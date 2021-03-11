@@ -1,0 +1,7 @@
+Also see github page https://github.com/YHordijk/scientificprogramming/tree/main/programming_ex6_yhordijk/cmc-vscode-generic/src
+
+Added real array summedwavefunction for storage.
+The array is allocated at the start of the propagateensemble subroutine.
+The array is updated whenever the energy is also updated.
+At the end the array is divided by the number of summationsteps and then printed after the last wavefunction is printed.
+The averaged wavefunction is, as expected, much smoother than the instantaneous wavefunction, However it is also shifted to the right slightly for the harmonic potential. This could be due to the fact that the averaging is was started while the energy difference was large. It may be improved by increasing the transient steps before averaging, i.e. close to convergence.
