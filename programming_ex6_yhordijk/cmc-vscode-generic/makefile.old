@@ -441,4 +441,4 @@ FORCE_REBUILD_OBJECTS := $(call objects_path, $(FORCE_REBUILD_FILES))
 $(FORCE_REBUILD_OBJECTS): $(SRCFILES)
 endif
 # Create object directory if required before compiling anything.
-$(OBJECTS): | $(DEST)# DO NOT DELETE THIS LINE - used by make depend
+$(OBJECTS): | $(DEST)

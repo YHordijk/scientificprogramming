@@ -31,6 +31,8 @@ module EnsembleWalkerModule
       type (Potential), pointer                         :: potentialFunction
       type (ParticleEnsemble), pointer                  :: ensemble
       real(KREAL)                                       :: summedReferenceEnergy
+      real(KREAL), ALLOCATABLE                          :: summedWaveFunction(:)
+      real(KREAL), ALLOCATABLE                          :: WaveFunction(:)
       real(KREAL)                                       :: currentReferenceEnergy
       logical                                           :: isConverged     
       integer(KINT)                                     :: numStepsTaken
@@ -150,15 +152,27 @@ contains
    ! Other methods.
    ! ------------------------
    subroutine PropagateEnsemble(self)
+      use HistogramBuilderModule
+
       type (EnsembleWalker), intent(inout)              :: self
       
       type (ParticleEnsemble), pointer                  :: newEnsemble
-      integer(KINT)                                     :: i, numParticlesLast, numParticles
+      integer(KINT)                                     :: i, j, numParticlesLast, numParticles
       real(KREAL)                                       :: lastEnergy, factor, tol, energy
       logical                                           :: converged
       real(KREAL), parameter                            :: ENERGY_DAMPING = 0.1_KREAL
+
+      type (HistogramBuilder)                           :: histoBuilder
+      type (Particle)                                   :: part
+      real(KREAL)                                       :: lowerBound, upperBound
+      real(KREAL), allocatable                          :: positions(:), wavefunc(:)
+      integer(KINT)                                     :: numberOfBins, n
       
       call LogMessage(log, TRACE_LOGGING_LEVEL, 'Entered PropagateEnsemble')
+
+      !!!! alocate wavefunction
+      allocate(self%WaveFunction(self%properties%numberOfEnergyBins))
+      allocate(self%summedWaveFunction(self%properties%numberOfEnergyBins))
             
       self%summedReferenceEnergy = 0.0_KREAL
       self%numStepsForAverage = 0
@@ -183,10 +197,32 @@ contains
          self%currentReferenceEnergy = self%currentReferenceEnergy + ENERGY_DAMPING * factor / self%properties%timeStep
          
          ! Update reference energy summation
+         !!!!!! AND WAVEFUNcTION !!!!!!
          if ( i >= self%properties%numberOfTransientSteps ) then
             lastEnergy = self%summedReferenceEnergy / max(1, self%numStepsForAverage)
             self%numStepsForAverage = self%numStepsForAverage + 1
             self%summedReferenceEnergy = self%summedReferenceEnergy + self%currentReferenceEnergy
+
+            !first create wf
+            ! Create histogram for the particle wavefunction. Print out the wavefunction.
+            n = GetNumberOfParticles(self%ensemble)
+            allocate(positions(n))
+            do j = 1, n
+               part = GetParticleAtIndex(self%ensemble, j)
+               positions(j) = part%position
+            enddo
+            lowerBound = minval(positions)
+            upperBound = maxval(positions)
+            call New(histoBuilder, lowerBound, upperBound, self%properties%numberOfEnergyBins)
+            allocate( wavefunc(self%properties%numberOfEnergyBins) )
+            wavefunc = CreateHistogram(histoBuilder, positions)
+            wavefunc = wavefunc / max(1.0_KREAL, sum(wavefunc))  
+            wavefunc = wavefunc / GetBinWidth(histoBuilder) 
+            wavefunc = sqrt(wavefunc)
+            ! add wf
+            self%summedWaveFunction = self%summedWaveFunction + wavefunc
+            call Delete(histoBuilder)
+            deallocate(positions, wavefunc)
          endif
          
          ! Log progress
@@ -325,6 +361,7 @@ contains
       wavefunc = wavefunc / GetBinWidth(histoBuilder) 
       wavefunc = sqrt(wavefunc)
       call Write(writer, 'Wavefunction', GetBinCenters(histoBuilder), wavefunc )
+      call Write(writer, 'Averaged Wavefunction', GetBinCenters(histoBuilder), self%summedWaveFunction / self%numStepsForAverage )
       call Delete(histoBuilder)
       deallocate(positions, wavefunc)
       
