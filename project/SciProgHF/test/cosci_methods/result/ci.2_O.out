@@ -1,0 +1,1815 @@
+DIRAC pam run in /home/miro/qch_software/dirac_git/trunk_working/test/cosci_methods
+DIRAC serial starts by allocating 64000000 words (488 MB) of memory
+DIRAC serial has no limitations in place for the amount of dynamically allocated memory
+
+Note: maximum allocatable memory for serial run can be set by pam --aw
+
+ ******************************************************************************
+ *                                                                            *
+ *                                O U T P U T                                 *
+ *                                   from                                     *
+ *                                                                            *
+ *                   @@@@@    @@   @@@@@     @@@@     @@@@@                   *
+ *                   @@  @@        @@  @@   @@  @@   @@                       *
+ *                   @@  @@   @@   @@@@@    @@@@@@   @@                       *
+ *                   @@  @@   @@   @@ @@    @@  @@   @@                       *
+ *                   @@@@@    @@   @@  @@   @@  @@    @@@@@                   *
+ *                                                                            *
+ *                                                                            *
+ %}ZS)S?$=$)]S?$%%>SS$%S$ZZ6cHHMHHHHHHHHMHHM&MHbHH6$L/:<S///</:|/:|:/::!:.::--:
+ $?S$$%$$$$?%?$(SSS$SSSHMMMMMMMMMMMMMMMMMM6H&6S&SH&&k?6$r~::://///::::::.:::-::
+ (%?)Z??$$$(S%$>$)S6HMMMMMMMMMMMMMMMMMMMMMMR6M]&&$6HR$&6(i::::::|i|:::::::-:-::
+ $S?$$)$?$%?))?S/]#MMMMMMMMMMMMMMMMMMMMMMMMMMHM1HRH9R&$$$|):?:/://|:/::/:/.::.:
+ SS$%%?$%((S)?Z[6MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM&HF$$&/)S?<~::!!:::::::/:-:|.
+ SS%%%%S$%%%$$MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHHHHHM>?/S/:/:::`:/://:/::-::
+ ?$SSSS?%SS$)MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM/4?:S:/:::/:::/:/:::.::
+ S$(S?S$%(?$HMMMMMMMMMMMMMMMMM#&7RH99MMMMMMMMMMMMMMMMMMHHHd$/:::::/::::::-//.:.
+ (?SS(%)S&HMMMMMMMMMMMMMMMMM#S|///???$9HHMMMMMMMMMDSZ&1S/?</>?~:///::|/!:/-:-:.
+ $S?%?<H(MMMMMMMMMMMMMMMMR?`. :.:`::<>:``?/*?##*)$:/>       `((%://::/:::::/::/
+ S$($$)HdMMMMMMMMMMMMMMMP: . `   `  `    `      `-            `Z<:>?::/:::::|:i
+ c%%%&HMMMMMMMMMMMMMMMM6:                                      `$%)>%%</>!:::::
+ S?%/MMMMMMMMMMMMMMMMMMH-                                        /ZSS>?:?~:;/::
+ $SZ?MMMMMMMMMMMMMMMMMH?.                                        \"&((/?//?|:::
+ $%$%&MMMMMMMMMMMMMMMMM:.                                          ?%/S:</::/::
+ ($?}&HMMMMMMMMMMMMMMMM>:                                          $%%<?/i:|i::
+ Z$($&MMMMMMMMMMMMMMMMHk(:.  . -                                   .S/\?\?/!:/:
+ (??$<HMMMMMMMMMMMMMMMFk|:   -.-.                                  :%/%/(:/:ii|
+ SZ(S?]MMMMMMMMMMMMMMHS?:- -  ::.:                                  |/S:</::?||
+ $%)$$(MMMMMMMMMMMMMMR):`:. :.:::`,,/bcokb/_                       :S?%?|~:/:/:
+ %$$%$)[[?$?MMMMMMMMMM: :.:-.::::$7?<&7&MMMMMMM#/           _ .. ..:</?:(:/::::
+ $$$?Z?HHH~|/MMMMMMMMM/`.-.:.:/:%%%%?dHMMMMMMMMMMH?,-   .,bMMMM6//./i~/~:<:::/:
+ $($S$M//::S?ZHMMMMMH/:.`:::.:/%S/&MMHMMMMMMMMRM&><   ,HMMMMMMMF  :::?:///:|:::
+ )[$S$S($|_i:#>::*H&?/::.::/:\"://:?>>`:&HMHSMMMM$:`-   MMHMMMMHHT .)i/?////::/
+ $$[$$>$}:dHH&$$--?S::-:.:::--/-:``./::>%Zi?)&/?`:.`   `H?$T*\" `  /%?>%:)://ii|
+ $&=&/ZS}$RF<:?/-.|%r/:::/:/:`.-.-..|::S//!`\"``          >??:    `SS<S:)!/////|
+ Z&]>b[Z(Z?&%:::../S$$:>:::i`.`. `-.`  `                         ,>%%%:>/>/!|:/
+ $$&/F&1$c$?>:>?/,>?$$ZS/::/:-: ...                              |S?S)S?<~:::::
+ &$&$&$k&>>|?<:<?((/$[/?)i~/:/. - -                              S?:%%%?/:::/::
+ =[/Z[[Fp[MMH$>?Z&S$$$/$S///||..-           -.-                  /((S$:%<:///:/
+ $&>1MHHMMMM6M9MMMM$Z$}$S%/:::.`.            .:/,,,dcb>/:.       ((SSSS%:)!//i|
+ MMMMMMMMMMMR&&RRRHR&&($(?:|i::-             .:%&S&$[&H&``     ../>%;/?>??:<::>
+ MMMMMMMMMMMMS/}S$&&H&[$SS//:::.:.   . . .v</Jq1&&D]&M&<,      :/::/?%%)S>?://:
+ MMMMMMMMMMMM?}$/$$kMM&&$(%/?//:..`.  .|//1d/`://?*/*/\"` `     .:/(SS$%(S%)):%
+ MMMMMMMMMMMM(}$$>&&MMHR#$S%%:?::.:|-.`:;&&b/D/$p=qpv//b/~`   :/~~%%??$=$)Z$S+;
+ MMMMMMMMMMMM[|S$$Z1]MMMMD[$?$:>)/::: :/?:``???bD&{b<<-`     .,:/)|SS(}Z/$$?/<S
+ MMMMMMMMMMMM||$)&7k&MMMMH9]$$??Z%|!/:i::`  `` .             SS?SS?Z/]1$/&$c/$S
+ MMMMMMMMMMMM| -?>[&]HMMMMMMMH1[/7SS(?:/..-` ::/Sc,/_,     _<$?SS%$S/&c&&$&>//<
+ MMMMMMMMMMMMR  `$&&&HMM9MMMMMMM&&c$%%:/:/:.:.:/\?\?/\    _MMHk/7S/]dq&1S<&&></
+ MMMMMMMMMMMMM?  :&96MHMMMMMMMMMMMHHk[S%(<<:// `         ,MMMMMMM&/Z6H]DkH]1$&&
+ MMMMMMMMMMMMMD    99H9HMMMMMMMMMMMMMMMb&%$<:i.:....    .MMMMMMMMM6HHHRH&H&H1SF
+ MMMMMMMMMMMMMM|   `?HMMMMMMMMMMMMMMMMMMMHk6k&>$&Z$/?_.bHMMMMMMMMMMM&6HRM9H6]Zk
+ MMMMMMMMMMMMMMM/    `TMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH6RH&R6&
+ MMMMMMMMMMMMMMMM    -|?HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMFHH6HMD&&
+ MMMMMMMMMMMMMMMMk  ..:~?9MMMMMMMMMMMMM#`:MMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MHkR6&F
+ MMMMMMMMMMMMMMMMM/  .-!:%$ZHMMMMMMMMMR` dMMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MRMHH9&
+ MMMMMMMMMMMMMMMMMML,:.-|::/?&&MMMMMM` .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHRMH&&6
+ MMMMMMMMMMMMMMMMMMMc%>/:::i<:SMMMMMMHdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHM&969k
+ MMMMMMMMMMMMMMMMMMMMSS/$$/(|HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHH&HH&
+ MMMMMMMMMMMMMMMMMMMM6S/?/MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMR96H1DR1
+ MMMMMMMMMMMMMMMMMMMMM&$MHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH691&&
+ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&R&9Z
+ MMMMMMMMMMMMMMMMMMMMMMMMMRHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&96][6
+ MMMMMMMMMMMMMMMMMMMMMMMMp?:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM96HH1][F
+ MMMMMMMMMMMMMMMMMMMMMMMM> -HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&1k&$&
+ ******************************************************************************
+ *                                                                            *
+ *         =========================================================          *
+ *                     Program for Atomic and Molecular                       *
+ *          Direct Iterative Relativistic All-electron Calculations           *
+ *         =========================================================          *
+ *                                                                            *
+ *                                                                            *
+ *    Written by:                                                             *
+ *                                                                            *
+ *    Radovan Bast             Universite P. Sabatier, Toulouse  France       *
+ *    Hans Joergen Aa. Jensen  University of Southern Denmark    Denmark      *
+ *    Trond Saue               Universite P. Sabatier, Toulouse  France       *
+ *    Lucas Visscher           VU University Amsterdam           Netherlands  *
+ *                                                                            *
+ *    with contributions from:                                                *
+ *                                                                            *
+ *    Vebjoern Bakken          University of Oslo                Norway       *
+ *    Kenneth G. Dyall         Schrodinger, Inc., Portland       USA          *
+ *    Sebastien Dubillard      University of Strasbourg          France       *
+ *    Ulf Ekstroem             University of Oslo                Norway       *
+ *    Ephraim Eliav            University of Tel Aviv            Israel       *
+ *    Thomas Enevoldsen        University of Southern Denmark    Denmark      *
+ *    Timo Fleig               Universite P. Sabatier, Toulouse  France       *
+ *    Olav Fossgaard           University of Tromsoe             Norway       *
+ *    Andre S. P. Gomes        CNRS/Universite Lille 1           France       *
+ *    Trygve Helgaker          University of Oslo                Norway       *
+ *    Jon K. Laerdahl          University of Oslo                Norway       *
+ *    Johan Henriksson         Linkoeping University             Sweden       *
+ *    Miroslav Ilias           Matej Bel University              Slovakia     *
+ *    Christoph R. Jacob       Karlsruhe Institute of Technology Germany      *
+ *    Stefan Knecht            University of Southern Denmark    Denmark      *
+ *    Christoffer V. Larsen    University of Southern Denmark    Denmark      *
+ *    Huliyar S. Nataraj       BME/Budapest Univ. Tech. & Econ.  Hungary      *
+ *    Patrick Norman           Linkoeping University             Sweden       *
+ *    Gosia Olejniczak         University of Warsaw              Poland       *
+ *    Jeppe Olsen              Aarhus University                 Denmark      *
+ *    Jesper K. Pedersen       University of Southern Denmark    Denmark      *
+ *    Markus Pernpointner      University of Heidelberg          Germany      *
+ *    Kenneth Ruud             University of Tromsoe             Norway       *
+ *    Pawel Salek              Stockholm Inst. of Technology     Sweden       *
+ *    Bernd Schimmelpfennig    Forschungszentrum Karlsruhe       Germany      *
+ *    Jetze Sikkema            VU University Amsterdam           Netherlands  *
+ *    Andreas J. Thorvaldsen   University of Tromsoe             Norway       *
+ *    Joern Thyssen            University of Southern Denmark    Denmark      *
+ *    Joost van Stralen        VU University Amsterdam           Netherlands  *
+ *    Sebastien Villaume       Linkoeping University             Sweden       *
+ *    Olivier Visser           University of Groningen           Netherlands  *
+ *    Toke Winther             University of Southern Denmark    Denmark      *
+ *    Shigeyoshi Yamamoto      Chukyo University                 Japan        *
+ *                                                                            *
+ *    For the complete list of contributors to the DIRAC code see our         *
+ *    website http://dirac.chem.vu.nl                                         *
+ *                                                                            *
+ *    This is an experimental code. The authors accept no responsibility      *
+ *    for the performance of the code or for the correctness of the results.  *
+ *                                                                            *
+ *    The code (in whole or part) is not to be reproduced for further         *
+ *    distribution without the written permission of the authors or           *
+ *    their representatives.                                                  *
+ *                                                                            *
+ *    If results obtained with this code are published, an                    *
+ *    appropriate citation would be:                                          *
+ *                                                                            *
+ *    DIRAC, a relativistic ab initio electronic structure program,           *
+ *    Release DIRAC11 (2011),                                                 *
+ *    written by R. Bast, H. J. Aa. Jensen, T. Saue, and L. Visscher,         *
+ *    with contributions from V. Bakken, K. G. Dyall, S. Dubillard,           *
+ *    U. Ekstroem, E. Eliav, T. Enevoldsen, T. Fleig, O. Fossgaard,           *
+ *    A. S. P. Gomes, T. Helgaker, J. K. Laerdahl, J. Henriksson,             *
+ *    M. Ilias, Ch. R. Jacob, S. Knecht, C. V. Larsen, H. S. Nataraj,         *
+ *    P. Norman, G. Olejniczak, J. Olsen, J. K. Pedersen, M. Pernpointner,    *
+ *    K. Ruud, P. Salek, B. Schimmelpfennig, J. Sikkema, A. J. Thorvaldsen,   *
+ *    J. Thyssen, J. van Stralen, S. Villaume, O. Visser, T. Winther,         *
+ *    and S. Yamamoto (see http://dirac.chem.vu.nl).                          *
+ *                                                                            *
+ ******************************************************************************
+
+
+Binary information
+------------------
+
+ Who compiled             | miro@opteron.tau.ac.il
+ System                   | Linux-2.6.18-274.17.1.el5
+ CMake generator          | Unix Makefiles
+ Processor                | x86_64
+ 64-bit integers          | OFF
+ MPI                      | OFF
+ Fortran compiler         | /opt/intel/fce/10.1.015/bin/ifort
+ Fortran compiler version | ifort (IFORT) 10.1 20080312
+ Fortran flags            | -w -assume byterecl -DVAR_IFORT -g -traceback -O0
+ C compiler               | /usr/bin/gcc
+ C compiler version       | gcc (GCC) 4.1.2 20080704 (Red Hat 4.1.2-52)
+ C flags                  | -g -O0
+ BLAS                     | -Wl,--start-group;-limf;/opt/intel/mkl/10.0.3.020/
+                          | lib/em64t/libmkl_core.so;/opt/intel/mkl/10.0.3.020
+                          | /lib/em64t/libmkl_intel_thread.so;/opt/intel/mkl/1
+                          | 0.0.3.020/lib/em64t/libguide.so;/usr/lib64/libpthr
+                          | ead.so;/usr/lib64/libm.so;/opt/intel/mkl/10.0.3.02
+                          | 0/lib/em64t/libmkl_intel_lp64.so;-openmp;-Wl,--end
+                          | -group
+ LAPACK                   | -Wl,--start-group;/opt/intel/mkl/10.0.3.020/lib/em
+                          | 64t/libmkl_lapack.so;-Wl,--end-group
+ Static linking           | OFF
+ Last Git revision        | ba9a443
+ Configuration time       | 2012-07-27 14:24:29.107119
+
+
+Execution time and host
+-----------------------
+
+ 
+     Date and time (Linux)  : Fri Jul 27 14:45:28 2012
+     Host name              : opteron.tau.ac.il                       
+
+
+Contents of the input file
+--------------------------
+
+**DIRAC                                                                                             
+.TITLE                                                                                              
+Oxygen atom.                                                                                        
+.WAVE F                                                                                             
+**HAMILTONIAN                                                                                       
+.DOSSSS                                                                                             
+.SPINFREE                                                                                           
+**WAVE FUNCTIONS                                                                                    
+.SCF                                                                                                
+.RESOLVE                                                                                            
+*SCF                                                                                                
+.CLOSED SHELL                                                                                       
+4 0                                                                                                 
+.OPEN S                                                                                             
+1                                                                                                   
+4/0,6                                                                                               
+.MAXITR                                                                                             
+25                                                                                                  
+.EVCCNV                                                                                             
+1.0E-8                                                                                              
+*RESOLVE                                                                                            
+.SCREEN                                                                                             
+1.0D-20                                                                                             
+*END OF                                                                                             
+                                                                                                    
+ $GOSCIP IPRNT=5 &END                                                                               
+
+
+Contents of the molecule file
+-----------------------------
+
+INTGRL                                                                                              
+Water                                                                                               
+cc-pVDZ basis (note that a tight p has NOT been added)                                              
+C   1    3  X  Y  Z                                                                                 
+        8.    1                                                                                     
+O      .0000000000        0.0000000000        0.0000000000                                          
+LARGE    3   1   1   1                                                                              
+    9    0    3                                                                                     
+  11720.0000000                                                                                     
+   1759.0000000                                                                                     
+    400.8000000                                                                                     
+    113.7000000                                                                                     
+     37.0300000                                                                                     
+     13.2700000                                                                                     
+      5.0250000                                                                                     
+      1.0130000                                                                                     
+      0.3023000                                                                                     
+    4    0    3                                                                                     
+     17.7000000                                                                                     
+      3.8540000                                                                                     
+      1.0460000                                                                                     
+      0.2753000                                                                                     
+    1    0    3                                                                                     
+      1.1850000                                                                                     
+FINISH                                                                                              
+                                                                                                    
+
+
+    **************************************************************************
+    ****************************** Oxygen atom. ******************************
+    **************************************************************************
+
+ Jobs in this run:
+   * Wave function
+
+
+    **************************************************************************
+    ************************** General DIRAC set-up **************************
+    **************************************************************************
+
+   CODATA Recommended Values of the Fundamental Physical Constants: 1998  
+                Peter J. Mohr and Barry N. Taylor                         
+   Journal of Physical and Chemical Reference Data, Vol. 28, No. 6, 1999  
+ * The speed of light :        137.0359998
+ * Running in four-component mode
+ * Direct evaluation of the following two-electron integrals:
+   - LL-integrals
+   - SL-integrals
+   - SS-integrals
+   - GT-integrals
+ * Spherical transformation embedded in MO-transformation
+   for large components
+ * Transformation to scalar RKB basis embedded in
+   MO-transformation for small components
+ * Thresholds for linear dependence:
+   Large components:   1.00D-06
+   Small components:   1.00D-08
+ * General print level   :   0
+
+
+    *************************************************************************
+    ****************** Output from HERMIT input processing ******************
+    *************************************************************************
+
+
+
+    *************************************************************************
+    ****************** Output from READIN input processing ******************
+    *************************************************************************
+
+
+
+  Title Cards
+  -----------
+
+  Water                                                                   
+  cc-pVDZ basis (note that a tight p has NOT been added)                  
+
+  Nuclear Gaussian exponent for atom of charge   8.000 :    5.8631436655D+08
+
+
+  Symmetry Operations
+  -------------------
+
+  Symmetry operations: 3
+
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Point group: D2h
+
+   * The point group was generated by:
+
+      Reflection in the yz-plane
+      Reflection in the xz-plane
+      Reflection in the xy-plane
+
+   * Group multiplication table
+
+        |  E   C2z  C2y  C2x   i   Oxy  Oxz  Oyz
+   -----+----------------------------------------
+     E  |  E   C2z  C2y  C2x   i   Oxy  Oxz  Oyz
+    C2z | C2z   E   C2x  C2y  Oxy   i   Oyz  Oxz
+    C2y | C2y  C2x   E   C2z  Oxz  Oyz   i   Oxy
+    C2x | C2x  C2y  C2z   E   Oyz  Oxz  Oxy   i 
+     i  |  i   Oxy  Oxz  Oyz   E   C2z  C2y  C2x
+    Oxy | Oxy   i   Oyz  Oxz  C2z   E   C2x  C2y
+    Oxz | Oxz  Oyz   i   Oxy  C2y  C2x   E   C2z
+    Oyz | Oyz  Oxz  Oxy   i   C2x  C2y  C2z   E 
+
+   * Character table
+
+        |  E   C2z  C2y  C2x   i   Oxy  Oxz  Oyz
+   -----+----------------------------------------
+    Ag  |   1    1    1    1    1    1    1    1
+    B3u |   1   -1   -1    1   -1    1    1   -1
+    B2u |   1   -1    1   -1   -1    1   -1    1
+    B1g |   1    1   -1   -1    1    1   -1   -1
+    B1u |   1    1   -1   -1   -1   -1    1    1
+    B2g |   1   -1    1   -1    1   -1    1   -1
+    B3g |   1   -1   -1    1    1   -1   -1    1
+    Au  |   1    1    1    1   -1   -1   -1   -1
+
+   * Direct product table
+
+        | Ag   B3u  B2u  B1g  B1u  B2g  B3g  Au 
+   -----+----------------------------------------
+    Ag  | Ag   B3u  B2u  B1g  B1u  B2g  B3g  Au 
+    B3u | B3u  Ag   B1g  B2u  B2g  B1u  Au   B3g
+    B2u | B2u  B1g  Ag   B3u  B3g  Au   B1u  B2g
+    B1g | B1g  B2u  B3u  Ag   Au   B3g  B2g  B1u
+    B1u | B1u  B2g  B3g  Au   Ag   B3u  B2u  B1g
+    B2g | B2g  B1u  Au   B3g  B3u  Ag   B1g  B2u
+    B3g | B3g  Au   B1u  B2g  B2u  B1g  Ag   B3u
+    Au  | Au   B3g  B2g  B1u  B1g  B2u  B3u  Ag 
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * Two fermion irreps:  E1g  E1u
+   * Real group. NZ = 1
+   * Direct product decomposition:
+          E1g x E1g : Ag  + B1g + B2g + B3g
+          E1u x E1g : Au  + B1u + B2u + B3u
+          E1u x E1u : Ag  + B1g + B2g + B3g
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1            * Fermion irrep no.: 2
+
+      La  |  Ag (1)  B1g(2)  |                La  |  Au (1)  B1u(2)  |
+      Sa  |  Au (1)  B1u(2)  |                Sa  |  Ag (1)  B1g(2)  |
+      Lb  |  B2g(3)  B3g(4)  |                Lb  |  B2u(3)  B3u(4)  |
+      Sb  |  B2u(3)  B3u(4)  |                Sb  |  B2g(3)  B3g(4)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    Ag   1
+    B3u  k
+    B2u  j
+    B1g  i
+    B1u  i
+    B2g  j
+    B3g  k
+    Au   1
+
+  QM-QM nuclear repulsion energy :      0.000000000000
+
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types:     1
+  Total number of atoms:    1
+
+  label    atoms   charge   prim    cont     basis   
+  ----------------------------------------------------------------------
+  O           1       8      27      27      L  - [9s4p1d|9s4p1d]                                                
+                             68      68      S  - [4s10p4d1f|4s10p4d1f]                                          
+  ----------------------------------------------------------------------
+                             27      27      L  - large components
+                             68      68      S  - small components
+  ----------------------------------------------------------------------
+  total:      1       8      95      95
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1
+  Basis set typed explicitly in input file                                        
+
+
+  Cartesian Coordinates
+  ---------------------
+
+  Total number of coordinates:  3
+
+
+   1   O        x      0.0000000000
+   2            y      0.0000000000
+   3            z      0.0000000000
+
+
+
+  Cartesian coordinates xyz format (angstrom)
+  -------------------------------------------
+
+    1
+ 
+O      0.0000000000   0.0000000000   0.0000000000
+
+
+  Symmetry Coordinates
+  --------------------
+
+  Number of coordinates in each symmetry:   0  1  1  0  1  0  0  0
+
+
+  Symmetry 2
+
+   1   O     x    1
+
+
+  Symmetry 3
+
+   2   O     y    2
+
+
+  Symmetry 5
+
+   3   O     z    3
+  Nuclear repulsion energy :    0.000000000000
+
+
+                                GETLAB: AO-labels
+                                -----------------
+
+   * Large components:   10
+     1  L O   1 s        2  L O   1 px       3  L O   1 py       4  L O   1 pz       5  L O   1 dxx      6  L O   1 dxy 
+     7  L O   1 dxz      8  L O   1 dyy      9  L O   1 dyz     10  L O   1 dzz 
+   * Small components:   20
+    11  S O   1 s       12  S O   1 px      13  S O   1 py      14  S O   1 pz      15  S O   1 dxx     16  S O   1 dxy 
+    17  S O   1 dxz     18  S O   1 dyy     19  S O   1 dyz     20  S O   1 dzz     21  S O   1 fxxx    22  S O   1 fxxy
+    23  S O   1 fxxz    24  S O   1 fxyy    25  S O   1 fxyz    26  S O   1 fxzz    27  S O   1 fyyy    28  S O   1 fyyz
+    29  S O   1 fyzz    30  S O   1 fzzz
+
+
+                                GETLAB: SO-labels
+                                -----------------
+
+   * Large components:   10
+     1  L Ag O  s        2  L Ag O  dxx      3  L Ag O  dyy      4  L Ag O  dzz      5  L B3uO  px       6  L B2uO  py  
+     7  L B1gO  dxy      8  L B1uO  pz       9  L B2gO  dxz     10  L B3gO  dyz 
+   * Small components:   20
+    11  S Ag O  s       12  S Ag O  dxx     13  S Ag O  dyy     14  S Ag O  dzz     15  S B3uO  px      16  S B3uO  fxxx
+    17  S B3uO  fxyy    18  S B3uO  fxzz    19  S B2uO  py      20  S B2uO  fxxy    21  S B2uO  fyyy    22  S B2uO  fyzz
+    23  S B1gO  dxy     24  S B1uO  pz      25  S B1uO  fxxz    26  S B1uO  fyyz    27  S B1uO  fzzz    28  S B2gO  dxz 
+    29  S B3gO  dyz     30  S Au O  fxyz
+
+
+  Symmetry Orbitals
+  -----------------
+
+  Number of orbitals in each symmetry:           28    17    17     5    17     5     5     1
+  Number of large orbitals in each symmetry:     12     4     4     1     4     1     1     0
+  Number of small orbitals in each symmetry:     16    13    13     4    13     4     4     1
+
+* Large component functions
+
+  Symmetry  Ag ( 1)
+
+        9 functions:    O  s   
+        1 functions:    O  dxx 
+        1 functions:    O  dyy 
+        1 functions:    O  dzz 
+
+  Symmetry  B3u( 2)
+
+        4 functions:    O  px  
+
+  Symmetry  B2u( 3)
+
+        4 functions:    O  py  
+
+  Symmetry  B1g( 4)
+
+        1 functions:    O  dxy 
+
+  Symmetry  B1u( 5)
+
+        4 functions:    O  pz  
+
+  Symmetry  B2g( 6)
+
+        1 functions:    O  dxz 
+
+  Symmetry  B3g( 7)
+
+        1 functions:    O  dyz 
+
+* Small component functions
+
+  Symmetry  Ag ( 1)
+
+        4 functions:    O  s   
+        4 functions:    O  dxx 
+        4 functions:    O  dyy 
+        4 functions:    O  dzz 
+
+  Symmetry  B3u( 2)
+
+       10 functions:    O  px  
+        1 functions:    O  fxxx
+        1 functions:    O  fxyy
+        1 functions:    O  fxzz
+
+  Symmetry  B2u( 3)
+
+       10 functions:    O  py  
+        1 functions:    O  fxxy
+        1 functions:    O  fyyy
+        1 functions:    O  fyzz
+
+  Symmetry  B1g( 4)
+
+        4 functions:    O  dxy 
+
+  Symmetry  B1u( 5)
+
+       10 functions:    O  pz  
+        1 functions:    O  fxxz
+        1 functions:    O  fyyz
+        1 functions:    O  fzzz
+
+  Symmetry  B2g( 6)
+
+        4 functions:    O  dxz 
+
+  Symmetry  B3g( 7)
+
+        4 functions:    O  dyz 
+
+  Symmetry  Au ( 8)
+
+        1 functions:    O  fxyz
+
+
+   ***************************************************************************
+   *************************** Hamiltonian defined ***************************
+   ***************************************************************************
+
+ * Print level:    0
+ * Dirac-Coulomb Hamiltonian
+   with the following modifications:
+   - Spin-orbit interactions neglected
+ * Default integral flags passed to all modules
+   - LL-integrals:     1
+   - LS-integrals:     1
+   - SS-integrals:     1
+   - GT-integrals:     0
+ * Basis set:
+   - uncontracted large component basis set
+   - uncontracted small component basis set
+
+
+ Information about the restricted kinetic balance scheme:
+ * Default RKB projection:
+   1: Pre-projection in scalar basis
+   2: Removal of unphysical solutions (via diagonalization of free particle Hamiltonian)
+
+
+    **************************************************************************
+    ************************** Wave function module **************************
+    **************************************************************************
+
+ Jobs in this run (in execution order):
+ * Hartree-Fock calculation
+ * Followed by resolution of open-shell states
+===========================================================================
+ SCFINP: Set-up for Hartree-Fock calculation:
+===========================================================================
+ * Number of fermion irreps: 2
+ * Open shell SCF calculation using Average-of-Configuration
+
+ * Shell specifications:
+
+                                        Orbitals
+                        #electrons  irrep 1  irrep 2     f        a      alpha
+                        ----------  -------  -------  -------  -------  -------
+   Closed shell            4             2        0    1.0000   1.0000   0.0000
+   Open shell no. 1        4.00          0        3    0.6667   0.9000   0.3000
+   ----------------------------------------------------------------------------
+   Total                   8.00          2        3
+
+   f is the fraction occupation; a and alpha open shell coupling coefficients.
+
+ * Bare nucleus screening correction used for start guess
+ * General print level   :   0
+ ***** INITIAL TRIAL SCF FUNCTION *****
+ * Trial vectors read from file DFCOEF
+ ***** SCF CONVERGENCE CRITERIA *****
+ * Convergence on norm of error vector (gradient).
+   Desired convergence:1.000D-08
+   Allowed convergence:1.000D-08
+
+ ***** CONVERGENCE CONTROL *****
+ * Fock matrix constructed using differential density matrix
+    with optimal parameter.
+ * DIIS (in MO basis)
+ * DIIS will be activated when convergence reaches : 1.00D+20
+   - Maximum size of B-matrix:   10
+ * Damping of Fock matrix when DIIS is not activated. 
+   Weight of old matrix    : 0.250
+ * Maximum number of SCF iterations  :   25
+ * No quadratic convergent Hartree-Fock
+ * Contributions from 2-electron integrals to Fock matrix:
+   LL-integrals.
+   SL-integrals from iteration    1
+   SS-integrals from iteration    1
+ ***** OUTPUT CONTROL *****
+ * Only electron eigenvalues written out.
+===========================================================================
+ RESINP: Set-up for resolution of open-shell states:
+===========================================================================
+ * General print level   :   0
+ * 4-index transformation follows scheme      :   4
+ - write (rs)-batches of half-transformed integrals 
+ (ij|rs) to disk; parallel scheme
+ * Screening threshold : 1.00E-20
+ * Gaunt integrals not included.
+
+
+ ********************************************************************************
+ *************************** Input consistency checks ***************************
+ ********************************************************************************
+
+
+
+    *************************************************************************
+    ************************ End of input processing ************************
+    *************************************************************************
+
+
+
+                      Nuclear contribution to dipole moments
+                      --------------------------------------
+
+                     All components zero by symmetry
+
+
+                       Generating Lowdin canonical matrix:
+                       -----------------------------------
+
+   L   Ag    * Deleted:          1(Proj:          1, Lindep:          0)
+   L   B1g   * Deleted:          0(Proj:          0, Lindep:          0)
+   L   B2g   * Deleted:          0(Proj:          0, Lindep:          0)
+   L   B3g   * Deleted:          0(Proj:          0, Lindep:          0)
+   S   B3u   * Deleted:          1(Proj:          1, Lindep:          0)
+   S   B2u   * Deleted:          1(Proj:          1, Lindep:          0)
+   S   B1u   * Deleted:          1(Proj:          1, Lindep:          0)
+   S   Au    * Deleted:          0(Proj:          0, Lindep:          0)
+   L   B3u   * Deleted:          0(Proj:          0, Lindep:          0)
+   L   B2u   * Deleted:          0(Proj:          0, Lindep:          0)
+   L   B1u   * Deleted:          0(Proj:          0, Lindep:          0)
+   S   Ag    * Deleted:          4(Proj:          4, Lindep:          0)
+   S   B1g   * Deleted:          0(Proj:          0, Lindep:          0)
+   S   B2g   * Deleted:          0(Proj:          0, Lindep:          0)
+   S   B3g   * Deleted:          0(Proj:          0, Lindep:          0)
+
+
+                                Output from MODHAM
+                                ------------------
+
+* Applied strict kinetic balance !
+
+
+      **********************************************************************
+      ************************* Orbital dimensions *************************
+      **********************************************************************
+
+                                   Irrep 1 Irrep 2   Sum
+No. of electronic orbitals (NESH):    14      12      26
+No. of positronic orbitals (NPSH):    14      12      26
+Total no. of orbitals      (NORB):    28      24      52
+
+
+   ****************************************************************************
+   ************************* Hartree-Fock calculation *************************
+   ****************************************************************************
+
+
+*** INFO *** No trial vectors found. Using bare nucleus approximation for initial trial vectors.
+             Improved by an estimate of the electronic screening (Slater's rules).
+
+
+########## START ITERATION NO.   1 ##########   Fri Jul 27 14:45:28 2012
+
+
+=> Calculating sum of orbital energies
+It.    1    -40.51328356907      0.00D+00  0.00D+00  0.00D+00               0.06000001s   Scr. nuclei    Fri Jul 27
+
+########## START ITERATION NO.   2 ##########   Fri Jul 27 14:45:28 2012
+
+
+* GETGAB: label "GABAO1XX" not found; calling GABGEN.
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-12    2.85%    0.65%   20.01%   54.14%   0.02000001s
+SOfock:SL  1.00D-12    2.26%    3.01%   14.55%   52.57%   0.13000000s
+SOfock:SS  1.00D-12    1.87%   11.60%    9.91%   46.92%   0.22999996s
+ cp DFCOEF DFCOEF.BEST
+>>> Total wall time: 0.00000000s
+>>> Total CPU time : 0.56000003s
+
+########## END ITERATION NO.   2 ##########   Fri Jul 27 14:45:28 2012
+
+It.    2    -74.65816448460      3.41D+01  8.80D+00  1.61D+00               0.56000003s   LL SL SS       Fri Jul 27
+
+########## START ITERATION NO.   3 ##########   Fri Jul 27 14:45:28 2012
+
+    3 *** Differential density matrix. DCOVLP     = 1.0038
+    3 *** Differential density matrix. DVOVLP( 1) = 1.0145
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-12    2.85%    0.82%   19.98%   54.01%   0.01999998s
+SOfock:SL  1.00D-12    2.26%    4.19%   14.35%   52.14%   0.14999998s
+SOfock:SS  1.00D-12    1.87%   16.13%    9.62%   45.25%   0.25000012s
+ cp DFCOEF DFCOEF.BEST
+>>> Total wall time: 0.00000000s
+>>> Total CPU time : 0.48000002s
+
+########## END ITERATION NO.   3 ##########   Fri Jul 27 14:45:28 2012
+
+It.    3    -74.79611506137      1.38D-01 -7.27D-01  1.76D-01   DIIS   2    0.48000002s   LL SL SS       Fri Jul 27
+
+########## START ITERATION NO.   4 ##########   Fri Jul 27 14:45:28 2012
+
+    4 *** Differential density matrix. DCOVLP     = 1.0029
+    4 *** Differential density matrix. DVOVLP( 1) = 0.9918
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-12    2.85%    0.99%   19.96%   53.89%   0.01999998s
+SOfock:SL  1.00D-12    2.26%    5.71%   14.26%   51.40%   0.13999999s
+SOfock:SS  1.00D-12    1.87%   21.60%    9.23%   42.78%   0.29999995s
+ cp DFCOEF DFCOEF.BEST
+>>> Total wall time: 1.00000000s
+>>> Total CPU time : 0.51999986s
+
+########## END ITERATION NO.   4 ##########   Fri Jul 27 14:45:28 2012
+
+It.    4    -74.80100359888      4.89D-03  1.56D-01  3.50D-02   DIIS   3    0.51999986s   LL SL SS       Fri Jul 27
+
+########## START ITERATION NO.   5 ##########   Fri Jul 27 14:45:29 2012
+
+    5 *** Differential density matrix. DCOVLP     = 0.9995
+    5 *** Differential density matrix. DVOVLP( 1) = 1.0013
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-12    2.85%    1.19%   19.96%   53.74%   0.02000010s
+SOfock:SL  1.00D-12    2.26%    8.39%   14.27%   50.30%   0.08999991s
+SOfock:SS  1.00D-12    1.87%   27.25%    8.79%   40.16%   0.20000005s
+ cp DFCOEF DFCOEF.BEST
+>>> Total wall time: 0.00000000s
+>>> Total CPU time : 0.38000000s
+
+########## END ITERATION NO.   5 ##########   Fri Jul 27 14:45:29 2012
+
+It.    5    -74.80116495681      1.61D-04 -2.40D-02  2.12D-03   DIIS   4    0.38000000s   LL SL SS       Fri Jul 27
+
+########## START ITERATION NO.   6 ##########   Fri Jul 27 14:45:29 2012
+
+    6 *** Differential density matrix. DCOVLP     = 1.0000
+    6 *** Differential density matrix. DVOVLP( 1) = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-12    0.80%    4.40%   19.71%   52.49%   0.01999998s
+SOfock:SL  1.00D-12    1.93%   14.30%   13.20%   47.99%   0.14000010s
+SOfock:SS  1.00D-12    1.87%   38.87%    8.03%   34.50%   0.20000005s
+ cp DFCOEF DFCOEF.BEST
+>>> Total wall time: 0.00000000s
+>>> Total CPU time : 0.42000008s
+
+########## END ITERATION NO.   6 ##########   Fri Jul 27 14:45:29 2012
+
+It.    6    -74.80116552211      5.65D-07  1.43D-03  8.24D-05   DIIS   5    0.42000008s   LL SL SS       Fri Jul 27
+
+########## START ITERATION NO.   7 ##########   Fri Jul 27 14:45:29 2012
+
+    7 *** Differential density matrix. DCOVLP     = 1.0000
+    7 *** Differential density matrix. DVOVLP( 1) = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-12    0.80%    8.02%   19.21%   50.53%   0.01999998s
+SOfock:SL  1.00D-12    1.93%   24.87%   12.14%   42.57%   0.14000010s
+SOfock:SS  1.00D-12    1.87%   62.62%    6.24%   21.85%   0.25999999s
+ cp DFCOEF DFCOEF.BEST
+>>> Total wall time: 1.00000000s
+>>> Total CPU time : 0.48000002s
+
+########## END ITERATION NO.   7 ##########   Fri Jul 27 14:45:29 2012
+
+It.    7    -74.80116552290      7.83D-10  4.33D-05  7.43D-06   DIIS   6    0.48000002s   LL SL SS       Fri Jul 27
+
+########## START ITERATION NO.   8 ##########   Fri Jul 27 14:45:30 2012
+
+    8 *** Differential density matrix. DCOVLP     = 1.0000
+    8 *** Differential density matrix. DVOVLP( 1) = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-12    0.80%   10.07%   18.77%   50.33%   0.01999998s
+SOfock:SL  1.00D-12    1.93%   30.36%   11.54%   40.00%   0.08999991s
+SOfock:SS  1.00D-12    1.87%   76.49%    5.09%   14.49%   0.18000007s
+ cp DFCOEF DFCOEF.BEST
+>>> Total wall time: 0.00000000s
+>>> Total CPU time : 0.34999990s
+
+########## END ITERATION NO.   8 ##########   Fri Jul 27 14:45:30 2012
+
+It.    8    -74.80116552291      1.37D-11  1.56D-06  3.45D-07   DIIS   7    0.34999990s   LL SL SS       Fri Jul 27
+
+########## START ITERATION NO.   9 ##########   Fri Jul 27 14:45:30 2012
+
+    9 *** Differential density matrix. DCOVLP     = 1.0000
+    9 *** Differential density matrix. DVOVLP( 1) = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-12    2.85%   15.09%   17.75%   47.76%   0.01999998s
+SOfock:SL  1.00D-12    2.26%   46.83%    9.76%   31.74%   0.12000012s
+SOfock:SS  1.00D-12    3.49%   92.52%    2.39%    5.71%   0.20999980s
+ cp DFCOEF DFCOEF.BEST
+>>> Total wall time: 0.00000000s
+>>> Total CPU time : 0.41000009s
+
+########## END ITERATION NO.   9 ##########   Fri Jul 27 14:45:30 2012
+
+It.    9    -74.80116552291      1.42D-14  1.46D-07  2.30D-09   DIIS   7    0.41000009s   LL SL SS       Fri Jul 27
+
+
+                                   SCF - CYCLE
+                                   -----------
+
+* Convergence on norm of error vector (gradient).
+  Desired convergence:1.000D-08
+  Allowed convergence:1.000D-08
+
+* ERGVAL - convergence in total energy
+* FCKVAL - convergence in maximum change in total Fock matrix
+* EVCVAL - convergence in error vector (gradient)
+--------------------------------------------------------------------------------------------------------------------------------
+           Energy               ERGVAL    FCKVAL    EVCVAL      Conv.acc    CPU          Integrals   Time stamp
+--------------------------------------------------------------------------------------------------------------------------------
+It.    1    -40.51328356907      0.00D+00  0.00D+00  0.00D+00               0.06000001s   Scr. nuclei    Fri Jul 27
+It.    2    -74.65816448460      3.41D+01  8.80D+00  1.61D+00               0.56000003s   LL SL SS       Fri Jul 27
+It.    3    -74.79611506137      1.38D-01 -7.27D-01  1.76D-01   DIIS   2    0.48000002s   LL SL SS       Fri Jul 27
+It.    4    -74.80100359888      4.89D-03  1.56D-01  3.50D-02   DIIS   3    0.51999986s   LL SL SS       Fri Jul 27
+It.    5    -74.80116495681      1.61D-04 -2.40D-02  2.12D-03   DIIS   4    0.38000000s   LL SL SS       Fri Jul 27
+It.    6    -74.80116552211      5.65D-07  1.43D-03  8.24D-05   DIIS   5    0.42000008s   LL SL SS       Fri Jul 27
+It.    7    -74.80116552290      7.83D-10  4.33D-05  7.43D-06   DIIS   6    0.48000002s   LL SL SS       Fri Jul 27
+It.    8    -74.80116552291      1.37D-11  1.56D-06  3.45D-07   DIIS   7    0.34999990s   LL SL SS       Fri Jul 27
+It.    9    -74.80116552291      1.42D-14  1.46D-07  2.30D-09   DIIS   7    0.41000009s   LL SL SS       Fri Jul 27
+--------------------------------------------------------------------------------------------------------------------------------
+* Convergence after    9 iterations.
+* Average elapsed time per iteration: 
+      No 2-ints    :    0.00000000s
+      LL SL SS     :    0.25000000s
+
+
+                                   TOTAL ENERGY
+                                   ------------
+
+   Electronic energy                        :    -74.801165522909585
+
+   Other contributions to the total energy
+   Nuclear repulsion energy                 :      0.000000000000000
+
+   Sum of all contributions to the energy
+   Total energy                             :    -74.801165522909585
+
+
+                                   Eigenvalues
+                                   -----------
+
+
+* Boson symmetry Ag 
+  * Closed shell, f = 1.0000
+   -20.69684602312  ( 2)       -1.24760458190  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+     1.26440870598  ( 2)        2.87864093177  ( 4)       12.48732534678  ( 2)       61.01401239158  ( 2)      230.11492237866  ( 2)
+   851.60670397373  ( 2)     3409.59880879963  ( 2)    15466.10460403292  ( 2)
+
+* Boson symmetry B1g
+  * Virtual eigenvalues, f = 0.0000
+     2.87864093177  ( 2)
+
+* Boson symmetry B2g
+  * Virtual eigenvalues, f = 0.0000
+     2.87864093177  ( 2)
+
+* Boson symmetry B3g
+  * Virtual eigenvalues, f = 0.0000
+     2.87864093177  ( 2)
+
+* Boson symmetry B3u
+  * Open shell #1, f = 0.6667
+    -0.60742774275  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+     1.05632821052  ( 2)        5.96917307280  ( 2)       33.23731450843  ( 2)
+
+* Boson symmetry B2u
+  * Open shell #1, f = 0.6667
+    -0.60742774275  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+     1.05632821053  ( 2)        5.96917307280  ( 2)       33.23731450843  ( 2)
+
+* Boson symmetry B1u
+  * Open shell #1, f = 0.6667
+    -0.60742774274  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+     1.05632821052  ( 2)        5.96917307280  ( 2)       33.23731450843  ( 2)
+
+* Boson symmetry Au 
+  * No eigenvalues.
+
+* Occupation in fermion symmetry E1g
+  * Inactive orbitals
+    Ag  Ag  
+  * Virtual orbitals
+    Ag  Ag  Ag  B3g B2g B1g Ag  Ag  Ag  Ag  Ag  Ag  
+
+* Occupation in fermion symmetry E1u
+  * Active orbitals
+    B3u B2u B1u 
+  * Virtual orbitals
+    B1u B3u B2u B2u B1u B3u B1u B3u B2u 
+
+* Occupation of subblocks
+                       E1g:  Ag   B1g  B2g  B3g                                                             
+  closed shells (f=1.0000):    2    0    0    0
+  open shell #1 (f=0.6667):    0    0    0    0
+ virtual shells (f=0.0000):    9    1    1    1
+tot.num. of pos.erg shells:   11    1    1    1
+                       E1u:  B3u  B2u  B1u  Au                                                              
+  closed shells (f=1.0000):    0    0    0    0
+  open shell #1 (f=0.6667):    1    1    1    0
+ virtual shells (f=0.0000):    3    3    3    0
+tot.num. of pos.erg shells:    4    4    4    0
+
+
+* HOMO - LUMO gap:
+
+    E(LUMO) :     1.05632821 au (symmetry B1u)
+  - E(HOMO) :    -0.60742774 au (symmetry B1u)
+  ------------------------------------------
+    gap     :     1.66375595 au
+
+
+
+    *************************************************************************
+    ******************** Resolution of open-shell states ********************
+    *************************************************************************
+
+- Number of active electrons:    4
+- Active orbitals:
+
+
+ * Fermion ircop E1g
+
+      No orbitals for index 1
+
+
+ * Fermion ircop E1u
+
+      Index 1    3 orbitals
+          1    2    3
+- Core orbitals:
+
+
+ * Fermion ircop E1g
+
+      Index 1    2 orbitals
+          1    2
+
+
+ * Fermion ircop E1u
+
+      No orbitals for index 1
+
+
+    **************************************************************************
+    **************** Transformation to Molecular Spinor Basis ****************
+    **************************************************************************
+
+
+          Written by Luuk Visscher, Jon Laerdahl & Trond Saue
+          Odense, 1997
+
+
+
+
+       ********************************************************************
+       **************** Transformation of core Fock matrix ****************
+       ********************************************************************
+
+
+ Transformation started at : Fri Jul 27 14:45:30 2012
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -74.8011655229095709
+* Heading :Oxygen atom.                                      Fri Jul 27 14:45:30 2012
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-12   56.02%    0.52%    2.54%   11.79%   0.00999975s
+SOfock:SL  1.00D-12   46.44%    5.53%    2.22%   15.03%   0.07999992s
+SOfock:SS  1.00D-12   37.64%    8.47%    1.57%   16.34%   0.13000011s
+
+* REAFCK: Fock matrix read from file /home02/temp/miro/miro/DIRAC_ci.2_O_15795/DFFCK1            
+* Heading :Oxygen atom.                                      Fri Jul 27 14:45:28 2012
+
+
+ Core energy (includes nuclear repulsion) :            -68.0119434904
+ - Electronic part :                                   -68.0119434904
+   - One-electron terms :                              -77.9507926122
+   - Two-electron terms :                                9.9388491218
+
+
+ MOLFDIR file MRCONEE is written
+
+
+    **************************************************************************
+    **************** Transformation to Molecular Spinor Basis ****************
+    **************************************************************************
+
+
+          Written by Luuk Visscher, Jon Laerdahl & Trond Saue
+          Odense, 1997
+
+
+
+
+     ************************************************************************
+     **************** Transformation of 2-electron integrals ****************
+     ************************************************************************
+
+
+ Transformation started at : Fri Jul 27 14:45:31 2012
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -74.8011655229095709
+* Heading :Oxygen atom.                                      Fri Jul 27 14:45:30 2012
+ - Integral class 1 : (LL|??)
+   - Beginning task   1 of   3 after      0. seconds and      0. CPU-seconds
+   - Beginning task   2 of   3 after      0. seconds and      0. CPU-seconds
+   - Beginning task   3 of   3 after      0. seconds and      0. CPU-seconds
+ - Integral class 2 : (SS|??)
+   - Beginning task   4 of   8 after      0. seconds and      0. CPU-seconds
+   - Beginning task   5 of   8 after      0. seconds and      0. CPU-seconds
+   - Beginning task   6 of   8 after      0. seconds and      0. CPU-seconds
+   - Beginning task   7 of   8 after      0. seconds and      0. CPU-seconds
+   - Beginning task   8 of   8 after      0. seconds and      0. CPU-seconds
+* Screening statistics:
+   (LL|LL)ints :  88.34%
+   (SS|LL)ints :  91.47%
+   (SS|SS)ints :  93.76%
+   Total       :  93.12%
+
+ - Starting symmetrization after           0.00 seconds
+ - Finished symmetrization after           0.00 seconds
+
+ - Binary  file MDCINT was written.
+
+------ Timing report (in CPU seconds) of module  integral transformation      
+
+ Time in  Initializing MS4IND file    C       3.990 seconds
+ Time in  Computing+transform. integral       0.200 seconds
+ Time in  Symmetrizing MO integrals           0.070 seconds
+
+
+ Total wall time used in RESOLV : 0.00000000s
+ Total CPU  time used in RESOLV : 0.26999998s
+
+ Transformation ended at : Fri Jul 27 14:45:31 2012
+GASRES: Set up the following information:
+      Ag a B3ua B2ua B1ga B1ua B2ga B3ga Au a Ag b B3ub B2ub B1gb B1ub B2gb B3gb Au b Ag 3 B3u3 B2u3 B1g3 B1u3 B2g3 B3g3 Au 3 Ag 3 B3u3 B2u3 B1g3 B1u3 B2g3 B3g3 Au 3
+    4    0    1    1    0    1    0    0    0    0    1    1    0    1    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+    0
+
+
+
+ GOSCIP (Version 1.8)
+
+ Today is :   27 Jul 12 
+ The time is :  14:45:31
+
+
+ &GENERAL
+ TWOC    = F
+ /
+ &POPAN
+ THRESH  =  1.000000000000000E-003,
+ DEGEN   =  1.000000000000000E-010,
+ SELPOP  =   100.000000000000     
+ /
+
+
+ All information read from MRCONEE (and input)
+
+
+ Number of electrons:    4
+ Decimal representation of frozen orbitals:   0
+
+ IACEL (number of active electrons) 
+ has been calculated from MAXE:  0
+
+
+ Breit interaction included :                    F
+ Core energy :                   -68.01194349    
+ Number of active orbitals :                     6
+
+ Orbital Representation        Orbital energy
+     1     Eu 1Eu               -0.6074277428    
+     2     Eu 1Eu               -0.6074277428    
+     3     Eu 1Eu               -0.6074277427    
+     4     Eu 2Eu               -0.6074277428    
+     5     Eu 2Eu               -0.6074277428    
+     6     Eu 2Eu               -0.6074277427    
+Number of determinants:
+   Symmetry Ag 0  :          3
+   Symmetry B3u0  :          0
+   Symmetry B2u0  :          0
+   Symmetry B1g0  :          2
+   Symmetry B1u0  :          0
+   Symmetry B2g0  :          2
+   Symmetry B3g0  :          2
+   Symmetry Au 0  :          0
+   Symmetry Ag 4  :          0
+   Symmetry B3u4  :          0
+   Symmetry B2u4  :          0
+   Symmetry B1g4  :          0
+   Symmetry B1u4  :          0
+   Symmetry B2g4  :          0
+   Symmetry B3g4  :          0
+   Symmetry Au 4  :          0
+   Symmetry Ag 2  :          0
+   Symmetry B3u2  :          0
+   Symmetry B2u2  :          0
+   Symmetry B1g2  :          1
+   Symmetry B1u2  :          0
+   Symmetry B2g2  :          1
+   Symmetry B3g2  :          1
+   Symmetry Au 2  :          0
+   Symmetry Ag 2  :          0
+   Symmetry B3u2  :          0
+   Symmetry B2u2  :          0
+   Symmetry B1g2  :          1
+   Symmetry B1u2  :          0
+   Symmetry B2g2  :          1
+   Symmetry B3g2  :          1
+   Symmetry Au 2  :          0
+
+ Coulomb integral file was generated at  27Jul12   14:45:31
+ Read      15 unique integrals
+
+ Representation Ag 0;    3 vectors written to file  MDTRIV_Ag 0
+
+ Eigenvalues             -74.760882951541
+                         -74.760882951541
+                         -74.640035242888
+
+ CPU time for this representation 
+
+ Generation of determinants :      0.0000
+ Building the CI matrix :          0.0000
+ Diagonalization :                 0.0100
+ Writing CI vectors :              0.0000
+
+ Population analysis for representation Ag 0
+            The first     3 vectors are analyzed
+
+       energy        det#  determinant                 norm      Re        Im
+       ------        ----  -----------                 ----      --        --
+     -74.76088295
+                        1  110110                      0.5549   -0.7449    0.0000
+                        2  101101                      0.0069    0.0830    0.0000
+                        3  011011                      0.4382    0.6620    0.0000
+     -74.76088295
+                        1  110110                      0.1117    0.3343    0.0000
+                        2  101101                      0.6598   -0.8123    0.0000
+                        3  011011                      0.2285    0.4780    0.0000
+     -74.64003524
+                        1  110110                      0.3333    0.5774    0.0000
+                        2  101101                      0.3333    0.5774    0.0000
+                        3  011011                      0.3333    0.5774    0.0000
+
+ Representation B1g0;    2 vectors written to file  MDTRIV_B1g0
+
+ Eigenvalues             -74.841448090642
+                         -74.760882951541
+
+ CPU time for this representation 
+
+ Generation of determinants :      0.0000
+ Building the CI matrix :          0.0000
+ Diagonalization :                 0.0000
+ Writing CI vectors :              0.0000
+
+ Population analysis for representation B1g0
+            The first     2 vectors are analyzed
+
+       energy        det#  determinant                 norm      Re        Im
+       ------        ----  -----------                 ----      --        --
+     -74.84144809
+                        1  011101                      0.5000    0.7071    0.0000
+                        2  101011                      0.5000   -0.7071    0.0000
+     -74.76088295
+                        1  011101                      0.5000    0.7071    0.0000
+                        2  101011                      0.5000    0.7071    0.0000
+
+ Representation B2g0;    2 vectors written to file  MDTRIV_B2g0
+
+ Eigenvalues             -74.841448090642
+                         -74.760882951541
+
+ CPU time for this representation 
+
+ Generation of determinants :      0.0000
+ Building the CI matrix :          0.0000
+ Diagonalization :                 0.0100
+ Writing CI vectors :              0.0000
+
+ Population analysis for representation B2g0
+            The first     2 vectors are analyzed
+
+       energy        det#  determinant                 norm      Re        Im
+       ------        ----  -----------                 ----      --        --
+     -74.84144809
+                        1  011110                      0.5000    0.7071    0.0000
+                        2  110011                      0.5000   -0.7071    0.0000
+     -74.76088295
+                        1  011110                      0.5000   -0.7071    0.0000
+                        2  110011                      0.5000   -0.7071    0.0000
+
+ Representation B3g0;    2 vectors written to file  MDTRIV_B3g0
+
+ Eigenvalues             -74.841448090642
+                         -74.760882951541
+
+ CPU time for this representation 
+
+ Generation of determinants :      0.0000
+ Building the CI matrix :          0.0000
+ Diagonalization :                 0.0100
+ Writing CI vectors :              0.0000
+
+ Population analysis for representation B3g0
+            The first     2 vectors are analyzed
+
+       energy        det#  determinant                 norm      Re        Im
+       ------        ----  -----------                 ----      --        --
+     -74.84144809
+                        1  101110                      0.5000    0.7071    0.0000
+                        2  110101                      0.5000   -0.7071    0.0000
+     -74.76088295
+                        1  101110                      0.5000    0.7071    0.0000
+                        2  110101                      0.5000    0.7071    0.0000
+
+ Representation B1g2;    1 vectors written to file  MDTRIV_B1g2
+
+ Eigenvalues             -74.841448090642
+
+ CPU time for this representation 
+
+ Generation of determinants :      0.0000
+ Building the CI matrix :          0.0000
+ Diagonalization :                 0.0100
+ Writing CI vectors :              0.0000
+
+ Population analysis for representation B1g2
+            The first     1 vectors are analyzed
+
+       energy        det#  determinant                 norm      Re        Im
+       ------        ----  -----------                 ----      --        --
+     -74.84144809
+                        1  111001                      1.0000    1.0000    0.0000
+
+ Representation B2g2;    1 vectors written to file  MDTRIV_B2g2
+
+ Eigenvalues             -74.841448090642
+
+ CPU time for this representation 
+
+ Generation of determinants :      0.0000
+ Building the CI matrix :          0.0000
+ Diagonalization :                 0.0100
+ Writing CI vectors :              0.0000
+
+ Population analysis for representation B2g2
+            The first     1 vectors are analyzed
+
+       energy        det#  determinant                 norm      Re        Im
+       ------        ----  -----------                 ----      --        --
+     -74.84144809
+                        1  111010                      1.0000    1.0000    0.0000
+
+ Representation B3g2;    1 vectors written to file  MDTRIV_B3g2
+
+ Eigenvalues             -74.841448090642
+
+ CPU time for this representation 
+
+ Generation of determinants :      0.0000
+ Building the CI matrix :          0.0000
+ Diagonalization :                 0.0100
+ Writing CI vectors :              0.0000
+
+ Population analysis for representation B3g2
+            The first     1 vectors are analyzed
+
+       energy        det#  determinant                 norm      Re        Im
+       ------        ----  -----------                 ----      --        --
+     -74.84144809
+                        1  111100                      1.0000    1.0000    0.0000
+
+ Representation B1g2;    1 vectors written to file  MDTRIV_B1g2
+
+ Eigenvalues             -74.841448090642
+
+ CPU time for this representation 
+
+ Generation of determinants :      0.0000
+ Building the CI matrix :          0.0000
+ Diagonalization :                 0.0100
+ Writing CI vectors :              0.0000
+
+ Population analysis for representation B1g2
+            The first     1 vectors are analyzed
+
+       energy        det#  determinant                 norm      Re        Im
+       ------        ----  -----------                 ----      --        --
+     -74.84144809
+                        1  001111                      1.0000    1.0000    0.0000
+
+ Representation B2g2;    1 vectors written to file  MDTRIV_B2g2
+
+ Eigenvalues             -74.841448090642
+
+ CPU time for this representation 
+
+ Generation of determinants :      0.0000
+ Building the CI matrix :          0.0000
+ Diagonalization :                 0.0100
+ Writing CI vectors :              0.0000
+
+ Population analysis for representation B2g2
+            The first     1 vectors are analyzed
+
+       energy        det#  determinant                 norm      Re        Im
+       ------        ----  -----------                 ----      --        --
+     -74.84144809
+                        1  010111                      1.0000    1.0000    0.0000
+
+ Representation B3g2;    1 vectors written to file  MDTRIV_B3g2
+
+ Eigenvalues             -74.841448090642
+
+ CPU time for this representation 
+
+ Generation of determinants :      0.0000
+ Building the CI matrix :          0.0000
+ Diagonalization :                 0.0100
+ Writing CI vectors :              0.0000
+
+ Population analysis for representation B3g2
+            The first     1 vectors are analyzed
+
+       energy        det#  determinant                 norm      Re        Im
+       ------        ----  -----------                 ----      --        --
+     -74.84144809
+                        1  100111                      1.0000    1.0000    0.0000
+
+ ( 1 au = 27.2113834378 eV  /  219474.631280634 cm-1)
+
+
+ Energy eigenvalues in atomic units
+
+ Level   Rel eigenvalue     Abs eigenvalue      Total Energy    Degeneracy
+
+    1     0.0000000000     -6.829504600220      -74.841448090642 (   9 * )
+    2     0.0805651391     -6.748939461119      -74.760882951541 (   5 * )
+    3     0.2014128478     -6.628091752466      -74.640035242888 (   1 * )
+
+
+ Total average:       -74.8011655211
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)  Ag 0|B3u0|B2u0|B1g0|B1u0|B2g0|B3g0|Au 0|
+
+    1        0.000000000          0.000000     0|   0|   0|   1|   0|   1|   1|   0|
+    2        2.192288892      17682.004198     2|   0|   0|   1|   0|   1|   1|   0|
+    3        5.480722230      44205.010496     1|   0|   0|   0|   0|   0|   0|   0|
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)  Ag 4|B3u4|B2u4|B1g4|B1u4|B2g4|B3g4|Au 4|
+
+    1        0.000000000          0.000000     0|   0|   0|   0|   0|   0|   0|   0|
+    2        2.192288892      17682.004198     0|   0|   0|   0|   0|   0|   0|   0|
+    3        5.480722230      44205.010496     0|   0|   0|   0|   0|   0|   0|   0|
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)  Ag 2|B3u2|B2u2|B1g2|B1u2|B2g2|B3g2|Au 2|
+
+    1        0.000000000          0.000000     0|   0|   0|   1|   0|   1|   1|   0|
+    2        2.192288892      17682.004198     0|   0|   0|   0|   0|   0|   0|   0|
+    3        5.480722230      44205.010496     0|   0|   0|   0|   0|   0|   0|   0|
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)  Ag 2|B3u2|B2u2|B1g2|B1u2|B2g2|B3g2|Au 2|
+
+    1        0.000000000          0.000000     0|   0|   0|   1|   0|   1|   1|   0|
+    2        2.192288892      17682.004198     0|   0|   0|   0|   0|   0|   0|   0|
+    3        5.480722230      44205.010496     0|   0|   0|   0|   0|   0|   0|   0|
+
+
+ =====================
+Total CPU time :                   0.1100
+
+        (NORMAL END OF PROGRAM)
+
+
+
+
+*****************************************************
+********** E N D   of   D I R A C  output  **********
+*****************************************************
+
+
+ 
+     Date and time (Linux)  : Fri Jul 27 14:45:31 2012
+     Host name              : opteron.tau.ac.il                       
+
+  
+  Dynamical Memory Usage Summary
+  
+  Mean allocation size (Mb) :        35.43
+  
+  Largest          10  allocations
+  
+      488.28 Mb at subroutine MAIN__+0x6f5                               for work array at main                        
+      244.14 Mb at subroutine diagh_+0x148                               for unnamed variable                          
+      244.14 Mb at subroutine diagh_+0x148                               for unnamed variable                          
+      244.14 Mb at subroutine diagh_+0x148                               for unnamed variable                          
+      244.14 Mb at subroutine diagh_+0x148                               for unnamed variable                          
+      244.14 Mb at subroutine diagh_+0x148                               for unnamed variable                          
+      244.14 Mb at subroutine diagh_+0x148                               for unnamed variable                          
+      244.14 Mb at subroutine diagh_+0x148                               for unnamed variable                          
+      244.14 Mb at subroutine diagh_+0x148                               for unnamed variable                          
+      244.14 Mb at subroutine diagh_+0x148                               for unnamed variable                          
+  
+  Peak memory usage    (Mb) :       741.00
+       reached at subroutine : diagh_+0x148                              
+              for variable   : unnamed variable                          
+  
+  Memory possibly left allocated! 
+     dumping list now... 
+  
+  <<< Tracked variables, alloc >>>
+      >>>           30  variables so far
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1a1                                                                  
+                                                      
+               mem.addr. (as integer) :              338988656
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1be                                                                  
+                                                      
+               mem.addr. (as integer) :              339500672
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :           32
+               was allocated at       : 
+ prtout_+0x1db                                                                  
+                                                      
+               mem.addr. (as integer) :              334127472
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1a1                                                                  
+                                                      
+               mem.addr. (as integer) :              338988656
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1be                                                                  
+                                                      
+               mem.addr. (as integer) :              339500672
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :           32
+               was allocated at       : 
+ prtout_+0x1db                                                                  
+                                                      
+               mem.addr. (as integer) :              334222016
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1a1                                                                  
+                                                      
+               mem.addr. (as integer) :              338988656
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1be                                                                  
+                                                      
+               mem.addr. (as integer) :              339500672
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :           32
+               was allocated at       : 
+ prtout_+0x1db                                                                  
+                                                      
+               mem.addr. (as integer) :              334222016
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1a1                                                                  
+                                                      
+               mem.addr. (as integer) :              338988656
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1be                                                                  
+                                                      
+               mem.addr. (as integer) :              339500672
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :           32
+               was allocated at       : 
+ prtout_+0x1db                                                                  
+                                                      
+               mem.addr. (as integer) :              334222016
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1a1                                                                  
+                                                      
+               mem.addr. (as integer) :              338988656
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1be                                                                  
+                                                      
+               mem.addr. (as integer) :              339500672
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :           32
+               was allocated at       : 
+ prtout_+0x1db                                                                  
+                                                      
+               mem.addr. (as integer) :              334222016
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1a1                                                                  
+                                                      
+               mem.addr. (as integer) :              338988656
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1be                                                                  
+                                                      
+               mem.addr. (as integer) :              339500672
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :           32
+               was allocated at       : 
+ prtout_+0x1db                                                                  
+                                                      
+               mem.addr. (as integer) :              334222016
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1a1                                                                  
+                                                      
+               mem.addr. (as integer) :              338988656
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1be                                                                  
+                                                      
+               mem.addr. (as integer) :              339500672
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :           32
+               was allocated at       : 
+ prtout_+0x1db                                                                  
+                                                      
+               mem.addr. (as integer) :              334222016
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1a1                                                                  
+                                                      
+               mem.addr. (as integer) :              338988656
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1be                                                                  
+                                                      
+               mem.addr. (as integer) :              339500672
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :           32
+               was allocated at       : 
+ prtout_+0x1db                                                                  
+                                                      
+               mem.addr. (as integer) :              334222016
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1a1                                                                  
+                                                      
+               mem.addr. (as integer) :              338988656
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1be                                                                  
+                                                      
+               mem.addr. (as integer) :              339500672
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :           32
+               was allocated at       : 
+ prtout_+0x1db                                                                  
+                                                      
+               mem.addr. (as integer) :              334222016
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1a1                                                                  
+                                                      
+               mem.addr. (as integer) :              338988656
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :       128000
+               was allocated at       : 
+ prtout_+0x1be                                                                  
+                                                      
+               mem.addr. (as integer) :              339500672
+      >>> (de)allocated data details <<<
+          var. name                   : 
+ unnamed variable                                                               
+                                                      
+               kind                   :            4
+               tot.dim. (<1 if array) :           32
+               was allocated at       : 
+ prtout_+0x1db                                                                  
+                                                      
+               mem.addr. (as integer) :              334140192
+      >>> Done after          30  el.
+  
+  There were           83  allocations/            53  deallocations
+      Current memory usage (in Mb) is    10.0000000000000     
+ MEMGET high-water mark:     0.00 MB
+
+*****************************************************
+>>>> Node 0, utime: 3, stime: 0, minflt: 24645, majflt: 0, nvcsw: 46, nivcsw: 216, maxrss: 23748
+>>>> Total WALL time used in DIRAC: 3s

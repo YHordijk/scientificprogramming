@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = '* Dipole moment:',
+      num_lines   = 6,
+      rel_tolerance   = 1.0e-6)
+f.add(from_string = 'TOTAL ENERGY',
+      to_re       = 'Eigenvalues',
+      rel_tolerance   = 1.0e-5)
+
+test.run(['fde_nr_pbe_update.inp'],        ['h2o.mol'], f, args='--put="FRZDNS" ')
+test.run(['fde_ll_pbe_update.inp'],        ['h2o.mol'], f, args='--put="FRZDNS" ')
+test.run(['fde_x2c-sf_pbe_update.inp'],    ['h2o.mol'], f, args='--put="FRZDNS" ')
+test.run(['fde_sfdc_pbe_update.inp'],      ['h2o.mol'], f, args='--put="FRZDNS" ')
+test.run(['fde_x2c_pbe_update.inp'],       ['h2o.mol'], f, args='--put="FRZDNS" ')
+test.run(['fde_dc_pbe_update.inp'],        ['h2o.mol'], f, args='--put="FRZDNS" ')
+
+sys.exit(test.return_code)

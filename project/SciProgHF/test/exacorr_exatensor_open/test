@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f1 = Filter()
+f1.add(from_string = 'Total energy',
+      num_lines   = 1,
+      rel_tolerance   = 1.0e-9)
+
+f2 = Filter()
+f2.add(from_string = 'Final results from EXACORR',
+      num_lines   = 8,
+      abs_tolerance   = 1.0e-6)
+f2.add(from_string = 'Norm of Fock matrix (OO',
+      num_lines   = 1,
+      abs_tolerance   = 1.0e-4)
+f2.add(from_string = 'Norm of Fock matrix (OV',
+      num_lines   = 1,
+      abs_tolerance   = 1.0e-3)
+f2.add(from_string = 'Norm of Fock matrix (VV',
+      num_lines   = 1,
+      abs_tolerance   = 1.0e-2)
+
+os.system('ulimit -s unlimited')
+
+test.run(['scf_beh.inp'], ['BeH_nosym.mol'], f1,"--get='X2CMAT AOMOMAT DFCOEF'")
+test.run(['cc_beh_level.inp'], ['BeH_nosym.mol'], f2, "--put='X2CMAT AOMOMAT DFCOEF'")
+
+sys.exit(test.return_code)

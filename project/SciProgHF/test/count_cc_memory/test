@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from runtest import version_info, get_filter, cli, run
+from runtest_config import configure
+
+assert version_info.major == 2
+
+f = [
+    get_filter(from_string='TOTAL ENERGY',
+               to_string='Eigenvalues',
+               rel_tolerance=1.0e-5),
+    get_filter(from_string='Peak memory usage:',
+               to_string='reached at subroutine :',
+               rel_tolerance=0.50), # different memory peaks for serial / parallel runs
+]
+
+options = cli()
+
+ierr = 0
+for inp in ['H2O.ae4z.x2c.scf_countmem-relcc.inp']:
+    for mol in ['H2O.xyz']:
+        ierr += run(options,
+                    configure,
+                    input_files=[inp, mol],
+                    extra_args=' --mw=32 --nw=32 --aw=64 --put "DFPCMO.H2O.x2c.ae4z=DFPCMO" ',
+                    filters={'out': f})
+
+sys.exit(ierr)

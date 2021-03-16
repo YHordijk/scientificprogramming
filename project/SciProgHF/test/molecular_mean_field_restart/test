@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'SCF energy :',
+      to_string   = 'Total MP2 energy :',
+      rel_tolerance   = 1.0e-7)
+
+test.run(['scf.inp'], ['f2.xyz'], f, args='--get="AOMOMAT DFCOEF X2CMAT"')
+
+
+f = Filter()
+f.add(from_string = 'SCF energy :',
+      to_string   = 'Total MP2 energy :',
+      rel_tolerance   = 1.0e-7)
+
+test.run(['res.inp'], ['f2.xyz'], f, args='--put="AOMOMAT DFCOEF X2CMAT"')
+
+os.unlink('X2CMAT')
+os.unlink('DFCOEF')
+os.unlink('AOMOMAT')
+
+sys.exit(test.return_code)

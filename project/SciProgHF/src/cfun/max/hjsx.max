@@ -1,0 +1,47 @@
+PI:3.14159265358979312;
+AE:[0.757211,-0.106364,-0.118649,0.609650,-0.0477963];
+a:[0.0159941, 0.0852995, -0.160368, 0.152645, -0.0971263, 0.0422061];
+b:[5.33319, -12.4780, 11.0988, -5.11013, 1.71468, -0.610380, 0.307555, -0.0770547, 0.0334840];
+kf(rhox):=(6.0 * PI * PI * rhox)^(1/3);
+
+xa:sqrt(grada*grada)/(2.0 * kf(rhoa) * rhoa);
+xb:sqrt(gradb*gradb)/(2.0 * kf(rhob) * rhob);
+
+hse1(sx):= a[1]*sx^2   + a[2]*sx^3 + a[3]*sx^4 + a[4]*sx^5 + a[5]*sx^6 + a[6]*sx^7;
+hse2(sx):= 1.0 + b[1]*sx + b[2]*sx^2 + b[3]*sx^3 + b[4]*sx^4 + b[5]*sx^5 + b[6]*sx^6 + b[7]*sx^7 + b[8]*sx^8 + b[9]*sx^9;
+
+hse(sx):=hse1(sx)/hse2(sx);
+xi(sx):=sx^2 * hse(sx);
+eta(sx):=AE[1]  + xi(sx);
+lamb(sx):=AE[4] + xi(sx);
+nu(rhox):=MU/kf(rhox);
+chi(sx,rhox):=nu(rhox)/sqrt(lamb(sx) + nu(rhox) * nu(rhox));
+gama(sx,rhox):=(1.0 + chi(sx,rhox)) * (lamb(sx) + nu(rhox) * nu(rhox));
+
+Fs(sx):= -1.0 + (1.0/(27.0 * AE[3])) * (sx^2/(1.0 + sx^2/4.0)) + sx^2 * hse(sx)/(2.0 * AE[3]);
+
+eGs(sx):=(2.0/5.0)*AE[3]*Fs(sx)*lamb(sx)-(4.0/15.0)*AE[2]*lamb(sx)^2-(6.0/5.0)*AE[1]*lamb(sx)^3-(4.0/5.0)*sqrt(PI)*lamb(sx)^(7/2)-(12.0/5.0)*lamb(sx)^(7/2)*(sqrt(xi(sx))-sqrt(eta(sx)));
+ 
+tem01(sx,rhox):=sqrt(xi(sx) + nu(rhox) * nu(rhox));
+tem02(sx,rhox):=sqrt(eta(sx)+ nu(rhox) * nu(rhox));
+
+dnom1(sx,rhox):=(tem01(sx,rhox) + tem02(sx,rhox)) * (tem01(sx,rhox) + nu(rhox));
+dnom2(sx,rhox):=(tem01(sx,rhox) + tem02(sx,rhox)) * (tem02(sx,rhox) + nu(rhox));
+tem1(sx,rhox):=AE[1] * (xi(sx)/dnom1(sx,rhox) + eta(sx)/dnom2(sx,rhox));
+tem2(sx,rhox):=-(4.0/9.0) * AE[2]/gama(sx,rhox);
+tem3(sx,rhox):=(4.0/9.0) * AE[3] * Fs(sx) * (1.0 + 0.5 * chi(sx,rhox))/(gama(sx,rhox)*gama(sx,rhox));
+tem40(sx,rhox):=-(8.0/9.0) * eGs(sx) * (1.0 + (9.0/8.0) * chi(sx,rhox) + (3.0/8.0) * chi(sx,rhox)* chi(sx,rhox));
+tem4(sx,rhox):=tem40(sx,rhox)/(gama(sx,rhox)*gama(sx,rhox)*gama(sx,rhox));
+tem50(sx,rhox):=sqrt( lamb(sx) + nu(rhox)* nu(rhox));
+tem51(sx,rhox):=(nu(rhox) + tem50(sx,rhox)) * ( tem50(sx,rhox) +  tem01(sx,rhox) );
+tem52(sx,rhox):=(nu(rhox) + tem50(sx,rhox)) * ( tem50(sx,rhox) +  tem02(sx,rhox) );    
+tem5(sx,rhox):=2.0* xi(sx)   * log(1.0 - (lamb(sx) - xi(sx))/tem51(sx,rhox));
+tem6(sx,rhox):=-2.0* eta(sx) * log(1.0 - (lamb(sx) - eta(sx))/tem52(sx,rhox));
+
+FHJS(sx,rhox):= tem1(sx,rhox) + tem2(sx,rhox) + tem3(sx,rhox) + tem4(sx,rhox) + tem5(sx,rhox) + tem6(sx,rhox);
+
+
+cx:(3.0/4.0)*(6.0/PI)^(1/3);
+lda:-cx*(rhoa^(4/3) + rhob^(4/3));
+
+K(rhoa,grada,rhob,gradb,gradab):= 0.50 * lda * (FHJS(xa,rhoa) + FHJS(xb,rhob));

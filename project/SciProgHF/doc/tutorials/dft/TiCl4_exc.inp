@@ -1,0 +1,66 @@
+**DIRAC                                                                                             
+#.WAVE FUNCTION                                                                                      
+#.ANALYZE                                                                                            
+.PROPERTIES
+**HAMILTONIAN                                                                                       
+.SPINFREE                                                                                           
+.DFT                                                                                                
+PBE0                                                                                                
+**INTEGRALS                                                                                         
+*READIN                                                                                             
+.UNCONT                                                                                             
+**WAVE FUNCTION                                                                                     
+.SCF                                                                                                
+*SCF                                                                                                
+.CLOSED SHELL                                                                                       
+90                                                                                                  
+**ANALYZE                                                                                           
+.MULPOP                                                                                             
+*MULPOP                                                                                             
+.VECPOP                                                                                             
+1..oo                                                                                               
+**PROPERTIES
+*EXCITATION
+.EXCITATION
+1 20
+.EXCITATION
+2 20
+.EXCITATION
+3 20
+.EXCITATION
+4 20
+.MXLOAD
+6
+.THRESH
+1.0D-6
+.INTENS
+0
+.BED
+.ROTAV
+9
+.OPERATOR
+ XDIPLEN
+.OPERATOR
+ YDIPLEN
+.OPERATOR
+ ZDIPLEN
+.OPERATOR
+ 'xdipvel'
+ XALPHA
+ 'OVERLAP'
+ CMULT
+.OPERATOR
+ 'ydipvel'
+ YALPHA
+ 'OVERLAP'
+ CMULT
+.OPERATOR
+ 'zdipvel'
+ ZALPHA
+ 'OVERLAP'
+ CMULT
+**MOLECULE                                                                                          
+*BASIS                                                                                              
+.DEFAULT                                                                                            
+dyall.ae3z
+**END OF

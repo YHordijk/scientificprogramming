@@ -1,0 +1,40 @@
+!
+! EFG finite field and analytic calculations on hydrogen fluoride with a small basis set.
+!
+! The studied component of EFG is qzz at the F nucleus.
+!
+| The run zerofield serves to generate the MO-vectors and gives the EFG
+! expectation value at the DHF & MP2 level. The finite field approach 
+! serves to compute a CCSD(T) correlation contribution that
+! can be added to the analytical HF value. We use relaxed orbitals for this
+! purpose as this gives the most rigorous result.
+!
+! Results (electronic contributions) :
+! 
+! DHF analytic (calculated via property module as exp. val.) 2.728 au
+! DHF fin. diff. (via finite field)                          2.727 au
+!
+! BSS analytic                                               2.728 au
+! BSS finite diff (strenght=0.001,first num.derivation)      2.727 au
+!
+! BSS+MFSSO analytic                                         2.727 au
+!
+! Correlation contributions
+! DC-MP2 analytic   (via new CCFOPR module in RELCCSD)      -0.118 au
+! DC-MP2 fin. diff.                                         -0.118 au
+! DC-CCSD fin. diff.                                        -0.056 au
+! DC-CCSD(T) fin. diff.                                     -0.056 au
+!
+! BSS-CCSD fin. diff.                                       -0.056 au
+! BSS-CCSD(T) fin. diff.                                    -0.056 au
+!
+!
+! Total DC-CCSD(T) value (adding nuclear + anal. HF + fin. diff corr. contr.)  3.056 au
+!
+!
+! Notes: - the MP2 method overshoots the correlation correction by a factor of 2
+!        - the basis is too small to give reliable results (this is only a test !)
+!
+! The used analytic formula is qzz_F(method,strength) = (E(+F)-E(-F))/(2*F)
+!
+!

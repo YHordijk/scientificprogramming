@@ -1,0 +1,39 @@
+**DIRAC
+.TITLE
+ V [Ar]3d(3)4s(2)
+.WAVE F
+.ANALYZE
+**GENERAL
+.DIRECT
+1 1 1
+**INTEGRALS
+.PRINT
+1
+.NUCMOD 
+2
+*READIN
+.UNCONTRACTED
+.PRINT
+1
+**HAMILTONIAN
+.X2C
+.PRINT
+1
+**WAVE FUNCTIONS
+.SCF
+*SCF
+# V(Z=23): 1s(2) 2s(2) 2p(6) 3s(2) 3p(6) 3d(3) 4s(2)
+# V(5+) closed-shell cation
+.CLOSED SHELL
+6 12
+# 3d(3) averaged open-shell state
+#.OPEN SHELL
+#1
+#3/10,0
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+1..14
+1..14
+*END OF

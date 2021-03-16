@@ -1,0 +1,33 @@
+**DIRAC                                                                                             
+.TITLE                                                                                              
+ Valence ionization of HCN in a bent structure                                                      
+.WAVE FUNCTION                                                                                      
+**INTEGRALS
+*READIN
+.UNCONTRACT
+**HAMILTONIAN                                                                                       
+.LVCORR                                                                                             
+**WAVE FUNCTIONS                                                                                    
+.SCF                                                                                                
+.RELADC                                                                                             
+*SCF                                                                                                
+.CLOSED SHELL                                                                                       
+ 14                                                                                                 
+.FCKCNV                                                                                             
+5.0E-06                                                                                             
+**MOLTRA                                                                                            
+.ACTIVE                                                                                             
+energy  -2.0 1.0 0.1                                                                                
+**RELADC
+.DODIPS
+.DIPREPS
+ 1
+ 1
+**LANCZOS
+.DIPITER
+ 50
+.DIPPRNT
+ 45.0
+*END OF                                                                                             
+                                                                                                    
+                                                                                                    

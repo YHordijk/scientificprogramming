@@ -1,0 +1,39 @@
+! This test calculates the CC energy with the X2C Hamiltonian
+**DIRAC
+.TITLE
+LiO molecule. X2C Hamiltonian. CC energies.
+.WAVE F
+.4INDEX
+**HAMILTONIAN
+.X2C
+**INTEGRALS
+*READIN
+.UNCONTRACT
+**WAVE FUNCTIONS
+.SCF
+.RELCCSD
+*SCF
+.CLOSED SHELL
+10
+.OPEN SHELL
+1
+1 / 2
+.EVCCNV
+1.0E-9 1.0E-7
+**MOLTRA
+.EXACORR
+.ACTIVE
+energy -5.0 5.0 0.01
+.PRINT
+1
+.CHOLESKY
+1.0D-6
+**RELCCSD
+.NELEC_OPEN
+1 0
+.DEBUG
+.INTERFACE
+DIRAC
+.PRINT
+1
+*END OF

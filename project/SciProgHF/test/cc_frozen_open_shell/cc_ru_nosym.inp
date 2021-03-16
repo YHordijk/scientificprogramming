@@ -1,0 +1,40 @@
+Ruthenium with frozen open shell
+**DIRAC
+.TITLE
+CI for atomic lanthanides
+.WAVE F
+.4INDEX
+**Hamiltonian
+.X2C
+**WAVE FUNCTION
+.SCF
+.RELCCSD
+*SCF
+.CLOSED SHELL
+36
+.OPEN SHELL
+2
+7 / 10
+1 / 2
+.MAXITR
+600
+.EVCCNV
+1.0E-8
+.MXDIIS
+30
+**MOLTRA
+.ACTIVE
+6..18,24..59
+.CORE
+1..5
+.CORE2
+7
+19..23
+**RELCCSD
+.NELEC
+14 13
+**INTEGRALS
+*READIN
+.UNCONTRACT
+*END OF
+

@@ -1,0 +1,71 @@
+# open-shell spinfree SD-mrSD CI using LUCITA in GASCI-mode 
+# including core-polarization with inversion symmetry
+**DIRAC
+.TITLE
+ open-shell spinfree SD-mrSD CI using LUCITA in GASCI-mode 
+.WAVE FUNCTION
+# do the AO -> MO transformation
+.4INDEX
+#################################
+**HAMILTONIAN
+.SPINFREE
+.LVCORR
+#################################
+**WAVE FUNCTION
+.SCF
+.LUCITA
+*SCF
+# here we insert the number of electrons for the closed shell
+# (if inversion for gerade and ungerade separately)
+.CLOSED SHELL
+ xx [xx]
+# here we insert the number of electrons for the open shell
+# first line: number of open shells yy
+# second line: number of electrons zz in this shell followed by the orbitals aa,[bb]
+.OPEN SHELL
+ yy
+ zz/aa,[bb]
+#
+*LUCITA
+# we use an open-shell DHF-wave function
+.INIWFC
+  OSHSCF
+.CITYPE
+  GASCI
+# number of eigenvalues to be calculated
+.NROOTS
+  xx
+# calculating states of spin S: 2S+1 = xx
+.MULTIP
+  xx
+# boson irrep of the roots you want to obtain
+.SYMMET
+  xx
+# number of electrons to be correlated
+.NACTEL
+  xx
+# specifying the GAS setup
+# first line: Number of GAS shells
+# number of orbitals in boson irrep per GAS shell
+.GASSHE
+u
+a1,a2,a3,a4,a5,a6,a7,a8  ! 'core'
+b1,b2,b3,b4,b5,b6,b7,b8  ! inner valence
+c1,c2,c3,c4,c5,c6,c7,c8  ! Cas space
+d1,d2,d3,d4,d5,d6,d7,d8  ! all virtuals up to cut off
+# Number of gas spaces i.e. number of different ci calculations to be done
+# Minimum and Maximum occupation in each gas shell
+# with: SUM a = 1/2 * X and SUM b + X = Y and Z = NACTEL and SUM c > 1/2 * Z
+.GASSPC
+ 1
+X-1  X
+Y-2  Y
+Z-2  Z
+Z    Z
+#####################################################
+**MOLTRA
+.ACTIVE
+# transformation from AO to MO basis
+#       lower bound xx upper bound yy (cut off) threshold zz
+energy  xx  yy  zz
+**END OF

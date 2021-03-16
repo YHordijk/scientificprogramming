@@ -1,0 +1,11 @@
+!
+! This test is meant to test the interface to the MRCCC code of Kallay and coworkers
+! It does a standard CCSD calculation with RELCCSD and then produces the interface file fort.55
+! and an input file fort.56 for the MRCC suite of codes. The two codes should obviously produce the
+! same CCSD energy, which is the purpose of this test.
+!
+! NB: Since MRCC is not distributed with DIRAC, you should get your own copy of the code from
+! http://tc03.fkt.bme.hu/ and set the environment variable $MRCCDIR to point to the goldstone and
+! mrcc executables. With this set, the run.sh script will execute correctly, but it can for 
+! technical reasons (setup of the test scripts) not yet automatically
+! test the outcome of the MRCC calculation. Please make sure to check the output yourself.

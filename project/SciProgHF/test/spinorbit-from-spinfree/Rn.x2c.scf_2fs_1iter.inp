@@ -1,0 +1,30 @@
+!
+**DIRAC
+.TITLE
+  Rn atom
+.WAVE F
+.ANALYZE
+**INTEGRALS
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+#.SPINFREE
+**WAVE FUNCTIONS
+.SCF
+*SCF
+.CLOSED SHELL
+42 44
+# do not throw error during convergence
+.EVCCNV
+1.0E+7 1.0E+7
+### read MOs from DFPCMO
+.MAXITR
+1
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+all
+all
+*END OF

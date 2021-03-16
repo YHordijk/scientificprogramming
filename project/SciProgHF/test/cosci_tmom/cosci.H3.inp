@@ -1,0 +1,80 @@
+!
+! H3+/C2v/COSCI
+!
+**DIRAC
+.TITLE
+H3+
+.WAVE F
+.PROPERTIES
+.4INDEX
+**GENERAL
+.PCMOUT
+**HAMILTONIAN
+.LVCORR
+**WAVE FUNCTIONS
+.SCF
+.COSCI
+######################################################################
+*SCF
+.CLOSED SHELL
+2
+.MAXITR
+100
+######################################################################
+*COSCI
+.NREP
+2
+## (INACT(IFRP),IFRP=1,NFSYM)
+.INACT
+0
+## (ACTIVE(IFRP),IFRP=1,NFSYM)
+.ACTIVE
+2
+.NOPEN
+1
+## ((NGASO(IREP,IOPEN),IREP=1,NREP),J=1,NOPEN)
+.GASO
+2,2
+## (IELC(IOPEN),I=1,NOPEN)
+.IELC
+2
+## (TRDM(IREP),I=1,NREP)
+.TRDM
+4,2
+.PRINT
+3
+######################################################################
+**MOLTRA
+.SCHEME
+ 4
+## specify open shell for each Fermion irrep in MO numbering
+.ACTIVE
+1..2
+*PRPTRA
+## specify inactive+active MO range for each Fermion irrep
+.MORANGE
+1..2
+.OPERATOR
+ XDIPLEN
+.OPERATOR
+ YDIPLEN
+.OPERATOR
+ ZDIPLEN
+.PRINT
+ 3
+######################################################################
+**PROPERTIES
+*EXPECTATION VALUE
+.OPERATOR
+ XDIPLEN
+.OPERATOR
+ YDIPLEN
+.OPERATOR
+ ZDIPLEN
+.PRINT
+ 1
+*END OF
+
+ $GOSCIP IPRNT=1,  &END
+
+

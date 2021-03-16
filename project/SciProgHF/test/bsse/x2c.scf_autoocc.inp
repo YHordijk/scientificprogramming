@@ -1,0 +1,31 @@
+**DIRAC                       
+.TITLE
+  Testing BSSE
+.WAVE F
+**INTEGRALS
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+.PRINT
+1
+*AMFI
+.PRNT_A 
+0
+.PRNT_S
+0
+.MXITER
+40
+.AMFICH
+0
+**WAVE FUNCTIONS
+.SCF
+*SCF
+# - autooccupation based on mol-input ...
+#.CLOSED
+#10
+.EVCCNV
+1.0D-9  1.0D-7
+.MAXITR
+40
+*END OF                                                                         

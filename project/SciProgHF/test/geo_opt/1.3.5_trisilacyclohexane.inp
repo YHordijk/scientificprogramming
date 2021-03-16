@@ -1,0 +1,15 @@
+! Nonrelativistic optimization using the default Gaussian nuclear model
+**DIRAC
+.OPTIMIZE
+*OPTIMIZE
+.BAKER
+.PRINT
+1
+**INTEGRALS
+*READIN
+.CONTRACT
+**HAMILTONIAN
+.LEVY-LEBLOND
+**WAVE FUNCTIONS
+.SCF
+*END OF 

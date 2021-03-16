@@ -1,0 +1,16 @@
+
+these tests calculate the NMR shielding tensor in LAO basis in few different ways:
+==================================================================================
+
+
+* inputs lao_shield_rearrange* calculate the NMR shielding tensor as follows:
+  - the property gradient is calculated from Eq. (31) in JCP-131-124119-2009 (connection matrices are present)
+  - the final shielding tensor is calculated from Eqs.(40-42) in JCP-131-124119-2009, so:
+     + the hermitian part of the occ-occ blocks of the connection matrices are formed (and should equal to the first-order derivative of the overlap distribution matrix) and used in Eq. (41)
+     + the occ-virt blocks of the connection matrices are combined with the optimized (before) response parameters, kappa, as in Eq. (42)
+
+* inputs lao_shield_lr_rearrange* 
+  - in the formulation of the property gradient we don't use the connection matrices, only the magnetic derivative of the overlap 
+  - we solve linear response equations, as a solution we get the new response parameters, kappa
+  - the final shielding tensor is the calculated from Eqs.(40-42) in JCP-131-124119-2009, where parameters A take the role of kappa
+

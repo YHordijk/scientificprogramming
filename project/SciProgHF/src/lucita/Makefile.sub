@@ -1,0 +1,40 @@
+P = lucita
+L = \
+   ciinfo.o  density.o  diagonal.o  diagonalize.o  doubledir.o  \
+   fock.o  interface.o  io.o  lucia_cc.o  lucia_icci.o  memory.o \
+   program.o  property.o  sigma.o  strings.o  transform.o  utils.o  \
+   vecmat.o
+#
+# COMMENTS COMMENTS !!!!!
+# vecsum.o, vvtov.o, copvec.o, xtrcdi.o, trpmat.o, setvec.o, scalve.o,
+# prsym.o, prsm2.o, matml4.o, iwrtma.o, istvc2.o, isetvc.o, inprod.o,
+# scavec.o, ifac.o, icopve.o, ibion.o, diavc2.o, gatvec.o
+# are all removed from LL as they already exist in gp/gpjeppe.o
+#
+# wrtmat did exist in gpjeppe.o but in another version, hence wrtmat was
+# renamed in gpjeppe.o as it was not used anywhere.
+#
+# The LUCITA dummy routines qexit, qenter, and quit were replaced 
+# with the proper Dirac versions.
+#
+# Unfortunately traprp, readin, getint, natorb, vectomat, and memchk 
+# all had to be renamed.
+#
+ 
+LL_REMOVED = \
+lucita/copvec.o  lucita/diavc2.o  lucita/gatvec.o  lucita/ibion.o  lucita/icopve.o \
+lucita/ifac.o  lucita/inprod.o  lucita/isetvc.o  lucita/setvec.o  lucita/istvc2.o \
+lucita/iwrtma.o  lucita/matml4.o  lucita/prsym.o  lucita/prsm2.o  lucita/scalve.o \
+lucita/scavec.o  lucita/vecsum.o  lucita/vvtov.o  lucita/trpmat.o  lucita/xtrcdi.o
+#luciarel/qexit.o luciarel/qenter.o luciarel/prsym.o luciarel/prsm2.o \
+#luciarel/scavec.o luciarel/quit.o luciarel/ifac.o luciarel/icopve.o \
+#
+
+LUCITA_OBJS = \
+   lucita/ciinfo.o  lucita/density.o  lucita/diagonal.o  \
+   lucita/diagonalize.o  lucita/doubledir.o  \
+   lucita/fock.o  lucita/interface.o  lucita/io.o  \
+   lucita/lucia_cc.o  lucita/lucia_icci.o  lucita/memory.o \
+   lucita/program.o  lucita/property.o  lucita/sigma.o  \
+   lucita/strings.o  lucita/transform.o  lucita/utils.o  \
+   lucita/vecmat.o

@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'No.         (a.u.)      (eV)',
+      num_lines    = 4,
+      rel_tolerance   = 1.0e-4,
+      mask        = [2, 3])
+
+#test.run(['adclevel1_real.inp', 'adclevel2_real.inp', 'adclevel3_real.inp'], ['ne_d2h.mol'],
+#                 f, accepted_errors=['RELADC not parallelized'])
+#test.run(['hcn_complex_1.inp', 'hcn_complex_2.inp', 'hcn_complex_3.inp'], ['hcn_cs.mol'],
+#                 f, accepted_errors=['RELADC not parallelized'])
+test.run(['hcn_complex_1.inp'], ['hcn_cs.mol'], f, accepted_errors=['RELADC not parallelized'])
+
+sys.exit(test.return_code)

@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(string    = ' Final CI energies',
+      rel_tolerance = 1.0e-6)
+
+test.run(['be.d2h.inp'], ['Be.d2h.mol'], f)
+test.run(['f.inp'], ['F.mol'], f)
+
+sys.exit(test.return_code)

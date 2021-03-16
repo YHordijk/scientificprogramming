@@ -1,0 +1,17 @@
+**DIRAC
+#.WAVE FUNCTION
+**HAMILTONIAN
+.DFT
+ B3LYP
+**WAVE FUNCTION
+.SCF
+**VISUAL
+.3D
+ 40 40 40         # will generate 40x40x40 cubes, the more points the better looking
+.DENSITY
+ DFCOEF
+.OCCUPATION
+ 1
+ 1 5 1.0
+.3D_INT           # to double-check that density integrates to 2 electrons
+*END OF INPUT

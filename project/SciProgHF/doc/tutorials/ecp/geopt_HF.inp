@@ -1,0 +1,22 @@
+!
+! This test calculates the total energy 
+! employing valence-only Hamitonian
+! for relativistic effective-core-potentials.
+!
+**DIRAC
+.TITLE
+HI molecule with RECP
+.WAVE F
+.OPTIMIZE
+*OPTIMIZE
+.NUMGRA
+.PRINT
+3
+**HAMILTONIAN 
+.ECP
+**WAVE FUNCTIONS
+.SCF
+*SCF
+.CLOSED SHELL
+8
+*END OF DIRAC

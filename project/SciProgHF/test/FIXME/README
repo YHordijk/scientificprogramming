@@ -1,0 +1,20 @@
+was disconnected from testing, more doc than testing:
+
+  response_lao_magnetiz
+  response_lao_shield   
+  fscc_highsectors
+
+has no reference outputs and no filter, never run:
+
+  projection_analysis_repolarized
+  mcscf_dev
+  rpa_openshell
+  hsmrcc
+  cc_more_perturbs
+  cap
+
+full system is never run. either connect it to testing or make it a doc:
+
+  fde_export_density
+  fde_response_autodiff
+  fde_static-vemb_dipole

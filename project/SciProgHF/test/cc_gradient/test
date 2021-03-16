@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+
+f.add(from_string = '  Retrieving CC density matrix from file',
+      to_string   = '1 a.u. =  9.71736E+21 V*m**-2',
+      rel_tolerance   = 0.00001)
+
+test.run(['ccsd_gradient_dc.inp','ccsd_gradient_x2c.inp'], ['CO_auto.mol'], f, args='--mw=100')
+test.run(['ccsd_gradient_dc.inp'], ['CO_c2v.mol'], f, args='--mw=100')
+test.run(['ccsd_gradient_pv.inp'], ['h2o2.mol'], f, args='--mw=100')
+
+sys.exit(test.return_code)

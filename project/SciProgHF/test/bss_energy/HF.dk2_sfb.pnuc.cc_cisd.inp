@@ -1,0 +1,55 @@
+**DIRAC
+.TITLE
+  LiH
+.WAVE F ! Activate integral and wave functions modules
+**GENERAL
+# taken older value due to compatibility with older test results
+.CVALUE
+137.035989500
+**INTEGRALS
+.PRINT
+1
+.NUCMOD ! 1-Point nucleus, 2-gaussian
+1
+*TWOINT
+**HAMILTONIAN
+.SPINFREE
+.BSS
+102
+.CMPEIG
+.PRINT
+1
+**WAVE FUNCTIONS ! What method (DHF,MP2,CC..)
+.SCF
+.RELCCSD
+.LUCITA
+*SCF
+.CLOSED SHELL
+10  
+.INTFLG ! Specify what 2-el.integrals to include
+1 1 0
+.EVCCNV ! Energy convergence...
+1.0E-10  1.0D-7
+*LUCITA
+.INIWFC
+  DHFSCF
+.CITYPE
+  SDCI
+.MULTIP
+  3
+**MOLTRA
+.SCHEME
+4
+.ACTIVE
+energy   -1000    999999  0.1
+**RELCCSD
+.TIMING
+.NELEC
+ 4 4
+.INTERFACE
+DIRAC
+.PRINT
+ 1
+*CCSORT
+.USEOE
+*END OF

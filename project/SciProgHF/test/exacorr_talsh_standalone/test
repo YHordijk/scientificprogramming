@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Final CCSD energy',
+      num_lines   = 7,
+      rel_tolerance   = 1.0e-6)
+f.add(from_string = 'Electronic energy',
+      num_lines   = 8,
+      rel_tolerance   = 1.0e-9)
+f.add(from_string = 'Eigenvalues',
+      num_lines   = 32,
+      rel_tolerance   = 1.0e-5)
+#f.add(from_string = ' Overview of calculated energies',
+#      num_lines   = 12,
+#      rel_tolerance   = 1.0e-6)
+
+test.run(['ccsd_x2c.inp'], ['H2O_nosym.mol'], f,"--outcmo")
+#test.run(['cc.inp'], ['C2H4Cl2.mol'], f)
+
+sys.exit(test.return_code)

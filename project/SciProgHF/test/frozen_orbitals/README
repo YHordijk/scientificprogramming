@@ -1,0 +1,24 @@
+!
+! This tests performs a geometry optimization of the water molecule while freezing
+! the 1s and 2s orbitals. The water molecule has a bond angle of 104.5 degrees,
+! whereas this angle tends towards 90 degrees for the heavier homologues. It has been
+! stated that the 90 degree angle for the heavier homologues is due to the increased
+! energetic separation of valence s and p orbitals, blocking hybridization. In this
+! test run we freeze the 2s (and 1s) orbital obtained from a preliminary calculation
+! of the oxygen atom. These orbitals have been calculated in the oxygen basis and
+! we may therefore use them through all iterations of a geometry optimization (neat, huh ?).
+! This must be done numerically for the moment. 
+!
+! At the end of the geometry optimization the bond angle closes, but not all the way to 90
+! degrees. This is due to Pauli repulsion between the hydrogen atoms, as explained by
+! Kutzelnigg in his classic paper in Angew. Chem. Int. Ed. Engl. 23 (1984) 272.
+!
+!
+! MI: Extended for pure two-component IOTC (Trond's one-step approach) calculations.
+!
+!   DC geometry:  d(HO) = 0.970438 A;  angle(HOH)=96.242 deg
+! IOTC geometry:  d(HO) = 0.970450 A;  angle(HOH)=96.243 deg
+!
+! nonrel. geom.:  d(HO) = 0.970412 A;  angle(HOH)=96.268 deg
+!
+

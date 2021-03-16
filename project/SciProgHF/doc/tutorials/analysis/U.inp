@@ -1,0 +1,25 @@
+**DIRAC                                                                                             
+.ANALYZE                                                                                            
+.WAVE FUNCTION                                                                                      
+**INTEGRALS
+*READIN
+.UNCONT
+**WAVE FUNCTION                                                                                     
+.REORDER
+1..43,51,44..50,52..56
+.SCF                                                                                                
+*SCF
+.CLOSED SHELL                                                                                                
+88
+.OPEN SHELL
+2
+3/14
+1/10
+.OVLSEL
+.NODYNSEL
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+1..oo
+**END OF

@@ -1,0 +1,38 @@
+!
+! This test calculates the energy and dipole moment
+! of the water molecule at different levels of theory.
+! Note that we consistently leave out the SS integrals
+! by using the LVCORR option in the general section.
+!
+**DIRAC
+.TITLE
+Water molecule. Restricted kinetic balance. Energies, dipole moment.
+.WAVE F
+.PROPER
+.4INDEX
+**HAMILTONIAN
+.LVCORR
+**WAVE FUNCTIONS
+.SCF
+.RELCCSD
+*SCF
+.EVCCNV
+1.0E-8
+**PROPERTIES
+.DIPOLE
+**MOLTRA
+.ACTIVE
+all
+**RELCCSD
+.RESTART
+.GRADIENT
+.TIMING
+.PRINT
+ 1
+*CCENER
+.MAXIT
+ 30
+*CCRESTART
+.REDOSORT
+.REDOCCSD
+*END OF

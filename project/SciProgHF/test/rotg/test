@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Molecular g-tensor',
+      to_string   = 'E N D   of   D I R A C  output',
+      rel_tolerance   = 1.0e-4)
+
+test.run(['rotg.inp'], ['H2-sym.mol', 'HF-sym.mol', 'HF.mol', 'OCS-sym.mol', 'CH3F-sym.mol'], f, args='--mw=100 --aw=128')
+
+sys.exit(test.return_code)

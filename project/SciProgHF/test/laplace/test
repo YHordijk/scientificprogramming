@@ -1,0 +1,61 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+#---------------------------------------#
+#
+# Test 1: fixed number of quadrature points
+#
+#---------------------------------------#
+
+
+f = Filter()
+
+# Laplace
+f.add(from_string = 'exponents              weights',
+      num_lines   = 6,
+      rel_tolerance = 1.0e-8)
+
+# run test
+test.run(['lap_fix_number.inp'], ['h2o.mol'], f)
+    
+
+#---------------------------------------#
+#
+# Test 2: fixed error tolerance
+#
+#---------------------------------------#
+
+f = Filter()
+
+# Laplace
+f.add(from_string = 'exponents              weights',
+      num_lines   = 8,
+      rel_tolerance = 1.0e-8)
+
+test.run(['lap_fix_tolerance.inp'], ['h2o.mol'], f)
+
+#---------------------------------------#
+#
+# Test 3: fixed number of quadrature points,
+#         restart from old exponents and weights
+#
+#---------------------------------------#
+f = Filter()
+
+# Laplace
+f.add(from_string = 'exponents              weights',
+      num_lines   = 6,
+      rel_tolerance = 1.0e-8)
+
+# run test
+test.run(['lap_restart.inp'], ['h2o.mol'], f)
+
+sys.exit(test.return_code)

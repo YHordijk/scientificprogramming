@@ -1,0 +1,47 @@
+#################################
+**DIRAC
+.TITLE
+ FO molecule - X2C-AMFI model
+.WAVE FUNCTION
+.ANALYZ
+#################################
+**ANALYZE
+.PRIVEC
+*PRIVEC
+.VECPRI
+1..10
+#################################
+**INTEGRALS
+*READIN
+.UNCONTRACT
+**HAMILTONIAN
+.GAUNT        ! activates spin-other-orbit in AMFI
+.X2C          ! nuclear X2C
+#################################
+**WAVE FUNCTION
+.SCF
+.RELCCSD
+*SCF
+.CLOSED SHELL
+ 18
+.EVCCNV
+1.0D-8
+.MAXITR
+ 100
+#####################################################
+**MOLTRA
+.ACTIVE
+energy -6.0 20.0 1.0
+#####################################################
+**RELCCSD
+.FOCKSP
+*CCSORT
+.USEOE
+.NORECMP
+*CCFSPC
+.DOIE
+.MAXIT
+100
+.NACTH
+ 2 2
+**END OF

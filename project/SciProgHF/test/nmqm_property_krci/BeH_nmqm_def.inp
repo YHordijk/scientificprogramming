@@ -1,0 +1,58 @@
+##################################
+**DIRAC
+.TITLE
+BeH
+.WAVE FUNCTION
+##################################
+**HAMILTONIAN
+.DOSSSS
+##################################
+**INTEGRALS
+.NUCMOD
+2
+##################################
+**WAVE FUNCTIONS
+.SCF
+.KR CI
+############
+*KRCICALC
+.CI PROGRAM
+LUCIAREL
+.GASSH
+ 3
+  2
+  1
+ 21
+.GASSPC
+  2  4
+  3  5
+  5  5
+.MK2REF
+ 0
+.MK2DEL
+ 5
+.CIROOTS
+ 1  1
+.MAX CI
+ 50
+.RSTRCI
+ 0
+#############
+.OPERATOR
+ 'Z1-MQM'
+ ZAVECTOR
+ YZEFG011
+ XZEFG011
+ COMFACTOR
+ -0.333333333D0
+#############
+.OPERATOR
+ 'Z2-MQM'
+ ZAVECTOR
+ YZEFG021
+ XZEFG021
+ COMFACTOR
+ -0.333333333D0
+##################################
+*END OF
+

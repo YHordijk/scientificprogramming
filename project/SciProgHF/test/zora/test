@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Eigenvalues',
+      to_re       = 'HOMO - LUMO|Occupation in fermion symmetry E1g',
+      rel_tolerance   = 1.0e-8)
+
+inp = []
+inp.append('1el.dirac.inp')
+inp.append('1el.diracsf.inp')
+inp.append('1el.zora.inp')
+inp.append('1el.zorasf.inp')
+inp.append('1el.zorasc.inp')
+inp.append('1el.zorascsf.inp')
+
+test.run(inp, ['U.dyall.2p.mol'], f)
+
+sys.exit(test.return_code)

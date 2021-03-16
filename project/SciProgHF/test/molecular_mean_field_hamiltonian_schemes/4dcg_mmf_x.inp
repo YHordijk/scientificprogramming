@@ -1,0 +1,52 @@
+#################################
+**DIRAC
+.TITLE
+ FO molecule - 4c DCG* model
+.WAVE FUNCTION
+.ANALYZ
+#################################
+**ANALYZE
+.PRIVEC
+*PRIVEC
+.VECPRI
+1..10
+#################################
+**INTEGRALS
+*READIN
+.UNCONTRACT
+**HAMILTONIAN
+.DOSSSS
+.GAUNT
+#################################
+**WAVE FUNCTION
+.SCF
+.RELCCSD
+*SCF
+.CLOSED SHELL
+ 18
+.EVCCNV
+1.0D-8
+.MAXITR
+ 100
+#####################################################
+**MOLTRA
+.ACTIVE
+energy -6.0 20.0 1.0
+.INTFL2
+1 1 1 1
+.INTFL4
+1 1 1 0 
+**RELCCSD
+.FOCKSP
+.PRINT
+ 1
+*CCSORT
+.USEOE
+.NORECMP
+*CCFSPC
+.DOIE
+.MAXIT
+100
+.NACTH
+ 2 2
+**END OF

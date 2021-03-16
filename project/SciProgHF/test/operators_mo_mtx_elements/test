@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from runtest import version_info, get_filter, cli, run
+from runtest_config import configure
+
+assert version_info.major == 2
+
+# miro: checking of degenerate numbers placed in various positions in the printout 
+# for example, matrix elements involving degenerate px,py,pz shells
+f = [
+    get_filter(from_string='Printout of all property elements',
+               to_string   = 'Transformation ended at',
+               ignore_sign = True, ignore_order=True,
+               mask=[3, 4], # skip first two indexes
+               abs_tolerance   = 5.0e-8)
+]
+
+
+options = cli()
+
+ierr = 0
+for inp in ['Ne.dc_rkb.2fs.scf_prptra_alpha_fc.inp', 
+            'Ne.dc_rkb.2fs.scf_prptra_dsigmadot-nucfield.inp', 
+            'Ne.dc_sf.2fs.scf_prptra_x-y-z-dipole.inp',
+            'Ne.levyle.2fs.scf_prptra_xy2z3.inp',
+            'Ne.dc_rkb.2fs.scf_prptra_ibetagama_edm.inp']:
+    for mol in ['Rn_Ne-like.mol']:
+        ierr += run(options,
+                    configure,
+                    input_files=[inp, mol],
+                    filters={'out': f})
+
+sys.exit(ierr)
+

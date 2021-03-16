@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string  = '   Electronic energy',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-8)
+f.add(from_string  = '   Embedding energy',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+f.add(from_string  = '   Total energy',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+
+#test.run(['nonrel.inp'], ['ch2o.mol'], f, args='--put peqm.pot')
+test.run(['dc.inp', 'x2c.inp', 'dc-pbe.inp','levy.inp' ,'spinfree.inp', 'nonrel.inp'], ['ch2o.mol'], f, args='--put peqm.pot')
+test.run(['dc_xyz.inp'], ['ch2o.xyz'], f, args='--put peqm.pot')
+
+sys.exit(test.return_code)

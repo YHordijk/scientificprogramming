@@ -1,0 +1,28 @@
+**DIRAC
+.PROPERTIES
+**GENERAL
+.RKBIMP
+**HAMILTONIAN
+.URKBAL
+# set integral class for all used methods
+.INTFLG
+1 1 0
+**INTEGRALS
+*READIN
+.UNCONT
+**WAVE FUNCTION
+.SCF
+*SCF
+.CLOSED SHELL
+2 0
+# you can overwrite integral class setting here
+#.INTFLG
+#1 0 0
+**PROPERTIES
+.SHIELDING
+*LINEAR RESPONSE
+.PRINT
+1
+#.INTFLG
+#1 0 0
+**END OF

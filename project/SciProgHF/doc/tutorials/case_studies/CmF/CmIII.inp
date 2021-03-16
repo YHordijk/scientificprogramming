@@ -1,0 +1,27 @@
+**DIRAC                                                                                             
+.WAVE FUNCTION                                                                                      
+.ANALYZE                                                                                            
+**ANALYZE                                                                                           
+.MULPOP                                                                                             
+*MULPOP
+.VECPOP
+1..oo
+.LABEL
+SHELL
+**WAVE FUNCTION                                                                                     
+.SCF                                                                                                
+*SCF                                                                                                
+.CLOSED SHELL                                                                                       
+86
+.OPEN SHELL                                                                                         
+1                                                                                                   
+7/14                                                                                              
+.OPENFAC                                                                                            
+1.0
+**MOLECULE                                                                                          
+*BASIS                                                                                              
+.DEFAULT                                                                                            
+dyall.cv3z                                                                                          
+.SPECIAL
+Cm.GH NOBASIS
+*END OF                                                                                             

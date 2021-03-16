@@ -1,0 +1,13 @@
+!
+! This test calculates variations of ZORA using two test systems
+! U91+ (2p space only) using a basis set of Dyall.
+! Xe atom using a small basis set of Faas.
+!
+! The test checks the ZORA and scaled ZORA option and
+! the so-called full density or ZORA-4 and approximate density ZORA schemes.
+! The scaling will only affect the output of orbital energies
+! The difference bwetween ZORA and ZORA4 is of importance for many-electron systems, where
+! the full density scheme gives a more accurate results, but at the expense of
+! cost of a regular dirac calculation. The approximate density scheme should
+! be of the order of a (LL+SL) calculation somewhat cheaper). 
+!

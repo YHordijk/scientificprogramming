@@ -1,0 +1,2 @@
+       PARAMETER (MXB=380,MXO=65,LDIMC=MXB*MXO*4,
+     &            NDIMPQPAR=2500000)

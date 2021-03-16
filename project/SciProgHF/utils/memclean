@@ -1,0 +1,9 @@
+#!/bin/ksh
+if [ "$DIRPAR" = "1" ]; then
+  for node in ` uniq dirac_machines `; do
+       echo "Memory cleanup on $node:"
+       ssh $node killall dirac.x
+       ssh $node $HOME/bin/iprm
+  done
+fi
+exit 0

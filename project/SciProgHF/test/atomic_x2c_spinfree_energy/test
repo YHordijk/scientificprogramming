@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = ' TOTAL ENERGY',
+      num_lines   = 11,
+      rel_tolerance   = 1.0e-8)
+
+test.run(['atoms.inp'], ['atoms.xyz'],
+                 args='--replace closed_occ="4" --replace open_e="5" --replace open_orb="6" --replace myatom="F" --get="X2CMAT"')
+shutil.copy('X2CMAT', 'X2CMAT.009')
+
+test.run(['atoms.inp'], ['atoms.xyz'],
+                 args='--replace closed_occ="12" --replace open_e="4" --replace open_orb="6" --replace myatom="S" --get="X2CMAT"')
+shutil.copy('X2CMAT', 'X2CMAT.016')
+
+test.run(['large-molecular-x2c-spinfree.inp', 'large-molecular-x2c-spinfree-end.inp', 'large-molecular-x2c-spinfree-beg.inp'],
+                 ['sf6.xyz'], f)
+
+test.run(['large-atomic-x2c-spinfree.inp'],
+                 ['sf6.xyz'], f, args='--put="X2CMAT.009 X2CMAT.016"')
+
+# cleanup
+os.unlink('X2CMAT')
+os.unlink('X2CMAT.016')
+os.unlink('X2CMAT.009')
+
+sys.exit(test.return_code)

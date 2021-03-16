@@ -1,0 +1,58 @@
+**DIRAC
+.TITLE
+  atomic test calculations
+.WAVE FUNCTION
+.ANALYZE
+.4INDEX
+**GENERAL
+.PCMOUT
+**INTEGRALS
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+*AMFI
+.AMFICH
++2
+**WAVE FUNCTION
+.SCF
+.RELCCSD
+*SCF
+# Pm-like (Z=61) : ... 4f(14) 5s(0) 5p12(1) 
+.CLOSED SHELL
+28 32
+.OPEN SHELL
+1
+1/0,2
+# reads DFPCMO
+.MAXITR
+3  
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+1..oo
+1..oo
+**MOLTRA
+# exactly 33 correlated electrons...
+.ACTIVE
+energy -50.0  50.0  1.0
+energy -50.0  50.0  1.0
+**RELCC
+.ENERGY
+.TIMING
+.PRINT
+1
+# 33 correlated electrons, 5p12(1) open-shell
+.NELEC
+6  6  11  10
+!.NEL_F1
+!9,8,4,4,2,2
+!.NEL_F2
+!8,8,5,5,2,2,1,1
+*CCENER
+.NTOL
+7
+*CCSORT
+!.USEOE
+*END OF

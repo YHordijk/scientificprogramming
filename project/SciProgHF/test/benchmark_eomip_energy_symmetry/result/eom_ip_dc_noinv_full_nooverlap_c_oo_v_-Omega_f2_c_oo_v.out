@@ -1,0 +1,4065 @@
+DIRAC serial starts by allocating 110000000 words (    839.23 MB -  0.820 GB)
+ of memory    out of the allowed maximum of 256000000 words (   1953.12 MB -  1.907 GB)
+
+Note: maximum allocatable memory for serial run can be set by pam --aw/--ag
+
+ *******************************************************************************
+ *                                                                             *
+ *                                O U T P U T                                  *
+ *                                   from                                      *
+ *                                                                             *
+ *                   @@@@@    @@   @@@@@     @@@@     @@@@@                    *
+ *                   @@  @@        @@  @@   @@  @@   @@                        *
+ *                   @@  @@   @@   @@@@@    @@@@@@   @@                        *
+ *                   @@  @@   @@   @@ @@    @@  @@   @@                        *
+ *                   @@@@@    @@   @@  @@   @@  @@    @@@@@                    *
+ *                                                                             *
+ *                                                                             *
+ %}ZS)S?$=$)]S?$%%>SS$%S$ZZ6cHHMHHHHHHHHMHHM&MHbHH6$L/:<S///</:|/:|:/::!:.::--:%
+ $?S$$%$$$$?%?$(SSS$SSSHMMMMMMMMMMMMMMMMMM6H&6S&SH&&k?6$r~::://///::::::.:::-::$
+ (%?)Z??$$$(S%$>$)S6HMMMMMMMMMMMMMMMMMMMMMMR6M]&&$6HR$&6(i::::::|i|:::::::-:-::(
+ $S?$$)$?$%?))?S/]#MMMMMMMMMMMMMMMMMMMMMMMMMMHM1HRH9R&$$$|):?:/://|:/::/:/.::.:$
+ SS$%%?$%((S)?Z[6MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM&HF$$&/)S?<~::!!:::::::/:-:|.S
+ SS%%%%S$%%%$$MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHHHHHM>?/S/:/:::`:/://:/::-::S
+ ?$SSSS?%SS$)MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM/4?:S:/:::/:::/:/:::.::?
+ S$(S?S$%(?$HMMMMMMMMMMMMMMMMM#&7RH99MMMMMMMMMMMMMMMMMMHHHd$/:::::/::::::-//.:.S
+ (?SS(%)S&HMMMMMMMMMMMMMMMMM#S|///???$9HHMMMMMMMMMDSZ&1S/?</>?~:///::|/!:/-:-:.(
+ $S?%?<H(MMMMMMMMMMMMMMMMR?`. :.:`::<>:``?/*?##*)$:/>       `((%://::/:::::/::/$
+ S$($$)HdMMMMMMMMMMMMMMMP: . `   `  `    `      `-            `Z<:>?::/:::::|:iS
+ c%%%&HMMMMMMMMMMMMMMMM6:                                      `$%)>%%</>!:::::c
+ S?%/MMMMMMMMMMMMMMMMMMH-                                        /ZSS>?:?~:;/::S
+ $SZ?MMMMMMMMMMMMMMMMMH?.                                        \"&((/?//?|:::$
+ $%$%&MMMMMMMMMMMMMMMMM:.                                          ?%/S:</::/::$
+ ($?}&HMMMMMMMMMMMMMMMM>:                                          $%%<?/i:|i::(
+ Z$($&MMMMMMMMMMMMMMMMHk(:.  . -                                   .S/\?\?/!:/:Z
+ (??$<HMMMMMMMMMMMMMMMFk|:   -.-.                                  :%/%/(:/:ii|(
+ SZ(S?]MMMMMMMMMMMMMMHS?:- -  ::.:                                  |/S:</::?||S
+ $%)$$(MMMMMMMMMMMMMMR):`:. :.:::`,,/bcokb/_                       :S?%?|~:/:/:$
+ %$$%$)[[?$?MMMMMMMMMM: :.:-.::::$7?<&7&MMMMMMM#/           _ .. ..:</?:(:/::::%
+ $$$?Z?HHH~|/MMMMMMMMM/`.-.:.:/:%%%%?dHMMMMMMMMMMH?,-   .,bMMMM6//./i~/~:<:::/:$
+ $($S$M//::S?ZHMMMMMH/:.`:::.:/%S/&MMHMMMMMMMMRM&><   ,HMMMMMMMF  :::?:///:|:::$
+ )[$S$S($|_i:#>::*H&?/::.::/:\"://:?>>`:&HMHSMMMM$:`-   MMHMMMMHHT .)i/?////::/)
+ $$[$$>$}:dHH&$$--?S::-:.:::--/-:``./::>%Zi?)&/?`:.`   `H?$T*\" `  /%?>%:)://ii$
+ $&=&/ZS}$RF<:?/-.|%r/:::/:/:`.-.-..|::S//!`\"``          >??:    `SS<S:)!/////$
+ Z&]>b[Z(Z?&%:::../S$$:>:::i`.`. `-.`  `                         ,>%%%:>/>/!|:/Z
+ $$&/F&1$c$?>:>?/,>?$$ZS/::/:-: ...                              |S?S)S?<~:::::$
+ &$&$&$k&>>|?<:<?((/$[/?)i~/:/. - -                              S?:%%%?/:::/::&
+ =[/Z[[Fp[MMH$>?Z&S$$$/$S///||..-           -.-                  /((S$:%<:///:/=
+ $&>1MHHMMMM6M9MMMM$Z$}$S%/:::.`.            .:/,,,dcb>/:.       ((SSSS%:)!//i|$
+ MMMMMMMMMMMR&&RRRHR&&($(?:|i::-             .:%&S&$[&H&``     ../>%;/?>??:<::>M
+ MMMMMMMMMMMMS/}S$&&H&[$SS//:::.:.   . . .v</Jq1&&D]&M&<,      :/::/?%%)S>?://:M
+ MMMMMMMMMMMM?}$/$$kMM&&$(%/?//:..`.  .|//1d/`://?*/*/\"` `     .:/(SS$%(S%)):%M
+ MMMMMMMMMMMM(}$$>&&MMHR#$S%%:?::.:|-.`:;&&b/D/$p=qpv//b/~`   :/~~%%??$=$)Z$S+;M
+ MMMMMMMMMMMM[|S$$Z1]MMMMD[$?$:>)/::: :/?:``???bD&{b<<-`     .,:/)|SS(}Z/$$?/<SM
+ MMMMMMMMMMMM||$)&7k&MMMMH9]$$??Z%|!/:i::`  `` .             SS?SS?Z/]1$/&$c/$SM
+ MMMMMMMMMMMM| -?>[&]HMMMMMMMH1[/7SS(?:/..-` ::/Sc,/_,     _<$?SS%$S/&c&&$&>//<M
+ MMMMMMMMMMMMR  `$&&&HMM9MMMMMMM&&c$%%:/:/:.:.:/\?\?/\    _MMHk/7S/]dq&1S<&&></M
+ MMMMMMMMMMMMM?  :&96MHMMMMMMMMMMMHHk[S%(<<:// `         ,MMMMMMM&/Z6H]DkH]1$&&M
+ MMMMMMMMMMMMMD    99H9HMMMMMMMMMMMMMMMb&%$<:i.:....    .MMMMMMMMM6HHHRH&H&H1SFM
+ MMMMMMMMMMMMMM|   `?HMMMMMMMMMMMMMMMMMMMHk6k&>$&Z$/?_.bHMMMMMMMMMMM&6HRM9H6]ZkM
+ MMMMMMMMMMMMMMM/    `TMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH6RH&R6&M
+ MMMMMMMMMMMMMMMM    -|?HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMFHH6HMD&&M
+ MMMMMMMMMMMMMMMMk  ..:~?9MMMMMMMMMMMMM#`:MMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MHkR6&FM
+ MMMMMMMMMMMMMMMMM/  .-!:%$ZHMMMMMMMMMR` dMMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MRMHH9&M
+ MMMMMMMMMMMMMMMMMML,:.-|::/?&&MMMMMM` .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHRMH&&6M
+ MMMMMMMMMMMMMMMMMMMc%>/:::i<:SMMMMMMHdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHM&969kM
+ MMMMMMMMMMMMMMMMMMMMSS/$$/(|HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHH&HH&M
+ MMMMMMMMMMMMMMMMMMMM6S/?/MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMR96H1DR1M
+ MMMMMMMMMMMMMMMMMMMMM&$MHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH691&&M
+ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&R&9ZM
+ MMMMMMMMMMMMMMMMMMMMMMMMMRHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&96][6M
+ MMMMMMMMMMMMMMMMMMMMMMMMp?:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM96HH1][FM
+ MMMMMMMMMMMMMMMMMMMMMMMM> -HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&1k&$&M
+ *******************************************************************************
+ *                                                                             *
+ *         =========================================================           *
+ *                     Program for Atomic and Molecular                        *
+ *          Direct Iterative Relativistic All-electron Calculations            *
+ *         =========================================================           *
+ *                                                                             *
+ *                                                                             *
+ *    Written by:                                                              *
+ *                                                                             *
+ *    Lucas Visscher           Vrije Universiteit Amsterdam      Netherlands   *
+ *    Hans Joergen Aa. Jensen  University of Southern Denmark    Denmark       *
+ *    Radovan Bast             UiT The Arctic University of      Norway        *
+ *    Trond Saue               Universite Toulouse III           France        *
+ *                                                                             *
+ *    with contributions from:                                                 *
+ *                                                                             *
+ *    Vebjoern Bakken          University of Oslo                Norway        *
+ *    Kenneth G. Dyall         Schrodinger, Inc., Portland       USA           *
+ *    Sebastien Dubillard      University of Strasbourg          France        *
+ *    Ulf Ekstroem             University of Oslo                Norway        *
+ *    Ephraim Eliav            University of Tel Aviv            Israel        *
+ *    Thomas Enevoldsen        University of Southern Denmark    Denmark       *
+ *    Elke Fasshauer           University of Aarhus              Denmark       *
+ *    Timo Fleig               Universite Toulouse III           France        *
+ *    Olav Fossgaard           UiT The Arctic University of      Norway        *
+ *    Andre S. P. Gomes        CNRS/Universite de Lille          France        *
+ *    Erik D. Hedegaard        Lund University                   Sweden        *
+ *    Trygve Helgaker          University of Oslo                Norway        *
+ *    Benjamin Helmich-Paris   Vrije Universiteit Amsterdam      Netherlands   *
+ *    Johan Henriksson         Linkoeping University             Sweden        *
+ *    Miroslav Ilias           Matej Bel University              Slovakia      *
+ *    Christoph R. Jacob       TU Braunschweig                   Germany       *
+ *    Stefan Knecht            ETH Zuerich                       Switzerland   *
+ *    Stanislav Komorovsky     UiT The Arctic University of      Norway        *
+ *    Ossama Kullie            University of Kassel              Germany       *
+ *    Jon K. Laerdahl          University of Oslo                Norway        *
+ *    Christoffer V. Larsen    University of Southern Denmark    Denmark       *
+ *    Yoon Sup Lee             KAIST, Daejeon                    South Korea   *
+ *    Huliyar S. Nataraj       BME/Budapest Univ. Tech. & Econ.  Hungary       *
+ *    Malaya Kumar Nayak       Bhabha Atomic Research Centre     India         *
+ *    Patrick Norman           Linkoeping University             Sweden        *
+ *    Malgorzata Olejniczak    CNRS/Universite de Lille          France        *
+ *    Jeppe Olsen              Aarhus University                 Denmark       *
+ *    Jogvan Magnus H. Olsen   University of Southern Denmark    Denmark       *
+ *    Young Choon Park         KAIST, Daejeon                    South Korea   *
+ *    Jesper K. Pedersen       University of Southern Denmark    Denmark       *
+ *    Markus Pernpointner      University of Heidelberg          Germany       *
+ *    Roberto Di Remigio       UiT The Arctic University of      Norway        *
+ *    Kenneth Ruud             UiT The Arctic University of      Norway        *
+ *    Pawel Salek              Stockholm Inst. of Technology     Sweden        *
+ *    Bernd Schimmelpfennig    Karlsruhe Institute of Technology Germany       *
+ *    Avijit Shee              University of Michigan            USA           *
+ *    Jetze Sikkema            Vrije Universiteit Amsterdam      Netherlands   *
+ *    Andreas J. Thorvaldsen   UiT The Arctic University of      Norway        *
+ *    Joern Thyssen            University of Southern Denmark    Denmark       *
+ *    Joost van Stralen        Vrije Universiteit Amsterdam      Netherlands   *
+ *    Sebastien Villaume       Linkoeping University             Sweden        *
+ *    Olivier Visser           University of Groningen           Netherlands   *
+ *    Toke Winther             University of Southern Denmark    Denmark       *
+ *    Shigeyoshi Yamamoto      Chukyo University                 Japan         *
+ *                                                                             *
+ *    For more information about the DIRAC code see http://diracprogram.org    *
+ *                                                                             *
+ *    This is an experimental code. The authors accept no responsibility       *
+ *    for the performance of the code or for the correctness of the results.   *
+ *                                                                             *
+ *    The code (in whole or part) is not to be reproduced for further          *
+ *    distribution without the written permission of the authors or            *
+ *    their representatives.                                                   *
+ *                                                                             *
+ *    If results obtained with this code are published, an                     *
+ *    appropriate citation would be:                                           *
+ *                                                                             *
+ *    DIRAC, a relativistic ab initio electronic structure program,            *
+ *    Release DIRAC17 (2017),                                                  *
+ *    written by L. Visscher, H. J. Aa. Jensen, R. Bast, and T. Saue,          *
+ *    with contributions from V. Bakken, K. G. Dyall, S. Dubillard,            *
+ *    U. Ekstroem, E. Eliav, T. Enevoldsen, E. Fasshauer, T. Fleig,            *
+ *    O. Fossgaard, A. S. P. Gomes, E. D. Hedegrd, T. Helgaker,               *
+ *    J. Henriksson, M. Ilias, Ch. R. Jacob, S. Knecht, S. Komorovsky,         *
+ *    O. Kullie, J. K. Laerdahl, C. V. Larsen, Y. S. Lee, H. S. Nataraj,       *
+ *    M. K. Nayak, P. Norman, G. Olejniczak, J. Olsen, J. M. H. Olsen,         *
+ *    Y. C. Park, J. K. Pedersen, M. Pernpointner, R. Di Remigio, K. Ruud,     *
+ *    P. Salek, B. Schimmelpfennig, A. Shee, J. Sikkema, A. J. Thorvaldsen,    *
+ *    J. Thyssen, J. van Stralen, S. Villaume, O. Visser,T. Winther,           *
+ *    and S. Yamamoto (see http://diracprogram.org).                           *
+ *                                                                             *
+ *******************************************************************************
+
+
+Version information
+-------------------
+
+Branch        | avijit/eomcc
+Commit hash   | 5ce0610
+Commit author | Andre Gomes
+Commit date   | Tue Jan 9 09:49:51 2018 +0100
+
+
+Configuration and build information
+-----------------------------------
+
+Who compiled             | andre
+Compiled on server       | utonium.home
+Operating system         | Darwin-15.6.0
+CMake version            | 3.6.1
+CMake generator          | Unix Makefiles
+CMake build type         | release
+Configuration time       | 2018-01-09 13:02:10.888823
+Python version           | 2.7.1
+Fortran compiler         | /opt/local/bin/gfortran
+Fortran compiler version | 5.4.0
+Fortran compiler flags   |  -g -fcray-pointer -fbacktrace -fno-range-check -DVAR_GFORTRAN -DVAR_MFDS
+C compiler               | /opt/local/bin/gcc
+C compiler version       | 5.4.0
+C compiler flags         |  -g
+C++ compiler             | /opt/local/bin/g++
+C++ compiler version     | 5.4.0
+C++ compiler flags       |  -g -Wall -Wno-unknown-pragmas -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused
+Static linking           | False
+64-bit integers          | False
+MPI parallelization      | False
+MPI launcher             | unknown
+Math libraries           | /usr/lib/liblapack.dylib;/usr/lib/libblas.dylib
+Builtin BLAS library     | OFF
+Builtin LAPACK library   | OFF
+Explicit libraries       | unknown
+Compile definitions      | HAVE_SYSTEM_NATIVE_BLAS;HAVE_SYSTEM_NATIVE_LAPACK;MOD_UNRELEASED;SYS_DARWIN;VAR_MFDS;PRG_DIRAC;INSTALL_WRKMEM=64000000;HAS_PCMSOLVER;BUILD_GEN1INT;HAS_PELIB;MOD_QCORR;HAS_STIELTJES;MOD_INTEREST;MOD_LAO_REARRANGED;MOD_MCSCF_spinfree;MOD_AOOSOC;MOD_ESR;MOD_KRCC;MOD_SRDFT
+
+
+ Selftest of ISO_C_BINDING Fortran - C/C++ interoperability PASSED
+
+Execution time and host
+-----------------------
+
+ 
+     Date and time (Mac OSX): Thu Feb  1 19:33:17 2018
+     Host name              : utonium.home                            
+
+
+Contents of the input file
+--------------------------
+
+**DIRAC                                                                                             
+.WAVE FUNCTION                                                                                      
+.4INDEX                                                                                             
+**WAVE FUNCTION                                                                                     
+.SCF                                                                                                
+.RELCCSD                                                                                            
+*SCF                                                                                                
+.FCKCNV                                                                                             
+1.0D-9                                                                                              
+.MAXITR                                                                                             
+70                                                                                                  
+**INTEGRALS                                                                                         
+.NUCMOD                                                                                             
+1                                                                                                   
+*TWOINT                                                                                             
+.SCREEN                                                                                             
+-1                                                                                                  
+*READIN                                                                                             
+.CONTRA                                                                                             
+**GENERAL                                                                                           
+.SPHTRA                                                                                             
+1 1                                                                                                 
+**HAMILTONIAN                                                                                       
+**RELCCSD                                                                                           
+.PRINT                                                                                              
+2                                                                                                   
+.ENERGY                                                                                             
+.EOMCC                                                                                              
+*EOMCC                                                                                              
+.IP                                                                                                 
+2 6                                                                                                 
+.IP                                                                                                 
+4 4                                                                                                 
+*CCENER                                                                                             
+.MAXIT                                                                                              
+45                                                                                                  
+*CCDIAG                                                                                             
+.CONVERG                                                                                            
+1.0D-7                                                                                              
+.MAXSIZE                                                                                            
+1024                                                                                                
+.MAXITER                                                                                            
+160                                                                                                 
+.TRV_FU                                                                                             
+.NOOVERLAP                                                                                          
+**MOLTRA                                                                                            
+.ACTIVE                                                                                             
+all                                                                                                 
+*END OF                                                                                             
+
+
+Contents of the molecule file
+-----------------------------
+
+INTGRL                                                                                              
+F2 molecule                                                                                         
+linear symmetry, ghost atom to force c_oo_v                                                         
+C   2                                                                                               
+        9.    2                                                                                     
+F      .0000000000        0.0000000000        0.70850                                               
+F      .0000000000        0.0000000000       -0.70850                                               
+LARGE BASIS cc-pVDZ                                                                                 
+        0.    1                                                                                     
+Gh     .0000000000        0.0000000000        1.70850                                               
+LARGE NOBASIS                                                                                       
+FINISH                                                                                              
+                                                                                                    
+
+
+    *************************************************************************
+    ********************* DIRAC: No title specified !!! *********************
+    *************************************************************************
+
+ Jobs in this run:
+   * Wave function
+   * Transformation to Molecular Spinor basis
+
+
+    **************************************************************************
+    ************************** General DIRAC set-up **************************
+    **************************************************************************
+
+   CODATA Recommended Values of the Fundamental Physical Constants: 1998  
+                Peter J. Mohr and Barry N. Taylor                         
+   Journal of Physical and Chemical Reference Data, Vol. 28, No. 6, 1999  
+ * The speed of light :        137.0359998
+ * Running in four-component mode
+ * Direct evaluation of the following two-electron integrals:
+   - LL-integrals
+   - SL-integrals
+   - SS-integrals
+   - GT-integrals
+ * Spherical transformation embedded in MO-transformation
+   for large components
+ * Transformation to scalar RKB basis embedded in
+   MO-transformation for small components
+ * Thresholds for linear dependence:
+   Large components:   1.00D-06
+   Small components:   1.00D-08
+ * General print level   :   0
+
+
+    *************************************************************************
+    ****************** Output from HERMIT input processing ******************
+    *************************************************************************
+
+ Default print level:        1
+ Nuclear model: Point charge.
+
+ Two-electron integrals not calculated.
+
+
+ Ordinary (field-free non-relativistic) Hamiltonian integrals not calculated.
+
+
+
+  Set-up from HR2INP:
+  -------------------
+
+ Print level in TWOINT:    1
+ * Direct calculation of Fock matrices in SO-basis.
+    ---> WARNING : Integral screening turned off !
+
+
+ Changes of defaults for *READIN
+ -------------------------------
+
+
+
+
+   ***************************************************************************
+   ****************** Output from MOLECULE input processing ******************
+   ***************************************************************************
+
+
+
+  Title Cards
+  -----------
+
+  F2 molecule                                                             
+  linear symmetry, ghost atom to force c_oo_v                             
+
+
+                     SYMADD: Detection of molecular symmetry
+                     ---------------------------------------
+
+ Symmetry test threshold:  5.00E-06
+
+    The molecule has been centered at center of mass
+
+ Symmetry point group found: C(oo,v)        
+
+ Centered and Rotated in original atom order
+ -------------------------------------------
+    9         0.00000000     0.00000000    -0.70850000       1
+    0         0.00000000     0.00000000     1.70850000       1
+    9         0.00000000     0.00000000     0.70850000       1
+
+ The following elements were found: X  Y     
+
+
+  Symmetry Operations
+  -------------------
+
+  Symmetry operations: 2
+
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Full group is:  C(oo,v)        
+Represented as: C2v
+
+   * The point group was generated by:
+
+      Reflection in the yz-plane
+      Reflection in the xz-plane
+
+   * Group multiplication table
+
+        |  E   C2z  Oxz  Oyz
+   -----+--------------------
+     E  |  E   C2z  Oxz  Oyz
+    C2z | C2z   E   Oyz  Oxz
+    Oxz | Oxz  Oyz   E   C2z
+    Oyz | Oyz  Oxz  C2z   E 
+
+   * Character table
+
+        |  E   C2z  Oxz  Oyz
+   -----+--------------------
+    A1  |   1    1    1    1
+    B1  |   1   -1    1   -1
+    B2  |   1   -1   -1    1
+    A2  |   1    1   -1   -1
+
+   * Direct product table
+
+        | A1   B1   B2   A2 
+   -----+--------------------
+    A1  | A1   B1   B2   A2 
+    B1  | B1   A1   A2   B2 
+    B2  | B2   A2   A1   B1 
+    A2  | A2   B2   B1   A1 
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * One fermion irrep:   E1 
+   * Real group. NZ = 1
+   * Direct product decomposition:
+          E1  x E1  : A1  + A2  + B1  + B2 
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1
+      La  |  A1 (1)  A2 (2)  |
+      Sa  |  A2 (1)  A1 (2)  |
+      Lb  |  B1 (3)  B2 (4)  |
+      Sb  |  B2 (3)  B1 (4)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    A1   1
+    B1   j
+    B2   k
+    A2   i
+
+  QM-QM nuclear repulsion energy :     57.163020465773
+
+
+
+                                 Isotopic Masses
+                                 ---------------
+
+                           F          18.998403
+                           F          18.998403
+
+                       Total mass:    37.996806 amu
+                       Natural abundance: 100.000 %
+
+ Center-of-mass coordinates (a.u.):    0.000000    0.000000    0.000000
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types :    2
+  Total number of atoms:    3
+
+  label    atoms   charge   prim    cont     basis   
+  ----------------------------------------------------------------------
+  F           2       9      27      15      L  - [9s4p1d|3s2p1d]                                                
+                             68      68      S  - [4s10p4d1f|4s10p4d1f]                                          
+  Gh          1       0       0       0      L  - No large component basis functions attached                    
+                              0       0      S  - No small component basis functions attached                    
+  ----------------------------------------------------------------------
+                             54      30      L  - large components
+                            136     136      S  - small components
+  ----------------------------------------------------------------------
+  total:      3      18     190     166
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1   2
+   Elements                             References                                
+   --------                             ----------                                
+   H      : T.H. Dunning, Jr. J. Chem. Phys. 90, 1007 (1989).                     
+   He     : D.E. Woon and T.H. Dunning, Jr. J. Chem. Phys. 100, 2975 (1994).      
+   Li - Ne: T.H. Dunning, Jr. J. Chem. Phys. 90, 1007 (1989).                     
+   Na - Mg: D.E. Woon and T.H. Dunning, Jr.  (to be published)                    
+   Al - Ar: D.E. Woon and T.H. Dunning, Jr.  J. Chem. Phys. 98, 1358 (1993).      
+   Ca     : J. Koput and K.A. Peterson, J. Phys. Chem. A, 106, 9595 (2002).       
+   Ga - Kr: A.K. Wilson, D.E. Woon, K.A. Peterson, T.H. Dunning, Jr.,             
+            J. Chem. Phys., 110, 7667 (1999)                                      
+
+  Atom type   2
+  Basis set typed explicitly in input file                                        
+
+
+  Cartesian Coordinates (bohr)
+  ----------------------------
+
+  Total number of coordinates:  9
+
+
+   1   F        x      0.0000000000
+   2            y      0.0000000000
+   3            z      0.7085000000
+
+   4   F        x      0.0000000000
+   5            y      0.0000000000
+   6            z     -0.7085000000
+
+   7   Gh       x      0.0000000000
+   8            y      0.0000000000
+   9            z      1.7085000000
+
+
+
+  Cartesian coordinates in XYZ format (Angstrom)
+  ----------------------------------------------
+
+    3
+
+F      0.0000000000   0.0000000000   0.3749220521
+F      0.0000000000   0.0000000000  -0.3749220521
+Gh     0.0000000000   0.0000000000   0.9040992604
+
+
+  Symmetry Coordinates
+  --------------------
+
+  Number of coordinates in each symmetry:     3    3    3    0
+
+
+  Symmetry  A1 ( 1)
+
+    1   F     z    3
+    2   F     z    6
+    3   Gh    z    9
+
+
+  Symmetry  B1 ( 2)
+
+    4   F     x    1
+    5   F     x    4
+    6   Gh    x    7
+
+
+  Symmetry  B2 ( 3)
+
+    7   F     y    2
+    8   F     y    5
+    9   Gh    y    8
+
+
+   Interatomic separations (in Angstroms):
+   ---------------------------------------
+
+            F           F           Gh  
+
+   F       0.000000
+   F       0.749844    0.000000
+   Gh      0.529177    1.279021    0.000000
+
+
+ RADII FOR ATOMS WITH EITHER/OR ATOMIC NUMBER            9  OR            0  ARE UNAVAILABLE 
+ RADII FOR ATOMS WITH EITHER/OR ATOMIC NUMBER            9  OR            0  ARE UNAVAILABLE 
+
+
+  Bond distances (angstroms):
+  ---------------------------
+
+                  atom 1     atom 2                           distance
+                  ------     ------                           --------
+  bond distance:    F          F                              0.749844
+
+
+  Bond angles (degrees):
+  ----------------------
+
+                  atom 1     atom 2     atom 3                   angle
+                  ------     ------     ------                   -----
+     No angles found
+
+
+
+   Nuclear repulsion energy :   57.163020465773 Hartree
+
+
+                                GETLAB: AO-labels
+                                -----------------
+
+   * Large components:   20
+     1  L F   1 s        2  L F   1 px       3  L F   1 py       4  L F   1 pz       5  L F   1 dxx      6  L F   1 dxy 
+     7  L F   1 dxz      8  L F   1 dyy      9  L F   1 dyz     10  L F   1 dzz     11  L F   1 s       12  L F   1 px  
+    13  L F   1 py      14  L F   1 pz      15  L F   1 dxx     16  L F   1 dxy     17  L F   1 dxz     18  L F   1 dyy 
+    19  L F   1 dyz     20  L F   1 dzz 
+   * Small components:   40
+    21  S F   1 s       22  S F   1 px      23  S F   1 py      24  S F   1 pz      25  S F   1 dxx     26  S F   1 dxy 
+    27  S F   1 dxz     28  S F   1 dyy     29  S F   1 dyz     30  S F   1 dzz     31  S F   1 fxxx    32  S F   1 fxxy
+    33  S F   1 fxxz    34  S F   1 fxyy    35  S F   1 fxyz    36  S F   1 fxzz    37  S F   1 fyyy    38  S F   1 fyyz
+    39  S F   1 fyzz    40  S F   1 fzzz    41  S F   1 s       42  S F   1 px      43  S F   1 py      44  S F   1 pz  
+    45  S F   1 dxx     46  S F   1 dxy     47  S F   1 dxz     48  S F   1 dyy     49  S F   1 dyz     50  S F   1 dzz 
+    51  S F   1 fxxx    52  S F   1 fxxy    53  S F   1 fxxz    54  S F   1 fxyy    55  S F   1 fxyz    56  S F   1 fxzz
+    57  S F   1 fyyy    58  S F   1 fyyz    59  S F   1 fyzz    60  S F   1 fzzz
+
+
+                                GETLAB: SO-labels
+                                -----------------
+
+   * Large components:   20
+     1  L A1 F  s        2  L A1 F  pz       3  L A1 F  dxx      4  L A1 F  dyy      5  L A1 F  dzz      6  L A1 F  s   
+     7  L A1 F  pz       8  L A1 F  dxx      9  L A1 F  dyy     10  L A1 F  dzz     11  L B1 F  px      12  L B1 F  dxz 
+    13  L B1 F  px      14  L B1 F  dxz     15  L B2 F  py      16  L B2 F  dyz     17  L B2 F  py      18  L B2 F  dyz 
+    19  L A2 F  dxy     20  L A2 F  dxy 
+   * Small components:   40
+    21  S A1 F  s       22  S A1 F  pz      23  S A1 F  dxx     24  S A1 F  dyy     25  S A1 F  dzz     26  S A1 F  fxxz
+    27  S A1 F  fyyz    28  S A1 F  fzzz    29  S A1 F  s       30  S A1 F  pz      31  S A1 F  dxx     32  S A1 F  dyy 
+    33  S A1 F  dzz     34  S A1 F  fxxz    35  S A1 F  fyyz    36  S A1 F  fzzz    37  S B1 F  px      38  S B1 F  dxz 
+    39  S B1 F  fxxx    40  S B1 F  fxyy    41  S B1 F  fxzz    42  S B1 F  px      43  S B1 F  dxz     44  S B1 F  fxxx
+    45  S B1 F  fxyy    46  S B1 F  fxzz    47  S B2 F  py      48  S B2 F  dyz     49  S B2 F  fxxy    50  S B2 F  fyyy
+    51  S B2 F  fyzz    52  S B2 F  py      53  S B2 F  dyz     54  S B2 F  fxxy    55  S B2 F  fyyy    56  S B2 F  fyzz
+    57  S A2 F  dxy     58  S A2 F  fxyz    59  S A2 F  dxy     60  S A2 F  fxyz
+
+
+  Symmetry Orbitals
+  -----------------
+
+  Number of orbitals in each symmetry:           74    40    40    12
+  Number of large orbitals in each symmetry:     16     6     6     2
+  Number of small orbitals in each symmetry:     58    34    34    10
+
+* Large component functions
+
+  Symmetry  A1 ( 1)
+
+        3 functions:    F  s   
+        2 functions:    F  pz  
+        1 functions:    F  dxx 
+        1 functions:    F  dyy 
+        1 functions:    F  dzz 
+        3 functions:    F  s   
+        2 functions:    F  pz  
+        1 functions:    F  dxx 
+        1 functions:    F  dyy 
+        1 functions:    F  dzz 
+
+  Symmetry  B1 ( 2)
+
+        2 functions:    F  px  
+        1 functions:    F  dxz 
+        2 functions:    F  px  
+        1 functions:    F  dxz 
+
+  Symmetry  B2 ( 3)
+
+        2 functions:    F  py  
+        1 functions:    F  dyz 
+        2 functions:    F  py  
+        1 functions:    F  dyz 
+
+  Symmetry  A2 ( 4)
+
+        1 functions:    F  dxy 
+        1 functions:    F  dxy 
+
+* Small component functions
+
+  Symmetry  A1 ( 1)
+
+        4 functions:    F  s   
+       10 functions:    F  pz  
+        4 functions:    F  dxx 
+        4 functions:    F  dyy 
+        4 functions:    F  dzz 
+        1 functions:    F  fxxz
+        1 functions:    F  fyyz
+        1 functions:    F  fzzz
+        4 functions:    F  s   
+       10 functions:    F  pz  
+        4 functions:    F  dxx 
+        4 functions:    F  dyy 
+        4 functions:    F  dzz 
+        1 functions:    F  fxxz
+        1 functions:    F  fyyz
+        1 functions:    F  fzzz
+
+  Symmetry  B1 ( 2)
+
+       10 functions:    F  px  
+        4 functions:    F  dxz 
+        1 functions:    F  fxxx
+        1 functions:    F  fxyy
+        1 functions:    F  fxzz
+       10 functions:    F  px  
+        4 functions:    F  dxz 
+        1 functions:    F  fxxx
+        1 functions:    F  fxyy
+        1 functions:    F  fxzz
+
+  Symmetry  B2 ( 3)
+
+       10 functions:    F  py  
+        4 functions:    F  dyz 
+        1 functions:    F  fxxy
+        1 functions:    F  fyyy
+        1 functions:    F  fyzz
+       10 functions:    F  py  
+        4 functions:    F  dyz 
+        1 functions:    F  fxxy
+        1 functions:    F  fyyy
+        1 functions:    F  fyzz
+
+  Symmetry  A2 ( 4)
+
+        4 functions:    F  dxy 
+        1 functions:    F  fxyz
+        4 functions:    F  dxy 
+        1 functions:    F  fxyz
+
+
+   ***************************************************************************
+   *************************** Hamiltonian defined ***************************
+   ***************************************************************************
+
+ * Print level:    0
+ * Dirac-Coulomb Hamiltonian
+ * SS integrals neglected:
+   Interatomic Coulombic SS-contributions modelled by
+   classical repulsion of small component atomic charges
+   using tabulated charges.
+ * Default integral flags passed to all modules
+   - LL-integrals:     1
+   - LS-integrals:     1
+   - SS-integrals:     0
+   - GT-integrals:     0
+ * Basis set:
+   - contracted large component basis set
+   - uncontracted small component basis set
+
+
+ Information about the restricted kinetic balance scheme:
+ * Default RKB projection:
+   1: Pre-projection in scalar basis
+   2: Removal of unphysical solutions (via diagonalization of free particle Hamiltonian)
+
+
+    **************************************************************************
+    ************************** Wave function module **************************
+    **************************************************************************
+
+ Wave function types requested (in input order):
+     HF        
+     RELCCSD   
+
+ Wave function jobs in execution order (expanded):
+ * Hartree-Fock calculation
+ * Run RELCCSD code
+
+ * Initial Automatic occupation based on:
+   Total charge of atoms =  18
+   Charge of molecule    =   0
+   i.e. no. of electrons =  18
+===========================================================================
+ *SCF: Set-up for Hartree-Fock calculation:
+===========================================================================
+ * Number of fermion irreps: 1
+ * Closed shell SCF calculation with    18 electrons in    9 orbitals.
+ * Sum of atomic potentials used for start guess
+ * General print level   :   0
+
+ ***** INITIAL TRIAL SCF FUNCTION *****
+ * Trial vectors read from file DFCOEF
+ * Scaling of active-active block correction to open shell Fock operator    0.500000
+   to improve convergence (default value).
+   The final open-shell orbital energies are recalculated with 1.0 scaling,
+   such that all occupied orbital energies correspond to Koopmans' theorem ionization energies.
+
+ ***** SCF CONVERGENCE CRITERIA *****
+ * Convergence on total Fock matrix.
+   Desired convergence:1.000D-09
+   Allowed convergence:1.000D-09
+
+ ***** CONVERGENCE CONTROL *****
+ * Fock matrix constructed using differential density matrix
+    with optimal parameter.
+ * DIIS (in MO basis)
+ * DIIS will be activated when convergence reaches : 1.00D+20
+   - Maximum size of B-matrix:   10
+ * Damping of Fock matrix when DIIS is not activated. 
+   Weight of old matrix    : 0.250
+ * Maximum number of SCF iterations  :   70
+ * No quadratic convergent Hartree-Fock
+ * Contributions from 2-electron integrals to Fock matrix:
+   LL-integrals.
+   SL-integrals from iteration    1
+    ---> this is default setting from Hamiltonian input
+ ***** OUTPUT CONTROL *****
+ * Only electron eigenvalues written out.
+===========================================================================
+ **RELCC: Set-up for Coupled Cluster calculations
+===========================================================================
+===========================================================================
+ TRPINP: Property integral transformation
+===========================================================================
+ * Print level:    0
+ *The following operators will be transformed:
+    1  XDIPLEN              B1      T+
+...........................................................................
+      Operator type DIAGONAL : scalar operator
+      Labels and factors     : XDIPLEN  +00+     1.0000000000000 (real)     
+...........................................................................
+    2  YDIPLEN              B2      T+
+...........................................................................
+      Operator type DIAGONAL : scalar operator
+      Labels and factors     : YDIPLEN  +00+     1.0000000000000 (real)     
+...........................................................................
+    3  ZDIPLEN              A1      T+
+...........................................................................
+      Operator type DIAGONAL : scalar operator
+      Labels and factors     : ZDIPLEN  +00+     1.0000000000000 (real)     
+...........................................................................
+---------------------------------------------------------------------------
+
+
+
+===========================================================================
+ TRAINP: Set-up for index transformation
+===========================================================================
+
+ * General print level   :   0
+ * Electronic orbitals only.
+ * Total active space.
+    Fermion ircop:E1 
+    all                                                                     
+
+ * Set-up for 2-index transformation
+ * SS Integrals not included in core Fock-matrix
+ * Active spaces:
+    Fermion ircop:E1 
+    - Index  1:  all                                                                     
+    - Index  2:  all                                                                     
+
+ * Set-up for 4-index transformation
+ * Following scheme      :   6
+ - write half-transformed integrals (ij|rs) to disk
+ - sorting of intermediate 1HT integrals is disabled
+ * Screening threshold :1.00E-14
+ * MO integral threshold :1.00E-14
+ * SS Integrals not transformed.
+ * Gaunt Integrals not transformed.
+ * 4-index transformed integrals written to file.
+ * Active spaces:
+    Fermion ircop:E1 
+    - Index  1:  all                                                                     
+    - Index  2:  all                                                                     
+    - Index  3:  all                                                                     
+    - Index  4:  all                                                                     
+
+
+ ********************************************************************************
+ *************************** Input consistency checks ***************************
+ ********************************************************************************
+
+
+
+    *************************************************************************
+    ************************ End of input processing ************************
+    *************************************************************************
+
+
+
+                      Nuclear contribution to dipole moments
+                      --------------------------------------
+
+                               au             Debye
+
+                    z      0.00000000      0.00000000
+
+                        1 Debye =   2.54177000 a.u. 
+
+
+                       Generating Lowdin canonical matrix:
+                       -----------------------------------
+
+   L   A1    * Deleted:          2(Proj:          2, Lindep:          0) Smin: 0.44E-02
+   L   B1    * Deleted:          0(Proj:          0, Lindep:          0) Smin: 0.12E+00
+   L   B2    * Deleted:          0(Proj:          0, Lindep:          0) Smin: 0.12E+00
+   L   A2    * Deleted:          0(Proj:          0, Lindep:          0) Smin: 0.81E+00
+   S   A1    * Deleted:         10(Proj:         10, Lindep:          0) Smin: 0.45E-02
+   S   B1    * Deleted:          2(Proj:          2, Lindep:          0) Smin: 0.46E-02
+   S   B2    * Deleted:          2(Proj:          2, Lindep:          0) Smin: 0.46E-02
+   S   A2    * Deleted:          0(Proj:          0, Lindep:          0) Smin: 0.17E+00
+
+
+                                Output from MODHAM
+                                ------------------
+
+ * Applied strict kinetic balance !
+ * Applied SL-regrouping on AO2MO tranf.matrix in SLSORT.
+
+
+                                Output from LINSYM
+                                ------------------
+
+
+ Parity   MJ  Functions(total) Functions(LC) Functions(SC)
+     1    1/2         36           18           18
+     1   -3/2         16            8            8
+     1    5/2          4            2            2
+
+
+      **********************************************************************
+      ************************* Orbital dimensions *************************
+      **********************************************************************
+
+No. of positive energy orbitals (NESH):    28
+No. of negative energy orbitals (NPSH):    28
+Total no. of orbitals           (NORB):    56
+
+
+   ****************************************************************************
+   ************************* Hartree-Fock calculation *************************
+   ****************************************************************************
+
+
+*** INFO *** No trial vectors found.
+ Using bare nucleus approximation for initial trial vectors.
+             Improved by a sum of atomic screening potentials.
+
+
+########## START ITERATION NO.   1 ##########   Thu Feb  1 19:33:18 2018
+
+E_HOMO...E_LUMO, symmetry 1:    37  -0.48605   38   0.44752
+
+=> Calculating sum of orbital energies
+It.    1    -60.02512323619      0.00D+00  0.00D+00  0.00D+00               0.18624500s   Scr. nuclei    Thu Feb  1
+
+########## START ITERATION NO.   2 ##########   Thu Feb  1 19:33:18 2018
+
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  0.00D+00    0.00%    0.00%    0.00%    0.00%   0.03880399s
+SOfock:SL  0.00D+00    0.00%    2.46%    0.00%    0.00%   0.25308698s
+E_HOMO...E_LUMO, symmetry 1:    37  -0.05358   38   0.94076
+>>> Total wall time: 0.30200000s, and total CPU time : 0.29491600s
+
+########## END ITERATION NO.   2 ##########   Thu Feb  1 19:33:18 2018
+
+It.    2    -196.9640233167      1.37D+02  3.38D+00  1.51D+00               0.29491600s   LL SL          Thu Feb  1
+
+########## START ITERATION NO.   3 ##########   Thu Feb  1 19:33:18 2018
+
+    3 *** Differential density matrix. DCOVLP     = 0.7604
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  0.00D+00    0.00%    0.00%    0.00%    0.00%   0.04858404s
+SOfock:SL  0.00D+00    0.00%    2.46%    0.00%    0.00%   0.24978095s
+E_HOMO...E_LUMO, symmetry 1:    37  -0.31001   38   0.88331
+>>> Total wall time: 0.31100000s, and total CPU time : 0.30171100s
+
+########## END ITERATION NO.   3 ##########   Thu Feb  1 19:33:19 2018
+
+It.    3    -197.2331425968      2.69D-01 -8.93D-01  7.61D-01   DIIS   2    0.30171100s   LL SL          Thu Feb  1
+
+########## START ITERATION NO.   4 ##########   Thu Feb  1 19:33:19 2018
+
+    4 *** Differential density matrix. DCOVLP     = 1.0483
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  0.00D+00    0.00%    0.00%    0.00%    0.00%   0.03875399s
+SOfock:SL  0.00D+00    0.00%    2.46%    0.00%    0.00%   0.27644503s
+E_HOMO...E_LUMO, symmetry 1:    37  -0.31468   38   0.88345
+>>> Total wall time: 0.32800000s, and total CPU time : 0.31838000s
+
+########## END ITERATION NO.   4 ##########   Thu Feb  1 19:33:19 2018
+
+It.    4    -197.3077255444      7.46D-02  2.90D-01  2.00D-02   DIIS   3    0.31838000s   LL SL          Thu Feb  1
+
+########## START ITERATION NO.   5 ##########   Thu Feb  1 19:33:19 2018
+
+    5 *** Differential density matrix. DCOVLP     = 1.0004
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  0.00D+00    0.00%    0.00%    0.00%    0.00%   0.04155397s
+SOfock:SL  0.00D+00    0.00%    2.46%    0.00%    0.00%   0.26975203s
+E_HOMO...E_LUMO, symmetry 1:    37  -0.31432   38   0.88315
+>>> Total wall time: 0.32500000s, and total CPU time : 0.31465700s
+
+########## END ITERATION NO.   5 ##########   Thu Feb  1 19:33:19 2018
+
+It.    5    -197.3077891640      6.36D-05 -2.44D-03  2.81D-03   DIIS   4    0.31465700s   LL SL          Thu Feb  1
+
+########## START ITERATION NO.   6 ##########   Thu Feb  1 19:33:19 2018
+
+    6 *** Differential density matrix. DCOVLP     = 1.0003
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  0.00D+00    0.00%    0.00%    0.00%    0.00%   0.04189491s
+SOfock:SL  0.00D+00    0.00%    2.46%    0.00%    0.00%   0.25476098s
+E_HOMO...E_LUMO, symmetry 1:    37  -0.31437   38   0.88315
+>>> Total wall time: 0.30900000s, and total CPU time : 0.30001000s
+
+########## END ITERATION NO.   6 ##########   Thu Feb  1 19:33:20 2018
+
+It.    6    -197.3077909632      1.80D-06  2.21D-04  2.12D-04   DIIS   5    0.30001000s   LL SL          Thu Feb  1
+
+########## START ITERATION NO.   7 ##########   Thu Feb  1 19:33:20 2018
+
+    7 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  0.00D+00    0.00%    0.00%    0.00%    0.00%   0.03888798s
+SOfock:SL  0.00D+00    0.00%    2.46%    0.00%    0.00%   0.24512005s
+E_HOMO...E_LUMO, symmetry 1:    37  -0.31436   38   0.88314
+>>> Total wall time: 0.29500000s, and total CPU time : 0.28713800s
+
+########## END ITERATION NO.   7 ##########   Thu Feb  1 19:33:20 2018
+
+It.    7    -197.3077909760      1.28D-08 -1.86D-05  2.88D-05   DIIS   6    0.28713800s   LL SL          Thu Feb  1
+
+########## START ITERATION NO.   8 ##########   Thu Feb  1 19:33:20 2018
+
+    8 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  0.00D+00    0.00%    0.00%    0.00%    0.00%   0.03807187s
+SOfock:SL  0.00D+00    0.00%    2.46%    0.00%    0.00%   0.25840306s
+E_HOMO...E_LUMO, symmetry 1:    37  -0.31436   38   0.88314
+>>> Total wall time: 0.30700000s, and total CPU time : 0.29921800s
+
+########## END ITERATION NO.   8 ##########   Thu Feb  1 19:33:20 2018
+
+It.    8    -197.3077909762      1.90D-10  4.16D-06  2.33D-06   DIIS   7    0.29921800s   LL SL          Thu Feb  1
+
+########## START ITERATION NO.   9 ##########   Thu Feb  1 19:33:20 2018
+
+    9 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  0.00D+00    0.00%    0.00%    0.00%    0.00%   0.03927207s
+SOfock:SL  0.00D+00    0.00%    2.46%    0.00%    0.00%   0.26222587s
+E_HOMO...E_LUMO, symmetry 1:    37  -0.31436   38   0.88314
+>>> Total wall time: 0.31600000s, and total CPU time : 0.30613100s
+
+########## END ITERATION NO.   9 ##########   Thu Feb  1 19:33:21 2018
+
+It.    9    -197.3077909762      9.66D-13 -1.77D-07  1.99D-07   DIIS   8    0.30613100s   LL SL          Thu Feb  1
+
+########## START ITERATION NO.  10 ##########   Thu Feb  1 19:33:21 2018
+
+   10 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  0.00D+00    0.00%    0.00%    0.00%    0.00%   0.04222298s
+SOfock:SL  0.00D+00    0.00%    2.46%    0.00%    0.00%   0.22915292s
+E_HOMO...E_LUMO, symmetry 1:    37  -0.31436   38   0.88314
+>>> Total wall time: 0.27500000s, and total CPU time : 0.27452100s
+
+########## END ITERATION NO.  10 ##########   Thu Feb  1 19:33:21 2018
+
+It.   10    -197.3077909762     -3.13D-13  2.88D-08  1.77D-08   DIIS   9    0.27452100s   LL SL          Thu Feb  1
+
+########## START ITERATION NO.  11 ##########   Thu Feb  1 19:33:21 2018
+
+   11 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  0.00D+00    0.00%    0.00%    0.00%    0.00%   0.04085612s
+SOfock:SL  0.00D+00    0.00%    2.46%    0.00%    0.00%   0.23108411s
+E_HOMO...E_LUMO, symmetry 1:    37  -0.31436   38   0.88314
+>>> Total wall time: 0.28100000s, and total CPU time : 0.27496700s
+
+########## END ITERATION NO.  11 ##########   Thu Feb  1 19:33:21 2018
+
+It.   11    -197.3077909762      4.83D-13  2.48D-09  3.21D-09   DAMP 25%    0.27496700s   LL SL          Thu Feb  1
+
+########## START ITERATION NO.  12 ##########   Thu Feb  1 19:33:21 2018
+
+   12 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  0.00D+00    0.00%    0.00%    0.00%    0.00%   0.03865409s
+SOfock:SL  0.00D+00    0.00%    2.46%    0.00%    0.00%   0.22746515s
+>>> Total wall time: 0.26900000s, and total CPU time : 0.26793300s
+
+########## END ITERATION NO.  12 ##########   Thu Feb  1 19:33:21 2018
+
+It.   12    -197.3077909762     -1.42D-13  8.53D-10  2.20D-09   DAMP 25%    0.26793300s   LL SL          Thu Feb  1
+
+
+                                   SCF - CYCLE
+                                   -----------
+
+* Convergence on total Fock matrix.
+  Desired convergence:1.000D-09
+  Allowed convergence:1.000D-09
+
+* ERGVAL - convergence in total energy
+* FCKVAL - convergence in maximum change in total Fock matrix
+* EVCVAL - convergence in error vector (gradient)
+--------------------------------------------------------------------------------------------------------------------------------
+           Energy               ERGVAL    FCKVAL    EVCVAL      Conv.acc    CPU          Integrals   Time stamp
+--------------------------------------------------------------------------------------------------------------------------------
+It.    1    -60.02512323619      0.00D+00  0.00D+00  0.00D+00               0.18624500s   Scr. nuclei    Thu Feb  1
+It.    2    -196.9640233167      1.37D+02  3.38D+00  1.51D+00               0.29491600s   LL SL          Thu Feb  1
+It.    3    -197.2331425968      2.69D-01 -8.93D-01  7.61D-01   DIIS   2    0.30171100s   LL SL          Thu Feb  1
+It.    4    -197.3077255444      7.46D-02  2.90D-01  2.00D-02   DIIS   3    0.31838000s   LL SL          Thu Feb  1
+It.    5    -197.3077891640      6.36D-05 -2.44D-03  2.81D-03   DIIS   4    0.31465700s   LL SL          Thu Feb  1
+It.    6    -197.3077909632      1.80D-06  2.21D-04  2.12D-04   DIIS   5    0.30001000s   LL SL          Thu Feb  1
+It.    7    -197.3077909760      1.28D-08 -1.86D-05  2.88D-05   DIIS   6    0.28713800s   LL SL          Thu Feb  1
+It.    8    -197.3077909762      1.90D-10  4.16D-06  2.33D-06   DIIS   7    0.29921800s   LL SL          Thu Feb  1
+It.    9    -197.3077909762      9.66D-13 -1.77D-07  1.99D-07   DIIS   8    0.30613100s   LL SL          Thu Feb  1
+It.   10    -197.3077909762     -3.13D-13  2.88D-08  1.77D-08   DIIS   9    0.27452100s   LL SL          Thu Feb  1
+It.   11    -197.3077909762      4.83D-13  2.48D-09  3.21D-09   DAMP 25%    0.27496700s   LL SL          Thu Feb  1
+It.   12    -197.3077909762     -1.42D-13  8.53D-10  2.20D-09   DAMP 25%    0.26793300s   LL SL          Thu Feb  1
+--------------------------------------------------------------------------------------------------------------------------------
+* Convergence after   12 iterations.
+* Average elapsed time per iteration: 
+      No 2-ints    :    0.20900000s
+      LL SL        :    0.30163636s
+
+
+                                   TOTAL ENERGY
+                                   ------------
+
+   Electronic energy                        :    -254.47081621259974
+
+   Other contributions to the total energy
+   Nuclear repulsion energy                 :      57.16302046577276
+   SS Coulombic correction                  :       0.00000477064220
+
+   Sum of all contributions to the energy
+   Total energy                             :    -197.30779097618478
+
+
+                                   Eigenvalues
+                                   -----------
+
+
+* Block   1 in E1 :  Omega =  1/2
+  * Closed shell, f = 1.0000
+-26.43505944335156  ( 2)   -26.42464255957819  ( 2)    -2.72394095583301  ( 2)    -1.27140301696626  ( 2)    -1.23044894757710  ( 2)
+ -1.05274935083611  ( 2)    -0.31634985806013  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+  0.88314379919147  ( 2)     1.15952301659118  ( 2)     1.18781328557754  ( 2)     1.52613876132271  ( 2)     1.67023745102564  ( 2)
+  2.13767411345492  ( 2)     3.03711736490639  ( 2)     3.56621983338576  ( 2)     5.18620900920390  ( 2)     5.79813809044874  ( 2)
+  6.44561902029042  ( 2)
+
+* Block   2 in E1 :  Omega =  3/2
+  * Closed shell, f = 1.0000
+ -1.26962360179657  ( 2)    -0.31435776414611  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+  1.18915942427266  ( 2)     1.52807316767843  ( 2)     3.29424363556978  ( 2)     3.56678816848963  ( 2)     4.42233329567290  ( 2)
+  5.79883581642706  ( 2)
+
+* Block   3 in E1 :  Omega =  5/2
+  * Virtual eigenvalues, f = 0.0000
+  3.29470505526115  ( 2)     4.42286822004826  ( 2)
+
+* Occupation in fermion symmetry E1 
+  * Inactive orbitals
+     1/2 1/2 1/2 1/2 3/2 1/2 1/2 1/2 3/2
+  * Virtual orbitals
+     1/2 1/2 1/2 3/2 1/2 3/2 1/2 1/2 1/2 3/2 5/2 1/2 3/2 3/2 5/2 1/2 1/2 3/2
+     1/2
+
+* Occupation of subblocks
+                       E1 :  1/2  3/2  5/2                                                                  
+  closed shells (f=1.0000):    7    2    0
+ virtual shells (f=0.0000):   11    6    2
+tot.num. of pos.erg shells:   18    8    2
+
+
+* HOMO - LUMO gap:
+
+    E(LUMO) :     0.88314380 au (symmetry E1 )
+  - E(HOMO) :    -0.31435776 au (symmetry E1 )
+  ------------------------------------------
+    gap     :     1.19750156 au
+
+
+
+    **************************************************************************
+    **************** Transformation to Molecular Spinor Basis ****************
+    **************************************************************************
+
+
+          Written by Luuk Visscher, Jon Laerdahl & Trond Saue
+          Odense, 1997
+
+
+
+
+     ************************************************************************
+     **************** Transformation of 2-electron integrals ****************
+     ************************************************************************
+
+
+ Transformation started at : Thu Feb  1 19:33:21 2018
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -197.307790976184918
+* Heading :DIRAC: No title specified !!!                     Thu Feb  1 19:33:21 2018
+
+* Orbital ranges for 4-index transformation:
+
+
+ * Fermion ircop E1 
+
+      Index 1   28 orbitals
+          1    2    3    4    5    6    7    8    9   10   11   12
+         13   14   15   16   17   18   19   20   21   22   23   24
+         25   26   27   28
+
+      Index 2   28 orbitals
+          1    2    3    4    5    6    7    8    9   10   11   12
+         13   14   15   16   17   18   19   20   21   22   23   24
+         25   26   27   28
+
+      Index 3   28 orbitals
+          1    2    3    4    5    6    7    8    9   10   11   12
+         13   14   15   16   17   18   19   20   21   22   23   24
+         25   26   27   28
+
+      Index 4   28 orbitals
+          1    2    3    4    5    6    7    8    9   10   11   12
+         13   14   15   16   17   18   19   20   21   22   23   24
+         25   26   27   28
+
+* Core orbital ranges for 2-index transformation:
+
+
+ * Fermion ircop E1 
+
+      No orbitals for index 1
+
+
+    **************************************************************************
+    **************** Transformation to Molecular Spinor Basis ****************
+    **************************************************************************
+
+
+          Written by Luuk Visscher, Jon Laerdahl & Trond Saue
+          Odense, 1997
+
+
+
+
+      **********************************************************************
+      **************** Transformation of property integrals ****************
+      **********************************************************************
+
+
+ Transformation started at : Thu Feb  1 19:33:21 2018
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -197.307790976184918
+* Heading :DIRAC: No title specified !!!                     Thu Feb  1 19:33:21 2018
+
+
+ * Fermion ircop E1 
+
+      Index 1   28 orbitals
+          1    2    3    4    5    6    7    8    9   10   11   12
+         13   14   15   16   17   18   19   20   21   22   23   24
+         25   26   27   28
+
+      Index 2   28 orbitals
+          1    2    3    4    5    6    7    8    9   10   11   12
+         13   14   15   16   17   18   19   20   21   22   23   24
+         25   26   27   28
+
+
+    **************************************************************************
+    **************** Transformation to Molecular Spinor Basis ****************
+    **************************************************************************
+
+
+          Written by Luuk Visscher, Jon Laerdahl & Trond Saue
+          Odense, 1997
+
+
+
+
+       ********************************************************************
+       **************** Transformation of core Fock matrix ****************
+       ********************************************************************
+
+
+ Transformation started at : Thu Feb  1 19:33:21 2018
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -197.307790976184918
+* Heading :DIRAC: No title specified !!!                     Thu Feb  1 19:33:21 2018
+
+* REAFCK: Fock matrix read from file DFFCK1                                                      
+* Heading :DIRAC: No title specified !!!                     Thu Feb  1 19:33:18 2018
+
+
+ Core energy (includes nuclear repulsion) :             57.1630252364
+ - Electronic part :                                     0.0000000000
+   - One-electron terms :                                0.0000000000
+   - Two-electron terms :                                0.0000000000
+
+
+ MOLFDIR file MRCONEE is written
+
+* GETGAB: label "GABAO1XX" not found; calling GABGEN.
+ - Integral class 1 : (LL|??)
+   - Beginning task   1 of   6 after      0. seconds and      0. CPU-seconds
+   - Beginning task   2 of   6 after      0. seconds and      0. CPU-seconds
+   - Beginning task   3 of   6 after      0. seconds and      0. CPU-seconds
+   - Beginning task   4 of   6 after      0. seconds and      0. CPU-seconds
+   - Beginning task   5 of   6 after      0. seconds and      0. CPU-seconds
+   - Beginning task   6 of   6 after      0. seconds and      0. CPU-seconds
+ - Integral class 2 : (SS|??)
+   - Beginning task   7 of  16 after      0. seconds and      0. CPU-seconds
+   - Beginning task   8 of  16 after      0. seconds and      0. CPU-seconds
+   - Beginning task   9 of  16 after      0. seconds and      0. CPU-seconds
+   - Beginning task  10 of  16 after      0. seconds and      0. CPU-seconds
+   - Beginning task  11 of  16 after      0. seconds and      0. CPU-seconds
+   - Beginning task  12 of  16 after      0. seconds and      0. CPU-seconds
+   - Beginning task  13 of  16 after      1. seconds and      0. CPU-seconds
+   - Beginning task  14 of  16 after      1. seconds and      1. CPU-seconds
+   - Beginning task  15 of  16 after      1. seconds and      1. CPU-seconds
+   - Beginning task  16 of  16 after      1. seconds and      1. CPU-seconds
+ Node    0 finished first half transformation         5572527 HT integrals written ( 72.67%,      0.08 GB)
+ >>> Time used in 2HT_all is   2.85 seconds
+ - Binary  file MDCINT was written.
+* Screening statistics:
+   (LL|LL)ints :   0.00%
+   (SS|LL)ints :   0.00%
+   Total       :   0.00%
+
+------ Timing report (in CPU seconds) of module  integral transformation      
+
+ Time in  First halftransformation            2.108 seconds
+ Time in  Second halftransformation           2.852 seconds
+
+
+ Total wall time used in PAMTRA :   00:00:06
+ Total CPU  time used in PAMTRA (master only) :   00:00:05
+
+ Transformation ended at : Thu Feb  1 19:33:27 2018
+
+
+---< Process     1 of     1----<
+
+
+
+ Relativistic Coupled Cluster program RELCCSD
+
+ Written by :
+    Lucas Visscher
+
+    NASA Ames Research Center    (1994)
+    Rijks Universiteit Groningen (1995)
+    Odense Universitet           (1996-1997)
+    VU University Amsterdam      (1998-present)
+
+
+ This module is documented in
+  - Initial implementation : L. Visscher, T.J. Lee and K.G. Dyall, J. Chem. Phys. 105 (1996) 8769.
+  - Fock Space (FSCC):       L. Visscher, E. Eliav and U. Kaldor, J. Chem. Phys. 115 (2002) 9720.
+  - Intermediate Hamiltonian E. Eliav, M. J. Vilkas, Y. Ishikawa, and U. Kaldor, J. Chem. Phys. 122 (2005) 224113.
+  - Parallelization :        M. Pernpointner and L. Visscher, J. Comp. Chem. 24 (2003) 754.
+
+
+ Today is :     1 Feb 18
+ The time is :  19:33:27
+
+ Initializing word-addressable I/O : the FORTRAN-interface is used with    16 KB records
+    1  -1   3  -3   5  -5   7  -7   9  -9  11 -11  13 -13  15 -15  17 -17  19 -19  21 -21  23 -23  25 -25  27 -27  29 -29  31 -31   0   2  -2   4  -4   6  -6   8  -8  10 -10  12 -12  14 -14  16 -16  18 -18  20 -20  22 -22  24 -24  26 -26  28 -28  30 -30  32
+===========================================================================
+ **RELCC: Set-up for Coupled Cluster calculations
+===========================================================================
+ * General print level   :   2
+ NEL_F1:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+
+ Total memory available :        1953.12 MB    1.907 GB
+
+ INFO: No old restart file(s) found!
+
+
+ Configuration in highest pointgroup
+
+                                           E    E
+ Spinor class : occupied                   9    9
+ Spinor class : virtual                   19   19
+
+ Configuration in abelian subgroup
+
+                                           1   -1    3   -3    5   -5
+ Spinor class : occupied                   7    7    2    2    0    0
+ Spinor class : virtual                   11   11    6    6    2    2
+
+
+ Number of electrons :                    18
+ Total charge of the system :              0
+ Number of virtual spinors :              38
+ Complex arithmetic mode :                 F
+ Do integral sorting     :                 T
+ Do energy calculation   :                 T
+ Do gradient calculation :                 F
+ Do response calculation :                 F
+ Debug information       :                 F
+ Timing information      :                 F
+ Print level          :                    2
+ Memory limit (MWord) :                       244
+ Interface used       :                DIRAC6    
+
+
+ Leave after calculating the total memory demand :          F
+ Memory for reading and sorting integrals :               466931 8-byte words
+ Core used for calculating amplitudes :                   397743 8-byte words
+ Core used for in core evaluation of triples :            286028 8-byte words
+ Core used for EOMCC calculation :                        501770 8-byte words
+ Memory used for active modules :                         501770 8-byte words
+
+ Predicted RelCC memory demand:            3.83 MB
+ Predicted RelCC memory demand:           0.004 GB
+
+ Expanding and sorting integrals to unique types :
+ Type OOOO :            5653 integrals
+ Type VOOO :           21820 integrals
+ Type VVOO :           20381 integrals
+ Type VOVO :           87286 integrals
+ Type VOVV :           82976 integrals
+ Type VVVV :           79815 integrals
+
+ Start sorting of integral classes at   1 Feb 18 19:33:27
+
+
+ Sorting of first 4 classes done at   1 Feb 18 19:33:27
+
+ Need      1 passes to sort VOVV integrals
+
+ Pass     1 ended at   1 Feb 18 19:33:27
+
+ VOVV sorting done at   1 Feb 18 19:33:27
+
+ Need      1 passes to sort VVVV integrals
+
+ Pass     1 ended at   1 Feb 18 19:33:27
+
+ VVVV sorting done at   1 Feb 18 19:33:27
+
+ Reading Coulomb integrals :
+ File date :       1 Feb 18
+ File time :       19:33:27
+ # of integrals              720175
+
+ Finished sorting of integrals
+
+
+ Checking the orbital energies, the program computes the diagonal elements of the
+ reconstructed Fock matrix. Differences with the reference orbital energies
+ are given if above a treshold or if iprnt > 1
+
+ Spinor   Abelian Rep.         Energy   Recalc. Energy
+  O    1    1     1      -26.4350594434  -26.4350594429
+  O    2    2     1      -26.4246425596  -26.4246425591
+  O    3    3     1       -2.7239409558   -2.7239409556
+  O    4    4     1       -1.2714030170   -1.2714030170
+  O    5    5     1       -1.2304489476   -1.2304489475
+  O    6    6     1       -1.0527493508   -1.0527493507
+  O    7    7     1       -0.3163498581   -0.3163498582
+  O    1    8    -1      -26.4350594434  -26.4350594429
+  O    2    9    -1      -26.4246425596  -26.4246425591
+  O    3   10    -1       -2.7239409558   -2.7239409556
+  O    4   11    -1       -1.2714030170   -1.2714030170
+  O    5   12    -1       -1.2304489476   -1.2304489475
+  O    6   13    -1       -1.0527493508   -1.0527493507
+  O    7   14    -1       -0.3163498581   -0.3163498582
+  O    1   15     3       -1.2696236018   -1.2696236014
+  O    2   16     3       -0.3143577641   -0.3143577636
+  O    1   17    -3       -1.2696236018   -1.2696236014
+  O    2   18    -3       -0.3143577641   -0.3143577636
+  V    1   19     1        0.8831437992    0.8831437992
+  V    2   20     1        1.1595230166    1.1595230167
+  V    3   21     1        1.1878132856    1.1878132855
+  V    4   22     1        1.5261387613    1.5261387612
+  V    5   23     1        1.6702374510    1.6702374511
+  V    6   24     1        2.1376741135    2.1376741137
+  V    7   25     1        3.0371173649    3.0371173650
+  V    8   26     1        3.5662198334    3.5662198335
+  V    9   27     1        5.1862090092    5.1862090094
+  V   10   28     1        5.7981380904    5.7981380906
+  V   11   29     1        6.4456190203    6.4456190206
+  V    1   30    -1        0.8831437992    0.8831437992
+  V    2   31    -1        1.1595230166    1.1595230167
+  V    3   32    -1        1.1878132856    1.1878132855
+  V    4   33    -1        1.5261387613    1.5261387612
+  V    5   34    -1        1.6702374510    1.6702374511
+  V    6   35    -1        2.1376741135    2.1376741137
+  V    7   36    -1        3.0371173649    3.0371173650
+  V    8   37    -1        3.5662198334    3.5662198335
+  V    9   38    -1        5.1862090092    5.1862090094
+  V   10   39    -1        5.7981380904    5.7981380906
+  V   11   40    -1        6.4456190203    6.4456190206
+  V    1   41     3        1.1891594243    1.1891594245
+  V    2   42     3        1.5280731677    1.5280731680
+  V    3   43     3        3.2942436356    3.2942436357
+  V    4   44     3        3.5667881685    3.5667881687
+  V    5   45     3        4.4223332957    4.4223332958
+  V    6   46     3        5.7988358164    5.7988358166
+  V    1   47    -3        1.1891594243    1.1891594245
+  V    2   48    -3        1.5280731677    1.5280731680
+  V    3   49    -3        3.2942436356    3.2942436357
+  V    4   50    -3        3.5667881685    3.5667881687
+  V    5   51    -3        4.4223332957    4.4223332958
+  V    6   52    -3        5.7988358164    5.7988358166
+  V    1   53     5        3.2947050553    3.2947050555
+  V    2   54     5        4.4228682200    4.4228682203
+  V    1   55    -5        3.2947050553    3.2947050555
+  V    2   56    -5        4.4228682200    4.4228682203
+
+ The diagonal elements of the recomputed Fock matrix (right column) are used in perturbation expressions.
+
+ Use the perturbative values (MP2, CCSD[T]/(T)/-T) with care, especially
+ in  open shell calculations because the orbitals need not always be
+ semi-canonical as was assumed in the derivation of the expressions.
+ The missing terms may be important !
+
+
+ Nuclear repulsion + core energy :            57.163025236414960
+ Zero order electronic energy :             -122.077150991795349
+ First order electronic energy :            -132.393665220804593
+ Electronic energy :                        -254.470816212599942
+ SCF energy :                               -197.307790976184975
+
+
+ Energy calculations
+ MP2 module active :                       T
+ CCSD module active :                      T
+ CCSD(T) module active :                   T
+
+
+  MP2 results
+
+ SCF energy :                               -197.307790976184975
+ MP2 correlation energy :                     -0.329561706623978
+ Total MP2 energy :                         -197.637352682808967
+ T1 diagnostic :                               0.000000000182853
+
+
+ CCSD options :
+ Maximum number of iterations :           45
+ Maximum size of DIIS space :              8
+ Convergence criterium :             0.1E-11
+
+
+   NIT          ENERGY                    RMS       T1-DIAGN
+    0       -0.329561706623978   1.000000000000000   0.00000
+    1       -0.334047347460550   0.027266673033602   0.00466
+    2       -0.337258074783354   0.008382040076336   0.00461
+    3       -0.337770312565115   0.001413473717344   0.00487
+    4       -0.337744791294838   0.000202322942558   0.00488
+    5       -0.337744733629515   0.000013650385828   0.00488
+    6       -0.337744857824618   0.000004988158938   0.00488
+    7       -0.337744836734637   0.000001592606198   0.00488
+    8       -0.337744840989029   0.000000101340750   0.00488
+    9       -0.337744839620636   0.000000011769921   0.00488
+   10       -0.337744840010831   0.000000009294127   0.00488
+   11       -0.337744840038455   0.000000001207127   0.00488
+   12       -0.337744840050471   0.000000000088400   0.00488
+   13       -0.337744840050163   0.000000000016668   0.00488
+   14       -0.337744840050026   0.000000000000205   0.00488
+
+
+  CCSD results
+
+ SCF energy :                               -197.307790976184975
+ CCSD correlation energy :                    -0.337744840050026
+ Total CCSD energy :                        -197.645535816234997
+
+
+ Individual terms in the correlation energy
+
+   Irrep Spinor     Relaxation energy (T1-amplitudes)
+
+   Irrep1 Spinor1 Irrep2 Spinor2     Correlation energy (T2-amplitudes)
+      2       1      1       1            -0.000303419268559
+      2       2      1       1            -0.000120556940599
+      2       3      1       1            -0.000071002388761
+      2       4      1       1            -0.000067192341512
+      2       5      1       1            -0.000069475881469
+      2       6      1       1            -0.000083992601710
+      2       7      1       1            -0.000084455339107
+      2       1      1       2            -0.000120556940599
+      2       2      1       2            -0.000325194682638
+      2       3      1       2            -0.000088739583241
+      2       4      1       2            -0.000088082693265
+      2       5      1       2            -0.000068062489978
+      2       6      1       2            -0.000111109933240
+      2       7      1       2            -0.000069596004142
+      2       1      1       3            -0.000071002388761
+      2       2      1       3            -0.000088739583241
+      2       3      1       3            -0.008435433997804
+      2       4      1       3            -0.001456809873730
+      2       5      1       3            -0.001496465836208
+      2       6      1       3            -0.002681932680132
+      2       7      1       3            -0.001764778745061
+      2       1      1       4            -0.000067192341512
+      2       2      1       4            -0.000088082693265
+      2       3      1       4            -0.001456809873730
+      2       4      1       4            -0.008114032775507
+      2       5      1       4            -0.001391350946754
+      2       6      1       4            -0.002705891164383
+      2       7      1       4            -0.007028676918436
+      2       1      1       5            -0.000069475881469
+      2       2      1       5            -0.000068062489978
+      2       3      1       5            -0.001496465836208
+      2       4      1       5            -0.001391350946754
+      2       5      1       5            -0.007065292022098
+      2       6      1       5            -0.007000685365849
+      2       7      1       5            -0.001656732359304
+      2       1      1       6            -0.000083992601710
+      2       2      1       6            -0.000111109933240
+      2       3      1       6            -0.002681932680132
+      2       4      1       6            -0.002705891164383
+      2       5      1       6            -0.007000685365849
+      2       6      1       6            -0.009990914388968
+      2       7      1       6            -0.003394758524949
+      2       1      1       7            -0.000084455339107
+      2       2      1       7            -0.000069596004142
+      2       3      1       7            -0.001764778745061
+      2       4      1       7            -0.007028676918436
+      2       5      1       7            -0.001656732359304
+      2       6      1       7            -0.003394758524949
+      2       7      1       7            -0.010150833624811
+      4       1      3       1            -0.008122531109628
+      4       2      3       1            -0.007033565159872
+      4       1      3       2            -0.007033565159872
+      4       2      3       2            -0.010152293891315
+      1       3      1       1            -0.000024660379717
+      1       4      1       1            -0.000073646638373
+      1       5      1       1            -0.000035882812853
+      1       6      1       1            -0.000080780251136
+      1       7      1       1            -0.000086557385634
+      1       3      1       2            -0.000060886706819
+      1       4      1       2            -0.000099109843235
+      1       5      1       2            -0.000028605178837
+      1       6      1       2            -0.000111692696963
+      1       7      1       2            -0.000085304285601
+      1       4      1       3            -0.003480373374488
+      1       5      1       3            -0.000708816694983
+      1       6      1       3            -0.000646886654242
+      1       7      1       3            -0.002510593720728
+      1       5      1       4            -0.002613746691097
+      1       6      1       4            -0.003527433619824
+      1       7      1       4            -0.000902250031479
+      1       6      1       5            -0.000459046524560
+      1       7      1       5            -0.004366344526522
+      1       7      1       6            -0.005133586481507
+      3       1      2       1            -0.000073601926628
+      3       2      2       1            -0.000086401947693
+      3       1      2       2            -0.000099077196508
+      3       2      2       2            -0.000085148834546
+      3       1      2       3            -0.003484106929267
+      3       2      2       3            -0.002508551405885
+      3       1      2       4            -0.003275961648870
+      3       2      2       4            -0.003349483119806
+      3       1      2       5            -0.002616865945225
+      3       2      2       5            -0.004368389647688
+      3       1      2       6            -0.003530791012807
+      3       2      2       6            -0.005134132538079
+      3       1      2       7            -0.003352633825417
+      3       2      2       7            -0.004140174134964
+      4       1      1       1            -0.000073601926628
+      4       2      1       1            -0.000086401947693
+      4       1      1       2            -0.000099077196508
+      4       2      1       2            -0.000085148834546
+      4       1      1       3            -0.003484106929267
+      4       2      1       3            -0.002508551405885
+      4       1      1       4            -0.003275961648870
+      4       2      1       4            -0.003349483119806
+      4       1      1       5            -0.002616865945225
+      4       2      1       5            -0.004368389647688
+      4       1      1       6            -0.003530791012807
+      4       2      1       6            -0.005134132538079
+      4       1      1       7            -0.003352633825417
+      4       2      1       7            -0.004140174134964
+      2       3      2       1            -0.000024660379717
+      2       4      2       1            -0.000073646638373
+      2       5      2       1            -0.000035882812853
+      2       6      2       1            -0.000080780251136
+      2       7      2       1            -0.000086557385634
+      2       3      2       2            -0.000060886706819
+      2       4      2       2            -0.000099109843235
+      2       5      2       2            -0.000028605178837
+      2       6      2       2            -0.000111692696963
+      2       7      2       2            -0.000085304285601
+      2       4      2       3            -0.003480373374488
+      2       5      2       3            -0.000708816694983
+      2       6      2       3            -0.000646886654242
+      2       7      2       3            -0.002510593720728
+      2       5      2       4            -0.002613746691097
+      2       6      2       4            -0.003527433619824
+      2       7      2       4            -0.000902250031479
+      2       6      2       5            -0.000459046524560
+      2       7      2       5            -0.004366344526522
+      2       7      2       6            -0.005133586481507
+      3       1      1       1            -0.000067108161228
+      3       2      1       1            -0.000084259543267
+      3       1      1       2            -0.000087916639281
+      3       2      1       2            -0.000069414231074
+      3       1      1       3            -0.001457972251813
+      3       2      1       3            -0.001763201785075
+      3       1      1       4            -0.005075730714827
+      3       2      1       4            -0.005631169461311
+      3       1      1       5            -0.001392163906237
+      3       2      1       5            -0.001656472192664
+      3       1      1       6            -0.002706637333166
+      3       2      1       6            -0.003393446137488
+      3       1      1       7            -0.005638139481302
+      3       2      1       7            -0.007939727003539
+      4       1      2       1            -0.000067108161228
+      4       2      2       1            -0.000084259543267
+      4       1      2       2            -0.000087916639281
+      4       2      2       2            -0.000069414231074
+      4       1      2       3            -0.001457972251813
+      4       2      2       3            -0.001763201785075
+      4       1      2       4            -0.005075730714827
+      4       2      2       4            -0.005631169461311
+      4       1      2       5            -0.001392163906237
+      4       2      2       5            -0.001656472192664
+      4       1      2       6            -0.002706637333166
+      4       2      2       6            -0.003393446137488
+      4       1      2       7            -0.005638139481302
+      4       2      2       7            -0.007939727003539
+      3       2      3       1            -0.000903487150665
+      4       2      4       1            -0.000903487150665
+
+
+
+ T1 diagnostic :                               0.004880726571592
+ Convergence :                                 0.000000000000205
+ Number or iterations used :                                  14
+
+
+  Perturbative treatment of triple excitations
+
+ SCF energy :                               -197.307790976184975
+ CCSD correlation energy :                    -0.337744840050026
+ 4th order triples correction :               -0.003319624698941
+ 5th order triples (T) correction :            0.000252322905466
+ 5th order triples -T  correction :            0.000374213000820
+ Total CCSD+T  energy :                     -197.648855440933943
+ Total CCSD(T) energy :                     -197.648603118028490
+ Total CCSD-T  energy :                     -197.648481227933132
+  
+ Equation of Motion CC module setup
+  
+  Requested     6  root(s) for symmetry:     -1( 2)
+  Requested     4  root(s) for symmetry:     -3( 4)
+    Warning: more EOM-IP roots than there are occupied orbitals.
+             Number or roots for symmetry  4  set to    2
+  
+  constructing intermediates for EOM-IP      
+     done with Fbar_mi   2826.9695658921632     
+     done with Fbar_me   1.9364119406339967E-004
+     done with Fbar_ae   498.11834489361667     
+     done with W_ijmn   170.58886164095426     
+     done with Wbar_mbej   369.40142838912629     
+     done with W_mbej   369.30411082051961     
+     done with W_ejmb   369.30411082051978     
+     done with W_iemn   14.799992682358894     
+     done with W_mnie   19.157550584509082     
+ 
+ Configuration variables for matrix-free diagonalizer
+ 
+   output written to unit        :            6
+   verbose output                :  F
+ 
+  convergence control
+ 
+   convergence threshold         :    9.9999999999999995E-008
+   maximum subspace size         :         1024
+   maximum number of iterations  :          160
+   refresh trial vectors         :  F
+ 
+  restart/data storage
+ 
+   save subspaces                : T
+   subspaces written to unit     :          137
+   save sigma vectors            :  T
+   sigma vectors written to unit :          138
+   save results                  : T
+   results written to unit       :          138
+ 
+  diagonalization characteristics
+ 
+   solve for right eigenvectors  :  T
+   solve for left eigenvectors   :  F
+   symmetric eigenproblem        :  F
+   complex mode (real variables) :  F
+   root following via overlap    :  F
+ 
+ 
+  <<< SOLVING RHS EOM-IP EQUATIONS FOR SYMMETRY    -1( 2) >>>
+ 
+    Requested      6 eigenvales
+ 
+ Iteration            1
+ 
+  debug, constructing EOM-IP sigma vector      1 out of      6
+ diagram 1    699.84529906488876     
+ diagram 2    699.84529906488876     
+ diagram 3    699.84529906488876     
+ diagram 4    2.0924321166581454     
+ diagram 5    2.0924321166581454     
+ diagram 6    2.0924321166581454     
+ diagram 7    2.0924321166581454     
+ diagram 8    2.0924321166581454     
+ diagram 9    2.0924321166581454     
+  debug, constructing EOM-IP sigma vector      2 out of      6
+ diagram 1    699.30545206469344     
+ diagram 2    699.30545206469344     
+ diagram 3    699.30545206469344     
+ diagram 4    2.0948372111524831     
+ diagram 5    2.0948372111524831     
+ diagram 6    2.0948372111524831     
+ diagram 7    2.0948372111524831     
+ diagram 8    2.0948372111524831     
+ diagram 9    2.0948372111524831     
+  debug, constructing EOM-IP sigma vector      3 out of      6
+ diagram 1    7.6620699681847286     
+ diagram 2    7.6620699681847286     
+ diagram 3    7.6620699681847286     
+ diagram 4   0.68436160133455504     
+ diagram 5   0.68436160133455504     
+ diagram 6   0.68436160133455504     
+ diagram 7   0.68436160133455504     
+ diagram 8   0.68436160133455504     
+ diagram 9   0.68436160133455504     
+  debug, constructing EOM-IP sigma vector      4 out of      6
+ diagram 1    1.7646184358585786     
+ diagram 2    1.7646184358585786     
+ diagram 3    1.7646184358585786     
+ diagram 4   0.45507120802091067     
+ diagram 5   0.45507120802091067     
+ diagram 6   0.45507120802091067     
+ diagram 7   0.45507120802091067     
+ diagram 8   0.45507120802091067     
+ diagram 9   0.45507120802091067     
+  debug, constructing EOM-IP sigma vector      5 out of      6
+ diagram 1    1.6229338507516513     
+ diagram 2    1.6229338507516513     
+ diagram 3    1.6229338507516513     
+ diagram 4   0.43994756623951747     
+ diagram 5   0.43994756623951747     
+ diagram 6   0.43994756623951747     
+ diagram 7   0.43994756623951747     
+ diagram 8   0.43994756623951747     
+ diagram 9   0.43994756623951747     
+  debug, constructing EOM-IP sigma vector      6 out of      6
+ diagram 1    1.2347769007910909     
+ diagram 2    1.2347769007910909     
+ diagram 3    1.2347769007910909     
+ diagram 4   0.41998320792807320     
+ diagram 5   0.41998320792807320     
+ diagram 6   0.41998320792807320     
+ diagram 7   0.41998320792807320     
+ diagram 8   0.41998320792807320     
+ diagram 9   0.41998320792807320     
+    Eigenvalue      1 :   0.111090E+01
+    Eigenvalue      2 :   0.127394E+01
+    Eigenvalue      3 :   0.132839E+01
+    Eigenvalue      4 :   0.276817E+01
+    Eigenvalue      5 :   0.264444E+02
+    Eigenvalue      6 :   0.264546E+02
+    Root      1  ||q_k,M||   0.647132E+00
+    Root      2  ||q_k,M||   0.663283E+00
+    Root      3  ||q_k,M||   0.674590E+00
+    Root      4  ||q_k,M||   0.828123E+00
+    Root      5  ||q_k,M||   0.144735E+01
+    Root      6  ||q_k,M||   0.144653E+01
+ 
+ Iteration            2
+ 
+  debug, constructing EOM-IP sigma vector      7 out of     12
+ diagram 1    1.1420328002066407E-011
+ diagram 2    1.0765538749179097E-004
+ diagram 3   0.47059416178531333     
+ diagram 4    2.9800112653491770E-011
+ diagram 5    4.9431153310618328     
+ diagram 6    2.4099795911678177     
+ diagram 7    5.1430913432411707     
+ diagram 8    15.995911597659353     
+ diagram 9    16.135321580625135     
+  debug, constructing EOM-IP sigma vector      8 out of     12
+ diagram 1    1.7716575001715574E-023
+ diagram 2    6.5454281278996419E-005
+ diagram 3   0.40146002317076884     
+ diagram 4    4.6229489274706557E-023
+ diagram 5    4.1817100925945354     
+ diagram 6    1.9066553461203715     
+ diagram 7    4.1146697688673308     
+ diagram 8    13.849413175650483     
+ diagram 9    13.969829748372527     
+  debug, constructing EOM-IP sigma vector      9 out of     12
+ diagram 1    1.0598384547940069E-023
+ diagram 2    8.7036689272489696E-005
+ diagram 3   0.44857464039409767     
+ diagram 4    2.7655339970663998E-023
+ diagram 5    4.1585051147901329     
+ diagram 6    1.9114200913721795     
+ diagram 7    4.3295475782535462     
+ diagram 8    13.588356515657633     
+ diagram 9    13.724125435567988     
+  debug, constructing EOM-IP sigma vector     10 out of     12
+ diagram 1    7.1420947941259154E-011
+ diagram 2    2.6647026955839051E-005
+ diagram 3   0.18114151957727784     
+ diagram 4    1.8636525098785146E-010
+ diagram 5    4.6056825649197117     
+ diagram 6    2.0796210694832826     
+ diagram 7    4.6317442453233708     
+ diagram 8    12.061758528480373     
+ diagram 9    12.086313077283318     
+  debug, constructing EOM-IP sigma vector     11 out of     12
+ diagram 1    1.2656286850003646E-027
+ diagram 2    1.1511154685943412E-004
+ diagram 3    2.2951207274290497     
+ diagram 4    3.3025213797429618E-027
+ diagram 5    749.90427054963118     
+ diagram 6    695.38820412724215     
+ diagram 7    762.92122758225594     
+ diagram 8    854.70411782339113     
+ diagram 9    854.71374027822515     
+  debug, constructing EOM-IP sigma vector     12 out of     12
+ diagram 1    1.2918233507051267E-014
+ diagram 2    1.1435729419198713E-004
+ diagram 3    2.2944933094667066     
+ diagram 4    3.3708735311681420E-014
+ diagram 5    749.97706512185448     
+ diagram 6    695.39719644754643     
+ diagram 7    762.95911168333976     
+ diagram 8    854.70298672644412     
+ diagram 9    854.70818341386291     
+    Eigenvalue      1 :   0.970751E+00
+    Eigenvalue      2 :   0.112095E+01
+    Eigenvalue      3 :   0.115830E+01
+    Eigenvalue      4 :   0.254806E+01
+    Eigenvalue      5 :   0.347906E+01
+    Eigenvalue      6 :   0.359692E+01
+    Root      1  ||q_k,M||   0.735012E-01
+    Root      2  ||q_k,M||   0.978467E-01
+    Root      3  ||q_k,M||   0.802604E-01
+    Root      4  ||q_k,M||   0.245902E+00
+    Root      5  ||q_k,M||   0.136286E+01
+    Root      6  ||q_k,M||   0.144751E+01
+ 
+ Iteration            3
+ 
+  debug, constructing EOM-IP sigma vector     13 out of     18
+ diagram 1    1.7324059364766770E-005
+ diagram 2    3.6749641283903750E-005
+ diagram 3    2.6940987131055003E-002
+ diagram 4    4.5205262107394516E-005
+ diagram 5    5.7577847224299994     
+ diagram 6    2.4917252968323393     
+ diagram 7    4.5060839850541754     
+ diagram 8    19.925765618056410     
+ diagram 9    19.937346568285168     
+  debug, constructing EOM-IP sigma vector     14 out of     18
+ diagram 1    1.4247943161114585E-023
+ diagram 2    2.4057084762064084E-005
+ diagram 3    1.0278213047525775E-002
+ diagram 4    3.7178469060165068E-023
+ diagram 5    4.7448784401218234     
+ diagram 6    2.2910299220429535     
+ diagram 7    4.4492879516552577     
+ diagram 8    16.430334340640439     
+ diagram 9    16.434182098534649     
+  debug, constructing EOM-IP sigma vector     15 out of     18
+ diagram 1    5.9894513638176034E-024
+ diagram 2    2.1421133103934037E-005
+ diagram 3    1.1665952536880101E-002
+ diagram 4    1.5628826540015222E-023
+ diagram 5    4.1023178099209359     
+ diagram 6    1.8799276122537396     
+ diagram 7    3.1246681972130679     
+ diagram 8    9.9105532766051123     
+ diagram 9    9.9157079669864974     
+  debug, constructing EOM-IP sigma vector     16 out of     18
+ diagram 1    5.0506980802703719E-007
+ diagram 2    1.1983823421480708E-005
+ diagram 3    8.3008934046971017E-002
+ diagram 4    1.3179251221470866E-006
+ diagram 5    3.5828761911335589     
+ diagram 6    1.2422426914369613     
+ diagram 7    3.7720814045534024     
+ diagram 8    8.7982719290492444     
+ diagram 9    8.8029848227136505     
+  debug, constructing EOM-IP sigma vector     17 out of     18
+ diagram 1    1.5338014426488128E-006
+ diagram 2    1.5691692662593206E-005
+ diagram 3    2.7539498676357736E-002
+ diagram 4    4.0022892311632785E-006
+ diagram 5    6.6498853031910397     
+ diagram 6    2.8098085987968986     
+ diagram 7    5.8350758388512380     
+ diagram 8    13.080489143627673     
+ diagram 9    13.084222728638098     
+  debug, constructing EOM-IP sigma vector     18 out of     18
+ diagram 1    1.1513945750360028E-024
+ diagram 2    3.1659054230093970E-007
+ diagram 3    9.7796446640534816E-004
+ diagram 4    3.0044398057992555E-024
+ diagram 5    5.9922423782091316     
+ diagram 6    2.5684446680429991     
+ diagram 7    5.5990756284366761     
+ diagram 8    12.438271472272772     
+ diagram 9    12.442521158053596     
+    Eigenvalue      1 :   0.969952E+00
+    Eigenvalue      2 :   0.111851E+01
+    Eigenvalue      3 :   0.115610E+01
+    Eigenvalue      4 :   0.240011E+01
+    Eigenvalue      5 :   0.246455E+01
+    Eigenvalue      6 :   0.269857E+01
+    Root      1  ||q_k,M||   0.845137E-02
+    Root      2  ||q_k,M||   0.186526E-01
+    Root      3  ||q_k,M||   0.275968E-01
+    Root      4  ||q_k,M||   0.167314E+01
+    Root      5  ||q_k,M||   0.242776E+00
+    Root      6  ||q_k,M||   0.424513E+00
+ 
+ Iteration            4
+ 
+  debug, constructing EOM-IP sigma vector     19 out of     24
+ diagram 1    8.2539064992598289E-005
+ diagram 2    9.7246113883612973E-005
+ diagram 3    3.2681351417387323E-002
+ diagram 4    2.1537677680082831E-004
+ diagram 5    8.0232846892669034     
+ diagram 6    5.2298243567065335     
+ diagram 7    7.5827200159232460     
+ diagram 8    21.001732095288588     
+ diagram 9    21.003701788206321     
+  debug, constructing EOM-IP sigma vector     20 out of     24
+ diagram 1    3.8737394221896314E-022
+ diagram 2    6.6155291786271485E-006
+ diagram 3    7.2694185474122625E-002
+ diagram 4    1.0108104701601893E-021
+ diagram 5    2.2655669919690427     
+ diagram 6   0.96929870948886798     
+ diagram 7    2.4531103992301371     
+ diagram 8    8.5232272221439196     
+ diagram 9    8.5414810821166203     
+  debug, constructing EOM-IP sigma vector     21 out of     24
+ diagram 1    2.8510079342456487E-022
+ diagram 2    3.6802764900163327E-006
+ diagram 3    2.8241503223805441E-002
+ diagram 4    7.4393973273925565E-022
+ diagram 5    6.4343198411888629     
+ diagram 6    3.3804597089761170     
+ diagram 7    5.5091701064405250     
+ diagram 8    20.192250827089225     
+ diagram 9    20.202321213820529     
+  debug, constructing EOM-IP sigma vector     22 out of     24
+ diagram 1    2.7770858586169591E-024
+ diagram 2    5.0365076087311769E-007
+ diagram 3    3.1939451354003154E-004
+ diagram 4    7.2465056537982186E-024
+ diagram 5    2.3633885997570401     
+ diagram 6   0.59900901338933177     
+ diagram 7    1.9151347843615645     
+ diagram 8    5.3531805640932824     
+ diagram 9    5.3534183755645959     
+  debug, constructing EOM-IP sigma vector     23 out of     24
+ diagram 1    1.1822746393914487E-005
+ diagram 2    1.5070789291074002E-005
+ diagram 3    8.5129292176354290E-004
+ diagram 4    3.0850179990326569E-005
+ diagram 5    1.5917485400527787     
+ diagram 6   0.75006649704675177     
+ diagram 7    1.1061433284172688     
+ diagram 8    6.1477575357508529     
+ diagram 9    6.1488616755174919     
+  debug, constructing EOM-IP sigma vector     24 out of     24
+ diagram 1    1.0538831353781830E-005
+ diagram 2    3.5469453083980783E-006
+ diagram 3    8.4570690973793019E-003
+ diagram 4    2.7499942341588044E-005
+ diagram 5    2.8417189639265734     
+ diagram 6   0.65253509006649346     
+ diagram 7    1.9172685074823119     
+ diagram 8    5.7401024141580601     
+ diagram 9    5.7413338181193057     
+    Eigenvalue      1 :   0.969926E+00
+    Eigenvalue      2 :   0.111838E+01
+    Eigenvalue      3 :   0.115562E+01
+    Eigenvalue      4 :   0.161274E+01
+    Eigenvalue      5 :   0.171494E+01
+    Eigenvalue      6 :   0.199592E+01
+    Root      1  ||q_k,M||   0.133176E-02
+    Root      2  ||q_k,M||   0.878538E-02
+    Root      3  ||q_k,M||   0.865349E-02
+    Root      4  ||q_k,M||   0.502323E+00
+    Root      5  ||q_k,M||   0.824766E+00
+    Root      6  ||q_k,M||   0.367670E+00
+ 
+ Iteration            5
+ 
+  debug, constructing EOM-IP sigma vector     25 out of     30
+ diagram 1    2.3119494128368994E-003
+ diagram 2    2.2419475933833232E-003
+ diagram 3    2.6131607265041702E-002
+ diagram 4    6.0327823280774094E-003
+ diagram 5    10.709690824094171     
+ diagram 6    6.6677380849599350     
+ diagram 7    11.320130772533050     
+ diagram 8    25.140973279161155     
+ diagram 9    25.141721337112639     
+  debug, constructing EOM-IP sigma vector     26 out of     30
+ diagram 1    1.6425696407132638E-021
+ diagram 2    7.1538542616637064E-006
+ diagram 3    8.3248080603816835E-003
+ diagram 4    4.2861080982616219E-021
+ diagram 5    5.0108674341041262     
+ diagram 6    2.4550666450738770     
+ diagram 7    5.6643990786638270     
+ diagram 8    16.550742147021001     
+ diagram 9    16.552132428438330     
+  debug, constructing EOM-IP sigma vector     27 out of     30
+ diagram 1    5.7757738325428404E-021
+ diagram 2    2.3658435470066775E-006
+ diagram 3    1.2708716526289972E-002
+ diagram 4    1.5071258096941109E-020
+ diagram 5    6.4729784096301390     
+ diagram 6    3.4689274931770657     
+ diagram 7    5.7108995840782359     
+ diagram 8    17.062968014440468     
+ diagram 9    17.074748708407668     
+  debug, constructing EOM-IP sigma vector     28 out of     30
+ diagram 1    7.3426571120181554E-022
+ diagram 2    3.4445223951254645E-006
+ diagram 3    1.4020577479764238E-003
+ diagram 4    1.9159870808834178E-021
+ diagram 5    3.8153278017336993     
+ diagram 6    1.0126643651857754     
+ diagram 7    3.0716036921056267     
+ diagram 8    10.509963495360253     
+ diagram 9    10.511394727194890     
+  debug, constructing EOM-IP sigma vector     29 out of     30
+ diagram 1    1.1637839534701428E-021
+ diagram 2    1.0223520748405989E-005
+ diagram 3    2.0879088708714894E-003
+ diagram 4    3.0367685509086176E-021
+ diagram 5    3.7973439524007886     
+ diagram 6    2.2040472391635553     
+ diagram 7    3.6143400726046941     
+ diagram 8    11.399610287570088     
+ diagram 9    11.400504141249233     
+  debug, constructing EOM-IP sigma vector     30 out of     30
+ diagram 1    1.2564489800954706E-003
+ diagram 2    1.2200667931807515E-003
+ diagram 3    7.5855764252836678E-003
+ diagram 4    3.2785679310992654E-003
+ diagram 5    3.1484146126007526     
+ diagram 6    1.2645110722234800     
+ diagram 7    2.6537304116068281     
+ diagram 8    11.317770333282114     
+ diagram 9    11.318065922156540     
+    Eigenvalue      1 :   0.969924E+00
+    Eigenvalue      2 :   0.111830E+01
+    Eigenvalue      3 :   0.115561E+01
+    Eigenvalue      4 :   0.147404E+01
+    Eigenvalue      5 :   0.150296E+01
+    Eigenvalue      6 :   0.184613E+01
+    Root      1  ||q_k,M||   0.199548E-03
+    Root      2  ||q_k,M||   0.182537E-02
+    Root      3  ||q_k,M||   0.210781E-02
+    Root      4  ||q_k,M||   0.131428E+00
+    Root      5  ||q_k,M||   0.127341E+00
+    Root      6  ||q_k,M||   0.534804E+00
+ 
+ Iteration            6
+ 
+  debug, constructing EOM-IP sigma vector     31 out of     36
+ diagram 1    3.0303125205590899E-002
+ diagram 2    3.1125148422240592E-002
+ diagram 3    9.8064647579982886E-002
+ diagram 4    7.9072732824843422E-002
+ diagram 5    7.3600337534936422     
+ diagram 6    4.2759282104287646     
+ diagram 7    6.9288287075625696     
+ diagram 8    18.124053424999182     
+ diagram 9    18.134691625074385     
+  debug, constructing EOM-IP sigma vector     32 out of     36
+ diagram 1    2.6757091934340472E-020
+ diagram 2    8.1295570200239791E-006
+ diagram 3    8.4904180303037779E-004
+ diagram 4    6.9819741935512455E-020
+ diagram 5    6.8241029157655611     
+ diagram 6    3.5551757696521866     
+ diagram 7    5.9641514778461771     
+ diagram 8    19.400533662914782     
+ diagram 9    19.401104755385031     
+  debug, constructing EOM-IP sigma vector     33 out of     36
+ diagram 1    1.7624932781411889E-023
+ diagram 2    4.4791036197872652E-006
+ diagram 3    1.6807900461561682E-002
+ diagram 4    4.5990358797160643E-023
+ diagram 5    4.1745735491267899     
+ diagram 6    1.8490480859400178     
+ diagram 7    3.9297329880121774     
+ diagram 8    12.340111567879852     
+ diagram 9    12.340790560456545     
+  debug, constructing EOM-IP sigma vector     34 out of     36
+ diagram 1    7.0238481670750638E-021
+ diagram 2    3.2319932311004410E-006
+ diagram 3    3.0922160489230649E-003
+ diagram 4    1.8327973294811284E-020
+ diagram 5    5.1702757345968857     
+ diagram 6    2.8287253179896688     
+ diagram 7    4.5635607466402970     
+ diagram 8    14.054918896536352     
+ diagram 9    14.056375149380012     
+  debug, constructing EOM-IP sigma vector     35 out of     36
+ diagram 1    1.4224557150914180E-020
+ diagram 2    2.7872461159337491E-006
+ diagram 3    2.3115463198311774E-004
+ diagram 4    3.7117445791975045E-020
+ diagram 5    4.4824835419302946     
+ diagram 6    1.6606537504774816     
+ diagram 7    3.9204861843172036     
+ diagram 8    11.806100166168054     
+ diagram 9    11.807405686986014     
+  debug, constructing EOM-IP sigma vector     36 out of     36
+ diagram 1    5.8425200728692743E-003
+ diagram 2    5.7227361224469987E-003
+ diagram 3    8.6944803588711629E-003
+ diagram 4    1.5245425203224307E-002
+ diagram 5    4.6517116443442710     
+ diagram 6    1.8974735542260155     
+ diagram 7    4.3984130154195835     
+ diagram 8    12.262334670656902     
+ diagram 9    12.264445880875456     
+    Eigenvalue      1 :   0.969924E+00
+    Eigenvalue      2 :   0.111830E+01
+    Eigenvalue      3 :   0.115563E+01
+    Eigenvalue      4 :   0.146697E+01
+    Eigenvalue      5 :   0.148328E+01
+    Eigenvalue      6 :   0.161696E+01
+    Root      1  ||q_k,M||   0.347229E-04
+    Root      2  ||q_k,M||   0.299678E-03
+    Root      3  ||q_k,M||   0.736350E-03
+    Root      4  ||q_k,M||   0.274582E-01
+    Root      5  ||q_k,M||   0.110706E+00
+    Root      6  ||q_k,M||   0.188315E+00
+ 
+ Iteration            7
+ 
+  debug, constructing EOM-IP sigma vector     37 out of     42
+ diagram 1    4.4642666702361201E-002
+ diagram 2    4.1743074814558495E-002
+ diagram 3    3.1563242968874659E-002
+ diagram 4   0.11649021785030471     
+ diagram 5    4.1520383101690124     
+ diagram 6    2.7072975071895691     
+ diagram 7    4.5386170894419751     
+ diagram 8    10.722404559262005     
+ diagram 9    10.779130508538325     
+  debug, constructing EOM-IP sigma vector     38 out of     42
+ diagram 1    2.0286698712798506E-019
+ diagram 2    2.4794714812119376E-007
+ diagram 3    1.4845736227214138E-003
+ diagram 4    5.2935949554115641E-019
+ diagram 5    7.0875317572380920     
+ diagram 6    3.7992869319631031     
+ diagram 7    6.0576718432421242     
+ diagram 8    21.717514963158482     
+ diagram 9    21.734997395278246     
+  debug, constructing EOM-IP sigma vector     39 out of     42
+ diagram 1    2.6785492918335050E-020
+ diagram 2    1.5800545872599155E-007
+ diagram 3    2.0568694489895894E-004
+ diagram 4    6.9893851236257063E-020
+ diagram 5    7.0263754021698439     
+ diagram 6    3.4998853895601245     
+ diagram 7    6.5381220193132963     
+ diagram 8    17.226622633915113     
+ diagram 9    17.228251268724783     
+  debug, constructing EOM-IP sigma vector     40 out of     42
+ diagram 1    1.2392385454560541E-020
+ diagram 2    7.3645048251894268E-007
+ diagram 3    2.7605959384177029E-004
+ diagram 4    3.2336591604424756E-020
+ diagram 5    4.2944933145764423     
+ diagram 6    2.5242855518189864     
+ diagram 7    4.3087803939282283     
+ diagram 8    11.096243892878856     
+ diagram 9    11.101622673894806     
+  debug, constructing EOM-IP sigma vector     41 out of     42
+ diagram 1    2.3964592295179524E-019
+ diagram 2    2.0162182230537390E-007
+ diagram 3    2.3239466109438388E-003
+ diagram 4    6.2533015685900805E-019
+ diagram 5    5.6976868110265411     
+ diagram 6    2.5771241754904772     
+ diagram 7    4.8976662993987476     
+ diagram 8    15.818890487727669     
+ diagram 9    15.819021967689508     
+  debug, constructing EOM-IP sigma vector     42 out of     42
+ diagram 1    2.7453974367170841E-003
+ diagram 2    2.8324354303195611E-003
+ diagram 3    3.4954717388493699E-002
+ diagram 4    7.1638181388462147E-003
+ diagram 5    4.6118413615902902     
+ diagram 6    2.2719793411141054     
+ diagram 7    4.2722274678311489     
+ diagram 8    11.679659396484427     
+ diagram 9    11.683944596089345     
+    Eigenvalue      1 :   0.969924E+00
+    Eigenvalue      2 :   0.111830E+01
+    Eigenvalue      3 :   0.114001E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.146660E+01
+    Eigenvalue      6 :   0.147393E+01
+    Root      1  ||q_k,M||   0.785219E-04
+    Root      2  ||q_k,M||   0.476261E-04
+    Root      3  ||q_k,M||   0.151754E+01
+    Root      4  ||q_k,M||   0.144987E-03
+    Root      5  ||q_k,M||   0.140767E-01
+    Root      6  ||q_k,M||   0.488465E-01
+ 
+ Iteration            8
+ 
+  debug, constructing EOM-IP sigma vector     43 out of     48
+ diagram 1    5.6059341297826290E-002
+ diagram 2    5.8461225116620739E-002
+ diagram 3   0.26876360507642377     
+ diagram 4   0.14628079733379742     
+ diagram 5    3.2425835977999538     
+ diagram 6    1.4106325841429110     
+ diagram 7    2.7137798931844626     
+ diagram 8    8.9982768997328719     
+ diagram 9    9.0427734676412967     
+  debug, constructing EOM-IP sigma vector     44 out of     48
+ diagram 1    2.0638243912307976E-020
+ diagram 2    5.2543569006765406E-007
+ diagram 3    5.8104458777293738E-004
+ diagram 4    5.3853268789279590E-020
+ diagram 5    6.5026988834755395     
+ diagram 6    3.4761037818084968     
+ diagram 7    6.0713860598484217     
+ diagram 8    18.444638955811858     
+ diagram 9    18.445484237407598     
+  debug, constructing EOM-IP sigma vector     45 out of     48
+ diagram 1    1.4766766756378546E-003
+ diagram 2    1.4226754337219622E-003
+ diagram 3    4.5595791135042791E-003
+ diagram 4    3.8532283204851412E-003
+ diagram 5    7.3630561484561543     
+ diagram 6    4.2656364820609998     
+ diagram 7    6.7767484105357534     
+ diagram 8    17.622463214970264     
+ diagram 9    17.624996966250432     
+  debug, constructing EOM-IP sigma vector     46 out of     48
+ diagram 1    2.9695819444587894E-025
+ diagram 2    4.8840194289897825E-006
+ diagram 3    8.3105309177151725E-004
+ diagram 4    7.7488034023746900E-025
+ diagram 5    3.9984226169647910     
+ diagram 6    1.8739590168848965     
+ diagram 7    4.0632518103776931     
+ diagram 8    12.261866882894804     
+ diagram 9    12.264309664529330     
+  debug, constructing EOM-IP sigma vector     47 out of     48
+ diagram 1    2.0128892539739949E-022
+ diagram 2    2.7493146459369699E-007
+ diagram 3    3.3521425388937070E-004
+ diagram 4    5.2524171386824007E-022
+ diagram 5    6.6151199501133053     
+ diagram 6    3.4890431976536700     
+ diagram 7    6.1484734613893108     
+ diagram 8    16.725515682172496     
+ diagram 9    16.728133347889440     
+  debug, constructing EOM-IP sigma vector     48 out of     48
+ diagram 1    5.1235384079952746E-022
+ diagram 2    3.3244687005379321E-006
+ diagram 3    9.2487191022404540E-004
+ diagram 4    1.3369320190726974E-021
+ diagram 5    5.3604736647914066     
+ diagram 6    2.6046992534305247     
+ diagram 7    4.3896486370876913     
+ diagram 8    15.071968045116670     
+ diagram 9    15.072214603936349     
+    Eigenvalue      1 :   0.345090E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.139182E+01
+    Eigenvalue      6 :   0.146691E+01
+    Root      1  ||q_k,M||   0.562193E+00
+    Root      2  ||q_k,M||   0.552457E-05
+    Root      3  ||q_k,M||   0.114558E-04
+    Root      4  ||q_k,M||   0.243791E-04
+    Root      5  ||q_k,M||   0.243982E+00
+    Root      6  ||q_k,M||   0.179820E-01
+ 
+ Iteration            9
+ 
+  debug, constructing EOM-IP sigma vector     49 out of     54
+ diagram 1    6.9656350478773438E-004
+ diagram 2    5.6914248327161751E-004
+ diagram 3   0.12928209371670221     
+ diagram 4    1.8176072446631671E-003
+ diagram 5    7.0187121556095020     
+ diagram 6    3.7965618348451509     
+ diagram 7    6.6582161337993693     
+ diagram 8    21.520946148604278     
+ diagram 9    21.575225732240526     
+  debug, constructing EOM-IP sigma vector     50 out of     54
+ diagram 1    1.0305190051364492E-004
+ diagram 2    2.5829617765810034E-004
+ diagram 3    2.1314417536924694E-002
+ diagram 4    2.6890280593581760E-004
+ diagram 5    5.5067603065963473     
+ diagram 6    2.8869435610059067     
+ diagram 7    4.5716741030393973     
+ diagram 8    15.467292349556008     
+ diagram 9    15.480375114739568     
+  debug, constructing EOM-IP sigma vector     51 out of     54
+ diagram 1    2.6772004486270999E-024
+ diagram 2    4.2792815221243821E-007
+ diagram 3    1.7512918746109609E-004
+ diagram 4    6.9858654629385990E-024
+ diagram 5    5.5718614167876463     
+ diagram 6    3.2521277180182739     
+ diagram 7    5.2059287575631048     
+ diagram 8    16.226662702634755     
+ diagram 9    16.227224234097935     
+  debug, constructing EOM-IP sigma vector     52 out of     54
+ diagram 1    4.3968843631796639E-026
+ diagram 2    3.2778655690739815E-006
+ diagram 3    3.0626111782973605E-005
+ diagram 4    1.1473194931303385E-025
+ diagram 5    4.8351168402606683     
+ diagram 6    2.5772052335497890     
+ diagram 7    4.4783960585272338     
+ diagram 8    12.614238668594957     
+ diagram 9    12.623257539607879     
+  debug, constructing EOM-IP sigma vector     53 out of     54
+ diagram 1    4.6876169440471630E-024
+ diagram 2    1.6997479730259385E-006
+ diagram 3    1.4522959376069774E-003
+ diagram 4    1.2231830205204821E-023
+ diagram 5    6.9156065533100435     
+ diagram 6    3.9755020360538031     
+ diagram 7    6.6933078295073827     
+ diagram 8    16.249463862578885     
+ diagram 9    16.250098147747511     
+  debug, constructing EOM-IP sigma vector     54 out of     54
+ diagram 1    2.1527153455440482E-024
+ diagram 2    3.3159013985836566E-007
+ diagram 3    4.2373098531494724E-004
+ diagram 4    5.6172782249779119E-024
+ diagram 5    4.1382015243947823     
+ diagram 6    1.9085512204364283     
+ diagram 7    3.5467874940169186     
+ diagram 8    12.678267436453641     
+ diagram 9    12.679609191616517     
+    Eigenvalue      1 :   0.264319E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136651E+01
+    Eigenvalue      6 :   0.146680E+01
+    Root      1  ||q_k,M||   0.541536E-01
+    Root      2  ||q_k,M||   0.849345E-06
+    Root      3  ||q_k,M||   0.280873E-05
+    Root      4  ||q_k,M||   0.735438E-05
+    Root      5  ||q_k,M||   0.695255E-01
+    Root      6  ||q_k,M||   0.446234E-02
+ 
+ Iteration           10
+ 
+  debug, constructing EOM-IP sigma vector     55 out of     60
+ diagram 1    7.8739519593665794E-007
+ diagram 2    5.9135223536908933E-007
+ diagram 3    5.9502348876656272E-003
+ diagram 4    2.0546227339079028E-006
+ diagram 5    7.8491632840862477     
+ diagram 6    4.3196562730507724     
+ diagram 7    7.1879843770074894     
+ diagram 8    21.064373172856158     
+ diagram 9    21.066735994938121     
+  debug, constructing EOM-IP sigma vector     56 out of     60
+ diagram 1    1.9243917010907067E-006
+ diagram 2    1.0004607421815813E-005
+ diagram 3    3.8316030394333110E-003
+ diagram 4    5.0214923311809664E-006
+ diagram 5    10.414859438965982     
+ diagram 6    6.8623167662488802     
+ diagram 7    9.4485167337955929     
+ diagram 8    21.242227717608600     
+ diagram 9    21.250608553772238     
+  debug, constructing EOM-IP sigma vector     57 out of     60
+ diagram 1    3.5951994703128388E-025
+ diagram 2    1.6531351898775018E-007
+ diagram 3    4.2480106502907012E-004
+ diagram 4    9.3812847763839172E-025
+ diagram 5    5.9101704715819450     
+ diagram 6    3.5030568469430161     
+ diagram 7    5.5976036619784271     
+ diagram 8    15.716788934097103     
+ diagram 9    15.718971770421470     
+  debug, constructing EOM-IP sigma vector     58 out of     60
+ diagram 1    1.2686706954337151E-024
+ diagram 2    3.9420622795769683E-006
+ diagram 3    5.6530329617347271E-003
+ diagram 4    3.3104591774656318E-024
+ diagram 5    9.4516564792442299     
+ diagram 6    5.9519155206655263     
+ diagram 7    8.4790033314417741     
+ diagram 8    22.827104361686143     
+ diagram 9    22.836858964531711     
+  debug, constructing EOM-IP sigma vector     59 out of     60
+ diagram 1    3.4160837546645064E-026
+ diagram 2    1.4291203415447733E-006
+ diagram 3    5.6752901465521009E-004
+ diagram 4    8.9139016588968214E-026
+ diagram 5    6.9953445722894605     
+ diagram 6    4.3402609745995502     
+ diagram 7    7.1975201714907389     
+ diagram 8    16.170306772155762     
+ diagram 9    16.170537127504964     
+  debug, constructing EOM-IP sigma vector     60 out of     60
+ diagram 1    5.7559761248744769E-024
+ diagram 2    9.3925353800779045E-007
+ diagram 3    2.4738228619991102E-003
+ diagram 4    1.5019598116711879E-023
+ diagram 5    5.9007565152701460     
+ diagram 6    2.9968129072565302     
+ diagram 7    5.0400206822298435     
+ diagram 8    15.502760929769826     
+ diagram 9    15.510198985633188     
+    Eigenvalue      1 :   0.263846E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136174E+01
+    Eigenvalue      6 :   0.146624E+01
+    Root      1  ||q_k,M||   0.597509E-02
+    Root      2  ||q_k,M||   0.144364E-06
+    Root      3  ||q_k,M||   0.802726E-06
+    Root      4  ||q_k,M||   0.144177E-05
+    Root      5  ||q_k,M||   0.522770E-01
+    Root      6  ||q_k,M||   0.124932E+00
+ 
+ Iteration           11
+ 
+  debug, constructing EOM-IP sigma vector     61 out of     66
+ diagram 1    4.2082628850443477E-009
+ diagram 2    2.9156295369108231E-006
+ diagram 3    7.3286997229592629E-003
+ diagram 4    1.0981007553122700E-008
+ diagram 5    8.8030391606811751     
+ diagram 6    5.7559310418360514     
+ diagram 7    8.1899883748655053     
+ diagram 8    19.425950171602651     
+ diagram 9    19.427418403998036     
+  debug, constructing EOM-IP sigma vector     62 out of     66
+ diagram 1    6.5687176762714572E-007
+ diagram 2    5.9121666080624453E-007
+ diagram 3    3.0627921225176843E-003
+ diagram 4    1.7140359428070131E-006
+ diagram 5    11.807253278510707     
+ diagram 6    8.3420445966477921     
+ diagram 7    11.674415979812434     
+ diagram 8    21.914804723088178     
+ diagram 9    21.918474353835993     
+  debug, constructing EOM-IP sigma vector     63 out of     66
+ diagram 1    2.6259195099857580E-024
+ diagram 2    7.5796319272992649E-007
+ diagram 3    1.0060662651724196E-005
+ diagram 4    6.8520533913227727E-024
+ diagram 5    7.8688103752856415     
+ diagram 6    4.8187272203875251     
+ diagram 7    7.2058934862117079     
+ diagram 8    20.310364510418928     
+ diagram 9    20.313995451623267     
+  debug, constructing EOM-IP sigma vector     64 out of     66
+ diagram 1    3.8343493929197965E-029
+ diagram 2    1.3785564159370639E-006
+ diagram 3    1.5920158534615158E-004
+ diagram 4    1.0005320673905581E-028
+ diagram 5    8.6839153030537553     
+ diagram 6    4.9603702203690201     
+ diagram 7    7.6303203981916834     
+ diagram 8    20.365581774518606     
+ diagram 9    20.371877972839116     
+  debug, constructing EOM-IP sigma vector     65 out of     66
+ diagram 1    3.9435977454016421E-024
+ diagram 2    1.4233170223340847E-006
+ diagram 3    1.5370013742516345E-003
+ diagram 4    1.0290392452104795E-023
+ diagram 5    8.2110693559680055     
+ diagram 6    4.8294751876809459     
+ diagram 7    8.3293874189371628     
+ diagram 8    20.147111670684232     
+ diagram 9    20.148527608660086     
+  debug, constructing EOM-IP sigma vector     66 out of     66
+ diagram 1    2.1163460676466260E-026
+ diagram 2    2.6082722691733804E-007
+ diagram 3    3.8277319128346806E-004
+ diagram 4    5.5223765217804881E-026
+ diagram 5    4.6600282518454668     
+ diagram 6    2.3399582277542228     
+ diagram 7    3.9504376669004171     
+ diagram 8    13.925398348889606     
+ diagram 9    13.926347946114353     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136066E+01
+    Eigenvalue      6 :   0.143942E+01
+    Root      1  ||q_k,M||   0.789635E-03
+    Root      2  ||q_k,M||   0.305394E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.134894E-06
+    Root      4  ||q_k,M||   0.205849E-06
+    Root      5  ||q_k,M||   0.119935E-01
+    Root      6  ||q_k,M||   0.534802E-01
+ 
+ Iteration           12
+ 
+  debug, constructing EOM-IP sigma vector     67 out of     71
+ diagram 1    2.0239708914188030E-008
+ diagram 2    6.3771858795797151E-006
+ diagram 3    4.2076825963837635E-003
+ diagram 4    5.2813334749015193E-008
+ diagram 5    8.0685543258419017     
+ diagram 6    4.8072719557672121     
+ diagram 7    7.2831477977278078     
+ diagram 8    19.549978531402868     
+ diagram 9    19.551586779814254     
+  debug, constructing EOM-IP sigma vector     68 out of     71
+ diagram 1    4.0460177685720544E-024
+ diagram 2    6.7604341337178870E-007
+ diagram 3    3.8289227217951462E-004
+ diagram 4    1.0557646442349142E-023
+ diagram 5    7.3379010939962184     
+ diagram 6    4.7790337614243077     
+ diagram 7    6.9865671146268786     
+ diagram 8    18.827933777762418     
+ diagram 9    18.828121934962248     
+  debug, constructing EOM-IP sigma vector     69 out of     71
+ diagram 1    8.9180050319610660E-024
+ diagram 2    2.5639790769301890E-006
+ diagram 3    1.9339053916569740E-004
+ diagram 4    2.3270571085940771E-023
+ diagram 5    12.775301574139949     
+ diagram 6    8.5574040942073637     
+ diagram 7    11.921147543261748     
+ diagram 8    25.754844493048939     
+ diagram 9    25.757002807400848     
+  debug, constructing EOM-IP sigma vector     70 out of     71
+ diagram 1    1.8781727282820132E-025
+ diagram 2    1.3185727752889767E-006
+ diagram 3    9.2046329868616911E-005
+ diagram 4    4.9008889127696455E-025
+ diagram 5    6.7800731820672775     
+ diagram 6    3.7786318392657945     
+ diagram 7    6.3138154290566453     
+ diagram 8    17.219601945451977     
+ diagram 9    17.220328922908546     
+  debug, constructing EOM-IP sigma vector     71 out of     71
+ diagram 1    4.5192382709365114E-024
+ diagram 2    1.2636886057309608E-006
+ diagram 3    5.2419016296828688E-004
+ diagram 4    1.1792464240739083E-023
+ diagram 5    5.8741783141564392     
+ diagram 6    3.2249793101647248     
+ diagram 7    5.5191451428216727     
+ diagram 8    15.071480908685555     
+ diagram 9    15.071886788801585     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136061E+01
+    Eigenvalue      6 :   0.143852E+01
+    Root      1  ||q_k,M||   0.102545E-03
+    Root      2  ||q_k,M||   0.299529E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.297458E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.378849E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.303330E-02
+    Root      6  ||q_k,M||   0.991569E-02
+ 
+ Iteration           13
+ 
+  debug, constructing EOM-IP sigma vector     72 out of     74
+ diagram 1    8.8427470582305001E-008
+ diagram 2    5.7696991243654784E-006
+ diagram 3    4.3082231857732214E-003
+ diagram 4    2.3074193530511674E-007
+ diagram 5    12.705551633253002     
+ diagram 6    8.7081093260704083     
+ diagram 7    11.984961035104858     
+ diagram 8    27.597671845630490     
+ diagram 9    27.602367646722552     
+  debug, constructing EOM-IP sigma vector     73 out of     74
+ diagram 1    4.1105974524282869E-023
+ diagram 2    1.4325079954455234E-006
+ diagram 3    5.8797987227153438E-004
+ diagram 4    1.0726160153487244E-022
+ diagram 5    5.6875439915248522     
+ diagram 6    3.1437310771042752     
+ diagram 7    5.1372505385680887     
+ diagram 8    15.580671299823749     
+ diagram 9    15.581119361590879     
+  debug, constructing EOM-IP sigma vector     74 out of     74
+ diagram 1    2.5600027677620706E-025
+ diagram 2    4.0005099862398483E-007
+ diagram 3    5.0191865088297118E-004
+ diagram 4    6.6800507707621666E-025
+ diagram 5    7.3192737188637702     
+ diagram 6    4.7264857994731937     
+ diagram 7    6.7418768221701786     
+ diagram 8    18.009715481652389     
+ diagram 9    18.011328378317963     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136060E+01
+    Eigenvalue      6 :   0.143849E+01
+    Root      1  ||q_k,M||   0.120304E-04
+    Root      2  ||q_k,M||   0.296077E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.138419E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.378985E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.187267E-02
+    Root      6  ||q_k,M||   0.203516E-02
+ 
+ Iteration           14
+ 
+  debug, constructing EOM-IP sigma vector     75 out of     77
+ diagram 1    2.3729593315699983E-008
+ diagram 2    2.3031330809176528E-006
+ diagram 3    2.8759844055973377E-003
+ diagram 4    6.1919811226214684E-008
+ diagram 5    28.244297373336799     
+ diagram 6    23.137670999610201     
+ diagram 7    29.431227133343750     
+ diagram 8    46.282261198590973     
+ diagram 9    46.283049311229618     
+  debug, constructing EOM-IP sigma vector     76 out of     77
+ diagram 1    2.2834989043749300E-023
+ diagram 2    2.9080726693993079E-006
+ diagram 3    1.9483300725261891E-003
+ diagram 4    5.9585437985831186E-023
+ diagram 5    15.530790019185575     
+ diagram 6    11.286912687915342     
+ diagram 7    15.066530394243053     
+ diagram 8    30.487402794579406     
+ diagram 9    30.490152180342189     
+  debug, constructing EOM-IP sigma vector     77 out of     77
+ diagram 1    3.0229312178219408E-023
+ diagram 2    2.8151531049437732E-007
+ diagram 3    1.3158281313442396E-004
+ diagram 4    7.8880125700900299E-023
+ diagram 5    8.3940351311152170     
+ diagram 6    5.7089915609707944     
+ diagram 7    8.0227352990605993     
+ diagram 8    17.542857230791263     
+ diagram 9    17.545659205895248     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136060E+01
+    Eigenvalue      6 :   0.143848E+01
+    Root      1  ||q_k,M||   0.159979E-05
+    Root      2  ||q_k,M||   0.296396E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.135724E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.330991E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.579003E-03
+    Root      6  ||q_k,M||   0.975199E-03
+ 
+ Iteration           15
+ 
+  debug, constructing EOM-IP sigma vector     78 out of     80
+ diagram 1    1.7083892828767178E-007
+ diagram 2    1.2576143291772830E-006
+ diagram 3    7.6347819894027769E-003
+ diagram 4    4.4578573467007681E-007
+ diagram 5    42.223708751641929     
+ diagram 6    37.322729082661013     
+ diagram 7    47.796614253610286     
+ diagram 8    62.941248840586610     
+ diagram 9    62.941804744430101     
+  debug, constructing EOM-IP sigma vector     79 out of     80
+ diagram 1    4.5532201402254034E-023
+ diagram 2    8.1280189739485783E-007
+ diagram 3    2.5786555392959779E-005
+ diagram 4    1.1881136258986025E-022
+ diagram 5    16.883013098622570     
+ diagram 6    13.391134046026449     
+ diagram 7    17.510643638210905     
+ diagram 8    30.472483519996459     
+ diagram 9    30.473936522239988     
+  debug, constructing EOM-IP sigma vector     80 out of     80
+ diagram 1    8.5612333638277539E-024
+ diagram 2    5.4960912567132238E-007
+ diagram 3    4.3509879367513340E-004
+ diagram 4    2.2339613945303202E-023
+ diagram 5    17.028525546977438     
+ diagram 6    13.567318096091897     
+ diagram 7    17.921446130896651     
+ diagram 8    29.912393344291672     
+ diagram 9    29.918390201007593     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136060E+01
+    Eigenvalue      6 :   0.143848E+01
+    Root      1  ||q_k,M||   0.197336E-06
+    Root      2  ||q_k,M||   0.292251E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.126955E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.323342E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.173484E-03
+    Root      6  ||q_k,M||   0.152681E-02
+ 
+ Iteration           16
+ 
+  debug, constructing EOM-IP sigma vector     81 out of     83
+ diagram 1    4.2055119263508001E-009
+ diagram 2    1.2181120752208400E-006
+ diagram 3    8.1225112808454064E-004
+ diagram 4    1.0973829223484704E-008
+ diagram 5    34.709804447228983     
+ diagram 6    30.468148261685020     
+ diagram 7    39.276042555869317     
+ diagram 8    52.161816596986831     
+ diagram 9    52.162673579074792     
+  debug, constructing EOM-IP sigma vector     82 out of     83
+ diagram 1    4.5174182204987807E-023
+ diagram 2    6.5463950623038925E-007
+ diagram 3    1.9395102440530752E-005
+ diagram 4    1.1787715015666954E-022
+ diagram 5    11.120935141638201     
+ diagram 6    7.6033249713048843     
+ diagram 7    10.690033082792315     
+ diagram 8    24.167685830865413     
+ diagram 9    24.168028120701532     
+  debug, constructing EOM-IP sigma vector     83 out of     83
+ diagram 1    4.0281379518389108E-023
+ diagram 2    1.7673731027477728E-006
+ diagram 3    2.1029795349672165E-004
+ diagram 4    1.0510990991404556E-022
+ diagram 5    44.189579691307216     
+ diagram 6    38.981836902587609     
+ diagram 7    50.339983356875663     
+ diagram 8    66.804777929525045     
+ diagram 9    66.808202199864496     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136060E+01
+    Eigenvalue      6 :   0.143848E+01
+    Root      1  ||q_k,M||   0.204821E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.292810E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.113830E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.326914E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.482282E-04
+    Root      6  ||q_k,M||   0.168590E-02
+ 
+ Iteration           17
+ 
+  debug, constructing EOM-IP sigma vector     84 out of     85
+ diagram 1    1.6466106991728176E-022
+ diagram 2    1.1358814655508041E-007
+ diagram 3    1.0205384419588931E-004
+ diagram 4    4.2966528039226363E-022
+ diagram 5    10.367488084560669     
+ diagram 6    6.5832901731684466     
+ diagram 7    9.3438559497889138     
+ diagram 8    20.023085525214245     
+ diagram 9    20.023380998414190     
+  debug, constructing EOM-IP sigma vector     85 out of     85
+ diagram 1    9.6395464809114440E-022
+ diagram 2    5.8117450376438649E-006
+ diagram 3    6.3718514323182638E-005
+ diagram 4    2.5153355578557309E-021
+ diagram 5    20.033278139047329     
+ diagram 6    16.115356094114947     
+ diagram 7    21.155242507783257     
+ diagram 8    32.699553427288457     
+ diagram 9    32.699794527950552     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136060E+01
+    Eigenvalue      6 :   0.143848E+01
+    Root      1  ||q_k,M||   0.204821E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.292810E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.113447E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.321333E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.101876E-04
+    Root      6  ||q_k,M||   0.528513E-03
+ 
+ Iteration           18
+ 
+  debug, constructing EOM-IP sigma vector     86 out of     87
+ diagram 1    5.6582060337002752E-022
+ diagram 2    9.2723569846786955E-007
+ diagram 3    5.4914846175322578E-004
+ diagram 4    1.4764477621870917E-021
+ diagram 5    20.794551455813920     
+ diagram 6    16.581776097409815     
+ diagram 7    21.436614794130392     
+ diagram 8    36.425865407360511     
+ diagram 9    36.426231591139278     
+  debug, constructing EOM-IP sigma vector     87 out of     87
+ diagram 1    4.7389056868338871E-021
+ diagram 2    5.5066421524617011E-006
+ diagram 3    3.4864346953909547E-004
+ diagram 4    1.2365662640895260E-020
+ diagram 5    15.518872436912432     
+ diagram 6    11.468012983943751     
+ diagram 7    14.875425313628245     
+ diagram 8    27.460398822002677     
+ diagram 9    27.463762728053702     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136060E+01
+    Eigenvalue      6 :   0.143848E+01
+    Root      1  ||q_k,M||   0.204821E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.292810E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.109832E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.334746E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.220511E-05
+    Root      6  ||q_k,M||   0.113753E-03
+ 
+ Iteration           19
+ 
+  debug, constructing EOM-IP sigma vector     88 out of     89
+ diagram 1    1.0383665731824435E-021
+ diagram 2    3.5926251993022427E-007
+ diagram 3    1.2445385930286747E-003
+ diagram 4    2.7095054407244779E-021
+ diagram 5    39.880823438498339     
+ diagram 6    35.166576387374839     
+ diagram 7    44.511259315033975     
+ diagram 8    61.325772462560373     
+ diagram 9    61.328887403934665     
+  debug, constructing EOM-IP sigma vector     89 out of     89
+ diagram 1    8.3484695951759073E-020
+ diagram 2    1.2400274930200028E-006
+ diagram 3    1.5115673342701712E-004
+ diagram 4    2.1784429867117448E-019
+ diagram 5    16.657946353165897     
+ diagram 6    11.866631575096585     
+ diagram 7    15.545203294836471     
+ diagram 8    32.808822844201117     
+ diagram 9    32.815302377625855     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136060E+01
+    Eigenvalue      6 :   0.143848E+01
+    Root      1  ||q_k,M||   0.204821E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.292810E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.112243E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.310556E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.459605E-06
+    Root      6  ||q_k,M||   0.225593E-04
+ 
+ Iteration           20
+ 
+  debug, constructing EOM-IP sigma vector     90 out of     91
+ diagram 1    3.1742733456225638E-020
+ diagram 2    1.3438527410949109E-007
+ diagram 3    1.7725262677993416E-004
+ diagram 4    8.2829235093258994E-020
+ diagram 5    57.766179679729021     
+ diagram 6    52.506077389834807     
+ diagram 7    66.099238049828969     
+ diagram 8    82.343179424297119     
+ diagram 9    82.347664683433010     
+  debug, constructing EOM-IP sigma vector     91 out of     91
+ diagram 1    1.0627406801307663E-018
+ diagram 2    1.0840712340588927E-006
+ diagram 3    4.5807313962236242E-004
+ diagram 4    2.7731070406747483E-018
+ diagram 5    29.719256421014407     
+ diagram 6    24.485007745436192     
+ diagram 7    31.371524989705190     
+ diagram 8    52.989328759939383     
+ diagram 9    53.002895142515193     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136060E+01
+    Eigenvalue      6 :   0.143848E+01
+    Root      1  ||q_k,M||   0.204821E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.292810E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.110694E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.309077E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.877153E-07     <<< converged ! 
+    Root      6  ||q_k,M||   0.440894E-05
+ 
+ Iteration           21
+ 
+  debug, constructing EOM-IP sigma vector     92 out of     92
+ diagram 1    3.0115082870356859E-018
+ diagram 2    6.4265769953673334E-008
+ diagram 3    5.4443942225041418E-004
+ diagram 4    7.8582056657522624E-018
+ diagram 5    86.292491922051425     
+ diagram 6    80.153605611959051     
+ diagram 7    99.817154757149396     
+ diagram 8    119.56859941418314     
+ diagram 9    119.57160277606167     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136060E+01
+    Eigenvalue      6 :   0.143848E+01
+    Root      1  ||q_k,M||   0.204821E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.292810E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.107442E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.307984E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.317122E-07     <<< converged ! 
+    Root      6  ||q_k,M||   0.710169E-06
+ 
+ Iteration           22
+ 
+  debug, constructing EOM-IP sigma vector     93 out of     93
+ diagram 1    3.4550938175027543E-017
+ diagram 2    8.3621859268673560E-007
+ diagram 3    8.3629204898789120E-005
+ diagram 4    9.0156942052220342E-017
+ diagram 5    103.51254223288534     
+ diagram 6    96.863993404460089     
+ diagram 7    120.20818228710047     
+ diagram 8    139.15696441816161     
+ diagram 9    139.15892388481478     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136060E+01
+    Eigenvalue      6 :   0.143848E+01
+    Root      1  ||q_k,M||   0.204821E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.292810E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.108649E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.306723E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.306068E-07     <<< converged ! 
+    Root      6  ||q_k,M||   0.135571E-06
+ 
+ Iteration           23
+ 
+  debug, constructing EOM-IP sigma vector     94 out of     94
+ diagram 1    2.8506947446060596E-016
+ diagram 2    2.0840371520279699E-007
+ diagram 3    7.8966018126364060E-005
+ diagram 4    7.4385800928490369E-016
+ diagram 5    67.219290030374140     
+ diagram 6    61.878726464021383     
+ diagram 7    77.475750364308766     
+ diagram 8    94.223548880503614     
+ diagram 9    94.225782013059444     
+    Eigenvalue      1 :   0.263842E+00
+    Eigenvalue      2 :   0.969924E+00
+    Eigenvalue      3 :   0.111830E+01
+    Eigenvalue      4 :   0.115563E+01
+    Eigenvalue      5 :   0.136060E+01
+    Eigenvalue      6 :   0.143848E+01
+    Root      1  ||q_k,M||   0.204821E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.292810E-07     <<< converged ! 
+    Root      3  ||q_k,M||   0.106315E-07     <<< converged ! 
+    Root      4  ||q_k,M||   0.306412E-07     <<< converged ! 
+    Root      5  ||q_k,M||   0.294338E-07     <<< converged ! 
+    Root      6  ||q_k,M||   0.304287E-07     <<< converged ! 
+ 
+ All roots converged.
+ Final size of reduced subspace :           94
+
+ ( 1 au = 27.2113834378 eV  /  219474.631280634 cm-1)
+
+
+ Energy eigenvalues in atomic units
+
+ Level   Rel eigenvalue     Abs eigenvalue      Total Energy    Degeneracy
+
+    1     0.0000000000      0.263841613094     -197.381694203141 (   1 * )
+    2     0.7060823802      0.969923993324     -196.675611822911 (   1 * )
+    3     0.8544587023      1.118300315367     -196.527235500868 (   1 * )
+    4     0.8917863914      1.155628004520     -196.489907811715 (   1 * )
+    5     1.0967566435      1.360598256575     -196.284937559660 (   1 * )
+    6     1.1746358429      1.438477455982     -196.207058360253 (   1 * )
+
+
+ Total average:      -196.5944075431
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)     1|  -1|   3|  -3|   5|  -5|   7|  -7|
+
+    1        0.000000000          0.000000     0|   1|   0|   0|   0|   0|   0|   0|
+    2       19.213478387     154967.170055     0|   1|   0|   0|   0|   0|   0|   0|
+    3       23.251003379     187532.008626     0|   1|   0|   0|   0|   0|   0|   0|
+    4       24.266741442     195724.489439     0|   1|   0|   0|   0|   0|   0|   0|
+    5       29.844265564     240710.259933     0|   1|   0|   0|   0|   0|   0|   0|
+    6       31.963466321     257802.768507     0|   1|   0|   0|   0|   0|   0|   0|
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)     9|  -9|  11| -11|  13| -13|  15| -15|
+
+    1        0.000000000          0.000000     0|   0|   0|   0|   0|   0|   0|   0|
+    2       19.213478387     154967.170055     0|   0|   0|   0|   0|   0|   0|   0|
+    3       23.251003379     187532.008626     0|   0|   0|   0|   0|   0|   0|   0|
+    4       24.266741442     195724.489439     0|   0|   0|   0|   0|   0|   0|   0|
+    5       29.844265564     240710.259933     0|   0|   0|   0|   0|   0|   0|   0|
+    6       31.963466321     257802.768507     0|   0|   0|   0|   0|   0|   0|   0|
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)    17| -17|  19| -19|  21| -21|  23| -23|
+
+    1        0.000000000          0.000000     0|   0|   0|   0|   0|   0|   0|   0|
+    2       19.213478387     154967.170055     0|   0|   0|   0|   0|   0|   0|   0|
+    3       23.251003379     187532.008626     0|   0|   0|   0|   0|   0|   0|   0|
+    4       24.266741442     195724.489439     0|   0|   0|   0|   0|   0|   0|   0|
+    5       29.844265564     240710.259933     0|   0|   0|   0|   0|   0|   0|   0|
+    6       31.963466321     257802.768507     0|   0|   0|   0|   0|   0|   0|   0|
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)    25| -25|  27| -27|  29| -29|  31| -31|
+
+    1        0.000000000          0.000000     0|   0|   0|   0|   0|   0|   0|   0|
+    2       19.213478387     154967.170055     0|   0|   0|   0|   0|   0|   0|   0|
+    3       23.251003379     187532.008626     0|   0|   0|   0|   0|   0|   0|   0|
+    4       24.266741442     195724.489439     0|   0|   0|   0|   0|   0|   0|   0|
+    5       29.844265564     240710.259933     0|   0|   0|   0|   0|   0|   0|   0|
+    6       31.963466321     257802.768507     0|   0|   0|   0|   0|   0|   0|   0|
+
+
+ Analysis of EOM eigenvectors
+ First line  :  State Energy, Eigenvalue
+ other lines : Largest R1 and R2 Vectors (above a treshold of .1E-01)
+
+ Irrep   -1 State     1   -197.38169420      0.26384161
+       -0.98309   |   -1 #   7 (  -0.316) |                         
+       -0.01845      -1 #   4 (  -1.271),    1 #   4 (  -1.271) ->    1 #  11 (   1.526)
+       -0.04108      -1 #   7 (  -0.316),    1 #   4 (  -1.271) ->    1 #  10 (   1.188)
+        0.01628      -1 #   4 (  -1.271),    1 #   5 (  -1.230) ->    1 #  12 (   1.670)
+       -0.01470      -1 #   6 (  -1.053),    1 #   5 (  -1.230) ->    1 #  15 (   3.566)
+       -0.02527      -1 #   7 (  -0.316),    1 #   5 (  -1.230) ->    1 #   8 (   0.883)
+        0.01848      -1 #   7 (  -0.316),    1 #   5 (  -1.230) ->    1 #  13 (   2.138)
+       -0.01117      -1 #   7 (  -0.316),    1 #   5 (  -1.230) ->    1 #  14 (   3.037)
+       -0.02315      -1 #   4 (  -1.271),    1 #   6 (  -1.053) ->    1 #  13 (   2.138)
+       -0.01088      -1 #   5 (  -1.230),    1 #   6 (  -1.053) ->    1 #  15 (   3.566)
+       -0.02364      -1 #   7 (  -0.316),    1 #   6 (  -1.053) ->    1 #   9 (   1.160)
+       -0.02538      -1 #   7 (  -0.316),    1 #   6 (  -1.053) ->    1 #  12 (   1.670)
+       -0.01859      -1 #   4 (  -1.271),    1 #   7 (  -0.316) ->    1 #  10 (   1.188)
+        0.01972      -1 #   4 (  -1.271),    1 #   7 (  -0.316) ->    1 #  15 (   3.566)
+       -0.06911      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #  11 (   1.526)
+        0.01228      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #  11 (   1.526)
+       -0.01901       1 #   5 (  -1.230),    1 #   4 (  -1.271) ->    3 #   5 (   3.294)
+       -0.01951       1 #   7 (  -0.316),    1 #   5 (  -1.230) ->    3 #   7 (   4.422)
+       -0.01319       1 #   7 (  -0.316),    1 #   6 (  -1.053) ->    3 #   5 (   3.294)
+       -0.01306       3 #   1 (  -1.270),   -1 #   4 (  -1.271) ->    3 #   4 (   1.528)
+       -0.01229       3 #   2 (  -0.314),   -1 #   4 (  -1.271) ->    3 #   3 (   1.189)
+        0.01841       3 #   2 (  -0.314),   -1 #   4 (  -1.271) ->    3 #   6 (   3.567)
+        0.03464       3 #   1 (  -1.270),   -1 #   7 (  -0.316) ->    3 #   3 (   1.189)
+        0.05691       3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->    3 #   4 (   1.528)
+       -0.01399      -3 #   2 (  -0.314),    1 #   5 (  -1.230) ->   -1 #   8 (   0.883)
+       -0.01563      -1 #   4 (  -1.271),   -1 #   3 (  -2.724) ->   -1 #  13 (   2.138)
+       -0.01202      -1 #   4 (  -1.271),   -1 #   3 (  -2.724) ->   -1 #  14 (   3.037)
+        0.01192      -1 #   7 (  -0.316),   -1 #   3 (  -2.724) ->   -1 #  12 (   1.670)
+       -0.01894      -1 #   5 (  -1.230),   -1 #   4 (  -1.271) ->   -1 #  12 (   1.670)
+        0.02210      -1 #   6 (  -1.053),   -1 #   4 (  -1.271) ->   -1 #  13 (   2.138)
+       -0.02252      -1 #   7 (  -0.316),   -1 #   4 (  -1.271) ->   -1 #  10 (   1.188)
+       -0.01785      -1 #   7 (  -0.316),   -1 #   4 (  -1.271) ->   -1 #  15 (   3.566)
+       -0.03927      -1 #   7 (  -0.316),   -1 #   5 (  -1.230) ->   -1 #   8 (   0.883)
+       -0.01747      -1 #   7 (  -0.316),   -1 #   5 (  -1.230) ->   -1 #  14 (   3.037)
+       -0.02675      -1 #   7 (  -0.316),   -1 #   6 (  -1.053) ->   -1 #   9 (   1.160)
+       -0.03196      -1 #   7 (  -0.316),   -1 #   6 (  -1.053) ->   -1 #  12 (   1.670)
+       -0.01177       3 #   1 (  -1.270),    1 #   5 (  -1.230) ->    5 #   1 (   3.295)
+       -0.01926      -3 #   1 (  -1.270),   -1 #   4 (  -1.271) ->   -3 #   4 (   1.528)
+       -0.01958      -3 #   2 (  -0.314),   -1 #   4 (  -1.271) ->   -3 #   3 (   1.189)
+        0.02029      -3 #   2 (  -0.314),   -1 #   4 (  -1.271) ->   -3 #   6 (   3.567)
+        0.04217      -3 #   1 (  -1.270),   -1 #   7 (  -0.316) ->   -3 #   3 (   1.189)
+        0.07123      -3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->   -3 #   4 (   1.528)
+
+ Irrep   -1 State     2   -196.67561182      0.96992399
+        0.97924   |   -1 #   6 (  -1.053) |                         
+       -0.01044      -1 #   5 (  -1.230),    1 #   3 (  -2.724) ->    1 #  13 (   2.138)
+       -0.01245      -1 #   6 (  -1.053),    1 #   3 (  -2.724) ->    1 #  12 (   1.670)
+       -0.01496      -1 #   5 (  -1.230),    1 #   4 (  -1.271) ->    1 #  11 (   1.526)
+        0.03697      -1 #   6 (  -1.053),    1 #   4 (  -1.271) ->    1 #  10 (   1.188)
+        0.03452      -1 #   5 (  -1.230),    1 #   5 (  -1.230) ->    1 #  12 (   1.670)
+        0.03291      -1 #   6 (  -1.053),    1 #   5 (  -1.230) ->    1 #   8 (   0.883)
+       -0.03143      -1 #   6 (  -1.053),    1 #   5 (  -1.230) ->    1 #  13 (   2.138)
+        0.01395      -1 #   6 (  -1.053),    1 #   5 (  -1.230) ->    1 #  14 (   3.037)
+       -0.04723      -1 #   5 (  -1.230),    1 #   6 (  -1.053) ->    1 #  13 (   2.138)
+        0.02021      -1 #   6 (  -1.053),    1 #   6 (  -1.053) ->    1 #   9 (   1.160)
+        0.04566      -1 #   6 (  -1.053),    1 #   6 (  -1.053) ->    1 #  12 (   1.670)
+       -0.01095      -1 #   4 (  -1.271),    1 #   7 (  -0.316) ->    1 #   8 (   0.883)
+       -0.01116      -1 #   5 (  -1.230),    1 #   7 (  -0.316) ->    1 #  10 (   1.188)
+        0.02131      -1 #   5 (  -1.230),    1 #   7 (  -0.316) ->    1 #  15 (   3.566)
+        0.05627      -1 #   6 (  -1.053),    1 #   7 (  -0.316) ->    1 #  11 (   1.526)
+        0.01410      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #  12 (   1.670)
+       -0.01098      -3 #   2 (  -0.314),    3 #   1 (  -1.270) ->    1 #   8 (   0.883)
+       -0.01411      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #  12 (   1.670)
+        0.01564       1 #   7 (  -0.316),    1 #   5 (  -1.230) ->    3 #   6 (   3.567)
+       -0.01826       3 #   1 (  -1.270),   -1 #   5 (  -1.230) ->    3 #   4 (   1.528)
+       -0.01566       3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->    3 #   3 (   1.189)
+        0.03697       3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->    3 #   6 (   3.567)
+       -0.03725       3 #   1 (  -1.270),   -1 #   6 (  -1.053) ->    3 #   3 (   1.189)
+       -0.06238       3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->    3 #   4 (   1.528)
+       -0.01565      -3 #   2 (  -0.314),    1 #   5 (  -1.230) ->   -1 #  15 (   3.566)
+       -0.01369      -1 #   5 (  -1.230),   -1 #   3 (  -2.724) ->   -1 #  13 (   2.138)
+       -0.01149      -1 #   5 (  -1.230),   -1 #   3 (  -2.724) ->   -1 #  14 (   3.037)
+       -0.01017      -1 #   6 (  -1.053),   -1 #   3 (  -2.724) ->   -1 #  12 (   1.670)
+       -0.01822      -1 #   5 (  -1.230),   -1 #   4 (  -1.271) ->   -1 #  11 (   1.526)
+        0.03719      -1 #   6 (  -1.053),   -1 #   4 (  -1.271) ->   -1 #  10 (   1.188)
+        0.03065      -1 #   6 (  -1.053),   -1 #   5 (  -1.230) ->   -1 #   8 (   0.883)
+        0.01580      -1 #   6 (  -1.053),   -1 #   5 (  -1.230) ->   -1 #  13 (   2.138)
+        0.01672      -1 #   6 (  -1.053),   -1 #   5 (  -1.230) ->   -1 #  14 (   3.037)
+        0.01567      -1 #   7 (  -0.316),   -1 #   5 (  -1.230) ->   -1 #  10 (   1.188)
+       -0.03695      -1 #   7 (  -0.316),   -1 #   5 (  -1.230) ->   -1 #  15 (   3.566)
+       -0.06227      -1 #   7 (  -0.316),   -1 #   6 (  -1.053) ->   -1 #  11 (   1.526)
+        0.01182       3 #   2 (  -0.314),    1 #   4 (  -1.271) ->    5 #   2 (   4.423)
+       -0.01186       3 #   1 (  -1.270),    1 #   7 (  -0.316) ->    5 #   2 (   4.423)
+       -0.02188       3 #   2 (  -0.314),    1 #   7 (  -0.316) ->    5 #   1 (   3.295)
+        0.01186      -3 #   2 (  -0.314),   -1 #   4 (  -1.271) ->   -3 #   7 (   4.422)
+       -0.01498      -3 #   1 (  -1.270),   -1 #   5 (  -1.230) ->   -3 #   4 (   1.528)
+       -0.01113      -3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->   -3 #   3 (   1.189)
+        0.02132      -3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->   -3 #   6 (   3.567)
+       -0.03702      -3 #   1 (  -1.270),   -1 #   6 (  -1.053) ->   -3 #   3 (   1.189)
+       -0.05634      -3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->   -3 #   4 (   1.528)
+       -0.01182      -3 #   1 (  -1.270),   -1 #   7 (  -0.316) ->   -3 #   7 (   4.422)
+       -0.02189      -3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->   -3 #   5 (   3.294)
+
+ Irrep   -1 State     3   -196.52723550      1.11830032
+        0.96880   |   -1 #   5 (  -1.230) |                         
+       -0.01013      -1 #   5 (  -1.230),    1 #   3 (  -2.724) ->    1 #  12 (   1.670)
+       -0.01027      -1 #   6 (  -1.053),    1 #   3 (  -2.724) ->    1 #  13 (   2.138)
+        0.02847      -1 #   5 (  -1.230),    1 #   4 (  -1.271) ->    1 #  10 (   1.188)
+       -0.01639      -1 #   6 (  -1.053),    1 #   4 (  -1.271) ->    1 #  11 (   1.526)
+       -0.01153      -1 #   7 (  -0.316),    1 #   4 (  -1.271) ->    1 #  12 (   1.670)
+        0.02751      -1 #   5 (  -1.230),    1 #   5 (  -1.230) ->    1 #   8 (   0.883)
+       -0.02946      -1 #   5 (  -1.230),    1 #   5 (  -1.230) ->    1 #  13 (   2.138)
+        0.01330      -1 #   5 (  -1.230),    1 #   5 (  -1.230) ->    1 #  14 (   3.037)
+        0.03860      -1 #   6 (  -1.053),    1 #   5 (  -1.230) ->    1 #  12 (   1.670)
+        0.01628      -1 #   5 (  -1.230),    1 #   6 (  -1.053) ->    1 #   9 (   1.160)
+        0.04396      -1 #   5 (  -1.230),    1 #   6 (  -1.053) ->    1 #  12 (   1.670)
+       -0.05345      -1 #   6 (  -1.053),    1 #   6 (  -1.053) ->    1 #  13 (   2.138)
+       -0.01125      -1 #   3 (  -2.724),    1 #   7 (  -0.316) ->    1 #  15 (   3.566)
+       -0.01644      -1 #   4 (  -1.271),    1 #   7 (  -0.316) ->    1 #   9 (   1.160)
+        0.04956      -1 #   5 (  -1.230),    1 #   7 (  -0.316) ->    1 #  11 (   1.526)
+       -0.02329      -1 #   6 (  -1.053),    1 #   7 (  -0.316) ->    1 #  10 (   1.188)
+        0.01770      -1 #   6 (  -1.053),    1 #   7 (  -0.316) ->    1 #  15 (   3.566)
+        0.08588      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #   8 (   0.883)
+        0.02993      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #  13 (   2.138)
+        0.01824      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #  14 (   3.037)
+       -0.01654      -3 #   2 (  -0.314),    3 #   1 (  -1.270) ->    1 #   9 (   1.160)
+       -0.01157      -3 #   1 (  -1.270),    3 #   2 (  -0.314) ->    1 #  12 (   1.670)
+       -0.08715      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #   8 (   0.883)
+       -0.03012      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #  13 (   2.138)
+       -0.01834      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #  14 (   3.037)
+        0.01049       1 #   5 (  -1.230),    1 #   4 (  -1.271) ->    3 #   6 (   3.567)
+       -0.01380       1 #   7 (  -0.316),    1 #   5 (  -1.230) ->    3 #   4 (   1.528)
+        0.02244       1 #   7 (  -0.316),    1 #   6 (  -1.053) ->    3 #   6 (   3.567)
+       -0.03401       3 #   1 (  -1.270),   -1 #   5 (  -1.230) ->    3 #   3 (   1.189)
+       -0.06346       3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->    3 #   4 (   1.528)
+       -0.01958       3 #   1 (  -1.270),   -1 #   6 (  -1.053) ->    3 #   4 (   1.528)
+       -0.01983       3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->    3 #   3 (   1.189)
+        0.04016       3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->    3 #   6 (   3.567)
+       -0.01048      -3 #   1 (  -1.270),    1 #   5 (  -1.230) ->   -1 #  15 (   3.566)
+       -0.01378      -3 #   2 (  -0.314),    1 #   5 (  -1.230) ->   -1 #  11 (   1.526)
+       -0.02244      -3 #   2 (  -0.314),    1 #   6 (  -1.053) ->   -1 #  15 (   3.566)
+       -0.02026      -1 #   6 (  -1.053),   -1 #   3 (  -2.724) ->   -1 #  13 (   2.138)
+        0.03395      -1 #   5 (  -1.230),   -1 #   4 (  -1.271) ->   -1 #  10 (   1.188)
+       -0.01953      -1 #   6 (  -1.053),   -1 #   4 (  -1.271) ->   -1 #  11 (   1.526)
+       -0.02452      -1 #   6 (  -1.053),   -1 #   5 (  -1.230) ->   -1 #   9 (   1.160)
+       -0.06331      -1 #   7 (  -0.316),   -1 #   5 (  -1.230) ->   -1 #  11 (   1.526)
+        0.01982      -1 #   7 (  -0.316),   -1 #   6 (  -1.053) ->   -1 #  10 (   1.188)
+       -0.04014      -1 #   7 (  -0.316),   -1 #   6 (  -1.053) ->   -1 #  15 (   3.566)
+        0.01243       3 #   1 (  -1.270),    1 #   4 (  -1.271) ->    5 #   2 (   4.423)
+        0.02061       3 #   2 (  -0.314),    1 #   4 (  -1.271) ->    5 #   1 (   3.295)
+       -0.02870       3 #   1 (  -1.270),    1 #   7 (  -0.316) ->    5 #   1 (   3.295)
+       -0.03042       3 #   2 (  -0.314),    1 #   7 (  -0.316) ->    5 #   2 (   4.423)
+       -0.01125      -3 #   2 (  -0.314),   -1 #   3 (  -2.724) ->   -3 #   6 (   3.567)
+        0.01243      -3 #   1 (  -1.270),   -1 #   4 (  -1.271) ->   -3 #   7 (   4.422)
+        0.02869      -3 #   2 (  -0.314),   -1 #   4 (  -1.271) ->   -3 #   5 (   3.294)
+       -0.02852      -3 #   1 (  -1.270),   -1 #   5 (  -1.230) ->   -3 #   3 (   1.189)
+       -0.04963      -3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->   -3 #   4 (   1.528)
+       -0.01641      -3 #   1 (  -1.270),   -1 #   6 (  -1.053) ->   -3 #   4 (   1.528)
+       -0.02328      -3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->   -3 #   3 (   1.189)
+        0.01772      -3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->   -3 #   6 (   3.567)
+       -0.02060      -3 #   1 (  -1.270),   -1 #   7 (  -0.316) ->   -3 #   5 (   3.294)
+       -0.03041      -3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->   -3 #   7 (   4.422)
+
+ Irrep   -1 State     4   -196.48990781      1.15562800
+        0.96251   |   -1 #   4 (  -1.271) |                         
+        0.01060      -1 #   3 (  -2.724),    1 #   3 (  -2.724) ->    1 #  15 (   3.566)
+        0.01139      -1 #   4 (  -1.271),    1 #   3 (  -2.724) ->    1 #   9 (   1.160)
+       -0.01198      -1 #   4 (  -1.271),    1 #   3 (  -2.724) ->    1 #  12 (   1.670)
+        0.04109      -1 #   4 (  -1.271),    1 #   4 (  -1.271) ->    1 #  10 (   1.188)
+        0.03680      -1 #   7 (  -0.316),    1 #   4 (  -1.271) ->    1 #  11 (   1.526)
+        0.03110      -1 #   4 (  -1.271),    1 #   5 (  -1.230) ->    1 #   8 (   0.883)
+        0.01382      -1 #   4 (  -1.271),    1 #   5 (  -1.230) ->    1 #  14 (   3.037)
+       -0.01056      -1 #   5 (  -1.230),    1 #   5 (  -1.230) ->    1 #  15 (   3.566)
+       -0.02137      -1 #   7 (  -0.316),    1 #   5 (  -1.230) ->    1 #  12 (   1.670)
+        0.02770      -1 #   4 (  -1.271),    1 #   6 (  -1.053) ->    1 #   9 (   1.160)
+        0.02347      -1 #   4 (  -1.271),    1 #   6 (  -1.053) ->    1 #  12 (   1.670)
+        0.03653      -1 #   7 (  -0.316),    1 #   6 (  -1.053) ->    1 #  13 (   2.138)
+        0.07700      -1 #   4 (  -1.271),    1 #   7 (  -0.316) ->    1 #  11 (   1.526)
+        0.09222      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #  10 (   1.188)
+       -0.03122      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #  15 (   3.566)
+        0.01746      -3 #   2 (  -0.314),    3 #   1 (  -1.270) ->    1 #  11 (   1.526)
+        0.01413      -3 #   1 (  -1.270),    3 #   2 (  -0.314) ->    1 #  11 (   1.526)
+       -0.04979      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #  10 (   1.188)
+       -0.02225       1 #   4 (  -1.271),    1 #   3 (  -2.724) ->    3 #   5 (   3.294)
+        0.01748       1 #   7 (  -0.316),    1 #   3 (  -2.724) ->    3 #   7 (   4.422)
+       -0.01230       1 #   5 (  -1.230),    1 #   4 (  -1.271) ->    3 #   7 (   4.422)
+       -0.01977       1 #   7 (  -0.316),    1 #   5 (  -1.230) ->    3 #   5 (   3.294)
+       -0.01221       1 #   7 (  -0.316),    1 #   6 (  -1.053) ->    3 #   7 (   4.422)
+        0.01048       3 #   1 (  -1.270),   -1 #   3 (  -2.724) ->    3 #   5 (   3.294)
+       -0.03764       3 #   1 (  -1.270),   -1 #   4 (  -1.271) ->    3 #   3 (   1.189)
+       -0.06303       3 #   2 (  -0.314),   -1 #   4 (  -1.271) ->    3 #   4 (   1.528)
+       -0.01169       3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->    3 #   5 (   3.294)
+        0.01944       3 #   1 (  -1.270),   -1 #   7 (  -0.316) ->    3 #   4 (   1.528)
+        0.04308       3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->    3 #   3 (   1.189)
+       -0.02328       3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->    3 #   6 (   3.567)
+        0.01411      -3 #   2 (  -0.314),    1 #   3 (  -2.724) ->   -1 #   8 (   0.883)
+        0.01809      -3 #   2 (  -0.314),    1 #   3 (  -2.724) ->   -1 #  13 (   2.138)
+        0.01160      -3 #   2 (  -0.314),    1 #   3 (  -2.724) ->   -1 #  14 (   3.037)
+       -0.01079      -3 #   1 (  -1.270),    1 #   5 (  -1.230) ->   -1 #   8 (   0.883)
+       -0.01811      -3 #   2 (  -0.314),    1 #   5 (  -1.230) ->   -1 #  12 (   1.670)
+       -0.01484      -3 #   2 (  -0.314),    1 #   6 (  -1.053) ->   -1 #   8 (   0.883)
+       -0.01207      -1 #   4 (  -1.271),   -1 #   3 (  -2.724) ->   -1 #  12 (   1.670)
+        0.01536      -1 #   7 (  -0.316),   -1 #   3 (  -2.724) ->   -1 #   8 (   0.883)
+        0.02119      -1 #   7 (  -0.316),   -1 #   3 (  -2.724) ->   -1 #  13 (   2.138)
+        0.01644      -1 #   7 (  -0.316),   -1 #   3 (  -2.724) ->   -1 #  14 (   3.037)
+       -0.04189      -1 #   5 (  -1.230),   -1 #   4 (  -1.271) ->   -1 #   8 (   0.883)
+       -0.02133      -1 #   5 (  -1.230),   -1 #   4 (  -1.271) ->   -1 #  14 (   3.037)
+       -0.03566      -1 #   6 (  -1.053),   -1 #   4 (  -1.271) ->   -1 #   9 (   1.160)
+       -0.02388      -1 #   6 (  -1.053),   -1 #   4 (  -1.271) ->   -1 #  12 (   1.670)
+       -0.04251      -1 #   7 (  -0.316),   -1 #   4 (  -1.271) ->   -1 #  11 (   1.526)
+       -0.03944      -1 #   7 (  -0.316),   -1 #   5 (  -1.230) ->   -1 #  12 (   1.670)
+        0.03871      -1 #   7 (  -0.316),   -1 #   6 (  -1.053) ->   -1 #  13 (   2.138)
+        0.01177       3 #   1 (  -1.270),    1 #   3 (  -2.724) ->    5 #   1 (   3.295)
+        0.01150       3 #   2 (  -0.314),    1 #   3 (  -2.724) ->    5 #   2 (   4.423)
+       -0.04133      -3 #   1 (  -1.270),   -1 #   4 (  -1.271) ->   -3 #   3 (   1.189)
+       -0.08179      -3 #   2 (  -0.314),   -1 #   4 (  -1.271) ->   -3 #   4 (   1.528)
+        0.03922      -3 #   1 (  -1.270),   -1 #   7 (  -0.316) ->   -3 #   4 (   1.528)
+        0.11170      -3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->   -3 #   3 (   1.189)
+       -0.03148      -3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->   -3 #   6 (   3.567)
+
+ Irrep   -1 State     5   -196.28493756      1.36059826
+       -0.03481      -1 #   4 (  -1.271),    1 #   4 (  -1.271) ->    1 #   8 (   0.883)
+       -0.02758      -1 #   7 (  -0.316),    1 #   4 (  -1.271) ->    1 #   9 (   1.160)
+       -0.02339      -1 #   7 (  -0.316),    1 #   4 (  -1.271) ->    1 #  12 (   1.670)
+       -0.02773      -1 #   4 (  -1.271),    1 #   7 (  -0.316) ->    1 #   9 (   1.160)
+       -0.02346      -1 #   4 (  -1.271),    1 #   7 (  -0.316) ->    1 #  12 (   1.670)
+        0.02343      -1 #   5 (  -1.230),    1 #   7 (  -0.316) ->    1 #  11 (   1.526)
+       -0.01541      -1 #   6 (  -1.053),    1 #   7 (  -0.316) ->    1 #  10 (   1.188)
+        0.55268      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #   8 (   0.883)
+        0.06216      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #  13 (   2.138)
+        0.06899      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #  14 (   3.037)
+       -0.03700      -3 #   1 (  -1.270),    3 #   1 (  -1.270) ->    1 #   8 (   0.883)
+        0.02856      -3 #   2 (  -0.314),    3 #   1 (  -1.270) ->    1 #   9 (   1.160)
+        0.02420      -3 #   2 (  -0.314),    3 #   1 (  -1.270) ->    1 #  12 (   1.670)
+        0.02871      -3 #   1 (  -1.270),    3 #   2 (  -0.314) ->    1 #   9 (   1.160)
+        0.02427      -3 #   1 (  -1.270),    3 #   2 (  -0.314) ->    1 #  12 (   1.670)
+        0.57616      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #   8 (   0.883)
+        0.06414      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #  13 (   2.138)
+        0.07144      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #  14 (   3.037)
+       -0.02329       1 #   7 (  -0.316),    1 #   5 (  -1.230) ->    3 #   4 (   1.528)
+       -0.01519       1 #   7 (  -0.316),    1 #   6 (  -1.053) ->    3 #   3 (   1.189)
+        0.02366       3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->    3 #   4 (   1.528)
+        0.01564       3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->    3 #   3 (   1.189)
+        0.03588      -3 #   1 (  -1.270),    1 #   4 (  -1.271) ->   -1 #   8 (   0.883)
+       -0.02829      -3 #   2 (  -0.314),    1 #   4 (  -1.271) ->   -1 #   9 (   1.160)
+       -0.02390      -3 #   2 (  -0.314),    1 #   4 (  -1.271) ->   -1 #  12 (   1.670)
+        0.02365      -3 #   2 (  -0.314),    1 #   5 (  -1.230) ->   -1 #  11 (   1.526)
+       -0.01565      -3 #   2 (  -0.314),    1 #   6 (  -1.053) ->   -1 #  10 (   1.188)
+        0.02797      -3 #   1 (  -1.270),    1 #   7 (  -0.316) ->   -1 #   9 (   1.160)
+        0.02374      -3 #   1 (  -1.270),    1 #   7 (  -0.316) ->   -1 #  12 (   1.670)
+        0.56408      -3 #   2 (  -0.314),    1 #   7 (  -0.316) ->   -1 #   8 (   0.883)
+        0.06313      -3 #   2 (  -0.314),    1 #   7 (  -0.316) ->   -1 #  13 (   2.138)
+        0.07019      -3 #   2 (  -0.314),    1 #   7 (  -0.316) ->   -1 #  14 (   3.037)
+       -0.02328      -1 #   7 (  -0.316),   -1 #   5 (  -1.230) ->   -1 #  11 (   1.526)
+        0.01521      -1 #   7 (  -0.316),   -1 #   6 (  -1.053) ->   -1 #  10 (   1.188)
+        0.02349      -3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->   -3 #   4 (   1.528)
+        0.01543      -3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->   -3 #   3 (   1.189)
+
+ Irrep   -1 State     6   -196.20705836      1.43847746
+       -0.02384      -1 #   4 (  -1.271),    1 #   4 (  -1.271) ->    1 #   8 (   0.883)
+       -0.02136      -1 #   7 (  -0.316),    1 #   4 (  -1.271) ->    1 #   9 (   1.160)
+       -0.01728      -1 #   7 (  -0.316),    1 #   4 (  -1.271) ->    1 #  12 (   1.670)
+       -0.01336      -1 #   5 (  -1.230),    1 #   7 (  -0.316) ->    1 #  11 (   1.526)
+        0.01430      -1 #   6 (  -1.053),    1 #   7 (  -0.316) ->    1 #  10 (   1.188)
+        0.37105      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #   8 (   0.883)
+        0.02222      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #  13 (   2.138)
+        0.03164      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    1 #  14 (   3.037)
+       -0.02988      -3 #   1 (  -1.270),    3 #   1 (  -1.270) ->    1 #   8 (   0.883)
+        0.01115      -3 #   2 (  -0.314),    3 #   1 (  -1.270) ->    1 #   9 (   1.160)
+        0.02438      -3 #   1 (  -1.270),    3 #   2 (  -0.314) ->    1 #   9 (   1.160)
+        0.01965      -3 #   1 (  -1.270),    3 #   2 (  -0.314) ->    1 #  12 (   1.670)
+        0.43333      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #   8 (   0.883)
+        0.02755      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #  13 (   2.138)
+        0.03830      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    1 #  14 (   3.037)
+        0.01108       1 #   7 (  -0.316),    1 #   4 (  -1.271) ->    3 #   5 (   3.294)
+        0.01680       3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->    3 #   4 (   1.528)
+        0.01176       3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->    3 #   3 (   1.189)
+       -0.05383      -3 #   1 (  -1.270),    1 #   4 (  -1.271) ->   -1 #   8 (   0.883)
+        0.03263      -3 #   2 (  -0.314),    1 #   4 (  -1.271) ->   -1 #   9 (   1.160)
+        0.02678      -3 #   2 (  -0.314),    1 #   4 (  -1.271) ->   -1 #  12 (   1.670)
+       -0.03348      -3 #   1 (  -1.270),    1 #   7 (  -0.316) ->   -1 #   9 (   1.160)
+       -0.02715      -3 #   1 (  -1.270),    1 #   7 (  -0.316) ->   -1 #  12 (   1.670)
+       -0.80617      -3 #   2 (  -0.314),    1 #   7 (  -0.316) ->   -1 #   8 (   0.883)
+       -0.04998      -3 #   2 (  -0.314),    1 #   7 (  -0.316) ->   -1 #  13 (   2.138)
+       -0.07017      -3 #   2 (  -0.314),    1 #   7 (  -0.316) ->   -1 #  14 (   3.037)
+       -0.01556      -1 #   7 (  -0.316),   -1 #   5 (  -1.230) ->   -1 #  11 (   1.526)
+        0.01049      -1 #   7 (  -0.316),   -1 #   6 (  -1.053) ->   -1 #  10 (   1.188)
+        0.01430       3 #   1 (  -1.270),    1 #   7 (  -0.316) ->    5 #   1 (   3.295)
+        0.01546       3 #   2 (  -0.314),    1 #   7 (  -0.316) ->    5 #   2 (   4.423)
+        0.01526      -3 #   2 (  -0.314),   -1 #   4 (  -1.271) ->   -3 #   5 (   3.294)
+       -0.01308      -3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->   -3 #   4 (   1.528)
+       -0.01433      -3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->   -3 #   3 (   1.189)
+       -0.01556      -3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->   -3 #   7 (   4.422)
+       -0.01228      -3 #   2 (  -0.314),   -3 #   1 (  -1.270) ->   -5 #   1 (   3.295)
+ 
+  <<< SOLVING RHS EOM-IP EQUATIONS FOR SYMMETRY    -3( 4) >>>
+ 
+    Requested      2 eigenvales
+ 
+ Iteration            1
+ 
+  debug, constructing EOM-IP sigma vector      1 out of      2
+ diagram 1    1.7600079408268630     
+ diagram 2    1.7600079408268630     
+ diagram 3    1.7600079408268630     
+ diagram 4   0.45451338125872076     
+ diagram 5   0.45451338125872076     
+ diagram 6   0.45451338125872076     
+ diagram 7   0.45451338125872076     
+ diagram 8   0.45451338125872076     
+ diagram 9   0.45451338125872076     
+  debug, constructing EOM-IP sigma vector      2 out of      2
+ diagram 1   0.14405340663009680     
+ diagram 2   0.14405340663009680     
+ diagram 3   0.14405340663009680     
+ diagram 4   0.37899742619692389     
+ diagram 5   0.37899742619692389     
+ diagram 6   0.37899742619692389     
+ diagram 7   0.37899742619692389     
+ diagram 8   0.37899742619692389     
+ diagram 9   0.37899742619692389     
+    Eigenvalue      1 :   0.379544E+00
+    Eigenvalue      2 :   0.132665E+01
+ warning : numerator is smaller than   2.2250738585072014E-308 (                  Infinity ). element of preconditioner set to 1.
+ warning : numerator is smaller than   2.2250738585072014E-308 (                  Infinity ). element of preconditioner set to 1.
+    Root      1  ||q_k,M||   0.615628E+00
+    Root      2  ||q_k,M||   0.674176E+00
+ 
+ Iteration            2
+ 
+  debug, constructing EOM-IP sigma vector      3 out of      4
+ diagram 1    0.0000000000000000     
+ diagram 2    1.1586002512631843E-004
+ diagram 3   0.39429853663315961     
+ diagram 4    0.0000000000000000     
+ diagram 5    3.1335234478146039     
+ diagram 6    1.3273251804954331     
+ diagram 7    3.2212179227476341     
+ diagram 8    12.083164289636382     
+ diagram 9    12.261007661673750     
+  debug, constructing EOM-IP sigma vector      4 out of      4
+ diagram 1    0.0000000000000000     
+ diagram 2    8.7028807529898657E-005
+ diagram 3   0.44794835381300951     
+ diagram 4    0.0000000000000000     
+ diagram 5    4.1555983959255673     
+ diagram 6    1.9103168774842099     
+ diagram 7    4.3263071312074475     
+ diagram 8    13.581830976859999     
+ diagram 9    13.717710663462251     
+    Eigenvalue      1 :   0.262501E+00
+    Eigenvalue      2 :   0.115682E+01
+    Root      1  ||q_k,M||   0.553450E-01
+    Root      2  ||q_k,M||   0.801797E-01
+ 
+ Iteration            3
+ 
+  debug, constructing EOM-IP sigma vector      5 out of      6
+ diagram 1    0.0000000000000000     
+ diagram 2    1.7672741057887915E-005
+ diagram 3    7.5520014633682509E-003
+ diagram 4    0.0000000000000000     
+ diagram 5    6.9078197595082855     
+ diagram 6    3.2393733835726630     
+ diagram 7    5.6076933082939053     
+ diagram 8    21.434016683468212     
+ diagram 9    21.440845103010211     
+  debug, constructing EOM-IP sigma vector      6 out of      6
+ diagram 1    0.0000000000000000     
+ diagram 2    2.1434524500369760E-005
+ diagram 3    1.1636821923900529E-002
+ diagram 4    0.0000000000000000     
+ diagram 5    4.1040502996666923     
+ diagram 6    1.8808721311256680     
+ diagram 7    3.1259921373532435     
+ diagram 8    9.9156556431305969     
+ diagram 9    9.9208149598369300     
+    Eigenvalue      1 :   0.262172E+00
+    Eigenvalue      2 :   0.115463E+01
+    Root      1  ||q_k,M||   0.582579E-02
+    Root      2  ||q_k,M||   0.274917E-01
+ 
+ Iteration            4
+ 
+  debug, constructing EOM-IP sigma vector      7 out of      8
+ diagram 1    0.0000000000000000     
+ diagram 2    3.2120736161948537E-006
+ diagram 3    2.0779288005584026E-002
+ diagram 4    0.0000000000000000     
+ diagram 5    5.6577926011460127     
+ diagram 6    3.2504132610234584     
+ diagram 7    4.8726969615248708     
+ diagram 8    16.661888332046249     
+ diagram 9    16.666392320284153     
+  debug, constructing EOM-IP sigma vector      8 out of      8
+ diagram 1    0.0000000000000000     
+ diagram 2    3.6649864917823106E-006
+ diagram 3    2.8491358513783267E-002
+ diagram 4    0.0000000000000000     
+ diagram 5    6.4553348381859736     
+ diagram 6    3.3912548669680880     
+ diagram 7    5.5245012214967257     
+ diagram 8    20.257652622778345     
+ diagram 9    20.267808944415570     
+    Eigenvalue      1 :   0.262159E+00
+    Eigenvalue      2 :   0.115415E+01
+    Root      1  ||q_k,M||   0.913014E-03
+    Root      2  ||q_k,M||   0.852756E-02
+ 
+ Iteration            5
+ 
+  debug, constructing EOM-IP sigma vector      9 out of     10
+ diagram 1    0.0000000000000000     
+ diagram 2    1.6458188815676222E-006
+ diagram 3    5.3951532419712353E-004
+ diagram 4    0.0000000000000000     
+ diagram 5    8.0946048753942108     
+ diagram 6    4.6683662503052652     
+ diagram 7    7.6435219537489543     
+ diagram 8    20.369551229582587     
+ diagram 9    20.374884693087154     
+  debug, constructing EOM-IP sigma vector     10 out of     10
+ diagram 1    0.0000000000000000     
+ diagram 2    2.7548443413096381E-006
+ diagram 3    1.1325976212417743E-002
+ diagram 4    0.0000000000000000     
+ diagram 5    6.3799832434655936     
+ diagram 6    3.4382094570857693     
+ diagram 7    5.6717199539322243     
+ diagram 8    16.731062978305896     
+ diagram 9    16.742115337662259     
+    Eigenvalue      1 :   0.262158E+00
+    Eigenvalue      2 :   0.115415E+01
+    Root      1  ||q_k,M||   0.121762E-03
+    Root      2  ||q_k,M||   0.212598E-02
+ 
+ Iteration            6
+ 
+  debug, constructing EOM-IP sigma vector     11 out of     12
+ diagram 1    0.0000000000000000     
+ diagram 2    1.2895088161200554E-006
+ diagram 3    2.6004273374318350E-004
+ diagram 4    0.0000000000000000     
+ diagram 5    8.1887485600552523     
+ diagram 6    4.5487157804886662     
+ diagram 7    7.9911133520069431     
+ diagram 8    21.014304823639321     
+ diagram 9    21.018356768129376     
+  debug, constructing EOM-IP sigma vector     12 out of     12
+ diagram 1    0.0000000000000000     
+ diagram 2    4.9675492258240288E-006
+ diagram 3    1.7647502211041954E-002
+ diagram 4    0.0000000000000000     
+ diagram 5    4.0009128450359688     
+ diagram 6    1.7664424602351509     
+ diagram 7    3.7643439117521851     
+ diagram 8    11.931027941599337     
+ diagram 9    11.931798013539476     
+    Eigenvalue      1 :   0.262158E+00
+    Eigenvalue      2 :   0.115416E+01
+    Root      1  ||q_k,M||   0.144287E-04
+    Root      2  ||q_k,M||   0.763198E-03
+ 
+ Iteration            7
+ 
+  debug, constructing EOM-IP sigma vector     13 out of     14
+ diagram 1    0.0000000000000000     
+ diagram 2    3.4875450481924476E-006
+ diagram 3    1.4039235018158877E-003
+ diagram 4    0.0000000000000000     
+ diagram 5    8.6043720217469382     
+ diagram 6    5.1492456684182653     
+ diagram 7    7.8537943864354860     
+ diagram 8    20.042826025052310     
+ diagram 9    20.047530639491832     
+  debug, constructing EOM-IP sigma vector     14 out of     14
+ diagram 1    0.0000000000000000     
+ diagram 2    3.0360102584173339E-006
+ diagram 3    5.5968340971837029E-004
+ diagram 4    0.0000000000000000     
+ diagram 5    6.1003749630266535     
+ diagram 6    3.0774810705347941     
+ diagram 7    5.7067690273889102     
+ diagram 8    16.114611281173207     
+ diagram 9    16.115408258183063     
+    Eigenvalue      1 :   0.262158E+00
+    Eigenvalue      2 :   0.115416E+01
+    Root      1  ||q_k,M||   0.173133E-05
+    Root      2  ||q_k,M||   0.188620E-03
+ 
+ Iteration            8
+ 
+  debug, constructing EOM-IP sigma vector     15 out of     16
+ diagram 1    0.0000000000000000     
+ diagram 2    1.6838770704141541E-006
+ diagram 3    1.9828743655661255E-003
+ diagram 4    0.0000000000000000     
+ diagram 5    9.4686184778177935     
+ diagram 6    5.5329038342699883     
+ diagram 7    8.1899002845498270     
+ diagram 8    23.009954187319138     
+ diagram 9    23.013498577957709     
+  debug, constructing EOM-IP sigma vector     16 out of     16
+ diagram 1    0.0000000000000000     
+ diagram 2    5.5118569884327516E-006
+ diagram 3    1.0850197532801938E-005
+ diagram 4    0.0000000000000000     
+ diagram 5    4.6548211960357069     
+ diagram 6    2.1084836047483582     
+ diagram 7    3.8565471025941807     
+ diagram 8    14.501661316312704     
+ diagram 9    14.504513621982234     
+    Eigenvalue      1 :   0.262158E+00
+    Eigenvalue      2 :   0.115416E+01
+    Root      1  ||q_k,M||   0.206027E-06
+    Root      2  ||q_k,M||   0.419912E-04
+ 
+ Iteration            9
+ 
+  debug, constructing EOM-IP sigma vector     17 out of     18
+ diagram 1    0.0000000000000000     
+ diagram 2    1.8237382970327252E-006
+ diagram 3    7.2154295596581490E-004
+ diagram 4    0.0000000000000000     
+ diagram 5    13.254460693127559     
+ diagram 6    8.8762637425920481     
+ diagram 7    12.107374444002126     
+ diagram 8    28.594795734995504     
+ diagram 9    28.595834876021648     
+  debug, constructing EOM-IP sigma vector     18 out of     18
+ diagram 1    0.0000000000000000     
+ diagram 2    9.1809196683405177E-006
+ diagram 3    2.7198220689372212E-003
+ diagram 4    0.0000000000000000     
+ diagram 5    6.9838899484156398     
+ diagram 6    4.1917643159966618     
+ diagram 7    6.1309572224970186     
+ diagram 8    19.269444711231092     
+ diagram 9    19.276714414055672     
+    Eigenvalue      1 :   0.262158E+00
+    Eigenvalue      2 :   0.115416E+01
+    Root      1  ||q_k,M||   0.209953E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.821220E-05
+ 
+ Iteration           10
+ 
+  debug, constructing EOM-IP sigma vector     19 out of     19
+ diagram 1    0.0000000000000000     
+ diagram 2    4.6290207449361645E-006
+ diagram 3    9.3069105981995852E-003
+ diagram 4    0.0000000000000000     
+ diagram 5    9.0402792784897201     
+ diagram 6    5.8154738841517419     
+ diagram 7    7.9939756971062232     
+ diagram 8    19.607749384263659     
+ diagram 9    19.617793142568331     
+    Eigenvalue      1 :   0.262158E+00
+    Eigenvalue      2 :   0.115416E+01
+    Root      1  ||q_k,M||   0.209953E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.194686E-05
+ 
+ Iteration           11
+ 
+  debug, constructing EOM-IP sigma vector     20 out of     20
+ diagram 1    0.0000000000000000     
+ diagram 2    1.5569855194507371E-006
+ diagram 3    3.5531711203844792E-004
+ diagram 4    0.0000000000000000     
+ diagram 5    9.1468094989409359     
+ diagram 6    5.7655767382398082     
+ diagram 7    8.0740712939952157     
+ diagram 8    20.241652360783615     
+ diagram 9    20.259453311708612     
+    Eigenvalue      1 :   0.262158E+00
+    Eigenvalue      2 :   0.115416E+01
+    Root      1  ||q_k,M||   0.209953E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.569621E-06
+ 
+ Iteration           12
+ 
+  debug, constructing EOM-IP sigma vector     21 out of     21
+ diagram 1    0.0000000000000000     
+ diagram 2    6.1689514795627695E-007
+ diagram 3    2.9610264941279531E-004
+ diagram 4    0.0000000000000000     
+ diagram 5    6.6923913672402406     
+ diagram 6    4.2785082676084745     
+ diagram 7    5.9203402370798219     
+ diagram 8    15.097015867286945     
+ diagram 9    15.104310138631634     
+    Eigenvalue      1 :   0.262158E+00
+    Eigenvalue      2 :   0.115416E+01
+    Root      1  ||q_k,M||   0.209953E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.215264E-06
+ 
+ Iteration           13
+ 
+  debug, constructing EOM-IP sigma vector     22 out of     22
+ diagram 1    0.0000000000000000     
+ diagram 2    1.5161590070605962E-007
+ diagram 3    2.3671608753541647E-003
+ diagram 4    0.0000000000000000     
+ diagram 5    9.7723749546350351     
+ diagram 6    6.6080482878333688     
+ diagram 7    9.2901538367338414     
+ diagram 8    20.883419544424342     
+ diagram 9    20.884583978342761     
+    Eigenvalue      1 :   0.262158E+00
+    Eigenvalue      2 :   0.115416E+01
+    Root      1  ||q_k,M||   0.209953E-07     <<< converged ! 
+    Root      2  ||q_k,M||   0.713237E-07     <<< converged ! 
+ 
+ All roots converged.
+ Final size of reduced subspace :           22
+
+ ( 1 au = 27.2113834378 eV  /  219474.631280634 cm-1)
+
+
+ Energy eigenvalues in atomic units
+
+ Level   Rel eigenvalue     Abs eigenvalue      Total Energy    Degeneracy
+
+    1     0.0000000000      0.262158369200     -197.383377447035 (   1 * )
+    2     0.8920028049      1.154161174146     -196.491374642089 (   1 * )
+
+
+ Total average:      -196.9373760446
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)     1|  -1|   3|  -3|   5|  -5|   7|  -7|
+
+    1        0.000000000          0.000000     0|   0|   0|   1|   0|   0|   0|   0|
+    2       24.272630353     195771.986717     0|   0|   0|   1|   0|   0|   0|   0|
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)     9|  -9|  11| -11|  13| -13|  15| -15|
+
+    1        0.000000000          0.000000     0|   0|   0|   0|   0|   0|   0|   0|
+    2       24.272630353     195771.986717     0|   0|   0|   0|   0|   0|   0|   0|
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)    17| -17|  19| -19|  21| -21|  23| -23|
+
+    1        0.000000000          0.000000     0|   0|   0|   0|   0|   0|   0|   0|
+    2       24.272630353     195771.986717     0|   0|   0|   0|   0|   0|   0|   0|
+
+
+ Relative real eigenvalues in other units;
+ Symmetry Classification in the Abelian subgroup
+
+ Level  eigenvalue (eV)  Eigenvalue (cm-1)    25| -25|  27| -27|  29| -29|  31| -31|
+
+    1        0.000000000          0.000000     0|   0|   0|   0|   0|   0|   0|   0|
+    2       24.272630353     195771.986717     0|   0|   0|   0|   0|   0|   0|   0|
+
+
+ Analysis of EOM eigenvectors
+ First line  :  State Energy, Eigenvalue
+ other lines : Largest R1 and R2 Vectors (above a treshold of .1E-01)
+
+ Irrep   -3 State     1   -197.38337745      0.26215837
+        0.98314   |   -3 #   2 (  -0.314) |                         
+       -0.01176      -1 #   5 (  -1.230),    1 #   4 (  -1.271) ->    3 #   5 (   3.294)
+        0.01087      -1 #   6 (  -1.053),    1 #   5 (  -1.230) ->    3 #   6 (   3.567)
+        0.01469      -1 #   5 (  -1.230),    1 #   6 (  -1.053) ->    3 #   6 (   3.567)
+       -0.01228      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    3 #   4 (   1.528)
+        0.01847      -3 #   1 (  -1.270),    3 #   1 (  -1.270) ->    3 #   4 (   1.528)
+        0.04108      -3 #   2 (  -0.314),    3 #   1 (  -1.270) ->    3 #   3 (   1.189)
+        0.01855      -3 #   1 (  -1.270),    3 #   2 (  -0.314) ->    3 #   3 (   1.189)
+       -0.01972      -3 #   1 (  -1.270),    3 #   2 (  -0.314) ->    3 #   6 (   3.567)
+        0.06913      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    3 #   4 (   1.528)
+       -0.01900       3 #   1 (  -1.270),   -1 #   5 (  -1.230) ->    5 #   1 (   3.295)
+       -0.01950       3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->    5 #   2 (   4.423)
+       -0.01318       3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->    5 #   1 (   3.295)
+       -0.01562      -3 #   1 (  -1.270),    1 #   3 (  -2.724) ->    1 #  13 (   2.138)
+       -0.01201      -3 #   1 (  -1.270),    1 #   3 (  -2.724) ->    1 #  14 (   3.037)
+       -0.01190      -3 #   2 (  -0.314),    1 #   3 (  -2.724) ->    1 #  12 (   1.670)
+       -0.01303      -3 #   1 (  -1.270),    1 #   4 (  -1.271) ->    1 #  11 (   1.526)
+        0.03455      -3 #   2 (  -0.314),    1 #   4 (  -1.271) ->    1 #  10 (   1.188)
+        0.01891      -3 #   1 (  -1.270),    1 #   5 (  -1.230) ->    1 #  12 (   1.670)
+        0.03922      -3 #   2 (  -0.314),    1 #   5 (  -1.230) ->    1 #   8 (   0.883)
+        0.01743      -3 #   2 (  -0.314),    1 #   5 (  -1.230) ->    1 #  14 (   3.037)
+       -0.02208      -3 #   1 (  -1.270),    1 #   6 (  -1.053) ->    1 #  13 (   2.138)
+        0.02671      -3 #   2 (  -0.314),    1 #   6 (  -1.053) ->    1 #   9 (   1.160)
+        0.03192      -3 #   2 (  -0.314),    1 #   6 (  -1.053) ->    1 #  12 (   1.670)
+       -0.01228      -3 #   1 (  -1.270),    1 #   7 (  -0.316) ->    1 #  10 (   1.188)
+        0.01839      -3 #   1 (  -1.270),    1 #   7 (  -0.316) ->    1 #  15 (   3.566)
+        0.05678      -3 #   2 (  -0.314),    1 #   7 (  -0.316) ->    1 #  11 (   1.526)
+        0.01397      -1 #   7 (  -0.316),   -1 #   5 (  -1.230) ->    1 #   8 (   0.883)
+       -0.01920      -3 #   1 (  -1.270),   -1 #   4 (  -1.271) ->   -1 #  11 (   1.526)
+        0.04204      -3 #   2 (  -0.314),   -1 #   4 (  -1.271) ->   -1 #  10 (   1.188)
+        0.01628      -3 #   1 (  -1.270),   -1 #   5 (  -1.230) ->   -1 #  12 (   1.670)
+        0.02526      -3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->   -1 #   8 (   0.883)
+       -0.01847      -3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->   -1 #  13 (   2.138)
+        0.01116      -3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->   -1 #  14 (   3.037)
+       -0.02313      -3 #   1 (  -1.270),   -1 #   6 (  -1.053) ->   -1 #  13 (   2.138)
+        0.02361      -3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->   -1 #   9 (   1.160)
+        0.02536      -3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->   -1 #  12 (   1.670)
+       -0.01955      -3 #   1 (  -1.270),   -1 #   7 (  -0.316) ->   -1 #  10 (   1.188)
+        0.02027      -3 #   1 (  -1.270),   -1 #   7 (  -0.316) ->   -1 #  15 (   3.566)
+        0.07103      -3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->   -1 #  11 (   1.526)
+        0.02256      -3 #   2 (  -0.314),   -3 #   1 (  -1.270) ->   -3 #   3 (   1.189)
+        0.01783      -3 #   2 (  -0.314),   -3 #   1 (  -1.270) ->   -3 #   6 (   3.567)
+
+ Irrep   -3 State     2   -196.49137464      1.15416117
+       -0.96260   |   -3 #   1 (  -1.270) |                         
+        0.01060      -1 #   3 (  -2.724),    1 #   3 (  -2.724) ->    3 #   6 (   3.567)
+       -0.01176      -1 #   3 (  -2.724),    1 #   4 (  -1.271) ->    3 #   5 (   3.294)
+       -0.01738      -1 #   7 (  -0.316),    1 #   4 (  -1.271) ->    3 #   4 (   1.528)
+       -0.01056      -1 #   5 (  -1.230),    1 #   5 (  -1.230) ->    3 #   6 (   3.567)
+        0.01150      -1 #   3 (  -2.724),    1 #   7 (  -0.316) ->    3 #   7 (   4.422)
+       -0.01407      -1 #   4 (  -1.271),    1 #   7 (  -0.316) ->    3 #   4 (   1.528)
+        0.04892      -1 #   7 (  -0.316),    1 #   7 (  -0.316) ->    3 #   3 (   1.189)
+       -0.04115      -3 #   1 (  -1.270),    3 #   1 (  -1.270) ->    3 #   3 (   1.189)
+       -0.03687      -3 #   2 (  -0.314),    3 #   1 (  -1.270) ->    3 #   4 (   1.528)
+       -0.07713      -3 #   1 (  -1.270),    3 #   2 (  -0.314) ->    3 #   4 (   1.528)
+       -0.09254      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    3 #   3 (   1.189)
+        0.03124      -3 #   2 (  -0.314),    3 #   2 (  -0.314) ->    3 #   6 (   3.567)
+        0.01048       1 #   4 (  -1.271),    1 #   3 (  -2.724) ->    5 #   1 (   3.295)
+        0.01168       1 #   7 (  -0.316),    1 #   5 (  -1.230) ->    5 #   1 (   3.295)
+       -0.02225       3 #   1 (  -1.270),   -1 #   3 (  -2.724) ->    5 #   1 (   3.295)
+       -0.01748       3 #   2 (  -0.314),   -1 #   3 (  -2.724) ->    5 #   2 (   4.423)
+        0.01230       3 #   1 (  -1.270),   -1 #   5 (  -1.230) ->    5 #   2 (   4.423)
+        0.01977       3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->    5 #   1 (   3.295)
+        0.01221       3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->    5 #   2 (   4.423)
+        0.01206      -3 #   1 (  -1.270),    1 #   3 (  -2.724) ->    1 #  12 (   1.670)
+        0.01536      -3 #   2 (  -0.314),    1 #   3 (  -2.724) ->    1 #   8 (   0.883)
+        0.02117      -3 #   2 (  -0.314),    1 #   3 (  -2.724) ->    1 #  13 (   2.138)
+        0.01643      -3 #   2 (  -0.314),    1 #   3 (  -2.724) ->    1 #  14 (   3.037)
+       -0.03758      -3 #   1 (  -1.270),    1 #   4 (  -1.271) ->    1 #  10 (   1.188)
+        0.01940      -3 #   2 (  -0.314),    1 #   4 (  -1.271) ->    1 #  11 (   1.526)
+       -0.04189      -3 #   1 (  -1.270),    1 #   5 (  -1.230) ->    1 #   8 (   0.883)
+       -0.02131      -3 #   1 (  -1.270),    1 #   5 (  -1.230) ->    1 #  14 (   3.037)
+       -0.03942      -3 #   2 (  -0.314),    1 #   5 (  -1.230) ->    1 #  12 (   1.670)
+       -0.03566      -3 #   1 (  -1.270),    1 #   6 (  -1.053) ->    1 #   9 (   1.160)
+       -0.02387      -3 #   1 (  -1.270),    1 #   6 (  -1.053) ->    1 #  12 (   1.670)
+        0.03868      -3 #   2 (  -0.314),    1 #   6 (  -1.053) ->    1 #  13 (   2.138)
+       -0.06291      -3 #   1 (  -1.270),    1 #   7 (  -0.316) ->    1 #  11 (   1.526)
+        0.04298      -3 #   2 (  -0.314),    1 #   7 (  -0.316) ->    1 #  10 (   1.188)
+       -0.02325      -3 #   2 (  -0.314),    1 #   7 (  -0.316) ->    1 #  15 (   3.566)
+        0.01409      -1 #   7 (  -0.316),   -1 #   3 (  -2.724) ->    1 #   8 (   0.883)
+        0.01807      -1 #   7 (  -0.316),   -1 #   3 (  -2.724) ->    1 #  13 (   2.138)
+        0.01159      -1 #   7 (  -0.316),   -1 #   3 (  -2.724) ->    1 #  14 (   3.037)
+       -0.01078      -1 #   5 (  -1.230),   -1 #   4 (  -1.271) ->    1 #   8 (   0.883)
+       -0.01802      -1 #   7 (  -0.316),   -1 #   5 (  -1.230) ->    1 #  12 (   1.670)
+       -0.01477      -1 #   7 (  -0.316),   -1 #   6 (  -1.053) ->    1 #   8 (   0.883)
+       -0.01139      -3 #   1 (  -1.270),   -1 #   3 (  -2.724) ->   -1 #   9 (   1.160)
+        0.01198      -3 #   1 (  -1.270),   -1 #   3 (  -2.724) ->   -1 #  12 (   1.670)
+       -0.04125      -3 #   1 (  -1.270),   -1 #   4 (  -1.271) ->   -1 #  10 (   1.188)
+        0.03911      -3 #   2 (  -0.314),   -1 #   4 (  -1.271) ->   -1 #  11 (   1.526)
+       -0.03110      -3 #   1 (  -1.270),   -1 #   5 (  -1.230) ->   -1 #   8 (   0.883)
+       -0.01381      -3 #   1 (  -1.270),   -1 #   5 (  -1.230) ->   -1 #  14 (   3.037)
+       -0.02136      -3 #   2 (  -0.314),   -1 #   5 (  -1.230) ->   -1 #  12 (   1.670)
+       -0.02769      -3 #   1 (  -1.270),   -1 #   6 (  -1.053) ->   -1 #   9 (   1.160)
+       -0.02346      -3 #   1 (  -1.270),   -1 #   6 (  -1.053) ->   -1 #  12 (   1.670)
+        0.03651      -3 #   2 (  -0.314),   -1 #   6 (  -1.053) ->   -1 #  13 (   2.138)
+       -0.08160      -3 #   1 (  -1.270),   -1 #   7 (  -0.316) ->   -1 #  11 (   1.526)
+        0.11132      -3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->   -1 #  10 (   1.188)
+       -0.03144      -3 #   2 (  -0.314),   -1 #   7 (  -0.316) ->   -1 #  15 (   3.566)
+        0.04256      -3 #   2 (  -0.314),   -3 #   1 (  -1.270) ->   -3 #   4 (   1.528)
+ 
+  Final results for RHS EOM-IP
+ 
+ Analysis of all EOM roots not implemented yet !
+
+
+--------------------------------------------------------------------------------
+
+
+ Today is :     1 Feb 18
+ The time is :  19:33:28
+
+ Status of the calculations
+ Integral sort # 1 :                   Completed, restartable        
+ Integral sort # 2 :                   Completed, restartable        
+ Fock matrix build :                   Completed, restartable        
+ MP2 energy calculation :              Completed, restartable        
+ CCSD energy calculation :             Completed, restartable        
+ CCSD(T) energy calculation :          Completed, restartable        
+ CCSD(T) energy calculation :          Completed, restartable        
+
+ Overview of calculated energies
+@ SCF energy :                              -197.307790976184975
+@ MP2 correlation energy :                    -0.329561706623978
+@ CCSD correlation energy :                   -0.337744840050026
+@ 4th order triples correction :              -0.003319624698941
+@ 5th order triples (T) correction :           0.000252322905466
+@ 5th order triples -T  correction :           0.000374213000820
+@ Total MP2 energy :                        -197.637352682808967
+@ Total CCSD energy :                       -197.645535816234997
+@ Total CCSD+T  energy :                    -197.648855440933943
+@ Total CCSD(T) energy :                    -197.648603118028490
+@ Total CCSD-T  energy :                    -197.648481227933132
+
+
+--------------------------------------------------------------------------------
+
+------ Timing report (in CPU seconds) of module  RELCCSD                      
+
+ Time in Sorting of integrals                 0.370 seconds
+ Time in CCSD equations                       0.257 seconds
+ Time in - T1 equations                       0.031 seconds
+ Time in --- T1EQNS T*[HOV - F]*T             0.000 seconds
+ Time in --- T1EQNS HOV*T2(A,C,I,K            0.002 seconds
+ Time in --- T1EQNS   HV*T / T*HO             0.000 seconds
+ Time in --- T1EQNS VOOO*TAU                  0.005 seconds
+ Time in --- T1EQNS VOVV contribution         0.007 seconds
+ Time in --- T1EQNS VOVO * T(C,K)             0.005 seconds
+ Time in - T2 equations                       0.202 seconds
+ Time in -- GOINTM                            0.002 seconds
+ Time in -- GVINTM                            0.005 seconds
+ Time in -- AINTM                             0.008 seconds
+ Time in -- HINTM                             0.077 seconds
+ Time in --- HINTM: VOVV*T                    0.012 seconds
+ Time in --- HINTM: VVOO contribution         0.034 seconds
+ Time in -- T2 EQNS                           0.082 seconds
+ Time in --- T2EQNS: TAU*AINTM contract       0.004 seconds
+ Time in --- T2EQNS: VOVV*T1                  0.008 seconds
+ Time in --- T2EQNS: HINTM*T2                 0.043 seconds
+ Time in -- BINTM                             0.028 seconds
+ Time in - adding partial T1/T2 amplitu       0.000 seconds
+ Time in - DIIS extrapolation                 0.014 seconds
+ Time in - synchronizing T1 & T2 amplit       0.000 seconds
+ Time in CCSD(T) evaluation                   0.105 seconds
+ Time in -- T3CORR: Integral resorting        0.001 seconds
+ Time in -- T3CORR: VOVV contraction          0.054 seconds
+ Time in -- T3CORR: energy calculation        0.048 seconds
+
+
+ Timing of main modules :         Wallclock (s)       CPU on master (s)
+ Before CC driver :            1386551.89                     8.55
+ Initialization :                    0.01                     0.02
+ Integral sorting :                  0.37                     0.37
+ Energy calculation :                0.32                     0.37
+ First order properties :            0.00                     0.00
+ Second order properties :           0.00                     0.00
+ Fock space energies :               0.00                     0.00
+ EOMCC energies :                    0.00                     0.67
+ Untimed parts :                     0.61                     0.00
+ Total time in CC driver :             1.                     1.43
+
+ Statistics for the word-addressable I/O
+ Number of write calls                                1381.
+ Number of read calls                                 1570.
+ Megabytes written                                    9.022
+ Megabytes read                                     164.644
+ Seconds spent in reads                               0.045
+ Seconds spent in writes                              0.052
+ average I/O speed for write (Mb/s)                 200.496
+ average I/O speed for read  (Mb/s)                3166.227
+
+
+ CPU time (seconds) used in RELCCSD:                     1.4294
+ CPU time (seconds) used before RELCCSD:                 8.5475
+ CPU time (seconds) used in total sofar:                 9.9769
+
+  --- Normal end of RELCCSD Run ---
+
+
+################################################################################
+
+*****************************************************
+********** E N D   of   D I R A C  output  **********
+*****************************************************
+
+
+ 
+     Date and time (Mac OSX): Thu Feb  1 19:33:28 2018
+     Host name              : utonium.home                            
+
+>>>> Node 0, utime: 8, stime: 1, minflt: 121090, majflt: 23, nvcsw: 134, nivcsw: 14679, maxrss: 424525824
+>>>> Total WALL time used in DIRAC: 11s
+  
+  Dynamical Memory Usage Summary for Master
+  
+  Mean allocation size (Mb) :        31.85
+  
+  Largest          10  allocations
+  
+      839.23 Mb at subroutine unknown                                    for WORK in PAMTRA                            
+      839.23 Mb at subroutine unknown                                    for WORK in PSISCF                            
+      839.23 Mb at subroutine unknown                                    for WORK in PAMSET - 2                        
+      839.23 Mb at subroutine unknown                                    for WORK in GMOTRA                            
+      839.23 Mb at subroutine unknown                                    for WORK in PAMSET - 1                        
+      839.23 Mb at subroutine unknown                                    for test allocation of work array in DIRAC mai
+        1.34 Mb at subroutine unknown                                    for ibuf                                      
+        1.34 Mb at subroutine unknown                                    for ibuf                                      
+        1.29 Mb at subroutine unknown                                    for buf3                                      
+        1.29 Mb at subroutine unknown                                    for buf3                                      
+  
+  Peak memory usage:       839.44 MB
+  Peak memory usage:        0.820 GB
+       reached at subroutine : unknown                                   
+              for variable   : buf in butobs                             
+  
+ MEMGET high-water mark:     0.00 MB
+
+*****************************************************
+DIRAC pam run in /Users/andre/Desktop/dirac-tests/dirac_eomcc_avijit_bugfix/build_eomcc_release/test/eomip_energy_symmetry

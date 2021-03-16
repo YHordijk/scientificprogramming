@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+# Testing regular and Fock space coupled cluster
+f = Filter()
+f.add(from_string = 'Electronic energy',
+      num_lines   = 8,
+      rel_tolerance   = 1.0e-9)
+
+f.add(from_string = ' Overview of calculated energies',
+      to_string   = '@ Total CCSD-T  energy',
+      rel_tolerance   = 1.0e-7)
+
+test.run(['ccsd.small.ion.inp'], ['H2O.mol'], f, args='--mw=64 --aw=130         ')
+
+f.add(from_string = '* Dipole moment',
+      to_string   = '1 a.u =   2.54177000 Debye',
+      rel_tolerance   = 1.0e-5)
+
+test.run(['ccsd.small.inp'], ['H2O.mol'], f, args='--mw=64 --aw=130         ')
+
+
+# Testing property calculation with coupled cluster
+f = Filter()
+f.add(from_string = '  Retrieving CC density matrix from file',
+      to_string   = '1 a.u. =  9.71736E+21 V*m**-2',
+      rel_tolerance   = 0.00001)
+
+test.run(['ccsd_gradient_sf.inp'], ['CO_auto.mol'], f, args='--mw=100')
+
+# Testing EOM coupled cluster
+f = Filter()
+f.add(from_string = ' Energy eigenvalues in atomic units',
+      to_re       = 'Relative real eigenvalues in other units;',
+# tolerance here is for differencees in absolute terms because for the complex
+# cases relative changes could be very large for the complex part of the energy
+# even though its magnitude is tiny (e.g. 5x10-9 vs 1x10-9)
+      abs_tolerance = 1.0e-7)
+
+test.run(['eom_ee_dc_inv_nooverlap_16roots.inp'], ['f2_c2h_turbomole-dz.mol'], f, args='--mw=110')
+
+sys.exit(test.return_code)

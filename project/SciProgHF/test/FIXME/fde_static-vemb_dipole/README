@@ -1,0 +1,31 @@
+#
+# For the sake of making the execution of this test faster, the dataset
+# originating from a FDE calculation from ADF, and residing in file
+#
+# EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym.bz2 (for the dft embedding potential)
+#
+# havs been shortened. this means that the calculated quantities in this
+# test are not accurate, but are sufficient to verify the functionality.
+# 
+# if one wishes to run the calculations that are comparable to those e.g. from ADF,
+# it is advised to replace the contents of the "menu" file in this directory
+# by the lines below
+
+sh bzip2 -d EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym.bz2
+
+sh ln -sf EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym vemb.grid
+
+fde_dc_lda.inp      water.sto6g.mol --mw=80 --nw=80 --aw=90 --put=vemb.grid
+fde_dc_lda.inp      water.sto6g.c2v --mw=80 --nw=80 --aw=90 --put=vemb.grid
+
+fde_ll_lda.inp      water.sto6g.mol --mw=80 --nw=80 --aw=90 --put=vemb.grid
+fde_ll_lda.inp      water.sto6g.c2v --mw=80 --nw=80 --aw=90 --put=vemb.grid
+
+fde_twocomp_lda.inp water.sto6g.mol --mw=80 --nw=80 --aw=90 --put=vemb.grid
+fde_twocomp_lda.inp water.sto6g.c2v --mw=80 --nw=80 --aw=90 --put=vemb.grid
+
+fde_dc_cc.inp       water.sto6g.mol --mw=80 --nw=80 --aw=90 --put=vemb.grid
+fde_dc_cc.inp       water.sto6g.c2v --mw=80 --nw=80 --aw=90 --put=vemb.grid
+
+sh bzip2 -9 EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym
+sh rm -f vemb.grid

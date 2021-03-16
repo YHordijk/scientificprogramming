@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string    = '     < state |      A2-EDM      | state > ',
+      num_lines    = 5,
+      rel_tolerance = 1.0e-4)
+f.add(from_string    = '     < state |      A1-SPS      | state > ',
+      num_lines    = 5,
+      rel_tolerance = 1.0e-4)
+f.add(from_string    = '     < state |      A2-SPS      | state > ',
+      num_lines    = 5,
+      rel_tolerance = 1.0e-4)
+f.add(from_string    = '     < state |      X1-HYP      | state > ',
+      num_lines    = 5,
+      rel_tolerance = 1.0e-4)
+f.add(from_string    = '     < state |      Y1-HYP      | state > ',
+      num_lines    = 5,
+      rel_tolerance = 1.0e-4)
+f.add(from_string    = '     < state |      Z1-HYP      | state > ',
+      num_lines    = 5,
+      rel_tolerance = 1.0e-4)
+f.add(from_string    = '     < state |      X2-HYP      | state > ',
+      num_lines    = 5,
+      rel_tolerance = 1.0e-4)
+f.add(from_string    = '     < state |      Y2-HYP      | state > ',
+      num_lines    = 5,
+      rel_tolerance = 1.0e-4)
+f.add(from_string    = '     < state |      Z2-HYP      | state > ',
+      num_lines    = 5,
+      rel_tolerance = 1.0e-4)
+
+test.run(['BeH.inp'], ['BeH.mol'], f)
+
+sys.exit(test.return_code)

@@ -1,0 +1,1702 @@
+
+  ** notice ** integer kinds do not match: dirac --> kind = 8 MPI library --> kind =  4
+  ** interface to 32-bit integer MPI enabled **
+
+DIRAC serial starts by allocating 64000000 words (    488.28 MB -      0.477 GB) of memory
+    out of the allowed maximum of 2147483648 words (  16384.00 MB -     16.000 GB)
+
+Note: maximum allocatable memory for serial run can be set by pam --aw/--ag
+
+ *******************************************************************************
+ *                                                                             *
+ *                                O U T P U T                                  *
+ *                                   from                                      *
+ *                                                                             *
+ *                   @@@@@    @@   @@@@@     @@@@     @@@@@                    *
+ *                   @@  @@        @@  @@   @@  @@   @@                        *
+ *                   @@  @@   @@   @@@@@    @@@@@@   @@                        *
+ *                   @@  @@   @@   @@ @@    @@  @@   @@                        *
+ *                   @@@@@    @@   @@  @@   @@  @@    @@@@@                    *
+ *                                                                             *
+ *                                                                             *
+ %}ZS)S?$=$)]S?$%%>SS$%S$ZZ6cHHMHHHHHHHHMHHM&MHbHH6$L/:<S///</:|/:|:/::!:.::--:%
+ $?S$$%$$$$?%?$(SSS$SSSHMMMMMMMMMMMMMMMMMM6H&6S&SH&&k?6$r~::://///::::::.:::-::$
+ (%?)Z??$$$(S%$>$)S6HMMMMMMMMMMMMMMMMMMMMMMR6M]&&$6HR$&6(i::::::|i|:::::::-:-::(
+ $S?$$)$?$%?))?S/]#MMMMMMMMMMMMMMMMMMMMMMMMMMHM1HRH9R&$$$|):?:/://|:/::/:/.::.:$
+ SS$%%?$%((S)?Z[6MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM&HF$$&/)S?<~::!!:::::::/:-:|.S
+ SS%%%%S$%%%$$MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHHHHHM>?/S/:/:::`:/://:/::-::S
+ ?$SSSS?%SS$)MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM/4?:S:/:::/:::/:/:::.::?
+ S$(S?S$%(?$HMMMMMMMMMMMMMMMMM#&7RH99MMMMMMMMMMMMMMMMMMHHHd$/:::::/::::::-//.:.S
+ (?SS(%)S&HMMMMMMMMMMMMMMMMM#S|///???$9HHMMMMMMMMMDSZ&1S/?</>?~:///::|/!:/-:-:.(
+ $S?%?<H(MMMMMMMMMMMMMMMMR?`. :.:`::<>:``?/*?##*)$:/>       `((%://::/:::::/::/$
+ S$($$)HdMMMMMMMMMMMMMMMP: . `   `  `    `      `-            `Z<:>?::/:::::|:iS
+ c%%%&HMMMMMMMMMMMMMMMM6:                                      `$%)>%%</>!:::::c
+ S?%/MMMMMMMMMMMMMMMMMMH-                                        /ZSS>?:?~:;/::S
+ $SZ?MMMMMMMMMMMMMMMMMH?.                                        \"&((/?//?|:::$
+ $%$%&MMMMMMMMMMMMMMMMM:.                                          ?%/S:</::/::$
+ ($?}&HMMMMMMMMMMMMMMMM>:                                          $%%<?/i:|i::(
+ Z$($&MMMMMMMMMMMMMMMMHk(:.  . -                                   .S/\?\?/!:/:Z
+ (??$<HMMMMMMMMMMMMMMMFk|:   -.-.                                  :%/%/(:/:ii|(
+ SZ(S?]MMMMMMMMMMMMMMHS?:- -  ::.:                                  |/S:</::?||S
+ $%)$$(MMMMMMMMMMMMMMR):`:. :.:::`,,/bcokb/_                       :S?%?|~:/:/:$
+ %$$%$)[[?$?MMMMMMMMMM: :.:-.::::$7?<&7&MMMMMMM#/           _ .. ..:</?:(:/::::%
+ $$$?Z?HHH~|/MMMMMMMMM/`.-.:.:/:%%%%?dHMMMMMMMMMMH?,-   .,bMMMM6//./i~/~:<:::/:$
+ $($S$M//::S?ZHMMMMMH/:.`:::.:/%S/&MMHMMMMMMMMRM&><   ,HMMMMMMMF  :::?:///:|:::$
+ )[$S$S($|_i:#>::*H&?/::.::/:\"://:?>>`:&HMHSMMMM$:`-   MMHMMMMHHT .)i/?////::/)
+ $$[$$>$}:dHH&$$--?S::-:.:::--/-:``./::>%Zi?)&/?`:.`   `H?$T*\" `  /%?>%:)://ii$
+ $&=&/ZS}$RF<:?/-.|%r/:::/:/:`.-.-..|::S//!`\"``          >??:    `SS<S:)!/////$
+ Z&]>b[Z(Z?&%:::../S$$:>:::i`.`. `-.`  `                         ,>%%%:>/>/!|:/Z
+ $$&/F&1$c$?>:>?/,>?$$ZS/::/:-: ...                              |S?S)S?<~:::::$
+ &$&$&$k&>>|?<:<?((/$[/?)i~/:/. - -                              S?:%%%?/:::/::&
+ =[/Z[[Fp[MMH$>?Z&S$$$/$S///||..-           -.-                  /((S$:%<:///:/=
+ $&>1MHHMMMM6M9MMMM$Z$}$S%/:::.`.            .:/,,,dcb>/:.       ((SSSS%:)!//i|$
+ MMMMMMMMMMMR&&RRRHR&&($(?:|i::-             .:%&S&$[&H&``     ../>%;/?>??:<::>M
+ MMMMMMMMMMMMS/}S$&&H&[$SS//:::.:.   . . .v</Jq1&&D]&M&<,      :/::/?%%)S>?://:M
+ MMMMMMMMMMMM?}$/$$kMM&&$(%/?//:..`.  .|//1d/`://?*/*/\"` `     .:/(SS$%(S%)):%M
+ MMMMMMMMMMMM(}$$>&&MMHR#$S%%:?::.:|-.`:;&&b/D/$p=qpv//b/~`   :/~~%%??$=$)Z$S+;M
+ MMMMMMMMMMMM[|S$$Z1]MMMMD[$?$:>)/::: :/?:``???bD&{b<<-`     .,:/)|SS(}Z/$$?/<SM
+ MMMMMMMMMMMM||$)&7k&MMMMH9]$$??Z%|!/:i::`  `` .             SS?SS?Z/]1$/&$c/$SM
+ MMMMMMMMMMMM| -?>[&]HMMMMMMMH1[/7SS(?:/..-` ::/Sc,/_,     _<$?SS%$S/&c&&$&>//<M
+ MMMMMMMMMMMMR  `$&&&HMM9MMMMMMM&&c$%%:/:/:.:.:/\?\?/\    _MMHk/7S/]dq&1S<&&></M
+ MMMMMMMMMMMMM?  :&96MHMMMMMMMMMMMHHk[S%(<<:// `         ,MMMMMMM&/Z6H]DkH]1$&&M
+ MMMMMMMMMMMMMD    99H9HMMMMMMMMMMMMMMMb&%$<:i.:....    .MMMMMMMMM6HHHRH&H&H1SFM
+ MMMMMMMMMMMMMM|   `?HMMMMMMMMMMMMMMMMMMMHk6k&>$&Z$/?_.bHMMMMMMMMMMM&6HRM9H6]ZkM
+ MMMMMMMMMMMMMMM/    `TMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH6RH&R6&M
+ MMMMMMMMMMMMMMMM    -|?HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMFHH6HMD&&M
+ MMMMMMMMMMMMMMMMk  ..:~?9MMMMMMMMMMMMM#`:MMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MHkR6&FM
+ MMMMMMMMMMMMMMMMM/  .-!:%$ZHMMMMMMMMMR` dMMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MRMHH9&M
+ MMMMMMMMMMMMMMMMMML,:.-|::/?&&MMMMMM` .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHRMH&&6M
+ MMMMMMMMMMMMMMMMMMMc%>/:::i<:SMMMMMMHdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHM&969kM
+ MMMMMMMMMMMMMMMMMMMMSS/$$/(|HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHH&HH&M
+ MMMMMMMMMMMMMMMMMMMM6S/?/MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMR96H1DR1M
+ MMMMMMMMMMMMMMMMMMMMM&$MHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH691&&M
+ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&R&9ZM
+ MMMMMMMMMMMMMMMMMMMMMMMMMRHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&96][6M
+ MMMMMMMMMMMMMMMMMMMMMMMMp?:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM96HH1][FM
+ MMMMMMMMMMMMMMMMMMMMMMMM> -HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&1k&$&M
+ *******************************************************************************
+ *                                                                             *
+ *         =========================================================           *
+ *                     Program for Atomic and Molecular                        *
+ *          Direct Iterative Relativistic All-electron Calculations            *
+ *         =========================================================           *
+ *                                                                             *
+ *                                                                             *
+ *    Written by:                                                              *
+ *                                                                             *
+ *    Andre S. P. Gomes        CNRS/Universite de Lille          France        *
+ *    Trond Saue               Universite Toulouse III           France        *
+ *    Lucas Visscher           Vrije Universiteit Amsterdam      Netherlands   *
+ *    Hans Joergen Aa. Jensen  University of Southern Denmark    Denmark       *
+ *    Radovan Bast             UiT The Arctic University of      Norway        *
+ *                                                                             *
+ *    with contributions from:                                                 *
+ *                                                                             *
+ *    Ignacio Agustin Aucar    Northeast National University     Argentina     *
+ *    Vebjoern Bakken          University of Oslo                Norway        *
+ *    Kenneth G. Dyall         Schrodinger, Inc., Portland       USA           *
+ *    Sebastien Dubillard      University of Strasbourg          France        *
+ *    Ulf Ekstroem             University of Oslo                Norway        *
+ *    Ephraim Eliav            University of Tel Aviv            Israel        *
+ *    Thomas Enevoldsen        University of Southern Denmark    Denmark       *
+ *    Elke Fasshauer           University of Aarhus              Denmark       *
+ *    Timo Fleig               Universite Toulouse III           France        *
+ *    Olav Fossgaard           UiT The Arctic University of      Norway        *
+ *    Loic Halbert             Universite de Lille               France        *
+ *    Erik D. Hedegaard        Lund University                   Sweden        *
+ *    Trygve Helgaker          University of Oslo                Norway        *
+ *    Benjamin Helmich-Paris   Max Planck Institute f. Coal Res. Germany       *
+ *    Johan Henriksson         Linkoeping University             Sweden        *
+ *    Miroslav Ilias           Matej Bel University              Slovakia      *
+ *    Christoph R. Jacob       TU Braunschweig                   Germany       *
+ *    Stefan Knecht            ETH Zuerich                       Switzerland   *
+ *    Stanislav Komorovsky     UiT The Arctic University of      Norway        *
+ *    Ossama Kullie            University of Kassel              Germany       *
+ *    Jon K. Laerdahl          University of Oslo                Norway        *
+ *    Christoffer V. Larsen    University of Southern Denmark    Denmark       *
+ *    Yoon Sup Lee             KAIST, Daejeon                    South Korea   *
+ *    Huliyar S. Nataraj       BME/Budapest Univ. Tech. & Econ.  Hungary       *
+ *    Malaya Kumar Nayak       Bhabha Atomic Research Centre     India         *
+ *    Patrick Norman           Stockholm Inst. of Technology     Sweden        *
+ *    Malgorzata Olejniczak    University of Warsaw              Poland        *
+ *    Jeppe Olsen              Aarhus University                 Denmark       *
+ *    Jogvan Magnus H. Olsen   University of Southern Denmark    Denmark       *
+ *    Young Choon Park         KAIST, Daejeon                    South Korea   *
+ *    Jesper K. Pedersen       University of Southern Denmark    Denmark       *
+ *    Markus Pernpointner      University of Heidelberg          Germany       *
+ *    Roberto Di Remigio       UiT The Arctic University of      Norway        *
+ *    Kenneth Ruud             UiT The Arctic University of      Norway        *
+ *    Pawel Salek              Stockholm Inst. of Technology     Sweden        *
+ *    Bernd Schimmelpfennig    Karlsruhe Institute of Technology Germany       *
+ *    Bruno Senjean            University of Leiden              Netherlands   *
+ *    Avijit Shee              University of Michigan            USA           *
+ *    Jetze Sikkema            Vrije Universiteit Amsterdam      Netherlands   *
+ *    Andreas J. Thorvaldsen   UiT The Arctic University of      Norway        *
+ *    Joern Thyssen            University of Southern Denmark    Denmark       *
+ *    Joost van Stralen        Vrije Universiteit Amsterdam      Netherlands   *
+ *    Marta L. Vidal           Technical University of Denmark   Denmark       *
+ *    Sebastien Villaume       Linkoeping University             Sweden        *
+ *    Olivier Visser           University of Groningen           Netherlands   *
+ *    Toke Winther             University of Southern Denmark    Denmark       *
+ *    Shigeyoshi Yamamoto      Chukyo University                 Japan         *
+ *                                                                             *
+ *    For more information about the DIRAC code see http://diracprogram.org    *
+ *                                                                             *
+ *    This is an experimental code. The authors accept no responsibility       *
+ *    for the performance of the code or for the correctness of the results.   *
+ *                                                                             *
+ *    The code (in whole or part) is not to be reproduced for further          *
+ *    distribution without the written permission of the authors or            *
+ *    their representatives.                                                   *
+ *                                                                             *
+ *    If results obtained with this code are published, an                     *
+ *    appropriate citation would be:                                           *
+ *                                                                             *
+ *    DIRAC, a relativistic ab initio electronic structure program,            *
+ *    Release DIRAC19 (2019), written by                                       *
+ *    A. S. P. Gomes, T. Saue, L. Visscher, H. J. Aa. Jensen, and R. Bast,     *
+ *    with contributions from I. A. Aucar, V. Bakken, K. G. Dyall,             *
+ *    S. Dubillard, U. Ekstroem, E. Eliav, T. Enevoldsen, E. Fasshauer,        *
+ *    T. Fleig, O. Fossgaard, L. Halbert, E. D. Hedegaard, T. Helgaker,        *
+ *    J. Henriksson, M. Ilias, Ch. R. Jacob, S. Knecht, S. Komorovsky,         *
+ *    O. Kullie, J. K. Laerdahl, C. V. Larsen, Y. S. Lee, H. S. Nataraj,       *
+ *    M. K. Nayak, P. Norman, M. Olejniczak, J. Olsen, J. M. H. Olsen,         *
+ *    Y. C. Park, J. K. Pedersen, M. Pernpointner, R. Di Remigio, K. Ruud,     *
+ *    P. Salek, B. Schimmelpfennig, B. Senjean, A. Shee, J. Sikkema,           *
+ *    A. J. Thorvaldsen, J. Thyssen, J. van Stralen, M. L. Vidal, S. Villaume, *
+ *    O. Visser, T. Winther, and S. Yamamoto (see http://diracprogram.org).    *
+ *                                                                             *
+ *******************************************************************************
+
+
+Version information
+-------------------
+
+Branch        | master
+Commit hash   | 8743b2c
+Commit author | Radovan Bast
+Commit date   | Wed Apr 29 18:40:41 2020 +0000
+
+
+Configuration and build information
+-----------------------------------
+
+Who compiled             | milias
+Compiled on server       | lxir127
+Operating system         | Linux-3.16.0-10-amd64
+CMake version            | 3.0.2
+CMake generator          | Unix Makefiles
+CMake build type         | release
+Configuration time       | 2020-04-30 07:36:32.862629
+Python version           | 2.7.9
+Fortran compiler         | /cvmfs/it.gsi.de/openmpi/intel/4.0.1_intel17.4/bin/mpif90
+Fortran compiler version | 17.0
+Fortran compiler flags   |  -w -assume byterecl -g -traceback -DVAR_IFORT  -i8 -w -assume byterecl -g -traceback -DVAR_IFORT  -i8
+C compiler               | /cvmfs/it.gsi.de/openmpi/intel/4.0.1_intel17.4/bin/mpicc
+C compiler version       | 17.0
+C compiler flags         |  -g -wd981 -wd279 -wd383 -wd1572 -wd177  -g -wd981 -wd279 -wd383 -wd1572 -wd177 
+C++ compiler             | /cvmfs/it.gsi.de/openmpi/intel/4.0.1_intel17.4/bin/mpicxx
+C++ compiler version     | 17.0.4
+C++ compiler flags       |  -Wno-unknown-pragmas  -Wno-unknown-pragmas 
+Static linking           | False
+64-bit integers          | True
+MPI parallelization      | True
+MPI launcher             | /cvmfs/it.gsi.de/openmpi/intel/4.0.1_intel17.4/bin/mpiexec
+Math libraries           | unknown
+Builtin BLAS library     | OFF
+Builtin LAPACK library   | OFF
+Explicit libraries       | unknown
+Compile definitions      | HAVE_MKL_BLAS;HAVE_MKL_LAPACK;HAVE_MPI;VAR_MPI;VAR_MPI2;VAR_MPI_32BIT_INT;MOD_UNRELEASED;SYS_LINUX;PRG_DIRAC;INT_STAR8;INSTALL_WRKMEM=64000000;HAS_PCMSOLVER;BUILD_GEN1INT;HAS_PELIB;MOD_QCORR;HAS_STIELTJES;MOD_INTEREST;MOD_LAO_REARRANGED;MOD_MCSCF_spinfree;MOD_AOOSOC;MOD_ESR;MOD_KRCC;MOD_SRDFT;MOD_LAPLACE
+
+
+ LAPACK integer*4/8 selftest passed
+ Selftest of ISO_C_BINDING Fortran - C/C++ interoperability PASSED
+
+Execution time and host
+-----------------------
+
+ 
+     Date and time (Linux)  : Thu Apr 30 11:51:43 2020
+     Host name              : lxir127                                 
+
+
+Contents of the input file
+--------------------------
+
+**DIRAC                                                                                             
+.TITLE                                                                                              
+  test xyz input symmetry detection                                                                 
+.INPTEST                                                                                            
+**MOLECULE                                                                                          
+*BASIS                                                                                              
+.DEFAULT                                                                                            
+dyall.v2z                                                                                           
+**INTEGRALS                                                                                         
+*READIN                                                                                             
+.UNCONTRACTED                                                                                       
+*END OF                                                                                             
+
+
+Contents of the molecule file
+-----------------------------
+
+21                                                                                                  
+ ferrocene; ADF imposed D(5h) symmetry                                                              
+Fe       0.00000000      -0.00000000      -0.00000000                                               
+C       1.21405000      -0.00000000      -1.63608000                                                
+C       1.21405000      -0.00000000       1.63608000                                                
+C       0.37516000       1.15463000      -1.63608000                                                
+C       0.37516000      -1.15463000      -1.63608000                                                
+C       0.37516000      -1.15463000       1.63608000                                                
+C       0.37516000       1.15463000       1.63608000                                                
+C      -0.98219000       0.71360000      -1.63608000                                                
+C      -0.98219000      -0.71360000      -1.63608000                                                
+C      -0.98219000      -0.71360000       1.63608000                                                
+C      -0.98219000       0.71360000       1.63608000                                                
+H       2.30223000      -0.00000000      -1.62182000                                                
+H       2.30223000      -0.00000000       1.62182000                                                
+H       0.71143000       2.18955000      -1.62182000                                                
+H       0.71143000      -2.18955000      -1.62182000                                                
+H       0.71143000      -2.18955000       1.62182000                                                
+H       0.71143000       2.18955000       1.62182000                                                
+H      -1.86254000       1.35322000      -1.62182000                                                
+H      -1.86254000      -1.35322000      -1.62182000                                                
+H      -1.86254000      -1.35322000       1.62182000                                                
+H      -1.86254000       1.35322000       1.62182000                                                
+
+
+    *************************************************************************
+    ******************   test xyz input symmetry detection ******************
+    *************************************************************************
+
+ Jobs in this run:
+   * Input test run only
+
+
+    **************************************************************************
+    ************************** General DIRAC set-up **************************
+    **************************************************************************
+
+   CODATA Recommended Values of the Fundamental Physical Constants: 1998  
+                Peter J. Mohr and Barry N. Taylor                         
+   Journal of Physical and Chemical Reference Data, Vol. 28, No. 6, 1999  
+ * The speed of light :        137.0359998
+ * Running in four-component mode
+ * Direct evaluation of the following two-electron integrals:
+   - LL-integrals
+   - SL-integrals
+   - SS-integrals
+   - GT-integrals
+ * Spherical transformation embedded in MO-transformation
+   for large components
+ * Transformation to scalar RKB basis embedded in
+   MO-transformation for small components
+ * Thresholds for linear dependence:
+   Large components:   1.00D-06
+   Small components:   1.00D-08
+ * General print level   :   0
+
+
+    *************************************************************************
+    ****************** Output from HERMIT input processing ******************
+    *************************************************************************
+
+ Default print level:        1
+ Nuclear model: Gaussian charge distribution.
+
+ Two-electron integrals not calculated.
+
+
+ Ordinary (field-free non-relativistic) Hamiltonian integrals not calculated.
+
+
+
+ Changes of defaults for *READIN
+ -------------------------------
+
+
+ Uncontracted basis forced, irrespective of basis input file.
+
+
+
+   ***************************************************************************
+   ****************** Output from MOLECULE input processing ******************
+   ***************************************************************************
+
+
+
+                     SYMADD: Detection of molecular symmetry
+                     ---------------------------------------
+
+ Symmetry test threshold:  5.00E-06
+
+    The molecule has been centered at center of mass
+
+ Symmetry point group found: C(s)           
+
+ No rotational axes were found.
+
+ No unique improper rotational axes were found.
+
+ Mirror planes
+ -----------------------------
+ #1 = Type: 2=h, 1=v, 0=other
+ #2 = Number of atoms in plane
+ #3-5 = normal vector of plane
+ -----------------------------
+ 0     0 :      0.00000000    -1.00000000     0.00000000
+ 0     0 :      0.00000000     0.00000000    -1.00000000
+
+ The following symmetry elements were found: Y  Z     
+
+
+  Symmetry Operations
+  -------------------
+
+  Symmetry operations: 2
+
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Full group is:  C(s)           
+Represented as: C2v
+
+   * The point group was generated by:
+
+      Reflection in the xz-plane
+      Reflection in the xy-plane
+
+   * Group multiplication table
+
+        |  E   C2x  Oxy  Oxz
+   -----+--------------------
+     E  |  E   C2x  Oxy  Oxz
+    C2x | C2x   E   Oxz  Oxy
+    Oxy | Oxy  Oxz   E   C2x
+    Oxz | Oxz  Oxy  C2x   E 
+
+   * Character table
+
+        |  E   C2x  Oxy  Oxz
+   -----+--------------------
+    A1  |   1    1    1    1
+    B1  |   1   -1    1   -1
+    B2  |   1   -1   -1    1
+    A2  |   1    1   -1   -1
+
+   * Direct product table
+
+        | A1   B1   B2   A2 
+   -----+--------------------
+    A1  | A1   B1   B2   A2 
+    B1  | B1   A1   A2   B2 
+    B2  | B2   A2   A1   B1 
+    A2  | A2   B2   B1   A1 
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * One fermion irrep:   E1 
+   * Real group. NZ = 1
+   * Direct product decomposition:
+          E1  x E1  : A1  + B1  + B2  + A2 
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1
+      La  |  A1 (1)  B1 (2)  |
+      Sa  |  A2 (1)  B2 (2)  |
+      Lb  |  B2 (3)  A2 (4)  |
+      Sb  |  B1 (3)  A1 (4)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    A1   1
+    B1   i
+    B2   j
+    A2   k
+
+  QM-QM nuclear repulsion energy :    921.464847072493
+
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types :    3
+  Total number of atoms:   21
+
+  label    atoms   charge   prim    cont     basis   
+  ----------------------------------------------------------------------
+  Fe          1      26     104     104      L  - [15s11p6d2f|15s11p6d2f]                                        
+                            242     242      S  - [11s21p13d6f2g|11s21p13d6f2g]                                  
+  C          10       6      34      34      L  - [10s6p1d|10s6p1d]                                              
+                             85      85      S  - [6s11p6d1f|6s11p6d1f]                                          
+  H          10       1       9       9      L  - [6s1p|6s1p]                                                    
+                             25      25      S  - [1s6p1d|1s6p1d]                                                
+  ----------------------------------------------------------------------
+                            534     534      L  - large components
+                           1342    1342      S  - small components
+  ----------------------------------------------------------------------
+  total:     21      96    1876    1876
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1   2   3
+   1s-3s: K.G. Dyall, Theor. Chem. Acc. (2016) 135:128                            
+   4s-7s: K.G. Dyall, J. Phys. Chem. A. (2009) 113:12638.                         
+   2p-3p: K.G. Dyall, Theor. Chem. Acc. (2016) 135:128                            
+   4p-6p: K.G. Dyall, Theor. Chem. Acc. (1998) 99:366;                            
+          revision K.G. Dyall, Theor. Chem. Acc. (2006) 115:441.                  
+      7p: K.G. Dyall, Theor. Chem. Acc. (2012) 131:1172.                          
+      3d: K.G. Dyall and A.S.P. Gomes, unpublished.                               
+      4d: K.G. Dyall, Theor. Chem. Acc. (2007) 117:483.                           
+      5d: K.G. Dyall, Theor. Chem. Acc. (2004) 112:403;                           
+          revision K.G. Dyall and A.S.P. Gomes, Theor. Chem. Acc. (2009) 125:97.  
+
+
+  Cartesian Coordinates (bohr)
+  ----------------------------
+
+  Total number of coordinates: 63
+
+
+   1   Fe       x      0.0000000000
+   2            y      0.0000000000
+   3            z      0.0000000000
+
+   4   C    1   x      2.2942242463
+   5            y      0.0000000000
+   6            z      3.0917431332
+
+   7   C    2   x      2.2942242463
+   8            y      0.0000000000
+   9            z     -3.0917431332
+
+  10   C    1   x      0.7089518898
+  11            y      2.1819344860
+  12            z      3.0917431332
+
+  13   C    2   x      0.7089518898
+  14            y     -2.1819344860
+  15            z      3.0917431332
+
+  16   C    3   x      0.7089518898
+  17            y      2.1819344860
+  18            z     -3.0917431332
+
+  19   C    4   x      0.7089518898
+  20            y     -2.1819344860
+  21            z     -3.0917431332
+
+  22   C    1   x     -1.8560678781
+  23            y      1.3485085692
+  24            z      3.0917431332
+
+  25   C    2   x     -1.8560678781
+  26            y     -1.3485085692
+  27            z      3.0917431332
+
+  28   C    3   x     -1.8560678781
+  29            y      1.3485085692
+  30            z     -3.0917431332
+
+  31   C    4   x     -1.8560678781
+  32            y     -1.3485085692
+  33            z     -3.0917431332
+
+  34   H    1   x      4.3505864307
+  35            y      0.0000000000
+  36            z      3.0647956385
+
+  37   H    2   x      4.3505864307
+  38            y      0.0000000000
+  39            z     -3.0647956385
+
+  40   H    1   x      1.3444100969
+  41            y      4.1376498565
+  42            z      3.0647956385
+
+  43   H    2   x      1.3444100969
+  44            y     -4.1376498565
+  45            z      3.0647956385
+
+  46   H    3   x      1.3444100969
+  47            y      4.1376498565
+  48            z     -3.0647956385
+
+  49   H    4   x      1.3444100969
+  50            y     -4.1376498565
+  51            z     -3.0647956385
+
+  52   H    1   x     -3.5196882801
+  53            y      2.5572151989
+  54            z      3.0647956385
+
+  55   H    2   x     -3.5196882801
+  56            y     -2.5572151989
+  57            z      3.0647956385
+
+  58   H    3   x     -3.5196882801
+  59            y      2.5572151989
+  60            z     -3.0647956385
+
+  61   H    4   x     -3.5196882801
+  62            y     -2.5572151989
+  63            z     -3.0647956385
+
+
+
+  Cartesian coordinates in XYZ format (Angstrom)
+  ----------------------------------------------
+
+   21
+ 
+Fe     0.0000000000   0.0000000000   0.0000000000
+C      1.2140511819   0.0000000000   1.6360800000
+C      1.2140511819   0.0000000000  -1.6360800000
+C      0.3751611819   1.1546300000   1.6360800000
+C      0.3751611819  -1.1546300000   1.6360800000
+C      0.3751611819   1.1546300000  -1.6360800000
+C      0.3751611819  -1.1546300000  -1.6360800000
+C     -0.9821888181   0.7136000000   1.6360800000
+C     -0.9821888181  -0.7136000000   1.6360800000
+C     -0.9821888181   0.7136000000  -1.6360800000
+C     -0.9821888181  -0.7136000000  -1.6360800000
+H      2.3022311819   0.0000000000   1.6218200000
+H      2.3022311819   0.0000000000  -1.6218200000
+H      0.7114311819   2.1895500000   1.6218200000
+H      0.7114311819  -2.1895500000   1.6218200000
+H      0.7114311819   2.1895500000  -1.6218200000
+H      0.7114311819  -2.1895500000  -1.6218200000
+H     -1.8625388181   1.3532200000   1.6218200000
+H     -1.8625388181  -1.3532200000   1.6218200000
+H     -1.8625388181   1.3532200000  -1.6218200000
+H     -1.8625388181  -1.3532200000  -1.6218200000
+
+
+  Symmetry Coordinates
+  --------------------
+
+  Number of coordinates in each symmetry:    17   15   17   14
+
+
+  Symmetry  A1 ( 1)
+
+    1   Fe    x    1
+    2   C     x    [  4  +    7 ]/2
+    3   C     z    [  6  -    9 ]/2
+    4   C     x    [ 10  +   13  +   16  +   19 ]/4
+    5   C     y    [ 11  -   14  +   17  -   20 ]/4
+    6   C     z    [ 12  +   15  -   18  -   21 ]/4
+    7   C     x    [ 22  +   25  +   28  +   31 ]/4
+    8   C     y    [ 23  -   26  +   29  -   32 ]/4
+    9   C     z    [ 24  +   27  -   30  -   33 ]/4
+   10   H     x    [ 34  +   37 ]/2
+   11   H     z    [ 36  -   39 ]/2
+   12   H     x    [ 40  +   43  +   46  +   49 ]/4
+   13   H     y    [ 41  -   44  +   47  -   50 ]/4
+   14   H     z    [ 42  +   45  -   48  -   51 ]/4
+   15   H     x    [ 52  +   55  +   58  +   61 ]/4
+   16   H     y    [ 53  -   56  +   59  -   62 ]/4
+   17   H     z    [ 54  +   57  -   60  -   63 ]/4
+
+
+  Symmetry  B1 ( 2)
+
+   18   Fe    y    2
+   19   C     y    [  5  +    8 ]/2
+   20   C     x    [ 10  -   13  +   16  -   19 ]/4
+   21   C     y    [ 11  +   14  +   17  +   20 ]/4
+   22   C     z    [ 12  -   15  -   18  +   21 ]/4
+   23   C     x    [ 22  -   25  +   28  -   31 ]/4
+   24   C     y    [ 23  +   26  +   29  +   32 ]/4
+   25   C     z    [ 24  -   27  -   30  +   33 ]/4
+   26   H     y    [ 35  +   38 ]/2
+   27   H     x    [ 40  -   43  +   46  -   49 ]/4
+   28   H     y    [ 41  +   44  +   47  +   50 ]/4
+   29   H     z    [ 42  -   45  -   48  +   51 ]/4
+   30   H     x    [ 52  -   55  +   58  -   61 ]/4
+   31   H     y    [ 53  +   56  +   59  +   62 ]/4
+   32   H     z    [ 54  -   57  -   60  +   63 ]/4
+
+
+  Symmetry  B2 ( 3)
+
+   33   Fe    z    3
+   34   C     x    [  4  -    7 ]/2
+   35   C     z    [  6  +    9 ]/2
+   36   C     x    [ 10  +   13  -   16  -   19 ]/4
+   37   C     y    [ 11  -   14  -   17  +   20 ]/4
+   38   C     z    [ 12  +   15  +   18  +   21 ]/4
+   39   C     x    [ 22  +   25  -   28  -   31 ]/4
+   40   C     y    [ 23  -   26  -   29  +   32 ]/4
+   41   C     z    [ 24  +   27  +   30  +   33 ]/4
+   42   H     x    [ 34  -   37 ]/2
+   43   H     z    [ 36  +   39 ]/2
+   44   H     x    [ 40  +   43  -   46  -   49 ]/4
+   45   H     y    [ 41  -   44  -   47  +   50 ]/4
+   46   H     z    [ 42  +   45  +   48  +   51 ]/4
+   47   H     x    [ 52  +   55  -   58  -   61 ]/4
+   48   H     y    [ 53  -   56  -   59  +   62 ]/4
+   49   H     z    [ 54  +   57  +   60  +   63 ]/4
+
+
+  Symmetry  A2 ( 4)
+
+   50   C     y    [  5  -    8 ]/2
+   51   C     x    [ 10  -   13  -   16  +   19 ]/4
+   52   C     y    [ 11  +   14  -   17  -   20 ]/4
+   53   C     z    [ 12  -   15  +   18  -   21 ]/4
+   54   C     x    [ 22  -   25  -   28  +   31 ]/4
+   55   C     y    [ 23  +   26  -   29  -   32 ]/4
+   56   C     z    [ 24  -   27  +   30  -   33 ]/4
+   57   H     y    [ 35  -   38 ]/2
+   58   H     x    [ 40  -   43  -   46  +   49 ]/4
+   59   H     y    [ 41  +   44  -   47  -   50 ]/4
+   60   H     z    [ 42  -   45  +   48  -   51 ]/4
+   61   H     x    [ 52  -   55  -   58  +   61 ]/4
+   62   H     y    [ 53  +   56  -   59  -   62 ]/4
+   63   H     z    [ 54  -   57  +   60  -   63 ]/4
+
+
+   Interatomic separations (in Angstroms):
+   ---------------------------------------
+
+            Fe          C  1        C  2        C  1        C  2        C  3
+
+   Fe      0.000000
+   C  1    2.037321    0.000000
+   C  2    2.037321    3.272160    0.000000
+   C  1    2.037320    1.427202    3.569865    0.000000
+   C  2    2.037320    1.427202    3.569865    2.309260    0.000000
+   C  3    2.037320    3.569865    1.427202    3.272160    4.004961    0.000000
+   C  4    2.037320    3.569865    1.427202    4.004961    3.272160    2.309260
+   C  1    2.037321    2.309263    4.004963    1.427202    2.309260    3.569865
+   C  2    2.037321    2.309263    4.004963    2.309260    1.427202    4.004961
+   C  3    2.037321    4.004963    2.309263    3.569865    4.004961    1.427202
+   C  4    2.037321    4.004963    2.309263    4.004961    3.569865    2.309260
+   H  1    2.816127    1.088273    3.434829    2.246547    2.246547    3.957358
+   H  2    2.816127    3.434829    1.088273    3.957358    3.957358    2.246547
+   H  1    2.816126    2.246544    3.957356    1.088274    3.361074    3.434829
+   H  2    2.816126    2.246544    3.957356    3.361074    1.088274    4.680868
+   H  3    2.816126    3.957356    2.246544    3.434829    4.680868    1.088274
+   H  4    2.816126    3.957356    2.246544    4.680868    3.434829    3.361074
+   H  1    2.816124    3.361073    4.680868    2.246540    3.361074    3.957354
+   H  2    2.816124    3.361073    4.680868    3.361074    2.246540    4.680868
+   H  3    2.816124    4.680868    3.361073    3.957354    4.680868    2.246540
+   H  4    2.816124    4.680868    3.361073    4.680868    3.957354    3.361074
+
+            C  4        C  1        C  2        C  3        C  4        H  1
+
+   C  4    0.000000
+   C  1    4.004961    0.000000
+   C  2    3.569865    1.427200    0.000000
+   C  3    2.309260    3.272160    3.569864    0.000000
+   C  4    1.427202    3.569864    3.272160    1.427200    0.000000
+   H  1    3.957358    3.361078    3.361078    4.680871    4.680871    0.000000
+   H  2    2.246547    4.680871    4.680871    3.361078    3.361078    3.243640
+   H  1    4.680868    2.246549    3.361076    3.957359    4.680870    2.706432
+   H  2    3.434829    3.361076    2.246549    4.680870    3.957359    2.706432
+   H  3    3.361074    3.957359    4.680870    2.246549    3.361076    4.224450
+   H  4    1.088274    4.680870    3.957359    3.361076    2.246549    4.224450
+   H  1    4.680868    1.088271    2.246545    3.434828    3.957357    4.379100
+   H  2    3.957354    2.246545    1.088271    3.957357    3.434828    4.379100
+   H  3    3.361074    3.434828    3.957357    1.088271    2.246545    5.449561
+   H  4    2.246540    3.957357    3.434828    2.246545    1.088271    5.449561
+
+            H  2        H  1        H  2        H  3        H  4        H  1
+
+   H  2    0.000000
+   H  1    4.224450    0.000000
+   H  2    4.224450    4.379100    0.000000
+   H  3    2.706432    3.243640    5.449561    0.000000
+   H  4    2.706432    5.449561    3.243640    4.379100    0.000000
+   H  1    5.449561    2.706431    4.379103    4.224449    5.449563    0.000000
+   H  2    5.449561    4.379103    2.706431    5.449563    4.224449    2.706440
+   H  3    4.379100    4.224449    5.449563    2.706431    4.379103    3.243640
+   H  4    4.379100    5.449563    4.224449    4.379103    2.706431    4.224455
+
+            H  2        H  3        H  4
+
+   H  2    0.000000
+   H  3    4.224455    0.000000
+   H  4    3.243640    2.706440    0.000000
+
+
+
+
+  Bond distances (angstroms):
+  ---------------------------
+
+                  atom 1     atom 2                           distance
+                  ------     ------                           --------
+  bond distance:    C  1       Fe                             2.037321
+  bond distance:    C  2       Fe                             2.037321
+  bond distance:    C  1       Fe                             2.037320
+  bond distance:    C  1       C  1                           1.427202
+  bond distance:    C  2       Fe                             2.037320
+  bond distance:    C  2       C  1                           1.427202
+  bond distance:    C  3       Fe                             2.037320
+  bond distance:    C  3       C  2                           1.427202
+  bond distance:    C  4       Fe                             2.037320
+  bond distance:    C  4       C  2                           1.427202
+  bond distance:    C  1       Fe                             2.037321
+  bond distance:    C  1       C  1                           1.427202
+  bond distance:    C  2       Fe                             2.037321
+  bond distance:    C  2       C  2                           1.427202
+  bond distance:    C  2       C  1                           1.427200
+  bond distance:    C  3       Fe                             2.037321
+  bond distance:    C  3       C  3                           1.427202
+  bond distance:    C  4       Fe                             2.037321
+  bond distance:    C  4       C  4                           1.427202
+  bond distance:    C  4       C  3                           1.427200
+  bond distance:    H  1       C  1                           1.088273
+  bond distance:    H  2       C  2                           1.088273
+  bond distance:    H  1       C  1                           1.088274
+  bond distance:    H  2       C  2                           1.088274
+  bond distance:    H  3       C  3                           1.088274
+  bond distance:    H  4       C  4                           1.088274
+  bond distance:    H  1       C  1                           1.088271
+  bond distance:    H  2       C  2                           1.088271
+  bond distance:    H  3       C  3                           1.088271
+  bond distance:    H  4       C  4                           1.088271
+
+
+  Bond angles (degrees):
+  ----------------------
+
+                  atom 1     atom 2     atom 3                   angle
+                  ------     ------     ------                   -----
+  bond angle:       C  2       Fe         C  1                 106.846
+  bond angle:       C  1       Fe         C  1                  41.007
+  bond angle:       C  1       Fe         C  2                 122.355
+  bond angle:       C  2       Fe         C  1                  41.007
+  bond angle:       C  2       Fe         C  2                 122.355
+  bond angle:       C  2       Fe         C  1                  69.046
+  bond angle:       C  3       Fe         C  1                 122.355
+  bond angle:       C  3       Fe         C  2                  41.007
+  bond angle:       C  3       Fe         C  1                 106.846
+  bond angle:       C  3       Fe         C  2                 158.777
+  bond angle:       C  4       Fe         C  1                 122.355
+  bond angle:       C  4       Fe         C  2                  41.007
+  bond angle:       C  4       Fe         C  1                 158.777
+  bond angle:       C  4       Fe         C  2                 106.846
+  bond angle:       C  4       Fe         C  3                  69.046
+  bond angle:       C  1       Fe         C  1                  69.046
+  bond angle:       C  1       Fe         C  2                 158.777
+  bond angle:       C  1       Fe         C  1                  41.007
+  bond angle:       C  1       Fe         C  2                  69.046
+  bond angle:       C  1       Fe         C  3                 122.355
+  bond angle:       C  1       Fe         C  4                 158.777
+  bond angle:       C  2       Fe         C  1                  69.046
+  bond angle:       C  2       Fe         C  2                 158.777
+  bond angle:       C  2       Fe         C  1                  69.046
+  bond angle:       C  2       Fe         C  2                  41.007
+  bond angle:       C  2       Fe         C  3                 158.777
+  bond angle:       C  2       Fe         C  4                 122.355
+  bond angle:       C  2       Fe         C  1                  41.007
+  bond angle:       C  3       Fe         C  1                 158.777
+  bond angle:       C  3       Fe         C  2                  69.046
+  bond angle:       C  3       Fe         C  1                 122.355
+  bond angle:       C  3       Fe         C  2                 158.777
+  bond angle:       C  3       Fe         C  3                  41.007
+  bond angle:       C  3       Fe         C  4                  69.046
+  bond angle:       C  3       Fe         C  1                 106.846
+  bond angle:       C  3       Fe         C  2                 122.355
+  bond angle:       C  4       Fe         C  1                 158.777
+  bond angle:       C  4       Fe         C  2                  69.046
+  bond angle:       C  4       Fe         C  1                 158.777
+  bond angle:       C  4       Fe         C  2                 122.355
+  bond angle:       C  4       Fe         C  3                  69.046
+  bond angle:       C  4       Fe         C  4                  41.007
+  bond angle:       C  4       Fe         C  1                 122.355
+  bond angle:       C  4       Fe         C  2                 106.846
+  bond angle:       C  4       Fe         C  3                  41.007
+  bond angle:       C  1       C  1       Fe                    69.496
+  bond angle:       C  2       C  1       Fe                    69.496
+  bond angle:       C  2       C  1       C  1                 108.000
+  bond angle:       H  1       C  1       Fe                   125.826
+  bond angle:       H  1       C  1       C  1                 125.996
+  bond angle:       H  1       C  1       C  2                 125.996
+  bond angle:       C  3       C  2       Fe                    69.496
+  bond angle:       C  4       C  2       Fe                    69.496
+  bond angle:       C  4       C  2       C  3                 108.000
+  bond angle:       H  2       C  2       Fe                   125.826
+  bond angle:       H  2       C  2       C  3                 125.996
+  bond angle:       H  2       C  2       C  4                 125.996
+  bond angle:       C  1       C  1       Fe                    69.497
+  bond angle:       C  1       C  1       Fe                    69.497
+  bond angle:       C  1       C  1       C  1                 108.000
+  bond angle:       H  1       C  1       Fe                   125.826
+  bond angle:       H  1       C  1       C  1                 125.996
+  bond angle:       H  1       C  1       C  1                 125.997
+  bond angle:       C  1       C  2       Fe                    69.497
+  bond angle:       C  2       C  2       Fe                    69.497
+  bond angle:       C  2       C  2       C  1                 108.000
+  bond angle:       H  2       C  2       Fe                   125.826
+  bond angle:       H  2       C  2       C  1                 125.996
+  bond angle:       H  2       C  2       C  2                 125.997
+  bond angle:       C  2       C  3       Fe                    69.497
+  bond angle:       C  3       C  3       Fe                    69.497
+  bond angle:       C  3       C  3       C  2                 108.000
+  bond angle:       H  3       C  3       Fe                   125.826
+  bond angle:       H  3       C  3       C  2                 125.996
+  bond angle:       H  3       C  3       C  3                 125.997
+  bond angle:       C  2       C  4       Fe                    69.497
+  bond angle:       C  4       C  4       Fe                    69.497
+  bond angle:       C  4       C  4       C  2                 108.000
+  bond angle:       H  4       C  4       Fe                   125.826
+  bond angle:       H  4       C  4       C  2                 125.996
+  bond angle:       H  4       C  4       C  4                 125.997
+  bond angle:       C  1       C  1       Fe                    69.496
+  bond angle:       C  2       C  1       Fe                    69.497
+  bond angle:       C  2       C  1       C  1                 108.000
+  bond angle:       H  1       C  1       Fe                   125.826
+  bond angle:       H  1       C  1       C  1                 125.996
+  bond angle:       H  1       C  1       C  2                 125.997
+  bond angle:       C  2       C  2       Fe                    69.496
+  bond angle:       C  1       C  2       Fe                    69.497
+  bond angle:       C  1       C  2       C  2                 108.000
+  bond angle:       H  2       C  2       Fe                   125.826
+  bond angle:       H  2       C  2       C  2                 125.996
+  bond angle:       H  2       C  2       C  1                 125.997
+  bond angle:       C  3       C  3       Fe                    69.496
+  bond angle:       C  4       C  3       Fe                    69.497
+  bond angle:       C  4       C  3       C  3                 108.000
+  bond angle:       H  3       C  3       Fe                   125.826
+  bond angle:       H  3       C  3       C  3                 125.996
+  bond angle:       H  3       C  3       C  4                 125.997
+  bond angle:       C  4       C  4       Fe                    69.496
+  bond angle:       C  3       C  4       Fe                    69.497
+  bond angle:       C  3       C  4       C  4                 108.000
+  bond angle:       H  4       C  4       Fe                   125.826
+  bond angle:       H  4       C  4       C  4                 125.996
+  bond angle:       H  4       C  4       C  3                 125.997
+
+
+
+   Nuclear repulsion energy :  921.464847072493 Hartree
+
+
+                                GETLAB: AO-labels
+                                -----------------
+
+   * Large components:  160
+     1  L Fe  1 s        2  L Fe  1 px       3  L Fe  1 py       4  L Fe  1 pz       5  L Fe  1 dxx      6  L Fe  1 dxy 
+     7  L Fe  1 dxz      8  L Fe  1 dyy      9  L Fe  1 dyz     10  L Fe  1 dzz     11  L Fe  1 fxxx    12  L Fe  1 fxxy
+    13  L Fe  1 fxxz    14  L Fe  1 fxyy    15  L Fe  1 fxyz    16  L Fe  1 fxzz    17  L Fe  1 fyyy    18  L Fe  1 fyyz
+    19  L Fe  1 fyzz    20  L Fe  1 fzzz    21  L C   1 s       22  L C   2 s       23  L C   1 px      24  L C   1 py  
+    25  L C   1 pz      26  L C   2 px      27  L C   2 py      28  L C   2 pz      29  L C   1 dxx     30  L C   1 dxy 
+    31  L C   1 dxz     32  L C   1 dyy     33  L C   1 dyz     34  L C   1 dzz     35  L C   2 dxx     36  L C   2 dxy 
+    37  L C   2 dxz     38  L C   2 dyy     39  L C   2 dyz     40  L C   2 dzz     41  L C   1 s       42  L C   2 s   
+    43  L C   3 s       44  L C   4 s       45  L C   1 px      46  L C   1 py      47  L C   1 pz      48  L C   2 px  
+    49  L C   2 py      50  L C   2 pz      51  L C   3 px      52  L C   3 py      53  L C   3 pz      54  L C   4 px  
+    55  L C   4 py      56  L C   4 pz      57  L C   1 dxx     58  L C   1 dxy     59  L C   1 dxz     60  L C   1 dyy 
+    61  L C   1 dyz     62  L C   1 dzz     63  L C   2 dxx     64  L C   2 dxy     65  L C   2 dxz     66  L C   2 dyy 
+    67  L C   2 dyz     68  L C   2 dzz     69  L C   3 dxx     70  L C   3 dxy     71  L C   3 dxz     72  L C   3 dyy 
+    73  L C   3 dyz     74  L C   3 dzz     75  L C   4 dxx     76  L C   4 dxy     77  L C   4 dxz     78  L C   4 dyy 
+    79  L C   4 dyz     80  L C   4 dzz     81  L C   1 s       82  L C   2 s       83  L C   3 s       84  L C   4 s   
+    85  L C   1 px      86  L C   1 py      87  L C   1 pz      88  L C   2 px      89  L C   2 py      90  L C   2 pz  
+    91  L C   3 px      92  L C   3 py      93  L C   3 pz      94  L C   4 px      95  L C   4 py      96  L C   4 pz  
+    97  L C   1 dxx     98  L C   1 dxy     99  L C   1 dxz    100  L C   1 dyy    101  L C   1 dyz    102  L C   1 dzz 
+   103  L C   2 dxx    104  L C   2 dxy    105  L C   2 dxz    106  L C   2 dyy    107  L C   2 dyz    108  L C   2 dzz 
+   109  L C   3 dxx    110  L C   3 dxy    111  L C   3 dxz    112  L C   3 dyy    113  L C   3 dyz    114  L C   3 dzz 
+   115  L C   4 dxx    116  L C   4 dxy    117  L C   4 dxz    118  L C   4 dyy    119  L C   4 dyz    120  L C   4 dzz 
+   121  L H   1 s      122  L H   2 s      123  L H   1 px     124  L H   1 py     125  L H   1 pz     126  L H   2 px  
+   127  L H   2 py     128  L H   2 pz     129  L H   1 s      130  L H   2 s      131  L H   3 s      132  L H   4 s   
+   133  L H   1 px     134  L H   1 py     135  L H   1 pz     136  L H   2 px     137  L H   2 py     138  L H   2 pz  
+   139  L H   3 px     140  L H   3 py     141  L H   3 pz     142  L H   4 px     143  L H   4 py     144  L H   4 pz  
+   145  L H   1 s      146  L H   2 s      147  L H   3 s      148  L H   4 s      149  L H   1 px     150  L H   1 py  
+   151  L H   1 pz     152  L H   2 px     153  L H   2 py     154  L H   2 pz     155  L H   3 px     156  L H   3 py  
+   157  L H   3 pz     158  L H   4 px     159  L H   4 py     160  L H   4 pz  
+   * Small components:  335
+   161  S Fe  1 s      162  S Fe  1 px     163  S Fe  1 py     164  S Fe  1 pz     165  S Fe  1 dxx    166  S Fe  1 dxy 
+   167  S Fe  1 dxz    168  S Fe  1 dyy    169  S Fe  1 dyz    170  S Fe  1 dzz    171  S Fe  1 fxxx   172  S Fe  1 fxxy
+   173  S Fe  1 fxxz   174  S Fe  1 fxyy   175  S Fe  1 fxyz   176  S Fe  1 fxzz   177  S Fe  1 fyyy   178  S Fe  1 fyyz
+   179  S Fe  1 fyzz   180  S Fe  1 fzzz   181  S Fe  1 g400   182  S Fe  1 g310   183  S Fe  1 g301   184  S Fe  1 g220
+   185  S Fe  1 g211   186  S Fe  1 g202   187  S Fe  1 g130   188  S Fe  1 g121   189  S Fe  1 g112   190  S Fe  1 g103
+   191  S Fe  1 g040   192  S Fe  1 g031   193  S Fe  1 g022   194  S Fe  1 g013   195  S Fe  1 g004   196  S C   1 s   
+   197  S C   2 s      198  S C   1 px     199  S C   1 py     200  S C   1 pz     201  S C   2 px     202  S C   2 py  
+   203  S C   2 pz     204  S C   1 dxx    205  S C   1 dxy    206  S C   1 dxz    207  S C   1 dyy    208  S C   1 dyz 
+   209  S C   1 dzz    210  S C   2 dxx    211  S C   2 dxy    212  S C   2 dxz    213  S C   2 dyy    214  S C   2 dyz 
+   215  S C   2 dzz    216  S C   1 fxxx   217  S C   1 fxxy   218  S C   1 fxxz   219  S C   1 fxyy   220  S C   1 fxyz
+   221  S C   1 fxzz   222  S C   1 fyyy   223  S C   1 fyyz   224  S C   1 fyzz   225  S C   1 fzzz   226  S C   2 fxxx
+   227  S C   2 fxxy   228  S C   2 fxxz   229  S C   2 fxyy   230  S C   2 fxyz   231  S C   2 fxzz   232  S C   2 fyyy
+   233  S C   2 fyyz   234  S C   2 fyzz   235  S C   2 fzzz   236  S C   1 s      237  S C   2 s      238  S C   3 s   
+   239  S C   4 s      240  S C   1 px     241  S C   1 py     242  S C   1 pz     243  S C   2 px     244  S C   2 py  
+   245  S C   2 pz     246  S C   3 px     247  S C   3 py     248  S C   3 pz     249  S C   4 px     250  S C   4 py  
+   251  S C   4 pz     252  S C   1 dxx    253  S C   1 dxy    254  S C   1 dxz    255  S C   1 dyy    256  S C   1 dyz 
+   257  S C   1 dzz    258  S C   2 dxx    259  S C   2 dxy    260  S C   2 dxz    261  S C   2 dyy    262  S C   2 dyz 
+   263  S C   2 dzz    264  S C   3 dxx    265  S C   3 dxy    266  S C   3 dxz    267  S C   3 dyy    268  S C   3 dyz 
+   269  S C   3 dzz    270  S C   4 dxx    271  S C   4 dxy    272  S C   4 dxz    273  S C   4 dyy    274  S C   4 dyz 
+   275  S C   4 dzz    276  S C   1 fxxx   277  S C   1 fxxy   278  S C   1 fxxz   279  S C   1 fxyy   280  S C   1 fxyz
+   281  S C   1 fxzz   282  S C   1 fyyy   283  S C   1 fyyz   284  S C   1 fyzz   285  S C   1 fzzz   286  S C   2 fxxx
+   287  S C   2 fxxy   288  S C   2 fxxz   289  S C   2 fxyy   290  S C   2 fxyz   291  S C   2 fxzz   292  S C   2 fyyy
+   293  S C   2 fyyz   294  S C   2 fyzz   295  S C   2 fzzz   296  S C   3 fxxx   297  S C   3 fxxy   298  S C   3 fxxz
+   299  S C   3 fxyy   300  S C   3 fxyz   301  S C   3 fxzz   302  S C   3 fyyy   303  S C   3 fyyz   304  S C   3 fyzz
+   305  S C   3 fzzz   306  S C   4 fxxx   307  S C   4 fxxy   308  S C   4 fxxz   309  S C   4 fxyy   310  S C   4 fxyz
+   311  S C   4 fxzz   312  S C   4 fyyy   313  S C   4 fyyz   314  S C   4 fyzz   315  S C   4 fzzz   316  S C   1 s   
+   317  S C   2 s      318  S C   3 s      319  S C   4 s      320  S C   1 px     321  S C   1 py     322  S C   1 pz  
+   323  S C   2 px     324  S C   2 py     325  S C   2 pz     326  S C   3 px     327  S C   3 py     328  S C   3 pz  
+   329  S C   4 px     330  S C   4 py     331  S C   4 pz     332  S C   1 dxx    333  S C   1 dxy    334  S C   1 dxz 
+   335  S C   1 dyy    336  S C   1 dyz    337  S C   1 dzz    338  S C   2 dxx    339  S C   2 dxy    340  S C   2 dxz 
+   341  S C   2 dyy    342  S C   2 dyz    343  S C   2 dzz    344  S C   3 dxx    345  S C   3 dxy    346  S C   3 dxz 
+   347  S C   3 dyy    348  S C   3 dyz    349  S C   3 dzz    350  S C   4 dxx    351  S C   4 dxy    352  S C   4 dxz 
+   353  S C   4 dyy    354  S C   4 dyz    355  S C   4 dzz    356  S C   1 fxxx   357  S C   1 fxxy   358  S C   1 fxxz
+   359  S C   1 fxyy   360  S C   1 fxyz   361  S C   1 fxzz   362  S C   1 fyyy   363  S C   1 fyyz   364  S C   1 fyzz
+   365  S C   1 fzzz   366  S C   2 fxxx   367  S C   2 fxxy   368  S C   2 fxxz   369  S C   2 fxyy   370  S C   2 fxyz
+   371  S C   2 fxzz   372  S C   2 fyyy   373  S C   2 fyyz   374  S C   2 fyzz   375  S C   2 fzzz   376  S C   3 fxxx
+   377  S C   3 fxxy   378  S C   3 fxxz   379  S C   3 fxyy   380  S C   3 fxyz   381  S C   3 fxzz   382  S C   3 fyyy
+   383  S C   3 fyyz   384  S C   3 fyzz   385  S C   3 fzzz   386  S C   4 fxxx   387  S C   4 fxxy   388  S C   4 fxxz
+   389  S C   4 fxyy   390  S C   4 fxyz   391  S C   4 fxzz   392  S C   4 fyyy   393  S C   4 fyyz   394  S C   4 fyzz
+   395  S C   4 fzzz   396  S H   1 s      397  S H   2 s      398  S H   1 px     399  S H   1 py     400  S H   1 pz  
+   401  S H   2 px     402  S H   2 py     403  S H   2 pz     404  S H   1 dxx    405  S H   1 dxy    406  S H   1 dxz 
+   407  S H   1 dyy    408  S H   1 dyz    409  S H   1 dzz    410  S H   2 dxx    411  S H   2 dxy    412  S H   2 dxz 
+   413  S H   2 dyy    414  S H   2 dyz    415  S H   2 dzz    416  S H   1 s      417  S H   2 s      418  S H   3 s   
+   419  S H   4 s      420  S H   1 px     421  S H   1 py     422  S H   1 pz     423  S H   2 px     424  S H   2 py  
+   425  S H   2 pz     426  S H   3 px     427  S H   3 py     428  S H   3 pz     429  S H   4 px     430  S H   4 py  
+   431  S H   4 pz     432  S H   1 dxx    433  S H   1 dxy    434  S H   1 dxz    435  S H   1 dyy    436  S H   1 dyz 
+   437  S H   1 dzz    438  S H   2 dxx    439  S H   2 dxy    440  S H   2 dxz    441  S H   2 dyy    442  S H   2 dyz 
+   443  S H   2 dzz    444  S H   3 dxx    445  S H   3 dxy    446  S H   3 dxz    447  S H   3 dyy    448  S H   3 dyz 
+   449  S H   3 dzz    450  S H   4 dxx    451  S H   4 dxy    452  S H   4 dxz    453  S H   4 dyy    454  S H   4 dyz 
+   455  S H   4 dzz    456  S H   1 s      457  S H   2 s      458  S H   3 s      459  S H   4 s      460  S H   1 px  
+   461  S H   1 py     462  S H   1 pz     463  S H   2 px     464  S H   2 py     465  S H   2 pz     466  S H   3 px  
+   467  S H   3 py     468  S H   3 pz     469  S H   4 px     470  S H   4 py     471  S H   4 pz     472  S H   1 dxx 
+   473  S H   1 dxy    474  S H   1 dxz    475  S H   1 dyy    476  S H   1 dyz    477  S H   1 dzz    478  S H   2 dxx 
+   479  S H   2 dxy    480  S H   2 dxz    481  S H   2 dyy    482  S H   2 dyz    483  S H   2 dzz    484  S H   3 dxx 
+   485  S H   3 dxy    486  S H   3 dxz    487  S H   3 dyy    488  S H   3 dyz    489  S H   3 dzz    490  S H   4 dxx 
+   491  S H   4 dxy    492  S H   4 dxz    493  S H   4 dyy    494  S H   4 dyz    495  S H   4 dzz 
+
+
+                                GETLAB: SO-labels
+                                -----------------
+
+   * Large components:  160
+     1  L A1 Fe s        2  L A1 Fe px       3  L A1 Fe dxx      4  L A1 Fe dyy      5  L A1 Fe dzz      6  L A1 Fe fxxx
+     7  L A1 Fe fxyy     8  L A1 Fe fxzz     9  L A1 C  s       10  L A1 C  px      11  L A1 C  pz      12  L A1 C  dxx 
+    13  L A1 C  dxz     14  L A1 C  dyy     15  L A1 C  dzz     16  L A1 C  s       17  L A1 C  px      18  L A1 C  py  
+    19  L A1 C  pz      20  L A1 C  dxx     21  L A1 C  dxy     22  L A1 C  dxz     23  L A1 C  dyy     24  L A1 C  dyz 
+    25  L A1 C  dzz     26  L A1 C  s       27  L A1 C  px      28  L A1 C  py      29  L A1 C  pz      30  L A1 C  dxx 
+    31  L A1 C  dxy     32  L A1 C  dxz     33  L A1 C  dyy     34  L A1 C  dyz     35  L A1 C  dzz     36  L A1 H  s   
+    37  L A1 H  px      38  L A1 H  pz      39  L A1 H  s       40  L A1 H  px      41  L A1 H  py      42  L A1 H  pz  
+    43  L A1 H  s       44  L A1 H  px      45  L A1 H  py      46  L A1 H  pz      47  L B1 Fe py      48  L B1 Fe dxy 
+    49  L B1 Fe fxxy    50  L B1 Fe fyyy    51  L B1 Fe fyzz    52  L B1 C  py      53  L B1 C  dxy     54  L B1 C  dyz 
+    55  L B1 C  s       56  L B1 C  px      57  L B1 C  py      58  L B1 C  pz      59  L B1 C  dxx     60  L B1 C  dxy 
+    61  L B1 C  dxz     62  L B1 C  dyy     63  L B1 C  dyz     64  L B1 C  dzz     65  L B1 C  s       66  L B1 C  px  
+    67  L B1 C  py      68  L B1 C  pz      69  L B1 C  dxx     70  L B1 C  dxy     71  L B1 C  dxz     72  L B1 C  dyy 
+    73  L B1 C  dyz     74  L B1 C  dzz     75  L B1 H  py      76  L B1 H  s       77  L B1 H  px      78  L B1 H  py  
+    79  L B1 H  pz      80  L B1 H  s       81  L B1 H  px      82  L B1 H  py      83  L B1 H  pz      84  L B2 Fe pz  
+    85  L B2 Fe dxz     86  L B2 Fe fxxz    87  L B2 Fe fyyz    88  L B2 Fe fzzz    89  L B2 C  s       90  L B2 C  px  
+    91  L B2 C  pz      92  L B2 C  dxx     93  L B2 C  dxz     94  L B2 C  dyy     95  L B2 C  dzz     96  L B2 C  s   
+    97  L B2 C  px      98  L B2 C  py      99  L B2 C  pz     100  L B2 C  dxx    101  L B2 C  dxy    102  L B2 C  dxz 
+   103  L B2 C  dyy    104  L B2 C  dyz    105  L B2 C  dzz    106  L B2 C  s      107  L B2 C  px     108  L B2 C  py  
+   109  L B2 C  pz     110  L B2 C  dxx    111  L B2 C  dxy    112  L B2 C  dxz    113  L B2 C  dyy    114  L B2 C  dyz 
+   115  L B2 C  dzz    116  L B2 H  s      117  L B2 H  px     118  L B2 H  pz     119  L B2 H  s      120  L B2 H  px  
+   121  L B2 H  py     122  L B2 H  pz     123  L B2 H  s      124  L B2 H  px     125  L B2 H  py     126  L B2 H  pz  
+   127  L A2 Fe dyz    128  L A2 Fe fxyz   129  L A2 C  py     130  L A2 C  dxy    131  L A2 C  dyz    132  L A2 C  s   
+   133  L A2 C  px     134  L A2 C  py     135  L A2 C  pz     136  L A2 C  dxx    137  L A2 C  dxy    138  L A2 C  dxz 
+   139  L A2 C  dyy    140  L A2 C  dyz    141  L A2 C  dzz    142  L A2 C  s      143  L A2 C  px     144  L A2 C  py  
+   145  L A2 C  pz     146  L A2 C  dxx    147  L A2 C  dxy    148  L A2 C  dxz    149  L A2 C  dyy    150  L A2 C  dyz 
+   151  L A2 C  dzz    152  L A2 H  py     153  L A2 H  s      154  L A2 H  px     155  L A2 H  py     156  L A2 H  pz  
+   157  L A2 H  s      158  L A2 H  px     159  L A2 H  py     160  L A2 H  pz  
+   * Small components:  335
+   161  S A1 Fe s      162  S A1 Fe px     163  S A1 Fe dxx    164  S A1 Fe dyy    165  S A1 Fe dzz    166  S A1 Fe fxxx
+   167  S A1 Fe fxyy   168  S A1 Fe fxzz   169  S A1 Fe g400   170  S A1 Fe g220   171  S A1 Fe g202   172  S A1 Fe g040
+   173  S A1 Fe g022   174  S A1 Fe g004   175  S A1 C  s      176  S A1 C  px     177  S A1 C  pz     178  S A1 C  dxx 
+   179  S A1 C  dxz    180  S A1 C  dyy    181  S A1 C  dzz    182  S A1 C  fxxx   183  S A1 C  fxxz   184  S A1 C  fxyy
+   185  S A1 C  fxzz   186  S A1 C  fyyz   187  S A1 C  fzzz   188  S A1 C  s      189  S A1 C  px     190  S A1 C  py  
+   191  S A1 C  pz     192  S A1 C  dxx    193  S A1 C  dxy    194  S A1 C  dxz    195  S A1 C  dyy    196  S A1 C  dyz 
+   197  S A1 C  dzz    198  S A1 C  fxxx   199  S A1 C  fxxy   200  S A1 C  fxxz   201  S A1 C  fxyy   202  S A1 C  fxyz
+   203  S A1 C  fxzz   204  S A1 C  fyyy   205  S A1 C  fyyz   206  S A1 C  fyzz   207  S A1 C  fzzz   208  S A1 C  s   
+   209  S A1 C  px     210  S A1 C  py     211  S A1 C  pz     212  S A1 C  dxx    213  S A1 C  dxy    214  S A1 C  dxz 
+   215  S A1 C  dyy    216  S A1 C  dyz    217  S A1 C  dzz    218  S A1 C  fxxx   219  S A1 C  fxxy   220  S A1 C  fxxz
+   221  S A1 C  fxyy   222  S A1 C  fxyz   223  S A1 C  fxzz   224  S A1 C  fyyy   225  S A1 C  fyyz   226  S A1 C  fyzz
+   227  S A1 C  fzzz   228  S A1 H  s      229  S A1 H  px     230  S A1 H  pz     231  S A1 H  dxx    232  S A1 H  dxz 
+   233  S A1 H  dyy    234  S A1 H  dzz    235  S A1 H  s      236  S A1 H  px     237  S A1 H  py     238  S A1 H  pz  
+   239  S A1 H  dxx    240  S A1 H  dxy    241  S A1 H  dxz    242  S A1 H  dyy    243  S A1 H  dyz    244  S A1 H  dzz 
+   245  S A1 H  s      246  S A1 H  px     247  S A1 H  py     248  S A1 H  pz     249  S A1 H  dxx    250  S A1 H  dxy 
+   251  S A1 H  dxz    252  S A1 H  dyy    253  S A1 H  dyz    254  S A1 H  dzz    255  S B1 Fe py     256  S B1 Fe dxy 
+   257  S B1 Fe fxxy   258  S B1 Fe fyyy   259  S B1 Fe fyzz   260  S B1 Fe g310   261  S B1 Fe g130   262  S B1 Fe g112
+   263  S B1 C  py     264  S B1 C  dxy    265  S B1 C  dyz    266  S B1 C  fxxy   267  S B1 C  fxyz   268  S B1 C  fyyy
+   269  S B1 C  fyzz   270  S B1 C  s      271  S B1 C  px     272  S B1 C  py     273  S B1 C  pz     274  S B1 C  dxx 
+   275  S B1 C  dxy    276  S B1 C  dxz    277  S B1 C  dyy    278  S B1 C  dyz    279  S B1 C  dzz    280  S B1 C  fxxx
+   281  S B1 C  fxxy   282  S B1 C  fxxz   283  S B1 C  fxyy   284  S B1 C  fxyz   285  S B1 C  fxzz   286  S B1 C  fyyy
+   287  S B1 C  fyyz   288  S B1 C  fyzz   289  S B1 C  fzzz   290  S B1 C  s      291  S B1 C  px     292  S B1 C  py  
+   293  S B1 C  pz     294  S B1 C  dxx    295  S B1 C  dxy    296  S B1 C  dxz    297  S B1 C  dyy    298  S B1 C  dyz 
+   299  S B1 C  dzz    300  S B1 C  fxxx   301  S B1 C  fxxy   302  S B1 C  fxxz   303  S B1 C  fxyy   304  S B1 C  fxyz
+   305  S B1 C  fxzz   306  S B1 C  fyyy   307  S B1 C  fyyz   308  S B1 C  fyzz   309  S B1 C  fzzz   310  S B1 H  py  
+   311  S B1 H  dxy    312  S B1 H  dyz    313  S B1 H  s      314  S B1 H  px     315  S B1 H  py     316  S B1 H  pz  
+   317  S B1 H  dxx    318  S B1 H  dxy    319  S B1 H  dxz    320  S B1 H  dyy    321  S B1 H  dyz    322  S B1 H  dzz 
+   323  S B1 H  s      324  S B1 H  px     325  S B1 H  py     326  S B1 H  pz     327  S B1 H  dxx    328  S B1 H  dxy 
+   329  S B1 H  dxz    330  S B1 H  dyy    331  S B1 H  dyz    332  S B1 H  dzz    333  S B2 Fe pz     334  S B2 Fe dxz 
+   335  S B2 Fe fxxz   336  S B2 Fe fyyz   337  S B2 Fe fzzz   338  S B2 Fe g301   339  S B2 Fe g121   340  S B2 Fe g103
+   341  S B2 C  s      342  S B2 C  px     343  S B2 C  pz     344  S B2 C  dxx    345  S B2 C  dxz    346  S B2 C  dyy 
+   347  S B2 C  dzz    348  S B2 C  fxxx   349  S B2 C  fxxz   350  S B2 C  fxyy   351  S B2 C  fxzz   352  S B2 C  fyyz
+   353  S B2 C  fzzz   354  S B2 C  s      355  S B2 C  px     356  S B2 C  py     357  S B2 C  pz     358  S B2 C  dxx 
+   359  S B2 C  dxy    360  S B2 C  dxz    361  S B2 C  dyy    362  S B2 C  dyz    363  S B2 C  dzz    364  S B2 C  fxxx
+   365  S B2 C  fxxy   366  S B2 C  fxxz   367  S B2 C  fxyy   368  S B2 C  fxyz   369  S B2 C  fxzz   370  S B2 C  fyyy
+   371  S B2 C  fyyz   372  S B2 C  fyzz   373  S B2 C  fzzz   374  S B2 C  s      375  S B2 C  px     376  S B2 C  py  
+   377  S B2 C  pz     378  S B2 C  dxx    379  S B2 C  dxy    380  S B2 C  dxz    381  S B2 C  dyy    382  S B2 C  dyz 
+   383  S B2 C  dzz    384  S B2 C  fxxx   385  S B2 C  fxxy   386  S B2 C  fxxz   387  S B2 C  fxyy   388  S B2 C  fxyz
+   389  S B2 C  fxzz   390  S B2 C  fyyy   391  S B2 C  fyyz   392  S B2 C  fyzz   393  S B2 C  fzzz   394  S B2 H  s   
+   395  S B2 H  px     396  S B2 H  pz     397  S B2 H  dxx    398  S B2 H  dxz    399  S B2 H  dyy    400  S B2 H  dzz 
+   401  S B2 H  s      402  S B2 H  px     403  S B2 H  py     404  S B2 H  pz     405  S B2 H  dxx    406  S B2 H  dxy 
+   407  S B2 H  dxz    408  S B2 H  dyy    409  S B2 H  dyz    410  S B2 H  dzz    411  S B2 H  s      412  S B2 H  px  
+   413  S B2 H  py     414  S B2 H  pz     415  S B2 H  dxx    416  S B2 H  dxy    417  S B2 H  dxz    418  S B2 H  dyy 
+   419  S B2 H  dyz    420  S B2 H  dzz    421  S A2 Fe dyz    422  S A2 Fe fxyz   423  S A2 Fe g211   424  S A2 Fe g031
+   425  S A2 Fe g013   426  S A2 C  py     427  S A2 C  dxy    428  S A2 C  dyz    429  S A2 C  fxxy   430  S A2 C  fxyz
+   431  S A2 C  fyyy   432  S A2 C  fyzz   433  S A2 C  s      434  S A2 C  px     435  S A2 C  py     436  S A2 C  pz  
+   437  S A2 C  dxx    438  S A2 C  dxy    439  S A2 C  dxz    440  S A2 C  dyy    441  S A2 C  dyz    442  S A2 C  dzz 
+   443  S A2 C  fxxx   444  S A2 C  fxxy   445  S A2 C  fxxz   446  S A2 C  fxyy   447  S A2 C  fxyz   448  S A2 C  fxzz
+   449  S A2 C  fyyy   450  S A2 C  fyyz   451  S A2 C  fyzz   452  S A2 C  fzzz   453  S A2 C  s      454  S A2 C  px  
+   455  S A2 C  py     456  S A2 C  pz     457  S A2 C  dxx    458  S A2 C  dxy    459  S A2 C  dxz    460  S A2 C  dyy 
+   461  S A2 C  dyz    462  S A2 C  dzz    463  S A2 C  fxxx   464  S A2 C  fxxy   465  S A2 C  fxxz   466  S A2 C  fxyy
+   467  S A2 C  fxyz   468  S A2 C  fxzz   469  S A2 C  fyyy   470  S A2 C  fyyz   471  S A2 C  fyzz   472  S A2 C  fzzz
+   473  S A2 H  py     474  S A2 H  dxy    475  S A2 H  dyz    476  S A2 H  s      477  S A2 H  px     478  S A2 H  py  
+   479  S A2 H  pz     480  S A2 H  dxx    481  S A2 H  dxy    482  S A2 H  dxz    483  S A2 H  dyy    484  S A2 H  dyz 
+   485  S A2 H  dzz    486  S A2 H  s      487  S A2 H  px     488  S A2 H  py     489  S A2 H  pz     490  S A2 H  dxx 
+   491  S A2 H  dxy    492  S A2 H  dxz    493  S A2 H  dyy    494  S A2 H  dyz    495  S A2 H  dzz 
+
+
+  Symmetry Orbitals
+  -----------------
+
+  Number of orbitals in each symmetry:          566   431   496   383
+  Number of large orbitals in each symmetry:    170   118   143   103
+  Number of small orbitals in each symmetry:    396   313   353   280
+
+* Large component functions
+
+  Symmetry  A1 ( 1)
+
+       15 functions:    Fe s   
+       11 functions:    Fe px  
+        6 functions:    Fe dxx 
+        6 functions:    Fe dyy 
+        6 functions:    Fe dzz 
+        2 functions:    Fe fxxx
+        2 functions:    Fe fxyy
+        2 functions:    Fe fxzz
+       10 functions:    C  s   1+2
+        6 functions:    C  px  1+2
+        6 functions:    C  pz  1-2
+        1 functions:    C  dxx 1+2
+        1 functions:    C  dxz 1-2
+        1 functions:    C  dyy 1+2
+        1 functions:    C  dzz 1+2
+       10 functions:    C  s   1+2+3+4
+        6 functions:    C  px  1+2+3+4
+        6 functions:    C  py  1-2+3-4
+        6 functions:    C  pz  1+2-3-4
+        1 functions:    C  dxx 1+2+3+4
+        1 functions:    C  dxy 1-2+3-4
+        1 functions:    C  dxz 1+2-3-4
+        1 functions:    C  dyy 1+2+3+4
+        1 functions:    C  dyz 1-2-3+4
+        1 functions:    C  dzz 1+2+3+4
+       10 functions:    C  s   1+2+3+4
+        6 functions:    C  px  1+2+3+4
+        6 functions:    C  py  1-2+3-4
+        6 functions:    C  pz  1+2-3-4
+        1 functions:    C  dxx 1+2+3+4
+        1 functions:    C  dxy 1-2+3-4
+        1 functions:    C  dxz 1+2-3-4
+        1 functions:    C  dyy 1+2+3+4
+        1 functions:    C  dyz 1-2-3+4
+        1 functions:    C  dzz 1+2+3+4
+        6 functions:    H  s   1+2
+        1 functions:    H  px  1+2
+        1 functions:    H  pz  1-2
+        6 functions:    H  s   1+2+3+4
+        1 functions:    H  px  1+2+3+4
+        1 functions:    H  py  1-2+3-4
+        1 functions:    H  pz  1+2-3-4
+        6 functions:    H  s   1+2+3+4
+        1 functions:    H  px  1+2+3+4
+        1 functions:    H  py  1-2+3-4
+        1 functions:    H  pz  1+2-3-4
+
+  Symmetry  B1 ( 2)
+
+       11 functions:    Fe py  
+        6 functions:    Fe dxy 
+        2 functions:    Fe fxxy
+        2 functions:    Fe fyyy
+        2 functions:    Fe fyzz
+        6 functions:    C  py  1+2
+        1 functions:    C  dxy 1+2
+        1 functions:    C  dyz 1-2
+       10 functions:    C  s   1-2+3-4
+        6 functions:    C  px  1-2+3-4
+        6 functions:    C  py  1+2+3+4
+        6 functions:    C  pz  1-2-3+4
+        1 functions:    C  dxx 1-2+3-4
+        1 functions:    C  dxy 1+2+3+4
+        1 functions:    C  dxz 1-2-3+4
+        1 functions:    C  dyy 1-2+3-4
+        1 functions:    C  dyz 1+2-3-4
+        1 functions:    C  dzz 1-2+3-4
+       10 functions:    C  s   1-2+3-4
+        6 functions:    C  px  1-2+3-4
+        6 functions:    C  py  1+2+3+4
+        6 functions:    C  pz  1-2-3+4
+        1 functions:    C  dxx 1-2+3-4
+        1 functions:    C  dxy 1+2+3+4
+        1 functions:    C  dxz 1-2-3+4
+        1 functions:    C  dyy 1-2+3-4
+        1 functions:    C  dyz 1+2-3-4
+        1 functions:    C  dzz 1-2+3-4
+        1 functions:    H  py  1+2
+        6 functions:    H  s   1-2+3-4
+        1 functions:    H  px  1-2+3-4
+        1 functions:    H  py  1+2+3+4
+        1 functions:    H  pz  1-2-3+4
+        6 functions:    H  s   1-2+3-4
+        1 functions:    H  px  1-2+3-4
+        1 functions:    H  py  1+2+3+4
+        1 functions:    H  pz  1-2-3+4
+
+  Symmetry  B2 ( 3)
+
+       11 functions:    Fe pz  
+        6 functions:    Fe dxz 
+        2 functions:    Fe fxxz
+        2 functions:    Fe fyyz
+        2 functions:    Fe fzzz
+       10 functions:    C  s   1-2
+        6 functions:    C  px  1-2
+        6 functions:    C  pz  1+2
+        1 functions:    C  dxx 1-2
+        1 functions:    C  dxz 1+2
+        1 functions:    C  dyy 1-2
+        1 functions:    C  dzz 1-2
+       10 functions:    C  s   1+2-3-4
+        6 functions:    C  px  1+2-3-4
+        6 functions:    C  py  1-2-3+4
+        6 functions:    C  pz  1+2+3+4
+        1 functions:    C  dxx 1+2-3-4
+        1 functions:    C  dxy 1-2-3+4
+        1 functions:    C  dxz 1+2+3+4
+        1 functions:    C  dyy 1+2-3-4
+        1 functions:    C  dyz 1-2+3-4
+        1 functions:    C  dzz 1+2-3-4
+       10 functions:    C  s   1+2-3-4
+        6 functions:    C  px  1+2-3-4
+        6 functions:    C  py  1-2-3+4
+        6 functions:    C  pz  1+2+3+4
+        1 functions:    C  dxx 1+2-3-4
+        1 functions:    C  dxy 1-2-3+4
+        1 functions:    C  dxz 1+2+3+4
+        1 functions:    C  dyy 1+2-3-4
+        1 functions:    C  dyz 1-2+3-4
+        1 functions:    C  dzz 1+2-3-4
+        6 functions:    H  s   1-2
+        1 functions:    H  px  1-2
+        1 functions:    H  pz  1+2
+        6 functions:    H  s   1+2-3-4
+        1 functions:    H  px  1+2-3-4
+        1 functions:    H  py  1-2-3+4
+        1 functions:    H  pz  1+2+3+4
+        6 functions:    H  s   1+2-3-4
+        1 functions:    H  px  1+2-3-4
+        1 functions:    H  py  1-2-3+4
+        1 functions:    H  pz  1+2+3+4
+
+  Symmetry  A2 ( 4)
+
+        6 functions:    Fe dyz 
+        2 functions:    Fe fxyz
+        6 functions:    C  py  1-2
+        1 functions:    C  dxy 1-2
+        1 functions:    C  dyz 1+2
+       10 functions:    C  s   1-2-3+4
+        6 functions:    C  px  1-2-3+4
+        6 functions:    C  py  1+2-3-4
+        6 functions:    C  pz  1-2+3-4
+        1 functions:    C  dxx 1-2-3+4
+        1 functions:    C  dxy 1+2-3-4
+        1 functions:    C  dxz 1-2+3-4
+        1 functions:    C  dyy 1-2-3+4
+        1 functions:    C  dyz 1+2+3+4
+        1 functions:    C  dzz 1-2-3+4
+       10 functions:    C  s   1-2-3+4
+        6 functions:    C  px  1-2-3+4
+        6 functions:    C  py  1+2-3-4
+        6 functions:    C  pz  1-2+3-4
+        1 functions:    C  dxx 1-2-3+4
+        1 functions:    C  dxy 1+2-3-4
+        1 functions:    C  dxz 1-2+3-4
+        1 functions:    C  dyy 1-2-3+4
+        1 functions:    C  dyz 1+2+3+4
+        1 functions:    C  dzz 1-2-3+4
+        1 functions:    H  py  1-2
+        6 functions:    H  s   1-2-3+4
+        1 functions:    H  px  1-2-3+4
+        1 functions:    H  py  1+2-3-4
+        1 functions:    H  pz  1-2+3-4
+        6 functions:    H  s   1-2-3+4
+        1 functions:    H  px  1-2-3+4
+        1 functions:    H  py  1+2-3-4
+        1 functions:    H  pz  1-2+3-4
+
+* Small component functions
+
+  Symmetry  A1 ( 1)
+
+       11 functions:    Fe s   
+       21 functions:    Fe px  
+       13 functions:    Fe dxx 
+       13 functions:    Fe dyy 
+       13 functions:    Fe dzz 
+        6 functions:    Fe fxxx
+        6 functions:    Fe fxyy
+        6 functions:    Fe fxzz
+        2 functions:    Fe g400
+        2 functions:    Fe g220
+        2 functions:    Fe g202
+        2 functions:    Fe g040
+        2 functions:    Fe g022
+        2 functions:    Fe g004
+        6 functions:    C  s   1+2
+       11 functions:    C  px  1+2
+       11 functions:    C  pz  1-2
+        6 functions:    C  dxx 1+2
+        6 functions:    C  dxz 1-2
+        6 functions:    C  dyy 1+2
+        6 functions:    C  dzz 1+2
+        1 functions:    C  fxxx1+2
+        1 functions:    C  fxxz1-2
+        1 functions:    C  fxyy1+2
+        1 functions:    C  fxzz1+2
+        1 functions:    C  fyyz1-2
+        1 functions:    C  fzzz1-2
+        6 functions:    C  s   1+2+3+4
+       11 functions:    C  px  1+2+3+4
+       11 functions:    C  py  1-2+3-4
+       11 functions:    C  pz  1+2-3-4
+        6 functions:    C  dxx 1+2+3+4
+        6 functions:    C  dxy 1-2+3-4
+        6 functions:    C  dxz 1+2-3-4
+        6 functions:    C  dyy 1+2+3+4
+        6 functions:    C  dyz 1-2-3+4
+        6 functions:    C  dzz 1+2+3+4
+        1 functions:    C  fxxx1+2+3+4
+        1 functions:    C  fxxy1-2+3-4
+        1 functions:    C  fxxz1+2-3-4
+        1 functions:    C  fxyy1+2+3+4
+        1 functions:    C  fxyz1-2-3+4
+        1 functions:    C  fxzz1+2+3+4
+        1 functions:    C  fyyy1-2+3-4
+        1 functions:    C  fyyz1+2-3-4
+        1 functions:    C  fyzz1-2+3-4
+        1 functions:    C  fzzz1+2-3-4
+        6 functions:    C  s   1+2+3+4
+       11 functions:    C  px  1+2+3+4
+       11 functions:    C  py  1-2+3-4
+       11 functions:    C  pz  1+2-3-4
+        6 functions:    C  dxx 1+2+3+4
+        6 functions:    C  dxy 1-2+3-4
+        6 functions:    C  dxz 1+2-3-4
+        6 functions:    C  dyy 1+2+3+4
+        6 functions:    C  dyz 1-2-3+4
+        6 functions:    C  dzz 1+2+3+4
+        1 functions:    C  fxxx1+2+3+4
+        1 functions:    C  fxxy1-2+3-4
+        1 functions:    C  fxxz1+2-3-4
+        1 functions:    C  fxyy1+2+3+4
+        1 functions:    C  fxyz1-2-3+4
+        1 functions:    C  fxzz1+2+3+4
+        1 functions:    C  fyyy1-2+3-4
+        1 functions:    C  fyyz1+2-3-4
+        1 functions:    C  fyzz1-2+3-4
+        1 functions:    C  fzzz1+2-3-4
+        1 functions:    H  s   1+2
+        6 functions:    H  px  1+2
+        6 functions:    H  pz  1-2
+        1 functions:    H  dxx 1+2
+        1 functions:    H  dxz 1-2
+        1 functions:    H  dyy 1+2
+        1 functions:    H  dzz 1+2
+        1 functions:    H  s   1+2+3+4
+        6 functions:    H  px  1+2+3+4
+        6 functions:    H  py  1-2+3-4
+        6 functions:    H  pz  1+2-3-4
+        1 functions:    H  dxx 1+2+3+4
+        1 functions:    H  dxy 1-2+3-4
+        1 functions:    H  dxz 1+2-3-4
+        1 functions:    H  dyy 1+2+3+4
+        1 functions:    H  dyz 1-2-3+4
+        1 functions:    H  dzz 1+2+3+4
+        1 functions:    H  s   1+2+3+4
+        6 functions:    H  px  1+2+3+4
+        6 functions:    H  py  1-2+3-4
+        6 functions:    H  pz  1+2-3-4
+        1 functions:    H  dxx 1+2+3+4
+        1 functions:    H  dxy 1-2+3-4
+        1 functions:    H  dxz 1+2-3-4
+        1 functions:    H  dyy 1+2+3+4
+        1 functions:    H  dyz 1-2-3+4
+        1 functions:    H  dzz 1+2+3+4
+
+  Symmetry  B1 ( 2)
+
+       21 functions:    Fe py  
+       13 functions:    Fe dxy 
+        6 functions:    Fe fxxy
+        6 functions:    Fe fyyy
+        6 functions:    Fe fyzz
+        2 functions:    Fe g310
+        2 functions:    Fe g130
+        2 functions:    Fe g112
+       11 functions:    C  py  1+2
+        6 functions:    C  dxy 1+2
+        6 functions:    C  dyz 1-2
+        1 functions:    C  fxxy1+2
+        1 functions:    C  fxyz1-2
+        1 functions:    C  fyyy1+2
+        1 functions:    C  fyzz1+2
+        6 functions:    C  s   1-2+3-4
+       11 functions:    C  px  1-2+3-4
+       11 functions:    C  py  1+2+3+4
+       11 functions:    C  pz  1-2-3+4
+        6 functions:    C  dxx 1-2+3-4
+        6 functions:    C  dxy 1+2+3+4
+        6 functions:    C  dxz 1-2-3+4
+        6 functions:    C  dyy 1-2+3-4
+        6 functions:    C  dyz 1+2-3-4
+        6 functions:    C  dzz 1-2+3-4
+        1 functions:    C  fxxx1-2+3-4
+        1 functions:    C  fxxy1+2+3+4
+        1 functions:    C  fxxz1-2-3+4
+        1 functions:    C  fxyy1-2+3-4
+        1 functions:    C  fxyz1+2-3-4
+        1 functions:    C  fxzz1-2+3-4
+        1 functions:    C  fyyy1+2+3+4
+        1 functions:    C  fyyz1-2-3+4
+        1 functions:    C  fyzz1+2+3+4
+        1 functions:    C  fzzz1-2-3+4
+        6 functions:    C  s   1-2+3-4
+       11 functions:    C  px  1-2+3-4
+       11 functions:    C  py  1+2+3+4
+       11 functions:    C  pz  1-2-3+4
+        6 functions:    C  dxx 1-2+3-4
+        6 functions:    C  dxy 1+2+3+4
+        6 functions:    C  dxz 1-2-3+4
+        6 functions:    C  dyy 1-2+3-4
+        6 functions:    C  dyz 1+2-3-4
+        6 functions:    C  dzz 1-2+3-4
+        1 functions:    C  fxxx1-2+3-4
+        1 functions:    C  fxxy1+2+3+4
+        1 functions:    C  fxxz1-2-3+4
+        1 functions:    C  fxyy1-2+3-4
+        1 functions:    C  fxyz1+2-3-4
+        1 functions:    C  fxzz1-2+3-4
+        1 functions:    C  fyyy1+2+3+4
+        1 functions:    C  fyyz1-2-3+4
+        1 functions:    C  fyzz1+2+3+4
+        1 functions:    C  fzzz1-2-3+4
+        6 functions:    H  py  1+2
+        1 functions:    H  dxy 1+2
+        1 functions:    H  dyz 1-2
+        1 functions:    H  s   1-2+3-4
+        6 functions:    H  px  1-2+3-4
+        6 functions:    H  py  1+2+3+4
+        6 functions:    H  pz  1-2-3+4
+        1 functions:    H  dxx 1-2+3-4
+        1 functions:    H  dxy 1+2+3+4
+        1 functions:    H  dxz 1-2-3+4
+        1 functions:    H  dyy 1-2+3-4
+        1 functions:    H  dyz 1+2-3-4
+        1 functions:    H  dzz 1-2+3-4
+        1 functions:    H  s   1-2+3-4
+        6 functions:    H  px  1-2+3-4
+        6 functions:    H  py  1+2+3+4
+        6 functions:    H  pz  1-2-3+4
+        1 functions:    H  dxx 1-2+3-4
+        1 functions:    H  dxy 1+2+3+4
+        1 functions:    H  dxz 1-2-3+4
+        1 functions:    H  dyy 1-2+3-4
+        1 functions:    H  dyz 1+2-3-4
+        1 functions:    H  dzz 1-2+3-4
+
+  Symmetry  B2 ( 3)
+
+       21 functions:    Fe pz  
+       13 functions:    Fe dxz 
+        6 functions:    Fe fxxz
+        6 functions:    Fe fyyz
+        6 functions:    Fe fzzz
+        2 functions:    Fe g301
+        2 functions:    Fe g121
+        2 functions:    Fe g103
+        6 functions:    C  s   1-2
+       11 functions:    C  px  1-2
+       11 functions:    C  pz  1+2
+        6 functions:    C  dxx 1-2
+        6 functions:    C  dxz 1+2
+        6 functions:    C  dyy 1-2
+        6 functions:    C  dzz 1-2
+        1 functions:    C  fxxx1-2
+        1 functions:    C  fxxz1+2
+        1 functions:    C  fxyy1-2
+        1 functions:    C  fxzz1-2
+        1 functions:    C  fyyz1+2
+        1 functions:    C  fzzz1+2
+        6 functions:    C  s   1+2-3-4
+       11 functions:    C  px  1+2-3-4
+       11 functions:    C  py  1-2-3+4
+       11 functions:    C  pz  1+2+3+4
+        6 functions:    C  dxx 1+2-3-4
+        6 functions:    C  dxy 1-2-3+4
+        6 functions:    C  dxz 1+2+3+4
+        6 functions:    C  dyy 1+2-3-4
+        6 functions:    C  dyz 1-2+3-4
+        6 functions:    C  dzz 1+2-3-4
+        1 functions:    C  fxxx1+2-3-4
+        1 functions:    C  fxxy1-2-3+4
+        1 functions:    C  fxxz1+2+3+4
+        1 functions:    C  fxyy1+2-3-4
+        1 functions:    C  fxyz1-2+3-4
+        1 functions:    C  fxzz1+2-3-4
+        1 functions:    C  fyyy1-2-3+4
+        1 functions:    C  fyyz1+2+3+4
+        1 functions:    C  fyzz1-2-3+4
+        1 functions:    C  fzzz1+2+3+4
+        6 functions:    C  s   1+2-3-4
+       11 functions:    C  px  1+2-3-4
+       11 functions:    C  py  1-2-3+4
+       11 functions:    C  pz  1+2+3+4
+        6 functions:    C  dxx 1+2-3-4
+        6 functions:    C  dxy 1-2-3+4
+        6 functions:    C  dxz 1+2+3+4
+        6 functions:    C  dyy 1+2-3-4
+        6 functions:    C  dyz 1-2+3-4
+        6 functions:    C  dzz 1+2-3-4
+        1 functions:    C  fxxx1+2-3-4
+        1 functions:    C  fxxy1-2-3+4
+        1 functions:    C  fxxz1+2+3+4
+        1 functions:    C  fxyy1+2-3-4
+        1 functions:    C  fxyz1-2+3-4
+        1 functions:    C  fxzz1+2-3-4
+        1 functions:    C  fyyy1-2-3+4
+        1 functions:    C  fyyz1+2+3+4
+        1 functions:    C  fyzz1-2-3+4
+        1 functions:    C  fzzz1+2+3+4
+        1 functions:    H  s   1-2
+        6 functions:    H  px  1-2
+        6 functions:    H  pz  1+2
+        1 functions:    H  dxx 1-2
+        1 functions:    H  dxz 1+2
+        1 functions:    H  dyy 1-2
+        1 functions:    H  dzz 1-2
+        1 functions:    H  s   1+2-3-4
+        6 functions:    H  px  1+2-3-4
+        6 functions:    H  py  1-2-3+4
+        6 functions:    H  pz  1+2+3+4
+        1 functions:    H  dxx 1+2-3-4
+        1 functions:    H  dxy 1-2-3+4
+        1 functions:    H  dxz 1+2+3+4
+        1 functions:    H  dyy 1+2-3-4
+        1 functions:    H  dyz 1-2+3-4
+        1 functions:    H  dzz 1+2-3-4
+        1 functions:    H  s   1+2-3-4
+        6 functions:    H  px  1+2-3-4
+        6 functions:    H  py  1-2-3+4
+        6 functions:    H  pz  1+2+3+4
+        1 functions:    H  dxx 1+2-3-4
+        1 functions:    H  dxy 1-2-3+4
+        1 functions:    H  dxz 1+2+3+4
+        1 functions:    H  dyy 1+2-3-4
+        1 functions:    H  dyz 1-2+3-4
+        1 functions:    H  dzz 1+2-3-4
+
+  Symmetry  A2 ( 4)
+
+       13 functions:    Fe dyz 
+        6 functions:    Fe fxyz
+        2 functions:    Fe g211
+        2 functions:    Fe g031
+        2 functions:    Fe g013
+       11 functions:    C  py  1-2
+        6 functions:    C  dxy 1-2
+        6 functions:    C  dyz 1+2
+        1 functions:    C  fxxy1-2
+        1 functions:    C  fxyz1+2
+        1 functions:    C  fyyy1-2
+        1 functions:    C  fyzz1-2
+        6 functions:    C  s   1-2-3+4
+       11 functions:    C  px  1-2-3+4
+       11 functions:    C  py  1+2-3-4
+       11 functions:    C  pz  1-2+3-4
+        6 functions:    C  dxx 1-2-3+4
+        6 functions:    C  dxy 1+2-3-4
+        6 functions:    C  dxz 1-2+3-4
+        6 functions:    C  dyy 1-2-3+4
+        6 functions:    C  dyz 1+2+3+4
+        6 functions:    C  dzz 1-2-3+4
+        1 functions:    C  fxxx1-2-3+4
+        1 functions:    C  fxxy1+2-3-4
+        1 functions:    C  fxxz1-2+3-4
+        1 functions:    C  fxyy1-2-3+4
+        1 functions:    C  fxyz1+2+3+4
+        1 functions:    C  fxzz1-2-3+4
+        1 functions:    C  fyyy1+2-3-4
+        1 functions:    C  fyyz1-2+3-4
+        1 functions:    C  fyzz1+2-3-4
+        1 functions:    C  fzzz1-2+3-4
+        6 functions:    C  s   1-2-3+4
+       11 functions:    C  px  1-2-3+4
+       11 functions:    C  py  1+2-3-4
+       11 functions:    C  pz  1-2+3-4
+        6 functions:    C  dxx 1-2-3+4
+        6 functions:    C  dxy 1+2-3-4
+        6 functions:    C  dxz 1-2+3-4
+        6 functions:    C  dyy 1-2-3+4
+        6 functions:    C  dyz 1+2+3+4
+        6 functions:    C  dzz 1-2-3+4
+        1 functions:    C  fxxx1-2-3+4
+        1 functions:    C  fxxy1+2-3-4
+        1 functions:    C  fxxz1-2+3-4
+        1 functions:    C  fxyy1-2-3+4
+        1 functions:    C  fxyz1+2+3+4
+        1 functions:    C  fxzz1-2-3+4
+        1 functions:    C  fyyy1+2-3-4
+        1 functions:    C  fyyz1-2+3-4
+        1 functions:    C  fyzz1+2-3-4
+        1 functions:    C  fzzz1-2+3-4
+        6 functions:    H  py  1-2
+        1 functions:    H  dxy 1-2
+        1 functions:    H  dyz 1+2
+        1 functions:    H  s   1-2-3+4
+        6 functions:    H  px  1-2-3+4
+        6 functions:    H  py  1+2-3-4
+        6 functions:    H  pz  1-2+3-4
+        1 functions:    H  dxx 1-2-3+4
+        1 functions:    H  dxy 1+2-3-4
+        1 functions:    H  dxz 1-2+3-4
+        1 functions:    H  dyy 1-2-3+4
+        1 functions:    H  dyz 1+2+3+4
+        1 functions:    H  dzz 1-2-3+4
+        1 functions:    H  s   1-2-3+4
+        6 functions:    H  px  1-2-3+4
+        6 functions:    H  py  1+2-3-4
+        6 functions:    H  pz  1-2+3-4
+        1 functions:    H  dxx 1-2-3+4
+        1 functions:    H  dxy 1+2-3-4
+        1 functions:    H  dxz 1-2+3-4
+        1 functions:    H  dyy 1-2-3+4
+        1 functions:    H  dyz 1+2+3+4
+        1 functions:    H  dzz 1-2-3+4
+
+
+   ***************************************************************************
+   *************************** Hamiltonian defined ***************************
+   ***************************************************************************
+
+ * Print level:    0
+ * Dirac-Coulomb Hamiltonian
+ * SS integrals neglected:
+   Interatomic Coulombic SS-contributions modelled by
+   classical repulsion of small component atomic charges
+   using tabulated charges.
+ * Default integral flags passed to all modules
+   - LL-integrals:     1
+   - LS-integrals:     1
+   - SS-integrals:     0
+   - GT-integrals:     0
+ * Basis set:
+   - uncontracted large component basis set
+   - uncontracted small component basis set
+
+
+ Information about the restricted kinetic balance scheme:
+ * Default RKB projection:
+   1: Pre-projection in scalar basis
+   2: Removal of unphysical solutions (via diagonalization of free particle Hamiltonian)
+
+
+ ********************************************************************************
+ *************************** Input consistency checks ***************************
+ ********************************************************************************
+
+
+
+    *************************************************************************
+    ************************ End of input processing ************************
+    *************************************************************************
+
+
+*****************************************************
+********** E N D   of   D I R A C  output  **********
+*****************************************************
+
+
+ 
+     Date and time (Linux)  : Thu Apr 30 11:51:43 2020
+     Host name              : lxir127                                 
+
+>>>> Node 0, utime: 0, stime: 0, minflt: 4651, majflt: 193, nvcsw: 734, nivcsw: 1706, maxrss: 48920
+>>>> Total WALL time used in DIRAC: 0s
+  
+  Dynamical Memory Usage Summary for Master
+  
+  Mean allocation size (Mb) :        48.90
+  
+  Largest                    10  allocations
+  
+      488.28 Mb at subroutine MAIN__+0x9a3                               for test allocation of work array in DIRAC mai
+        0.76 Mb at subroutine paminp_+0x112                              for PAMINP WORK array                         
+        0.03 Mb at subroutine xpldef_+0x3fc                              for INTADR in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3cc                              for INTREP in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3fc                              for INTADR in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3cc                              for INTREP in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3fc                              for INTADR in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3cc                              for INTREP in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3fc                              for INTADR in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3cc                              for INTREP in XPLDEF                          
+  
+  Peak memory usage:       488.28 MB
+  Peak memory usage:        0.477 GB
+       reached at subroutine : MAIN__+0x9a3                              
+              for variable   : test allocation of work array in DIRAC mai
+  
+ MEMGET high-water mark:     0.00 MB
+
+*****************************************************
+DIRAC pam run in /u/milias/Work/qch/software/dirac/trunk/test/xyz_symmetry_recognition
+
+ ====  below this line is the stderr stream  ====
+--------------------------------------------------------------------------
+By default, for Open MPI 4.0 and later, infiniband ports on a device
+are not used by default.  The intent is to use UCX for these devices.
+You can override this policy by setting the btl_openib_allow_ib MCA parameter
+to true.
+
+  Local host:              lxir127
+  Local adapter:           mlx4_0
+  Local port:              1
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   lxir127
+  Local device: mlx4_0
+--------------------------------------------------------------------------

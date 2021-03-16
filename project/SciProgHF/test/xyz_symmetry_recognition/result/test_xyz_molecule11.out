@@ -1,0 +1,2540 @@
+
+  ** notice ** integer kinds do not match: dirac --> kind = 8 MPI library --> kind =  4
+  ** interface to 32-bit integer MPI enabled **
+
+DIRAC serial starts by allocating 64000000 words (    488.28 MB -      0.477 GB) of memory
+    out of the allowed maximum of 2147483648 words (  16384.00 MB -     16.000 GB)
+
+Note: maximum allocatable memory for serial run can be set by pam --aw/--ag
+
+ *******************************************************************************
+ *                                                                             *
+ *                                O U T P U T                                  *
+ *                                   from                                      *
+ *                                                                             *
+ *                   @@@@@    @@   @@@@@     @@@@     @@@@@                    *
+ *                   @@  @@        @@  @@   @@  @@   @@                        *
+ *                   @@  @@   @@   @@@@@    @@@@@@   @@                        *
+ *                   @@  @@   @@   @@ @@    @@  @@   @@                        *
+ *                   @@@@@    @@   @@  @@   @@  @@    @@@@@                    *
+ *                                                                             *
+ *                                                                             *
+ %}ZS)S?$=$)]S?$%%>SS$%S$ZZ6cHHMHHHHHHHHMHHM&MHbHH6$L/:<S///</:|/:|:/::!:.::--:%
+ $?S$$%$$$$?%?$(SSS$SSSHMMMMMMMMMMMMMMMMMM6H&6S&SH&&k?6$r~::://///::::::.:::-::$
+ (%?)Z??$$$(S%$>$)S6HMMMMMMMMMMMMMMMMMMMMMMR6M]&&$6HR$&6(i::::::|i|:::::::-:-::(
+ $S?$$)$?$%?))?S/]#MMMMMMMMMMMMMMMMMMMMMMMMMMHM1HRH9R&$$$|):?:/://|:/::/:/.::.:$
+ SS$%%?$%((S)?Z[6MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM&HF$$&/)S?<~::!!:::::::/:-:|.S
+ SS%%%%S$%%%$$MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHHHHHM>?/S/:/:::`:/://:/::-::S
+ ?$SSSS?%SS$)MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM/4?:S:/:::/:::/:/:::.::?
+ S$(S?S$%(?$HMMMMMMMMMMMMMMMMM#&7RH99MMMMMMMMMMMMMMMMMMHHHd$/:::::/::::::-//.:.S
+ (?SS(%)S&HMMMMMMMMMMMMMMMMM#S|///???$9HHMMMMMMMMMDSZ&1S/?</>?~:///::|/!:/-:-:.(
+ $S?%?<H(MMMMMMMMMMMMMMMMR?`. :.:`::<>:``?/*?##*)$:/>       `((%://::/:::::/::/$
+ S$($$)HdMMMMMMMMMMMMMMMP: . `   `  `    `      `-            `Z<:>?::/:::::|:iS
+ c%%%&HMMMMMMMMMMMMMMMM6:                                      `$%)>%%</>!:::::c
+ S?%/MMMMMMMMMMMMMMMMMMH-                                        /ZSS>?:?~:;/::S
+ $SZ?MMMMMMMMMMMMMMMMMH?.                                        \"&((/?//?|:::$
+ $%$%&MMMMMMMMMMMMMMMMM:.                                          ?%/S:</::/::$
+ ($?}&HMMMMMMMMMMMMMMMM>:                                          $%%<?/i:|i::(
+ Z$($&MMMMMMMMMMMMMMMMHk(:.  . -                                   .S/\?\?/!:/:Z
+ (??$<HMMMMMMMMMMMMMMMFk|:   -.-.                                  :%/%/(:/:ii|(
+ SZ(S?]MMMMMMMMMMMMMMHS?:- -  ::.:                                  |/S:</::?||S
+ $%)$$(MMMMMMMMMMMMMMR):`:. :.:::`,,/bcokb/_                       :S?%?|~:/:/:$
+ %$$%$)[[?$?MMMMMMMMMM: :.:-.::::$7?<&7&MMMMMMM#/           _ .. ..:</?:(:/::::%
+ $$$?Z?HHH~|/MMMMMMMMM/`.-.:.:/:%%%%?dHMMMMMMMMMMH?,-   .,bMMMM6//./i~/~:<:::/:$
+ $($S$M//::S?ZHMMMMMH/:.`:::.:/%S/&MMHMMMMMMMMRM&><   ,HMMMMMMMF  :::?:///:|:::$
+ )[$S$S($|_i:#>::*H&?/::.::/:\"://:?>>`:&HMHSMMMM$:`-   MMHMMMMHHT .)i/?////::/)
+ $$[$$>$}:dHH&$$--?S::-:.:::--/-:``./::>%Zi?)&/?`:.`   `H?$T*\" `  /%?>%:)://ii$
+ $&=&/ZS}$RF<:?/-.|%r/:::/:/:`.-.-..|::S//!`\"``          >??:    `SS<S:)!/////$
+ Z&]>b[Z(Z?&%:::../S$$:>:::i`.`. `-.`  `                         ,>%%%:>/>/!|:/Z
+ $$&/F&1$c$?>:>?/,>?$$ZS/::/:-: ...                              |S?S)S?<~:::::$
+ &$&$&$k&>>|?<:<?((/$[/?)i~/:/. - -                              S?:%%%?/:::/::&
+ =[/Z[[Fp[MMH$>?Z&S$$$/$S///||..-           -.-                  /((S$:%<:///:/=
+ $&>1MHHMMMM6M9MMMM$Z$}$S%/:::.`.            .:/,,,dcb>/:.       ((SSSS%:)!//i|$
+ MMMMMMMMMMMR&&RRRHR&&($(?:|i::-             .:%&S&$[&H&``     ../>%;/?>??:<::>M
+ MMMMMMMMMMMMS/}S$&&H&[$SS//:::.:.   . . .v</Jq1&&D]&M&<,      :/::/?%%)S>?://:M
+ MMMMMMMMMMMM?}$/$$kMM&&$(%/?//:..`.  .|//1d/`://?*/*/\"` `     .:/(SS$%(S%)):%M
+ MMMMMMMMMMMM(}$$>&&MMHR#$S%%:?::.:|-.`:;&&b/D/$p=qpv//b/~`   :/~~%%??$=$)Z$S+;M
+ MMMMMMMMMMMM[|S$$Z1]MMMMD[$?$:>)/::: :/?:``???bD&{b<<-`     .,:/)|SS(}Z/$$?/<SM
+ MMMMMMMMMMMM||$)&7k&MMMMH9]$$??Z%|!/:i::`  `` .             SS?SS?Z/]1$/&$c/$SM
+ MMMMMMMMMMMM| -?>[&]HMMMMMMMH1[/7SS(?:/..-` ::/Sc,/_,     _<$?SS%$S/&c&&$&>//<M
+ MMMMMMMMMMMMR  `$&&&HMM9MMMMMMM&&c$%%:/:/:.:.:/\?\?/\    _MMHk/7S/]dq&1S<&&></M
+ MMMMMMMMMMMMM?  :&96MHMMMMMMMMMMMHHk[S%(<<:// `         ,MMMMMMM&/Z6H]DkH]1$&&M
+ MMMMMMMMMMMMMD    99H9HMMMMMMMMMMMMMMMb&%$<:i.:....    .MMMMMMMMM6HHHRH&H&H1SFM
+ MMMMMMMMMMMMMM|   `?HMMMMMMMMMMMMMMMMMMMHk6k&>$&Z$/?_.bHMMMMMMMMMMM&6HRM9H6]ZkM
+ MMMMMMMMMMMMMMM/    `TMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH6RH&R6&M
+ MMMMMMMMMMMMMMMM    -|?HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMFHH6HMD&&M
+ MMMMMMMMMMMMMMMMk  ..:~?9MMMMMMMMMMMMM#`:MMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MHkR6&FM
+ MMMMMMMMMMMMMMMMM/  .-!:%$ZHMMMMMMMMMR` dMMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MRMHH9&M
+ MMMMMMMMMMMMMMMMMML,:.-|::/?&&MMMMMM` .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHRMH&&6M
+ MMMMMMMMMMMMMMMMMMMc%>/:::i<:SMMMMMMHdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHM&969kM
+ MMMMMMMMMMMMMMMMMMMMSS/$$/(|HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHH&HH&M
+ MMMMMMMMMMMMMMMMMMMM6S/?/MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMR96H1DR1M
+ MMMMMMMMMMMMMMMMMMMMM&$MHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH691&&M
+ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&R&9ZM
+ MMMMMMMMMMMMMMMMMMMMMMMMMRHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&96][6M
+ MMMMMMMMMMMMMMMMMMMMMMMMp?:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM96HH1][FM
+ MMMMMMMMMMMMMMMMMMMMMMMM> -HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&1k&$&M
+ *******************************************************************************
+ *                                                                             *
+ *         =========================================================           *
+ *                     Program for Atomic and Molecular                        *
+ *          Direct Iterative Relativistic All-electron Calculations            *
+ *         =========================================================           *
+ *                                                                             *
+ *                                                                             *
+ *    Written by:                                                              *
+ *                                                                             *
+ *    Andre S. P. Gomes        CNRS/Universite de Lille          France        *
+ *    Trond Saue               Universite Toulouse III           France        *
+ *    Lucas Visscher           Vrije Universiteit Amsterdam      Netherlands   *
+ *    Hans Joergen Aa. Jensen  University of Southern Denmark    Denmark       *
+ *    Radovan Bast             UiT The Arctic University of      Norway        *
+ *                                                                             *
+ *    with contributions from:                                                 *
+ *                                                                             *
+ *    Ignacio Agustin Aucar    Northeast National University     Argentina     *
+ *    Vebjoern Bakken          University of Oslo                Norway        *
+ *    Kenneth G. Dyall         Schrodinger, Inc., Portland       USA           *
+ *    Sebastien Dubillard      University of Strasbourg          France        *
+ *    Ulf Ekstroem             University of Oslo                Norway        *
+ *    Ephraim Eliav            University of Tel Aviv            Israel        *
+ *    Thomas Enevoldsen        University of Southern Denmark    Denmark       *
+ *    Elke Fasshauer           University of Aarhus              Denmark       *
+ *    Timo Fleig               Universite Toulouse III           France        *
+ *    Olav Fossgaard           UiT The Arctic University of      Norway        *
+ *    Loic Halbert             Universite de Lille               France        *
+ *    Erik D. Hedegaard        Lund University                   Sweden        *
+ *    Trygve Helgaker          University of Oslo                Norway        *
+ *    Benjamin Helmich-Paris   Max Planck Institute f. Coal Res. Germany       *
+ *    Johan Henriksson         Linkoeping University             Sweden        *
+ *    Miroslav Ilias           Matej Bel University              Slovakia      *
+ *    Christoph R. Jacob       TU Braunschweig                   Germany       *
+ *    Stefan Knecht            ETH Zuerich                       Switzerland   *
+ *    Stanislav Komorovsky     UiT The Arctic University of      Norway        *
+ *    Ossama Kullie            University of Kassel              Germany       *
+ *    Jon K. Laerdahl          University of Oslo                Norway        *
+ *    Christoffer V. Larsen    University of Southern Denmark    Denmark       *
+ *    Yoon Sup Lee             KAIST, Daejeon                    South Korea   *
+ *    Huliyar S. Nataraj       BME/Budapest Univ. Tech. & Econ.  Hungary       *
+ *    Malaya Kumar Nayak       Bhabha Atomic Research Centre     India         *
+ *    Patrick Norman           Stockholm Inst. of Technology     Sweden        *
+ *    Malgorzata Olejniczak    University of Warsaw              Poland        *
+ *    Jeppe Olsen              Aarhus University                 Denmark       *
+ *    Jogvan Magnus H. Olsen   University of Southern Denmark    Denmark       *
+ *    Young Choon Park         KAIST, Daejeon                    South Korea   *
+ *    Jesper K. Pedersen       University of Southern Denmark    Denmark       *
+ *    Markus Pernpointner      University of Heidelberg          Germany       *
+ *    Roberto Di Remigio       UiT The Arctic University of      Norway        *
+ *    Kenneth Ruud             UiT The Arctic University of      Norway        *
+ *    Pawel Salek              Stockholm Inst. of Technology     Sweden        *
+ *    Bernd Schimmelpfennig    Karlsruhe Institute of Technology Germany       *
+ *    Bruno Senjean            University of Leiden              Netherlands   *
+ *    Avijit Shee              University of Michigan            USA           *
+ *    Jetze Sikkema            Vrije Universiteit Amsterdam      Netherlands   *
+ *    Andreas J. Thorvaldsen   UiT The Arctic University of      Norway        *
+ *    Joern Thyssen            University of Southern Denmark    Denmark       *
+ *    Joost van Stralen        Vrije Universiteit Amsterdam      Netherlands   *
+ *    Marta L. Vidal           Technical University of Denmark   Denmark       *
+ *    Sebastien Villaume       Linkoeping University             Sweden        *
+ *    Olivier Visser           University of Groningen           Netherlands   *
+ *    Toke Winther             University of Southern Denmark    Denmark       *
+ *    Shigeyoshi Yamamoto      Chukyo University                 Japan         *
+ *                                                                             *
+ *    For more information about the DIRAC code see http://diracprogram.org    *
+ *                                                                             *
+ *    This is an experimental code. The authors accept no responsibility       *
+ *    for the performance of the code or for the correctness of the results.   *
+ *                                                                             *
+ *    The code (in whole or part) is not to be reproduced for further          *
+ *    distribution without the written permission of the authors or            *
+ *    their representatives.                                                   *
+ *                                                                             *
+ *    If results obtained with this code are published, an                     *
+ *    appropriate citation would be:                                           *
+ *                                                                             *
+ *    DIRAC, a relativistic ab initio electronic structure program,            *
+ *    Release DIRAC19 (2019), written by                                       *
+ *    A. S. P. Gomes, T. Saue, L. Visscher, H. J. Aa. Jensen, and R. Bast,     *
+ *    with contributions from I. A. Aucar, V. Bakken, K. G. Dyall,             *
+ *    S. Dubillard, U. Ekstroem, E. Eliav, T. Enevoldsen, E. Fasshauer,        *
+ *    T. Fleig, O. Fossgaard, L. Halbert, E. D. Hedegaard, T. Helgaker,        *
+ *    J. Henriksson, M. Ilias, Ch. R. Jacob, S. Knecht, S. Komorovsky,         *
+ *    O. Kullie, J. K. Laerdahl, C. V. Larsen, Y. S. Lee, H. S. Nataraj,       *
+ *    M. K. Nayak, P. Norman, M. Olejniczak, J. Olsen, J. M. H. Olsen,         *
+ *    Y. C. Park, J. K. Pedersen, M. Pernpointner, R. Di Remigio, K. Ruud,     *
+ *    P. Salek, B. Schimmelpfennig, B. Senjean, A. Shee, J. Sikkema,           *
+ *    A. J. Thorvaldsen, J. Thyssen, J. van Stralen, M. L. Vidal, S. Villaume, *
+ *    O. Visser, T. Winther, and S. Yamamoto (see http://diracprogram.org).    *
+ *                                                                             *
+ *******************************************************************************
+
+
+Version information
+-------------------
+
+Branch        | master
+Commit hash   | 8743b2c
+Commit author | Radovan Bast
+Commit date   | Wed Apr 29 18:40:41 2020 +0000
+
+
+Configuration and build information
+-----------------------------------
+
+Who compiled             | milias
+Compiled on server       | lxir127
+Operating system         | Linux-3.16.0-10-amd64
+CMake version            | 3.0.2
+CMake generator          | Unix Makefiles
+CMake build type         | release
+Configuration time       | 2020-04-30 07:36:32.862629
+Python version           | 2.7.9
+Fortran compiler         | /cvmfs/it.gsi.de/openmpi/intel/4.0.1_intel17.4/bin/mpif90
+Fortran compiler version | 17.0
+Fortran compiler flags   |  -w -assume byterecl -g -traceback -DVAR_IFORT  -i8 -w -assume byterecl -g -traceback -DVAR_IFORT  -i8
+C compiler               | /cvmfs/it.gsi.de/openmpi/intel/4.0.1_intel17.4/bin/mpicc
+C compiler version       | 17.0
+C compiler flags         |  -g -wd981 -wd279 -wd383 -wd1572 -wd177  -g -wd981 -wd279 -wd383 -wd1572 -wd177 
+C++ compiler             | /cvmfs/it.gsi.de/openmpi/intel/4.0.1_intel17.4/bin/mpicxx
+C++ compiler version     | 17.0.4
+C++ compiler flags       |  -Wno-unknown-pragmas  -Wno-unknown-pragmas 
+Static linking           | False
+64-bit integers          | True
+MPI parallelization      | True
+MPI launcher             | /cvmfs/it.gsi.de/openmpi/intel/4.0.1_intel17.4/bin/mpiexec
+Math libraries           | unknown
+Builtin BLAS library     | OFF
+Builtin LAPACK library   | OFF
+Explicit libraries       | unknown
+Compile definitions      | HAVE_MKL_BLAS;HAVE_MKL_LAPACK;HAVE_MPI;VAR_MPI;VAR_MPI2;VAR_MPI_32BIT_INT;MOD_UNRELEASED;SYS_LINUX;PRG_DIRAC;INT_STAR8;INSTALL_WRKMEM=64000000;HAS_PCMSOLVER;BUILD_GEN1INT;HAS_PELIB;MOD_QCORR;HAS_STIELTJES;MOD_INTEREST;MOD_LAO_REARRANGED;MOD_MCSCF_spinfree;MOD_AOOSOC;MOD_ESR;MOD_KRCC;MOD_SRDFT;MOD_LAPLACE
+
+
+ LAPACK integer*4/8 selftest passed
+ Selftest of ISO_C_BINDING Fortran - C/C++ interoperability PASSED
+
+Execution time and host
+-----------------------
+
+ 
+     Date and time (Linux)  : Thu Apr 30 11:51:38 2020
+     Host name              : lxir127                                 
+
+
+Contents of the input file
+--------------------------
+
+**DIRAC                                                                                             
+.TITLE                                                                                              
+  test xyz input symmetry detection                                                                 
+.INPTEST                                                                                            
+**MOLECULE                                                                                          
+*BASIS                                                                                              
+.DEFAULT                                                                                            
+dyall.v2z                                                                                           
+**INTEGRALS                                                                                         
+*READIN                                                                                             
+.UNCONTRACTED                                                                                       
+*END OF                                                                                             
+
+
+Contents of the molecule file
+-----------------------------
+
+40                                                                                                  
+Dodecahedrane; ADF geom.opt: SRZORA,BP,DZP; I(h) imposed symmetry                                   
+C      -0.77819000       1.07108000       1.73305000                                                
+C       0.77819000       1.07108000       1.73305000                                                
+C      -1.25913000       1.73305000       0.40912000                                                
+C      -1.25913000      -0.40912000       1.73305000                                                
+C       1.25913000       1.73305000       0.40912000                                                
+C       1.25913000      -0.40912000       1.73305000                                                
+C       0.00000000       2.14216000      -0.40912000                                                
+C      -2.03732000       0.66196000      -0.40912000                                                
+C      -0.00000000      -1.32393000       1.73305000                                                
+C      -2.03732000      -0.66196000       0.40912000                                                
+C       2.03732000       0.66196000      -0.40912000                                                
+C       2.03732000      -0.66196000       0.40912000                                                
+C       0.00000000       1.32393000      -1.73305000                                                
+C      -1.25913000       0.40912000      -1.73305000                                                
+C      -0.00000000      -2.14216000       0.40912000                                                
+C      -1.25913000      -1.73305000      -0.40912000                                                
+C       1.25913000       0.40912000      -1.73305000                                                
+C       1.25913000      -1.73305000      -0.40912000                                                
+C      -0.77819000      -1.07108000      -1.73305000                                                
+C       0.77819000      -1.07108000      -1.73305000                                                
+H      -1.17061000       1.61121000       2.60699000                                                
+H       1.17061000       1.61121000       2.60699000                                                
+H      -1.89409000       2.60699000       0.61543000                                                
+H      -1.89409000      -0.61543000       2.60699000                                                
+H       1.89409000       2.60699000       0.61543000                                                
+H       1.89409000      -0.61543000       2.60699000                                                
+H       0.00000000       3.22242000      -0.61543000                                                
+H      -3.06470000       0.99578000      -0.61543000                                                
+H      -0.00000000      -1.99156000       2.60699000                                                
+H      -3.06470000      -0.99578000       0.61543000                                                
+H       3.06470000       0.99578000      -0.61543000                                                
+H       3.06470000      -0.99578000       0.61543000                                                
+H       0.00000000       1.99156000      -2.60699000                                                
+H      -1.89409000       0.61543000      -2.60699000                                                
+H      -0.00000000      -3.22242000       0.61543000                                                
+H      -1.89409000      -2.60699000      -0.61543000                                                
+H       1.89409000       0.61543000      -2.60699000                                                
+H       1.89409000      -2.60699000      -0.61543000                                                
+H      -1.17061000      -1.61121000      -2.60699000                                                
+H       1.17061000      -1.61121000      -2.60699000                                                
+
+
+    *************************************************************************
+    ******************   test xyz input symmetry detection ******************
+    *************************************************************************
+
+ Jobs in this run:
+   * Input test run only
+
+
+    **************************************************************************
+    ************************** General DIRAC set-up **************************
+    **************************************************************************
+
+   CODATA Recommended Values of the Fundamental Physical Constants: 1998  
+                Peter J. Mohr and Barry N. Taylor                         
+   Journal of Physical and Chemical Reference Data, Vol. 28, No. 6, 1999  
+ * The speed of light :        137.0359998
+ * Running in four-component mode
+ * Direct evaluation of the following two-electron integrals:
+   - LL-integrals
+   - SL-integrals
+   - SS-integrals
+   - GT-integrals
+ * Spherical transformation embedded in MO-transformation
+   for large components
+ * Transformation to scalar RKB basis embedded in
+   MO-transformation for small components
+ * Thresholds for linear dependence:
+   Large components:   1.00D-06
+   Small components:   1.00D-08
+ * General print level   :   0
+
+
+    *************************************************************************
+    ****************** Output from HERMIT input processing ******************
+    *************************************************************************
+
+ Default print level:        1
+ Nuclear model: Gaussian charge distribution.
+
+ Two-electron integrals not calculated.
+
+
+ Ordinary (field-free non-relativistic) Hamiltonian integrals not calculated.
+
+
+
+ Changes of defaults for *READIN
+ -------------------------------
+
+
+ Uncontracted basis forced, irrespective of basis input file.
+
+
+
+   ***************************************************************************
+   ****************** Output from MOLECULE input processing ******************
+   ***************************************************************************
+
+
+
+                     SYMADD: Detection of molecular symmetry
+                     ---------------------------------------
+
+ Symmetry test threshold:  5.00E-06
+
+    The molecule has been centered at center of mass
+
+ Symmetry point group found: C(2h)          
+
+ Rotational Axes
+ ---------------
+       2 :      0.00000000     0.00000000     1.00000000  Isotope  0
+
+ No unique improper rotational axes were found.
+
+ Mirror planes
+ -----------------------------
+ #1 = Type: 2=h, 1=v, 0=other
+ #2 = Number of atoms in plane
+ #3-5 = normal vector of plane
+ -----------------------------
+ 0     2 :     -0.00000000     0.00000000    -1.00000000
+ 0     0 :      0.75575997     0.57735194     0.30901716
+ 0     0 :      0.75575997     0.57735194    -0.30901716
+
+ The following symmetry elements were found: Z  XY    
+
+
+  Symmetry Operations
+  -------------------
+
+  Symmetry operations: 2
+
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Full group is:  C(2h)          
+Represented as: C2h
+
+   * The point group was generated by:
+
+      Reflection in the xy-plane
+      Rotation about the z-axis
+
+   * Group multiplication table
+
+        |  E   C2z   i   Oxy
+   -----+--------------------
+     E  |  E   C2z   i   Oxy
+    C2z | C2z   E   Oxy   i 
+     i  |  i   Oxy   E   C2z
+    Oxy | Oxy   i   C2z   E 
+
+   * Character table
+
+        |  E   C2z   i   Oxy
+   -----+--------------------
+    Ag  |   1    1    1    1
+    Au  |   1    1   -1   -1
+    Bu  |   1   -1   -1    1
+    Bg  |   1   -1    1   -1
+
+   * Direct product table
+
+        | Ag   Au   Bu   Bg 
+   -----+--------------------
+    Ag  | Ag   Au   Bu   Bg 
+    Au  | Au   Ag   Bg   Bu 
+    Bu  | Bu   Bg   Ag   Au 
+    Bg  | Bg   Bu   Au   Ag 
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * Two fermion irreps:  E1g  E1u
+   * Complex group. NZ = 2
+   * Direct product decomposition:
+          E1g x E1g : Ag  + Ag  + Bg  + Bg 
+          E1u x E1g : Au  + Au  + Bu  + Bu 
+          E1u x E1u : Ag  + Ag  + Bg  + Bg 
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1            * Fermion irrep no.: 2
+
+      La  |  Ag (1)  Ag (1)  |                La  |  Au (1)  Au (1)  |
+      Sa  |  Au (1)  Au (1)  |                Sa  |  Ag (1)  Ag (1)  |
+      Lb  |  Bg (4)  Bg (4)  |                Lb  |  Bu (4)  Bu (4)  |
+      Sb  |  Bu (4)  Bu (4)  |                Sb  |  Bg (4)  Bg (4)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    Ag   1  i
+    Au   1  i
+    Bu   k  j
+    Bg   k  j
+
+  QM-QM nuclear repulsion energy :   1744.340213761169
+
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types :    2
+  Total number of atoms:   40
+
+  label    atoms   charge   prim    cont     basis   
+  ----------------------------------------------------------------------
+  C          20       6      34      34      L  - [10s6p1d|10s6p1d]                                              
+                             85      85      S  - [6s11p6d1f|6s11p6d1f]                                          
+  H          20       1       9       9      L  - [6s1p|6s1p]                                                    
+                             25      25      S  - [1s6p1d|1s6p1d]                                                
+  ----------------------------------------------------------------------
+                            860     860      L  - large components
+                           2200    2200      S  - small components
+  ----------------------------------------------------------------------
+  total:     40     140    3060    3060
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1   2
+   1s-3s: K.G. Dyall, Theor. Chem. Acc. (2016) 135:128                            
+   4s-7s: K.G. Dyall, J. Phys. Chem. A. (2009) 113:12638.                         
+   2p-3p: K.G. Dyall, Theor. Chem. Acc. (2016) 135:128                            
+   4p-6p: K.G. Dyall, Theor. Chem. Acc. (1998) 99:366;                            
+          revision K.G. Dyall, Theor. Chem. Acc. (2006) 115:441.                  
+      7p: K.G. Dyall, Theor. Chem. Acc. (2012) 131:1172.                          
+      3d: K.G. Dyall and A.S.P. Gomes, unpublished.                               
+      4d: K.G. Dyall, Theor. Chem. Acc. (2007) 117:483.                           
+      5d: K.G. Dyall, Theor. Chem. Acc. (2004) 112:403;                           
+          revision K.G. Dyall and A.S.P. Gomes, Theor. Chem. Acc. (2009) 125:97.  
+
+
+  Cartesian Coordinates (bohr)
+  ----------------------------
+
+  Total number of coordinates:120
+
+
+   1   C    1   x     -1.3737682033
+   2            y      3.0718140409
+   3            z      2.3794108670
+
+   4   C    2   x     -1.3737682033
+   5            y      3.0718140409
+   6            z     -2.3794108670
+
+   7   C    3   x      1.3737682033
+   8            y     -3.0718140409
+   9            z      2.3794108670
+
+  10   C    4   x      1.3737682033
+  11            y     -3.0718140409
+  12            z     -2.3794108670
+
+  13   C    1   x      0.0000000000
+  14            y      4.1212620601
+  15            z      0.0000000000
+
+  16   C    2   x      0.0000000000
+  17            y     -4.1212620601
+  18            z      0.0000000000
+
+  19   C    1   x      0.5247332905
+  20            y      1.3737487009
+  21            z      3.8499768472
+
+  22   C    2   x      0.5247332905
+  23            y      1.3737487009
+  24            z     -3.8499768472
+
+  25   C    3   x     -0.5247332905
+  26            y     -1.3737487009
+  27            z      3.8499768472
+
+  28   C    4   x     -0.5247332905
+  29            y     -1.3737487009
+  30            z     -3.8499768472
+
+  31   C    1   x      2.7475124186
+  32            y      3.0718175860
+  33            z      0.0000000000
+
+  34   C    2   x     -2.7475124186
+  35            y     -3.0718175860
+  36            z      0.0000000000
+
+  37   C    1   x      3.0718140409
+  38            y      1.3737682033
+  39            z      2.3794108670
+
+  40   C    2   x      3.0718140409
+  41            y      1.3737682033
+  42            z     -2.3794108670
+
+  43   C    3   x     -3.0718140409
+  44            y     -1.3737682033
+  45            z      2.3794108670
+
+  46   C    4   x     -3.0718140409
+  47            y     -1.3737682033
+  48            z     -2.3794108670
+
+  49   C    1   x      3.5965473314
+  50            y     -1.3737451559
+  51            z      1.4705659802
+
+  52   C    2   x      3.5965473314
+  53            y     -1.3737451559
+  54            z     -1.4705659802
+
+  55   C    3   x     -3.5965473314
+  56            y      1.3737451559
+  57            z      1.4705659802
+
+  58   C    4   x     -3.5965473314
+  59            y      1.3737451559
+  60            z     -1.4705659802
+
+  61   H    1   x     -2.0665292444
+  62            y      4.6208642369
+  63            z      3.5793113730
+
+  64   H    2   x     -2.0665292444
+  65            y      4.6208642369
+  66            z     -3.5793113730
+
+  67   H    3   x      2.0665292444
+  68            y     -4.6208642369
+  69            z      3.5793113730
+
+  70   H    4   x      2.0665292444
+  71            y     -4.6208642369
+  72            z     -3.5793113730
+
+  73   H    1   x     -0.0000060149
+  74            y      6.1995531739
+  75            z      0.0000000000
+
+  76   H    2   x      0.0000060149
+  77            y     -6.1995531739
+  78            z      0.0000000000
+
+  79   H    1   x      0.7893414611
+  80            y      2.0665149722
+  81            z      5.7914436826
+
+  82   H    2   x      0.7893414611
+  83            y      2.0665149722
+  84            z     -5.7914436826
+
+  85   H    3   x     -0.7893414611
+  86            y     -2.0665149722
+  87            z      5.7914436826
+
+  88   H    4   x     -0.7893414611
+  89            y     -2.0665149722
+  90            z     -5.7914436826
+
+  91   H    1   x      4.1330239295
+  92            y      4.6208702518
+  93            z      0.0000000000
+
+  94   H    2   x     -4.1330239295
+  95            y     -4.6208702518
+  96            z      0.0000000000
+
+  97   H    1   x      4.6208642369
+  98            y      2.0665292444
+  99            z      3.5793113730
+
+ 100   H    2   x      4.6208642369
+ 101            y      2.0665292444
+ 102            z     -3.5793113730
+
+ 103   H    3   x     -4.6208642369
+ 104            y     -2.0665292444
+ 105            z      3.5793113730
+
+ 106   H    4   x     -4.6208642369
+ 107            y     -2.0665292444
+ 108            z     -3.5793113730
+
+ 109   H    1   x      5.4102117128
+ 110            y     -2.0665089573
+ 111            z      2.2121323096
+
+ 112   H    2   x      5.4102117128
+ 113            y     -2.0665089573
+ 114            z     -2.2121323096
+
+ 115   H    3   x     -5.4102117128
+ 116            y      2.0665089573
+ 117            z      2.2121323096
+
+ 118   H    4   x     -5.4102117128
+ 119            y      2.0665089573
+ 120            z     -2.2121323096
+
+
+
+  Cartesian coordinates in XYZ format (Angstrom)
+  ----------------------------------------------
+
+   40
+ 
+C     -0.7269668227   1.6255339786   1.2591300000
+C     -0.7269668227   1.6255339786  -1.2591300000
+C      0.7269668227  -1.6255339786   1.2591300000
+C      0.7269668227  -1.6255339786  -1.2591300000
+C      0.0000000000   2.1808779517   0.0000000000
+C      0.0000000000  -2.1808779517   0.0000000000
+C      0.2776768978   0.7269565024   2.0373200000
+C      0.2776768978   0.7269565024  -2.0373200000
+C     -0.2776768978  -0.7269565024   2.0373200000
+C     -0.2776768978  -0.7269565024  -2.0373200000
+C      1.4539209514   1.6255358545   0.0000000000
+C     -1.4539209514  -1.6255358545   0.0000000000
+C      1.6255339786   0.7269668227   1.2591300000
+C      1.6255339786   0.7269668227  -1.2591300000
+C     -1.6255339786  -0.7269668227   1.2591300000
+C     -1.6255339786  -0.7269668227  -1.2591300000
+C      1.9032108764  -0.7269546265   0.7781900000
+C      1.9032108764  -0.7269546265  -0.7781900000
+C     -1.9032108764   0.7269546265   0.7781900000
+C     -1.9032108764   0.7269546265  -0.7781900000
+H     -1.0935601764   2.4452560368   1.8940900000
+H     -1.0935601764   2.4452560368  -1.8940900000
+H      1.0935601764  -2.4452560368   1.8940900000
+H      1.0935601764  -2.4452560368  -1.8940900000
+H     -0.0000031829   3.2806622413   0.0000000000
+H      0.0000031829  -3.2806622413   0.0000000000
+H      0.4177015108   1.0935526239   3.0647000000
+H      0.4177015108   1.0935526239  -3.0647000000
+H     -0.4177015108  -1.0935526239   3.0647000000
+H     -0.4177015108  -1.0935526239  -3.0647000000
+H      2.1871020648   2.4452592197   0.0000000000
+H     -2.1871020648  -2.4452592197   0.0000000000
+H      2.4452560368   1.0935601764   1.8940900000
+H      2.4452560368   1.0935601764  -1.8940900000
+H     -2.4452560368  -1.0935601764   1.8940900000
+H     -2.4452560368  -1.0935601764  -1.8940900000
+H      2.8629607305  -1.0935494409   1.1706100000
+H      2.8629607305  -1.0935494409  -1.1706100000
+H     -2.8629607305   1.0935494409   1.1706100000
+H     -2.8629607305   1.0935494409  -1.1706100000
+
+
+  Symmetry Coordinates
+  --------------------
+
+  Number of coordinates in each symmetry:    32   28   32   28
+
+
+  Symmetry  Ag ( 1)
+
+    1   C     x    [  1  +    4  -    7  -   10 ]/4
+    2   C     y    [  2  +    5  -    8  -   11 ]/4
+    3   C     z    [  3  -    6  +    9  -   12 ]/4
+    4   C     x    [ 13  -   16 ]/2
+    5   C     y    [ 14  -   17 ]/2
+    6   C     x    [ 19  +   22  -   25  -   28 ]/4
+    7   C     y    [ 20  +   23  -   26  -   29 ]/4
+    8   C     z    [ 21  -   24  +   27  -   30 ]/4
+    9   C     x    [ 31  -   34 ]/2
+   10   C     y    [ 32  -   35 ]/2
+   11   C     x    [ 37  +   40  -   43  -   46 ]/4
+   12   C     y    [ 38  +   41  -   44  -   47 ]/4
+   13   C     z    [ 39  -   42  +   45  -   48 ]/4
+   14   C     x    [ 49  +   52  -   55  -   58 ]/4
+   15   C     y    [ 50  +   53  -   56  -   59 ]/4
+   16   C     z    [ 51  -   54  +   57  -   60 ]/4
+   17   H     x    [ 61  +   64  -   67  -   70 ]/4
+   18   H     y    [ 62  +   65  -   68  -   71 ]/4
+   19   H     z    [ 63  -   66  +   69  -   72 ]/4
+   20   H     x    [ 73  -   76 ]/2
+   21   H     y    [ 74  -   77 ]/2
+   22   H     x    [ 79  +   82  -   85  -   88 ]/4
+   23   H     y    [ 80  +   83  -   86  -   89 ]/4
+   24   H     z    [ 81  -   84  +   87  -   90 ]/4
+   25   H     x    [ 91  -   94 ]/2
+   26   H     y    [ 92  -   95 ]/2
+   27   H     x    [ 97  +  100  -  103  -  106 ]/4
+   28   H     y    [ 98  +  101  -  104  -  107 ]/4
+   29   H     z    [ 99  -  102  +  105  -  108 ]/4
+   30   H     x    [109  +  112  -  115  -  118 ]/4
+   31   H     y    [110  +  113  -  116  -  119 ]/4
+   32   H     z    [111  -  114  +  117  -  120 ]/4
+
+
+  Symmetry  Au ( 2)
+
+   33   C     x    [  1  -    4  -    7  +   10 ]/4
+   34   C     y    [  2  -    5  -    8  +   11 ]/4
+   35   C     z    [  3  +    6  +    9  +   12 ]/4
+   36   C     z    [ 15  +   18 ]/2
+   37   C     x    [ 19  -   22  -   25  +   28 ]/4
+   38   C     y    [ 20  -   23  -   26  +   29 ]/4
+   39   C     z    [ 21  +   24  +   27  +   30 ]/4
+   40   C     z    [ 33  +   36 ]/2
+   41   C     x    [ 37  -   40  -   43  +   46 ]/4
+   42   C     y    [ 38  -   41  -   44  +   47 ]/4
+   43   C     z    [ 39  +   42  +   45  +   48 ]/4
+   44   C     x    [ 49  -   52  -   55  +   58 ]/4
+   45   C     y    [ 50  -   53  -   56  +   59 ]/4
+   46   C     z    [ 51  +   54  +   57  +   60 ]/4
+   47   H     x    [ 61  -   64  -   67  +   70 ]/4
+   48   H     y    [ 62  -   65  -   68  +   71 ]/4
+   49   H     z    [ 63  +   66  +   69  +   72 ]/4
+   50   H     z    [ 75  +   78 ]/2
+   51   H     x    [ 79  -   82  -   85  +   88 ]/4
+   52   H     y    [ 80  -   83  -   86  +   89 ]/4
+   53   H     z    [ 81  +   84  +   87  +   90 ]/4
+   54   H     z    [ 93  +   96 ]/2
+   55   H     x    [ 97  -  100  -  103  +  106 ]/4
+   56   H     y    [ 98  -  101  -  104  +  107 ]/4
+   57   H     z    [ 99  +  102  +  105  +  108 ]/4
+   58   H     x    [109  -  112  -  115  +  118 ]/4
+   59   H     y    [110  -  113  -  116  +  119 ]/4
+   60   H     z    [111  +  114  +  117  +  120 ]/4
+
+
+  Symmetry  Bu ( 3)
+
+   61   C     x    [  1  +    4  +    7  +   10 ]/4
+   62   C     y    [  2  +    5  +    8  +   11 ]/4
+   63   C     z    [  3  -    6  -    9  +   12 ]/4
+   64   C     x    [ 13  +   16 ]/2
+   65   C     y    [ 14  +   17 ]/2
+   66   C     x    [ 19  +   22  +   25  +   28 ]/4
+   67   C     y    [ 20  +   23  +   26  +   29 ]/4
+   68   C     z    [ 21  -   24  -   27  +   30 ]/4
+   69   C     x    [ 31  +   34 ]/2
+   70   C     y    [ 32  +   35 ]/2
+   71   C     x    [ 37  +   40  +   43  +   46 ]/4
+   72   C     y    [ 38  +   41  +   44  +   47 ]/4
+   73   C     z    [ 39  -   42  -   45  +   48 ]/4
+   74   C     x    [ 49  +   52  +   55  +   58 ]/4
+   75   C     y    [ 50  +   53  +   56  +   59 ]/4
+   76   C     z    [ 51  -   54  -   57  +   60 ]/4
+   77   H     x    [ 61  +   64  +   67  +   70 ]/4
+   78   H     y    [ 62  +   65  +   68  +   71 ]/4
+   79   H     z    [ 63  -   66  -   69  +   72 ]/4
+   80   H     x    [ 73  +   76 ]/2
+   81   H     y    [ 74  +   77 ]/2
+   82   H     x    [ 79  +   82  +   85  +   88 ]/4
+   83   H     y    [ 80  +   83  +   86  +   89 ]/4
+   84   H     z    [ 81  -   84  -   87  +   90 ]/4
+   85   H     x    [ 91  +   94 ]/2
+   86   H     y    [ 92  +   95 ]/2
+   87   H     x    [ 97  +  100  +  103  +  106 ]/4
+   88   H     y    [ 98  +  101  +  104  +  107 ]/4
+   89   H     z    [ 99  -  102  -  105  +  108 ]/4
+   90   H     x    [109  +  112  +  115  +  118 ]/4
+   91   H     y    [110  +  113  +  116  +  119 ]/4
+   92   H     z    [111  -  114  -  117  +  120 ]/4
+
+
+  Symmetry  Bg ( 4)
+
+   93   C     x    [  1  -    4  +    7  -   10 ]/4
+   94   C     y    [  2  -    5  +    8  -   11 ]/4
+   95   C     z    [  3  +    6  -    9  -   12 ]/4
+   96   C     z    [ 15  -   18 ]/2
+   97   C     x    [ 19  -   22  +   25  -   28 ]/4
+   98   C     y    [ 20  -   23  +   26  -   29 ]/4
+   99   C     z    [ 21  +   24  -   27  -   30 ]/4
+  100   C     z    [ 33  -   36 ]/2
+  101   C     x    [ 37  -   40  +   43  -   46 ]/4
+  102   C     y    [ 38  -   41  +   44  -   47 ]/4
+  103   C     z    [ 39  +   42  -   45  -   48 ]/4
+  104   C     x    [ 49  -   52  +   55  -   58 ]/4
+  105   C     y    [ 50  -   53  +   56  -   59 ]/4
+  106   C     z    [ 51  +   54  -   57  -   60 ]/4
+  107   H     x    [ 61  -   64  +   67  -   70 ]/4
+  108   H     y    [ 62  -   65  +   68  -   71 ]/4
+  109   H     z    [ 63  +   66  -   69  -   72 ]/4
+  110   H     z    [ 75  -   78 ]/2
+  111   H     x    [ 79  -   82  +   85  -   88 ]/4
+  112   H     y    [ 80  -   83  +   86  -   89 ]/4
+  113   H     z    [ 81  +   84  -   87  -   90 ]/4
+  114   H     z    [ 93  -   96 ]/2
+  115   H     x    [ 97  -  100  +  103  -  106 ]/4
+  116   H     y    [ 98  -  101  +  104  -  107 ]/4
+  117   H     z    [ 99  +  102  -  105  -  108 ]/4
+  118   H     x    [109  -  112  +  115  -  118 ]/4
+  119   H     y    [110  -  113  +  116  -  119 ]/4
+  120   H     z    [111  +  114  -  117  -  120 ]/4
+
+
+   Interatomic separations (in Angstroms):
+   ---------------------------------------
+
+            C  1        C  2        C  3        C  4        C  1        C  2
+
+   C  1    0.000000
+   C  2    2.518260    0.000000
+   C  3    3.561371    4.361766    0.000000
+   C  4    4.361766    3.561371    2.518260    0.000000
+   C  1    1.556373    1.556373    4.074636    4.074636    0.000000
+   C  2    4.074636    4.074636    1.556373    1.556373    4.361756    0.000000
+   C  1    1.556384    3.561367    2.518264    4.074636    2.518266    3.561359
+   C  2    3.561367    1.556384    4.074636    2.518264    2.518266    3.561359
+   C  3    2.518264    4.074636    1.556384    3.561367    3.561359    2.518266
+   C  4    4.074636    2.518264    3.561367    1.556384    3.561359    2.518266
+   C  1    2.518269    2.518269    3.561366    3.561366    1.556371    4.074638
+   C  2    3.561366    3.561366    2.518269    2.518269    4.074638    1.556371
+   C  1    2.518270    3.561364    2.518270    3.561364    2.518259    3.561366
+   C  2    3.561364    2.518270    3.561364    2.518270    2.518259    3.561366
+   C  3    2.518270    3.561364    2.518270    3.561364    3.561366    2.518259
+   C  4    3.561364    2.518270    3.561364    2.518270    3.561366    2.518259
+   C  1    3.561368    4.074642    1.556373    2.518267    3.561360    2.518270
+   C  2    4.074642    3.561368    2.518267    1.556373    3.561360    2.518270
+   C  3    1.556373    2.518267    3.561368    4.074642    2.518270    3.561360
+   C  4    2.518267    1.556373    4.074642    3.561368    2.518270    3.561360
+   H  1    1.099777    3.278587    4.504312    5.461542    2.203031    5.117086
+   H  2    3.278587    1.099777    5.461542    4.504312    2.203031    5.117086
+   H  3    4.504312    5.461542    1.099777    3.278587    5.117086    2.203031
+   H  4    5.461542    4.504312    3.278587    1.099777    5.117086    2.203031
+   H  1    2.203028    2.203028    5.117094    5.117094    1.099784    5.461540
+   H  2    5.117094    5.117094    2.203028    2.203028    5.461540    1.099784
+   H  1    2.203033    4.504306    3.278591    5.117087    3.278588    4.504304
+   H  2    4.504306    2.203033    5.117087    3.278591    3.278588    4.504304
+   H  3    3.278591    5.117087    2.203033    4.504306    4.504304    3.278588
+   H  4    5.117087    3.278591    4.504306    2.203033    4.504304    3.278588
+   H  1    3.278590    3.278590    4.504305    4.504305    2.203024    5.117085
+   H  2    4.504305    4.504305    3.278590    3.278590    5.117085    2.203024
+   H  1    3.278592    4.504308    3.278592    4.504308    3.278584    4.504309
+   H  2    4.504308    3.278592    4.504308    3.278592    3.278584    4.504309
+   H  3    3.278592    4.504308    3.278592    4.504308    4.504309    3.278584
+   H  4    4.504308    3.278592    4.504308    3.278592    4.504309    3.278584
+   H  1    4.504312    5.117092    2.203024    3.278584    4.504303    3.278590
+   H  2    5.117092    4.504312    3.278584    2.203024    4.504303    3.278590
+   H  3    2.203024    3.278584    4.504312    5.117092    3.278590    4.504303
+   H  4    3.278584    2.203024    5.117092    4.504312    3.278590    4.504303
+
+            C  1        C  2        C  3        C  4        C  1        C  2
+
+   C  1    0.000000
+   C  2    4.074640    0.000000
+   C  3    1.556368    4.361762    0.000000
+   C  4    4.361762    1.556368    4.074640    0.000000
+   C  1    2.518267    2.518267    3.561365    3.561365    0.000000
+   C  2    3.561365    3.561365    2.518267    2.518267    4.361767    0.000000
+   C  1    1.556373    3.561362    2.518270    4.074640    1.556369    4.074644
+   C  2    3.561362    1.556373    4.074640    2.518270    1.556369    4.074644
+   C  3    2.518270    4.074640    1.556373    3.561362    4.074644    1.556369
+   C  4    4.074640    2.518270    3.561362    1.556373    4.074644    1.556369
+   C  1    2.518259    3.561364    2.518269    3.561372    2.518264    3.561371
+   C  2    3.561364    2.518259    3.561372    2.518269    2.518264    3.561371
+   C  3    2.518269    3.561372    2.518259    3.561364    3.561371    2.518264
+   C  4    3.561372    2.518269    3.561364    2.518259    3.561371    2.518264
+   H  1    2.203034    4.504312    3.278584    5.117087    3.278594    4.504307
+   H  2    4.504312    2.203034    5.117087    3.278584    3.278594    4.504307
+   H  3    3.278584    5.117087    2.203034    4.504312    4.504307    3.278594
+   H  4    5.117087    3.278584    4.504312    2.203034    4.504307    3.278594
+   H  1    3.278596    3.278596    4.504307    4.504307    2.203029    5.117095
+   H  2    4.504307    4.504307    3.278596    3.278596    5.117095    2.203029
+   H  1    1.099777    5.117090    2.203024    5.461539    3.278589    4.504309
+   H  2    5.117090    1.099777    5.461539    2.203024    3.278589    4.504309
+   H  3    2.203024    5.461539    1.099777    5.117090    4.504309    3.278589
+   H  4    5.461539    2.203024    5.117090    1.099777    4.504309    3.278589
+   H  1    3.278588    3.278588    4.504305    4.504305    1.099773    5.461540
+   H  2    4.504305    4.504305    3.278588    3.278588    5.461540    1.099773
+   H  1    2.203023    4.504307    3.278591    5.117092    2.203025    5.117093
+   H  2    4.504307    2.203023    5.117092    3.278591    2.203025    5.117093
+   H  3    3.278591    5.117092    2.203023    4.504307    5.117093    2.203025
+   H  4    5.117092    3.278591    4.504307    2.203023    5.117093    2.203025
+   H  1    3.278585    4.504303    3.278594    4.504310    3.278589    4.504310
+   H  2    4.504303    3.278585    4.504310    3.278594    3.278589    4.504310
+   H  3    3.278594    4.504310    3.278585    4.504303    4.504310    3.278589
+   H  4    4.504310    3.278594    4.504303    3.278585    4.504310    3.278589
+
+            C  1        C  2        C  3        C  4        C  1        C  2
+
+   C  1    0.000000
+   C  2    2.518260    0.000000
+   C  3    3.561371    4.361766    0.000000
+   C  4    4.361766    3.561371    2.518260    0.000000
+   C  1    1.556372    2.518266    3.561368    4.074643    0.000000
+   C  2    2.518266    1.556372    4.074643    3.561368    1.556380    0.000000
+   C  3    3.561368    4.074643    1.556372    2.518266    4.074641    4.361768
+   C  4    4.074643    3.561368    2.518266    1.556372    4.361768    4.074641
+   H  1    3.278592    4.504308    3.278592    4.504308    4.504308    5.117093
+   H  2    4.504308    3.278592    4.504308    3.278592    5.117093    4.504308
+   H  3    3.278592    4.504308    3.278592    4.504308    2.203027    3.278593
+   H  4    4.504308    3.278592    4.504308    3.278592    3.278593    2.203027
+   H  1    3.278588    3.278588    4.504315    4.504315    4.504309    4.504309
+   H  2    4.504315    4.504315    3.278588    3.278588    3.278598    3.278598
+   H  1    2.203027    4.504304    3.278595    5.117090    3.278584    4.504308
+   H  2    4.504304    2.203027    5.117090    3.278595    4.504308    3.278584
+   H  3    3.278595    5.117090    2.203027    4.504304    3.278591    4.504313
+   H  4    5.117090    3.278595    4.504304    2.203027    4.504313    3.278591
+   H  1    2.203020    2.203020    5.117091    5.117091    3.278584    3.278584
+   H  2    5.117091    5.117091    2.203020    2.203020    4.504310    4.504310
+   H  1    1.099777    3.278587    4.504312    5.461542    2.203025    3.278592
+   H  2    3.278587    1.099777    5.461542    4.504312    3.278592    2.203025
+   H  3    4.504312    5.461542    1.099777    3.278587    4.504309    5.117093
+   H  4    5.461542    4.504312    3.278587    1.099777    5.117093    4.504309
+   H  1    2.203030    3.278588    4.504309    5.117089    1.099775    2.203028
+   H  2    3.278588    2.203030    5.117089    4.504309    2.203028    1.099775
+   H  3    4.504309    5.117089    2.203030    3.278588    5.117091    5.461543
+   H  4    5.117089    4.504309    3.278588    2.203030    5.461543    5.117091
+
+            C  3        C  4        H  1        H  2        H  3        H  4
+
+   C  3    0.000000
+   C  4    1.556380    0.000000
+   H  1    2.203027    3.278593    0.000000
+   H  2    3.278593    2.203027    3.788180    0.000000
+   H  3    4.504308    5.117093    5.357294    6.561319    0.000000
+   H  4    5.117093    4.504308    6.561319    5.357294    3.788180    0.000000
+   H  1    3.278598    3.278598    2.341228    2.341228    6.129404    6.129404
+   H  2    4.504309    4.504309    6.129404    6.129404    2.341228    2.341228
+   H  1    3.278591    4.504313    2.341227    5.357295    3.788176    6.129400
+   H  2    4.504313    3.278591    5.357295    2.341227    6.129400    3.788176
+   H  3    3.278584    4.504308    3.788176    6.129400    2.341227    5.357295
+   H  4    4.504308    3.278584    6.129400    3.788176    5.357295    2.341227
+   H  1    4.504310    4.504310    3.788182    3.788182    5.357289    5.357289
+   H  2    3.278584    3.278584    5.357289    5.357289    3.788182    3.788182
+   H  1    4.504309    5.117093    3.788179    5.357295    3.788179    5.357295
+   H  2    5.117093    4.504309    5.357295    3.788179    5.357295    3.788179
+   H  3    2.203025    3.278592    3.788179    5.357295    3.788179    5.357295
+   H  4    3.278592    2.203025    5.357295    3.788179    5.357295    3.788179
+   H  1    5.117091    5.461543    5.357296    6.129404    2.341220    3.788176
+   H  2    5.461543    5.117091    6.129404    5.357296    3.788176    2.341220
+   H  3    1.099775    2.203028    2.341220    3.788176    5.357296    6.129404
+   H  4    2.203028    1.099775    3.788176    2.341220    6.129404    5.357296
+
+            H  1        H  2        H  1        H  2        H  3        H  4
+
+   H  1    0.000000
+   H  2    6.561324    0.000000
+   H  1    3.788181    5.357295    0.000000
+   H  2    3.788181    5.357295    6.129400    0.000000
+   H  3    5.357295    3.788181    2.341224    6.561316    0.000000
+   H  4    5.357295    3.788181    6.561316    2.341224    6.129400    0.000000
+   H  1    2.341224    6.129403    3.788176    3.788176    5.357292    5.357292
+   H  2    6.129403    2.341224    5.357292    5.357292    3.788176    3.788176
+   H  1    3.788177    5.357300    2.341219    5.357292    3.788181    6.129403
+   H  2    3.788177    5.357300    5.357292    2.341219    6.129403    3.788181
+   H  3    5.357300    3.788177    3.788181    6.129403    2.341219    5.357292
+   H  4    5.357300    3.788177    6.129403    3.788181    5.357292    2.341219
+   H  1    5.357296    3.788181    3.788177    5.357290    3.788182    5.357294
+   H  2    5.357296    3.788181    5.357290    3.788177    5.357294    3.788182
+   H  3    3.788181    5.357296    3.788182    5.357294    3.788177    5.357290
+   H  4    3.788181    5.357296    5.357294    3.788182    5.357290    3.788177
+
+            H  1        H  2        H  1        H  2        H  3        H  4
+
+   H  1    0.000000
+   H  2    6.561313    0.000000
+   H  1    2.341220    6.129401    0.000000
+   H  2    2.341220    6.129401    3.788180    0.000000
+   H  3    6.129401    2.341220    5.357294    6.561319    0.000000
+   H  4    6.129401    2.341220    6.561319    5.357294    3.788180    0.000000
+   H  1    3.788176    5.357292    2.341228    3.788181    5.357293    6.129401
+   H  2    3.788176    5.357292    3.788181    2.341228    6.129401    5.357293
+   H  3    5.357292    3.788176    5.357293    6.129401    2.341228    3.788181
+   H  4    5.357292    3.788176    6.129401    5.357293    3.788181    2.341228
+
+            H  1        H  2        H  3        H  4
+
+   H  1    0.000000
+   H  2    2.341220    0.000000
+   H  3    6.129403    6.561318    0.000000
+   H  4    6.561318    6.129403    2.341220    0.000000
+
+
+
+
+  Bond distances (angstroms):
+  ---------------------------
+
+                  atom 1     atom 2                           distance
+                  ------     ------                           --------
+  bond distance:    C  1       C  1                           1.556373
+  bond distance:    C  1       C  2                           1.556373
+  bond distance:    C  2       C  3                           1.556373
+  bond distance:    C  2       C  4                           1.556373
+  bond distance:    C  1       C  1                           1.556384
+  bond distance:    C  2       C  2                           1.556384
+  bond distance:    C  3       C  3                           1.556384
+  bond distance:    C  3       C  1                           1.556368
+  bond distance:    C  4       C  4                           1.556384
+  bond distance:    C  4       C  2                           1.556368
+  bond distance:    C  1       C  1                           1.556371
+  bond distance:    C  2       C  2                           1.556371
+  bond distance:    C  1       C  1                           1.556373
+  bond distance:    C  1       C  1                           1.556369
+  bond distance:    C  2       C  2                           1.556373
+  bond distance:    C  2       C  1                           1.556369
+  bond distance:    C  3       C  3                           1.556373
+  bond distance:    C  3       C  2                           1.556369
+  bond distance:    C  4       C  4                           1.556373
+  bond distance:    C  4       C  2                           1.556369
+  bond distance:    C  1       C  3                           1.556373
+  bond distance:    C  1       C  1                           1.556372
+  bond distance:    C  2       C  4                           1.556373
+  bond distance:    C  2       C  2                           1.556372
+  bond distance:    C  2       C  1                           1.556380
+  bond distance:    C  3       C  1                           1.556373
+  bond distance:    C  3       C  3                           1.556372
+  bond distance:    C  4       C  2                           1.556373
+  bond distance:    C  4       C  4                           1.556372
+  bond distance:    C  4       C  3                           1.556380
+  bond distance:    H  1       C  1                           1.099777
+  bond distance:    H  2       C  2                           1.099777
+  bond distance:    H  3       C  3                           1.099777
+  bond distance:    H  4       C  4                           1.099777
+  bond distance:    H  1       C  1                           1.099784
+  bond distance:    H  2       C  2                           1.099784
+  bond distance:    H  1       C  1                           1.099777
+  bond distance:    H  2       C  2                           1.099777
+  bond distance:    H  3       C  3                           1.099777
+  bond distance:    H  4       C  4                           1.099777
+  bond distance:    H  1       C  1                           1.099773
+  bond distance:    H  2       C  2                           1.099773
+  bond distance:    H  1       C  1                           1.099777
+  bond distance:    H  2       C  2                           1.099777
+  bond distance:    H  3       C  3                           1.099777
+  bond distance:    H  4       C  4                           1.099777
+  bond distance:    H  1       C  1                           1.099775
+  bond distance:    H  2       C  2                           1.099775
+  bond distance:    H  3       C  3                           1.099775
+  bond distance:    H  4       C  4                           1.099775
+
+
+  Bond angles (degrees):
+  ----------------------
+
+                  atom 1     atom 2     atom 3                   angle
+                  ------     ------     ------                   -----
+  bond angle:       C  1       C  1       C  1                 108.000
+  bond angle:       C  3       C  1       C  1                 108.000
+  bond angle:       C  3       C  1       C  1                 108.000
+  bond angle:       H  1       C  1       C  1                 110.906
+  bond angle:       H  1       C  1       C  1                 110.905
+  bond angle:       H  1       C  1       C  3                 110.905
+  bond angle:       C  2       C  2       C  1                 108.000
+  bond angle:       C  4       C  2       C  1                 108.000
+  bond angle:       C  4       C  2       C  2                 108.000
+  bond angle:       H  2       C  2       C  1                 110.906
+  bond angle:       H  2       C  2       C  2                 110.905
+  bond angle:       H  2       C  2       C  4                 110.905
+  bond angle:       C  3       C  3       C  2                 108.000
+  bond angle:       C  1       C  3       C  2                 108.000
+  bond angle:       C  1       C  3       C  3                 108.000
+  bond angle:       H  3       C  3       C  2                 110.906
+  bond angle:       H  3       C  3       C  3                 110.905
+  bond angle:       H  3       C  3       C  1                 110.905
+  bond angle:       C  4       C  4       C  2                 108.000
+  bond angle:       C  2       C  4       C  2                 108.000
+  bond angle:       C  2       C  4       C  4                 108.000
+  bond angle:       H  4       C  4       C  2                 110.906
+  bond angle:       H  4       C  4       C  4                 110.905
+  bond angle:       H  4       C  4       C  2                 110.905
+  bond angle:       C  2       C  1       C  1                 108.000
+  bond angle:       C  1       C  1       C  1                 108.000
+  bond angle:       C  1       C  1       C  2                 108.000
+  bond angle:       H  1       C  1       C  1                 110.905
+  bond angle:       H  1       C  1       C  2                 110.905
+  bond angle:       H  1       C  1       C  1                 110.905
+  bond angle:       C  4       C  2       C  3                 108.000
+  bond angle:       C  2       C  2       C  3                 108.000
+  bond angle:       C  2       C  2       C  4                 108.000
+  bond angle:       H  2       C  2       C  3                 110.905
+  bond angle:       H  2       C  2       C  4                 110.905
+  bond angle:       H  2       C  2       C  2                 110.905
+  bond angle:       C  3       C  1       C  1                 108.000
+  bond angle:       C  1       C  1       C  1                 108.000
+  bond angle:       C  1       C  1       C  3                 108.001
+  bond angle:       H  1       C  1       C  1                 110.905
+  bond angle:       H  1       C  1       C  3                 110.905
+  bond angle:       H  1       C  1       C  1                 110.905
+  bond angle:       C  4       C  2       C  2                 108.000
+  bond angle:       C  2       C  2       C  2                 108.000
+  bond angle:       C  2       C  2       C  4                 108.001
+  bond angle:       H  2       C  2       C  2                 110.905
+  bond angle:       H  2       C  2       C  4                 110.905
+  bond angle:       H  2       C  2       C  2                 110.905
+  bond angle:       C  1       C  3       C  3                 108.000
+  bond angle:       C  3       C  3       C  3                 108.000
+  bond angle:       C  3       C  3       C  1                 108.001
+  bond angle:       H  3       C  3       C  3                 110.905
+  bond angle:       H  3       C  3       C  1                 110.905
+  bond angle:       H  3       C  3       C  3                 110.905
+  bond angle:       C  2       C  4       C  4                 108.000
+  bond angle:       C  4       C  4       C  4                 108.000
+  bond angle:       C  4       C  4       C  2                 108.001
+  bond angle:       H  4       C  4       C  4                 110.905
+  bond angle:       H  4       C  4       C  2                 110.905
+  bond angle:       H  4       C  4       C  4                 110.905
+  bond angle:       C  1       C  1       C  1                 108.000
+  bond angle:       C  2       C  1       C  1                 108.000
+  bond angle:       C  2       C  1       C  1                 108.000
+  bond angle:       H  1       C  1       C  1                 110.905
+  bond angle:       H  1       C  1       C  1                 110.905
+  bond angle:       H  1       C  1       C  2                 110.905
+  bond angle:       C  3       C  2       C  2                 108.000
+  bond angle:       C  4       C  2       C  2                 108.000
+  bond angle:       C  4       C  2       C  3                 108.000
+  bond angle:       H  2       C  2       C  2                 110.905
+  bond angle:       H  2       C  2       C  3                 110.905
+  bond angle:       H  2       C  2       C  4                 110.905
+  bond angle:       C  1       C  1       C  1                 108.000
+  bond angle:       C  1       C  1       C  1                 108.000
+  bond angle:       C  1       C  1       C  1                 108.000
+  bond angle:       H  1       C  1       C  1                 110.905
+  bond angle:       H  1       C  1       C  1                 110.905
+  bond angle:       H  1       C  1       C  1                 110.905
+  bond angle:       C  1       C  2       C  2                 108.000
+  bond angle:       C  2       C  2       C  2                 108.000
+  bond angle:       C  2       C  2       C  1                 108.000
+  bond angle:       H  2       C  2       C  2                 110.905
+  bond angle:       H  2       C  2       C  1                 110.905
+  bond angle:       H  2       C  2       C  2                 110.905
+  bond angle:       C  2       C  3       C  3                 108.000
+  bond angle:       C  3       C  3       C  3                 108.000
+  bond angle:       C  3       C  3       C  2                 108.000
+  bond angle:       H  3       C  3       C  3                 110.905
+  bond angle:       H  3       C  3       C  2                 110.905
+  bond angle:       H  3       C  3       C  3                 110.905
+  bond angle:       C  2       C  4       C  4                 108.000
+  bond angle:       C  4       C  4       C  4                 108.000
+  bond angle:       C  4       C  4       C  2                 108.000
+  bond angle:       H  4       C  4       C  4                 110.905
+  bond angle:       H  4       C  4       C  2                 110.905
+  bond angle:       H  4       C  4       C  4                 110.905
+  bond angle:       C  1       C  1       C  3                 108.000
+  bond angle:       C  2       C  1       C  3                 108.000
+  bond angle:       C  2       C  1       C  1                 108.000
+  bond angle:       H  1       C  1       C  3                 110.905
+  bond angle:       H  1       C  1       C  1                 110.906
+  bond angle:       H  1       C  1       C  2                 110.905
+  bond angle:       C  2       C  2       C  4                 108.000
+  bond angle:       C  1       C  2       C  4                 108.000
+  bond angle:       C  1       C  2       C  2                 108.000
+  bond angle:       H  2       C  2       C  4                 110.905
+  bond angle:       H  2       C  2       C  2                 110.906
+  bond angle:       H  2       C  2       C  1                 110.905
+  bond angle:       C  3       C  3       C  1                 108.000
+  bond angle:       C  4       C  3       C  1                 108.000
+  bond angle:       C  4       C  3       C  3                 108.000
+  bond angle:       H  3       C  3       C  1                 110.905
+  bond angle:       H  3       C  3       C  3                 110.906
+  bond angle:       H  3       C  3       C  4                 110.905
+  bond angle:       C  4       C  4       C  2                 108.000
+  bond angle:       C  3       C  4       C  2                 108.000
+  bond angle:       C  3       C  4       C  4                 108.000
+  bond angle:       H  4       C  4       C  2                 110.905
+  bond angle:       H  4       C  4       C  4                 110.906
+  bond angle:       H  4       C  4       C  3                 110.905
+
+
+
+   Nuclear repulsion energy : 1744.340213761169 Hartree
+
+
+                                GETLAB: AO-labels
+                                -----------------
+
+   * Large components:  280
+     1  L C   1 s        2  L C   2 s        3  L C   3 s        4  L C   4 s        5  L C   1 px       6  L C   1 py  
+     7  L C   1 pz       8  L C   2 px       9  L C   2 py      10  L C   2 pz      11  L C   3 px      12  L C   3 py  
+    13  L C   3 pz      14  L C   4 px      15  L C   4 py      16  L C   4 pz      17  L C   1 dxx     18  L C   1 dxy 
+    19  L C   1 dxz     20  L C   1 dyy     21  L C   1 dyz     22  L C   1 dzz     23  L C   2 dxx     24  L C   2 dxy 
+    25  L C   2 dxz     26  L C   2 dyy     27  L C   2 dyz     28  L C   2 dzz     29  L C   3 dxx     30  L C   3 dxy 
+    31  L C   3 dxz     32  L C   3 dyy     33  L C   3 dyz     34  L C   3 dzz     35  L C   4 dxx     36  L C   4 dxy 
+    37  L C   4 dxz     38  L C   4 dyy     39  L C   4 dyz     40  L C   4 dzz     41  L C   1 s       42  L C   2 s   
+    43  L C   1 px      44  L C   1 py      45  L C   1 pz      46  L C   2 px      47  L C   2 py      48  L C   2 pz  
+    49  L C   1 dxx     50  L C   1 dxy     51  L C   1 dxz     52  L C   1 dyy     53  L C   1 dyz     54  L C   1 dzz 
+    55  L C   2 dxx     56  L C   2 dxy     57  L C   2 dxz     58  L C   2 dyy     59  L C   2 dyz     60  L C   2 dzz 
+    61  L C   1 s       62  L C   2 s       63  L C   3 s       64  L C   4 s       65  L C   1 px      66  L C   1 py  
+    67  L C   1 pz      68  L C   2 px      69  L C   2 py      70  L C   2 pz      71  L C   3 px      72  L C   3 py  
+    73  L C   3 pz      74  L C   4 px      75  L C   4 py      76  L C   4 pz      77  L C   1 dxx     78  L C   1 dxy 
+    79  L C   1 dxz     80  L C   1 dyy     81  L C   1 dyz     82  L C   1 dzz     83  L C   2 dxx     84  L C   2 dxy 
+    85  L C   2 dxz     86  L C   2 dyy     87  L C   2 dyz     88  L C   2 dzz     89  L C   3 dxx     90  L C   3 dxy 
+    91  L C   3 dxz     92  L C   3 dyy     93  L C   3 dyz     94  L C   3 dzz     95  L C   4 dxx     96  L C   4 dxy 
+    97  L C   4 dxz     98  L C   4 dyy     99  L C   4 dyz    100  L C   4 dzz    101  L C   1 s      102  L C   2 s   
+   103  L C   1 px     104  L C   1 py     105  L C   1 pz     106  L C   2 px     107  L C   2 py     108  L C   2 pz  
+   109  L C   1 dxx    110  L C   1 dxy    111  L C   1 dxz    112  L C   1 dyy    113  L C   1 dyz    114  L C   1 dzz 
+   115  L C   2 dxx    116  L C   2 dxy    117  L C   2 dxz    118  L C   2 dyy    119  L C   2 dyz    120  L C   2 dzz 
+   121  L C   1 s      122  L C   2 s      123  L C   3 s      124  L C   4 s      125  L C   1 px     126  L C   1 py  
+   127  L C   1 pz     128  L C   2 px     129  L C   2 py     130  L C   2 pz     131  L C   3 px     132  L C   3 py  
+   133  L C   3 pz     134  L C   4 px     135  L C   4 py     136  L C   4 pz     137  L C   1 dxx    138  L C   1 dxy 
+   139  L C   1 dxz    140  L C   1 dyy    141  L C   1 dyz    142  L C   1 dzz    143  L C   2 dxx    144  L C   2 dxy 
+   145  L C   2 dxz    146  L C   2 dyy    147  L C   2 dyz    148  L C   2 dzz    149  L C   3 dxx    150  L C   3 dxy 
+   151  L C   3 dxz    152  L C   3 dyy    153  L C   3 dyz    154  L C   3 dzz    155  L C   4 dxx    156  L C   4 dxy 
+   157  L C   4 dxz    158  L C   4 dyy    159  L C   4 dyz    160  L C   4 dzz    161  L C   1 s      162  L C   2 s   
+   163  L C   3 s      164  L C   4 s      165  L C   1 px     166  L C   1 py     167  L C   1 pz     168  L C   2 px  
+   169  L C   2 py     170  L C   2 pz     171  L C   3 px     172  L C   3 py     173  L C   3 pz     174  L C   4 px  
+   175  L C   4 py     176  L C   4 pz     177  L C   1 dxx    178  L C   1 dxy    179  L C   1 dxz    180  L C   1 dyy 
+   181  L C   1 dyz    182  L C   1 dzz    183  L C   2 dxx    184  L C   2 dxy    185  L C   2 dxz    186  L C   2 dyy 
+   187  L C   2 dyz    188  L C   2 dzz    189  L C   3 dxx    190  L C   3 dxy    191  L C   3 dxz    192  L C   3 dyy 
+   193  L C   3 dyz    194  L C   3 dzz    195  L C   4 dxx    196  L C   4 dxy    197  L C   4 dxz    198  L C   4 dyy 
+   199  L C   4 dyz    200  L C   4 dzz    201  L H   1 s      202  L H   2 s      203  L H   3 s      204  L H   4 s   
+   205  L H   1 px     206  L H   1 py     207  L H   1 pz     208  L H   2 px     209  L H   2 py     210  L H   2 pz  
+   211  L H   3 px     212  L H   3 py     213  L H   3 pz     214  L H   4 px     215  L H   4 py     216  L H   4 pz  
+   217  L H   1 s      218  L H   2 s      219  L H   1 px     220  L H   1 py     221  L H   1 pz     222  L H   2 px  
+   223  L H   2 py     224  L H   2 pz     225  L H   1 s      226  L H   2 s      227  L H   3 s      228  L H   4 s   
+   229  L H   1 px     230  L H   1 py     231  L H   1 pz     232  L H   2 px     233  L H   2 py     234  L H   2 pz  
+   235  L H   3 px     236  L H   3 py     237  L H   3 pz     238  L H   4 px     239  L H   4 py     240  L H   4 pz  
+   241  L H   1 s      242  L H   2 s      243  L H   1 px     244  L H   1 py     245  L H   1 pz     246  L H   2 px  
+   247  L H   2 py     248  L H   2 pz     249  L H   1 s      250  L H   2 s      251  L H   3 s      252  L H   4 s   
+   253  L H   1 px     254  L H   1 py     255  L H   1 pz     256  L H   2 px     257  L H   2 py     258  L H   2 pz  
+   259  L H   3 px     260  L H   3 py     261  L H   3 pz     262  L H   4 px     263  L H   4 py     264  L H   4 pz  
+   265  L H   1 s      266  L H   2 s      267  L H   3 s      268  L H   4 s      269  L H   1 px     270  L H   1 py  
+   271  L H   1 pz     272  L H   2 px     273  L H   2 py     274  L H   2 pz     275  L H   3 px     276  L H   3 py  
+   277  L H   3 pz     278  L H   4 px     279  L H   4 py     280  L H   4 pz  
+   * Small components:  600
+   281  S C   1 s      282  S C   2 s      283  S C   3 s      284  S C   4 s      285  S C   1 px     286  S C   1 py  
+   287  S C   1 pz     288  S C   2 px     289  S C   2 py     290  S C   2 pz     291  S C   3 px     292  S C   3 py  
+   293  S C   3 pz     294  S C   4 px     295  S C   4 py     296  S C   4 pz     297  S C   1 dxx    298  S C   1 dxy 
+   299  S C   1 dxz    300  S C   1 dyy    301  S C   1 dyz    302  S C   1 dzz    303  S C   2 dxx    304  S C   2 dxy 
+   305  S C   2 dxz    306  S C   2 dyy    307  S C   2 dyz    308  S C   2 dzz    309  S C   3 dxx    310  S C   3 dxy 
+   311  S C   3 dxz    312  S C   3 dyy    313  S C   3 dyz    314  S C   3 dzz    315  S C   4 dxx    316  S C   4 dxy 
+   317  S C   4 dxz    318  S C   4 dyy    319  S C   4 dyz    320  S C   4 dzz    321  S C   1 fxxx   322  S C   1 fxxy
+   323  S C   1 fxxz   324  S C   1 fxyy   325  S C   1 fxyz   326  S C   1 fxzz   327  S C   1 fyyy   328  S C   1 fyyz
+   329  S C   1 fyzz   330  S C   1 fzzz   331  S C   2 fxxx   332  S C   2 fxxy   333  S C   2 fxxz   334  S C   2 fxyy
+   335  S C   2 fxyz   336  S C   2 fxzz   337  S C   2 fyyy   338  S C   2 fyyz   339  S C   2 fyzz   340  S C   2 fzzz
+   341  S C   3 fxxx   342  S C   3 fxxy   343  S C   3 fxxz   344  S C   3 fxyy   345  S C   3 fxyz   346  S C   3 fxzz
+   347  S C   3 fyyy   348  S C   3 fyyz   349  S C   3 fyzz   350  S C   3 fzzz   351  S C   4 fxxx   352  S C   4 fxxy
+   353  S C   4 fxxz   354  S C   4 fxyy   355  S C   4 fxyz   356  S C   4 fxzz   357  S C   4 fyyy   358  S C   4 fyyz
+   359  S C   4 fyzz   360  S C   4 fzzz   361  S C   1 s      362  S C   2 s      363  S C   1 px     364  S C   1 py  
+   365  S C   1 pz     366  S C   2 px     367  S C   2 py     368  S C   2 pz     369  S C   1 dxx    370  S C   1 dxy 
+   371  S C   1 dxz    372  S C   1 dyy    373  S C   1 dyz    374  S C   1 dzz    375  S C   2 dxx    376  S C   2 dxy 
+   377  S C   2 dxz    378  S C   2 dyy    379  S C   2 dyz    380  S C   2 dzz    381  S C   1 fxxx   382  S C   1 fxxy
+   383  S C   1 fxxz   384  S C   1 fxyy   385  S C   1 fxyz   386  S C   1 fxzz   387  S C   1 fyyy   388  S C   1 fyyz
+   389  S C   1 fyzz   390  S C   1 fzzz   391  S C   2 fxxx   392  S C   2 fxxy   393  S C   2 fxxz   394  S C   2 fxyy
+   395  S C   2 fxyz   396  S C   2 fxzz   397  S C   2 fyyy   398  S C   2 fyyz   399  S C   2 fyzz   400  S C   2 fzzz
+   401  S C   1 s      402  S C   2 s      403  S C   3 s      404  S C   4 s      405  S C   1 px     406  S C   1 py  
+   407  S C   1 pz     408  S C   2 px     409  S C   2 py     410  S C   2 pz     411  S C   3 px     412  S C   3 py  
+   413  S C   3 pz     414  S C   4 px     415  S C   4 py     416  S C   4 pz     417  S C   1 dxx    418  S C   1 dxy 
+   419  S C   1 dxz    420  S C   1 dyy    421  S C   1 dyz    422  S C   1 dzz    423  S C   2 dxx    424  S C   2 dxy 
+   425  S C   2 dxz    426  S C   2 dyy    427  S C   2 dyz    428  S C   2 dzz    429  S C   3 dxx    430  S C   3 dxy 
+   431  S C   3 dxz    432  S C   3 dyy    433  S C   3 dyz    434  S C   3 dzz    435  S C   4 dxx    436  S C   4 dxy 
+   437  S C   4 dxz    438  S C   4 dyy    439  S C   4 dyz    440  S C   4 dzz    441  S C   1 fxxx   442  S C   1 fxxy
+   443  S C   1 fxxz   444  S C   1 fxyy   445  S C   1 fxyz   446  S C   1 fxzz   447  S C   1 fyyy   448  S C   1 fyyz
+   449  S C   1 fyzz   450  S C   1 fzzz   451  S C   2 fxxx   452  S C   2 fxxy   453  S C   2 fxxz   454  S C   2 fxyy
+   455  S C   2 fxyz   456  S C   2 fxzz   457  S C   2 fyyy   458  S C   2 fyyz   459  S C   2 fyzz   460  S C   2 fzzz
+   461  S C   3 fxxx   462  S C   3 fxxy   463  S C   3 fxxz   464  S C   3 fxyy   465  S C   3 fxyz   466  S C   3 fxzz
+   467  S C   3 fyyy   468  S C   3 fyyz   469  S C   3 fyzz   470  S C   3 fzzz   471  S C   4 fxxx   472  S C   4 fxxy
+   473  S C   4 fxxz   474  S C   4 fxyy   475  S C   4 fxyz   476  S C   4 fxzz   477  S C   4 fyyy   478  S C   4 fyyz
+   479  S C   4 fyzz   480  S C   4 fzzz   481  S C   1 s      482  S C   2 s      483  S C   1 px     484  S C   1 py  
+   485  S C   1 pz     486  S C   2 px     487  S C   2 py     488  S C   2 pz     489  S C   1 dxx    490  S C   1 dxy 
+   491  S C   1 dxz    492  S C   1 dyy    493  S C   1 dyz    494  S C   1 dzz    495  S C   2 dxx    496  S C   2 dxy 
+   497  S C   2 dxz    498  S C   2 dyy    499  S C   2 dyz    500  S C   2 dzz    501  S C   1 fxxx   502  S C   1 fxxy
+   503  S C   1 fxxz   504  S C   1 fxyy   505  S C   1 fxyz   506  S C   1 fxzz   507  S C   1 fyyy   508  S C   1 fyyz
+   509  S C   1 fyzz   510  S C   1 fzzz   511  S C   2 fxxx   512  S C   2 fxxy   513  S C   2 fxxz   514  S C   2 fxyy
+   515  S C   2 fxyz   516  S C   2 fxzz   517  S C   2 fyyy   518  S C   2 fyyz   519  S C   2 fyzz   520  S C   2 fzzz
+   521  S C   1 s      522  S C   2 s      523  S C   3 s      524  S C   4 s      525  S C   1 px     526  S C   1 py  
+   527  S C   1 pz     528  S C   2 px     529  S C   2 py     530  S C   2 pz     531  S C   3 px     532  S C   3 py  
+   533  S C   3 pz     534  S C   4 px     535  S C   4 py     536  S C   4 pz     537  S C   1 dxx    538  S C   1 dxy 
+   539  S C   1 dxz    540  S C   1 dyy    541  S C   1 dyz    542  S C   1 dzz    543  S C   2 dxx    544  S C   2 dxy 
+   545  S C   2 dxz    546  S C   2 dyy    547  S C   2 dyz    548  S C   2 dzz    549  S C   3 dxx    550  S C   3 dxy 
+   551  S C   3 dxz    552  S C   3 dyy    553  S C   3 dyz    554  S C   3 dzz    555  S C   4 dxx    556  S C   4 dxy 
+   557  S C   4 dxz    558  S C   4 dyy    559  S C   4 dyz    560  S C   4 dzz    561  S C   1 fxxx   562  S C   1 fxxy
+   563  S C   1 fxxz   564  S C   1 fxyy   565  S C   1 fxyz   566  S C   1 fxzz   567  S C   1 fyyy   568  S C   1 fyyz
+   569  S C   1 fyzz   570  S C   1 fzzz   571  S C   2 fxxx   572  S C   2 fxxy   573  S C   2 fxxz   574  S C   2 fxyy
+   575  S C   2 fxyz   576  S C   2 fxzz   577  S C   2 fyyy   578  S C   2 fyyz   579  S C   2 fyzz   580  S C   2 fzzz
+   581  S C   3 fxxx   582  S C   3 fxxy   583  S C   3 fxxz   584  S C   3 fxyy   585  S C   3 fxyz   586  S C   3 fxzz
+   587  S C   3 fyyy   588  S C   3 fyyz   589  S C   3 fyzz   590  S C   3 fzzz   591  S C   4 fxxx   592  S C   4 fxxy
+   593  S C   4 fxxz   594  S C   4 fxyy   595  S C   4 fxyz   596  S C   4 fxzz   597  S C   4 fyyy   598  S C   4 fyyz
+   599  S C   4 fyzz   600  S C   4 fzzz   601  S C   1 s      602  S C   2 s      603  S C   3 s      604  S C   4 s   
+   605  S C   1 px     606  S C   1 py     607  S C   1 pz     608  S C   2 px     609  S C   2 py     610  S C   2 pz  
+   611  S C   3 px     612  S C   3 py     613  S C   3 pz     614  S C   4 px     615  S C   4 py     616  S C   4 pz  
+   617  S C   1 dxx    618  S C   1 dxy    619  S C   1 dxz    620  S C   1 dyy    621  S C   1 dyz    622  S C   1 dzz 
+   623  S C   2 dxx    624  S C   2 dxy    625  S C   2 dxz    626  S C   2 dyy    627  S C   2 dyz    628  S C   2 dzz 
+   629  S C   3 dxx    630  S C   3 dxy    631  S C   3 dxz    632  S C   3 dyy    633  S C   3 dyz    634  S C   3 dzz 
+   635  S C   4 dxx    636  S C   4 dxy    637  S C   4 dxz    638  S C   4 dyy    639  S C   4 dyz    640  S C   4 dzz 
+   641  S C   1 fxxx   642  S C   1 fxxy   643  S C   1 fxxz   644  S C   1 fxyy   645  S C   1 fxyz   646  S C   1 fxzz
+   647  S C   1 fyyy   648  S C   1 fyyz   649  S C   1 fyzz   650  S C   1 fzzz   651  S C   2 fxxx   652  S C   2 fxxy
+   653  S C   2 fxxz   654  S C   2 fxyy   655  S C   2 fxyz   656  S C   2 fxzz   657  S C   2 fyyy   658  S C   2 fyyz
+   659  S C   2 fyzz   660  S C   2 fzzz   661  S C   3 fxxx   662  S C   3 fxxy   663  S C   3 fxxz   664  S C   3 fxyy
+   665  S C   3 fxyz   666  S C   3 fxzz   667  S C   3 fyyy   668  S C   3 fyyz   669  S C   3 fyzz   670  S C   3 fzzz
+   671  S C   4 fxxx   672  S C   4 fxxy   673  S C   4 fxxz   674  S C   4 fxyy   675  S C   4 fxyz   676  S C   4 fxzz
+   677  S C   4 fyyy   678  S C   4 fyyz   679  S C   4 fyzz   680  S C   4 fzzz   681  S H   1 s      682  S H   2 s   
+   683  S H   3 s      684  S H   4 s      685  S H   1 px     686  S H   1 py     687  S H   1 pz     688  S H   2 px  
+   689  S H   2 py     690  S H   2 pz     691  S H   3 px     692  S H   3 py     693  S H   3 pz     694  S H   4 px  
+   695  S H   4 py     696  S H   4 pz     697  S H   1 dxx    698  S H   1 dxy    699  S H   1 dxz    700  S H   1 dyy 
+   701  S H   1 dyz    702  S H   1 dzz    703  S H   2 dxx    704  S H   2 dxy    705  S H   2 dxz    706  S H   2 dyy 
+   707  S H   2 dyz    708  S H   2 dzz    709  S H   3 dxx    710  S H   3 dxy    711  S H   3 dxz    712  S H   3 dyy 
+   713  S H   3 dyz    714  S H   3 dzz    715  S H   4 dxx    716  S H   4 dxy    717  S H   4 dxz    718  S H   4 dyy 
+   719  S H   4 dyz    720  S H   4 dzz    721  S H   1 s      722  S H   2 s      723  S H   1 px     724  S H   1 py  
+   725  S H   1 pz     726  S H   2 px     727  S H   2 py     728  S H   2 pz     729  S H   1 dxx    730  S H   1 dxy 
+   731  S H   1 dxz    732  S H   1 dyy    733  S H   1 dyz    734  S H   1 dzz    735  S H   2 dxx    736  S H   2 dxy 
+   737  S H   2 dxz    738  S H   2 dyy    739  S H   2 dyz    740  S H   2 dzz    741  S H   1 s      742  S H   2 s   
+   743  S H   3 s      744  S H   4 s      745  S H   1 px     746  S H   1 py     747  S H   1 pz     748  S H   2 px  
+   749  S H   2 py     750  S H   2 pz     751  S H   3 px     752  S H   3 py     753  S H   3 pz     754  S H   4 px  
+   755  S H   4 py     756  S H   4 pz     757  S H   1 dxx    758  S H   1 dxy    759  S H   1 dxz    760  S H   1 dyy 
+   761  S H   1 dyz    762  S H   1 dzz    763  S H   2 dxx    764  S H   2 dxy    765  S H   2 dxz    766  S H   2 dyy 
+   767  S H   2 dyz    768  S H   2 dzz    769  S H   3 dxx    770  S H   3 dxy    771  S H   3 dxz    772  S H   3 dyy 
+   773  S H   3 dyz    774  S H   3 dzz    775  S H   4 dxx    776  S H   4 dxy    777  S H   4 dxz    778  S H   4 dyy 
+   779  S H   4 dyz    780  S H   4 dzz    781  S H   1 s      782  S H   2 s      783  S H   1 px     784  S H   1 py  
+   785  S H   1 pz     786  S H   2 px     787  S H   2 py     788  S H   2 pz     789  S H   1 dxx    790  S H   1 dxy 
+   791  S H   1 dxz    792  S H   1 dyy    793  S H   1 dyz    794  S H   1 dzz    795  S H   2 dxx    796  S H   2 dxy 
+   797  S H   2 dxz    798  S H   2 dyy    799  S H   2 dyz    800  S H   2 dzz    801  S H   1 s      802  S H   2 s   
+   803  S H   3 s      804  S H   4 s      805  S H   1 px     806  S H   1 py     807  S H   1 pz     808  S H   2 px  
+   809  S H   2 py     810  S H   2 pz     811  S H   3 px     812  S H   3 py     813  S H   3 pz     814  S H   4 px  
+   815  S H   4 py     816  S H   4 pz     817  S H   1 dxx    818  S H   1 dxy    819  S H   1 dxz    820  S H   1 dyy 
+   821  S H   1 dyz    822  S H   1 dzz    823  S H   2 dxx    824  S H   2 dxy    825  S H   2 dxz    826  S H   2 dyy 
+   827  S H   2 dyz    828  S H   2 dzz    829  S H   3 dxx    830  S H   3 dxy    831  S H   3 dxz    832  S H   3 dyy 
+   833  S H   3 dyz    834  S H   3 dzz    835  S H   4 dxx    836  S H   4 dxy    837  S H   4 dxz    838  S H   4 dyy 
+   839  S H   4 dyz    840  S H   4 dzz    841  S H   1 s      842  S H   2 s      843  S H   3 s      844  S H   4 s   
+   845  S H   1 px     846  S H   1 py     847  S H   1 pz     848  S H   2 px     849  S H   2 py     850  S H   2 pz  
+   851  S H   3 px     852  S H   3 py     853  S H   3 pz     854  S H   4 px     855  S H   4 py     856  S H   4 pz  
+   857  S H   1 dxx    858  S H   1 dxy    859  S H   1 dxz    860  S H   1 dyy    861  S H   1 dyz    862  S H   1 dzz 
+   863  S H   2 dxx    864  S H   2 dxy    865  S H   2 dxz    866  S H   2 dyy    867  S H   2 dyz    868  S H   2 dzz 
+   869  S H   3 dxx    870  S H   3 dxy    871  S H   3 dxz    872  S H   3 dyy    873  S H   3 dyz    874  S H   3 dzz 
+   875  S H   4 dxx    876  S H   4 dxy    877  S H   4 dxz    878  S H   4 dyy    879  S H   4 dyz    880  S H   4 dzz 
+
+
+                                GETLAB: SO-labels
+                                -----------------
+
+   * Large components:  280
+     1  L Ag C  s        2  L Ag C  px       3  L Ag C  py       4  L Ag C  pz       5  L Ag C  dxx      6  L Ag C  dxy 
+     7  L Ag C  dxz      8  L Ag C  dyy      9  L Ag C  dyz     10  L Ag C  dzz     11  L Ag C  s       12  L Ag C  px  
+    13  L Ag C  py      14  L Ag C  dxx     15  L Ag C  dxy     16  L Ag C  dyy     17  L Ag C  dzz     18  L Ag C  s   
+    19  L Ag C  px      20  L Ag C  py      21  L Ag C  pz      22  L Ag C  dxx     23  L Ag C  dxy     24  L Ag C  dxz 
+    25  L Ag C  dyy     26  L Ag C  dyz     27  L Ag C  dzz     28  L Ag C  s       29  L Ag C  px      30  L Ag C  py  
+    31  L Ag C  dxx     32  L Ag C  dxy     33  L Ag C  dyy     34  L Ag C  dzz     35  L Ag C  s       36  L Ag C  px  
+    37  L Ag C  py      38  L Ag C  pz      39  L Ag C  dxx     40  L Ag C  dxy     41  L Ag C  dxz     42  L Ag C  dyy 
+    43  L Ag C  dyz     44  L Ag C  dzz     45  L Ag C  s       46  L Ag C  px      47  L Ag C  py      48  L Ag C  pz  
+    49  L Ag C  dxx     50  L Ag C  dxy     51  L Ag C  dxz     52  L Ag C  dyy     53  L Ag C  dyz     54  L Ag C  dzz 
+    55  L Ag H  s       56  L Ag H  px      57  L Ag H  py      58  L Ag H  pz      59  L Ag H  s       60  L Ag H  px  
+    61  L Ag H  py      62  L Ag H  s       63  L Ag H  px      64  L Ag H  py      65  L Ag H  pz      66  L Ag H  s   
+    67  L Ag H  px      68  L Ag H  py      69  L Ag H  s       70  L Ag H  px      71  L Ag H  py      72  L Ag H  pz  
+    73  L Ag H  s       74  L Ag H  px      75  L Ag H  py      76  L Ag H  pz      77  L Au C  s       78  L Au C  px  
+    79  L Au C  py      80  L Au C  pz      81  L Au C  dxx     82  L Au C  dxy     83  L Au C  dxz     84  L Au C  dyy 
+    85  L Au C  dyz     86  L Au C  dzz     87  L Au C  pz      88  L Au C  dxz     89  L Au C  dyz     90  L Au C  s   
+    91  L Au C  px      92  L Au C  py      93  L Au C  pz      94  L Au C  dxx     95  L Au C  dxy     96  L Au C  dxz 
+    97  L Au C  dyy     98  L Au C  dyz     99  L Au C  dzz    100  L Au C  pz     101  L Au C  dxz    102  L Au C  dyz 
+   103  L Au C  s      104  L Au C  px     105  L Au C  py     106  L Au C  pz     107  L Au C  dxx    108  L Au C  dxy 
+   109  L Au C  dxz    110  L Au C  dyy    111  L Au C  dyz    112  L Au C  dzz    113  L Au C  s      114  L Au C  px  
+   115  L Au C  py     116  L Au C  pz     117  L Au C  dxx    118  L Au C  dxy    119  L Au C  dxz    120  L Au C  dyy 
+   121  L Au C  dyz    122  L Au C  dzz    123  L Au H  s      124  L Au H  px     125  L Au H  py     126  L Au H  pz  
+   127  L Au H  pz     128  L Au H  s      129  L Au H  px     130  L Au H  py     131  L Au H  pz     132  L Au H  pz  
+   133  L Au H  s      134  L Au H  px     135  L Au H  py     136  L Au H  pz     137  L Au H  s      138  L Au H  px  
+   139  L Au H  py     140  L Au H  pz     141  L Bu C  s      142  L Bu C  px     143  L Bu C  py     144  L Bu C  pz  
+   145  L Bu C  dxx    146  L Bu C  dxy    147  L Bu C  dxz    148  L Bu C  dyy    149  L Bu C  dyz    150  L Bu C  dzz 
+   151  L Bu C  s      152  L Bu C  px     153  L Bu C  py     154  L Bu C  dxx    155  L Bu C  dxy    156  L Bu C  dyy 
+   157  L Bu C  dzz    158  L Bu C  s      159  L Bu C  px     160  L Bu C  py     161  L Bu C  pz     162  L Bu C  dxx 
+   163  L Bu C  dxy    164  L Bu C  dxz    165  L Bu C  dyy    166  L Bu C  dyz    167  L Bu C  dzz    168  L Bu C  s   
+   169  L Bu C  px     170  L Bu C  py     171  L Bu C  dxx    172  L Bu C  dxy    173  L Bu C  dyy    174  L Bu C  dzz 
+   175  L Bu C  s      176  L Bu C  px     177  L Bu C  py     178  L Bu C  pz     179  L Bu C  dxx    180  L Bu C  dxy 
+   181  L Bu C  dxz    182  L Bu C  dyy    183  L Bu C  dyz    184  L Bu C  dzz    185  L Bu C  s      186  L Bu C  px  
+   187  L Bu C  py     188  L Bu C  pz     189  L Bu C  dxx    190  L Bu C  dxy    191  L Bu C  dxz    192  L Bu C  dyy 
+   193  L Bu C  dyz    194  L Bu C  dzz    195  L Bu H  s      196  L Bu H  px     197  L Bu H  py     198  L Bu H  pz  
+   199  L Bu H  s      200  L Bu H  px     201  L Bu H  py     202  L Bu H  s      203  L Bu H  px     204  L Bu H  py  
+   205  L Bu H  pz     206  L Bu H  s      207  L Bu H  px     208  L Bu H  py     209  L Bu H  s      210  L Bu H  px  
+   211  L Bu H  py     212  L Bu H  pz     213  L Bu H  s      214  L Bu H  px     215  L Bu H  py     216  L Bu H  pz  
+   217  L Bg C  s      218  L Bg C  px     219  L Bg C  py     220  L Bg C  pz     221  L Bg C  dxx    222  L Bg C  dxy 
+   223  L Bg C  dxz    224  L Bg C  dyy    225  L Bg C  dyz    226  L Bg C  dzz    227  L Bg C  pz     228  L Bg C  dxz 
+   229  L Bg C  dyz    230  L Bg C  s      231  L Bg C  px     232  L Bg C  py     233  L Bg C  pz     234  L Bg C  dxx 
+   235  L Bg C  dxy    236  L Bg C  dxz    237  L Bg C  dyy    238  L Bg C  dyz    239  L Bg C  dzz    240  L Bg C  pz  
+   241  L Bg C  dxz    242  L Bg C  dyz    243  L Bg C  s      244  L Bg C  px     245  L Bg C  py     246  L Bg C  pz  
+   247  L Bg C  dxx    248  L Bg C  dxy    249  L Bg C  dxz    250  L Bg C  dyy    251  L Bg C  dyz    252  L Bg C  dzz 
+   253  L Bg C  s      254  L Bg C  px     255  L Bg C  py     256  L Bg C  pz     257  L Bg C  dxx    258  L Bg C  dxy 
+   259  L Bg C  dxz    260  L Bg C  dyy    261  L Bg C  dyz    262  L Bg C  dzz    263  L Bg H  s      264  L Bg H  px  
+   265  L Bg H  py     266  L Bg H  pz     267  L Bg H  pz     268  L Bg H  s      269  L Bg H  px     270  L Bg H  py  
+   271  L Bg H  pz     272  L Bg H  pz     273  L Bg H  s      274  L Bg H  px     275  L Bg H  py     276  L Bg H  pz  
+   277  L Bg H  s      278  L Bg H  px     279  L Bg H  py     280  L Bg H  pz  
+   * Small components:  600
+   281  S Ag C  s      282  S Ag C  px     283  S Ag C  py     284  S Ag C  pz     285  S Ag C  dxx    286  S Ag C  dxy 
+   287  S Ag C  dxz    288  S Ag C  dyy    289  S Ag C  dyz    290  S Ag C  dzz    291  S Ag C  fxxx   292  S Ag C  fxxy
+   293  S Ag C  fxxz   294  S Ag C  fxyy   295  S Ag C  fxyz   296  S Ag C  fxzz   297  S Ag C  fyyy   298  S Ag C  fyyz
+   299  S Ag C  fyzz   300  S Ag C  fzzz   301  S Ag C  s      302  S Ag C  px     303  S Ag C  py     304  S Ag C  dxx 
+   305  S Ag C  dxy    306  S Ag C  dyy    307  S Ag C  dzz    308  S Ag C  fxxx   309  S Ag C  fxxy   310  S Ag C  fxyy
+   311  S Ag C  fxzz   312  S Ag C  fyyy   313  S Ag C  fyzz   314  S Ag C  s      315  S Ag C  px     316  S Ag C  py  
+   317  S Ag C  pz     318  S Ag C  dxx    319  S Ag C  dxy    320  S Ag C  dxz    321  S Ag C  dyy    322  S Ag C  dyz 
+   323  S Ag C  dzz    324  S Ag C  fxxx   325  S Ag C  fxxy   326  S Ag C  fxxz   327  S Ag C  fxyy   328  S Ag C  fxyz
+   329  S Ag C  fxzz   330  S Ag C  fyyy   331  S Ag C  fyyz   332  S Ag C  fyzz   333  S Ag C  fzzz   334  S Ag C  s   
+   335  S Ag C  px     336  S Ag C  py     337  S Ag C  dxx    338  S Ag C  dxy    339  S Ag C  dyy    340  S Ag C  dzz 
+   341  S Ag C  fxxx   342  S Ag C  fxxy   343  S Ag C  fxyy   344  S Ag C  fxzz   345  S Ag C  fyyy   346  S Ag C  fyzz
+   347  S Ag C  s      348  S Ag C  px     349  S Ag C  py     350  S Ag C  pz     351  S Ag C  dxx    352  S Ag C  dxy 
+   353  S Ag C  dxz    354  S Ag C  dyy    355  S Ag C  dyz    356  S Ag C  dzz    357  S Ag C  fxxx   358  S Ag C  fxxy
+   359  S Ag C  fxxz   360  S Ag C  fxyy   361  S Ag C  fxyz   362  S Ag C  fxzz   363  S Ag C  fyyy   364  S Ag C  fyyz
+   365  S Ag C  fyzz   366  S Ag C  fzzz   367  S Ag C  s      368  S Ag C  px     369  S Ag C  py     370  S Ag C  pz  
+   371  S Ag C  dxx    372  S Ag C  dxy    373  S Ag C  dxz    374  S Ag C  dyy    375  S Ag C  dyz    376  S Ag C  dzz 
+   377  S Ag C  fxxx   378  S Ag C  fxxy   379  S Ag C  fxxz   380  S Ag C  fxyy   381  S Ag C  fxyz   382  S Ag C  fxzz
+   383  S Ag C  fyyy   384  S Ag C  fyyz   385  S Ag C  fyzz   386  S Ag C  fzzz   387  S Ag H  s      388  S Ag H  px  
+   389  S Ag H  py     390  S Ag H  pz     391  S Ag H  dxx    392  S Ag H  dxy    393  S Ag H  dxz    394  S Ag H  dyy 
+   395  S Ag H  dyz    396  S Ag H  dzz    397  S Ag H  s      398  S Ag H  px     399  S Ag H  py     400  S Ag H  dxx 
+   401  S Ag H  dxy    402  S Ag H  dyy    403  S Ag H  dzz    404  S Ag H  s      405  S Ag H  px     406  S Ag H  py  
+   407  S Ag H  pz     408  S Ag H  dxx    409  S Ag H  dxy    410  S Ag H  dxz    411  S Ag H  dyy    412  S Ag H  dyz 
+   413  S Ag H  dzz    414  S Ag H  s      415  S Ag H  px     416  S Ag H  py     417  S Ag H  dxx    418  S Ag H  dxy 
+   419  S Ag H  dyy    420  S Ag H  dzz    421  S Ag H  s      422  S Ag H  px     423  S Ag H  py     424  S Ag H  pz  
+   425  S Ag H  dxx    426  S Ag H  dxy    427  S Ag H  dxz    428  S Ag H  dyy    429  S Ag H  dyz    430  S Ag H  dzz 
+   431  S Ag H  s      432  S Ag H  px     433  S Ag H  py     434  S Ag H  pz     435  S Ag H  dxx    436  S Ag H  dxy 
+   437  S Ag H  dxz    438  S Ag H  dyy    439  S Ag H  dyz    440  S Ag H  dzz    441  S Au C  s      442  S Au C  px  
+   443  S Au C  py     444  S Au C  pz     445  S Au C  dxx    446  S Au C  dxy    447  S Au C  dxz    448  S Au C  dyy 
+   449  S Au C  dyz    450  S Au C  dzz    451  S Au C  fxxx   452  S Au C  fxxy   453  S Au C  fxxz   454  S Au C  fxyy
+   455  S Au C  fxyz   456  S Au C  fxzz   457  S Au C  fyyy   458  S Au C  fyyz   459  S Au C  fyzz   460  S Au C  fzzz
+   461  S Au C  pz     462  S Au C  dxz    463  S Au C  dyz    464  S Au C  fxxz   465  S Au C  fxyz   466  S Au C  fyyz
+   467  S Au C  fzzz   468  S Au C  s      469  S Au C  px     470  S Au C  py     471  S Au C  pz     472  S Au C  dxx 
+   473  S Au C  dxy    474  S Au C  dxz    475  S Au C  dyy    476  S Au C  dyz    477  S Au C  dzz    478  S Au C  fxxx
+   479  S Au C  fxxy   480  S Au C  fxxz   481  S Au C  fxyy   482  S Au C  fxyz   483  S Au C  fxzz   484  S Au C  fyyy
+   485  S Au C  fyyz   486  S Au C  fyzz   487  S Au C  fzzz   488  S Au C  pz     489  S Au C  dxz    490  S Au C  dyz 
+   491  S Au C  fxxz   492  S Au C  fxyz   493  S Au C  fyyz   494  S Au C  fzzz   495  S Au C  s      496  S Au C  px  
+   497  S Au C  py     498  S Au C  pz     499  S Au C  dxx    500  S Au C  dxy    501  S Au C  dxz    502  S Au C  dyy 
+   503  S Au C  dyz    504  S Au C  dzz    505  S Au C  fxxx   506  S Au C  fxxy   507  S Au C  fxxz   508  S Au C  fxyy
+   509  S Au C  fxyz   510  S Au C  fxzz   511  S Au C  fyyy   512  S Au C  fyyz   513  S Au C  fyzz   514  S Au C  fzzz
+   515  S Au C  s      516  S Au C  px     517  S Au C  py     518  S Au C  pz     519  S Au C  dxx    520  S Au C  dxy 
+   521  S Au C  dxz    522  S Au C  dyy    523  S Au C  dyz    524  S Au C  dzz    525  S Au C  fxxx   526  S Au C  fxxy
+   527  S Au C  fxxz   528  S Au C  fxyy   529  S Au C  fxyz   530  S Au C  fxzz   531  S Au C  fyyy   532  S Au C  fyyz
+   533  S Au C  fyzz   534  S Au C  fzzz   535  S Au H  s      536  S Au H  px     537  S Au H  py     538  S Au H  pz  
+   539  S Au H  dxx    540  S Au H  dxy    541  S Au H  dxz    542  S Au H  dyy    543  S Au H  dyz    544  S Au H  dzz 
+   545  S Au H  pz     546  S Au H  dxz    547  S Au H  dyz    548  S Au H  s      549  S Au H  px     550  S Au H  py  
+   551  S Au H  pz     552  S Au H  dxx    553  S Au H  dxy    554  S Au H  dxz    555  S Au H  dyy    556  S Au H  dyz 
+   557  S Au H  dzz    558  S Au H  pz     559  S Au H  dxz    560  S Au H  dyz    561  S Au H  s      562  S Au H  px  
+   563  S Au H  py     564  S Au H  pz     565  S Au H  dxx    566  S Au H  dxy    567  S Au H  dxz    568  S Au H  dyy 
+   569  S Au H  dyz    570  S Au H  dzz    571  S Au H  s      572  S Au H  px     573  S Au H  py     574  S Au H  pz  
+   575  S Au H  dxx    576  S Au H  dxy    577  S Au H  dxz    578  S Au H  dyy    579  S Au H  dyz    580  S Au H  dzz 
+   581  S Bu C  s      582  S Bu C  px     583  S Bu C  py     584  S Bu C  pz     585  S Bu C  dxx    586  S Bu C  dxy 
+   587  S Bu C  dxz    588  S Bu C  dyy    589  S Bu C  dyz    590  S Bu C  dzz    591  S Bu C  fxxx   592  S Bu C  fxxy
+   593  S Bu C  fxxz   594  S Bu C  fxyy   595  S Bu C  fxyz   596  S Bu C  fxzz   597  S Bu C  fyyy   598  S Bu C  fyyz
+   599  S Bu C  fyzz   600  S Bu C  fzzz   601  S Bu C  s      602  S Bu C  px     603  S Bu C  py     604  S Bu C  dxx 
+   605  S Bu C  dxy    606  S Bu C  dyy    607  S Bu C  dzz    608  S Bu C  fxxx   609  S Bu C  fxxy   610  S Bu C  fxyy
+   611  S Bu C  fxzz   612  S Bu C  fyyy   613  S Bu C  fyzz   614  S Bu C  s      615  S Bu C  px     616  S Bu C  py  
+   617  S Bu C  pz     618  S Bu C  dxx    619  S Bu C  dxy    620  S Bu C  dxz    621  S Bu C  dyy    622  S Bu C  dyz 
+   623  S Bu C  dzz    624  S Bu C  fxxx   625  S Bu C  fxxy   626  S Bu C  fxxz   627  S Bu C  fxyy   628  S Bu C  fxyz
+   629  S Bu C  fxzz   630  S Bu C  fyyy   631  S Bu C  fyyz   632  S Bu C  fyzz   633  S Bu C  fzzz   634  S Bu C  s   
+   635  S Bu C  px     636  S Bu C  py     637  S Bu C  dxx    638  S Bu C  dxy    639  S Bu C  dyy    640  S Bu C  dzz 
+   641  S Bu C  fxxx   642  S Bu C  fxxy   643  S Bu C  fxyy   644  S Bu C  fxzz   645  S Bu C  fyyy   646  S Bu C  fyzz
+   647  S Bu C  s      648  S Bu C  px     649  S Bu C  py     650  S Bu C  pz     651  S Bu C  dxx    652  S Bu C  dxy 
+   653  S Bu C  dxz    654  S Bu C  dyy    655  S Bu C  dyz    656  S Bu C  dzz    657  S Bu C  fxxx   658  S Bu C  fxxy
+   659  S Bu C  fxxz   660  S Bu C  fxyy   661  S Bu C  fxyz   662  S Bu C  fxzz   663  S Bu C  fyyy   664  S Bu C  fyyz
+   665  S Bu C  fyzz   666  S Bu C  fzzz   667  S Bu C  s      668  S Bu C  px     669  S Bu C  py     670  S Bu C  pz  
+   671  S Bu C  dxx    672  S Bu C  dxy    673  S Bu C  dxz    674  S Bu C  dyy    675  S Bu C  dyz    676  S Bu C  dzz 
+   677  S Bu C  fxxx   678  S Bu C  fxxy   679  S Bu C  fxxz   680  S Bu C  fxyy   681  S Bu C  fxyz   682  S Bu C  fxzz
+   683  S Bu C  fyyy   684  S Bu C  fyyz   685  S Bu C  fyzz   686  S Bu C  fzzz   687  S Bu H  s      688  S Bu H  px  
+   689  S Bu H  py     690  S Bu H  pz     691  S Bu H  dxx    692  S Bu H  dxy    693  S Bu H  dxz    694  S Bu H  dyy 
+   695  S Bu H  dyz    696  S Bu H  dzz    697  S Bu H  s      698  S Bu H  px     699  S Bu H  py     700  S Bu H  dxx 
+   701  S Bu H  dxy    702  S Bu H  dyy    703  S Bu H  dzz    704  S Bu H  s      705  S Bu H  px     706  S Bu H  py  
+   707  S Bu H  pz     708  S Bu H  dxx    709  S Bu H  dxy    710  S Bu H  dxz    711  S Bu H  dyy    712  S Bu H  dyz 
+   713  S Bu H  dzz    714  S Bu H  s      715  S Bu H  px     716  S Bu H  py     717  S Bu H  dxx    718  S Bu H  dxy 
+   719  S Bu H  dyy    720  S Bu H  dzz    721  S Bu H  s      722  S Bu H  px     723  S Bu H  py     724  S Bu H  pz  
+   725  S Bu H  dxx    726  S Bu H  dxy    727  S Bu H  dxz    728  S Bu H  dyy    729  S Bu H  dyz    730  S Bu H  dzz 
+   731  S Bu H  s      732  S Bu H  px     733  S Bu H  py     734  S Bu H  pz     735  S Bu H  dxx    736  S Bu H  dxy 
+   737  S Bu H  dxz    738  S Bu H  dyy    739  S Bu H  dyz    740  S Bu H  dzz    741  S Bg C  s      742  S Bg C  px  
+   743  S Bg C  py     744  S Bg C  pz     745  S Bg C  dxx    746  S Bg C  dxy    747  S Bg C  dxz    748  S Bg C  dyy 
+   749  S Bg C  dyz    750  S Bg C  dzz    751  S Bg C  fxxx   752  S Bg C  fxxy   753  S Bg C  fxxz   754  S Bg C  fxyy
+   755  S Bg C  fxyz   756  S Bg C  fxzz   757  S Bg C  fyyy   758  S Bg C  fyyz   759  S Bg C  fyzz   760  S Bg C  fzzz
+   761  S Bg C  pz     762  S Bg C  dxz    763  S Bg C  dyz    764  S Bg C  fxxz   765  S Bg C  fxyz   766  S Bg C  fyyz
+   767  S Bg C  fzzz   768  S Bg C  s      769  S Bg C  px     770  S Bg C  py     771  S Bg C  pz     772  S Bg C  dxx 
+   773  S Bg C  dxy    774  S Bg C  dxz    775  S Bg C  dyy    776  S Bg C  dyz    777  S Bg C  dzz    778  S Bg C  fxxx
+   779  S Bg C  fxxy   780  S Bg C  fxxz   781  S Bg C  fxyy   782  S Bg C  fxyz   783  S Bg C  fxzz   784  S Bg C  fyyy
+   785  S Bg C  fyyz   786  S Bg C  fyzz   787  S Bg C  fzzz   788  S Bg C  pz     789  S Bg C  dxz    790  S Bg C  dyz 
+   791  S Bg C  fxxz   792  S Bg C  fxyz   793  S Bg C  fyyz   794  S Bg C  fzzz   795  S Bg C  s      796  S Bg C  px  
+   797  S Bg C  py     798  S Bg C  pz     799  S Bg C  dxx    800  S Bg C  dxy    801  S Bg C  dxz    802  S Bg C  dyy 
+   803  S Bg C  dyz    804  S Bg C  dzz    805  S Bg C  fxxx   806  S Bg C  fxxy   807  S Bg C  fxxz   808  S Bg C  fxyy
+   809  S Bg C  fxyz   810  S Bg C  fxzz   811  S Bg C  fyyy   812  S Bg C  fyyz   813  S Bg C  fyzz   814  S Bg C  fzzz
+   815  S Bg C  s      816  S Bg C  px     817  S Bg C  py     818  S Bg C  pz     819  S Bg C  dxx    820  S Bg C  dxy 
+   821  S Bg C  dxz    822  S Bg C  dyy    823  S Bg C  dyz    824  S Bg C  dzz    825  S Bg C  fxxx   826  S Bg C  fxxy
+   827  S Bg C  fxxz   828  S Bg C  fxyy   829  S Bg C  fxyz   830  S Bg C  fxzz   831  S Bg C  fyyy   832  S Bg C  fyyz
+   833  S Bg C  fyzz   834  S Bg C  fzzz   835  S Bg H  s      836  S Bg H  px     837  S Bg H  py     838  S Bg H  pz  
+   839  S Bg H  dxx    840  S Bg H  dxy    841  S Bg H  dxz    842  S Bg H  dyy    843  S Bg H  dyz    844  S Bg H  dzz 
+   845  S Bg H  pz     846  S Bg H  dxz    847  S Bg H  dyz    848  S Bg H  s      849  S Bg H  px     850  S Bg H  py  
+   851  S Bg H  pz     852  S Bg H  dxx    853  S Bg H  dxy    854  S Bg H  dxz    855  S Bg H  dyy    856  S Bg H  dyz 
+   857  S Bg H  dzz    858  S Bg H  pz     859  S Bg H  dxz    860  S Bg H  dyz    861  S Bg H  s      862  S Bg H  px  
+   863  S Bg H  py     864  S Bg H  pz     865  S Bg H  dxx    866  S Bg H  dxy    867  S Bg H  dxz    868  S Bg H  dyy 
+   869  S Bg H  dyz    870  S Bg H  dzz    871  S Bg H  s      872  S Bg H  px     873  S Bg H  py     874  S Bg H  pz  
+   875  S Bg H  dxx    876  S Bg H  dxy    877  S Bg H  dxz    878  S Bg H  dyy    879  S Bg H  dyz    880  S Bg H  dzz 
+
+
+  Symmetry Orbitals
+  -----------------
+
+  Number of orbitals in each symmetry:          830   700   830   700
+  Number of large orbitals in each symmetry:    240   190   240   190
+  Number of small orbitals in each symmetry:    590   510   590   510
+
+* Large component functions
+
+  Symmetry  Ag ( 1)
+
+       10 functions:    C  s   1+2+3+4
+        6 functions:    C  px  1+2-3-4
+        6 functions:    C  py  1+2-3-4
+        6 functions:    C  pz  1-2+3-4
+        1 functions:    C  dxx 1+2+3+4
+        1 functions:    C  dxy 1+2+3+4
+        1 functions:    C  dxz 1-2-3+4
+        1 functions:    C  dyy 1+2+3+4
+        1 functions:    C  dyz 1-2-3+4
+        1 functions:    C  dzz 1+2+3+4
+       10 functions:    C  s   1+2
+        6 functions:    C  px  1-2
+        6 functions:    C  py  1-2
+        1 functions:    C  dxx 1+2
+        1 functions:    C  dxy 1+2
+        1 functions:    C  dyy 1+2
+        1 functions:    C  dzz 1+2
+       10 functions:    C  s   1+2+3+4
+        6 functions:    C  px  1+2-3-4
+        6 functions:    C  py  1+2-3-4
+        6 functions:    C  pz  1-2+3-4
+        1 functions:    C  dxx 1+2+3+4
+        1 functions:    C  dxy 1+2+3+4
+        1 functions:    C  dxz 1-2-3+4
+        1 functions:    C  dyy 1+2+3+4
+        1 functions:    C  dyz 1-2-3+4
+        1 functions:    C  dzz 1+2+3+4
+       10 functions:    C  s   1+2
+        6 functions:    C  px  1-2
+        6 functions:    C  py  1-2
+        1 functions:    C  dxx 1+2
+        1 functions:    C  dxy 1+2
+        1 functions:    C  dyy 1+2
+        1 functions:    C  dzz 1+2
+       10 functions:    C  s   1+2+3+4
+        6 functions:    C  px  1+2-3-4
+        6 functions:    C  py  1+2-3-4
+        6 functions:    C  pz  1-2+3-4
+        1 functions:    C  dxx 1+2+3+4
+        1 functions:    C  dxy 1+2+3+4
+        1 functions:    C  dxz 1-2-3+4
+        1 functions:    C  dyy 1+2+3+4
+        1 functions:    C  dyz 1-2-3+4
+        1 functions:    C  dzz 1+2+3+4
+       10 functions:    C  s   1+2+3+4
+        6 functions:    C  px  1+2-3-4
+        6 functions:    C  py  1+2-3-4
+        6 functions:    C  pz  1-2+3-4
+        1 functions:    C  dxx 1+2+3+4
+        1 functions:    C  dxy 1+2+3+4
+        1 functions:    C  dxz 1-2-3+4
+        1 functions:    C  dyy 1+2+3+4
+        1 functions:    C  dyz 1-2-3+4
+        1 functions:    C  dzz 1+2+3+4
+        6 functions:    H  s   1+2+3+4
+        1 functions:    H  px  1+2-3-4
+        1 functions:    H  py  1+2-3-4
+        1 functions:    H  pz  1-2+3-4
+        6 functions:    H  s   1+2
+        1 functions:    H  px  1-2
+        1 functions:    H  py  1-2
+        6 functions:    H  s   1+2+3+4
+        1 functions:    H  px  1+2-3-4
+        1 functions:    H  py  1+2-3-4
+        1 functions:    H  pz  1-2+3-4
+        6 functions:    H  s   1+2
+        1 functions:    H  px  1-2
+        1 functions:    H  py  1-2
+        6 functions:    H  s   1+2+3+4
+        1 functions:    H  px  1+2-3-4
+        1 functions:    H  py  1+2-3-4
+        1 functions:    H  pz  1-2+3-4
+        6 functions:    H  s   1+2+3+4
+        1 functions:    H  px  1+2-3-4
+        1 functions:    H  py  1+2-3-4
+        1 functions:    H  pz  1-2+3-4
+
+  Symmetry  Au ( 2)
+
+       10 functions:    C  s   1-2+3-4
+        6 functions:    C  px  1-2-3+4
+        6 functions:    C  py  1-2-3+4
+        6 functions:    C  pz  1+2+3+4
+        1 functions:    C  dxx 1-2+3-4
+        1 functions:    C  dxy 1-2+3-4
+        1 functions:    C  dxz 1+2-3-4
+        1 functions:    C  dyy 1-2+3-4
+        1 functions:    C  dyz 1+2-3-4
+        1 functions:    C  dzz 1-2+3-4
+        6 functions:    C  pz  1+2
+        1 functions:    C  dxz 1-2
+        1 functions:    C  dyz 1-2
+       10 functions:    C  s   1-2+3-4
+        6 functions:    C  px  1-2-3+4
+        6 functions:    C  py  1-2-3+4
+        6 functions:    C  pz  1+2+3+4
+        1 functions:    C  dxx 1-2+3-4
+        1 functions:    C  dxy 1-2+3-4
+        1 functions:    C  dxz 1+2-3-4
+        1 functions:    C  dyy 1-2+3-4
+        1 functions:    C  dyz 1+2-3-4
+        1 functions:    C  dzz 1-2+3-4
+        6 functions:    C  pz  1+2
+        1 functions:    C  dxz 1-2
+        1 functions:    C  dyz 1-2
+       10 functions:    C  s   1-2+3-4
+        6 functions:    C  px  1-2-3+4
+        6 functions:    C  py  1-2-3+4
+        6 functions:    C  pz  1+2+3+4
+        1 functions:    C  dxx 1-2+3-4
+        1 functions:    C  dxy 1-2+3-4
+        1 functions:    C  dxz 1+2-3-4
+        1 functions:    C  dyy 1-2+3-4
+        1 functions:    C  dyz 1+2-3-4
+        1 functions:    C  dzz 1-2+3-4
+       10 functions:    C  s   1-2+3-4
+        6 functions:    C  px  1-2-3+4
+        6 functions:    C  py  1-2-3+4
+        6 functions:    C  pz  1+2+3+4
+        1 functions:    C  dxx 1-2+3-4
+        1 functions:    C  dxy 1-2+3-4
+        1 functions:    C  dxz 1+2-3-4
+        1 functions:    C  dyy 1-2+3-4
+        1 functions:    C  dyz 1+2-3-4
+        1 functions:    C  dzz 1-2+3-4
+        6 functions:    H  s   1-2+3-4
+        1 functions:    H  px  1-2-3+4
+        1 functions:    H  py  1-2-3+4
+        1 functions:    H  pz  1+2+3+4
+        1 functions:    H  pz  1+2
+        6 functions:    H  s   1-2+3-4
+        1 functions:    H  px  1-2-3+4
+        1 functions:    H  py  1-2-3+4
+        1 functions:    H  pz  1+2+3+4
+        1 functions:    H  pz  1+2
+        6 functions:    H  s   1-2+3-4
+        1 functions:    H  px  1-2-3+4
+        1 functions:    H  py  1-2-3+4
+        1 functions:    H  pz  1+2+3+4
+        6 functions:    H  s   1-2+3-4
+        1 functions:    H  px  1-2-3+4
+        1 functions:    H  py  1-2-3+4
+        1 functions:    H  pz  1+2+3+4
+
+  Symmetry  Bu ( 3)
+
+       10 functions:    C  s   1+2-3-4
+        6 functions:    C  px  1+2+3+4
+        6 functions:    C  py  1+2+3+4
+        6 functions:    C  pz  1-2-3+4
+        1 functions:    C  dxx 1+2-3-4
+        1 functions:    C  dxy 1+2-3-4
+        1 functions:    C  dxz 1-2+3-4
+        1 functions:    C  dyy 1+2-3-4
+        1 functions:    C  dyz 1-2+3-4
+        1 functions:    C  dzz 1+2-3-4
+       10 functions:    C  s   1-2
+        6 functions:    C  px  1+2
+        6 functions:    C  py  1+2
+        1 functions:    C  dxx 1-2
+        1 functions:    C  dxy 1-2
+        1 functions:    C  dyy 1-2
+        1 functions:    C  dzz 1-2
+       10 functions:    C  s   1+2-3-4
+        6 functions:    C  px  1+2+3+4
+        6 functions:    C  py  1+2+3+4
+        6 functions:    C  pz  1-2-3+4
+        1 functions:    C  dxx 1+2-3-4
+        1 functions:    C  dxy 1+2-3-4
+        1 functions:    C  dxz 1-2+3-4
+        1 functions:    C  dyy 1+2-3-4
+        1 functions:    C  dyz 1-2+3-4
+        1 functions:    C  dzz 1+2-3-4
+       10 functions:    C  s   1-2
+        6 functions:    C  px  1+2
+        6 functions:    C  py  1+2
+        1 functions:    C  dxx 1-2
+        1 functions:    C  dxy 1-2
+        1 functions:    C  dyy 1-2
+        1 functions:    C  dzz 1-2
+       10 functions:    C  s   1+2-3-4
+        6 functions:    C  px  1+2+3+4
+        6 functions:    C  py  1+2+3+4
+        6 functions:    C  pz  1-2-3+4
+        1 functions:    C  dxx 1+2-3-4
+        1 functions:    C  dxy 1+2-3-4
+        1 functions:    C  dxz 1-2+3-4
+        1 functions:    C  dyy 1+2-3-4
+        1 functions:    C  dyz 1-2+3-4
+        1 functions:    C  dzz 1+2-3-4
+       10 functions:    C  s   1+2-3-4
+        6 functions:    C  px  1+2+3+4
+        6 functions:    C  py  1+2+3+4
+        6 functions:    C  pz  1-2-3+4
+        1 functions:    C  dxx 1+2-3-4
+        1 functions:    C  dxy 1+2-3-4
+        1 functions:    C  dxz 1-2+3-4
+        1 functions:    C  dyy 1+2-3-4
+        1 functions:    C  dyz 1-2+3-4
+        1 functions:    C  dzz 1+2-3-4
+        6 functions:    H  s   1+2-3-4
+        1 functions:    H  px  1+2+3+4
+        1 functions:    H  py  1+2+3+4
+        1 functions:    H  pz  1-2-3+4
+        6 functions:    H  s   1-2
+        1 functions:    H  px  1+2
+        1 functions:    H  py  1+2
+        6 functions:    H  s   1+2-3-4
+        1 functions:    H  px  1+2+3+4
+        1 functions:    H  py  1+2+3+4
+        1 functions:    H  pz  1-2-3+4
+        6 functions:    H  s   1-2
+        1 functions:    H  px  1+2
+        1 functions:    H  py  1+2
+        6 functions:    H  s   1+2-3-4
+        1 functions:    H  px  1+2+3+4
+        1 functions:    H  py  1+2+3+4
+        1 functions:    H  pz  1-2-3+4
+        6 functions:    H  s   1+2-3-4
+        1 functions:    H  px  1+2+3+4
+        1 functions:    H  py  1+2+3+4
+        1 functions:    H  pz  1-2-3+4
+
+  Symmetry  Bg ( 4)
+
+       10 functions:    C  s   1-2-3+4
+        6 functions:    C  px  1-2+3-4
+        6 functions:    C  py  1-2+3-4
+        6 functions:    C  pz  1+2-3-4
+        1 functions:    C  dxx 1-2-3+4
+        1 functions:    C  dxy 1-2-3+4
+        1 functions:    C  dxz 1+2+3+4
+        1 functions:    C  dyy 1-2-3+4
+        1 functions:    C  dyz 1+2+3+4
+        1 functions:    C  dzz 1-2-3+4
+        6 functions:    C  pz  1-2
+        1 functions:    C  dxz 1+2
+        1 functions:    C  dyz 1+2
+       10 functions:    C  s   1-2-3+4
+        6 functions:    C  px  1-2+3-4
+        6 functions:    C  py  1-2+3-4
+        6 functions:    C  pz  1+2-3-4
+        1 functions:    C  dxx 1-2-3+4
+        1 functions:    C  dxy 1-2-3+4
+        1 functions:    C  dxz 1+2+3+4
+        1 functions:    C  dyy 1-2-3+4
+        1 functions:    C  dyz 1+2+3+4
+        1 functions:    C  dzz 1-2-3+4
+        6 functions:    C  pz  1-2
+        1 functions:    C  dxz 1+2
+        1 functions:    C  dyz 1+2
+       10 functions:    C  s   1-2-3+4
+        6 functions:    C  px  1-2+3-4
+        6 functions:    C  py  1-2+3-4
+        6 functions:    C  pz  1+2-3-4
+        1 functions:    C  dxx 1-2-3+4
+        1 functions:    C  dxy 1-2-3+4
+        1 functions:    C  dxz 1+2+3+4
+        1 functions:    C  dyy 1-2-3+4
+        1 functions:    C  dyz 1+2+3+4
+        1 functions:    C  dzz 1-2-3+4
+       10 functions:    C  s   1-2-3+4
+        6 functions:    C  px  1-2+3-4
+        6 functions:    C  py  1-2+3-4
+        6 functions:    C  pz  1+2-3-4
+        1 functions:    C  dxx 1-2-3+4
+        1 functions:    C  dxy 1-2-3+4
+        1 functions:    C  dxz 1+2+3+4
+        1 functions:    C  dyy 1-2-3+4
+        1 functions:    C  dyz 1+2+3+4
+        1 functions:    C  dzz 1-2-3+4
+        6 functions:    H  s   1-2-3+4
+        1 functions:    H  px  1-2+3-4
+        1 functions:    H  py  1-2+3-4
+        1 functions:    H  pz  1+2-3-4
+        1 functions:    H  pz  1-2
+        6 functions:    H  s   1-2-3+4
+        1 functions:    H  px  1-2+3-4
+        1 functions:    H  py  1-2+3-4
+        1 functions:    H  pz  1+2-3-4
+        1 functions:    H  pz  1-2
+        6 functions:    H  s   1-2-3+4
+        1 functions:    H  px  1-2+3-4
+        1 functions:    H  py  1-2+3-4
+        1 functions:    H  pz  1+2-3-4
+        6 functions:    H  s   1-2-3+4
+        1 functions:    H  px  1-2+3-4
+        1 functions:    H  py  1-2+3-4
+        1 functions:    H  pz  1+2-3-4
+
+* Small component functions
+
+  Symmetry  Ag ( 1)
+
+        6 functions:    C  s   1+2+3+4
+       11 functions:    C  px  1+2-3-4
+       11 functions:    C  py  1+2-3-4
+       11 functions:    C  pz  1-2+3-4
+        6 functions:    C  dxx 1+2+3+4
+        6 functions:    C  dxy 1+2+3+4
+        6 functions:    C  dxz 1-2-3+4
+        6 functions:    C  dyy 1+2+3+4
+        6 functions:    C  dyz 1-2-3+4
+        6 functions:    C  dzz 1+2+3+4
+        1 functions:    C  fxxx1+2-3-4
+        1 functions:    C  fxxy1+2-3-4
+        1 functions:    C  fxxz1-2+3-4
+        1 functions:    C  fxyy1+2-3-4
+        1 functions:    C  fxyz1-2+3-4
+        1 functions:    C  fxzz1+2-3-4
+        1 functions:    C  fyyy1+2-3-4
+        1 functions:    C  fyyz1-2+3-4
+        1 functions:    C  fyzz1+2-3-4
+        1 functions:    C  fzzz1-2+3-4
+        6 functions:    C  s   1+2
+       11 functions:    C  px  1-2
+       11 functions:    C  py  1-2
+        6 functions:    C  dxx 1+2
+        6 functions:    C  dxy 1+2
+        6 functions:    C  dyy 1+2
+        6 functions:    C  dzz 1+2
+        1 functions:    C  fxxx1-2
+        1 functions:    C  fxxy1-2
+        1 functions:    C  fxyy1-2
+        1 functions:    C  fxzz1-2
+        1 functions:    C  fyyy1-2
+        1 functions:    C  fyzz1-2
+        6 functions:    C  s   1+2+3+4
+       11 functions:    C  px  1+2-3-4
+       11 functions:    C  py  1+2-3-4
+       11 functions:    C  pz  1-2+3-4
+        6 functions:    C  dxx 1+2+3+4
+        6 functions:    C  dxy 1+2+3+4
+        6 functions:    C  dxz 1-2-3+4
+        6 functions:    C  dyy 1+2+3+4
+        6 functions:    C  dyz 1-2-3+4
+        6 functions:    C  dzz 1+2+3+4
+        1 functions:    C  fxxx1+2-3-4
+        1 functions:    C  fxxy1+2-3-4
+        1 functions:    C  fxxz1-2+3-4
+        1 functions:    C  fxyy1+2-3-4
+        1 functions:    C  fxyz1-2+3-4
+        1 functions:    C  fxzz1+2-3-4
+        1 functions:    C  fyyy1+2-3-4
+        1 functions:    C  fyyz1-2+3-4
+        1 functions:    C  fyzz1+2-3-4
+        1 functions:    C  fzzz1-2+3-4
+        6 functions:    C  s   1+2
+       11 functions:    C  px  1-2
+       11 functions:    C  py  1-2
+        6 functions:    C  dxx 1+2
+        6 functions:    C  dxy 1+2
+        6 functions:    C  dyy 1+2
+        6 functions:    C  dzz 1+2
+        1 functions:    C  fxxx1-2
+        1 functions:    C  fxxy1-2
+        1 functions:    C  fxyy1-2
+        1 functions:    C  fxzz1-2
+        1 functions:    C  fyyy1-2
+        1 functions:    C  fyzz1-2
+        6 functions:    C  s   1+2+3+4
+       11 functions:    C  px  1+2-3-4
+       11 functions:    C  py  1+2-3-4
+       11 functions:    C  pz  1-2+3-4
+        6 functions:    C  dxx 1+2+3+4
+        6 functions:    C  dxy 1+2+3+4
+        6 functions:    C  dxz 1-2-3+4
+        6 functions:    C  dyy 1+2+3+4
+        6 functions:    C  dyz 1-2-3+4
+        6 functions:    C  dzz 1+2+3+4
+        1 functions:    C  fxxx1+2-3-4
+        1 functions:    C  fxxy1+2-3-4
+        1 functions:    C  fxxz1-2+3-4
+        1 functions:    C  fxyy1+2-3-4
+        1 functions:    C  fxyz1-2+3-4
+        1 functions:    C  fxzz1+2-3-4
+        1 functions:    C  fyyy1+2-3-4
+        1 functions:    C  fyyz1-2+3-4
+        1 functions:    C  fyzz1+2-3-4
+        1 functions:    C  fzzz1-2+3-4
+        6 functions:    C  s   1+2+3+4
+       11 functions:    C  px  1+2-3-4
+       11 functions:    C  py  1+2-3-4
+       11 functions:    C  pz  1-2+3-4
+        6 functions:    C  dxx 1+2+3+4
+        6 functions:    C  dxy 1+2+3+4
+        6 functions:    C  dxz 1-2-3+4
+        6 functions:    C  dyy 1+2+3+4
+        6 functions:    C  dyz 1-2-3+4
+        6 functions:    C  dzz 1+2+3+4
+        1 functions:    C  fxxx1+2-3-4
+        1 functions:    C  fxxy1+2-3-4
+        1 functions:    C  fxxz1-2+3-4
+        1 functions:    C  fxyy1+2-3-4
+        1 functions:    C  fxyz1-2+3-4
+        1 functions:    C  fxzz1+2-3-4
+        1 functions:    C  fyyy1+2-3-4
+        1 functions:    C  fyyz1-2+3-4
+        1 functions:    C  fyzz1+2-3-4
+        1 functions:    C  fzzz1-2+3-4
+        1 functions:    H  s   1+2+3+4
+        6 functions:    H  px  1+2-3-4
+        6 functions:    H  py  1+2-3-4
+        6 functions:    H  pz  1-2+3-4
+        1 functions:    H  dxx 1+2+3+4
+        1 functions:    H  dxy 1+2+3+4
+        1 functions:    H  dxz 1-2-3+4
+        1 functions:    H  dyy 1+2+3+4
+        1 functions:    H  dyz 1-2-3+4
+        1 functions:    H  dzz 1+2+3+4
+        1 functions:    H  s   1+2
+        6 functions:    H  px  1-2
+        6 functions:    H  py  1-2
+        1 functions:    H  dxx 1+2
+        1 functions:    H  dxy 1+2
+        1 functions:    H  dyy 1+2
+        1 functions:    H  dzz 1+2
+        1 functions:    H  s   1+2+3+4
+        6 functions:    H  px  1+2-3-4
+        6 functions:    H  py  1+2-3-4
+        6 functions:    H  pz  1-2+3-4
+        1 functions:    H  dxx 1+2+3+4
+        1 functions:    H  dxy 1+2+3+4
+        1 functions:    H  dxz 1-2-3+4
+        1 functions:    H  dyy 1+2+3+4
+        1 functions:    H  dyz 1-2-3+4
+        1 functions:    H  dzz 1+2+3+4
+        1 functions:    H  s   1+2
+        6 functions:    H  px  1-2
+        6 functions:    H  py  1-2
+        1 functions:    H  dxx 1+2
+        1 functions:    H  dxy 1+2
+        1 functions:    H  dyy 1+2
+        1 functions:    H  dzz 1+2
+        1 functions:    H  s   1+2+3+4
+        6 functions:    H  px  1+2-3-4
+        6 functions:    H  py  1+2-3-4
+        6 functions:    H  pz  1-2+3-4
+        1 functions:    H  dxx 1+2+3+4
+        1 functions:    H  dxy 1+2+3+4
+        1 functions:    H  dxz 1-2-3+4
+        1 functions:    H  dyy 1+2+3+4
+        1 functions:    H  dyz 1-2-3+4
+        1 functions:    H  dzz 1+2+3+4
+        1 functions:    H  s   1+2+3+4
+        6 functions:    H  px  1+2-3-4
+        6 functions:    H  py  1+2-3-4
+        6 functions:    H  pz  1-2+3-4
+        1 functions:    H  dxx 1+2+3+4
+        1 functions:    H  dxy 1+2+3+4
+        1 functions:    H  dxz 1-2-3+4
+        1 functions:    H  dyy 1+2+3+4
+        1 functions:    H  dyz 1-2-3+4
+        1 functions:    H  dzz 1+2+3+4
+
+  Symmetry  Au ( 2)
+
+        6 functions:    C  s   1-2+3-4
+       11 functions:    C  px  1-2-3+4
+       11 functions:    C  py  1-2-3+4
+       11 functions:    C  pz  1+2+3+4
+        6 functions:    C  dxx 1-2+3-4
+        6 functions:    C  dxy 1-2+3-4
+        6 functions:    C  dxz 1+2-3-4
+        6 functions:    C  dyy 1-2+3-4
+        6 functions:    C  dyz 1+2-3-4
+        6 functions:    C  dzz 1-2+3-4
+        1 functions:    C  fxxx1-2-3+4
+        1 functions:    C  fxxy1-2-3+4
+        1 functions:    C  fxxz1+2+3+4
+        1 functions:    C  fxyy1-2-3+4
+        1 functions:    C  fxyz1+2+3+4
+        1 functions:    C  fxzz1-2-3+4
+        1 functions:    C  fyyy1-2-3+4
+        1 functions:    C  fyyz1+2+3+4
+        1 functions:    C  fyzz1-2-3+4
+        1 functions:    C  fzzz1+2+3+4
+       11 functions:    C  pz  1+2
+        6 functions:    C  dxz 1-2
+        6 functions:    C  dyz 1-2
+        1 functions:    C  fxxz1+2
+        1 functions:    C  fxyz1+2
+        1 functions:    C  fyyz1+2
+        1 functions:    C  fzzz1+2
+        6 functions:    C  s   1-2+3-4
+       11 functions:    C  px  1-2-3+4
+       11 functions:    C  py  1-2-3+4
+       11 functions:    C  pz  1+2+3+4
+        6 functions:    C  dxx 1-2+3-4
+        6 functions:    C  dxy 1-2+3-4
+        6 functions:    C  dxz 1+2-3-4
+        6 functions:    C  dyy 1-2+3-4
+        6 functions:    C  dyz 1+2-3-4
+        6 functions:    C  dzz 1-2+3-4
+        1 functions:    C  fxxx1-2-3+4
+        1 functions:    C  fxxy1-2-3+4
+        1 functions:    C  fxxz1+2+3+4
+        1 functions:    C  fxyy1-2-3+4
+        1 functions:    C  fxyz1+2+3+4
+        1 functions:    C  fxzz1-2-3+4
+        1 functions:    C  fyyy1-2-3+4
+        1 functions:    C  fyyz1+2+3+4
+        1 functions:    C  fyzz1-2-3+4
+        1 functions:    C  fzzz1+2+3+4
+       11 functions:    C  pz  1+2
+        6 functions:    C  dxz 1-2
+        6 functions:    C  dyz 1-2
+        1 functions:    C  fxxz1+2
+        1 functions:    C  fxyz1+2
+        1 functions:    C  fyyz1+2
+        1 functions:    C  fzzz1+2
+        6 functions:    C  s   1-2+3-4
+       11 functions:    C  px  1-2-3+4
+       11 functions:    C  py  1-2-3+4
+       11 functions:    C  pz  1+2+3+4
+        6 functions:    C  dxx 1-2+3-4
+        6 functions:    C  dxy 1-2+3-4
+        6 functions:    C  dxz 1+2-3-4
+        6 functions:    C  dyy 1-2+3-4
+        6 functions:    C  dyz 1+2-3-4
+        6 functions:    C  dzz 1-2+3-4
+        1 functions:    C  fxxx1-2-3+4
+        1 functions:    C  fxxy1-2-3+4
+        1 functions:    C  fxxz1+2+3+4
+        1 functions:    C  fxyy1-2-3+4
+        1 functions:    C  fxyz1+2+3+4
+        1 functions:    C  fxzz1-2-3+4
+        1 functions:    C  fyyy1-2-3+4
+        1 functions:    C  fyyz1+2+3+4
+        1 functions:    C  fyzz1-2-3+4
+        1 functions:    C  fzzz1+2+3+4
+        6 functions:    C  s   1-2+3-4
+       11 functions:    C  px  1-2-3+4
+       11 functions:    C  py  1-2-3+4
+       11 functions:    C  pz  1+2+3+4
+        6 functions:    C  dxx 1-2+3-4
+        6 functions:    C  dxy 1-2+3-4
+        6 functions:    C  dxz 1+2-3-4
+        6 functions:    C  dyy 1-2+3-4
+        6 functions:    C  dyz 1+2-3-4
+        6 functions:    C  dzz 1-2+3-4
+        1 functions:    C  fxxx1-2-3+4
+        1 functions:    C  fxxy1-2-3+4
+        1 functions:    C  fxxz1+2+3+4
+        1 functions:    C  fxyy1-2-3+4
+        1 functions:    C  fxyz1+2+3+4
+        1 functions:    C  fxzz1-2-3+4
+        1 functions:    C  fyyy1-2-3+4
+        1 functions:    C  fyyz1+2+3+4
+        1 functions:    C  fyzz1-2-3+4
+        1 functions:    C  fzzz1+2+3+4
+        1 functions:    H  s   1-2+3-4
+        6 functions:    H  px  1-2-3+4
+        6 functions:    H  py  1-2-3+4
+        6 functions:    H  pz  1+2+3+4
+        1 functions:    H  dxx 1-2+3-4
+        1 functions:    H  dxy 1-2+3-4
+        1 functions:    H  dxz 1+2-3-4
+        1 functions:    H  dyy 1-2+3-4
+        1 functions:    H  dyz 1+2-3-4
+        1 functions:    H  dzz 1-2+3-4
+        6 functions:    H  pz  1+2
+        1 functions:    H  dxz 1-2
+        1 functions:    H  dyz 1-2
+        1 functions:    H  s   1-2+3-4
+        6 functions:    H  px  1-2-3+4
+        6 functions:    H  py  1-2-3+4
+        6 functions:    H  pz  1+2+3+4
+        1 functions:    H  dxx 1-2+3-4
+        1 functions:    H  dxy 1-2+3-4
+        1 functions:    H  dxz 1+2-3-4
+        1 functions:    H  dyy 1-2+3-4
+        1 functions:    H  dyz 1+2-3-4
+        1 functions:    H  dzz 1-2+3-4
+        6 functions:    H  pz  1+2
+        1 functions:    H  dxz 1-2
+        1 functions:    H  dyz 1-2
+        1 functions:    H  s   1-2+3-4
+        6 functions:    H  px  1-2-3+4
+        6 functions:    H  py  1-2-3+4
+        6 functions:    H  pz  1+2+3+4
+        1 functions:    H  dxx 1-2+3-4
+        1 functions:    H  dxy 1-2+3-4
+        1 functions:    H  dxz 1+2-3-4
+        1 functions:    H  dyy 1-2+3-4
+        1 functions:    H  dyz 1+2-3-4
+        1 functions:    H  dzz 1-2+3-4
+        1 functions:    H  s   1-2+3-4
+        6 functions:    H  px  1-2-3+4
+        6 functions:    H  py  1-2-3+4
+        6 functions:    H  pz  1+2+3+4
+        1 functions:    H  dxx 1-2+3-4
+        1 functions:    H  dxy 1-2+3-4
+        1 functions:    H  dxz 1+2-3-4
+        1 functions:    H  dyy 1-2+3-4
+        1 functions:    H  dyz 1+2-3-4
+        1 functions:    H  dzz 1-2+3-4
+
+  Symmetry  Bu ( 3)
+
+        6 functions:    C  s   1+2-3-4
+       11 functions:    C  px  1+2+3+4
+       11 functions:    C  py  1+2+3+4
+       11 functions:    C  pz  1-2-3+4
+        6 functions:    C  dxx 1+2-3-4
+        6 functions:    C  dxy 1+2-3-4
+        6 functions:    C  dxz 1-2+3-4
+        6 functions:    C  dyy 1+2-3-4
+        6 functions:    C  dyz 1-2+3-4
+        6 functions:    C  dzz 1+2-3-4
+        1 functions:    C  fxxx1+2+3+4
+        1 functions:    C  fxxy1+2+3+4
+        1 functions:    C  fxxz1-2-3+4
+        1 functions:    C  fxyy1+2+3+4
+        1 functions:    C  fxyz1-2-3+4
+        1 functions:    C  fxzz1+2+3+4
+        1 functions:    C  fyyy1+2+3+4
+        1 functions:    C  fyyz1-2-3+4
+        1 functions:    C  fyzz1+2+3+4
+        1 functions:    C  fzzz1-2-3+4
+        6 functions:    C  s   1-2
+       11 functions:    C  px  1+2
+       11 functions:    C  py  1+2
+        6 functions:    C  dxx 1-2
+        6 functions:    C  dxy 1-2
+        6 functions:    C  dyy 1-2
+        6 functions:    C  dzz 1-2
+        1 functions:    C  fxxx1+2
+        1 functions:    C  fxxy1+2
+        1 functions:    C  fxyy1+2
+        1 functions:    C  fxzz1+2
+        1 functions:    C  fyyy1+2
+        1 functions:    C  fyzz1+2
+        6 functions:    C  s   1+2-3-4
+       11 functions:    C  px  1+2+3+4
+       11 functions:    C  py  1+2+3+4
+       11 functions:    C  pz  1-2-3+4
+        6 functions:    C  dxx 1+2-3-4
+        6 functions:    C  dxy 1+2-3-4
+        6 functions:    C  dxz 1-2+3-4
+        6 functions:    C  dyy 1+2-3-4
+        6 functions:    C  dyz 1-2+3-4
+        6 functions:    C  dzz 1+2-3-4
+        1 functions:    C  fxxx1+2+3+4
+        1 functions:    C  fxxy1+2+3+4
+        1 functions:    C  fxxz1-2-3+4
+        1 functions:    C  fxyy1+2+3+4
+        1 functions:    C  fxyz1-2-3+4
+        1 functions:    C  fxzz1+2+3+4
+        1 functions:    C  fyyy1+2+3+4
+        1 functions:    C  fyyz1-2-3+4
+        1 functions:    C  fyzz1+2+3+4
+        1 functions:    C  fzzz1-2-3+4
+        6 functions:    C  s   1-2
+       11 functions:    C  px  1+2
+       11 functions:    C  py  1+2
+        6 functions:    C  dxx 1-2
+        6 functions:    C  dxy 1-2
+        6 functions:    C  dyy 1-2
+        6 functions:    C  dzz 1-2
+        1 functions:    C  fxxx1+2
+        1 functions:    C  fxxy1+2
+        1 functions:    C  fxyy1+2
+        1 functions:    C  fxzz1+2
+        1 functions:    C  fyyy1+2
+        1 functions:    C  fyzz1+2
+        6 functions:    C  s   1+2-3-4
+       11 functions:    C  px  1+2+3+4
+       11 functions:    C  py  1+2+3+4
+       11 functions:    C  pz  1-2-3+4
+        6 functions:    C  dxx 1+2-3-4
+        6 functions:    C  dxy 1+2-3-4
+        6 functions:    C  dxz 1-2+3-4
+        6 functions:    C  dyy 1+2-3-4
+        6 functions:    C  dyz 1-2+3-4
+        6 functions:    C  dzz 1+2-3-4
+        1 functions:    C  fxxx1+2+3+4
+        1 functions:    C  fxxy1+2+3+4
+        1 functions:    C  fxxz1-2-3+4
+        1 functions:    C  fxyy1+2+3+4
+        1 functions:    C  fxyz1-2-3+4
+        1 functions:    C  fxzz1+2+3+4
+        1 functions:    C  fyyy1+2+3+4
+        1 functions:    C  fyyz1-2-3+4
+        1 functions:    C  fyzz1+2+3+4
+        1 functions:    C  fzzz1-2-3+4
+        6 functions:    C  s   1+2-3-4
+       11 functions:    C  px  1+2+3+4
+       11 functions:    C  py  1+2+3+4
+       11 functions:    C  pz  1-2-3+4
+        6 functions:    C  dxx 1+2-3-4
+        6 functions:    C  dxy 1+2-3-4
+        6 functions:    C  dxz 1-2+3-4
+        6 functions:    C  dyy 1+2-3-4
+        6 functions:    C  dyz 1-2+3-4
+        6 functions:    C  dzz 1+2-3-4
+        1 functions:    C  fxxx1+2+3+4
+        1 functions:    C  fxxy1+2+3+4
+        1 functions:    C  fxxz1-2-3+4
+        1 functions:    C  fxyy1+2+3+4
+        1 functions:    C  fxyz1-2-3+4
+        1 functions:    C  fxzz1+2+3+4
+        1 functions:    C  fyyy1+2+3+4
+        1 functions:    C  fyyz1-2-3+4
+        1 functions:    C  fyzz1+2+3+4
+        1 functions:    C  fzzz1-2-3+4
+        1 functions:    H  s   1+2-3-4
+        6 functions:    H  px  1+2+3+4
+        6 functions:    H  py  1+2+3+4
+        6 functions:    H  pz  1-2-3+4
+        1 functions:    H  dxx 1+2-3-4
+        1 functions:    H  dxy 1+2-3-4
+        1 functions:    H  dxz 1-2+3-4
+        1 functions:    H  dyy 1+2-3-4
+        1 functions:    H  dyz 1-2+3-4
+        1 functions:    H  dzz 1+2-3-4
+        1 functions:    H  s   1-2
+        6 functions:    H  px  1+2
+        6 functions:    H  py  1+2
+        1 functions:    H  dxx 1-2
+        1 functions:    H  dxy 1-2
+        1 functions:    H  dyy 1-2
+        1 functions:    H  dzz 1-2
+        1 functions:    H  s   1+2-3-4
+        6 functions:    H  px  1+2+3+4
+        6 functions:    H  py  1+2+3+4
+        6 functions:    H  pz  1-2-3+4
+        1 functions:    H  dxx 1+2-3-4
+        1 functions:    H  dxy 1+2-3-4
+        1 functions:    H  dxz 1-2+3-4
+        1 functions:    H  dyy 1+2-3-4
+        1 functions:    H  dyz 1-2+3-4
+        1 functions:    H  dzz 1+2-3-4
+        1 functions:    H  s   1-2
+        6 functions:    H  px  1+2
+        6 functions:    H  py  1+2
+        1 functions:    H  dxx 1-2
+        1 functions:    H  dxy 1-2
+        1 functions:    H  dyy 1-2
+        1 functions:    H  dzz 1-2
+        1 functions:    H  s   1+2-3-4
+        6 functions:    H  px  1+2+3+4
+        6 functions:    H  py  1+2+3+4
+        6 functions:    H  pz  1-2-3+4
+        1 functions:    H  dxx 1+2-3-4
+        1 functions:    H  dxy 1+2-3-4
+        1 functions:    H  dxz 1-2+3-4
+        1 functions:    H  dyy 1+2-3-4
+        1 functions:    H  dyz 1-2+3-4
+        1 functions:    H  dzz 1+2-3-4
+        1 functions:    H  s   1+2-3-4
+        6 functions:    H  px  1+2+3+4
+        6 functions:    H  py  1+2+3+4
+        6 functions:    H  pz  1-2-3+4
+        1 functions:    H  dxx 1+2-3-4
+        1 functions:    H  dxy 1+2-3-4
+        1 functions:    H  dxz 1-2+3-4
+        1 functions:    H  dyy 1+2-3-4
+        1 functions:    H  dyz 1-2+3-4
+        1 functions:    H  dzz 1+2-3-4
+
+  Symmetry  Bg ( 4)
+
+        6 functions:    C  s   1-2-3+4
+       11 functions:    C  px  1-2+3-4
+       11 functions:    C  py  1-2+3-4
+       11 functions:    C  pz  1+2-3-4
+        6 functions:    C  dxx 1-2-3+4
+        6 functions:    C  dxy 1-2-3+4
+        6 functions:    C  dxz 1+2+3+4
+        6 functions:    C  dyy 1-2-3+4
+        6 functions:    C  dyz 1+2+3+4
+        6 functions:    C  dzz 1-2-3+4
+        1 functions:    C  fxxx1-2+3-4
+        1 functions:    C  fxxy1-2+3-4
+        1 functions:    C  fxxz1+2-3-4
+        1 functions:    C  fxyy1-2+3-4
+        1 functions:    C  fxyz1+2-3-4
+        1 functions:    C  fxzz1-2+3-4
+        1 functions:    C  fyyy1-2+3-4
+        1 functions:    C  fyyz1+2-3-4
+        1 functions:    C  fyzz1-2+3-4
+        1 functions:    C  fzzz1+2-3-4
+       11 functions:    C  pz  1-2
+        6 functions:    C  dxz 1+2
+        6 functions:    C  dyz 1+2
+        1 functions:    C  fxxz1-2
+        1 functions:    C  fxyz1-2
+        1 functions:    C  fyyz1-2
+        1 functions:    C  fzzz1-2
+        6 functions:    C  s   1-2-3+4
+       11 functions:    C  px  1-2+3-4
+       11 functions:    C  py  1-2+3-4
+       11 functions:    C  pz  1+2-3-4
+        6 functions:    C  dxx 1-2-3+4
+        6 functions:    C  dxy 1-2-3+4
+        6 functions:    C  dxz 1+2+3+4
+        6 functions:    C  dyy 1-2-3+4
+        6 functions:    C  dyz 1+2+3+4
+        6 functions:    C  dzz 1-2-3+4
+        1 functions:    C  fxxx1-2+3-4
+        1 functions:    C  fxxy1-2+3-4
+        1 functions:    C  fxxz1+2-3-4
+        1 functions:    C  fxyy1-2+3-4
+        1 functions:    C  fxyz1+2-3-4
+        1 functions:    C  fxzz1-2+3-4
+        1 functions:    C  fyyy1-2+3-4
+        1 functions:    C  fyyz1+2-3-4
+        1 functions:    C  fyzz1-2+3-4
+        1 functions:    C  fzzz1+2-3-4
+       11 functions:    C  pz  1-2
+        6 functions:    C  dxz 1+2
+        6 functions:    C  dyz 1+2
+        1 functions:    C  fxxz1-2
+        1 functions:    C  fxyz1-2
+        1 functions:    C  fyyz1-2
+        1 functions:    C  fzzz1-2
+        6 functions:    C  s   1-2-3+4
+       11 functions:    C  px  1-2+3-4
+       11 functions:    C  py  1-2+3-4
+       11 functions:    C  pz  1+2-3-4
+        6 functions:    C  dxx 1-2-3+4
+        6 functions:    C  dxy 1-2-3+4
+        6 functions:    C  dxz 1+2+3+4
+        6 functions:    C  dyy 1-2-3+4
+        6 functions:    C  dyz 1+2+3+4
+        6 functions:    C  dzz 1-2-3+4
+        1 functions:    C  fxxx1-2+3-4
+        1 functions:    C  fxxy1-2+3-4
+        1 functions:    C  fxxz1+2-3-4
+        1 functions:    C  fxyy1-2+3-4
+        1 functions:    C  fxyz1+2-3-4
+        1 functions:    C  fxzz1-2+3-4
+        1 functions:    C  fyyy1-2+3-4
+        1 functions:    C  fyyz1+2-3-4
+        1 functions:    C  fyzz1-2+3-4
+        1 functions:    C  fzzz1+2-3-4
+        6 functions:    C  s   1-2-3+4
+       11 functions:    C  px  1-2+3-4
+       11 functions:    C  py  1-2+3-4
+       11 functions:    C  pz  1+2-3-4
+        6 functions:    C  dxx 1-2-3+4
+        6 functions:    C  dxy 1-2-3+4
+        6 functions:    C  dxz 1+2+3+4
+        6 functions:    C  dyy 1-2-3+4
+        6 functions:    C  dyz 1+2+3+4
+        6 functions:    C  dzz 1-2-3+4
+        1 functions:    C  fxxx1-2+3-4
+        1 functions:    C  fxxy1-2+3-4
+        1 functions:    C  fxxz1+2-3-4
+        1 functions:    C  fxyy1-2+3-4
+        1 functions:    C  fxyz1+2-3-4
+        1 functions:    C  fxzz1-2+3-4
+        1 functions:    C  fyyy1-2+3-4
+        1 functions:    C  fyyz1+2-3-4
+        1 functions:    C  fyzz1-2+3-4
+        1 functions:    C  fzzz1+2-3-4
+        1 functions:    H  s   1-2-3+4
+        6 functions:    H  px  1-2+3-4
+        6 functions:    H  py  1-2+3-4
+        6 functions:    H  pz  1+2-3-4
+        1 functions:    H  dxx 1-2-3+4
+        1 functions:    H  dxy 1-2-3+4
+        1 functions:    H  dxz 1+2+3+4
+        1 functions:    H  dyy 1-2-3+4
+        1 functions:    H  dyz 1+2+3+4
+        1 functions:    H  dzz 1-2-3+4
+        6 functions:    H  pz  1-2
+        1 functions:    H  dxz 1+2
+        1 functions:    H  dyz 1+2
+        1 functions:    H  s   1-2-3+4
+        6 functions:    H  px  1-2+3-4
+        6 functions:    H  py  1-2+3-4
+        6 functions:    H  pz  1+2-3-4
+        1 functions:    H  dxx 1-2-3+4
+        1 functions:    H  dxy 1-2-3+4
+        1 functions:    H  dxz 1+2+3+4
+        1 functions:    H  dyy 1-2-3+4
+        1 functions:    H  dyz 1+2+3+4
+        1 functions:    H  dzz 1-2-3+4
+        6 functions:    H  pz  1-2
+        1 functions:    H  dxz 1+2
+        1 functions:    H  dyz 1+2
+        1 functions:    H  s   1-2-3+4
+        6 functions:    H  px  1-2+3-4
+        6 functions:    H  py  1-2+3-4
+        6 functions:    H  pz  1+2-3-4
+        1 functions:    H  dxx 1-2-3+4
+        1 functions:    H  dxy 1-2-3+4
+        1 functions:    H  dxz 1+2+3+4
+        1 functions:    H  dyy 1-2-3+4
+        1 functions:    H  dyz 1+2+3+4
+        1 functions:    H  dzz 1-2-3+4
+        1 functions:    H  s   1-2-3+4
+        6 functions:    H  px  1-2+3-4
+        6 functions:    H  py  1-2+3-4
+        6 functions:    H  pz  1+2-3-4
+        1 functions:    H  dxx 1-2-3+4
+        1 functions:    H  dxy 1-2-3+4
+        1 functions:    H  dxz 1+2+3+4
+        1 functions:    H  dyy 1-2-3+4
+        1 functions:    H  dyz 1+2+3+4
+        1 functions:    H  dzz 1-2-3+4
+
+
+   ***************************************************************************
+   *************************** Hamiltonian defined ***************************
+   ***************************************************************************
+
+ * Print level:    0
+ * Dirac-Coulomb Hamiltonian
+ * SS integrals neglected:
+   Interatomic Coulombic SS-contributions modelled by
+   classical repulsion of small component atomic charges
+   using tabulated charges.
+ * Default integral flags passed to all modules
+   - LL-integrals:     1
+   - LS-integrals:     1
+   - SS-integrals:     0
+   - GT-integrals:     0
+ * Basis set:
+   - uncontracted large component basis set
+   - uncontracted small component basis set
+
+
+ Information about the restricted kinetic balance scheme:
+ * Default RKB projection:
+   1: Pre-projection in scalar basis
+   2: Removal of unphysical solutions (via diagonalization of free particle Hamiltonian)
+
+
+ ********************************************************************************
+ *************************** Input consistency checks ***************************
+ ********************************************************************************
+
+
+
+    *************************************************************************
+    ************************ End of input processing ************************
+    *************************************************************************
+
+
+*****************************************************
+********** E N D   of   D I R A C  output  **********
+*****************************************************
+
+
+ 
+     Date and time (Linux)  : Thu Apr 30 11:51:39 2020
+     Host name              : lxir127                                 
+
+>>>> Node 0, utime: 0, stime: 0, minflt: 4638, majflt: 193, nvcsw: 735, nivcsw: 2555, maxrss: 49464
+>>>> Total WALL time used in DIRAC: 1s
+  
+  Dynamical Memory Usage Summary for Master
+  
+  Mean allocation size (Mb) :        48.90
+  
+  Largest                    10  allocations
+  
+      488.28 Mb at subroutine MAIN__+0x9a3                               for test allocation of work array in DIRAC mai
+        0.76 Mb at subroutine paminp_+0x112                              for PAMINP WORK array                         
+        0.03 Mb at subroutine xpldef_+0x3fc                              for INTADR in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3cc                              for INTREP in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3fc                              for INTADR in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3cc                              for INTREP in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3fc                              for INTADR in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3cc                              for INTREP in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3fc                              for INTADR in XPLDEF                          
+        0.03 Mb at subroutine xpldef_+0x3cc                              for INTREP in XPLDEF                          
+  
+  Peak memory usage:       488.28 MB
+  Peak memory usage:        0.477 GB
+       reached at subroutine : MAIN__+0x9a3                              
+              for variable   : test allocation of work array in DIRAC mai
+  
+ MEMGET high-water mark:     0.00 MB
+
+*****************************************************
+DIRAC pam run in /u/milias/Work/qch/software/dirac/trunk/test/xyz_symmetry_recognition
+
+ ====  below this line is the stderr stream  ====
+--------------------------------------------------------------------------
+By default, for Open MPI 4.0 and later, infiniband ports on a device
+are not used by default.  The intent is to use UCX for these devices.
+You can override this policy by setting the btl_openib_allow_ib MCA parameter
+to true.
+
+  Local host:              lxir127
+  Local adapter:           mlx4_0
+  Local port:              1
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   lxir127
+  Local device: mlx4_0
+--------------------------------------------------------------------------

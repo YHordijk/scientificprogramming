@@ -1,0 +1,65 @@
+                                   SCF - CYCLE
+                                   -----------
+
+* Convergence on norm of error vector (gradient).
+  Desired convergence:1.000D-07
+  Allowed convergence:1.000D-06
+
+* ERGVAL - convergence in total energy
+* FCKVAL - convergence in maximum change in total Fock matrix
+* EVCVAL - convergence in error vector (gradient)
+--------------------------------------------------------------------------------------------------------------------------------
+           Energy               ERGVAL    FCKVAL    EVCVAL      Conv.acc    CPU          Integrals   Time stamp
+--------------------------------------------------------------------------------------------------------------------------------
+It.    1    -7606.329622178      0.00D+00  0.00D+00  0.00D+00              28.97259600s   Scr. nuclei    Wed Dec 10
+It.    2    -14547.31897887      6.94D+03 -4.12D+02  1.08D+02               2min32.266s   LL SL          Wed Dec 10
+It.    3    -14073.36388927     -4.74D+02  1.23D+02  1.66D+02   DIIS   2    2min31.717s   LL SL          Wed Dec 10
+It.    4    -14792.03577675      7.19D+02 -4.80D+01  4.86D+01   DIIS   3    2min35.039s   LL SL          Wed Dec 10
+It.    5    -14695.41264973     -9.66D+01 -5.33D+01  3.35D+01   DIIS   4    2min31.924s   LL SL          Wed Dec 10
+It.    6    -14619.54437781     -7.59D+01  6.02D+01  5.70D+01   DIIS   5    2min20.840s   LL SL          Wed Dec 10
+It.    7    -14630.80789739      1.13D+01 -8.06D-01  5.57D+01   DIIS   6    2min21.446s   LL SL          Wed Dec 10
+It.    8    -14632.21062186      1.40D+00 -9.11D-02  5.55D+01   DIIS   7    2min21.657s   LL SL          Wed Dec 10
+It.    9    -14632.21078416      1.62D-04 -2.00D-03  5.55D+01   DIIS   8    2min19.026s   LL SL          Wed Dec 10
+It.   10    -14630.85572005     -1.36D+00  1.07D-01  5.57D+01   DIIS   9    2min20.250s   LL SL          Wed Dec 10
+It.   11    -14632.27345480      1.42D+00 -8.90D-02  5.56D+01   DIIS   9    2min19.892s   LL SL          Wed Dec 10
+It.   12    -14675.22022580      4.29D+01 -2.22D+00  5.27D+01   DIIS   9    2min24.215s   LL SL          Wed Dec 10
+It.   13    -14674.79019885     -4.30D-01 -3.70D-01  5.17D+01   DIIS   9    2min32.673s   LL SL          Wed Dec 10
+It.   14    -14773.70533600      9.89D+01 -4.57D+00  4.40D+01   DIIS   9    2min40.921s   LL SL          Wed Dec 10
+It.   15    -14030.36289440     -7.43D+02 -8.76D+01  4.18D+01   DIIS   9    2min31.891s   LL SL          Wed Dec 10
+It.   16    -14534.80551844      5.04D+02  1.05D+02  7.86D+01   DIIS   9    2min46.992s   LL SL          Wed Dec 10
+It.   17    -14535.64458223      8.39D-01  4.70D-02  7.88D+01   DIIS   9    2min35.034s   LL SL          Wed Dec 10
+It.   18    -14523.96963624     -1.17D+01  7.36D-01  8.06D+01   DIIS   9    2min37.812s   LL SL          Wed Dec 10
+It.   19    -14527.13835101      3.17D+00 -1.86D-01  8.00D+01   DIIS   9    2min39.389s   LL SL          Wed Dec 10
+It.   20    -14532.42279875      5.28D+00 -3.49D-01  7.92D+01   DIIS   9    2min38.201s   LL SL          Wed Dec 10
+It.   21    -14521.10965318     -1.13D+01  6.40D-01  8.09D+01   DIIS   9    2min23.733s   LL SL          Wed Dec 10
+It.   22    -14471.27866690     -4.98D+01  3.20D+00  8.78D+01   DIIS   9    2min27.103s   LL SL          Wed Dec 10
+It.   23    -14458.64743054     -1.26D+01  8.10D-01  8.95D+01   DIIS   9    2min26.239s   LL SL          Wed Dec 10
+It.   24    -14247.57474297     -2.11D+02  1.42D+01  1.26D+02   DIIS   9    2min27.943s   LL SL          Wed Dec 10
+It.   25    -13755.84951325     -4.92D+02 -1.34D+02  4.31D+01   DIIS   9    2min34.127s   LL SL          Wed Dec 10
+It.   26    -14155.33995820      3.99D+02  1.40D+02  1.42D+02   DIIS   9    2min27.956s   LL SL          Wed Dec 10
+It.   27    -14203.53818312      4.82D+01 -2.81D+00  1.34D+02   DIIS   9    2min26.276s   LL SL          Wed Dec 10
+It.   28    -14372.59026376      1.69D+02 -1.02D+01  1.08D+02   DIIS   9    2min29.781s   LL SL          Wed Dec 10
+It.   29    -14403.99910127      3.14D+01 -1.84D+00  1.04D+02   DIIS   9    2min27.335s   LL SL          Wed Dec 10
+It.   30    -14398.26182697     -5.74D+00  4.01D-01  1.05D+02   DIIS   9    2min27.010s   LL SL          Wed Dec 10
+It.   31    -14390.97015529     -7.29D+00  4.69D-01  1.06D+02   DIIS   9    2min22.080s   LL SL          Wed Dec 10
+It.   32    -14392.09835723      1.13D+00 -3.80D-02  1.06D+02   DIIS   9    2min15.570s   LL SL          Wed Dec 10
+It.   33    -14357.31922163     -3.48D+01  2.18D+00  1.11D+02   DIIS   9    2min20.425s   LL SL          Wed Dec 10
+It.   34    -14403.41219753      4.61D+01 -3.07D+00  1.04D+02   DIIS   9    2min20.358s   LL SL          Wed Dec 10
+It.   35    -13757.03956058     -6.46D+02 -1.24D+02  3.89D+01   DIIS   9    2min22.830s   LL SL          Wed Dec 10
+It.   36    -14319.29356334      5.62D+02  1.29D+02  1.17D+02   DIIS   9    2min20.737s   LL SL          Wed Dec 10
+It.   37    -14301.26184351     -1.80D+01  1.14D+00  1.20D+02   DIIS   9    2min18.481s   LL SL          Wed Dec 10
+It.   38    -14321.83223258      2.06D+01 -1.36D+00  1.17D+02   DIIS   9    2min18.980s   LL SL          Wed Dec 10
+It.   39    -14312.58970385     -9.24D+00  5.89D-01  1.18D+02   DIIS   9    2min18.591s   LL SL          Wed Dec 10
+It.   40    -14303.93716589     -8.65D+00  5.49D-01  1.20D+02   DIIS   9    2min18.135s   LL SL          Wed Dec 10
+It.   41    -14234.12176998     -6.98D+01  4.06D+00  1.30D+02   DIIS   9    2min19.220s   LL SL          Wed Dec 10
+It.   42    -14262.78273430      2.87D+01 -1.69D+00  1.26D+02   DIIS   9    2min19.694s   LL SL          Wed Dec 10
+It.   43    -14284.94272404      2.22D+01 -1.32D+00  1.22D+02   DIIS   9    2min22.317s   LL SL          Wed Dec 10
+It.   44    -14283.69349005     -1.25D+00  1.21D-01  1.22D+02   DIIS   9    2min18.819s   LL SL          Wed Dec 10
+It.   45    -13756.02930378     -5.28D+02 -1.32D+02  4.12D+01   DIIS   9    2min20.891s   LL SL          Wed Dec 10
+It.   46    -14294.32431815      5.38D+02  1.31D+02  1.21D+02   DIIS   9    2min21.661s   LL SL          Wed Dec 10
+It.   47    -14271.05944724     -2.33D+01  1.47D+00  1.25D+02   DIIS   9    2min19.840s   LL SL          Wed Dec 10
+It.   48    -14111.67647533     -1.59D+02  9.25D+00  1.50D+02   DIIS   9    2min21.312s   LL SL          Wed Dec 10
+It.   49    -14198.35642753      8.67D+01 -4.95D+00  1.36D+02   DIIS   9    2min20.919s   LL SL          Wed Dec 10
+It.   50    -14205.82719171      7.47D+00 -3.60D-01  1.35D+02   DIIS   9    2min19.880s   LL SL          Wed Dec 10
+--------------------------------------------------------------------------------------------------------------------------------
+* No convergence after   50 iterations

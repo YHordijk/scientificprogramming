@@ -1,0 +1,62 @@
+**DIRAC
+.TITLE
+  atomic test calculations
+.WAVE FUNCTION
+.ANALYZE
+.4INDEX
+**GENERAL
+.PCMOUT
+**INTEGRALS
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+*AMFI
+.AMFICH
++2
+**WAVE FUNCTION
+.SCF
+.REORDER MO'S  ! get 5p32 before 5p12
+
+1..16,18,19,17
+.RELCCSD
+*SCF
+# Pm-like (Z=61) : ... 4f(14) 5s(0) 5p32(1) 5p12(0)
+.CLOSED SHELL
+28 32
+.OPEN SHELL
+1
+1/0,4
+.MAXITR
+55
+! choose dynamical overlap selection to get 2P3/2 state
+.OVLSEL
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+1..oo
+1..oo
+**MOLTRA
+# exactly 33 correlated electrons...
+.ACTIVE
+energy -50.0  50.0  1.0
+energy -50.0  50.0  1.0
+**RELCC
+.ENERGY
+.TIMING
+.PRINT
+1
+# 33 correlated electrons, 5p32(1) open-shell thanks to SCF state
+.NELEC
+6  6  11  10
+*CCENER
+.DHOLU
+1.0D-3
+.NTOL
+7
+.MAXIT
+100
+*CCSORT
+!.USEOE
+*END OF

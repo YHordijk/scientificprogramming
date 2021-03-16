@@ -1,0 +1,35 @@
+**DIRAC
+.TITLE
+ Testing xyz input with locally dense basis set. 
+.WAVE FUNCTION
+**HAMILTONIAN
+.LEVY-LEBLOND
+**WAVE FUNCTION
+.SCF
+**MOLECULE
+*BASIS
+.DEFAULT 
+STO-3G
+.SPECIAL 
+O BASIS cc-pVDZ
+.SPECIAL
+HA BASIS Turbomole-DZ
+.SPECIAL
+HB EXPLICIT
+    2    1    1
+    4    0    3
+   13.0100000
+    1.9620000
+    0.4446000
+    0.1220000
+    1    0    3
+   0.7270000
+*CENTERS
+.NUCLEUS
+HA 1.0
+.NUCLEUS
+HB 1.0 
+*COORDINATES
+.UNITS
+PM
+*END OF 

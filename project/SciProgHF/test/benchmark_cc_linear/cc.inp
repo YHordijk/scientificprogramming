@@ -1,0 +1,23 @@
+**DIRAC
+.TITLE
+ Coupled Cluster method to test the linear symmetry
+.WAVE FUNCTION
+.ANALYZE
+**HAMILTONIAN
+.LVCORR
+**INTEGRALS
+*READIN
+.CONTRACT
+**WAVE FUNCTION
+.SCF
+.RELCCSD
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+all
+all
+**RELCCSD
+.PRINT
+1
+*END OF

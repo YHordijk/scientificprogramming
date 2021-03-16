@@ -1,0 +1,7 @@
+noref HF.inp Be_lin.mol --get=DFACMO
+noref mul.inp BeC2v.mol --copy=DFACMO
+noref mul.inp BeC2z.mol --copy=DFACMO
+noref MCSCF.inp BeC2v.mol --copy=DFACMO
+noref MCSCF.inp BeC2z.mol --copy=DFACMO
+
+

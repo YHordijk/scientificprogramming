@@ -1,0 +1,49 @@
+     1	**DIRAC
+     2	.TITLE
+     3	Ar exc./X2Cmmf/ADC-2s/D2h/Pop anal./Tr. mom.
+     4	.WAVE F
+     5	.ANALYZE
+     6	**GENERAL
+     7	**INTEGRALS
+     8	*READIN
+     9	.UNCONTRACT
+    10	**HAMILTONIAN
+    11	.X2Cmmf
+    12	**WAVE FUNCTIONS
+    13	.SCF
+    14	.POLPRP
+    15	*SCF
+    16	.CLOSED SHELL
+    17	 6  12
+    18	**ANALYZE
+    19	.MULPOP
+    20	*MULPOP
+    21	.VECPOP
+    22	1..oo
+    23	1..oo
+    24	**MOLTRA
+    25	.ACTIVE
+    26	 energy -30.0 500.0 0.01
+    27	 energy -30.0 500.0 0.01
+    28	.PRPTRA
+    29	*PRPTRA
+    30	.OPERATOR
+    31	 XDIPLEN
+    32	.OPERATOR
+    33	 YDIPLEN
+    34	.OPERATOR
+    35	 ZDIPLEN
+    36	**POLPRP
+    37	.DOTRMO
+    38	.PRINT
+    39	 1
+    40	**DAVIDSON
+    41	.DVROOTS
+    42	 40
+    43	.DVMAXSP
+    44	 400
+    45	.DVMAXIT
+    46	 12
+    47	.DVCONV
+    48	 1.0E-06
+    49	*END OF

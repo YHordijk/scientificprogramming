@@ -1,0 +1,53 @@
+**DIRAC
+.TITLE
+  LiH
+.WAVE F ! Activate integral and wave functions modules
+.PROPERTIES ! Activate property module (dipole moment; polarizability...)
+**GENERAL
+! Direct evaluation of two-electron integrals
+.DIRECT
+1 1 1
+**INTEGRALS
+.PRINT
+1
+.NUCMOD ! 1-Point nucleus, 2-gaussian
+1
+**HAMILTONIAN
+.URKBAL
+.PRINT
+1
+.INTFLG
+1 1 0
+.GAUGEO
+11.0  -4.5   5.75
+**WAVE FUNCTIONS ! What method (DHF,MP2,CC..)
+.SCF
+*SCF
+.CLOSED SHELL
+4 
+.INTFLG ! Specify what 2-el.integrals to include
+1 1 0
+.EVCCNV ! Energy convergence...
+1.0E-10  1.0D-7
+**PROPERTIES ! Calculating of properties...
+.PRINT
+1
+.MAGNET
+*NMR
+#.INTFLG
+#1 1 0
+.LONDON
+#.USECM
+*LINEAR RESPONSE
+.MAXITR
+100
+#.INTFLG
+#1 1 0
+.THRESH
+1.0D-9
+.PRINT
+1 
+*EXPECTATION VALUE
+.PRINT
+1 
+*END OF

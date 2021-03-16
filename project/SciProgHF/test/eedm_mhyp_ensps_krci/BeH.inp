@@ -1,0 +1,47 @@
+##################################
+**DIRAC
+.TITLE
+BeH
+.WAVE FUNCTION
+##################################
+**HAMILTONIAN
+.DOSSSS
+##################################
+**INTEGRALS
+.NUCMOD
+2
+##################################
+**WAVE FUNCTIONS
+.SCF
+.KR CI
+############
+*KRCICALC
+.CI PROGRAM
+LUCIAREL
+.GASSH
+ 3
+  2
+  1
+ 21
+.GASSPC
+  2  4
+  3  5
+  5  5
+.MK2REF
+ 0
+.MK2DEL
+ 5
+.CIROOTS
+ 1  1
+.MAX CI
+ 50
+.RSTRCI
+ 0
+#############
+.EEDM
+.ENSPS
+.MHYP
+ 1.5        0.5          # I(^9Be)    and I(^1H)
+ -1.177432  2.79284734   # \mu(^9Be)  and \mu(^1H)
+##################################
+*END OF

@@ -1,0 +1,7 @@
+noref H2.inp  H2.mol --get "DFCOEF=AFH2XX"
+noref O.inp   O.mol  --get "DFCOEF=AFOXXX"
+H2O.inp H2O.mol      --outcmo
+prj.inp H2O.mol      --incmo --copy="AF*"
+prjpol.inp H2O.mol   --incmo --copy="AF*"
+rm AFH2XX AFOXXX
+

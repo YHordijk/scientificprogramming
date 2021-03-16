@@ -1,0 +1,864 @@
+#! /usr/bin/env python
+#
+# Python script for automatized atom-by-atom X2C calculations
+#
+#                     roadmap of the script
+#
+# a. read the original Dirac input and molecule file. 
+#
+# b. create atomic fragment inputs and call Dirac via "pam" 
+#    in order to obtain the pct-matrices from atomic X2C calculations.
+#
+# c. run the molecular X2C calculation combining all pct-matrices
+#    to yield an approximate molecular one.
+#
+#
+# Written by   :  Stefan Knecht, Denmark, Jan 2011 - ?
+#                 report problems/bugs to knecht@ifk.sdu.dk
+#
+#                 version 0.1: 03.02.2011
+#                 version 0.2: 21.06.2012 (major revision of code, switch to openbabel for standard "chemistry" support)
+#
+# Contributors :  Radovan Bast, Norway (structure adapted from runtest)
+#                 Andre Gomes,  France (thanks for the periodic table)
+#
+# x2c wish list:  1. full support for .xyz molecular input files.
+#                 2. full support for user-provided Dirac input files.
+#                 3. automatic check for existing X2CMAT."fragment" files which 
+#                    would allow us to skip the atomic x2c run for a given fragment.
+# 
+# following the suggestion from Ulf how to make the basis set read more robust and create a 
+# generic basis set reader will be available soon... :)
+#
+
+import os
+import errno
+import sys
+import string
+import subprocess
+import stat
+import shutil
+import distutils.util
+import time
+import openbabel
+from optparse import OptionParser, OptionGroup
+
+# 'classical' function needed
+
+def mkdir_p(path):
+    try:
+        os.makedirs(path)
+    except OSError, exc:
+        if exc.errno == errno.EEXIST:
+            pass
+        else: raise
+
+
+# start of class definitions
+class periodic_table_plus_ext(object):
+
+    def __init__ (self):
+        pass
+
+    element_symbols = ['dummy', 'H', 'He','Li','Be','B' ,'C' ,'N' ,'O' ,'F' ,'Ne',
+                                'Na','Mg','Al','Si','P ','S' ,'Cl','Ar','K' ,'Ca',
+                                'Sc','Ti','V', 'Cr','Mn','Fe','Co','Ni','Cu','Zn',
+                                'Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y' ,'Zr',
+                                'Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn',
+                                'Sb','Te','I' ,'Xe','Cs','Ba','La','Ce','Pr','Nd',
+                                'Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb',
+                                'Lu','Hf','Ta','W' ,'Re','Os','Ir','Pt','Au','Hg',
+                                'Tl','Pb','Bi','Po','At','Rn','Fr','Ra','Ac','Th',
+                                'Pa','U' ,'Np','Pu','Am','Cm','Bk','Cf','Es','Fm',
+                                'Md','No','Lr','Rf','Db','Sg','Bh','Hs','Mt','Ds',
+                                'Rg','Cn','Uut','Uuq','Uup','Uuh','Uus','Uuo','X',
+                                'Q','J','a','b','c','d','e','f','g','h',
+                                'i','j','k','l','m','n','o','p','q','r',
+                                's','t','u','v','w','x','y','z']
+
+
+    def get_element_number(self,symbol):
+        return self.element_symbols.index(symbol)
+
+    def get_element_symbol(self,Z):
+        return self.element_symbols[Z]
+
+    def compare_element_symbols(self,symbol):
+        result = False
+        for element in self.element_symbols:
+            if symbol[0].lower() == element.lower():
+                result = True
+                break
+        return result
+
+class x2c_total_symmetry(object):
+    """
+    class for fragment-x2c total symmetry
+    """
+    
+    def set_symmetry(self, symmetry):
+#       self._symmetry = symmetry
+#       stefan: only atoms allowed at present, thus use highest symmetry possible:
+        self._symmetry = 'C   1              A'
+
+    def symmetry(self):
+        return self._symmetry
+
+class x2c_fragment(object):
+    """
+    class for fragment-x2c fragment
+    """
+    
+    def set_fragment(self, fragment_Z, exponent):
+        self._fragment = fragment_Z.rjust(8) + '.0    ' + '1 ' + exponent
+
+    def fragment(self):
+        return self._fragment
+
+class x2c_coordinates(object):
+    """
+    class for fragment-x2c coordinates
+    """
+    
+    def set_coordinates(self, coordinates):
+#       self._coordinates = coordinates
+#       stefan: only atoms allowed at present, thus:
+        self._coordinates = 'atom  0.0                0.0                0.0'
+
+    def coordinates(self):
+        return self._coordinates
+
+class x2c_basis_set(object):
+    """
+    class for fragment-x2c basis_set
+    """
+    
+    def set_basis_set(self, basis_set):
+        self._basis_set = basis_set
+
+    def basis_set(self):
+        return self._basis_set
+
+# x2c fragment molecule file
+class x2c_fragment_basis_set_input(x2c_total_symmetry, x2c_fragment, x2c_coordinates, x2c_basis_set):
+    """
+    class for fragment-x2c basis set input
+    """
+
+    def __init__ (self):
+        pass
+
+    def assemble_basis_set_fragment_input(self):
+        dirac_fragment_basis_set_input  = "BASIS_SET_INPUT\n"\
+                                        + "input generated by the atomic-start-x2c-pam script\n"\
+                                        + "no warranty for correctness - report bugs to knecht@ifk.sdu.dk\n"
+        dirac_fragment_basis_set_input += self.symmetry()    + '\n'
+        dirac_fragment_basis_set_input += self.fragment()    + '\n'
+        dirac_fragment_basis_set_input += self.coordinates() + '\n'
+        dirac_fragment_basis_set_input += self.basis_set()   + '\n'
+        dirac_fragment_basis_set_input += "FINISH\n"
+
+        if options.being_verbose:
+            print "automatically generated basis set file"
+            print dirac_fragment_basis_set_input,
+
+        return dirac_fragment_basis_set_input
+
+# x2c fragment input
+class x2c_fragment_dirac_input(object):
+    """
+    class for assembling a fragment dirac input
+    """
+
+    def __init__ (self, _runtype, _dirac_input_lines):
+     self._rtype     = _runtype
+     self._inp_lines = _dirac_input_lines
+
+    def set_dirac_init_section(self) :
+        text  = "**DIRAC\n"
+        text += ".TITLE\n"
+        text += " automatized dirac fragment run.\n"
+        return text
+
+    def set_dirac_wavefunction_input(self) :
+        text = '#\n'
+        if self._rtype == 'atomic-start':
+            text = ".WAVE F\n"
+        return text
+
+    def set_dirac_integral_section(self) :
+        text  = "**INTEGRALS\n"
+        text += "*READIN\n"
+        text += ".UNCONTRACT\n"
+        return text
+
+    def set_dirac_hamiltonian_section(self) :
+        _hamtext = scan_hamiltonian_section_in_dirac_input(self._inp_lines)
+        text  = "**HAMILTONIAN\n"
+        if self._rtype == 'atomic-start':
+            i = 0
+            for line in _hamtext:
+                text += line
+                i += 1
+        elif self._rtype == 'atomic-x2c':
+            text += ".X2C\n"
+            text += ".NOAMFI\n"
+            text += "*X2C\n"
+            text += ".FGMx2c\n"
+        return text
+
+    def set_dirac_wavefunction_section(self) :
+        text  = "**WAVE FUNCTIONS\n"
+        if self._rtype == 'atomic-start':
+            text += ".DHF\n"
+        text += "*SCF\n"
+        text += ".FOCC\n"
+        return text
+
+    def set_dirac_general_section(self) :
+        text  = "#\n"
+        if self._rtype == 'atomic-start':
+            text  = "**GENERAL\n"
+            text += ".ACMOUT\n"
+        return text
+
+    def set_dirac_end_section(self) :
+        text  = "**END OF\n"
+        return text
+
+    def assemble_dirac_fragment_input(self) :
+        dirac_fragment_input  = self.set_dirac_init_section()
+        dirac_fragment_input += self.set_dirac_wavefunction_input()
+        dirac_fragment_input += self.set_dirac_integral_section()
+        dirac_fragment_input += self.set_dirac_general_section()
+        dirac_fragment_input += self.set_dirac_hamiltonian_section()
+        dirac_fragment_input += self.set_dirac_wavefunction_section()
+        dirac_fragment_input += self.set_dirac_end_section()
+
+        if options.being_verbose:
+            print "automatically generated input file"
+            print dirac_fragment_input
+
+        return dirac_fragment_input
+
+# prepare lists from original mol file for generating automatized x2c fragment input
+class prepare_lists_for_x2c_fragment_mol(periodic_table_plus_ext):
+    """
+    class for preparation of lists for fragment-x2c mol files
+    """
+
+    def __init__(self, mol_file_lines, num_fragments):
+     self.num_frag  = num_fragments
+     self.mol_lines = mol_file_lines
+    
+    def prepare_startlist(self):
+
+        line_count = 0
+        _s         = []
+        finish_found = False
+        for line in self.mol_lines:
+            if line.split()[0].lower() == 'large':
+                _s.append(int(line_count))
+            elif line.split()[0].lower() == 'finish':
+                _s.append(int(line_count))
+                finish_found = True
+            line_count += 1
+
+        if not finish_found:
+            print ' *** error in reading the molecular basis set input: no end marker found (FINISH) in the .mol file.'
+            sys.exit()
+
+        if len(_s)-1 != self.num_frag:
+            print ' *** error in reading the molecular basis set input: basis set for at least one unique element missing.'
+            print '     number of basis set found: %i <--> number of unique elements specified in .mol input: %i'\
+                        % (len(_s)-1, self.num_frag)
+            sys.exit()
+        return _s
+
+    def prepare_endmarkerlist(self, start_list):
+
+        i  = 0
+        _e = []
+        # elements # 1 -- num_fragments-1
+        while i < self.num_frag - 1:
+            j         = 1
+            line      = self.mol_lines[start_list[i+1]-j]
+            found_end = False
+            while not found_end:
+#               print 'line in endmarker search %s' % line
+                j   += 1
+                if self.compare_element_symbols(line.split()[0].lower()):
+                    line = self.mol_lines[start_list[i+1]-j]
+                else:
+#                   print 'line found search %s %i' % (line, start_list[i+1]-j)
+                    _e.append(start_list[i+1]-j)
+                    found_end = True
+            i += 1
+        # element # num_fragments
+        _e.append(start_list[self.num_frag]-1)
+        return _e
+
+    def prepare_Z_and_exponent_list(self, start_list):
+
+        i    = 0
+        _z   = []
+        _exp = []
+        while i < self.num_frag:
+            j         = 1
+            line      = self.mol_lines[start_list[i]-j]
+            found_Z   = False
+            while not found_Z:
+                j   += 1
+                if self.compare_element_symbols(line.split()[0].lower()):
+                    line = self.mol_lines[start_list[i]-j]
+                else:
+                    found_Z = True
+                    a       = ''
+                    _z.append(int(float((line.split()[0]))))
+                    if len(line.split()) > 2:
+                        a = line.split()[2]
+                    _exp.append(a)
+            i += 1
+        return _z, _exp
+
+class run_frag:
+     def __init__(self, runtype, invoke_path, scratch_path, dirac_input, mol_input):
+         self._runtype       = runtype
+         self.root_calc_path = invoke_path
+         self.path_frag      = scratch_path
+         self.inp            = dirac_input
+         self.mol            = mol_input
+         pam_flags_extra  = ''
+         if options.pam_argument_list:
+             pam_flags_extra += options.pam_argument_list
+         else:
+             if not options.being_verbose:
+                 pam_flags_extra += '--nobackup --silent ' 
+             else:
+                 pam_flags_extra += '--nobackup ' 
+         self.pam_flags = pam_flags_extra + ' '
+         if options.being_verbose:
+             print 'options passed on to \"pam\": %s' % pam_flags_extra
+
+     def get_output_name(self):
+         (inp_file_strip, mol_file_strip) = stripped_names(self.inp, self.mol)
+         return '%s_%s.out' % (inp_file_strip, mol_file_strip)
+     def get_fragment_name(self):
+         return string.replace(self.mol,       '.mol', '' )
+     def run_and_normal_exit(self, full_pam_flags):
+         os.chdir(self.path_frag)
+         (input, basis) = stripped_names(self.inp, self.mol)
+         # run pam
+         command = '%s/pam --inp=%s --mol=%s %s' \
+             % (root_directory, input, basis, full_pam_flags)
+         p = subprocess.Popen(command,
+                              shell=True,
+                              stdin=subprocess.PIPE,
+                              stdout=subprocess.PIPE)
+         
+         pam_output = p.communicate()[0]
+         pam_output_file.write(pam_output)
+         os.chdir(self.root_calc_path)
+         # check whether DIRAC terminated normally
+         if 'exit           : normal' in pam_output:
+             return True
+         else:
+             return False
+#        return True
+
+     def print_result(self, progress, result_text, elapsed):
+         """
+          print result of the fragment run
+         """
+         elapsed_str=time.strftime('%Mm%Ss', time.gmtime(elapsed))
+         print '%10s %12s %32s %s' % \
+               (progress.rjust(10), result_text.rjust(12), self.get_fragment_name().rjust(32), elapsed_str.rjust(16))
+
+     def coefficient_file(self):
+         _xxx = 'XX'
+         if len(self.get_fragment_name()) < 2:
+             _xxx += 'X'
+         return "DF"+ self.get_fragment_name() + _xxx
+
+     def copy_outputfiles(self):
+         if self._runtype == 'atomic-x2c':
+             if os.path.isfile(self.path_frag      + '/' + 'X2CMAT'):
+                 shutil.copy(self.path_frag      + '/' + 'X2CMAT',\
+                             self.root_calc_path + '/' + 'X2CMAT.'\
+                           + self.get_fragment_name())
+             else:
+                 print ' *** cannot copy fragment X2CMAT; file does not exist.'
+         elif self._runtype == 'atomic-start':
+             if os.path.isfile(self.path_frag      + '/' + 'DFACMO'):
+                 shutil.copy(self.path_frag      + '/' + 'DFACMO',\
+                             self.root_calc_path + '/' + self.coefficient_file())
+             else:
+                 print ' *** cannot copy fragment coefficient file; file does not exist.'
+
+         if os.path.isfile(self.path_frag      + '/' + self.get_output_name()):
+             shutil.copy(self.path_frag      + '/' +\
+                         self.get_output_name(),\
+                         self.root_calc_path + '/')
+         else:
+             print ' *** cannot copy fragment output; file %s does not exist.' % self.get_output_name()
+
+     def copy_X2C_inputfiles(self, num_frag, symbols):
+
+         list = self.x2cmat_list(num_frag, symbols)
+         i = 0
+         while i < num_frag:
+             if os.path.isfile(self.root_calc_path + '/' + list[i]):
+
+                  shutil.copy(self.root_calc_path + '/' + list[i],\
+                              self.path_frag + '/' + list[i])
+             else:
+                  print ' *** cannot copy fragment x2c file; file %s does not exist in the directory %s.'\
+                          % (list[i], self.root_calc_path + '/')
+                  sys.exit(1)
+             i += 1
+
+         (name1, name2) = stripped_names(self.inp, self.mol) 
+
+         if os.path.isfile(self.root_calc_path + '/' + name1 + '.inp'):
+             shutil.copy(self.root_calc_path + '/' + name1 + '.inp',\
+                         self.path_frag + '/' + name1 + '.inp')
+         else:
+             print ' *** cannot copy molecular Dirac input file; file %s does not exist in the directory %s.'\
+                   % (name1 + '.inp', self.root_calc_path + '/')
+             sys.exit(1)
+
+         if os.path.isfile(self.root_calc_path + '/' + name2 + '.mol'):
+             extension = '.mol'
+         elif  os.path.isfile(self.root_calc_path + '/' + name2 + '.xyz'):
+             extension = '.xyz'
+         else:
+             print ' *** cannot copy molecular basis set file; file %s (.mol/.xyz) does not exist in the directory %s.'\
+                   % (name2, self.root_calc_path + '/')
+
+         shutil.copy(self.root_calc_path + '/' + name2 + extension,\
+                     self.path_frag + '/' + name2 + extension)
+
+     def mol_X2C_pam_flags(self, num_frag, symbols):
+
+         list = self.x2cmat_list(num_frag, symbols)
+         string = '--copy=\"'
+         i = 0
+         while i < num_frag:
+            string += list[i] + ' '
+            i += 1
+         string += '\" '
+         return self.fragment_pam_flags() + string
+
+     def x2cmat_list(self, num_frag, symbols):
+         i  = 0
+         _p = []
+         while i < num_frag:
+            if self._runtype == 'atomic-start':
+                _xxx = 'XX'
+                if len(symbols[i]) < 2:
+                    _xxx += 'X'
+                    _xxx
+                _p.append('DF' + symbols[i] + _xxx)
+
+            _p.append('X2CMAT.' + symbols[i])
+            i += 1
+         return _p
+
+     def fragment_pam_flags(self):
+         if self._runtype == 'atomic-start':
+             return self.pam_flags + '--get=\"X2CMAT DFACMO\" '
+         else:
+             return self.pam_flags + '--get=\"X2CMAT\" '
+                         
+     def clean_fragment_scratch_dir(self):
+         os.chdir(self.root_calc_path)
+         clean_fragment_directory = 'rm -rf '\
+                                  + self.path_frag
+         os.system(clean_fragment_directory)
+
+     def write_fragment_inputs(self, dirac_frag_input_content, mol_frag_input_content):
+         """
+          write fragment inputs (.inp and .mol)
+         """
+         os.chdir(self.path_frag)
+         if not options.user_dirac_fragment_inp:
+            f = file(self.inp,'w',0)
+            f.write(dirac_frag_input_content)
+            f.close()
+
+         f = file(self.mol,'w',0)
+         f.write(mol_frag_input_content)
+         f.close()
+         os.chdir(self.root_calc_path)
+
+     def is_run(self):
+         return True
+
+# end of class definitions
+
+# function definitions
+def runtype_header():
+    if get_diracruntype() == 'atomic-start':
+        header = 'atomic start guess Dirac calculation'
+    elif get_diracruntype() == 'atomic-x2c':
+        header = '   fragment X2C Dirac calculation   '
+    else:
+        print 'no header found.'
+        sys.exit(-1)
+    return header
+
+def get_diracruntype():
+    _i = 0
+    while _i < run_tasks:
+        if len(dirac_run_list[_i]) > 0:
+           break
+        _i += 1
+    return dirac_run_list[_i]
+
+def get_original_dirac_inputfile_content(orig_inp_file):
+
+    (inp_file_strip, bla) = stripped_names(orig_inp_file, 'bla')
+    f                     = open(inp_file_strip + '.inp', 'r')
+    inp_file_lines        = [line.strip('\n') for line in f.readlines()]
+    f.close()
+
+#   remove blank lines
+    while len(inp_file_lines[-1].split()) == 0:
+        del inp_file_lines[-1]
+
+    return inp_file_lines
+def get_original_molfile_content(orig_mol_file):
+
+    (bla, mol_file_strip) = stripped_names('bla', orig_mol_file)
+    f                     = open(mol_file_strip + get_original_molfile_extension(mol_file_strip) , 'r')
+    mol_file_lines        = [line.strip('\n') for line in f.readlines()]
+    f.close()
+
+#   temporary solution; delete any blank line after FINISH...
+    while len(mol_file_lines[-1].split()) == 0:
+        del mol_file_lines[-1]
+
+    return mol_file_lines
+
+def get_original_molfile_extension(mol_file_strip):
+
+    if os.path.isfile(mol_file_strip + '.mol'):
+        extension = '.mol'
+    elif os.path.isfile(mol_file_strip + '.xyz'):
+        extension = '.xyz'
+    else:
+        print 'neither a %s nor a %s molecular input file for the full system does exist, please check your input.'\
+             % (mol_file_strip + '.mol' , mol_file_strip + '.xyz')
+        sys.exit(1)
+
+    return extension
+
+def check_original_molfile_content_and_get_num_fragments(mol_file_lines):
+
+    if mol_file_lines[3].split()[0] != 'C':
+        print ' *** error in reading the molecular basis set input: the file has a wrong format. ***'
+        print '     please consult http://www.diracprogram.org for more help.'
+        print '     the first character in line 4 is %s rather than C'\
+                    % mol_file_lines[3].split()[0]
+        sys.exit()
+    num_fragments = int(mol_file_lines[3].split()[1])
+    return num_fragments
+
+def stripped_names(input, basis):
+    inp_file_strip = string.replace(input,          '.inp', '')
+    mol_file_strip = string.replace(basis,          '.mol', '')
+    mol_file_strip = string.replace(mol_file_strip, '.xyz', '')
+    return inp_file_strip, mol_file_strip
+
+def scan_hamiltonian_section_in_dirac_input(inp_lines):
+
+    temp_lines        = [] 
+    temp_lines.extend(inp_lines)
+    i                 = 0
+    hamiltonian_lines = []
+    for line in temp_lines:
+       if line[0:5] == '**HAM':
+           break
+       i += 1
+    del temp_lines[0:i+1]
+    i = 0
+    for line in temp_lines:
+       if line[0:2] == '**':
+          break
+       elif line[0:7] == '*END OF':
+          break
+       hamiltonian_lines.append(temp_lines[i] + '\n')
+       i += 1
+
+    return hamiltonian_lines
+
+# end of function definitions
+
+# STARTING POINT OF THE RUN SCRIPT
+
+# define example usage
+
+usage = '''
+  typically ./%prog --inp=[.inp] --mol=[.mol] --atomic-start
+         or ./%prog --inp=[.inp] --mol=[.mol] --atomic-x2c
+         or ./%prog --inp=[.inp] --mol=[.mol] --atomic-start --atomic-x2c
+         or ./%prog --inp=[.inp] --mol=[.mol] --atomic-start --atomic-x2c [--pam_options="additional pam options"]
+         or ./%prog --inp=[.inp] --mol=[.mol] --atomic-start --atomic-x2c --verbose'''
+
+# initialize parser
+
+parser = OptionParser(usage)
+
+# define options
+
+group = OptionGroup(parser, 'dirac input file')
+group.add_option('--inp',
+                 type='string',
+                 action='store',
+                 dest='original_dirac_input',
+                 default=None,
+                 metavar='xxx.inp',
+                 help='specifies the Dirac calculation input [default: %default]')
+parser.add_option_group(group)
+
+group = OptionGroup(parser, 'molecule input file')
+group.add_option('--mol',
+                 type='string',
+                 action='store',
+                 dest='original_molecular_input',
+                 default=None,
+                 metavar='xxx.mol',
+                 help='specifies the molecular input file (support for .xyz files not implemented yet) [default: %default]')
+parser.add_option_group(group)
+
+group = OptionGroup(parser, 'Dirac fragment input files (NOT OPERATIONAL YET)')
+group.add_option('--user-frag-inp',
+                 action='store_true',
+                 dest='user_dirac_fragment_inp',
+                 default=False,
+                 help='use existing Dirac fragment inputs [default: %default]')
+parser.add_option_group(group)
+
+group = OptionGroup(parser, '\"pam\" options')
+group.add_option('--pam_options',
+                 type='string',
+                 action='store',
+                 dest='pam_argument_list',
+                 default=None,
+                 metavar='\"--silent --put=\"testfile testfile2\" \"',
+                 help='provides keywords passed on to pam [default: %default]')
+parser.add_option_group(group)
+
+group = OptionGroup(parser, 'verbosity level')
+group.add_option('--verbose',
+                 action='store_true',
+                 dest='being_verbose',
+                 default=False,
+                 help='produces more verbose output [default: %default]')
+parser.add_option_group(group)
+
+group = OptionGroup(parser, 'atomic start')
+group.add_option('--atomic-start',
+                 action='store_true',
+                 dest='run_atomic_start',
+                 default=False,
+                 help='run atomic calculations to create a molecular start guess [default: %default]')
+parser.add_option_group(group)
+
+group = OptionGroup(parser, 'atomic X2C')
+group.add_option('--atomic-x2c',
+                 action='store_true',
+                 dest='run_atomic_x2c',
+                 default=False,
+                 help='run atomic X2c calculations to approximate a molecular X2C picture-change matrix [default: %default]')
+parser.add_option_group(group)
+
+# process input
+
+(options, args) = parser.parse_args()
+
+# user has given no arguments: print help and exit
+
+if len(sys.argv) == 1:
+    print parser.format_help().strip()
+    sys.exit()
+
+# set root directory where pam and atomic-start-x2c-pam are supposed to "reside"
+
+root_directory = os.path.realpath(__file__)[:-20]
+
+# set directory where the current job was issued
+cwd = os.getcwd()
+
+# set path to directory which will contain fragment-input/output files
+x2c_fragment_scratch_files_path = cwd + '/fragment-scratch-files'
+
+#   open logfile
+pam_output_file = open(cwd + '/fragment.log','w',0)
+
+# read original molecular input
+mol_file_lines = get_original_molfile_content(options.original_molecular_input)
+
+# read original dirac input
+inp_file_lines = get_original_dirac_inputfile_content(options.original_dirac_input)
+
+# determine number of num_fragments (read from line 4 in .mol input)
+num_fragments = check_original_molfile_content_and_get_num_fragments(mol_file_lines)
+
+# prepare dirac runtypes
+run_tasks = 0
+dirac_run_list = []
+
+if options.run_atomic_start:
+    dirac_run_list.append('atomic-start')
+    run_tasks += 1
+if options.run_atomic_x2c:
+    dirac_run_list.append('atomic-x2c')
+    run_tasks += 1
+
+# sanity check
+if run_tasks ==0:
+    print '  *** no runtype found. the script will stop here. ***'
+    print '  *** please define either \"--atomic-start\" and/or \"--atomic-x2c\" ***'
+    sys.exit(0)
+
+# main function
+def main(*args):
+    
+#   call dirac for each runtype
+    i = 0
+    while i < run_tasks:
+        run_dirac(*args)
+        dirac_run_list[i] = ''
+        i += 1
+        
+    pam_output_file.close()
+
+
+# dirac-run function
+def run_dirac(*args):
+
+#   find the current runtype
+    current_runtype = get_diracruntype()
+
+#   print header (log file + screen)
+    pam_output_file.write(" fragment-run output data from pam\n\n")
+    header = runtype_header()
+    print
+    print '%58s' % (header)
+    print '  -----------------------------------------------------------------------'
+    print
+    print '%10s %12s %32s %16s' % ('progress', 'status', 'atom/molecular-fragment', 'time')
+    print '  -----------------------------------------------------------------------'
+
+#   initialize marker list, atomic numbers and exponents for each fragment
+    mol_orig_info = prepare_lists_for_x2c_fragment_mol(mol_file_lines, num_fragments)
+    start_marker  = mol_orig_info.prepare_startlist()
+    end_marker    = mol_orig_info.prepare_endmarkerlist(start_marker)
+    
+    if options.being_verbose:
+        print 'num_fragments is %i' % num_fragments
+        print 'list of start markers'
+        print start_marker
+        print 'list of end   markers'
+        print end_marker
+
+    (atomic_number_list, atomic_exponent_list) = mol_orig_info.prepare_Z_and_exponent_list(start_marker)
+
+    if options.being_verbose:
+        print 'list of atomic numbers for each fragment'
+        print atomic_number_list
+        print 'list of atomic exponents for each fragment'
+        print atomic_exponent_list
+
+#   create a list of fragment tasks and prepare fragment inputs
+    lookup_symbol = periodic_table_plus_ext()
+    fraginp_lines = x2c_fragment_dirac_input(current_runtype, inp_file_lines)
+    fragmol_lines = x2c_fragment_basis_set_input()
+    fragmol_lines.set_coordinates('')
+    fragmol_lines.set_symmetry('')
+    i = 0
+    s = []
+    l = []
+    m = []
+    n = []
+
+    while i < num_fragments:
+        dirac_input   = ''
+        mol_input     = ''
+        s.append(lookup_symbol.get_element_symbol(atomic_number_list[i]))
+#       set the name of the .inp input and store content in n[]
+        if options.user_dirac_fragment_inp:
+            print '*** user-provided fragment inputs are not supported yet'
+            sys.exit()
+        else:
+            dirac_input += s[i] + '.inp'
+            n.append(fraginp_lines.assemble_dirac_fragment_input())
+#       set the name of the .mol input
+        mol_input       += s[i] + '.mol'
+#       set the name of the .mol input and store its content in m[]
+        frag_basis_set = ''
+        for j in range (start_marker[i], (end_marker[i]+1)):
+            frag_basis_set += mol_file_lines[j]
+        fragmol_lines.set_basis_set(frag_basis_set)
+        fragmol_lines.set_fragment( str(atomic_number_list[i]), atomic_exponent_list[i])
+        m.append(fragmol_lines.assemble_basis_set_fragment_input())
+
+#       initialize fragment tasks and store its content in l[]
+        l.append(run_frag(current_runtype, cwd, x2c_fragment_scratch_files_path, dirac_input, mol_input))
+        i += 1
+
+    # define the molecular run task list
+    (dirac_input, mol_input) = stripped_names(options.original_dirac_input,\
+                                              options.original_molecular_input)
+    l.append(run_frag(current_runtype, cwd, x2c_fragment_scratch_files_path, dirac_input, mol_input))
+
+    # get total number of individual x2c calculations
+    total_nr_of_x2c_runs = 0
+    for task in l:
+        if task.is_run():
+            total_nr_of_x2c_runs += 1
+
+    # run the fragment/molecule calculations
+    nr_of_x2c_runs_done = 0
+    nr_crashed          = 0
+
+    for task in l:
+        mkdir_p(x2c_fragment_scratch_files_path)
+        nr_of_x2c_runs_done += 1
+        if nr_of_x2c_runs_done <= num_fragments:
+            task.write_fragment_inputs(n[nr_of_x2c_runs_done-1], m[nr_of_x2c_runs_done-1])
+            full_pam_flags = task.fragment_pam_flags()
+        else:
+            task.copy_X2C_inputfiles( num_fragments, s)
+            full_pam_flags = task.mol_X2C_pam_flags( num_fragments, s)
+
+        start                = time.time()
+        if task.run_and_normal_exit(full_pam_flags):
+            result_text = 'done'
+        else:
+            result_text = 'failed'
+            nr_crashed += 1
+        elapsed = (time.time() - start)
+
+        progress = '[%3i%s]' % (100.0*float(nr_of_x2c_runs_done)/float(total_nr_of_x2c_runs), r'%')
+        task.print_result(progress, result_text, elapsed)
+
+        task.copy_outputfiles()
+        task.clean_fragment_scratch_dir()
+
+        if nr_crashed > 0:
+            print
+            print 'cannot continue since the previous calculation crashed'
+            print 'check the Dirac output %s for more information.' % task.get_output_name()
+            sys.exit(1)
+
+
+    if nr_crashed > 0:
+        return 3
+    else:
+        return 0
+
+# launch the main function
+if __name__ == '__main__':
+    sys.exit(main(*sys.argv))

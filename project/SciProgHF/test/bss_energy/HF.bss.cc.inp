@@ -1,0 +1,41 @@
+**DIRAC
+.TITLE
+  LiH
+.WAVE F ! Activate integral and wave functions modules
+.XMLOUT
+**GENERAL
+.DIRECT
+1 1 1
+**INTEGRALS
+.PRINT
+1
+.NUCMOD ! 1-Point nucleus, 2-gaussian
+1
+**HAMILTONIAN
+.BSS
+999
+.CMPEIG
+.PRINT
+2
+**WAVE FUNCTIONS ! What method (DHF,MP2,CC..)
+.SCF
+.RELCCSD
+*SCF
+.CLOSED SHELL
+10  
+.INTFLG ! Specify what 2-el.integrals to include
+1 1 0
+.EVCCNV ! Energy convergence...
+1.0E-10  1.0D-7
+**MOLTRA
+.ACTIVE
+energy   -1000    999999  0.1
+**RELCCSD
+.NELEC
+ 4 4
+.TIMING
+.PRINT
+ 1
+*CCSORT
+.USEOE
+*END OF

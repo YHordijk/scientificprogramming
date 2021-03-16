@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+# test energy in iteration 1: the energy based on the atomic start
+# do NOT test on energyis the following iterations, they depend on changes
+# in convergence algorithm
+f.add(string = 'It.    1 ',
+      rel_tolerance   = 1.0e-8,
+       mask        = [1, 2])
+# test final results OK
+f.add(from_string = ' TOTAL ENERGY',
+      num_lines   = 11,
+      rel_tolerance   = 1.0e-8)
+f.add(from_string = ' Eigenvalues',
+      num_lines = 10,  # the different tests have different number of lines, this should be OK for all
+      abs_tolerance   = 1.0e-5)
+
+test.run(['H.inp'], ['H.mol'], args='--get=DFACMO')
+shutil.copy('DFACMO', 'DFHXXX')
+
+test.run(['O.inp'], ['O.mol'], args='--get=DFACMO')
+shutil.copy('DFACMO', 'DFOXXX')
+
+test.run(['O_atom.inp'], ['O.mol'], f, '--copy=DFOXXX')
+test.run(['H2O.inp'], ['H2O.mol'], f, '--copy="DFHXXX DFOXXX"')
+
+# cleanup
+os.unlink('DFACMO')
+os.unlink('DFHXXX')
+os.unlink('DFOXXX')
+
+sys.exit(test.return_code)

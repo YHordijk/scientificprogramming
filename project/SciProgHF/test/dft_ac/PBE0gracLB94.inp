@@ -1,0 +1,36 @@
+**DIRAC
+.TITLE
+ DFT linear response run with the GRAC asymptotic correction
+.WAVE FUNCTION
+.PROPERTIES
+**HAMILTONIAN
+.LEVY-LEBLOND
+.DFT
+ PBE0
+*DFT
+.BLOCKED
+.ALDA
+.GRAC
+LB94
+0.5 40.0 0.79248 1.0D-2
+**GRID
+.ZIPGRID
+.COARSE         !for the test we use a coarse grid
+**INTEGRALS
+.NUCMOD
+ 1
+*READIN
+.CONTRACT
+**WAVE FUNCTION
+.SCF
+*SCF
+.EVCCNV
+ 1.0E-5         !we use poor convergence threshold for the test
+.MOSTART        !we use the old start procedure as this was used when generating the test
+BNCORR
+**PROPERTIES
+.POLARIZABILITY
+*EXPECTATION
+.OPERATOR
+ ZZSECMOM
+*END OF

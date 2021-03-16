@@ -1,0 +1,3 @@
+      REAL*8 WAVEVEC(3)
+      COMMON/DCBWAV/WAVEVEC
+      

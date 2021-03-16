@@ -1,0 +1,74 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = ' TOTAL ENERGY',
+      num_lines   = 11,
+      rel_tolerance   = 1.0e-8)
+
+#test.run(['he.inp'], ['he.xyz'], f, args='--get="X2CMAT aoo2esoc.002"')
+test.run(['he.inp'], ['he.xyz'], f, args='--get="X2CMAT"')
+shutil.copy('X2CMAT', 'X2CMAT.002')
+
+#test.run(['li.inp'], ['li.xyz'], f, args='--get="X2CMAT aoo2esoc.003"')
+test.run(['li.inp'], ['li.xyz'], f, args='--get="X2CMAT"')
+shutil.copy('X2CMAT', 'X2CMAT.003')
+
+test.run(['lihe-4c.inp'], ['lihe.mol'], f, args='--get=X2CMAT')
+shutil.copy('X2CMAT', 'X2CMAT.000')
+
+# molecular U matrix (from molecular core h1^{4c}) + AMFI 2e-SO corrections
+test.run(['molecular-x2c-amfisoc.inp'], ['lihe.mol'], f)
+
+# molecular U matrix (from molecular core h1^{4c}) + atomic 2e-SO corrections
+#test.run(['molecular-x2c-aoosoc.inp'], ['lihe.mol'], f, args='--put="aoo2esoc*"')
+
+# molecular U matrix (from molecular fock^{4c}) + atomic 2e-SO corrections
+#test.run(['molecular-fragment-x2c-aoosoc.inp'], ['lihe.mol'], f, args='--put="aoo2esoc* X2CMAT.000"')
+
+# atomic U matrices + atomic 2e-SO corrections
+#test.run(['atomic-x2c-aoosoc.inp'], ['lihe.mol'], f, args='--put="X2CMAT.002 X2CMAT.003 aoo2esoc*"')
+
+test.run(['atoms.inp'], ['atoms.xyz'],
+#                args='--replace closed_occ="4" --replace open_e="5" --replace open_orb="6" --replace myatom="F" --get="X2CMAT aoo2esoc.009"')
+                 args='--replace closed_occ="4" --replace open_e="5" --replace open_orb="6" --replace myatom="F" --get="X2CMAT"')
+shutil.copy('X2CMAT', 'X2CMAT.009')
+
+test.run(['atoms.inp'], ['atoms.xyz'],
+#                args='--replace closed_occ="12" --replace open_e="4" --replace open_orb="6" --replace myatom="S" --get="X2CMAT aoo2esoc.016"')
+                 args='--replace closed_occ="12" --replace open_e="4" --replace open_orb="6" --replace myatom="S" --get="X2CMAT"')
+shutil.copy('X2CMAT', 'X2CMAT.016')
+
+# molecular U matrix (from molecular core h1^{4c}) + AMFI 2e-SO corrections
+test.run(['large-molecular-x2c-amfisoc.inp'], ['sf6.xyz'], f)
+
+# molecular U matrix (from molecular core h1^{4c}) + atomic 2e-SO corrections
+#test.run(['large-molecular-x2c-aoosoc.inp'], ['sf6.xyz'], f, args='--put="aoo2esoc*"')
+
+# atomic U matrices + AMFI 2e-SO corrections
+test.run(['large-atomic-x2c-amfisoc.inp'], ['sf6.xyz'], f, args='--put="X2CMAT.009 X2CMAT.016"')
+
+# atomic U matrices + atomic 2e-SO corrections
+#test.run(['large-atomic-x2c-aoosoc.inp'], ['sf6.xyz'], f, args='--put="aoo2esoc* X2CMAT.009 X2CMAT.016"')
+
+os.unlink('X2CMAT')
+os.unlink('X2CMAT.000')
+os.unlink('X2CMAT.002')
+os.unlink('X2CMAT.003')
+os.unlink('X2CMAT.009')
+os.unlink('X2CMAT.016')
+#os.unlink('aoo2esoc.002')
+#os.unlink('aoo2esoc.003')
+#os.unlink('aoo2esoc.009')
+#os.unlink('aoo2esoc.016')
+
+sys.exit(test.return_code)

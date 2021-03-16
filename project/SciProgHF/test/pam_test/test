@@ -1,0 +1,63 @@
+#!/usr/bin/env python
+
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from runtest import version_info, get_filter, cli, run
+from runtest_config import configure
+
+assert version_info.major == 2
+
+# invoke the command line interface parser which returns options
+options = cli()
+
+print('PAM oriented test based on runtest-in-DIRAC:\n')
+
+(launcher, full_command, output_prefix, relative_reference_path)=configure(options,input_files=['inptest.inp','CN.sto2g.mol'], extra_args='')  # I need this library to get the pam_command !
+pam_command=' '.join(full_command.split()[0:2])
+print('pam script:',pam_command)
+
+ierr = 0
+# Lauch pam to print with defined variables
+print('\n Running pam for showing of flags:')
+ierr += os.system(pam_command+' --show')
+
+f1 = [
+   get_filter(from_string='* Shell specifications:',
+               to_string='f is the fraction occupation; a and alpha open shell coupling coefficients.',
+               abs_tolerance=0.01)
+  ]
+
+f2 = [
+   get_filter(from_string='* interface to 32-bit integer MPI enabled **',
+               to_string='Note: maximum allocatable memory for master+nodes can be set by -aw (MW)/-ag (GB) flags in pam',
+               abs_tolerance=1e-3),  # check the gb/ag parameters assignement, together with number of MPI threads
+   get_filter(from_string='* Shell specifications:',
+               to_string='f is the fraction occupation; a and alpha open shell coupling coefficients.',
+               abs_tolerance=1e-7),  # check the SCF open-shell specification
+   get_filter(from_string='TOTAL ENERGY',  # also, check the total SCF energy
+               num_lines=11,
+               rel_tolerance=1.0e-5),
+  ]
+
+
+if os.environ.get('DIRAC_MPI_COMMAND'):
+# go ahead with the parallel run with checking output numbers
+  print('\nRunning pam in parallel, with defined DIRAC_MPI_COMMAND ='+os.getenv('DIRAC_MPI_COMMAND'))
+  ierr += run(options,
+            configure,
+            input_files=['inptest.inp','CN.sto2g.mol'],
+            extra_args='--noarch',
+            filters={'out': f1})
+
+else:
+# go ahead with the serial run, with checking output numbers
+  print('\nRunning pam in serial :')
+  ierr += run(options,
+            configure,
+            input_files=['inptest.inp','CN.sto2g.mol'],
+            extra_args='--noarch',
+            filters={'out': f1})
+
+sys.exit(ierr)

@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = ' Energy eigenvalues in atomic units',
+      to_re       = 'Relative real eigenvalues in other units;',
+      rel_tolerance = 1.0e-5)
+
+#disabling ea and all linear tests for now, as no reference outputs are available
+#test.run(['eom_ip.inp', 'eom_ea.inp'], ['h2o.xyz'], f, args='--mw=110')
+#test.run(['eom_ip_linear.inp', 'eom_ea_linear.inp'], ['hf.xyz'], f, args='--mw=110')
+
+test.run(['eom_ip.inp'], ['h2o.xyz'], f, args='--mw=110')
+
+sys.exit(test.return_code)

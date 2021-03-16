@@ -1,0 +1,66 @@
+!
+!
+**GENERAL
+.PCMOUT
+**DIRAC
+.TITLE
+Rb2 
+.WAVE F
+**HAMILTONIAN 
+.ECP
+**WAVE FUNCTIONS
+.SCF   
+.RELCCSD
+*SCF
+.CLOSED SHELL
+ 8  8
+**MOLTRA
+.ACTIVE
+energy -100.0 20.0 0.5
+**RELCC
+.FOCKSP
+.ENERGY
+.PRINT
+1
+*CCFSPC
+.MAXIT # maximum number of iterations for sectors
+60
+.DOEA     #  (0,1) sector
+.DOEA2    
+.NACTP
+ 14 14 14 14
+.DOIH
+*CCIH
+.EPMIN
+-0.5 
+.EPMAX
+ 1.0
+#
+#  all active spinors declared "intermediate"
+#  frequently useful, but mandatory only for subsequent Pade extrapolation 
+#
+.IHSCHEME
+ 1
+.SH_P11
+-.075
+# Energy shift parameter S_k for the one-electronic excitations in (0,1) sector. 
+.SH_P12
+-.15
+# Energy shift parameter S_k for the two-electronic excitations in (0,1) sector
+.SH_P2
+-.15
+# half (!!) of the energy shift parameter S_k for the two-electronic excitations in (0,2) sector. 
+# should be chosen so that shifted denominators are neither positive or weakly negative
+.AIH
+ 0.0
+#
+# zero value corresponds to denominator D_k shifting
+# D_k => D_k + S_k*(S_k/(D_k+S_k))^NIH
+# for AIH>0, conventional denominator modif formula (senseless for AIH-0) is applied
+#  
+.NIH
+ 3
+# attenuation parameter. NIH=0 corresponds to denominator-independent shift
+*END OF DIRAC
+
+

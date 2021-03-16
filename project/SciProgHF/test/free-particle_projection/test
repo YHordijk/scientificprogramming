@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_re     = 'Fermion symmetry E1g',
+      num_lines   = 30,
+      rel_tolerance   = 1.0e-5)
+
+test.run(['std.inp', 'free.inp'], ['Hg.mol'], f)
+
+sys.exit(test.return_code)

@@ -1,0 +1,39 @@
+#################################
+**DIRAC
+.TITLE
+ Testing 4-component CI calculation on F atom in C2h, complex CMICDV optimization
+.WAVE FUNCTION
+#################################
+**HAMILTONIAN
+.DOSSSS
+**WAVE FUNCTION
+.SCF
+.KR CI
+#########
+*SCF
+.CLOSED SHELL
+  4  0
+.OPEN SHELL
+ 1
+ 5/0,6
+#########
+*KRCICALC
+.CI PROGRAM
+LUCIAREL
+.INACTIVE
+  1  0
+.GAS SHELLS
+ 2
+  5 7 / 1  3
+  7 7 / 1  3   ! p,s
+.CIROOTS
+ 7  3
+.MAX CI
+ 20
+.MXCIVE
+  60
+.ANALYZ
+.RSTRCI
+ 0
+#################################
+*END OF

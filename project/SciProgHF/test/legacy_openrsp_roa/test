@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_re   = 'dg Polari',
+      to_re     = '^$',
+      rel_tolerance = 1.0e-7)
+f.add(from_re   = 'dg G-prime',
+      to_re     = '^$',
+      rel_tolerance = 1.0e-7)
+f.add(from_re   = 'dg A-tensor',
+      to_re     = '^$',
+      rel_tolerance = 1.0e-7)
+f.add(from_re   = 'Raman related properties for freq',
+      to_re     = 'Molecular Partition Functions',
+      rel_tolerance = 1.0e-7)
+
+test.run(['roa_ll.inp', 'roa_dc.inp'], ['h2o2.mol'], f, args='--copy=DALTON.HES')
+
+sys.exit(test.return_code)

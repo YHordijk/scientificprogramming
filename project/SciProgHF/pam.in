@@ -1,0 +1,2295 @@
+#!/usr/bin/env python
+
+
+"""
+    Launching script for DIRAC calculations.
+    Takes care of copying files in and out and of setting appropriate environment variables for a DIRAC calculation.
+  
+    Written by Miroslav Ilias, Matej Bel University, Banska Bystrica, Slovakia, 2010-2013
+    Contributors: Radovan Bast, Ulf Ekstrom, Stefan Knecht, Andre Gomes
+
+    This script is distributed under the MIT licence.
+   
+    Environment variables (set by user) used by pam:
+             DIRTIMEOUT        - time out limit for dirac run
+             DIRAC_MPI_COMMAND - if set, instead of "dirac.x" pam will execute "$DIRAC_MPI_COMMAND dirac.x";
+                                 example: export DIRAC_MPI_COMMAND="mpirun -np 8 -x PATH"
+                                 if set, pam assumes that this is an MPI run
+                                 this environment variable has to be set for parallel tests with ctest
+                                 it allows to run DIRAC in parallel on systems which
+                                 do not use mpirun (SGI, Cray, systems with own wrappers); in this case do not use the "--mpi" flag
+                                 because "--mpi" overrides the DIRAC_MPI_COMMAND environmental variable
+             DIRAC_MPI_MACHFILE - if set, tells about parallel multinodes run with nodes specified by this variable. Is overwritten by --machfile flag.
+             DIRAC_TMPDIR      - if set, DIRAC will use the path $DIRAC_TMPDIR as scratch directory. Is overwritten by --scratch/--scratchfull flags.
+             BASDIR_PATH       - if set, DIRAC will use this basis set directory/directories, otherwise it takes the default $DIRAC/build*
+             LOCAL_SCRATCH_BOOL- if set, DIRAC will use local scratch disks in PARALLEL calculation (parallel run must be set on to read this variable)
+
+    Environment variables set by pam and used by MKL:
+             MKL_NUM_THREADS - set to 1 if not defined and parallel dirac.x
+             MKL_DYNAMIC     - set to "FALSE" if not defined and parallel dirac.x
+             OMP_NUM_THREADS - set to 1 if not defined and parallel dirac.x
+             OMP_DYNAMIC     - set to "FALSE" if not defined and parallel dirac.x
+
+    Environment variables set only by pam and used by DIRAC:
+             BASDIR          - contains path for basis set directories
+             DIRWRK          - work space for Fortran 77 "WORK" allocations         (units - million words)
+             DIRMAX          - maximum work space for Fortran 77 "WORK" allocations (radovan: how does it differ from DIRWRK?)
+             DIRPAR          - controls parallel run (1) or sequential run (0)
+             DIRNOD          - maximum work space for Fortran 77 "WORK" allocations for MPI workers, only used in MPI run
+             GLBSCR          - global scratch disk (1) or local scratch disk (0), only used in MPI run (cryptic 6-character name is used in source codes)
+
+"""
+
+from __future__ import print_function
+
+import os
+import sys
+import subprocess
+import shutil
+import signal
+import stat
+import time
+import fileinput
+import datetime
+import platform
+import glob
+import shlex
+import tarfile
+
+version = sys.version_info
+
+#miro: for older Pythons, use instead of "version.major == 2 and version.minor < 6"
+if version[0] == 2 and version[1] < 6:
+    print('pam requires python version >= 2.6')
+    sys.exit(1)
+
+pam_directory = os.path.dirname(os.path.realpath(__file__))
+
+class pam_enviroment:
+    """
+    Principal class for handling the pam-launched dirac run. Contains a lot of variables and methods.
+    """
+
+    def __init__(self):
+        '''Initialize the global set of variables for dirac run'''
+
+        # set up own dirac executable file name for Windows/Linux
+        if is_windows():
+            self.dirac_exe_file="dirac.x.exe"
+        else:
+            self.dirac_exe_file="dirac.x"
+
+        # returns the name of the operating system, empty if it cannot be determined
+        self.operating_system = platform.system()
+
+        # default: do not show pam settings
+        self.just_show_settings = False
+
+        # list of environment variables thar are to be set by dirac (useful to specify defaults in .diracrc)
+        self.environment = []
+
+        # supercomputers are special, need to know whether we run on summit
+        self.summit = False
+
+        self.expert_mode = False # disable various safety checks
+
+        # set the basis set directories
+        self.set_basdir()
+
+        # by default we assume no xyz-molecule input file
+        self.xyz_molecule_input = False
+
+        # scratch space, set up later in pam
+        self.scratch_dir = None
+
+        # globally accessible scratch disk in parallel runs
+        # this variable decides whether files are distributed over local disks in parallel calculation
+        self.global_scratch_disk = True
+
+        # the default is to delete the scratch after the job
+        self.keep_scratch = False   # default - delete the scratch after the job
+
+        # current PID to obtain unique string for each pam run (used for defining the name of scratch directory)
+        self.current_pid=os.getpid()
+
+        self.dirac_p=None # dirac.x/dirac mpi-launcher subprocess
+        self.pgid = None # process group id of the "dirac" process
+
+        # dirac error output (stderr stream)
+        self.dirac_stderr=None
+
+        # variables related to parallel calculations
+        self.parallel_run = False  # whether parallel run - decide upon the "--mpi=xxx" parameter
+        self.mpiarg = None  # additional arguments for the MPIRUN
+        self.nr_proc = 1  # number of processors, default 1, i.e. serial run
+        self.dirac_mpi_command = None # MPI launcher 
+        self.distribute_files = False # if there is some distribution of files over different nodes
+        self.own_mpirun = None
+
+        # depending on the operating_system, we set a default for the MPI launcher
+        # agreed policy (Stefan,Miro,Ulf) - each user is responsible for what he has in $PATH
+        if self.operating_system == 'AIX':
+        #   IBM
+            self.mpirun = find_executable('poe')
+        else:
+        #   Linux, Windows, ...
+            self.mpirun = find_executable('mpirun')
+
+        #  restrict distribution of working files over nodes by own flag/variable
+        self.distribute = []
+
+        #  list of basic (core) DIRAC files to be distributed over nodes by default
+        self.core_dirac_files=[self.dirac_exe_file,'MOLECULE.MOL','MOLECULE.XYZ','DIRAC.INP']
+
+        # machine file
+        self.machinefile = None  # could be enviroment variable (like $PBS_NODEFILE)
+        self.machinefile_content = None
+
+        # argument to pass the scratch directory location on to the nodes (rarely needed)
+        self.argument_to_pass_scratch_dir_to_slaves = None
+
+        # master name
+        self.master = get_hostname()  # short hostname
+
+        # user (login) name
+        self.user_name=get_username()
+
+        # nodes for parallel run (if any) - list; filled from self.machinefile
+        self.nodes = []
+
+        # rcp, rsh for parallel, multinodes calculations
+        self.rsh = 'ssh'
+        self.rcp = 'scp'
+
+       # dirac profiling
+        self.profile = False
+        self.profiler = None
+        self.profiling_file = 'gmon.out'  # usuall output file
+        self.profile_command = None  # command for profiling
+
+       # dirac executable command (set in own routine)
+        self.dirac_cmd = None
+
+       # dirac-executable position (could be reset after flag reading)
+        exec_position=os.path.join(pam_directory, self.dirac_exe_file)
+        if os.path.isfile(exec_position):
+            self.dirac_exe = exec_position
+        else:
+            # does not exist, try build directory
+            exec_position=os.path.join(pam_directory, "build", self.dirac_exe_file)
+            if os.path.isfile(exec_position):
+                # assign build/dirac.x
+                self.dirac_exe = exec_position
+            else:
+                self.dirac_exe = None
+
+        # flags for putting/getting files for Dirac calculation
+        self.put_files = None
+        self.get_files = None
+
+        self.string_replace_list = []
+
+        # memory allocation
+        mw = 64
+        self.mw_to_mb = 7.62939453 # as (10^6)*(2^3)/(2^20)
+        self.mw_to_gb = 0.00745058 # as (10^6)*(2^3)/(2^30)
+        self.default_memory_work_master = mw
+        self.default_memory_work_master_mb = mw*self.mw_to_mb
+        self.default_memory_work_master_gb = mw*self.mw_to_gb
+
+        self.max_memory_work_master = self.default_memory_work_master
+        self.max_memory_work_slave  = self.default_memory_work_master
+        self.default_memory_dynamic = 0
+        self.max_memory_dynamic     = self.default_memory_dynamic
+
+    # all files from the archive.tgz are unpacked
+    # assumed that archive file is copied into the scratch_dir
+        self.full_restart = False
+        self.archive_name = ''
+
+    # classic debugging (gdb, idb, dbx ...)
+        self.debug = False
+        self.debugger = None
+
+        # valgrind debugging
+        self.vg_debug = False
+
+    # input directory (=directory with input files)
+        self.input_directory = ''
+
+    # molecule/input names plus  molecule/input file names
+        self.input_molecule = ''
+        self.input_file_molecule = ''
+        self.input_dirac = ''
+        self.input_file_dirac = ''
+    # PCMSolver input file
+        self.input_pcm = ''
+        self.input_file_pcm = ''
+
+    # potential name plus potential file name
+        self.input_potential = ''
+        self.input_file_potential = ''
+
+    # output name created from *inp & *mol names
+        self.output_name = ''
+
+    # default output suffix
+        self.output_suffix = 'out'
+
+    # output file (sitting in the input directory)
+        self.output_file = None
+        self.output_file_full = None  # full (absolute) path
+
+    # lu of the DIRAC run output file (open in the "execute_dirac" method)
+        self.f = None
+
+    # by default, do backup files
+        self.nobackup = False
+
+        # default is to archive files
+        self.archive = True
+
+    # list of all possible DIRAC produced files for the archivation
+        self.archive_files = [
+            'MOLECULE.MOL',
+            'MOLECULE.XYZ',
+            'DIRAC.INP',
+            'DFCOEF',
+            '*.cube',
+            'AOPROPER',
+            'AOMOMAT',
+            'BSSMAT',
+            'X2CMAT',
+            'matexport.m',
+            'DFCOEF.BEST',
+            '*.xml',
+            'plot*',
+            'KRMCSCF',    # KRMC restart file
+            'KRMCOLD',    # KRMC restart file and MP2-NO file
+            'GASCIP.RST', # GASCIP CI restart file
+            'cavity.off', # for visualization of cavity with geomview
+            'cavity.npz', # for restart of cavity
+            'PEDRA.OUT',  # cavity formation summary
+            'PCM_mep_asc' # Converged MEP and ASC @cavity points
+            'pcmsolver.inp',
+            'POTENTIAL.INP'
+            ]
+
+    # ... DFCOEF
+        self.incmo = False
+        self.outcmo = False
+
+    # ... KRMCOLD/KRMCSCF
+        self.inkrmc = False
+        self.outkrmc = False
+
+    # ... qforce files form exatensor
+        self.outqforce = False
+
+    # execution time-limit in seconds (TODO: implement general time format)
+        self.timeout = None
+
+    # total spent time for pam script + job execution
+        self.start_time=time.time()
+
+    #  variable for the diracrc file, full path
+        self.diracrc_file = None
+    # variable for the sole diracrc file argument list for pam
+        self.diracrc_args = []
+    # variable for listing all pam arguments
+        self.pam_args = []
+
+    def set_basdir(self):
+        '''
+        sets and controls the default basis set directory
+        '''
+    # basis set directory - initial value which can be reset later in the flags-reading step
+    # note: Due to the "." in the basdir path there is no need to use --basdir='pwd'
+    # note: we must use ; instead of : as a separator on Windows
+        if not is_windows():
+            self.basdir='.:'
+            basis_dir= os.path.join(pam_directory, 'basis')
+            basis_dalton_dir=os.path.join(pam_directory, 'basis_dalton')
+            basis_ecp_dir=os.path.join(pam_directory, 'basis_ecp')
+            if os.path.isdir(basis_dir):
+                self.basdir = self.basdir + basis_dir
+            if os.path.isdir(basis_dalton_dir):
+                self.basdir = self.basdir+':'+basis_dalton_dir
+            if os.path.isdir(basis_ecp_dir):
+                self.basdir = self.basdir+':'+basis_ecp_dir
+        else:
+            self.basdir='.;'
+            basis_dir= os.path.join(pam_directory, 'basis')
+            basis_dalton_dir=os.path.join(pam_directory, 'basis_dalton')
+            basis_ecp_dir=os.path.join(pam_directory, 'basis_ecp')
+            if os.path.isdir(basis_dir):
+                self.basdir = self.basdir + basis_dir
+            if os.path.isdir(basis_dalton_dir):
+                self.basdir = self.basdir+';'+basis_dalton_dir
+            if os.path.isdir(basis_ecp_dir):
+                self.basdir = self.basdir+';'+basis_ecp_dir
+
+    def show_settings(self):
+        '''
+        Print current settings to stdout
+        TODO: do we want to show also content of the .diracrc file ?
+        Miro: this shows setting read in from the .diracrc file,
+        but without specifying which from where
+        '''
+        print( "Operating system:     ",  self.operating_system)
+        print("Current settings:")
+        print("  Basis directories   ",  self.basdir)
+        disk= disk_space_find(self.scratch_dir)
+        if disk.available:
+            scratch_disk_usage="(avail=%10.3f[GB])"%(disk.available)
+            scratch_disk_usage=scratch_disk_usage.replace(" ","")
+            print("  Scratch directory   ",  self.scratch_dir, scratch_disk_usage)
+        else:
+            print_error_message('scratch dir:'+self.scratch_dir+' not found/not accessible !')
+        print("  Relevant for parallel builds:")
+        print("    mpi launcher         ",  str(self.mpirun))
+        print("    mpirun extra args    ",  self.mpiarg)
+        print("    global scratch disk  ",  self.global_scratch_disk)
+        print("    Machine file         ", self.machinefile)
+        print("    own mpirun command   ", str(self.own_mpirun))
+
+        print("  Profiler            ",  self.profiler)
+        print("  Debugger            ",  self.debugger)
+        print("  Dirac command       ",  self.dirac_cmd)
+        print("  Dirac executable    ",  self.dirac_exe)
+        if self.diracrc_file:
+            print("  sole diracrc file, which was read: ", self.diracrc_file)
+        if self.diracrc_args:
+            print("  default pam arguments from this file: ", self.diracrc_args)
+
+    def create_scratch_dir(self):
+        ''' create the scratch directory for Dirac run  '''
+        if not os.path.isdir(self.scratch_dir) :
+            if self.verbose:
+                print('\n  Creating the scratch directory.')
+            os.makedirs(self.scratch_dir)
+        else:
+            if glob.glob(os.path.join(self.scratch_dir, "*")):
+                print('  The scratch directory already exists and is not empty :')
+                os.chdir(self.scratch_dir)
+                self.list_scratch_dir()
+                os.chdir(self.input_directory)
+            else:
+                print('  The scratch directory already exists and is empty.')
+
+    def copy_file(self, src, dest):
+        """copy file from directory "scr" to "dest"
+     for the printout use 'purified' file names"""
+        try:
+            if self.verbose:
+                print("  Copying %s to %s" % (src, dest))
+            shutil.copy(src, dest)
+        except:
+            print("Copying of files - shutil.copy(src, dest) - failed, error exit ", file=sys.stderr)
+            print(' src full path:', src, file=sys.stderr)
+            print('dest full path:', dest, file=sys.stderr)
+            print('  input dir   :', self.input_directory, file=sys.stderr)
+            sys.stderr.flush()
+            sys.exit(13)
+
+    def copy_with_replacement(self, src, dst):
+        try:
+            if self.verbose:
+                print("  Copying %s to %s" % (src, dst))
+            if self.string_replace_list == []:
+                if src.endswith('.gz') and not dst.endswith('.gz'):
+                    # -ifile.gz=file
+                    # guzip file after copyin
+                    shutil.copy2(src, dst+'.gz')
+                    os.system('gunzip %s.gz' % dst)
+                else:
+                    shutil.copy2(src, dst)
+            else:
+                of = open(dst, 'w')
+                for l in open(src, 'r').readlines():
+                    for r in self.string_replace_list:
+                        l = l.replace(r.split('=')[0], r.split('=')[1])
+                    of.write(l)
+                of.close()
+        except IOError:
+            print("pam: Error copying file %s" % src, file=sys.stderr)
+            raise
+
+    def list_scratch_dir(self):
+        '''
+        lists the content of the master scratch directory;
+        see  http://www.daniweb.com/code/snippet216798.html
+        '''
+        sum_filesize_mb=0
+        print('  content of the (master) scratch directory')
+        print('  ------------------------------------------------------------------------------')
+        print('%25s %12s %s' % ('name', 'size (MB)', '   last accessed'))
+        print('  ------------------------------------------------------------------------------')
+        for filename in os.listdir(self.scratch_dir):
+            filesize_mb = float(os.path.getsize(os.path.join(self.scratch_dir,filename)))/1024000
+            sum_filesize_mb=sum_filesize_mb+filesize_mb
+      # create a dictionary to hold file info
+            file_name = filename
+            file_stats = os.stat(file_name)
+            file_info = {
+                'fname': file_name,
+                'fsize': file_stats[stat.ST_SIZE],
+                'f_lm': time.strftime('%m/%d/%Y %I:%M:%S %p',
+                        time.localtime(file_stats[stat.ST_MTIME])),
+                'f_la': time.strftime('%m/%d/%Y %I:%M:%S %p',
+                        time.localtime(file_stats[stat.ST_ATIME])),
+                'f_ct': time.strftime('%m/%d/%Y %I:%M:%S %p',
+                        time.localtime(file_stats[stat.ST_CTIME])),
+                }
+            print('%25s %10.3f   %s' % (filename, filesize_mb,
+                                        file_info['f_la']))
+            sys.stdout.flush()
+        print('  ------------------------------------------------------------------------------')
+        print('      Total size of all files :  %10.3f  MB ' % sum_filesize_mb)
+        disk = disk_space_find(self.scratch_dir)
+        print('      Disk info:  used    available   capacity [GB]')
+        print('             %10.3f %10.3f   %10.3f ' % (disk.used, disk.available, disk.capacity))
+        print('')
+        sys.stdout.flush()
+
+    def remove_scratch_dir(self):
+        ''' remove the scratch directory (if it exists) after Dirac run '''
+        if os.path.isdir(self.scratch_dir):
+            if self.verbose and os.path.isdir(self.scratch_dir):
+                self.list_scratch_dir()
+            if not self.keep_scratch:
+                # leave the scratch dir to be able to remove it (Windows demand)
+                os.chdir(self.input_directory)
+                if self.verbose:
+                    sys.stdout.write('  going to delete the scratch directory ... ')
+                count=1
+                #miro: I had to use this solution on Windows, because dirac.x.exe process is sometimes 
+                # remaining 'alive' even after its ending 
+                while os.path.isdir(self.scratch_dir):
+                    try:
+                        shutil.rmtree(self.scratch_dir)
+                    except:
+                        count = count + 1
+                if self.verbose:
+                    if count > 1:
+                        sys.stdout.write('done (after %s attempts)' % count)
+                    else:
+                        sys.stdout.write('done')
+                    print()
+            else:
+                if self.verbose:
+                    print('  keeping the scratch directory')
+        sys.stdout.flush()
+
+    def exit_function(self):
+        '''prints message on the DIRAC executable exit according to the input parameter'''
+        elapsed_time = time.time() - self.start_time
+        if self.verbose:
+            print()
+            print('  exit date      :', datetime.datetime.now())
+            print('  elapsed time   :', time.strftime('%Hh%Mm%Ss', time.gmtime(elapsed_time)))
+        f = open(self.output_file_full)
+        if 'E N D   of   D I R A C  output' in f.read():
+            print('  exit           : normal')
+            return_code = 0
+        else:
+            print('  exit           : ABNORMAL (CHECK DIRAC OUTPUT)')
+            return_code = 1
+        f.close()
+        sys.stdout.flush()
+        return return_code
+
+    def get_rc_arguments(self):
+        """
+        Look for possible rc files and return arguments collected from the first found.
+        #-serve as comments.
+        """
+        fullargs = []
+        paths = [os.path.join(os.path.expanduser('~'), '.diracrc'),  # first try $HOME/.diracrc
+                 os.path.join(pam_directory, '.diracrc')]            # then try .diracrc in the pam directory
+        for path in paths:
+            try:
+                f = open(path,'r')
+                read_args=False
+                for l in f.readlines():
+                    l = l.strip()
+                    if len(l) > 0:
+                        if l[0] != '#':
+                            for a in shlex.split(l):
+                                self.diracrc_args.append(os.path.expandvars(a))
+                                fullargs.append(os.path.expandvars(a))
+                                read_args=True
+                if read_args:
+                    break
+            except Exception:
+                pass
+        if self.diracrc_args: # save info about the diracrc file
+            self.diracrc_file = path
+        return fullargs
+
+    def process_pam_arguments(self):
+        ''' the longest method - reading and processing pam script flags  '''
+
+        from optparse import OptionParser, OptionGroup
+
+        usage = \
+            """%prog [options] --inp=*.inp --mol=*.mol [--pcm=*.pcm] [--pot=*.pot]
+   or: %prog [options] --inp=*.inp --mol=*.xyz [--pcm=*.pcm] [--pot=*.pot]
+   or: %prog [options] --fullrestart=ARCHIVE.tgz [--inp=*.inp] [--mol=*.mol | --mol=*.xyz] [--pcm=*.pcm] [--pot=*.pot]
+Options are also read from ~/.diracrc"""
+
+        parser = OptionParser(usage)
+
+        group = OptionGroup(parser, 'Input files - mandatory specifications')
+        group.add_option('--inp', type='string', action='store',
+                         dest='inp_file', help='Dirac input file containing the job directives [*.inp]')
+        group.add_option('--mol', type='string', action='store',
+                         dest='mol_file',
+                         help='file containing the basis set and geometry specifications [*.mol or *.xyz]')
+        group.add_option('--pcm', type='string', action='store',
+                         dest='pcm_file', help='PCMSolver input file [*.pcm]')
+        group.add_option('--pot', type='string', action='store',
+                         dest='pot_file',
+                         help='file containing the polarizable embedding potential parameters [*.pot]')
+        group.add_option(
+            '--fullrestart',
+            type='string',
+            action='store',
+            dest='dest_fullrestart',
+            help="""restart from files within ARCHIVE.tgz;
+                           old input files from ARCHIVE.tgz are reused unless new input files are provided with one or more of \"--inp\", \"--mol\", \"--pcm\", and \"--pot\".""",
+            metavar='ARCHIVE.tgz',
+            )
+        parser.add_option_group(group)
+
+        group = OptionGroup(parser, 'Output files')
+        group.add_option(
+            '--suffix',
+            type='string',
+            action='store',
+            dest='dest_suffix',
+            default=self.output_suffix,
+            help='file suffix for output [default: %default]',
+            metavar='STRING',
+            )
+        group.add_option(
+            '--rsh',
+            type='string',
+            action='store',
+            dest='rsh',
+            default=self.rsh,
+            help='Remote shell program, typically rsh or ssh [default: %default or taken from .dirarc]',
+            metavar='STRING',
+            )
+        group.add_option(
+            '--rcp',
+            type='string',
+            action='store',
+            dest='rcp',
+            default=self.rcp,
+            help='Remote shell program, typically rcp or scp [default: %default or taken from .dirarc]',
+            metavar='STRING',
+            )
+        group.add_option('--noarch', action='store_true',
+                         dest='dest_noarch', default=False,
+                         help='do not create a tgz archive [default: create it]'
+                         )
+        group.add_option('--nobackup', action='store_true',
+                         dest='dest_nobackup', default=False,
+                         help='do not backup old outputs [default: back them up]'
+                         )
+        parser.add_option_group(group)
+
+        group = OptionGroup(parser, 'Memory specification')
+        group.add_option(
+            '--mw',
+            type='int',
+            action='store',
+            dest='dest_mw',
+            default=self.default_memory_work_master,
+            help="""set max memory (in megawords) for WORK array
+                    for the master (for each MPI thread) [default: %default]
+                  """,
+            metavar='INTEGER',
+            )
+        group.add_option(
+            '--mb',
+            type='int',
+            action='store',
+            dest='dest_mb',
+            help="""set max memory (in MB) for WORK array
+                    for the master (for each MPI thread) [default: %default]
+                  """,
+            metavar='INTEGER',
+            )
+        group.add_option(
+            '--gb',
+            type='float',
+            action='store',
+            dest='dest_gb',
+            help="""set max memory (in GB) for WORK array
+                    for the master (for each MPI thread) [default: %default]
+                  """,
+            metavar='FLOAT',
+            )
+        group.add_option(  # default set later - it's --mw setting
+            '--nw',
+            type='int',
+            action='store',
+            dest='dest_nw',
+            help="""set max memory (in megawords) for WORK array
+                    for the co-workers (for each MPI thread) [default: --mw set value]
+                  """,
+            metavar='INTEGER',
+            )
+        group.add_option(
+            '--aw',
+            type='int',
+            action='store',
+            dest='dest_aw',
+            default=self.default_memory_dynamic,
+            help="""set max dynamically allocatable memory (in megawords)
+                    (for each MPI thread) [default: %default]
+                  """,
+            metavar='INTEGER',
+            )
+        group.add_option(
+            '--ag',
+            type='float',
+            action='store',
+            dest='dest_awgb',
+            default=self.default_memory_dynamic,
+            help="""set max dynamically allocatable memory (in gigabytes)
+                    (for each MPI thread) [default: %default]
+                  """,
+            metavar='FLOAT',
+            )
+        parser.add_option_group(group)
+
+        group = OptionGroup(parser, 'MPI settings')
+        group.add_option(
+            '--mpi',
+            type='int',
+            action='store',
+            dest='dest_mpi',
+            default=None,
+            help='set number of MPI processes in parallel run [default: 1]',
+            metavar='INTEGER',
+            )
+
+        group.add_option('--mpirun',
+            type='string',
+            action='store',
+            dest='dest_ownmpirun',
+            help='set the MPI run command, can have own arguments [default: see "pam --show" output]',
+            metavar='STRING')
+
+        group.add_option(
+            '--mpiarg',
+            type='string',
+            action='store',
+            dest='dest_mpiarg',
+            default=None,
+            help="""additonal options passed on to the MPI launcher;
+                            useful arguments could be:
+                            -envall (for MPICH2, Intel MPI)
+                            -x \"PATH LD_LIBRARY_PATH\" (for Open MPI)
+                            which will allow the user to pass the present environment settings from the head node to the scratch nodes.""",
+            metavar='STRING',
+            )
+
+        group.add_option(
+            '--mpi-workdir-argument',
+            type='string',
+            action='store',
+            dest='dest_mpi_workdir_argument',
+            default=None,
+            help='''option to explicitly pass the scratch directory name on to the slaves
+                                    (\"wd\" for MPICH2/Intel MPI, \"wdir\" for Open MPI).''',
+            metavar='STRING',
+            )
+
+        group.add_option(
+            '--machfile',
+            type='string',
+            action='store',
+            dest='machfile',
+            default=None,
+            help='specify a machinefile for a parallel run [default: %default]',
+            metavar='STRING',
+            )
+        parser.add_option_group(group)
+
+        group = OptionGroup(parser, 'Managing data/file transfer')
+
+        group.add_option(
+            '--put',
+            '--copy',
+            type='string',
+            action='store',
+            dest='dest_put',
+            help='copy files to scratch directory ',
+            metavar='"file1 file2 my_file* ..."',
+            )
+
+        group.add_option(
+            '--distribute',
+            type='string',
+            action='store',
+            dest='dest_distribute',
+            help='copy selected files to scratch directories of working nodes in parallel run',
+            metavar='"file1 file2 my_file*..."',
+            )
+
+        group.add_option(
+            '--get',
+            type='string',
+            action='store',
+            dest='dest_get',
+            help='get files from scratch directory',
+            metavar='"file1 file2 my_file*..."',
+            )
+
+        group.add_option(
+            '--env',
+            type='string',
+            action='append',
+            dest='dest_env',
+            help='set environment variables',
+            metavar='"env_var1=value1 env_var2=value2 ..."',
+            )
+
+        group.add_option(
+            '--replace',
+            action='append',
+            default=[],
+            help='replace NAME by VALUE in the mol and inp files',
+            metavar='NAME=VALUE',
+            )
+
+        group.add_option('--incmo', action='store_true',
+                         dest='dest_incmo', default=False,
+                         help='copy DFCOEF to scratch directory [default: %default]'
+                         )
+        group.add_option('--outcmo', action='store_true',
+                         dest='dest_outcmo', default=False,
+                         help='get DFCOEF from scratch directory [default: %default]'
+                         )
+        group.add_option('--inkrmc', action='store_true',
+                         dest='dest_inkrmc', default=False,
+                         help='copy KRMCSCF to scratch directory as KRMCOLD [default: %default]'
+                         )
+        group.add_option('--outkrmc', action='store_true',
+                         dest='dest_outkrmc', default=False,
+                         help='get KRMCSCF and KRMCOLD from scratch directory [default: %default]'
+                         )
+        group.add_option('--outqforce', action='store_true',
+                         dest='dest_outqforce', default=False,
+                         help='get qforce.*.log from scratch directory [default: %default]'
+                         )
+
+        group.add_option('--keep_scratch', action='store_true',
+                         dest='dest_keep_scratch', default=False,
+                         help='keep the scratch directory after calculation [default: delete it]'
+                         )
+        parser.add_option_group(group)
+
+#   radovan: this can be evaluated from sys.argv[0]
+
+        group = OptionGroup(parser, 'Modify default paths and settings')
+
+        group.add_option(
+            '--scratch',
+            type='string',
+            action='store',
+            dest='dest_scratch',
+            help='full path to scratch directory (DIRAC will append a subdirectory to make it unique) [default read from  ~/.diracrc]',
+            metavar='FULL_PATH',
+            )
+
+        group.add_option(
+            '--scratchfull',
+            type='string',
+            action='store',
+            dest='dest_scratchfull',
+            help='full path to scratch directory (DIRAC will not append anything to this path; do NOT choose your /home/user as scratchfull) [default: script defined full path upon ~/.diracrc]',
+            metavar='FULL_PATH',
+            )
+        group.add_option(
+            '--basis',
+            type='string',
+            action='store',
+            dest='dest_basdir',
+            default=self.basdir,
+            help='basis set directory [default: %default]',
+            metavar='FULL_PATH',
+            )
+        group.add_option(
+            '--dirac',
+            type='string',
+            action='store',
+            dest='dest_dirac',
+            default=self.dirac_exe,
+            help='dirac executable [default: %default]',
+            metavar='FULL_PATH',
+            )
+        parser.add_option_group(group)
+
+        group = OptionGroup(parser,
+                            'Advanced options for programming and debugging'
+                            )
+        group.add_option('--show', action='store_true',
+                         dest='just_show_settings', default=False,
+                         help='print current settings (including those from .diracrc) and exit')
+        group.add_option('--silent', action='store_true',
+                         dest='silent_pam', default=False,
+                         help='run pam silent with minimal output')
+        group.add_option('--debug', action='store_true',
+                         dest='dest_debug', default=False,
+                         help='run in debugger [default: %default]')
+        group.add_option('--summit', action='store_true',
+                         dest='dest_summit', default=False,
+                         help='run with summits jsrun [default: %default]')
+        group.add_option(
+            '--debugger',
+            type='string',
+            action='store',
+            dest='dest_debugger',
+            help='set full path to debugger [default: in .diracrc]',
+            metavar='FULL_PATH',
+            )
+        group.add_option('--valgrind', action='store_true',
+                         dest='dest_vg', default=False,
+                         help='run with valgrind [default: %default]')
+        group.add_option('--profile', action='store_true',
+                         dest='dest_profile', default=False,
+                         help='perform profiling [default: %default]')
+        group.add_option(
+            '--profiler',
+            type='string',
+            action='store',
+            dest='dest_profiler',
+            default=self.profiler,
+            help='set full path to profiler [default: %default]',
+            metavar='FULL_PATH',
+            )
+        group.add_option(
+            '--timeout',
+            type='string',
+            action='store',
+            dest='dest_timeout',
+            help='limit dirac.x execution time (in #d#h#m#s, or in pure seconds-integer) [default: no limit; reads env.var. DIRTIMEOUT]'
+                ,
+            metavar='TIME_STRING',
+            )
+        parser.add_option_group(group)
+
+        # read the .diracrc file #
+        fullargs = self.get_rc_arguments()
+        fullargs.extend(sys.argv[1:])
+        (options, args) = parser.parse_args(fullargs)
+
+        self.pam_args = fullargs
+
+        if len(sys.argv) == 1: #   user has given no arguments: print help and exit
+            print(parser.format_help().strip())
+            print()
+            print('  further information on Dirac calculations may be found at:')
+            print('  http://www.diracprogram.org')
+            print()
+            sys.exit()
+
+        # produce minimal output
+        if options.silent_pam:
+            self.verbose = False
+        else:
+            self.verbose = True
+
+        self.output_suffix = options.dest_suffix
+
+        self.max_memory_work_master = int(options.dest_mw)
+        if options.dest_mb :
+            self.max_memory_work_master = int(options.dest_mb/self.mw_to_mb)
+        if options.dest_gb :
+            self.max_memory_work_master = int(options.dest_gb/self.mw_to_gb)
+
+        if options.dest_nw:
+            # user defined value
+            self.max_memory_work_slave = int(options.dest_nw)
+        else:
+            # default is the --mw set value of master max memory
+            self.max_memory_work_slave = self.max_memory_work_master
+
+        self.max_memory_dynamic = int(options.dest_aw)
+
+        if options.dest_awgb:
+            self.max_memory_dynamic = int(options.dest_awgb/self.mw_to_gb)
+
+        # DIRAC_MPI_COMMAND is overriden with the "--mpi" flag !
+        if os.environ.get('DIRAC_MPI_COMMAND') and not options.dest_mpi:
+            self.parallel_run = True
+            self.dirac_mpi_command = os.environ.get('DIRAC_MPI_COMMAND') + ' '
+
+        if options.dest_ownmpirun:
+            self.own_mpirun = options.dest_ownmpirun
+
+        if options.dest_mpiarg:
+            self.mpiarg = options.dest_mpiarg
+
+        if os.environ.get('DIRAC_MPI_MACHFILE'):
+            #following  --machfile keyword overwrites enviro variable
+            self.machinefile=os.environ.get('DIRAC_MPI_MACHFILE') + ' '
+
+        if options.machfile:
+            self.global_scratch_disk = False
+            self.machinefile = options.machfile
+
+        if options.dest_mpi_workdir_argument:
+            self.argument_to_pass_scratch_dir_to_slaves = options.dest_mpi_workdir_argument
+
+        # if "--mpi " flag present, override 'DIRAC_MPI_COMMAND' envirovariable 
+        if options.dest_mpi:
+            self.parallel_run = True
+            self.nr_proc = int(options.dest_mpi)
+            if self.own_mpirun:
+                print('Error, pam: you can not combine --mpirun and --mpi flags, use the former flag only ! ')
+                sys.exit(14)
+            else:
+                self.dirac_mpi_command = str(self.mpirun) + ' -np ' + str(self.nr_proc) + ' '
+
+        if self.mpiarg: 
+            if  self.own_mpirun:
+                print('Error, pam: you can not combine --mpirun and --mpiarg flags, use the former flag only ! ')
+                sys.exit(15)
+            else:
+                self.dirac_mpi_command = self.dirac_mpi_command + str(self.mpiarg) + ' ' 
+
+        # overwrite whatever was specified for MPI because summit does not fit the general scheme
+        if options.dest_summit:
+            self.summit = True
+
+        # The CMAKE variable ENABLE_MPI is "True" for "setup --mpi", otherwise it is "False".
+        if "@ENABLE_MPI@" == "True" or "@ENABLE_MPI@" == "ON":
+            # always is parallel run if ENABLE_MPI=ON
+            self.parallel_run = True
+            if self.dirac_mpi_command is None:
+               if self.own_mpirun:
+                  self.dirac_mpi_command = str(self.own_mpirun) + ' '
+               else:
+                  self.dirac_mpi_command = self.mpirun + ' -np ' + str(self.nr_proc) + ' '
+            if os.environ.get('LOCAL_SCRATCH_BOOL'):
+                # set local disks for paralell run
+                self.global_scratch_disk = False
+
+        self.basdir = str(options.dest_basdir)
+        self.dirac_exe = str(options.dest_dirac)
+        # check the executable
+        if  os.path.isfile(self.dirac_exe) is False:
+            err_message=\
+            "The dirac.x(.exe) executable either does not exist or its location is wrongly or not specified. Wanted executable:"+self.dirac_exe_file
+            print_error_message(err_message)
+
+        if options.dest_timeout:
+            print('...timeout from pam:')
+            self.timeout = process_time_string(options.dest_timeout)
+
+        self.nobackup = options.dest_nobackup
+
+        if options.dest_noarch:
+            self.archive = False
+
+        if options.dest_distribute:
+            # wildcards...
+            self.distribute = glob.glob(options.dest_distribute)
+
+        if options.dest_put:
+            self.put_files = options.dest_put
+
+        if options.dest_get:
+            self.get_files = options.dest_get
+
+        if options.dest_env:
+            self.environment = options.dest_env
+
+        if options.replace:
+            self.string_replace_list = options.replace
+
+        self.incmo = options.dest_incmo
+        self.outcmo = options.dest_outcmo
+        self.outkrmc = options.dest_outkrmc
+        self.inkrmc = options.dest_inkrmc
+        self.outqforce = options.dest_outqforce
+
+        self.rcp = options.rcp
+        self.rsh = options.rsh
+
+        if options.dest_fullrestart:
+            self.archive_name = options.dest_fullrestart
+            self.full_restart = True
+
+        self.keep_scratch = options.dest_keep_scratch
+        self.just_show_settings = options.just_show_settings
+
+        if options.dest_debug:
+            self.debug = True
+
+
+        if options.dest_debugger:
+            debugger_full_path=str(find_executable(options.dest_debugger))
+            # assign only correctly defined debugger
+            if os.path.isfile(debugger_full_path):
+                self.debugger = debugger_full_path
+
+        if options.dest_vg:
+            self.vg_debug = True
+        if options.dest_profile:
+            self.profile = True
+
+        self.profiler = options.dest_profiler
+
+    # assign input directory ...
+        self.input_directory = os.getcwd()
+
+#   input and molecule files are required
+#   check that they are there, if not exit
+#   if yes, assign output file name
+
+        if not self.just_show_settings:
+            if options.mol_file is not None and options.inp_file \
+                is not None:
+                    if options.pcm_file is not None:
+                        self.input_molecule = options.mol_file
+                        self.input_dirac = options.inp_file
+                        self.input_pcm   = options.pcm_file
+                        self.assign_mol_inp_files()
+                    else:
+                        self.input_molecule = options.mol_file
+                        self.input_dirac = options.inp_file
+                        self.assign_mol_inp_files()
+            else:
+                if not self.full_restart:
+                    print_error_message("both --mol and --inp input parameters are required !")
+                    sys.exit(22)
+            if options.pot_file is not None:
+                self.input_potential = options.pot_file
+                self.assign_pot_file()
+
+        self.set_output_name()
+
+        if self.parallel_run and not self.global_scratch_disk:
+            self.distribute_files = True
+
+        # determine scratch directory
+
+        # 1) if user sets by flag or in .diracrc, use this choice
+        if options.dest_scratch:
+            self.scratch_dir = options.dest_scratch
+
+        # 2) if user did not set, check whether environment variables are set
+        if not self.scratch_dir:
+            if os.environ.get('DIRAC_TMPDIR'):
+                self.scratch_dir = os.environ.get('DIRAC_TMPDIR')
+
+        # 3) last resort: use $HOME/DIRAC_scratch_directory
+        if not self.scratch_dir:
+            self.scratch_dir = os.path.join(os.path.expanduser("~"), 'DIRAC_scratch_directory')
+
+        # finally ALWAYS append $USER/DIRAC_inp_mol_pid
+        # otherwise users could wipe out their home directory
+        self.scratch_dir = os.path.join(self.scratch_dir, self.user_name, 'DIRAC_%s_%s' % (self.output_name, self.current_pid))
+
+        # --scratchfull overrides --scratch
+        if options.dest_scratchfull:
+            self.scratch_dir = options.dest_scratchfull
+
+    def assign_mol_inp_files(self):
+        '''Assign "self.input_file_molecule" and
+        "self.input_file_dirac" with proper input file names according to
+        filled variables (class members) "self.input_molecule" and
+        "self.input_dirac"'''
+
+        if os.path.isfile(self.input_molecule + '.mol'):
+            self.input_file_molecule = self.input_molecule + '.mol'
+        elif os.path.isfile(self.input_molecule + '.xyz'):
+            self.input_file_molecule = self.input_molecule + '.xyz'
+        elif os.path.isfile(self.input_molecule):
+            self.input_file_molecule = self.input_molecule
+        else:
+            print( '\npam: DIRAC molecule file %s not found' % self.input_molecule, file=sys.stderr)
+            
+            print('     input directory: %s' % self.input_directory, file=sys.stderr)
+            sys.exit(4)
+
+        if os.path.isfile(self.input_dirac + '.inp'):
+            self.input_file_dirac = self.input_dirac + '.inp'
+        elif os.path.isfile(self.input_dirac):
+            self.input_file_dirac = self.input_dirac
+        else:
+            print('\npam: DIRAC input file %s not found' % self.input_dirac, file=sys.stderr)
+            print('     input directory: %s' % self.input_directory, file=sys.stderr)
+            sys.exit(5)
+        
+        if os.path.isfile(self.input_pcm + '.pcm'):
+            self.input_file_pcm = self.input_pcm + '.pcm'
+        elif os.path.isfile(self.input_pcm):
+            self.input_file_pcm = self.input_pcm
+        else:
+            self.input_file_pcm = '' 
+
+    def assign_pot_file(self):
+        '''Assign "self.input_file_potential" with proper input file
+        names according to filled variables (class members) "self.input_potential"'''
+
+        if os.path.isfile(self.input_potential + '.pot'):
+            self.input_file_potential = self.input_potential + '.pot'
+        elif os.path.isfile(self.input_potential):
+            self.input_file_potential = self.input_potential
+        else:
+            print >> sys.stderr, '\npam: DIRAC potential file %s not found' % self.input_potential
+            print >> sys.stderr, '     input directory: %s' % self.input_directory
+            sys.exit(6)
+
+
+    def set_output_name(self):
+        '''Set the output name string to be used later for naming the
+        output file and the scratch directory'''
+
+        if len(self.input_molecule) > 0 and len(self.input_dirac) > 0:
+            if '.mol' in self.input_file_molecule:
+                mol_file_stripped = \
+                    self.input_file_molecule.replace('.mol', '', 1)
+            elif '.xyz' in self.input_file_molecule:
+                self.xyz_molecule_input = True
+                mol_file_stripped = \
+                    self.input_file_molecule.replace('.xyz', '', 1)
+            else:
+                # no suffix, never mind
+                mol_file_stripped = self.input_file_molecule
+            # ... strip off from path
+            mol_file_stripped = os.path.split(mol_file_stripped)[1]
+
+            if '.inp' in self.input_file_dirac:
+                inp_file_stripped = self.input_file_dirac.replace('.inp'
+                        , '', 1)
+            else:
+                # no suffix, continuing..
+                print('The dirac input file does not contain recommended suffix, never mind...')
+                inp_file_stripped = self.input_file_dirac
+            # ... strip off from path
+            inp_file_stripped = os.path.split(inp_file_stripped)[1]
+
+            if len(self.input_potential) > 0:
+                if '.pot' in self.input_file_potential:
+                    pot_file_stripped = \
+                        self.input_file_potential.replace('.pot', '', 1)
+                else:
+                    # no suffix, never mind
+                    pot_file_stripped = self.input_file_potential
+                pot_file_stripped = os.path.split(pot_file_stripped)[1]
+
+            # set proper output file structure
+            self.output_name = inp_file_stripped + '_' + mol_file_stripped
+            if self.input_file_pcm:
+                # Strip suffix
+                pcmFname, fileExtension = os.path.splitext(self.input_file_pcm)
+                self.output_name = inp_file_stripped + '_' + mol_file_stripped + '_' + pcmFname
+            if len(self.input_potential) > 0:
+                self.output_name = self.output_name + '_' + pot_file_stripped
+        elif self.full_restart:
+            # todo: verify *.tgz ?
+            self.output_name = self.archive_name.replace('.tgz', '', 1)
+        else:
+            # assign default name
+            self.output_name = 'dirac_output.' + str(self.current_pid)
+
+
+    def set_mkl_environment_variables(self):
+        '''
+        For the Intel-MKL library linked with DIRAC
+        set MKL & OpenMP environment variables to safe defaults
+        unless they are set by the user where we leave them as
+        they are and trust that the user knows what he/she is doing.
+        These variables are valid for both serial and (hybrid) parallel runs.
+        TODO: Extend variables setting for OpenBLAS !
+        '''
+        if self.verbose:
+            print()
+            print('  Setting MKL and OPENMP environment to default values (if not set already)')
+        if not os.environ.get('MKL_NUM_THREADS'):
+            os.environ['MKL_NUM_THREADS'] = '1'
+            if self.verbose:
+                print('   MKL_NUM_THREADS = 1')
+        else:
+            if self.verbose:
+                print('   Variabl.MKL_NUM_THREADS = ',os.environ.get('MKL_NUM_THREADS'))
+        if not os.environ.get('MKL_DYNAMIC'):
+            os.environ['MKL_DYNAMIC'] = 'FALSE'
+            if self.verbose:
+                print('   MKL_DYNAMIC = "FALSE"')
+        else:
+            if self.verbose:
+                print('   Variabl.MKL_DYNAMIC = ',os.environ.get('MKL_DYNAMIC'))
+        if not os.environ.get('OMP_NUM_THREADS'):
+            os.environ['OMP_NUM_THREADS'] = '1'
+            if self.verbose:
+                print('   OMP_NUM_THREADS = 1')
+        else:
+            if self.verbose:
+                print('   Variabl.OMP_NUM_THREADS = ',os.environ.get('OMP_NUM_THREADS'))
+        if not os.environ.get('OMP_DYNAMIC'):
+            os.environ['OMP_DYNAMIC'] = 'FALSE'
+            if self.verbose:
+                print('   OMP_DYNAMIC="FALSE"')
+        else:
+            if self.verbose:
+                print('   Variabl.OMP_DYNAMIC=',os.environ.get('OMP_DYNAMIC'))
+
+    def set_environment(self):
+        '''
+        Set environment variables as specified by the user (e.g. in .diracrc)
+        Implemented for the ExaTensor library, but useful in general.
+        '''
+
+        if self.verbose:
+           print('  Setting environment variables (as specified explicitly or in .diracrc)')
+        for env_options in self.environment:
+            for env_var in env_options.split(' '):
+                env = env_var.split('=')[0]
+                var = env_var.split('=')[1]
+                os.environ[env] = var
+                if self.verbose:
+                    print('  ',env,'=',var)
+
+    def copy_files(self):
+        '''copy file from any directory to the scratch directory'''
+
+        def copy_single_file(file_name, file_name_scr):
+            if os.path.isfile(file_name):
+                file_name_scratch = os.path.join(self.scratch_dir,os.path.basename(file_name_scr))
+                self.copy_file(file_name, file_name_scratch)
+            else:
+                if self.expert_mode:
+                    
+                    print('happens in input directory:', self.input_directory, file=sys.stderr)
+                    print('  Warning: file "', file_name,
+                          '" you want to copy to scratch_dir does not exist, continuing at your own risk.',
+                          file=sys.stderr)
+
+                else:
+                    print('happens in input directory:', self.input_directory, file=sys.stderr)
+                    print('Error exit: file "', file_name,
+                          '" you want to copy to scratch_dir does not exist !  ', file=sys.stderr)
+                    sys.exit(11)
+
+    # create the scratch directory ...
+        self.create_scratch_dir()
+
+    # copy dirac.x executable if wanted
+        self.copy_file(self.dirac_exe, os.path.join(self.scratch_dir,self.dirac_exe_file))
+
+    # restarting stuff
+        if self.full_restart:
+            copy_single_file(self.archive_name, self.archive_name)
+            print('  Unpacking the archive file into the scratch directory using python tarfile module:')
+            tar = tarfile.open(self.archive_name, 'r:gz')
+            print(' ', tar.getnames())
+            for tar_member in tar.getnames():
+                # TarFile.extractall is from python version 2.5, but we lean on version 2.4
+                tar.extract(tar_member,path=self.scratch_dir)
+            tar.close()
+
+    # copy input files
+    # Note: this copy is after "restarting stuff" such that specified input files replace those from a restart file
+        if self.input_file_molecule:
+            if self.xyz_molecule_input:
+                self.copy_with_replacement(self.input_file_molecule, os.path.join(self.scratch_dir, 'MOLECULE.XYZ'))
+            else:
+                self.copy_with_replacement(self.input_file_molecule, os.path.join(self.scratch_dir, 'MOLECULE.MOL'))
+        else:
+            print('  No molecule file provided; pam will assume that it is obtained from the restart file.')
+        if self.input_file_dirac:
+            self.copy_with_replacement(self.input_file_dirac, os.path.join(self.scratch_dir, 'DIRAC.INP'))
+        else:
+            print('  No input file provided; pam will assume that it is obtained from the restart file.')
+        if self.input_file_potential:
+            self.copy_with_replacement(self.input_file_potential, os.path.join(self.scratch_dir, 'POTENTIAL.INP'))
+        if self.input_file_pcm:
+            self.copy_with_replacement(self.input_file_pcm, os.path.join(self.scratch_dir, 'pcmsolver.inp'))
+            sys.path.append('@PCMSOLVER_PARSE_DIR@')
+            current = os.getcwd()
+            os.chdir(self.scratch_dir)
+            import pcmsolver
+            pcmsolver.parse_pcm_input('pcmsolver.inp')
+            os.chdir(current)
+
+        # put files to the scratch directory
+        if self.put_files:
+            for p in self.put_files.split():
+                if '=' in p:
+                    f1 = p.split('=')[0]
+                    f2 = p.split('=')[1]
+                    copy_single_file(f1, f2)
+                else:
+                    for f in glob.glob(p):
+                        copy_single_file(f, f)
+
+        # copies files to scratch_dir
+        if self.incmo:
+            file_name = 'DFCOEF'
+            copy_single_file(file_name,file_name)
+        if self.inkrmc:
+            file_name_loc = 'KRMCSCF'
+            file_name_scr = 'KRMCOLD'
+            copy_single_file(file_name_loc,file_name_scr)
+
+    def distribute_scratch_dir(self):
+        """
+        This routine is called when local disks are selected
+        for parallel calculations and we need to distribute dirac.x and input files onto the local disks.
+        """
+        if not self.rcp:
+            print_error_message('No rcp command specified, use --rcp= on the command line or in ~/.diracrc')
+            sys.exit(-1)
+        if not self.rsh:
+            print_error_message('No rsh command specified, use --rsh= on the command line or in ~/.diracrc')
+            sys.exit(-1)
+        # get the list of nodes
+        self.get_nodes()
+
+    # ... distribute master scratch_dir's selected files over different nodes scratch dirs
+    # by "copying $master:$file onto $node:$WRK/."
+    # otherwise print message that all CPUs are on one machine-master
+    #
+        if self.nodes:
+            files_to_nodes=self.core_dirac_files+self.distribute # list of files to be distributed over nodes
+            print('  Copying selected content of master -', self.master, '- scratch directory to nodes -',
+                  self.nodes)
+            for node in self.nodes:
+                # create scratch directories on the nodes; TODO: find pure python replacement
+                command = self.rsh + ' ' + node + ' "mkdir -p ' \
+                    + self.scratch_dir + ' "'
+                os.system(command)
+                # copies file after file
+                for this_file in os.listdir(self.scratch_dir):
+                    # distribute only selected files in the list
+                    if this_file in files_to_nodes:
+                        this_file_full = os.path.join(self.scratch_dir,this_file)
+                        # TODO: replace the linux shell command by pure python solution
+                        command = self.rcp + ' ' + this_file_full + ' ' \
+                            + node + ':' + this_file_full
+                        if self.verbose:
+                            print('  ', command)
+                        os.system(command)
+        else:
+            print('  All CPUs are on the master, no distribution of scratch_dir over different nodes.')
+
+    def set_output_file(self):
+        '''Set the name of the output file by using "self.output_name"
+    which is prepared in set_output_name(self) routine'''
+
+        if self.output_name and self.output_suffix:
+
+            output_file_base = self.output_name
+            if self.string_replace_list != []:
+                for r in self.string_replace_list:
+                    output_file_base += '_' + r
+            self.output_file = output_file_base + '.' + self.output_suffix
+            self.output_file_full = os.path.join(self.input_directory, self.output_file)
+        else:
+            print('can not set output file - some strings not set up !')
+            print('self.output_name=', self.output_name)
+            print('self.output_suffix=', self.output_suffix)
+            sys.exit(-1)
+
+    def set_dirac_environment(self):
+        """export important variables for DIRAC"""
+
+        if os.environ.get('BASDIR_PATH'):
+            self.basdir = os.environ.get('BASDIR_PATH')
+        else:
+            if not is_windows():
+                self.basdir = self.input_directory + ':' + self.basdir
+            else:
+                self.basdir = self.input_directory + ';' + self.basdir
+
+        #miro: BASDIR enviro-variable is read by dirac.x, so set it
+        os.putenv('BASDIR', self.basdir)
+
+        # set path to laplace input data
+        try:
+          os.putenv('LAPLACE_ROOT',os.path.join(pam_directory,'external'))
+        except:
+          pass
+        
+        dirwrk_amount = str(int(self.max_memory_work_master * 1000000))
+        try:
+            # make sure DIRWRK is integer
+            os.putenv('DIRWRK', dirwrk_amount)
+        except:
+            print('error in DIRWRK variable passing !', filesys.stderr,)
+
+            print('variable value :', dirwrk_amount, file=sys.stderr)
+            sys.exit(17)
+
+        os.putenv('DIRMAX', str(int(self.max_memory_dynamic * 1000000)))
+
+        if self.parallel_run:
+        # set environ. variables for parallel dirac.x run
+            os.putenv('DIRPAR', '1')
+            os.putenv('DIRNOD', str(int(self.max_memory_work_slave * 1000000)))
+            if not self.global_scratch_disk:
+                os.putenv('GLBSCR', '0')
+            else:
+                os.putenv('GLBSCR', '1')
+        else:
+            os.putenv('DIRPAR', '0')
+
+    # check the timeout environment variable, check if the timeout variable did not enter already through the pam flag --timeout
+        timeout_env=os.getenv('DIRTIMEOUT')
+        if timeout_env and self.timeout==None:
+            self.timeout = process_time_string(timeout_env)
+
+    def set_dirac_cmd(self):
+        '''set the dirac command to be launched by the system (serial or parallel)'''
+
+        dirac_executable = os.path.join(self.scratch_dir,self.dirac_exe_file)
+
+        # On summit we execute a script that executes dirac.x (to keep things simple...)
+        if self.summit:
+           # assemble the jsrun command that we need and put this at the place of mpirun command
+           mpi_command = "jsrun --smpiargs='-async' --smpiargs='-mca common_pami_use_odp 1' -bnone"
+           mpi_command =  mpi_command + ' -n ' + str(self.nr_proc)
+           mpi_command =  mpi_command + ' -a 1'
+           mpi_command =  mpi_command + ' -r ' + os.environ.get('QF_PROCS_PER_NODE')
+           mpi_command =  mpi_command + ' -c ' + os.environ.get('QF_CORES_PER_PROCESS')
+           mpi_command =  mpi_command + ' -g ' + os.environ.get('QF_GPUS_PER_PROCESS') + ' '
+           self.dirac_mpi_command = mpi_command
+           # create an executable script to set the correct OMP_PLACES before starting dirac.x
+           path_to_script = os.path.join(self.scratch_dir,'exec_script.sh')
+           with open(path_to_script, 'w') as script:
+               script.write("#!/bin/bash \n")
+               script.write(" \n")
+               script.write("# OpenMP environment \n")
+               script.write("export OMP_PROC_BIND=\""+ os.environ.get('OMP_PROC_BIND') +"\" \n")
+               script.write("remainder=$(( $PMIX_RANK % 2 ))\n")
+               script.write("if [ $remainder -eq 0 ]; then\n")
+               script.write("export OMP_PLACES='{0},{4},{8},{12},{28:56},{16},{20},{24}' \n")
+               script.write("else\n")
+               script.write("export OMP_PLACES='{88},{92},{96},{100},{116:56},{104},{108},{112}'\n")
+               script.write("fi\n")
+               script.write(" \n")
+               script.write("# echo \" OMP_NUM_THREADS = $OMP_NUM_THREADS \" \n")
+               script.write("# echo \" OMP_DYNAMIC = $OMP_DYNAMIC \" \n")
+               script.write(" \n")
+               script.write("./dirac.x\n")
+               script.close()
+           os.chmod(path_to_script, 509)
+           dirac_executable = path_to_script
+
+        if not os.path.isfile(dirac_executable):
+            print_error_message(dirac_executable+' not found!')
+            sys.exit(13)
+
+        if self.parallel_run:
+            if self.mpirun is None:
+                # radovan: it can happen that pam is called with --mpi but it doesn't find mpirun
+                #          then self.mpirun is None and we have to stop here otherwise pam calls
+                #          'None -np N /path/to/dirac.x'
+                sys.exit('pam did not find mpirun, check your $PATH, or assign it as parameter ! ')
+
+            # ... add extra mpirun argument - scratch directory 
+            if self.argument_to_pass_scratch_dir_to_slaves:
+                self.dirac_mpi_command += self.argument_to_pass_scratch_dir_to_slaves + ' ' \
+                                       + self.scratch_dir + ' '
+
+            # add extra mpi arguments - machinefile
+            if self.machinefile:
+                self.dirac_mpi_command += '--hostfile ' + self.machinefile + ' '
+
+            #  ... afterwards set up the core dirac command for parallel run
+            self.dirac_cmd =  self.dirac_mpi_command
+               
+            # OpenMPI debugging with valgrind: http://www.open-mpi.org/faq/?category=debugging#memchecker_run
+            # additional valgrind flags to be read from files ~/.valgrindrc and ./.valgrindrc
+            if self.vg_debug:
+                # master the final command launcher (as std debugger); TODO: adapt for Windows
+                if self.dirac_cmd:
+                    self.dirac_cmd =  self.dirac_cmd + \
+                       ' valgrind --log-fd=1 ' + dirac_executable + ' | tee ' + self.output_file_full
+                else:
+                    self.dirac_cmd=' valgrind --log-fd=1 ' + dirac_executable + ' | tee ' + self.output_file_full
+            else:
+               # no valgrind debugging, standard parallel run
+                if self.dirac_cmd:
+                    self.dirac_cmd =  self.dirac_cmd + dirac_executable
+                else:
+                    self.dirac_cmd =  dirac_executable
+
+        else:
+            # serial run (also in debugger)
+            if self.debug:
+                # first check if debugger is set
+                if self.debugger is None:
+                    print_error_message("\n Though debugging wanted, no debugger is assigned - check the flag !")
+                    sys.exit(234)
+                if find_executable(self.debugger) is None:
+                    print_error_message('\n no debugger found in the <diracrc> file !')
+                    sys.exit(235)
+                if not is_windows():                        
+                    self.dirac_cmd = self.debugger + ' ' + dirac_executable \
+                    + ' | tee ' + self.output_file_full
+                else:
+                    #non-interactive adaptation for Windows: just run and quit automatically
+				    #because interactive mode has non-standard behaviour in PowerShell
+                    self.dirac_cmd = 'PowerShell -Command \"&{' + self.debugger + ' -ex run -ex quit ' \
+                    + dirac_executable + ' | Tee-Object -FilePath ' + self.output_file_full + '}\"'
+            elif self.vg_debug:
+                # valgrind flags read from files ~/.valgrindrc and ./.valgrindrc
+                # -v --error-limit=no --leak-check=full  --show-reachable=yes
+                self.dirac_cmd = 'valgrind --log-fd=1 ' \
+                    + dirac_executable + ' | tee ' + self.output_file_full
+            else:
+                # no debug, plain run
+                self.dirac_cmd = dirac_executable
+
+    def handle_machinefile(self):
+        """
+        take care of the machinefile
+        """
+    #  The list of machines available to dirac.x check if this is an enviromental variable
+    #   with "$" - than get its content
+
+        if self.machinefile[0] == '$':
+            machinefile_temp = self.machinefile[1:len(self.machinefile)]
+            self.machinefile_content = ''
+            try:
+                self.machinefile_content = os.environ[machinefile_temp]
+            except:
+                print('  The ', self.machinefile,
+                      ' enviroment variable for machinefile is not active (no batch system).')
+        else:
+            # true file, no pointing variable
+            self.machinefile_content = self.machinefile
+
+    def get_nodes(self):
+        """
+        get the list of unique nodes
+        """
+        # first, get the machinefile content if any
+        if self.machinefile:
+            self.handle_machinefile()
+
+        master_id = '' 
+        # get names of nodes in the machinefile
+        if os.path.isfile(str(self.machinefile_content)):
+            for line in fileinput.input(self.machinefile_content):
+                line = line.split()[0]   # first entry is each line should the the name of the node
+                if len(master_id) == 0:  # set master id from first line in machinefile
+                    master_id = line
+                if line != master_id:    # append only slaves different from the master
+                    self.nodes.append(line)
+            # make a unique list of nodes - remove all duplicities from the list
+            self.nodes=list(set(self.nodes))
+            print('  Machinefile read, list of unique nodes obtained:', self.nodes)
+
+    def write_info_output(self):
+        """
+        Write useful info at the beginning of the output file - size of
+        all static allocations, for example
+        """
+        self.f.write('DIRAC pam run in ' + self.input_directory + '\n')
+        if not is_windows:
+            # this is pure linux way to obatin size of static allocations
+            size_command = \
+            "echo -e 'Size of all static allocations: \c'; size " \
+            + self.dirac_exe + ' 2> /dev/null | grep ' + self.dirac_exe \
+            + " 2> /dev/null | awk '{printf $3/(1024*1024)} ' 2> /dev/null; echo ' MB ' || echo 'can not be determined' "
+            subprocess.Popen(shlex.split(size_command),
+                             stdin=subprocess.PIPE, stdout=self.f, universal_newlines=True)
+
+    def grep_for_warnings(self):
+        if os.path.isfile(self.output_file_full):
+            f = open(self.output_file_full, 'r')
+            warnings = ''
+            for line in f.readlines():
+                if 'warning' in line.lower():
+                    warnings += line
+            f.close()
+            if warnings != '':
+                print('\n  output lines containing warnings:')
+                print(warnings)
+                sys.stdout.flush()
+
+    def execute_dirac(self):
+        '''
+        Excecute dirac.x, either in serial or parallel mode. Perform debugging, if wanted.
+        '''
+        # go to the scratch directory
+        os.chdir(self.scratch_dir)
+
+        if not self.nobackup:
+            backup_file(some_file=os.path.join(self.input_directory,self.output_file),upto=None)
+
+        # note: : is separator on Linux and ; on Windows
+        if not is_windows():
+            basis_set_directory_list = self.basdir.split(':')
+        else:
+            basis_set_directory_list = self.basdir.split(';')
+            
+        if self.verbose:
+            if os.environ.get('BASDIR_SET'):
+                print('  Basis set libraries (BASDIR_SET) : %s' % basis_set_directory_list[0])
+            else:
+                print('  Basis set libraries (default)    : %s' % basis_set_directory_list[0])
+            # ...
+            if len(basis_set_directory_list) > 1:
+                for i in range(1, len(basis_set_directory_list)):
+                    if basis_set_directory_list[i] != '.':
+                        print('                        %s' 
+                              % basis_set_directory_list[i])
+                            
+        if not self.debug and not self.vg_debug:
+            self.launch_dirac_subprocess()
+        elif not self.parallel_run:
+            print( '  debugging dirac.x in plain serial run, command:')
+            print( self.dirac_cmd)
+            os.system(self.dirac_cmd)
+        elif self.parallel_run and self.vg_debug:
+            print('  debugging dirac.x with valgrind in parallel run, command:')
+            print(self.dirac_cmd)
+            os.system(self.dirac_cmd)
+        else:
+            print('...no dirac run - wrong parallel & classic debugger combination')
+
+        if self.profile:
+            # do the profiling after the execution if wanted
+            self.profile_dirac()
+
+    def print_all_processes(self):
+        """
+        print all remaining processes using the system command "ps" (Linux), "tasklist" (Windows)
+        TODO: adapt for Mac?
+        """
+        sys.stdout.flush()
+        sys.stderr.flush()
+        if not is_windows():
+            command="ps -fu " + self.user_name
+        else:
+            command="tasklist /FI \"USERNAME eq " + self_master + "\\" + self_user_name + "\""
+        process_string=subprocess.Popen(shlex.split(command),stdin=subprocess.PIPE,\
+                                        stdout=subprocess.PIPE, universal_newlines=True).communicate()[0]
+        print_error_message("\n current processes left: \n--------------------------- \n"+process_string)
+
+    def child_signaller(self,signum,frame):
+        '''
+        Pass on interrupting signals to pam and to its all children.
+        '''
+        def signal_numtoname (num): # convert signal number to the name
+            name = []
+            for key in list(signal.__dict__.keys()):
+                if key.startswith("SIG") and getattr(signal, key) == num:
+                    name.append (key)
+            if len(name) == 1:
+                return name[0]
+            else:
+                return str(num)
+        signum_kill=signal.SIGKILL # for killing the process, use the most lethal ammo
+        # interrupt dirac run
+        if self.pgid is not None:
+            if signum != signum_kill:
+                interrupt_message="\npam: Caught signal #"+str(signum)+"("+signal_numtoname(signum)+")"\
+                " but dirac.x process group is going to be terminated"+\
+                " with stronger ammunution - signal #"+\
+                str(signum_kill)+" ("+signal_numtoname(signum_kill)+"). "
+            else:
+                interrupt_message="\npam: Caught signal #"+str(signum)+" ("+signal_numtoname(signum)+")"\
+                " -  dirac.x process group is going to be terminated with this signal."
+            print_error_message(interrupt_message)
+            if not is_windows():
+                # Always kill with the strongest ammunution - SIGINT, as signum=14(SIGALARM) was leaving zombie!
+                os.killpg(self.pgid,signum_kill)
+            else:
+                kill_win(self.pgid)
+
+            # stamp the  general  interruption message into the output file
+            self.f.write(interrupt_message+"\n") #
+            # flush out specific timeout interruption message
+            if signum == 14 and self.timeout:
+                timeout_interrupt_message="\npam: This is specific timeout kill after "+str(self.timeout)+" seconds."
+                print_error_message(timeout_interrupt_message)
+                self.f.write(timeout_interrupt_message+"\n")
+            #TODO: maybe specify CTRL+C interruption and  flush out message about it ?
+            # flush out the final sdterr message on details about the dirac run
+            self.stderr_message()
+            # clean the working directory and exit
+            self.remove_scratch_dir()
+            return_code = self.exit_function()
+        sys.exit()
+
+    def stderr_message(self):
+        '''
+        flush stderr message about details of the terminated run;
+        serves for the CDash-board
+        '''
+        # flush out message on the existence of stderr output
+        print( "  pam, stdout info: process ended with nonzero stderr stream - check ", file=sys.stdout)
+        print('\n **** dirac-executable stderr console output : **** ', file=sys.stderr)
+        if self.dirac_stderr :
+            print(self.dirac_stderr, file=sys.stderr)
+        print('directory:', self.input_directory, file=sys.stderr)
+        print('   inputs:', self.input_molecule,
+              ' & ', self.input_dirac, file=sys.stderr)
+        sys.stderr.flush()
+
+    def launch_dirac_subprocess(self):
+        '''
+        Launches the dirac.x subprocess(-es), also takes care of killing
+        FYI: On Windows, signal() can only be called with SIGABRT, SIGFPE, SIGILL, SIGINT, SIGSEGV, or SIGTERM
+        '''
+        if not is_windows():
+            signal.signal(signal.SIGHUP,self.child_signaller)
+            signal.signal(signal.SIGPIPE,self.child_signaller)
+            if self.timeout: # set timeout alarm if selected
+                signal.signal(signal.SIGALRM, self.child_signaller)
+                signal.alarm(self.timeout)
+        else:
+            # these commented signals should work with newer versions of Python
+            #signal.signal(signal.CTRL_C_EVENT,self.child_signaller)
+            #signal.signal(signal.CTRL_BREAK_EVENT,self.child_signaller)
+            signal.signal(signal.SIGABRT,self.child_signaller)
+            signal.signal(signal.SIGFPE,self.child_signaller)
+            signal.signal(signal.SIGILL,self.child_signaller)
+            signal.signal(signal.SIGSEGV,self.child_signaller)
+        signal.signal(signal.SIGTERM,self.child_signaller)
+        signal.signal(signal.SIGINT,self.child_signaller)
+
+        self.f = open(self.output_file_full, 'w')
+
+        # write header into the output file by pam
+        self.write_info_output()
+
+        # process the dirac.x (or mpi-wrapper) as the child subprocess
+        # stderr=None means flushing stderr output only into console (red color in CDash-webpage)
+        # http://mail.python.org/pipermail/python-bugs-list/2009-January/067267.html
+        # ulf: Passing the signal on to the process group should work
+        if not is_windows():
+            self.dirac_p = subprocess.Popen(shlex.split(self.dirac_cmd),
+                           stdin=subprocess.PIPE, stdout=self.f, stderr=subprocess.PIPE,
+                                            universal_newlines=True)
+        else:
+        # Windows: provide exec command with "" to fix =/+ characters in the full path
+            self.dirac_cmd='"'+self.dirac_cmd+'"'
+            self.dirac_p = subprocess.Popen(shlex.split(self.dirac_cmd),
+                                            stdin=subprocess.PIPE, stdout=self.f, stderr=subprocess.PIPE,
+                                            universal_newlines=True)
+        self.pgid = self.dirac_p.pid
+        if self.verbose:
+            print('  DIRAC command  : %s (PID=%s)' % (self.dirac_cmd, self.dirac_p.pid))
+
+        # catch the stderr stream
+        self.dirac_stderr = self.dirac_p.communicate()[1]
+
+        self.dirac_p.wait()
+
+        # deal with the error output only if happens
+        if self.dirac_stderr and self.verbose:
+            # attach stderr to the pam output
+            self.f.write('\n ====  below this line is the stderr stream  ====\n' + str(self.dirac_stderr))
+            # flush out the entire dirac stderr; useful for non-verbose test runs (to have it on the console)
+            self.stderr_message()
+
+        # close the dirac.x stdout file
+        self.f.close()
+
+    def profile_dirac(self):
+        """
+        profile after the DIRAC execution- we are in the scratch directory
+        """
+        if os.path.isfile(self.profiling_file):
+            self.f = open(self.output_file_full, 'a', 0)  # open file for appending
+            self.f.write('\n\n Profiling dirac.x in '+os.getcwd())
+            self.profile_command = self.profiler + ' dirac.x ' \
+                + ' ' + self.profiling_file
+            print('  Going to profile after, command:',self.profile_command)
+            self.f.write('\ncommand:'+self.profile_command+'\n\n')
+            p = subprocess.Popen(shlex.split(self.profile_command),
+                                 stdin=subprocess.PIPE, stdout=self.f, universal_newlines=True)
+            p.wait()
+            self.f.close()
+        else:
+            print_error_message('pam - self.profiling_file='+self.profiling_file)
+            print_error_message('pam - can not perform profiling, missing profiling core...did you set profiling flag ??? ')
+
+    def save_files(self):
+        "save files in various manners from the scratch directory"
+        def save_single_file(file_name_scratch, file_name_local=''):
+            if file_name_local == '':
+                file_name_local = file_name_scratch
+            full_file_name_scratch = os.path.join(self.scratch_dir, file_name_scratch)
+            full_file_name_local   = os.path.join(self.input_directory, file_name_local)
+            if os.path.isfile(full_file_name_scratch):
+                if not self.nobackup:
+                    # backup file if it's there
+                    backup_file(some_file=full_file_name_local, upto=None)
+                self.copy_file(full_file_name_scratch, full_file_name_local)
+                #print '  Copy %s to %s' % (full_file_name_scratch, full_file_name_local)
+            else:
+                print_error_message('  File %s not found in the scratch directory !' % file_name_scratch)
+
+        if self.archive:
+            self.archive_working_files()
+
+        # get files from scratch
+        if self.get_files is not None:
+            for p in self.get_files.split():
+                if '=' in p:
+                    f1 = p.split('=')[0]
+                    f2 = p.split('=')[1]
+                    save_single_file(f1, f2)
+                else:
+                    for f in glob.glob(p):
+                        save_single_file(f, f)
+
+        if self.outcmo:
+            save_single_file('DFCOEF')
+
+        if self.outkrmc:
+            save_single_file('KRMCSCF')
+            save_single_file('KRMCOLD')
+
+        if self.outqforce:
+            qfpath = os.path.join(self.input_directory, 'qfdir')
+            try:
+                os.mkdir(qfpath)
+            except OSError:
+                print ("Creation of the directory %s failed" % qfpath)
+            for p in os.listdir(self.scratch_dir):
+                if 'qforce' in p:
+                    full_file_name_scratch = os.path.join(self.scratch_dir, p)
+                    full_file_name_local = os.path.join(qfpath,p)
+                    self.copy_file(full_file_name_scratch, full_file_name_local)
+
+    # take care of individual nodes if parallel run
+
+        if self.nodes:
+            # ulf: on grid systems I don't think we can log into the nodes..
+            if not self.rsh:
+                print_error_message('No rsh command specified, use --rsh= on the command line or in ~/.dirac')
+                sys.exit(-1)
+            for this_node in self.nodes:
+                print('\n Content of the scratch_directory, slave node ', this_node,
+                      ':', self.scratch_dir)
+                command = self.rsh + ' ' + this_node + ' "ls -l ' \
+                    + self.scratch_dir + ' "'
+                print( "  " + command)
+                os.system(command)
+                print(" Total size of the slave node scratch directory:")
+                command = self.rsh + ' ' + this_node + ' "du -h -s ' \
+                    + self.scratch_dir + ' "'
+                print("  " + command)
+                os.system(command)
+                print(' Info on the disk space usage on the slave node:')
+                command = self.rsh + ' ' + this_node + ' "df -h  "' + self.scratch_dir
+                print("  " + command)
+                os.system(command)
+
+                sys.stdout.flush()
+
+        # finally remove nodes content;TODO: find Python replacement !
+
+                command = self.rsh + ' ' + this_node + ' "rm -fr  ' \
+                    + self.scratch_dir + ' "'
+                os.system(command)
+                print(' Scratch directory on slave node', this_node, ':', 
+                      self.scratch_dir, ' deleted.')
+                sys.stdout.flush()
+
+    def archive_working_files(self):
+        """
+        archive (pack) working files at the end of the DIRAC program run
+        """
+
+        # set name of the archive file
+        archive_name = self.output_name + '.' + self.output_suffix
+        archive_name = '.'.join(archive_name.split('.')[:-1]) + '.tgz'
+        archive_full_name = os.path.join(self.input_directory,archive_name)
+
+        # backup
+        if not self.nobackup:
+            backup_file(some_file=archive_full_name, upto=None)
+
+        # select existing files in self.archive_files for the archive
+
+        existing_archive_files = []
+        for p in self.archive_files:
+            for archfile in glob.glob(p):
+                if os.path.isfile(archfile):
+                    existing_archive_files.append(archfile)
+
+        print('  creating archive file ', archive_name)
+        print('  archived working files:',existing_archive_files)
+
+        tar = tarfile.open(archive_full_name, 'w:gz')
+        for filename in existing_archive_files:
+            tar.add(filename)
+        tar.close()
+
+    def print_header(self):
+        """
+        print nice informative header after all Dirac run variables are properly setup
+        """
+        if self.parallel_run:
+            dirac_run = 'parallel (launcher: ' + str(self.mpirun) + ')'
+        else:
+            dirac_run = 'serial'
+        if self.verbose:
+            print()
+            print('  DIRAC pam script running:')
+            print()
+            print('  user           :', self.user_name)
+            print('  machine        :', self.master)
+            print('  date and time  :', datetime.datetime.now())
+            print('  input dir      :', self.input_directory)
+            print('  pam command    :', os.path.join(pam_directory, 'pam'))
+            # we have all args here, therefore canceled printout of input file & molecule file
+            print('  all pam args   :', self.pam_args)
+            if self.dirac_exe not in self.pam_args:
+                print('  executable     :', self.dirac_exe)
+            disk= disk_space_find(self.scratch_dir)
+            if disk.available:
+                scratch_disk_usage="(avail space=%10.3f[GB])"%(disk.available)
+                scratch_disk_usage=scratch_disk_usage.replace(" ","")
+                print('  scratch dir    :', self.scratch_dir,scratch_disk_usage)
+            else:
+                print_error_message('scratch dir:'+self.scratch_dir+' not found/not accessible !')
+            print('  output file    :', self.output_file)
+            print('  DIRAC run      :', dirac_run)
+            # print out more stuff regarding the parallel setting
+            if self.parallel_run:
+                print('  local disks    :', not self.global_scratch_disk)
+                print('  rsh/rcp        :', self.rsh, '/', self.rcp)
+                print('  machine file   :', self.machinefile)
+        else:
+            print('  running', os.path.join(pam_directory, 'pam'), ' '.join(self.pam_args))
+
+        if self.timeout and not is_windows():
+            print('  Allowed runtime:', self.timeout, 
+                ' seconds. Killing afterwards.')
+        elif self.timeout and is_windows():
+           print('--timeout not (yet) working for Windows !')
+
+        if self.profile:
+           print('  You want profiling - check that you have proper linking flag and assigned profiler.')
+           if not os.path.isfile(str(find_executable(self.profiler))):
+               print_error_message('ERROR: profiler %s not found' % self.profiler)
+               sys.exit(19)
+
+        # add few consistency checks
+        if not self.dirac_exe:
+            print_error_message('pam: No Dirac executable assigned, quitting.')
+            sys.exit(29)
+
+        if self.parallel_run and not self.mpirun:
+            print('\n pam: No MPI launcher assigned for the parallel run !', file=sys.stderr)            
+            print( ' Check the PATH variable: ',os.environ['PATH'], file=sys.stderr)
+            sys.stderr.flush()
+            sys.exit(21)
+
+        if self.parallel_run and not self.global_scratch_disk and not self.machinefile:
+            print_error_message('\n pam: Parallel run set with local disks but without machinefile!')
+            print(' Needs machinefile for copying working files onto local disks of different nodes !',
+                  file=sys.stderr)
+            sys.exit(22)
+
+class pam_run(pam_enviroment):
+    """
+    class for running pam script - perform couple methods necessary for running Dirac
+    """
+
+    def __init__(self):
+        self.pam_variables = pam_enviroment()
+
+    def perform(self):
+        self.pam_variables.process_pam_arguments()
+        self.pam_variables.set_output_file()
+
+        self.pam_variables.set_dirac_environment()
+        self.pam_variables.print_header()
+        self.pam_variables.set_mkl_environment_variables()
+        self.pam_variables.set_environment()
+
+        self.pam_variables.copy_files()
+        if self.pam_variables.distribute_files:
+            self.pam_variables.distribute_scratch_dir()
+        self.pam_variables.set_dirac_cmd()
+        if self.pam_variables.just_show_settings:
+            self.pam_variables.show_settings()
+            self.pam_variables.remove_scratch_dir()
+            sys.exit()
+        self.pam_variables.execute_dirac()
+        self.pam_variables.save_files()
+        self.pam_variables.remove_scratch_dir()
+        return_code = self.pam_variables.exit_function()
+        if self.pam_variables.verbose:
+            self.pam_variables.grep_for_warnings()
+        return return_code
+
+# short definition of the script's main function
+def main():
+    dirac_run = pam_run()
+    return_code = dirac_run.perform()
+    sys.exit(return_code)
+
+#
+#  common (general purpose) functionalities for pam
+#
+
+def is_windows():
+    """
+    returns true if this machine is Windows operating system
+    """
+    return sys.platform == "win32"
+
+def kill_win(pid):
+    """
+    kill process on  Win32
+    http://docs.python.org/faq/windows.html#id11
+    see also http://code.activestate.com/recipes/347462-terminating-a-subprocess-on-windows/
+    """
+    import ctypes
+    kernel32 = ctypes.windll.kernel32
+    handle = kernel32.OpenProcess(1, 0, pid)
+    return (0 != kernel32.TerminateProcess(handle, 0))
+
+def process_time_string_core(time_string):
+    """
+    process the entering time string of the form "#d#h#m#s"
+    or as pure integer number;
+    returns the resulting time in seconds (integer)
+    - called from process_time_string - 
+    """
+    secs=0
+    mins=0
+    hours=0
+    days=0
+    # check if the time string is pure integer number - then return  the "virgin" value :)
+    if time_string.isdigit(): return (int(time_string))
+
+    # otherwise continue to cut the string into substrings according to the presence of time units: s,m,h,d
+    d_pos=time_string.find("d");
+    h_pos=time_string.find("h");
+    m_pos=time_string.find("m");
+    s_pos=time_string.find("s");
+
+    positions=[s_pos,m_pos,h_pos,d_pos]; j=0
+    num=[0,0,0,0]
+    for i in positions:
+        if i >-1 :
+            num_str=''
+            i=i-1
+            while (i>=0 and time_string[i] >= '0' and time_string[i] <= '9' ):
+                num_str+=str(time_string[i])
+                i=i-1
+            # revert string to get proper order of numbers
+            num[j]=int(num_str[::-1])
+            j=j+1
+    # take care of time units
+    k=0
+    if s_pos > -1:
+        secs=num[k]; k=k+1
+    if m_pos > -1:
+        mins=num[k]; k=k+1
+    if h_pos > -1:
+        hours=num[k]; k=k+1
+    if d_pos > -1:
+        days=num[k]; k=k+1
+
+    return secs + (60*mins) + (60*60*hours) + (60*60*60*days)
+
+def process_time_string(time_string):
+    """
+    process entering time_string of the form "#d#h#m#s"
+    or as pure integer number;
+    returns the resulting time in seconds (integer)
+    """
+    try:
+        return process_time_string_core(time_string)
+    except:
+        print('error, wrong entering time string:', time_string, file=sys.stderr)
+        print('proper examples: 1h2m30s  2m40s 1m40s  1h20s 3h ...', file=sys.stderr)
+        sys.exit(15)
+
+def get_username():
+    """
+    returns name of the user
+    """
+    import getpass
+    return getpass.getuser()
+
+def get_hostname():
+    """
+    get the server's short hostname
+    NOTE: short hostnames are used in batch-system  "machinefiles"
+    only short master's hostname can be compared with slaves hostnames
+    """
+    try:
+        import socket
+        return socket.gethostname()
+    except:
+        return 'not found'
+
+class disk_space:
+    """
+    extracts disk space data - capacity, available, used -  in GB
+    TODO: Adapt for Windows
+    """
+    def __init__(self,path):
+        """
+        fill (initialize) wanted variables, no other info needed sofar
+        if entering variable path is not proper, returns None
+        """
+        gb_factor = float(1024*1024*1024)
+        # initialize
+        self.capacity=None
+        self.available=None
+        self.used=None
+        # if path not defined, return with None attributes
+        if not os.path.isdir(path): return
+        if not is_windows():
+            # Unix/Linux stuff
+            self.disk_info = os.statvfs(path)
+            self.capacity = ( self.disk_info.f_frsize * self.disk_info.f_blocks ) / gb_factor
+            self.available = ( self.disk_info.f_frsize * self.disk_info.f_bavail ) /  gb_factor
+            self.used = ( self.disk_info.f_frsize * (self.disk_info.f_blocks - self.disk_info.f_bavail)) / gb_factor
+        else:
+            # Windows stuff
+            import ctypes
+            drive = ctypes.c_wchar_p(path)
+            freeuser = ctypes.c_int64() # or ctypes.c_ulonglong(0)
+            total = ctypes.c_int64()
+            free = ctypes.c_int64()
+            ctypes.windll.kernel32.GetDiskFreeSpaceExW(drive,ctypes.byref(freeuser),ctypes.byref(total),ctypes.byref(free))
+            self.capacity = total.value / gb_factor
+            self.available= freeuser.value / gb_factor
+            self.used = (total.value - freeuser.value) / gb_factor
+
+class disk_space_find:
+    """
+    extracts disk space data - capacity, available, used -  in GB
+    """
+    def __init__(self,path):
+        """
+        fill (initialize) wanted variables, no other info needed sofar
+        if entering variable path is not proper, returns None
+        """
+        # initialize
+        self.capacity=disk_space(path).capacity
+        self.available=disk_space(path).available
+        self.used=disk_space(path).used
+        # cycle for finding existing path
+        this_path=path
+        while disk_space(this_path).used is None:
+            this_path=os.path.dirname(this_path)
+            self.capacity=disk_space(this_path).capacity
+            self.available=disk_space(this_path).available
+            self.used=disk_space(this_path).used
+
+class extract_path_file:
+    """
+    general class which can separate the pure file name from its path;
+    used (not only) for the backup procedure
+    """
+    def __init__(self):
+        self.pure_file_name = ''
+        self.pure_file_path = ''
+        self.short_file_path= ''
+        self.extracted = False
+    def get_path_file(self,full_file_name):
+        """
+        extracts file name and it's path (directory) by splitting string
+        """
+        try:
+            self.pure_file_name=os.path.basename(full_file_name)
+            self.pure_file_path=os.path.dirname(full_file_name)
+            self.extracted=True
+        except:
+            self.extracted=False
+
+        # shorten the path string by placing "..."
+        if (len(self.pure_file_path) > 20):
+           max_len=12
+           temp_path=self.pure_file_path
+           len_tp=len(temp_path)
+           self.short_file_path=temp_path[0:max_len]+'...'+temp_path[len_tp-max_len:len_tp]
+
+def backup_file(some_file,upto):
+    """
+    Important routine doing backup of the file "some_file", version up to
+    number "upto"
+    """
+    def do_copy_print(backup_file_name,backup_file_name_p1):
+        shutil.copy2(backup_file_name,backup_file_name_p1)
+        #         "file.n"  -->  "file.n+1"
+        result=extract_path_file()
+        result.get_path_file(backup_file_name)
+        result_p1=extract_path_file()
+        result_p1.get_path_file(backup_file_name_p1)
+
+#   backup-s file by copying it up to 'upto' version
+    upto_default = 7
+    if (upto is None):
+        upto = upto_default
+    for vers in range(upto-1,-1,-1):
+        backup_file_name=some_file+"."+str(vers)
+        backup_file_name_p1=some_file+"."+str(vers+1)
+        if (os.path.isfile(backup_file_name)):
+            do_copy_print(backup_file_name,backup_file_name_p1)
+    if (os.path.isfile(some_file)):
+        do_copy_print(some_file,backup_file_name)
+
+    epf=extract_path_file()
+    epf.get_path_file(some_file)
+
+def find_executable(executable, path=None):
+    """
+    Try to find 'executable' in the directories listed in 'path' (a
+    string listing directories separated by 'os.pathsep'; defaults to
+    os.environ['PATH']).  Returns the complete filename or None if not
+    found
+    from: http://snippets.dzone.com/posts/show/6313
+    """
+    if not executable:
+        sys.exit("find_executable: no executable privided on input!")
+    if path is None:
+        path = os.environ['PATH']
+    paths = path.split(os.pathsep)
+    extlist = ['']
+    if os.name == 'os2':
+        (base, ext) = os.path.splitext(executable)
+        # executable files on OS/2 can have an arbitrary extension, but
+        # .exe is automatically appended if no dot is present in the name
+        if not ext:
+            executable = executable + ".exe"
+    elif sys.platform == 'win32':
+        pathext = os.environ['PATHEXT'].lower().split(os.pathsep)
+        (base, ext) = os.path.splitext(executable)
+        if ext.lower() not in pathext:
+            extlist = pathext
+    for ext in extlist:
+        execname = executable + ext
+        if os.path.isfile(execname):
+            return execname
+        else:
+            for p in paths:
+                f = os.path.join(p, execname)
+                if os.path.isfile(f):
+                    return f
+    else:
+        return None
+
+def print_error_message(s):
+    print(s, file=sys.stderr)
+    sys.stderr.flush()
+
+if __name__ == '__main__':
+    sys.exit(main())

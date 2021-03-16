@@ -1,0 +1,23 @@
+! requirements: 
+! ExaTENSOR library (Dmitry Lyakh): MPI, OpenMP, CUDA (optional)
+
+In order to run ExaTENSOR one can give the memory per MPI process with (optional)
+*****
+.TALSH_BUFF
+50
+*****
+The total memory is than given by multiplying it with # MPI processes. 
+  
+You can always find a memory estimate in the header of ExaCorr:
+-----------------
+- Estimating memory requirements
+-- nao  ( scheme 1-3  ) :         5 GB
+-- nvir ( scheme 4/42 ) :         5 GB
+-----------------
+  
+With the following option you can run the code without doing computations and only testing allocations:
+******
+.MOINT_SCHEME
+5
+*****
+

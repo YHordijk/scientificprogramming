@@ -1,0 +1,45 @@
+**DIRAC
+.TITLE
+ B atom, 1st excited state ^2P_3/2
+.WAVE F
+.ANALYZE
+**INTEGRALS
+.PRINT 
+1
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+.PRINT
+1
+**WAVE FUNCTIONS
+.SCF
+.REORDER MO'S
+
+2,3,1 
+*SCF
+# 1s(2) 2s(2)
+.CLOSED SHELL
+4 0
+# 2p32(1)
+.OPEN S
+1
+1/0,4
+.MAXITR
+40
+.OVLSEL
+.NODYNSEL
+.EVCCNV
+1.0D-9  1.0D-7
+.PRINT
+0
+**ANALYZE
+.MULPOP
+*MULPOP
+# 2 fermion symmetries
+.VECPOP
+ all
+ all
+.PRINT 
+0
+*END OF

@@ -1,0 +1,20 @@
+
+ =========================================================================
+ Version           : Dirac 8.0 (patchlevel 0) 
+ Hostname          : ibm
+ Operating system  : Linux 2.6.31-22-generic
+ Machine           : i686
+ Run               : Sequential
+ Last compilation  : 21:38:09 Aug  1 2010 (by gosia@ibm:/home/gosia/dirac.git/work)
+ FORTRAN compiler  : /usr/bin/gfortran -g -fno-range-check -Iinclude -Jmodules -DARCH32BIT -DUSE_DIRAC_BLAS -DUSE_DIRAC_DLAMCH -DUSE_DIRAC_DLAPACK -DUSE_DIRAC_ZLAPACK -DVAR_GFORTRAN -DGFORTRAN 441 -DPRG_DIRAC -DSYS_LINUX -DINSTALL_WRKMEM 63963136 -DVAR_MFDS -DMOD_ERI -DMOD_DNF -DMOD_KRMC -DMOD_ESR -DMOD_XPP -DMOD_STEX -DMOD_EMB -DMOD_ADC -DMOD_VISUAL -DMOD_OPENRSP -DMOD_UNRELEASED -DMOD_MATRIX_OPERATIONS -DMOD_IHFSCC -DMOD_AMFI -DMOD_LONDON 
+
+ =========================================================================
+$ERROR 1.E-5
+$SIGNCHECK
+     r_x           r_y           r_z            scalar          x-component       y-component       z-component
+
+  0.100000E+01  0.500000E+00  0.000000E+00 -0.6899979087E-01  0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+  0.100000E+01  0.100000E+01  0.000000E+00  0.1246768519E-01  0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+ -0.112800E+01  0.000000E+00  0.000000E+00 -0.8206358225E-01  0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+  0.112800E+01  0.000000E+00  0.000000E+00 -0.8206358224E-01  0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+

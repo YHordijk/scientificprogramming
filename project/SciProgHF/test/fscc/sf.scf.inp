@@ -1,0 +1,18 @@
+**DIRAC
+.TITLE
+Magnesium atom. Fockspace test calculations.
+.WAVE F
+**HAMILTONIAN
+.SPINFREE
+.INTFLG
+1 1 0
+**WAVE FUNCTIONS
+.SCF
+*SCF
+.EVCCNV
+1.0E-10 1.0E-7
+.CNVINT
+0.01 0.0001
+.CLOSED SHELL
+4 6
+*END OF

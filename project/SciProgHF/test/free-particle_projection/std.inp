@@ -1,0 +1,20 @@
+!
+! Diagonalizes the Dirac matrix for F9+ (no 2-electron interactions)
+!
+**DIRAC
+.TITLE
+Fluorine atom.
+.WAVE F
+**GENERAL
+.DIRECT
+1 1 1
+**HAMILTONIAN
+.ONESYS
+**WAVE FUNCTIONS
+.SCF
+*SCF
+.CLOSED SHELL
+42 38
+*END OF
+
+

@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+
+f.add(string      = 'Electronic energy',
+      rel_tolerance   = 1.0e-7)
+f.add(string      = 'Value of total response',
+      rel_tolerance   = 1.0e-7)
+f.add(string      = '@   average',
+      rel_tolerance   = 1.0e-4)
+
+test.run(['levy-leblond.inp', 'nonrel.inp'], ['hf.mol'], f, accepted_errors=['ERROR: response with .NONREL not possible'])
+
+sys.exit(test.return_code)

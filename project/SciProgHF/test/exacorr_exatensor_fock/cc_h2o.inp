@@ -1,0 +1,32 @@
+!
+! This test calculates the CC energy with the X2C Hamiltonian
+!
+**DIRAC
+.TITLE
+Water molecule. X2C Hamiltonian. CC energies.
+.WAVE F
+.4INDEX
+**HAMILTONIAN
+.X2C
+**WAVE FUNCTIONS
+.SCF
+.EXACC
+*SCF
+.EVCCNV
+1.0E-9
+**MOLTRA
+.ACTIVE
+energy -100.0 1.0 0.00001
+.NO4IND
+**EXACC
+.OCCUPIED
+1..5
+.VIRTUAL
+6..9
+.EXATENSOR
+.PRINT
+1
+**INTEGRALS
+*READIN
+.UNCONTRACT
+*END OF

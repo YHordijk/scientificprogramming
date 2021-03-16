@@ -1,0 +1,15 @@
+cp ../fde_static-vemb_dipole/EMBPOT.2e-1 vemb.grid
+cp ../fde_static-vemb_dipole/EMBPOT.2e-1 GRIDOUT
+cp ../fde_static-vemb_dipole/EMBPOT.2e-1 numerical_grid
+
+cp fde_dc_hf_exportdens.inp   fde_dc_hf_exportdens_short.inp
+cp fde_dc_lda_exportdens.inp  fde_dc_lda_exportdens_short.inp
+cp fde_dc_mp2_exportdens.inp  fde_dc_mp2_exportdens_short.inp
+
+fde_dc_hf_exportdens_short.inp  water.sto6g     --mw=80 --put="vemb.grid GRIDOUT" 
+ 
+fde_dc_lda_exportdens_short.inp water.sto6g     --mw=80 --put="vemb.grid GRIDOUT numerical_grid"
+ 
+fde_dc_mp2_exportdens_short.inp water.sto6g     --mw=40 --put="vemb.grid GRIDOUT" --aw=90
+
+rm vemb.grid GRIDOUT numerical_grid fde_dc_hf_exportdens_short.inp fde_dc_lda_exportdens_short.inp fde_dc_mp2_exportdens_short.inp

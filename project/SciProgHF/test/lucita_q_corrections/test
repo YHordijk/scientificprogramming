@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Q corrections for state',
+      to_string   = 'CI+Q energy',
+      rel_tolerance   = 1.0e-5)
+
+test.run(['lucita-q.inp'], ['h2o.xyz'], f, accepted_errors=['memory offset (dynamic memory - static memory) is too big for i*4','LUCITA WORK(MXPWRD) memory off-set is too big for INTEGER*4'])
+
+sys.exit(test.return_code)

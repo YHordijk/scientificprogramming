@@ -1,0 +1,32 @@
+!
+! This test calculates the energy of singly ionized water.
+! Here we use the CCSD(T) approach with an average-of-configuration HF, 
+! which is quite OK for doublet states. An alternative is to use the
+! Fock space approach, but then the triples are not available.
+!
+! WARNING : TESTING PURPOSE ONLY
+! We use only LL-type integrals : results are not reliable !
+!
+**DIRAC
+.TITLE
+Water molecule. Restricted kinetic balance. Ionized molecule.
+.WAVE F
+**HAMILTONIAN
+.INTFLG      
+1 0 0 0
+**WAVE FUNCTIONS
+.SCF
+.RELCCSD
+*SCF
+.CLOSED SHELL
+ 8
+.OPEN SHELL
+ 1
+1/2
+**MOLTRA
+.ACTIVE
+energy -1.2 2.0 0.02
+**RELCCSD
+.NELEC_OPEN
+ 1 0
+*END OF

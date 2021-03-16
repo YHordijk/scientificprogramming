@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = ' Energy eigenvalues in atomic units',
+      to_re       = 'Relative real eigenvalues in other units;',
+# tolerance here is for differencees in absolute terms because for the complex
+# cases relative changes could be very large for the complex part of the energy
+# even though its magnitude is tiny (e.g. 5x10-9 vs 1x10-9)
+      abs_tolerance = 1.0e-7)
+
+# 1. run tests without overlap selection but using pivoted unit vectors as trial vectors. in the runs below a relatively small number of roots is requested.
+
+test.run(['eom_ee_dc_noinv_nooverlap_8roots.inp'], ['f2_c2v.mol', 'f2_d2.mol', 'f2_c2.mol', 'f2_cs.mol'], f, args='--mw=110')
+test.run(['eom_ee_dc_noinv_nooverlap_c1_8roots.inp'], ['f2_c1.mol'], f, args='--mw=110')
+test.run(['eom_ee_dc_noinv_nooverlap_c_oo_v_Omega_28roots.inp','eom_ee_dc_noinv_nooverlap_c_oo_v_-Omega_28roots.inp'], ['f2_c_oo_v.mol'], f, args='--mw=110')
+
+test.run(['eom_ee_dc_inv_nooverlap_16roots.inp'], ['f2_d2h.mol', 'f2_c2h.mol'], f, args='--mw=110')
+test.run(['eom_ee_dc_inv_nooverlap_ci_16roots.inp'], ['f2_ci.mol'], f, args='--mw=110')
+test.run(['eom_ee_dc_inv_nooverlap_d_oo_h_Omega_28roots.inp','eom_ee_dc_inv_nooverlap_d_oo_h_-Omega_28roots.inp'], ['f2_d_oo_h.mol'], f, args='--mw=110')
+
+# 2. run the same short tests as in 1. above, with overlap selecton and pivoted unit vectors as trial vectors. in some symmetries overlap selection appears to not be working
+# properly, and significantly slows down convergence (c2, d2, c1 and ci groups) or does not produce correct numbers (c2h, cs).
+#
+# because of that these are removed from the test set for the moment. they should be added back when these problems are solved
+#
+#test.run(['eom_ee_dc_noinv_overlap_8roots.inp'], ['f2_c2v.mol', 'f2_d2.mol', 'f2_c2.mol', 'f2_cs.mol'], f, args='--mw=110')
+#test.run(['eom_ee_dc_noinv_overlap_c1_8roots.inp'], ['f2_c1.mol'], f, args='--mw=110')
+#test.run(['eom_ee_dc_inv_overlap_ci_16roots.inp'], ['f2_ci.mol'], f, args='--mw=110')
+#test.run(['eom_ee_dc_inv_overlap_16roots.inp'], ['f2_d2h.mol', 'f2_c2h.mol'], f, args='--mw=110')
+
+test.run(['eom_ee_dc_noinv_overlap_8roots.inp'], ['f2_c2v.mol'], f, args='--mw=110')
+test.run(['eom_ee_dc_noinv_overlap_c_oo_v_Omega_28roots.inp','eom_ee_dc_noinv_overlap_c_oo_v_-Omega_28roots.inp'], ['f2_c_oo_v.mol'], f, args='--mw=110')
+
+test.run(['eom_ee_dc_inv_overlap_16roots.inp'], ['f2_d2h.mol'], f, args='--mw=110')
+test.run(['eom_ee_dc_inv_overlap_d_oo_h_Omega_28roots.inp','eom_ee_dc_inv_overlap_d_oo_h_-Omega_28roots.inp'], ['f2_d_oo_h.mol'], f, args='--mw=110')
+
+# 3. same as above but asking for 32 roots in total for the abelina groups and more than than for the linear symmetry cases. these tests
+# take quite some time to run so they are commented out
+
+#test.run(['eom_ee_dc_noinv_nooverlap.inp'], ['f2_c2v.mol', 'f2_d2.mol', 'f2_c2.mol', 'f2_cs.mol'], f, args='--mw=110')
+#test.run(['eom_ee_dc_noinv_nooverlap_c1.inp'], ['f2_c1.mol'], f, args='--mw=110')
+#test.run(['eom_ee_dc_noinv_nooverlap_c_oo_v_Omega.inp','eom_ee_dc_noinv_nooverlap_c_oo_v_-Omega.inp'], ['f2_c_oo_v.mol'], f, args='--mw=110')
+#
+#test.run(['eom_ee_dc_inv_nooverlap.inp'], ['f2_d2h.mol', 'f2_c2h.mol'], f, args='--mw=110')
+#test.run(['eom_ee_dc_inv_nooverlap_ci.inp'], ['f2_ci.mol'], f, args='--mw=110')
+#test.run(['eom_ee_dc_inv_nooverlap_d_oo_h_Omega.inp','eom_ee_dc_inv_nooverlap_d_oo_h_-Omega.inp'], ['f2_d_oo_h.mol'], f, args='--mw=110')
+
+# ccs trial vectors instead of unit vector ones
+
+#test.run(['eom_ee_dc_noinv_ccs_nooverlap.inp'], ['f2_c2v.mol', 'f2_d2.mol', 'f2_c2.mol', 'f2_cs.mol'], f, args='--mw=110')
+#test.run(['eom_ee_dc_noinv_ccs_nooverlap_c1.inp'], ['f2_c1.mol'], f, args='--mw=110')
+#
+#test.run(['eom_ee_dc_inv_ccs_nooverlap.inp'], ['f2_d2h.mol', 'f2_c2h.mol'], f, args='--mw=110')
+#test.run(['eom_ee_dc_inv_ccs_nooverlap_ci.inp'], ['f2_ci.mol'], f, args='--mw=110')
+
+sys.exit(test.return_code)

@@ -1,0 +1,58 @@
+!
+! This test calculates the 2P state of Fluorine,
+! using the spinfree formalism.
+!
+**DIRAC
+.TITLE
+Fluorine atom.
+.WAVE F
+.4INDEX
+**HAMILTONIAN
+.SPINFREE
+.BSS
+109
+.ONESTEP
+.CMPEIG
+.PRINT
+2
+**GENERAL
+.DIRECT
+1 1 1
+**INTEGRALS
+*TWOINT
+.SOFOCK
+*TWOINT
+.SCREEN
+ 1.0D-12
+**WAVE FUNCTIONS
+.SCF
+.DIRRCI
+*SCF
+.CLOSED
+4 0
+.OPEN S
+1
+5/0,6
+.INTFLG
+1 1 0
+.MAXITR
+25
+.EVCCNV
+5.0E-7
+.CNVINT
+0.01 0.0001
+**MOLTRA
+.INTFLG
+1 1 0
+.CORE
+1..2
+
+.ACTIVE
+    
+1..3
+.SCHEME
+4
+*END OF
+
+ &GOSCIP NELACT=5 &END
+

@@ -1,0 +1,90 @@
+# Contains the translationkeys for dirac output files. 
+# Column 1: The key we can use in the class parse dirac.
+# Column 2: Line from where we should start reading. 
+# Column 3: Keyword for blocks of information.
+# Column 4: Line where we should stop reading.
+# Column 5: Keyword for stop reading a single block of information. A number
+#	    denotes the number of empty lines we should encounter before we stop reading.
+# Column 6: How the info that comes after the block keyword (column3) should be interpreted.
+# Column 7-...: The columns that should be read in the block of information.
+# Column 8: Factor for converting the column to different energyscale.
+
+# GOSCIP18 is CI calculation with SCF RESOLVE 
+# GOSCIP18FIXED is the same but then for fixed width columns (i.e. the symmetry
+# labels are lacking spaces.
+
+
+BONDDIST " Bond distances (angstroms):" "  distance" " Bond angles (degrees):" 1 "label" "distance" 1
+BONDANGLE " Bond angles (degrees):" "  angle" " Nuclear" 1 "label" "  angle" 1
+SCF "@ SCF energy :" ""
+CCSD(T) "@ Total CCSD(T) energy :" ""
+CCSD "@ Total CCSD energy :" ""
+CCSD+T "@ Total CCSD+T  energy :" ""
+CCSD-T "@ Total CCSD-T  energy :" ""
+GOSCIP18 " GOSCIP " "Level  eigenvalue (eV)  Eigenvalue (cm-1) " "(NORMAL END OF PROGRAM)" 2 "label" "eigenvalue (eV) " 1
+GOSCIP18FIXED " GOSCIP" "Level  eigenvalue (eV)  Eigenvalue (cm-1)  " "(NORMAL END OF PROGRAM)" 2 "label 4" "eigenvalue (eV) " 1
+GOSCIP18A " GOSCIP " " Level   Rel eigenvalue     Abs eigenvalue  Degeneracy" "(NORMAL END OF PROGRAM)" 2 "label" "     Abs eigenvalue " "egen" 1
+GOSCIP " DIRect Relativistic CI program" " Level  eigenvalue (eV)  Eigenvalue (cm-1)  " "(NORMAL END OF PROGRAM)" 2 "label" "eigenvalue (eV) " 0.0367452260
+GOSCIPA " DIRect Relativistic CI program" " Level   Rel eigenvalue     Abs eigenvalue  Degeneracy" "(NORMAL END OF PROGRAM)" 2 "label" "    Abs eigenvalue " 1
+FSCC " Fock space CCSD Energy calculations" " Level  eigenvalue (eV) Eigenvalue (cm-1)  " "-------------------" 2 "label 4" "eigenvalue (eV) " 0.036745226
+FSCCA0 " Solving equations for sector  0" " Level   Rel eigenvalue     Abs eigenvalue  Degeneracy" " Solving equations for sector" 2 "label" "Abs eigenvalue " 1
+FSCCA1 " Solving equations for sector  1" " Level   Rel eigenvalue     Abs eigenvalue  Degeneracy" " Solving equations for sector" 2 "label" "Abs eigenvalue " 1
+FSCCA2 " Solving equations for sector  2" " Level   Rel eigenvalue     Abs eigenvalue  Degeneracy" " Solving equations for sector" 2 "label" "Abs eigenvalue " 1
+FSCCA10 " Solving equations for sector 10" " Level   Rel eigenvalue     Abs eigenvalue  Degeneracy" " Solving equations for sector" 2 "label" "Abs eigenvalue " 1
+FSCCA01 " Solving equations for sector 01" " Level   Rel eigenvalue     Abs eigenvalue  Degeneracy" " Solving equations for sector" 2 "label" "Abs eigenvalue " 1
+FSCCA11 " Solving equations for sector 11" " Level   Rel eigenvalue     Abs eigenvalue  Degeneracy" " Solving equations for sector" 2 "label" "Abs eigenvalue " 1
+FSCCA20 " Solving equations for sector 20" " Level   Rel eigenvalue     Abs eigenvalue  Degeneracy" " Solving equations for sector" 2 "label" "Abs eigenvalue " 1
+FSCCA02 " Solving equations for sector 02" " Level   Rel eigenvalue     Abs eigenvalue  Degeneracy" " Solving equations for sector" 2 "label" "Abs eigenvalue " 1
+FSCC0 " Solving equations for sector  0" " Level  eigenvalue (eV)  Eigenvalue (cm-1)  " " Solving equations for sector" 2 "label 4" "eigenvalue (eV) " 0.036745226
+FSCC1 " Solving equations for sector  1" " Level  eigenvalue (eV)  Eigenvalue (cm-1)  " " Solving equations for sector" 2 "label 4" "eigenvalue (eV) " 0.036745226
+FSCC2 " Solving equations for sector  2" " Level  eigenvalue (eV)  Eigenvalue (cm-1)  " " Solving equations for sector" 2 "label 4" "eigenvalue (eV) " 0.036745226
+FSCC00 " Solving equations for sector 00" " Level  eigenvalue (eV)  Eigenvalue (cm-1)  " " Solving equations for sector" 2 "label 4" "eigenvalue (eV) " 0.036745226
+FSCC10 " Solving equations for sector 10" " Level  eigenvalue (eV)  Eigenvalue (cm-1)  " " Solving equations for sector" 2 "label 4" "eigenvalue (eV) " 0.036745226
+FSCC01 " Solving equations for sector 01" " Level  eigenvalue (eV)  Eigenvalue (cm-1)  " " Solving equations for sector" 2 "label 4" "eigenvalue (eV) " 0.036745226
+FSCC11 " Solving equations for sector 11" " Level  eigenvalue (eV)  Eigenvalue (cm-1)  " " Solving equations for sector" 2 "label 4" "eigenvalue (eV) " 0.036745226
+FSCC20 " Solving equations for sector 20" " Level  eigenvalue (eV)  Eigenvalue (cm-1)  " " Solving equations for sector" 2 "label 4" "eigenvalue (eV) " 0.036745226
+FSCC02 " Solving equations for sector 02" " Level  eigenvalue (eV)  Eigenvalue (cm-1)  " " Solving equations for sector" 2 "label 4" "eigenvalue (eV) " 0.036745226
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

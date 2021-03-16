@@ -1,0 +1,20 @@
+**DIRAC
+.TITLE
+ PE test magnetic properties 
+.WAVE FUNCTION
+**INTEGRALS
+.NUCMOD        # point-charge nuclei to exactly reproduce 
+1              # non-rel. results (e.g. with DALTON)
+**HAMILTONIAN   
+.LEVY-LEBLOND
+.PEQM
+*PEQM
+.POTENT
+peqm.pot
+**WAVE FUNCTION
+.SCF
+*SCF
+.CLOSED SHELL
+16
+*END OF
+

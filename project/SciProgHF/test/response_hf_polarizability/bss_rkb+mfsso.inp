@@ -1,0 +1,39 @@
+!
+! This test calculates the dipole polarizability
+| of the water molecule at various frequencies
+| using the linear response module.
+!
+**DIRAC
+.WAVE FUNCTION
+.PROPERTIES
+**HAMILTONIAN
+.BSS
+ 2999
+.CMPEIG
+.ONESTEP
+.PRINT
+ 2
+**INTEGRALS
+*READIN
+.UNCONTRACT
+**WAVE FUNCTION
+.SCF
+*SCF
+.CLOSED SHELL
+ 10
+.EVCCNV
+ 1.0D-4         !we use poor convergence threshold for the test
+**PROPERTIES
+.POLARIZABILITY
+*LINEAR RESPONSE
+.SKIPEP
+.THRESH
+ 1.0D-3         !we use poor convergence threshold for the test
+.MAXRED
+ 400
+.B FREQ
+ 3
+ 0.00
+ 0.10
+ 0.20
+*END OF

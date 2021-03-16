@@ -1,0 +1,22 @@
+scf:
+
+    geo-units: bohr
+    geometry:
+       O     0.0000000000        0.0000000000        -0.2249058930
+       H     1.4523499293        0.0000000000         0.8996235720
+       H    -1.4523499293        0.0000000000         0.8996235720
+
+
+    method: hf
+    basis:  ucc-pvdz
+
+    nc-model:      point
+    charge:        0
+    multiplicity:  1
+    maxiterations: 30
+    convergence:   1.0e-7
+
+
+
+export:
+    exacorr: 1c

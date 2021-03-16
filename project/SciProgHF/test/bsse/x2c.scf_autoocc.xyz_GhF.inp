@@ -1,0 +1,39 @@
+**DIRAC                       
+.TITLE
+  Testing BSSE
+.WAVE F
+**INTEGRALS
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+.PRINT
+1
+*AMFI
+.PRNT_A 
+0
+.PRNT_S
+0
+.MXITER
+40
+.AMFICH
+0
+**WAVE FUNCTIONS
+.SCF
+*SCF
+# uses autooccupation based on the input ...
+.EVCCNV
+1.0D-9  1.0D-7
+.MAXITR
+40
+**MOLECULE
+*BASIS
+.DEFAULT 
+STO-2G 
+*UNITS
+AU
+*CENTERS
+# F is used as the 'ghost' atom for BSSE correction
+.NUCLEUS
+FGh 0.0 10.0
+**END OF

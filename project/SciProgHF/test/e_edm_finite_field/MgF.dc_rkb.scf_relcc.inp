@@ -1,0 +1,57 @@
+**DIRAC
+.TITLE
+  MgF
+.WAVE F ! Activate integral and wave functions modules
+.ANALYZE
+**GENERAL
+.DIRECT
+1 1 1
+**INTEGRALS
+.PRINT
+1
+.NUCMOD ! 1-Point nucleus, 2-gaussian
+2
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.PRINT
+1
+.INTFLG
+1 1 0
+**WAVE FUNCTIONS 
+.SCF
+.RELCCSD
+*SCF
+.CLOSED SHELL
+20  
+.OPEN SHELL
+1
+1/2
+.INTFLG ! Specify what 2-el.integrals to include
+1 1 0
+.EVCCNV ! Energy convergence...
+1.0D-9  1.0D-6
+#################################################
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+all
+**MOLTRA
+.ACTIVE
+energy -1000.00   2000.0 0.01
+**RELCC
+.ENERGY
+.TIMING
+.PRINT
+1
+##  all 21 correlated electrons  ##
+.NELEC
+10 11
+*CCENER
+.MAXIT # maximum number of iterations for (0,0) sector
+45        
+.NTOL
+12
+*CCSORT
+*END OF

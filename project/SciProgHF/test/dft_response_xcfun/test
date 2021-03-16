@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(string    = 'Electronic energy',
+      rel_tolerance = 1.0e-7)
+f.add(string    = 'number of electrons from numerical integration',
+      rel_tolerance = 1.0e-4)
+f.add(from_string = 'Energy eigenvalues in atomic units',
+      to_re       = 'Relative real eigenvalues in other units;',
+      rel_tolerance   = 1.0e-4)
+
+test.run(['blyp_sdft.inp', 'lda_sdft.inp'], ['he.mol'], f)
+
+f.add(string    = 'ZZSECMOM',
+      rel_tolerance = 1.0e-4)
+f.add(string    = '  ZDIPLEN   ZDIPLEN   ZDIPLEN',
+      rel_tolerance = 1.0e-4)
+
+test.run(['b3lyp.inp', 'blyp.inp', 'lda.inp', 'pbex.inp', 'pbec.inp', 'pbe0.inp', 'pbe.inp'], ['hf.mol'], f)
+
+sys.exit(test.return_code)

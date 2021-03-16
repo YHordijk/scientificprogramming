@@ -1,0 +1,23 @@
+**DIRAC
+.WAVE FUNCTION
+**HAMILTONIAN
+.NONREL
+.DFT
+ BLYP
+**GRID
+.ZIPGRID
+.COARSE         !for the test we use a coarse grid
+**INTEGRALS
+*READIN
+.CONTRACT
+**WAVE FUNCTION
+.SCF
+*SCF
+.MAXITR
+ 4              !we stop after 4 iterations
+.MOSTART        !we need to use the old starting procedure to be compatible with the original test output
+BNCORR
+.EVCCNV
+ 1.0D-9 1.0D8   !and set the accepted threshold to a large number
+.SCFPOP
+*END OF

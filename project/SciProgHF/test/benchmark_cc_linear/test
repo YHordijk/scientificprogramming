@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Electronic energy',
+      num_lines   = 8,
+      rel_tolerance   = 1.0e-9)
+f.add(from_string = 'Eigenvalues',
+      to_re       = 'HOMO - LUMO',
+      rel_tolerance   = 1.0e-5)
+f.add(from_string = ' Overview of calculated energies',
+      num_lines   = 12,
+      rel_tolerance   = 1.0e-6)
+
+test.run(['cc.inp'], ['N2.ccpVQZ.mol'], f, args='--mw=130 --aw=140')
+test.run(['cc.inp'], ['N2.ccpV5Z.mol'], f, args='--mw=280 --aw=300')
+
+sys.exit(test.return_code)

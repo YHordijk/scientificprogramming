@@ -1,0 +1,648 @@
+#!/bin/bash
+
+#
+#
+#
+# Submit pam job to the queue.
+# Written by Luuk Visscher - 2002
+#
+# Miro ILIAS, 2008 - splitted into procedures, fixed pbs for local opteron cluster
+#
+#
+
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+usage ()
+##########################################################################################################
+#
+#
+#
+##########################################################################################################
+{
+   echo 'Usage: '$0' [pamflags] [pamqflags] mol[.mol] menu[.inp]'
+   echo '   pamflags :         Invoke pam without options to get a list of flags for pam'
+   echo '   pamqflags:'
+   echo "     -p dir           : Set directory with pam; default is \"$DEFAULT_PAMDIR"\"
+   echo "     -q queue         : Submit job to the specified queue; default is \"$DEFAULT_QUEUE\""
+   echo "     -qsys queuesys   : Which queue system to use; default is \"$DEFAULT_QSYS\" "
+   echo "                        Known queue systems: pbs, bsub, LoadLeveler, XGrid"
+   echo "     -t time          : Time limit for job; default is \"$DEFAULT_TIME\""
+   echo "                        Specify either hours (as in 20h) or minutes (as in 30m)"
+   echo "     -mpi n           : Run MPI with n nodes; default is to run a serial job"
+   echo "     -mw mem          : Set memory (in megawords) for master; default is $DEFAULT_MW"
+   echo "                        (and slave nodes if "-nw mem" not specified)"
+   echo "     -nw mem          : Set memory (in megawords) for the slave nodes; default is $DEFAULT_NW"
+   echo "     -i num           : Set verbose print-level; default is $DEFAULT_IPRINT"
+   echo
+}
+
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+take_defaults()
+{
+##############################################################################################3
+#
+#         Take the default when variables for pam are not set by the user
+#
+##############################################################################################3
+#
+if [  -z "$MW" ]; then
+   MW=$DEFAULT_MW;
+   all_arguments="-mw $MW $all_arguments"
+fi
+if [  -z "$NW" ]; then
+   NW=$DEFAULT_NW;
+   all_arguments="-nw $NW $all_arguments"
+fi
+#  The next two variables need not be passed to pam as the queuing system will take care.
+if [  -z "$TIME" ]; then
+   TIME=$DEFAULT_TIME;
+fi
+#
+if [  -z "$QSYS" ]; then
+   QSYS=$DEFAULT_QSYS;
+fi
+#
+if [  -z "$QUEUE" ]; then
+   QUEUE=$DEFAULT_QUEUE;
+fi
+#
+if [  -z "$MPI_NPROC" ]; then
+   MPI_NPROC=$DEFAULT_MPI_NPROC;
+fi
+#
+if [  -z "$PAMDIR" ]; then
+   PAMDIR=$DEFAULT_PAMDIR;
+fi
+#
+if [  -z "$IPRINT" ]; then
+  # echo 'DEFAULT_IPRINT='$DEFAULT_IPRINT
+  # IPRINT=$DEFAULT_IPRINT;
+   IPRINT=$DEFAULT_IPRINT;
+fi
+#
+
+# control print-out
+
+if [ $IPRINT -gt "8" ];  then
+  echo ' defaults: '
+  echo '  QSYS='$QSYS
+  echo ' QUEUE='$QUEUE
+  echo '  TIME='$TIME
+  echo 'IPRINT='$IPRINT
+  echo 'PAMDIR='$PAMDIR
+fi
+
+}
+
+
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+convert_mem_time()
+{
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+# Compute memory required for this job
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+#
+let MEM_IN_MWORDS=$MW+$NW*\($MPI_NPROC-1\)
+let MEM_IN_KBYTES=$MEM_IN_MWORDS*8192
+let MEM_IN_MBYTES=$MEM_IN_MWORDS*8
+
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+# Convert time to proper units
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+case $TIME in
+  *m)
+   wallt_ll="0:`basename $TIME m`:0"
+   wallt_bsub="0:`basename $TIME m`"
+   wallt_qsub="0:`basename $TIME m`:0"
+  ;;
+  *h)
+   wallt_ll="`basename $TIME h`:0:0"
+   wallt_bsub="`basename $TIME h`:0"
+   wallt_qsub="`basename $TIME h`:0:0"
+  ;;
+  *)
+   echo "$0: Wallclock time incorrect; specify in minutes or hours as 15m or 6h.";
+   exit 1
+  ;;
+esac
+
+if [ $IPRINT -gt "5" ];  then
+  echo '===  convert MEM/TIME: ==='
+  echo 'MEM_IN_MWORDS='$MEM_IN_MWORDS
+  echo 'MEM_IN_KBYTES='$MEM_IN_KBYTES
+  echo 'MEM_IN_MBYTES='$MEM_IN_MBYTES
+  echo '      TIME=' $TIME
+  echo '  wallt_ll='$wallt_ll
+  echo 'wallt_bsub='$wallt_bsub
+  echo 'wallt_qsub='$wallt_qsub
+fi
+###########################################################################################################
+}
+
+
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+submit_job ()
+{
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+# Set queue name
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+#
+QUEUEQ="-q $QUEUE"
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+#
+#
+# Create job file
+#
+#
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+#
+jobname=${MENU}_${MOL}
+
+#jobinp=job_$$
+jobinp=job_$$.bash
+
+jobout=$jobname.$$.log
+
+echo "----------------------------------------------------------------------"
+echo "$0: The job script wil be saved in the file '$jobinp'"
+echo "$0: and will be submitted in queue '$QUEUE' using $QSYS."
+echo "$0: The job log (stdout/stderr) will be saved in the file '$jobout'."
+echo "$0: The name of the job is '$jobname'."
+echo "----------------------------------------------------------------------"
+
+#
+#
+#  ...   branching according queue systems
+#
+#
+case $QSYS in
+
+#### SGI's bsub ########
+   bsub)
+         process_bsub  
+         ;;
+#### SGE queueing system (on the TC cluster in Amsterdam  ########
+   sge-amsterdam)
+         process_sge_amsterdam    
+         ;;
+#### Linux PBS ########
+   pbs)
+         process_pbs
+         ;;
+#### IBM's LoadLeveler ########
+  LoadLeveler)
+         process_loadleveler
+         ;;
+#### Apple's XGrid ########
+  XGrid)
+         process_xgrid
+         ;;
+#### Unimplemented queue system
+  *)
+        echo "$0: Requested queue system $QSYS is not implemented (yet)"
+        exit 1
+        ;;
+esac
+#################### End of case statement for queues #####
+}
+
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+process_bsub ()
+{
+#       bsub 
+#  Create jobinp file
+#
+cat <<EOJ >$jobinp
+#
+# change to original directory
+#
+cd $LOC
+#
+# execute pam shell script
+#
+$PAMDIR/pam $all_arguments
+EOJ
+bsub -M $MEM_IN_KBYTES -n $MPI_NPROC -o $jobout -J $jobname -W $wallt_bsub $QUEUEQ < $jobinp
+#################### End of bsub code #####
+}
+
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+process_sge_amsterdam ()
+{
+#### SGE queueing system (on the TC cluster in Amsterdam  ########
+# 
+#  Create jobinp file
+#  
+cat <<EOJ >$jobinp
+#
+# change to original directory
+# 
+cd $LOC
+#
+# execute pam shell script
+#
+$PAMDIR/pam $all_arguments
+EOJ
+SHORT=`echo $jobname | cut -c1-10`
+qsub -e $SHORT.\$JOB_ID.out -o $SHORT.\$JOB_ID.out -l s_cpu=$wallt_qsub -cwd -V $parallel -l queue=$QUEUE -N $SHORT $jobinp
+#################### End of sgq-amsterdam code #####
+}
+
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+process_pbs ()
+{
+# 
+#  Create jobinp file for PBS queue system - the user can check its contents
+#
+#  
+if [ $MPI_NPROC -le 4 ]; then
+   NNODE=1
+elif [ $MPI_NPROC -le 8 ]; then
+   NNODE=2
+elif [ $MPI_NPROC -le 12 ]; then
+   NNODE=3
+elif [ $MPI_NPROC -le 16 ]; then
+   NNODE=4
+else
+  echo "$0: Too many nodes requested!"
+  exit 1
+fi
+
+#echo "NNODE="$NNODE
+
+cat << EOF > $jobinp
+#!/bin/bash
+#
+# Use controls since these are directly readable fromthe batch script
+#
+# job name
+#PBS -N $jobname
+#
+# nodes
+#PBS -l nodes=$NNODE
+#
+# queue
+#PBS $QUEUEQ
+#
+# time
+#PBS -l walltime=$wallt_qsub
+#
+# unite stdout with stderr
+#PBS -j oe
+#
+# stdout
+#PBS -o $jobout
+#
+#
+# ... print out important PBS variables
+#
+echo '------------------------------------'
+echo '   PBS_O_HOME='\$PBS_O_HOME
+echo '   PBS_O_HOST='\$PBS_O_HOST
+echo '   PBS_SERVER='\$PBS_SERVER
+echo '  PBS_O_QUEUE='\$PBS_O_QUEUE
+echo 'PBS_O_WORKDIR='\$PBS_O_WORKDIR
+echo '  PBS_JOBNAME='\$PBS_JOBNAME
+echo '    PBS_JOBID='\$PBS_JOBID
+echo ' PBS_NODEFILE='\$PBS_NODEFILE
+echo '------------------------------------'
+#
+#   ... change to original directory
+# 
+cd $LOC
+#
+# execute pam shell script
+#
+echo
+echo ' allocated nodes (machines):'
+cat \$PBS_NODEFILE 
+echo
+######
+echo
+echo 'DIRAC pam script starts'
+echo
+#
+
+$PAMDIR/pam $all_arguments
+
+#
+echo
+echo 'DIRAC pam script ends'
+echo
+#
+exit
+EOF
+#
+SHORT=`echo $jobname | cut -c1-10`
+#
+
+if [ $IPRINT -gt "8" ];  then
+  echo "...in process_pbs - before qsub"
+  echo "     SHORT=" $SHORT
+  echo "    jobout="$jobout
+  echo "    jobinp="$jobinp
+  echo "    QUEUEQ="$QUEUEQ
+  echo "    MPI_NPROC="$MPI_NPROC
+  echo "wallt_qsub="$wallt_qsub
+fi
+#
+
+#qsub -j oe -N $SHORT -o $jobout -l walltime=$wallt_qsub,nodes=$MPI_NPROC:$QUEUE -V $QUEUEQ $jobinp
+#qsub -j oe -o $jobout -l walltime=$wallt_qsub,nodes=$MPI_NPROC:$QUEUE -V $QUEUEQ $jobinp
+#qsub -j oe  -N $SHORT  $jobinp
+
+# ... this works ...
+#qsub -j oe -N $jobname -o $jobout  -l walltime=$wallt_qsub  $QUEUEQ  $jobinp
+
+#qsub -j oe -N $jobname -o $jobout  -l walltime=$wallt_qsub,nodes=$MPI_NPROC  $QUEUEQ  $jobinp
+
+# ... works for Odesne horseshoe ...
+#qsub -j oe -N $jobname -o $jobout -V -l walltime=$wallt_qsub  $QUEUEQ  $jobinp
+#qsub -j oe -o $jobout -V -l walltime=$wallt_qsub  $jobinp
+
+# ... works for Odesne horseshoe ...
+#qsub -j oe -o $jobout -V $jobinp
+
+### the simplest 
+qsub -V $jobinp
+
+
+echo "  -  Current user-status on queueing-system : "
+echo "Job id           Name             User             Time Use S Queue"
+echo "---------------- ---------------- ---------------- -------- - -----"
+##qstat | grep "\<$PAM_USER\>"
+qstat | grep $USER
+
+
+#################### End of pbs code ##################
+}
+
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+process_loadleveler ()
+###########################################################
+####             IBM's LoadLeveler                 ########
+###########################################################
+{
+JTYPE=serial
+#REQUIRE="(Memory >= $MEM_IN_MBYTES)"
+REQUIRE=""
+CLASS=""
+case $QUEUE in
+  default)
+  ;;
+  *)
+  CLASS="$QUEUE"
+  ;;
+esac
+
+#
+#miro: the relation between MPI_NPROC and NNODE should be somehow generalized !
+#
+if [ $MPI_NPROC -le 32 ]; then
+   NNODE=1
+elif [ $MPI_NPROC -le 64 ]; then
+   NNODE=2
+elif [ $MPI_NPROC -le 96 ]; then
+   NNODE=3
+elif [ $MPI_NPROC -le 128 ]; then
+   NNODE=4
+else
+  echo "$0: Too many nodes requested!"
+  exit 1
+fi
+#
+#  Create jobinp file
+#
+cat <<EOJ >$jobinp
+#
+# loadl stuff
+#
+# @ shell            = /bin/sh
+# @ initialdir       = $LOC
+# @ output           = $jobout 
+# @ error            = $jobout 
+# @ node             = $NNODE 
+# @ tasks_per_node   = $MPI_NPROC 
+# @ job_type         = parallel
+# @ wall_clock_limit = $wallt_ll
+# @ environment      = LLSHELL=$SHELL;ENVIRONMENT=BATCH;
+# @ network.MPI      = sn_all,not_shared,US
+# @ notification     = never
+# @ queue
+
+#
+# change to original directory
+#
+cd $LOC
+#
+# execute pam shell script
+#
+export XLFRTEOPTS="namelist=old"
+$PAMDIR/pam $all_arguments
+
+EOJ
+llsubmit $jobinp
+#################### End of Load Leveler specific code #####
+}
+
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+process_xgrid ()
+{
+#
+# create temporary directory to gather everything that is needed to run Dirac
+#
+TMPDIR=tmp.$$
+mkdir $TMPDIR
+cd $TMPDIR
+cp $LOC/* .
+cp $PAMDIR/pam pam.$$
+cp $PAMDIR/dirac.x dirac.x
+#
+# run pam script via XGrid
+#
+xgrid -job run -in `pwd` -out $LOC ./pam.$$ -dirac ../dirac.x -wrkdir work $all_arguments
+#
+# copy back the output file and any other file that is new
+#
+rm dirac.x pam.$$
+mv *.out $LOC
+mv -n * $LOC
+#
+# clean up
+#
+cd $LOC
+rm -r $TMPDIR
+#################### End of XGrid code #####
+}
+#################### End of case statement for queues #####
+#
+# Clean up : remove the job
+#
+# Uncomment the following line if you don't want to save the job script file for reference.
+#rm -f $jobinp
+
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+set_defaults ()
+{
+#########################################################################################
+# Set defaults
+#
+# These should be set manually at the moment, one should write an installer
+# for this purpose to make this better maintainable.
+#
+#########################################################################################
+LOC=`pwd`
+#
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+# Installation specfic variables : chose the right defaults for your system
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+#
+DEFAULT_QSYS=LoadLeveler
+#DEFAULT_QSYS=pbs
+#
+DEFAULT_PAMDIR=~/bin
+#DEFAULT_PAMDIR=/home/v20/devel/cvs/snapshots/newmalloc/Dirac
+#
+DEFAULT_MW=256
+DEFAULT_NW=256
+#
+DEFAULT_MPI_NPROC=1
+#
+# miro: the default queue shouldn't be empty for PBS ?
+DEFAULT_QUEUE=default
+#DEFAULT_QUEUE=
+#
+DEFAULT_TIME=15m
+#
+DEFAULT_IPRINT="0"
+}
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+#
+#                 THIS FINISHED THE DEFINITIONS OF FUNCTIONS
+#
+#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+###################################################################################
+#
+#
+#                 MAIN PART - CALLING SEQUENCE OF ROUTINES
+#
+#
+###################################################################################
+
+#echo '$1='$1
+#echo '$2='$2
+#echo '$3='$3
+#echo '$4='$4
+
+set_defaults
+#take_defaults
+#convert_mem_time
+
+#
+# Process relevant arguments of pamq
+#
+if [ -z "$1" ]; then
+  # echo ' wrong number of arguments ! $0='$0
+  # echo '                             $1='$1
+  # echo '                             $2='$2
+   usage
+   exit 0
+fi
+
+#
+# ... arguments for pam ...
+# 
+#all_arguments="$*"
+all_arguments=" "
+while [ $# -gt 0 ]; do
+   argv="$1"; shift
+   case "${argv}" in
+      -mw)
+         MW=$1
+         shift
+         all_arguments="-mw $MW $all_arguments"
+         ;;
+      -nw)
+         NW=$1
+         shift
+         all_arguments="-nw $NW $all_arguments"
+         ;;
+      -mpi)
+         MPI_NPROC=$1
+         parallel="-pe mpich $MPI_NPROC" 
+         shift
+         all_arguments="-mpi $MPI_NPROC $all_arguments"
+         ;;
+      -p)
+         PAMDIR=$1
+         shift
+         ;;
+      -q)
+         QUEUE=$1
+         shift
+         ;;
+      -qsys)
+         QSYS=$1
+         shift
+         ;;
+      -t)
+         TIME=$1
+         shift
+         ;;
+      -i)
+         IPRINT=$1
+         shift
+         ;;
+       *)
+         all_arguments="$all_arguments $argv"
+         ;;
+   esac
+done
+
+##if [ $IPRINT -ge "8" ]; then
+##   echo "for pam all_arguments="$all_arguments
+##fi
+
+# remove any initial flags if user has specified just two arguments,
+# to catch errors.
+##case "$1" in
+##   -*)
+##     shift
+##     ;;
+##esac
+
+##if [ $IPRINT -gt "8" ]; then
+##   echo "II. for pam all_arguments="$all_arguments
+##fi
+
+##if [ $# != 2 ]; then
+# can only happen if user has -mw, -nw, -mpi, -q, or -t as third
+# last elements, i.e. user has forgotten the argument or one
+# of the MOL and MENU arguments
+##   echo "$0: Error, check the last elements in your parameter list"
+##   echo "  $all_arguments"
+##   echo "Either you have forgotten a parameter to a flag or one or both of the mol and menu arguments"
+##   exit 1
+##fi
+
+set - $all_arguments
+while [ $# -gt 2 ]; do
+  shift
+done
+
+#
+argv="$1";shift; MOL=$argv
+argv="$1";shift; MENU=$argv
+#
+
+#echo "MOL="$MOL
+#echo "MENU="$MENU
+
+
+take_defaults
+
+convert_mem_time
+
+submit_job
+
+

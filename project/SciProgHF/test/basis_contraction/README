@@ -1,0 +1,10 @@
+!
+! Calculations on water with a contracted basis set
+!
+| Calc 1 is with the large and small basis set given in Dirac format.
+! Calc 2 is using basis sets read from MOLFDIR basis set files
+!        Make sure that these basis sets are present in the executing directory
+|
+! Contracted "MOLFDIR" type basis set should only be used with URKBAL and
+! .SPHTRA 1 0. Other options may give spurious results.
+!

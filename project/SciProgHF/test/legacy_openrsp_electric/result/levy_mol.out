@@ -1,0 +1,87 @@
+
+ =========================================================================
+ Version           : Dirac 8.0 (patchlevel 0) 
+ Hostname          : larry
+ Operating system  : Linux 2.6.32-24-generic
+ Machine           : i686
+ Run               : Sequential
+ Last compilation  : 16:57:11 Jul 29 2010 (by bast@larry:/home/bast/dirac/intel_mkl)
+ FORTRAN compiler  : /opt/intel/Compiler/11.1/072/bin/ia32/ifort -O3 -ip  -g -fpp1 -w -assume byterecl -Iinclude -module modules -DARCH32BIT -DVAR_IFC -DPRG_DIRAC -DSYS_LINUX -DINSTALL_WRKMEM 64000000 -DVAR_MKL -DVAR_MFDS -DMOD_AMFI -DMOD_MAGNETIZ -DMOD_LONDON -DMOD_DNF -DMOD_ESR -DMOD_MATRIX_OPERATIONS -DMOD_ADC -DMOD_KRMC -DMOD_OPENRSP -DMOD_VISUAL -DMOD_IHFSCC -DMOD_XPP -DMOD_STEX -DMOD_EMB -DMOD_ERI -DMOD_UNRELEASED   
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.0886   0.0886   0.0000   0.0000)        FxFxFxFx            139.0471009894
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.0886   0.0886   0.0000   0.0000)        FxFzFzFx             59.9812349954
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.0886   0.0886   0.0000   0.0000)        FxFxFzFz             62.0853638395
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.0886   0.0886   0.0000   0.0000)        FzFzFxFx             59.5745649533
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.0886   0.0886   0.0000   0.0000)        FzFzFzFz            215.3878033967
+$ERROR 1.0e-4
+$SIGNCHECK
+      @ averaged gamma dc Kerr (w     -0.0886   0.0886   0.0000   0.0000):            165.4473303769
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.1771   0.0886   0.0886   0.0000)        FxFxFxFx            162.3150492159
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.1771   0.0886   0.0886   0.0000)        FxFzFzFx             68.6946747394
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.1771   0.0886   0.0886   0.0000)        FzFxFxFz             65.5809530362
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.1771   0.0886   0.0886   0.0000)        FxFxFzFz             73.8393228822
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.1771   0.0886   0.0886   0.0000)        FzFzFxFx             67.1290236493
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.1771   0.0886   0.0886   0.0000)        FzFzFzFz            241.3001439800
+$ERROR 1.0e-4
+$SIGNCHECK
+       @ averaged gamma dc SHG (w     -0.1771   0.0886   0.0886   0.0000):            190.3230311563
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.2657   0.0886   0.0886   0.0886)        FxFxFxFx            212.3390165708
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.2657   0.0886   0.0886   0.0886)        FxFxFzFz             99.2382779447
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.2657   0.0886   0.0886   0.0886)        FzFzFxFx             78.1556456732
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.2657   0.0886   0.0886   0.0886)        FzFzFzFz            289.5925206443
+$ERROR 1.0e-4
+$SIGNCHECK
+       @ averaged gamma dc THG (w     -0.2657   0.0886   0.0886   0.0886):            242.1235490805
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.0886   0.0886  -0.0886   0.0886)        FxFxFxFx            149.8474734049
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.0886   0.0886  -0.0886   0.0886)        FxFxFzFz             65.7661088186
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.0886   0.0886  -0.0886   0.0886)        FxFzFxFz             62.1057771681
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w     -0.0886   0.0886  -0.0886   0.0886)        FzFzFzFz            227.8715766491
+$ERROR 1.0e-4
+$SIGNCHECK
+      @ averaged gamma dc IDRI (w     -0.0886   0.0886  -0.0886   0.0886):            177.1297664272
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w      0.0000   0.0000   0.0000   0.0000)        FxFxFxFx            129.2991822911
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w      0.0000   0.0000   0.0000   0.0000)        FxFxFzFz             56.4485926487
+$ERROR 1.E-6
+$SIGNCHECK
+@ gamma (w      0.0000   0.0000   0.0000   0.0000)        FzFzFzFz            203.9428645493

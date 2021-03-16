@@ -1,0 +1,2586 @@
+  ** interface to 32-bit integer MPI enabled **
+
+DIRAC master    (h30n12) starts by allocating     1424000000 r*8 words (  10.610 GB) of memory
+DIRAC nodes 1 to 7 starts by allocating          1424000000 r*8 words (  10.610 GB) of memory
+DIRAC master    (h30n12) to allocate at most      2048000000 r*8 words (  15.259 GB) of memory
+ 
+Note: maximum allocatable memory for master+nodes can be set by -aw (MW)/-ag (GB) flags in pam
+ 
+DIRAC nodes 1 to 7 to allocate at most           2048000000 r*8 words (  15.259 GB) of memory
+ *******************************************************************************
+ *                                                                             *
+ *                                O U T P U T                                  *
+ *                                   from                                      *
+ *                                                                             *
+ *                   @@@@@    @@   @@@@@     @@@@     @@@@@                    *
+ *                   @@  @@        @@  @@   @@  @@   @@                        *
+ *                   @@  @@   @@   @@@@@    @@@@@@   @@                        *
+ *                   @@  @@   @@   @@ @@    @@  @@   @@                        *
+ *                   @@@@@    @@   @@  @@   @@  @@    @@@@@                    *
+ *                                                                             *
+ *                                                                             *
+ %}ZS)S?$=$)]S?$%%>SS$%S$ZZ6cHHMHHHHHHHHMHHM&MHbHH6$L/:<S///</:|/:|:/::!:.::--:%
+ $?S$$%$$$$?%?$(SSS$SSSHMMMMMMMMMMMMMMMMMM6H&6S&SH&&k?6$r~::://///::::::.:::-::$
+ (%?)Z??$$$(S%$>$)S6HMMMMMMMMMMMMMMMMMMMMMMR6M]&&$6HR$&6(i::::::|i|:::::::-:-::(
+ $S?$$)$?$%?))?S/]#MMMMMMMMMMMMMMMMMMMMMMMMMMHM1HRH9R&$$$|):?:/://|:/::/:/.::.:$
+ SS$%%?$%((S)?Z[6MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM&HF$$&/)S?<~::!!:::::::/:-:|.S
+ SS%%%%S$%%%$$MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHHHHHM>?/S/:/:::`:/://:/::-::S
+ ?$SSSS?%SS$)MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM/4?:S:/:::/:::/:/:::.::?
+ S$(S?S$%(?$HMMMMMMMMMMMMMMMMM#&7RH99MMMMMMMMMMMMMMMMMMHHHd$/:::::/::::::-//.:.S
+
+
+ * openMP activated,  thread limit - # processes - # threads:   256   84   21
+ (?SS(%)S&HMMMMMMMMMMMMMMMMM#S|///???$9HHMMMMMMMMMDSZ&1S/?</>?~:///::|/!:/-:-:.(
+ $S?%?<H(MMMMMMMMMMMMMMMMR?`. :.:`::<>:``?/*?##*)$:/>       `((%://::/:::::/::/$
+ S$($$)HdMMMMMMMMMMMMMMMP: . `   `  `    `      `-            `Z<:>?::/:::::|:iS
+ c%%%&HMMMMMMMMMMMMMMMM6:                                      `$%)>%%</>!:::::c
+ S?%/MMMMMMMMMMMMMMMMMMH-                                        /ZSS>?:?~:;/::S
+ $SZ?MMMMMMMMMMMMMMMMMH?.                                        \"&((/?//?|:::$
+ $%$%&MMMMMMMMMMMMMMMMM:.                                          ?%/S:</::/::$
+ ($?}&HMMMMMMMMMMMMMMMM>:                                          $%%<?/i:|i::(
+ Z$($&MMMMMMMMMMMMMMMMHk(:.  . -                                   .S/\?\?/!:/:Z
+ (??$<HMMMMMMMMMMMMMMMFk|:   -.-.                                  :%/%/(:/:ii|(
+ SZ(S?]MMMMMMMMMMMMMMHS?:- -  ::.:                                  |/S:</::?||S
+ $%)$$(MMMMMMMMMMMMMMR):`:. :.:::`,,/bcokb/_                       :S?%?|~:/:/:$
+ %$$%$)[[?$?MMMMMMMMMM: :.:-.::::$7?<&7&MMMMMMM#/           _ .. ..:</?:(:/::::%
+ $$$?Z?HHH~|/MMMMMMMMM/`.-.:.:/:%%%%?dHMMMMMMMMMMH?,-   .,bMMMM6//./i~/~:<:::/:$
+ $($S$M//::S?ZHMMMMMH/:.`:::.:/%S/&MMHMMMMMMMMRM&><   ,HMMMMMMMF  :::?:///:|:::$
+ )[$S$S($|_i:#>::*H&?/::.::/:\"://:?>>`:&HMHSMMMM$:`-   MMHMMMMHHT .)i/?////::/)
+ $$[$$>$}:dHH&$$--?S::-:.:::--/-:``./::>%Zi?)&/?`:.`   `H?$T*\" `  /%?>%:)://ii$
+ $&=&/ZS}$RF<:?/-.|%r/:::/:/:`.-.-..|::S//!`\"``          >??:    `SS<S:)!/////$
+ Z&]>b[Z(Z?&%:::../S$$:>:::i`.`. `-.`  `                         ,>%%%:>/>/!|:/Z
+ $$&/F&1$c$?>:>?/,>?$$ZS/::/:-: ...                              |S?S)S?<~:::::$
+ &$&$&$k&>>|?<:<?((/$[/?)i~/:/. - -                              S?:%%%?/:::/::&
+ =[/Z[[Fp[MMH$>?Z&S$$$/$S///||..-           -.-                  /((S$:%<:///:/=
+ $&>1MHHMMMM6M9MMMM$Z$}$S%/:::.`.            .:/,,,dcb>/:.       ((SSSS%:)!//i|$
+ MMMMMMMMMMMR&&RRRHR&&($(?:|i::-             .:%&S&$[&H&``     ../>%;/?>??:<::>M
+ MMMMMMMMMMMMS/}S$&&H&[$SS//:::.:.   . . .v</Jq1&&D]&M&<,      :/::/?%%)S>?://:M
+ MMMMMMMMMMMM?}$/$$kMM&&$(%/?//:..`.  .|//1d/`://?*/*/\"` `     .:/(SS$%(S%)):%M
+ MMMMMMMMMMMM(}$$>&&MMHR#$S%%:?::.:|-.`:;&&b/D/$p=qpv//b/~`   :/~~%%??$=$)Z$S+;M
+ MMMMMMMMMMMM[|S$$Z1]MMMMD[$?$:>)/::: :/?:``???bD&{b<<-`     .,:/)|SS(}Z/$$?/<SM
+ MMMMMMMMMMMM||$)&7k&MMMMH9]$$??Z%|!/:i::`  `` .             SS?SS?Z/]1$/&$c/$SM
+ MMMMMMMMMMMM| -?>[&]HMMMMMMMH1[/7SS(?:/..-` ::/Sc,/_,     _<$?SS%$S/&c&&$&>//<M
+ MMMMMMMMMMMMR  `$&&&HMM9MMMMMMM&&c$%%:/:/:.:.:/\?\?/\    _MMHk/7S/]dq&1S<&&></M
+ MMMMMMMMMMMMM?  :&96MHMMMMMMMMMMMHHk[S%(<<:// `         ,MMMMMMM&/Z6H]DkH]1$&&M
+ MMMMMMMMMMMMMD    99H9HMMMMMMMMMMMMMMMb&%$<:i.:....    .MMMMMMMMM6HHHRH&H&H1SFM
+ MMMMMMMMMMMMMM|   `?HMMMMMMMMMMMMMMMMMMMHk6k&>$&Z$/?_.bHMMMMMMMMMMM&6HRM9H6]ZkM
+ MMMMMMMMMMMMMMM/    `TMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH6RH&R6&M
+ MMMMMMMMMMMMMMMM    -|?HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMFHH6HMD&&M
+ MMMMMMMMMMMMMMMMk  ..:~?9MMMMMMMMMMMMM#`:MMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MHkR6&FM
+ MMMMMMMMMMMMMMMMM/  .-!:%$ZHMMMMMMMMMR` dMMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MRMHH9&M
+
+
+ * openMP activated,  thread limit - # processes - # threads:   256   84   21
+
+
+ * openMP activated,  thread limit - # processes - # threads:   256   84   21
+ MMMMMMMMMMMMMMMMMML,:.-|::/?&&MMMMMM` .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHRMH&&6M
+ MMMMMMMMMMMMMMMMMMMc%>/:::i<:SMMMMMMHdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHM&969kM
+ MMMMMMMMMMMMMMMMMMMMSS/$$/(|HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHH&HH&M
+ MMMMMMMMMMMMMMMMMMMM6S/?/MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMR96H1DR1M
+ MMMMMMMMMMMMMMMMMMMMM&$MHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH691&&M
+ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&R&9ZM
+ MMMMMMMMMMMMMMMMMMMMMMMMMRHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&96][6M
+ MMMMMMMMMMMMMMMMMMMMMMMMp?:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM96HH1][FM
+ MMMMMMMMMMMMMMMMMMMMMMMM> -HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&1k&$&M
+ *******************************************************************************
+ *                                                                             *
+ *         =========================================================           *
+ *                     Program for Atomic and Molecular                        *
+ *          Direct Iterative Relativistic All-electron Calculations            *
+ *         =========================================================           *
+ *                                                                             *
+ *                                                                             *
+ *    Written by:                                                              *
+ *                                                                             *
+ *    Andre S. P. Gomes        CNRS/Universite de Lille          France        *
+ *    Trond Saue               Universite Toulouse III           France        *
+ *    Lucas Visscher           Vrije Universiteit Amsterdam      Netherlands   *
+ *    Hans Joergen Aa. Jensen  University of Southern Denmark    Denmark       *
+ *    Radovan Bast             UiT The Arctic University of      Norway        *
+ *                                                                             *
+ *    with contributions from:                                                 *
+ *                                                                             *
+ *    Ignacio Agustin Aucar    Northeast National University     Argentina     *
+ *    Vebjoern Bakken          University of Oslo                Norway        *
+ *    Kenneth G. Dyall         Schrodinger, Inc., Portland       USA           *
+ *    Sebastien Dubillard      University of Strasbourg          France        *
+ *    Ulf Ekstroem             University of Oslo                Norway        *
+ *    Ephraim Eliav            University of Tel Aviv            Israel        *
+ *    Thomas Enevoldsen        University of Southern Denmark    Denmark       *
+ *    Elke Fasshauer           University of Aarhus              Denmark       *
+ *    Timo Fleig               Universite Toulouse III           France        *
+ *    Olav Fossgaard           UiT The Arctic University of      Norway        *
+
+
+ * openMP activated,  thread limit - # processes - # threads:   256   84   21
+ *    Loic Halbert             Universite de Lille               France        *
+ *    Erik D. Hedegaard        Lund University                   Sweden        *
+ *    Trygve Helgaker          University of Oslo                Norway        *
+ *    Benjamin Helmich-Paris   Max Planck Institute f. Coal Res. Germany       *
+ *    Johan Henriksson         Linkoeping University             Sweden        *
+ *    Miroslav Ilias           Matej Bel University              Slovakia      *
+ *    Christoph R. Jacob       TU Braunschweig                   Germany       *
+ *    Stefan Knecht            ETH Zuerich                       Switzerland   *
+ *    Stanislav Komorovsky     UiT The Arctic University of      Norway        *
+ *    Ossama Kullie            University of Kassel              Germany       *
+ *    Jon K. Laerdahl          University of Oslo                Norway        *
+ *    Christoffer V. Larsen    University of Southern Denmark    Denmark       *
+ *    Yoon Sup Lee             KAIST, Daejeon                    South Korea   *
+ *    Huliyar S. Nataraj       BME/Budapest Univ. Tech. & Econ.  Hungary       *
+ *    Malaya Kumar Nayak       Bhabha Atomic Research Centre     India         *
+ *    Patrick Norman           Stockholm Inst. of Technology     Sweden        *
+ *    Malgorzata Olejniczak    University of Warsaw              Poland        *
+ *    Jeppe Olsen              Aarhus University                 Denmark       *
+ *    Jogvan Magnus H. Olsen   University of Southern Denmark    Denmark       *
+ *    Young Choon Park         KAIST, Daejeon                    South Korea   *
+ *    Jesper K. Pedersen       University of Southern Denmark    Denmark       *
+ *    Markus Pernpointner      University of Heidelberg          Germany       *
+ *    Roberto Di Remigio       UiT The Arctic University of      Norway        *
+ *    Kenneth Ruud             UiT The Arctic University of      Norway        *
+ *    Pawel Salek              Stockholm Inst. of Technology     Sweden        *
+ *    Bernd Schimmelpfennig    Karlsruhe Institute of Technology Germany       *
+ *    Bruno Senjean            University of Leiden              Netherlands   *
+ *    Avijit Shee              University of Michigan            USA           *
+ *    Jetze Sikkema            Vrije Universiteit Amsterdam      Netherlands   *
+ *    Andreas J. Thorvaldsen   UiT The Arctic University of      Norway        *
+ *    Joern Thyssen            University of Southern Denmark    Denmark       *
+ *    Joost N. P. van Stralen  Vrije Universiteit Amsterdam      Netherlands   *
+ *    Marta L. Vidal           Technical University of Denmark   Denmark       *
+ *    Sebastien Villaume       Linkoeping University             Sweden        *
+ *    Olivier Visser           University of Groningen           Netherlands   *
+ *    Toke Winther             University of Southern Denmark    Denmark       *
+ *    Shigeyoshi Yamamoto      Chukyo University                 Japan         *
+ *                                                                             *
+ *    For more information about the DIRAC code see http://diracprogram.org    *
+ *                                                                             *
+ *    This is an experimental code. The authors accept no responsibility       *
+ *    for the performance of the code or for the correctness of the results.   *
+ *                                                                             *
+ *    The code (in whole or part) is not to be reproduced for further          *
+ *    distribution without the written permission of the authors or            *
+ *    their representatives.                                                   *
+ *                                                                             *
+ *    If results obtained with this code are published, an                     *
+ *    appropriate citation would be:                                           *
+ *                                                                             *
+ *    DIRAC, a relativistic ab initio electron
+
+ * openMP activated,  thread limit - # processes - # threads:   256   84   21
+
+
+ * openMP activated,  thread limit - # processes - # threads:   256   84   21
+ic structure program,            *
+ *    Release DIRAC19 (2019), written by                                       *
+ *    A. S. P. Gomes, T. Saue, L. Visscher, H. J. Aa. Jensen, and R. Bast,     *
+ *    with contributions from I. A. Aucar, V. Bakken, K. G. Dyall,             *
+ *    S. Dubillard, U. Ekstroem, E. Eliav, T. Enevoldsen, E. Fasshauer,        *
+ *    T. Fleig, O. Fossgaard, L. Halbert, E. D. Hedegaard, T. Helgaker,        *
+ *    J. Henriksson, M. Ilias, Ch. R. Jacob, S. Knecht, S. Komorovsky,         *
+ *    O. Kullie, J. K. Laerdahl, C. V. Larsen, Y. S. Lee, H. S. Nataraj,       *
+ *    M. K. Nayak, P. Norman, M. Olejniczak, J. Olsen, J. M. H. Olsen,         *
+ *    Y. C. Park, J. K. Pedersen, M. Pernpointner, R. Di Remigio, K. Ruud,     *
+ *    P. Salek, B. Schimmelpfennig, B. Senjean, A. Shee, J. Sikkema,           *
+ *    A. J. Thorvaldsen, J. Thyssen, J. N. P. van Stralen, M. L. Vidal,        *
+  *    S. Villaume, O. Visser, T. Winther, and S. Yamamoto,                     *
+ *    (see http://diracprogram.org).                                           *
+ *                                                                             *
+ *******************************************************************************
+
+
+Version information
+-------------------
+
+Branch        | caar-cholesky
+Commit hash   | b7b26cd6c
+Commit author | Johann Pototschnig
+Commit date   | Thu Jul 9 10:37:49 2020 -0400
+
+
+Configuration and build information
+-----------------------------------
+
+Who compiled             | jpoto
+Compiled on server       | login4
+Operating system         | Linux-4.14.0-115.21.2.el7a.ppc64le
+CMake version            | 3.17.3
+CMake generator          | Unix Makefiles
+CMake build type         | release
+Configuration time       | 2020-07-10 09:28:10.929493
+Python version           | 3.6.7
+Fortran compiler         | /autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-8.1.1/spectrum-mpi-10.3.1.2-20200121-chae23sgwacfeot7vxkpfboz6wao2c33/bin/mpif90
+Fortran compiler version | 8.1.1
+Fortran compiler flags   |  -g -fcray-pointer -fbacktrace -fno-range-check -DVAR_GFORTRAN -DVAR_MFDS  -fopenmp
+C compiler               | /autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-8.1.1/spectrum-mpi-10.3.1.2-20200121-chae23sgwacfeot7vxkpfboz6wao2c33/bin/mpicc
+C compiler version       | 8.1.1
+C compiler flags         |  -g  -fopenmp
+C++ compiler             | /autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-8.1.1/spectrum-mpi-10.3.1.2-20200121-chae23sgwacfeot7vxkpfboz6wao2c33/bin/mpicxx
+C++ compiler version     | 8.1.1
+C++ compiler flags       |  -g -Wall -Wno-unknown-pragmas -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused  -fopenmp
+Static linking           | False
+64-bit integers          | False
+MPI parallelization      | True
+MPI launcher             | /autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-8.1.1/spectrum-mpi-10.3.1.2-20200121-chae23sgwacfeot7vxkpfboz6wao2c33/bin/mpiexec
+Math libraries           | /autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-8.1.1/netlib-lapack-3.8.0-p74bsneivus4jck562lq7drw2s7i4ytd/lib64/liblapack.so;/autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/gcc-8.1.1/netlib-lapack-3.8.0-p74bsneivus4jck562lq7drw2s7i4ytd/lib64/libblas.so
+Builtin BLAS library     | OFF
+Builtin LAPACK library   | OFF
+Explicit libraries       | unknown
+Compile definitions      | HAVE_SYSTEM_NATIVE_BLAS;HAVE_SYSTEM_NATIVE_LAPACK;HAVE_MPI;HAVE_OPENMP;VAR_MPI;VAR_MPI2;USE_MPI_MOD_F90;MOD_UNRELEASED;SYS_LINUX;PRG_DIRAC;INSTALL_WRKMEM=64000000;MOD_QCORR;MOD_INTEREST;MOD_LAO_REARRANGED;MOD_MCSCF_spinfree;MOD_AOOSOC;MOD_ESR;MOD_KRCC;MOD_SRDFT;MOD_EXACORR
+
+
+ LAPACK integer*4/8 selftest passed
+ Selftest of ISO_C_BINDING Fortran - C/C++ interoperability PASSED
+ MPI selftest passed with MPI_INTEGER of the size 4 bytes
+
+
+ * openMP activated,  thread limit - # processes - # threads:   256   84   21
+
+
+ * openMP activated,  thread limit - # processes - # threads:   256   84   21
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   12
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   13
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    6
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    4
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    1
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   15
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    8
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   20
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    7
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    2
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   16
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    5
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    9
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   17
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   11
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   19
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   18
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    0
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   10
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    3
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   14
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    4
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    9
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    2
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   12
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   14
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    6
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   15
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    7
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   13
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    1
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   19
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    3
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    8
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   17
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   10
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    0
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   11
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   16
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   20
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    5
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   18
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   10
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   11
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    6
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    1
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   15
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    3
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   20
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   19
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    0
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    9
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    4
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    5
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    2
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   14
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    7
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   13
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   17
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   16
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   18
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    8
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   12
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   14
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    2
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    8
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   16
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    6
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   20
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    9
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    1
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   12
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    7
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    4
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   18
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   17
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   10
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    0
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    3
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   13
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    5
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   19
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   12
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   11
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   15
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   13
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    1
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    6
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   10
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    8
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   20
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    9
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   11
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    5
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    7
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   16
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   18
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   14
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   19
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    0
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   15
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    2
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    3
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   17
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    4
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   10
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   11
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    6
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    4
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    9
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    7
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   19
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    1
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    2
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    5
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   15
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    3
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   17
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   16
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   18
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   12
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    0
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   13
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   14
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    8
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   20
+
+Execution time and host
+-----------------------
+
+ 
+     Date and time (Linux)  : Fri Jul 10 09:18:22 2020
+     Host name              : h30n12                                  
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   14
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   15
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    1
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    2
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    9
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   20
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   12
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    4
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   10
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   16
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    3
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   18
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   13
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   17
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   11
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    0
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    7
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    6
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   19
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    8
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    5
+
+
+Contents of the input file
+--------------------------
+
+!                                                                                                   
+! This test calculates the CC energy with the X2C Hamiltonian                                       
+!                                                                                                   
+**DIRAC                                                                                             
+.WAVE FUNCTIONS                                                                                     
+.TITLE                                                                                              
+Water molecule. X2C Hamiltonian. CC energies.                                                       
+**HAMILTONIAN                                                                                       
+.X2C                                                                                                
+.PRINT                                                                                              
+1                                                                                                   
+**INTEGRALS                                                                                         
+*READIN                                                                                             
+.UNCONTRACT                                                                                         
+**WAVE FUNCTIONS                                                                                    
+.SCF                                                                                                
+.EXACC                                                                                              
+*SCF                                                                                                
+.EVCCNV                                                                                             
+1.0E-9                                                                                              
+**EXACC                                                                                             
+.EXATENSOR                                                                                          
+.OCCUPIED                                                                                           
+3..5                                                                                                
+.VIRTUAL                                                                                            
+6..17                                                                                               
+.PRINT                                                                                              
+5                                                                                                   
+.NCYCLES                                                                                            
+80                                                                                                  
+.MOINT_SCHEME                                                                                       
+41                                                                                                  
+.TCONVERG                                                                                           
+1.0D-6                                                                                              
+.CHOLESKY                                                                                           
+1.0D-6                                                                                              
+*END OF                                                                                             
+
+
+Contents of the molecule file
+-----------------------------
+
+INTGRL                                                                                              
+Water, explitcit basis, no symmetry used.                                                           
+cc-pVDZ basis (note that a tight p has NOT been added)                                              
+C   2    0  X  Y                                                                                    
+        8.    1                                                                                     
+O      .0000000000        0.0000000000        -.2249058930                                          
+LARGE    3   1   1   1                                                                              
+F   9    0    3                                                                                     
+  11720.0000000                                                                                     
+   1759.0000000                                                                                     
+    400.8000000                                                                                     
+    113.7000000                                                                                     
+     37.0300000                                                                                     
+     13.2700000                                                                                     
+      5.0250000                                                                                     
+      1.0130000                                                                                     
+      0.3023000                                                                                     
+F   4    0    3                                                                                     
+     17.7000000                                                                                     
+      3.8540000                                                                                     
+      1.0460000                                                                                     
+      0.2753000                                                                                     
+F   1    0    3                                                                                     
+      1.1850000                                                                                     
+        1.    2                                                                                     
+H     1.4523499293         .0000000000         .8996235720                                          
+H    -1.4523499293         .0000000000         .8996235720                                          
+LARGE    2   1   1                                                                                  
+F   4    0    3                                                                                     
+     13.0100000                                                                                     
+      1.9620000                                                                                     
+      0.4446000                                                                                     
+      0.1220000                                                                                     
+F   1    0    3                                                                                     
+      0.7270000                                                                                     
+FINISH                                                                                              
+                                                                                                    
+
+
+    *************************************************************************
+    ************* Water molecule. X2C Hamiltonian. CC energies. *************
+    *************************************************************************
+
+ Jobs in this run:
+   * Wave function
+
+
+    **************************************************************************
+    ************************** General DIRAC set-up **************************
+    **************************************************************************
+
+ The 2018 CODATA Recommended Values of the Fundamental Physical Constants (Web Version 8.1)
+        Eite Tiesinga, Peter J. Mohr, David B. Newell, and Barry N. Taylor                 
+        Database developed by J. Baker, M. Douma, and S. Kotochigova                       
+  Available at http://physics.nist.gov/constants                                           
+  National Institute of Standards and Technology, Gaithersburg, MD 20899                   
+ * The speed of light :        137.0359992
+ * Running in two-component mode
+ * Parallel run with 7 slaves.
+ * Direct evaluation of the following two-electron integrals:
+   - LL-integrals
+ * Spherical transformation embedded in MO-transformation
+   for large components
+ * Transformation to scalar RKB basis embedded in
+   MO-transformation for small components
+ * Thresholds for linear dependence:
+   Large components:   1.00D-06
+   Small components:   1.00D-08
+ * General print level   :   0
+
+
+    *************************************************************************
+    ****************** Output from HERMIT input processing ******************
+    *************************************************************************
+
+ Default print level:        1
+ Using default nuclear model: Gaussian charge distribution.
+
+ Two-electron integrals not calculated.
+
+
+ Ordinary (field-free non-relativistic) Hamiltonian integrals not calculated.
+
+
+
+ Changes of defaults for *READIN
+ -------------------------------
+
+
+ Uncontracted basis forced, irrespective of basis input file.
+
+
+
+   ***************************************************************************
+   ****************** Output from MOLECULE input processing ******************
+   ***************************************************************************
+
+
+
+  Title Cards
+  -----------
+
+  Water, explitcit basis, no symmetry used.                               
+  cc-pVDZ basis (note that a tight p has NOT been added)                  
+  Nuclear Gaussian exponent for atom of charge   8.000 :    5.8631428213D+08
+  Nuclear Gaussian exponent for atom of charge   1.000 :    2.1248236111D+09
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Point group: C1 
+
+   * Character table
+
+        |  E 
+   -----+-----
+    A   |   1
+
+   * Direct product table
+
+        | A  
+   -----+-----
+    A   | A  
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * One fermion irrep:   E1 
+   * Quaternionic group. NZ = 4
+   * Direct product decomposition:
+          E1  x E1  : A   + A   + A   + A  
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1
+      La  |  A  (1)  A  (1)  |
+      Sa  |  A  (1)  A  (1)  |
+      Lb  |  A  (1)  A  (1)  |
+      Sb  |  A  (1)  A  (1)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    A    1  i  j  k
+
+  QM-QM nuclear repulsion energy :      9.055003146800
+
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types :    2
+  Total number of atoms:    3
+
+  label    atoms   charge   prim    cont     basis   
+  ----------------------------------------------------------------------
+  O           1       8      27      27      L  - [9s4p1d|9s4p1d]                                                
+  H           2       1       7       7      L  - [4s1p|4s1p]                                                    
+  ----------------------------------------------------------------------
+                             41      41      L  - large components
+  ----------------------------------------------------------------------
+  total:      3      10      41      41
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1   2
+  Basis set typed explicitly in input file                                        
+
+
+  Cartesian Coordinates (bohr)
+  ----------------------------
+
+  Total number of coordinates:  9
+
+
+   1   O        x      0.0000000000
+   2            y      0.0000000000
+   3            z     -0.2249058930
+
+   4   H        x      1.4523499293
+   5            y      0.0000000000
+   6            z      0.8996235720
+
+   7   H        x     -1.4523499293
+   8            y      0.0000000000
+   9            z      0.8996235720
+
+
+
+  Cartesian coordinates in XYZ format (Angstrom)
+  ----------------------------------------------
+
+    3
+
+O      0.0000000000   0.0000000000  -0.1190150732
+H      0.7685504848   0.0000000000   0.4760602927
+H     -0.7685504848   0.0000000000   0.4760602927
+
+
+   Interatomic separations (in Angstroms):
+   ---------------------------------------
+
+            O           H           H   
+
+   O       0.000000
+   H       0.972000    0.000000
+   H       0.972000    1.537101    0.000000
+
+
+
+
+  Bond distances (angstroms):
+  ---------------------------
+
+                  atom 1     atom 2                           distance
+                  ------     ------                           --------
+  bond distance:    H          O                              0.972000
+  bond distance:    H          O                              0.972000
+
+
+  Bond angles (degrees):
+  ----------------------
+
+                  atom 1     atom 2     atom 3                   angle
+                  ------     ------     ------                   -----
+  bond angle:       H          O          H                    104.500
+
+
+
+   Nuclear repulsion energy :    9.055003146800 Hartree
+
+                       * Total mass:    18.010565 amu
+                       * Natural abundance:  99.730 %
+
+
+
+* Center-of-mass coordinates (a.u.):       0.000000000000000   0.000000000000000  -0.099054326648403
+
+
+
+* Center-of-mass coordinates (A)   :       0.000000000000000   0.000000000000000  -0.052417292303677
+
+
+                                GETLAB: AO-labels
+                                -----------------
+
+   * Large components:   18
+     1  L O   1 s        2  L O   1 px       3  L O   1 py       4  L O   1 pz       5  L O   1 dxx      6  L O   1 dxy 
+     7  L O   1 dxz      8  L O   1 dyy      9  L O   1 dyz     10  L O   1 dzz     11  L H   1 s       12  L H   1 px  
+    13  L H   1 py      14  L H   1 pz      15  L H   1 s       16  L H   1 px      17  L H   1 py      18  L H   1 pz  
+   * Small components:    0
+
+
+
+  Symmetry Orbitals
+  -----------------
+
+  Number of orbitals in each symmetry:           41
+  Number of large orbitals in each symmetry:     41
+  Number of small orbitals in each symmetry:      0
+
+* Large component functions
+
+  Symmetry  A  ( 1)
+
+        9 functions:    O  s   
+        4 functions:    O  px  
+        4 functions:    O  py  
+        4 functions:    O  pz  
+        1 functions:    O  dxx 
+        1 functions:    O  dxy 
+        1 functions:    O  dxz 
+        1 functions:    O  dyy 
+        1 functions:    O  dyz 
+        1 functions:    O  dzz 
+        4 functions:    H  s   
+        1 functions:    H  px  
+        1 functions:    H  py  
+        1 functions:    H  pz  
+        4 functions:    H  s   
+        1 functions:    H  px  
+        1 functions:    H  py  
+        1 functions:    H  pz  
+
+
+   ***************************************************************************
+   *************************** Hamiltonian defined ***************************
+   ***************************************************************************
+
+
+ One-electron operator origins:
+ - General operator origin (a.u.)       :   0.000000000000000   0.000000000000000   0.000000000000000
+ - Magnetic gauge origin (a.u.)         :   0.000000000000000   0.000000000000000   0.000000000000000
+ - Dipole (and multipole) origin (a.u.) :   0.000000000000000   0.000000000000000   0.000000000000000
+ * Print level:    1
+ * Exact-Two-Component (X2C) Hamiltonian
+   Reference: 
+    M. Ilias and T. Saue:
+    "Implementation of an infinite-order two-component relativistic Hamiltonian 
+    by a simple one-step transformation." 
+    J. Chem. Phys., 126 (2007) 064102.
+   additional reference for the new X2C module:
+    S. Knecht and T. Saue:
+    manuscript in preparation, Strasbourg 2010.
+
+ * Running in two-component mode
+ * Default integral flags passed to all modules
+   - LL-integrals:     1
+   - LS-integrals:     0
+   - SS-integrals:     0
+   - GT-integrals:     0
+===========================================================================
+   Set-up for AMFI/RELSCF calculations
+===========================================================================
+  ...no reading under "*AMFI  ", thus default settings
+ * AMFI   code print level:    0
+ * RELSCF code print level:    0
+ * RELSCF maximum number of iterations:   50
+ * All AMFI mean-field summations are on neutral individual atoms.
+ * order of AMFI contributions to the X2C Hamiltonian:  2
+  --> adding spin-same orbit MFSSO2 terms.
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    4
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    1
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    6
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    3
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   20
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   14
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   16
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   10
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    7
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   13
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    9
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    8
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    0
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   15
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    2
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   17
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   19
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   11
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   12
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21    5
+
+
+ * openMP parallel region,  max # threads - current # threads - current thread:                   21   21   18
+
+
+    **************************************************************************
+    ************************** Wave function module **************************
+    **************************************************************************
+
+ Wave function types requested (in input order):
+     HF        
+     EXA_CC    
+
+ Wave function jobs in execution order (expanded):
+ * Hartree-Fock calculation
+
+ * Initial Automatic occupation based on:
+   Total charge of atoms =  10
+   Charge of molecule    =   0
+   i.e. no. of electrons =  10
+===========================================================================
+ *SCF: Set-up for Hartree-Fock calculation:
+===========================================================================
+ * Number of fermion irreps: 1
+ * Closed shell SCF calculation with    10 electrons in    5 orbitals.
+ * Sum of atomic potentials used for start guess
+ * General print level   :   0
+
+ ***** INITIAL TRIAL SCF FUNCTION *****
+ * Trial vectors read from file DFCOEF
+ * Scaling of active-active block correction to open shell Fock operator    0.500000
+   to improve convergence (default value).
+   The final open-shell orbital energies are recalculated with 1.0 scaling,
+   such that all occupied orbital energies correspond to Koopmans' theorem ionization energies.
+
+ ***** SCF CONVERGENCE CRITERIA *****
+ * Convergence on norm of error vector (gradient).
+   Desired convergence:1.000D-09
+   Allowed convergence:1.000D-09
+
+ ***** CONVERGENCE CONTROL *****
+ * Fock matrix constructed using differential density matrix
+    with optimal parameter.
+ * DIIS (in MO basis)
+ * DIIS will be activated when convergence reaches : 1.00D+20
+   - Maximum size of B-matrix:   10
+ * Damping of Fock matrix when DIIS is not activated. 
+   Weight of old matrix    : 0.250
+ * Maximum number of SCF iterations  :   50
+ * No quadratic convergent Hartree-Fock
+ * Contributions from 2-electron integrals to Fock matrix:
+   LL-integrals.
+    ---> this is default setting from Hamiltonian input
+ * NB!!! No e-p rotations in 2nd order optimization.
+ ***** OUTPUT CONTROL *****
+ * Only electron eigenvalues written out.
+
+
+ ********************************************************************************
+ *************************** Input consistency checks ***************************
+ ********************************************************************************
+
+
+
+    *************************************************************************
+    ************************ End of input processing ************************
+    *************************************************************************
+
+
+
+   ***************************************************************************
+   ****************** Output from MOLECULE input processing ******************
+   ***************************************************************************
+
+
+
+  Title Cards
+  -----------
+
+  Water, explitcit basis, no symmetry used.                               
+  cc-pVDZ basis (note that a tight p has NOT been added)                  
+  Nuclear Gaussian exponent for atom of charge   8.000 :    5.8631428213D+08
+  Nuclear Gaussian exponent for atom of charge   1.000 :    2.1248236111D+09
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Point group: C1 
+
+   * Character table
+
+        |  E 
+   -----+-----
+    A   |   1
+
+   * Direct product table
+
+        | A  
+   -----+-----
+    A   | A  
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * One fermion irrep:   E1 
+   * Quaternionic group. NZ = 4
+   * Direct product decomposition:
+          E1  x E1  : A   + A   + A   + A  
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1
+      La  |  A  (1)  A  (1)  |
+      Sa  |  A  (1)  A  (1)  |
+      Lb  |  A  (1)  A  (1)  |
+      Sb  |  A  (1)  A  (1)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    A    1  i  j  k
+
+  QM-QM nuclear repulsion energy :      9.055003146800
+
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types :    2
+  Total number of atoms:    3
+
+  label    atoms   charge   prim    cont     basis   
+  ----------------------------------------------------------------------
+  O           1       8      27      27      L  - [9s4p1d|9s4p1d]                                                
+  H           2       1       7       7      L  - [4s1p|4s1p]                                                    
+  ----------------------------------------------------------------------
+                             41      41      L  - large components
+                            106     106      S  - small components
+  ----------------------------------------------------------------------
+  total:      3      10     147     147
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1   2
+  Basis set typed explicitly in input file                                        
+
+
+  Cartesian Coordinates (bohr)
+  ----------------------------
+
+  Total number of coordinates:  9
+
+
+   1   O        x      0.0000000000
+   2            y      0.0000000000
+   3            z     -0.2249058930
+
+   4   H        x      1.4523499293
+   5            y      0.0000000000
+   6            z      0.8996235720
+
+   7   H        x     -1.4523499293
+   8            y      0.0000000000
+   9            z      0.8996235720
+
+
+
+  Cartesian coordinates in XYZ format (Angstrom)
+  ----------------------------------------------
+
+    3
+
+O      0.0000000000   0.0000000000  -0.1190150732
+H      0.7685504848   0.0000000000   0.4760602927
+H     -0.7685504848   0.0000000000   0.4760602927
+
+
+   Interatomic separations (in Angstroms):
+   ---------------------------------------
+
+            O           H           H   
+
+   O       0.000000
+   H       0.972000    0.000000
+   H       0.972000    1.537101    0.000000
+
+
+
+
+  Bond distances (angstroms):
+  ---------------------------
+
+                  atom 1     atom 2                           distance
+                  ------     ------                           --------
+  bond distance:    H          O                              0.972000
+  bond distance:    H          O                              0.972000
+
+
+  Bond angles (degrees):
+  ----------------------
+
+                  atom 1     atom 2     atom 3                   angle
+                  ------     ------     ------                   -----
+  bond angle:       H          O          H                    104.500
+
+
+
+   Nuclear repulsion energy :    9.055003146800 Hartree
+
+                       * Total mass:    18.010565 amu
+                       * Natural abundance:  99.730 %
+
+
+
+* Center-of-mass coordinates (a.u.):       0.000000000000000   0.000000000000000  -0.099054326648403
+
+
+
+* Center-of-mass coordinates (A)   :       0.000000000000000   0.000000000000000  -0.052417292303677
+
+
+                      Nuclear contribution to dipole moments
+                      --------------------------------------
+
+                               au             Debye
+
+                    x      0.00000000      0.00000000
+                    y      0.00000000      0.00000000
+                    z      0.00000000      0.00000000
+
+                        1 Debye =   2.54177000 a.u. 
+
+Total time used in ONEGEN (CPU)  0.00798400s and (WALL)  0.01000000s
+
+
+                       Generating Lowdin canonical matrix:
+                       -----------------------------------
+
+   L   A     * Deleted:          1(Proj:          1, Lindep:          0) Smin: 0.15E-01
+   S   A     * Deleted:          9(Proj:          9, Lindep:          0) Smin: 0.74E-02
+
+                   *********************************************************************
+                   ***   Entering the Exact-Two-Component (X2C) interface in DIRAC   ***
+                   ***                                                               ***
+                   *** library version:  1.2 (August  2013)                          ***
+                   ***                                                               ***
+                   *** authors:          - Stefan Knecht                             ***
+                   ***                   - Trond Saue                                ***
+                   *** contributors:     - Hans Joergen Aagaard Jensen               ***
+                   ***                   - Michal Repisky                            ***
+                   ***                   - Miroslav Ilias                            ***
+                   *** features:         - X2C                                       ***
+                   ***                   - X2C-atomic/fragment (X2C-LU)              ***
+                   ***                   - X2C-spinfree                              ***
+                   ***                   - X2C-molecular-mean-field (X2Cmmf)         ***
+                   ***                                                               ***
+                   ***                      Universities of                          ***
+                   ***     Zuerich, Toulouse, Odense, Banska Bystrica and Tromsoe    ***
+                   ***                                                               ***
+                   *** contact: stefan.knecht@phys.chem.ethz.ch                      ***
+                   *********************************************************************
+
+
+                   *** chosen path in X2C module: molecular X2C (with spin-orbit contributions)      
+
+
+                                Output from MODHAM
+                                ------------------
+
+ * Applied strict kinetic balance !
+ * Applied SL-regrouping on AO2MO tranf.matrix in SLSORT.
+
+
+                                Output from AMFIIN
+                                ------------------
+
+
+  *** number of unique nuclei (from file MNF.INP): 2
+
+  *** calculate AMFI for atom type 1 with atomic charge     8
+  *** number of nuclei with identical atom type:   1
+   unique nuclei index: 1
+  *** file with AMFI integrals for this center: AOPROPER_MNF.8.1    
+
+
+                         ATOMIC NO-PAIR SO-MF CODE starts
+                         --------------------------------
+
+   Douglas-Kroll type operators 
+  charge on the calculated atom:  0
+  Mean-field summation for electrons #:   8
+    ...electronic occupation of  O: [He]2s^2 2p^4             
+ ****  Written to the file TOSCF for "relscf" ****
+        charge:  8.000
+      nprimit:   9  4  1  0
+   closed sh.:   2  0  0  0
+     open sh.:   0  4  0  0
+
+
+                       *** PROGRAM AT34 - ALLIANT - @V ***
+                       -----------------------------------
+
+
+      SYMMETRY SPECIES            S       P       D       F
+      NUMBER OF BASIS FUNCTIONS:  9       4       1
+      NUMBER OF CLOSED SHELLS  :  2       0       0
+      OPEN SHELL OCCUPATION    :  0       4       0
+  ### SCF ITERATIONS           ###
+  ### NON-RELATIVISTIC APPROX. ###
+    1. iteration,  total energy:             0.000000000000
+    2. iteration,  total energy:           -71.292636094640
+    3. iteration,  total energy:           -74.460726878281
+    4. iteration,  total energy:           -74.762344904174
+    5. iteration,  total energy:           -74.782917711488
+    6. iteration,  total energy:           -74.785964221396
+    7. iteration,  total energy:           -74.786172202162
+    8. iteration,  total energy:           -74.786186580357
+    9. iteration,  total energy:           -74.786187508482
+   10. iteration,  total energy:           -74.786187641305
+   11. iteration,  total energy:           -74.786187650828
+   12. iteration,  total energy:           -74.786187651488
+   13. iteration,  total energy:           -74.786187656172
+   13. iteration,  total energy:           -74.786187651537
+  ### NON-RELATIVISTIC APPROX. ###
+        13      -0.7478618765D+02      -0.1495722830D+03       0.7478609539D+02      -0.2000001234D+01
+  ### SCF ITERATIONS           ###
+  ### EV APPROX.               ###
+    1. iteration,  total energy:           -74.834671965473
+    2. iteration,  total energy:           -74.838229600651
+    3. iteration,  total energy:           -74.838230705342
+    4. iteration,  total energy:           -74.838230772077
+    5. iteration,  total energy:           -74.838230780590
+    6. iteration,  total energy:           -74.838230776905
+    7. iteration,  total energy:           -74.838230776966
+    8. iteration,  total energy:           -74.838230776970
+    9. iteration,  total energy:           -74.838230781550
+    9. iteration,  total energy:           -74.838230776970
+  ### EV  OPERATOR RESULT      ###
+         9      -0.7483823078D+02      -0.1497856723D+03       0.7494744149D+02      -0.1998542836D+01
+      *** AMFIIN: ADDING nucleus    1 with charge   8 to the BSSn Hamiltonian.
+
+  *** calculate AMFI for atom type 2 with atomic charge     1
+  *** number of nuclei with identical atom type:   2
+  no 2e-SO corrections for hydrogen or hydrogen-like 1e-systems. AMFI is skipped.
+   unique nuclei index: 2
+
+       *** This (AMFI) unique nuclei is not to be calculated ! Only pass (to read input basis) through the AMFI routine.
+
+
+
+                         ATOMIC NO-PAIR SO-MF CODE starts
+                         --------------------------------
+
+   Douglas-Kroll type operators 
+  skip explicit AMFI - reading AMFI integrals from file AOPROPER_MNF.xxx!
+
+                   *********************************************************************
+                   ***               X2C transformation ended properly.              ***
+                   ***          Calculation continues in two-component mode.         ***
+                   *********************************************************************
+
+ >>> CPU  time used in mk_h2c is   0.11 seconds
+ >>> WALL time used in mk_h2c is   0.08 seconds
+  Nuclear Gaussian exponent for atom of charge   8.000 :    5.8631428213D+08
+  Nuclear Gaussian exponent for atom of charge   1.000 :    2.1248236111D+09
+
+
+                      Nuclear contribution to dipole moments
+                      --------------------------------------
+
+                               au             Debye
+
+                    x      0.00000000      0.00000000
+                    y      0.00000000      0.00000000
+                    z      0.00000000      0.00000000
+
+                        1 Debye =   2.54177000 a.u. 
+
+Total time used in ONEGEN (CPU)  0.00175400s and (WALL)  0.00200000s
+
+
+                       Generating Lowdin canonical matrix:
+                       -----------------------------------
+
+   L   A     * Deleted:          1(Proj:          1, Lindep:          0) Smin: 0.15E-01
+
+
+      **********************************************************************
+      ************************* Orbital dimensions *************************
+      **********************************************************************
+
+No. of positive energy orbitals (NESH):    40
+No. of negative energy orbitals (NPSH):     0
+Total no. of orbitals           (NORB):    40
+ >>> CPU  time used in PAMSET is   0.13 seconds
+ >>> WALL time used in PAMSET is   0.11 seconds
+
+
+ *******************************************************************************
+ *********************** X2C relativistic HF calculation ***********************
+ *******************************************************************************
+
+
+*** INFO *** No trial vectors found.
+ Using sum of fitted atomic potentials as start potential.
+
+ Reference: arXiv:2002.02587 (small GRASP fit)
+
+
+########## START ITERATION NO.   1 ##########   Fri Jul 10 09:18:22 2020
+
+E_HOMO...E_LUMO, symmetry 1:     5  -0.64359    6  -0.16454
+
+=> Calculating sum of orbital energies
+It.    1    -37.19007093556      0.00D+00  0.00D+00  0.00D+00               0.02088600s   Atom. scrpot   Fri Jul 10
+
+########## START ITERATION NO.   2 ##########   Fri Jul 10 09:18:22 2020
+
+
+* GETGAB: label "GABAO1XX" not found; calling GABGEN.
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   46.85%    0.00%    1.85%   0.03100000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.23209    6   0.21650
+>>> Total wall time:  0.14200000s, and total CPU time :  0.09585400s
+
+########## END ITERATION NO.   2 ##########   Fri Jul 10 09:18:22 2020
+
+It.    2    -75.83473710425      3.86D+01  5.34D+00  1.65D+00               0.14200000s   LL             Fri Jul 10
+
+########## START ITERATION NO.   3 ##########   Fri Jul 10 09:18:22 2020
+
+    3 *** Differential density matrix. DCOVLP     = 0.9237
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   47.02%    0.00%    1.93%   0.01100000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.52137    6   0.17472
+>>> Total wall time:  0.07100000s, and total CPU time :  0.04392000s
+
+########## END ITERATION NO.   3 ##########   Fri Jul 10 09:18:22 2020
+
+It.    3    -76.00033119004      1.66D-01 -1.13D+00  7.32D-01   DIIS   2    0.07100000s   LL             Fri Jul 10
+
+########## START ITERATION NO.   4 ##########   Fri Jul 10 09:18:22 2020
+
+    4 *** Differential density matrix. DCOVLP     = 0.9750
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   47.27%    0.00%    1.84%   0.01100000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49044    6   0.17978
+>>> Total wall time:  0.06900000s, and total CPU time :  0.04318100s
+
+########## END ITERATION NO.   4 ##########   Fri Jul 10 09:18:22 2020
+
+It.    4    -76.07879317140      7.85D-02  4.58D-01  1.09D-01   DIIS   3    0.06900000s   LL             Fri Jul 10
+
+########## START ITERATION NO.   5 ##########   Fri Jul 10 09:18:22 2020
+
+    5 *** Differential density matrix. DCOVLP     = 1.0008
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   47.74%    0.00%    1.89%   0.01300000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49202    6   0.18038
+>>> Total wall time:  0.07000000s, and total CPU time :  0.04491600s
+
+########## END ITERATION NO.   5 ##########   Fri Jul 10 09:18:22 2020
+
+It.    5    -76.08060087743      1.81D-03 -5.89D-02  6.10D-03   DIIS   4    0.07000000s   LL             Fri Jul 10
+
+########## START ITERATION NO.   6 ##########   Fri Jul 10 09:18:22 2020
+
+    6 *** Differential density matrix. DCOVLP     = 1.0002
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   48.32%    0.00%    1.78%   0.01400000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49281    6   0.18035
+>>> Total wall time:  0.07200000s, and total CPU time :  0.04583600s
+
+########## END ITERATION NO.   6 ##########   Fri Jul 10 09:18:22 2020
+
+It.    6    -76.08061618861      1.53D-05  5.82D-04  1.96D-03   DIIS   5    0.07200000s   LL             Fri Jul 10
+
+########## START ITERATION NO.   7 ##########   Fri Jul 10 09:18:22 2020
+
+    7 *** Differential density matrix. DCOVLP     = 1.0002
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   48.70%    0.00%    1.88%   0.01300000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49286    6   0.18036
+>>> Total wall time:  0.07100000s, and total CPU time :  0.04509000s
+
+########## END ITERATION NO.   7 ##########   Fri Jul 10 09:18:22 2020
+
+It.    7    -76.08061799352      1.80D-06  2.70D-04  2.05D-04   DIIS   6    0.07100000s   LL             Fri Jul 10
+
+########## START ITERATION NO.   8 ##########   Fri Jul 10 09:18:22 2020
+
+    8 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   49.89%    0.00%    1.76%   0.01300000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49287    6   0.18036
+>>> Total wall time:  0.07100000s, and total CPU time :  0.04523600s
+
+########## END ITERATION NO.   8 ##########   Fri Jul 10 09:18:22 2020
+
+It.    8    -76.08061801556      2.20D-08  2.98D-05  4.23D-05   DIIS   7    0.07100000s   LL             Fri Jul 10
+
+########## START ITERATION NO.   9 ##########   Fri Jul 10 09:18:22 2020
+
+    9 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   50.99%    0.00%    1.85%   0.01300000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49287    6   0.18036
+>>> Total wall time:  0.07100000s, and total CPU time :  0.04535700s
+
+########## END ITERATION NO.   9 ##########   Fri Jul 10 09:18:23 2020
+
+It.    9    -76.08061801661      1.05D-09 -4.97D-06  9.16D-06   DIIS   8    0.07100000s   LL             Fri Jul 10
+
+########## START ITERATION NO.  10 ##########   Fri Jul 10 09:18:23 2020
+
+   10 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   53.13%    0.00%    1.73%   0.01300000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49287    6   0.18036
+>>> Total wall time:  0.07000000s, and total CPU time :  0.04535700s
+
+########## END ITERATION NO.  10 ##########   Fri Jul 10 09:18:23 2020
+
+It.   10    -76.08061801667      5.42D-11  2.27D-06  2.03D-06   DIIS   9    0.07000000s   LL             Fri Jul 10
+
+########## START ITERATION NO.  11 ##########   Fri Jul 10 09:18:23 2020
+
+   11 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   55.08%    0.00%    1.87%   0.01300000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49287    6   0.18036
+>>> Total wall time:  0.07100000s, and total CPU time :  0.04521100s
+
+########## END ITERATION NO.  11 ##########   Fri Jul 10 09:18:23 2020
+
+It.   11    -76.08061801667      2.36D-12 -4.91D-07  2.26D-07   DIIS   9    0.07100000s   LL             Fri Jul 10
+
+########## START ITERATION NO.  12 ##########   Fri Jul 10 09:18:23 2020
+
+   12 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   58.51%    0.02%    2.09%   0.01300000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49287    6   0.18036
+>>> Total wall time:  0.02000000s, and total CPU time :  0.02721400s
+
+########## END ITERATION NO.  12 ##########   Fri Jul 10 09:18:23 2020
+
+It.   12    -76.08061801667     -5.68D-14  3.35D-08  7.04D-08   DIIS   9    0.02000000s   LL             Fri Jul 10
+
+########## START ITERATION NO.  13 ##########   Fri Jul 10 09:18:23 2020
+
+   13 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.00%   62.29%    0.31%    2.32%   0.01300000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49287    6   0.18036
+>>> Total wall time:  0.02100000s, and total CPU time :  0.02691100s
+
+########## END ITERATION NO.  13 ##########   Fri Jul 10 09:18:23 2020
+
+It.   13    -76.08061801667     -4.55D-13 -1.84D-08  2.02D-08   DIIS   5    0.02100000s   LL             Fri Jul 10
+
+########## START ITERATION NO.  14 ##########   Fri Jul 10 09:18:23 2020
+
+   14 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.02%   66.06%    1.12%    3.49%   0.01200000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49287    6   0.18036
+>>> Total wall time:  0.02000000s, and total CPU time :  0.02684300s
+
+########## END ITERATION NO.  14 ##########   Fri Jul 10 09:18:23 2020
+
+It.   14    -76.08061801667      1.42D-13  6.73D-09  3.21D-09   DAMP 25%    0.02000000s   LL             Fri Jul 10
+
+########## START ITERATION NO.  15 ##########   Fri Jul 10 09:18:23 2020
+
+   15 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.13%   75.88%    1.42%    4.09%   0.01300000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49287    6   0.18036
+>>> Total wall time:  0.02000000s, and total CPU time :  0.02643700s
+
+########## END ITERATION NO.  15 ##########   Fri Jul 10 09:18:23 2020
+
+It.   15    -76.08061801667     -2.47D-12  1.04D-09  3.57D-09   DAMP 25%    0.02000000s   LL             Fri Jul 10
+
+########## START ITERATION NO.  16 ##########   Fri Jul 10 09:18:23 2020
+
+   16 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.55%   78.18%    2.44%    5.91%   0.01300000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49287    6   0.18036
+>>> Total wall time:  0.02000000s, and total CPU time :  0.02694500s
+
+########## END ITERATION NO.  16 ##########   Fri Jul 10 09:18:23 2020
+
+It.   16    -76.08061801666     -2.16D-12  7.03D-10  2.38D-09   DAMP 25%    0.02000000s   LL             Fri Jul 10
+
+########## START ITERATION NO.  17 ##########   Fri Jul 10 09:18:23 2020
+
+   17 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    0.87%   80.59%    2.76%    5.76%   0.01300000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49287    6   0.18036
+>>> Total wall time:  0.02000000s, and total CPU time :  0.02708000s
+
+########## END ITERATION NO.  17 ##########   Fri Jul 10 09:18:23 2020
+
+It.   17    -76.08061801667      6.54D-13 -4.77D-10  1.60D-09   DAMP 25%    0.02000000s   LL             Fri Jul 10
+
+########## START ITERATION NO.  18 ##########   Fri Jul 10 09:18:23 2020
+
+   18 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    1.14%   82.76%    2.98%    5.95%   0.01200000s
+E_HOMO...E_LUMO, symmetry 1:     5  -0.49287    6   0.18036
+>>> Total wall time:  0.01900000s, and total CPU time :  0.02678500s
+
+########## END ITERATION NO.  18 ##########   Fri Jul 10 09:18:23 2020
+
+It.   18    -76.08061801667      1.72D-12  5.24D-10  1.09D-09   DAMP 25%    0.01900000s   LL             Fri Jul 10
+
+########## START ITERATION NO.  19 ##########   Fri Jul 10 09:18:23 2020
+
+   19 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange   WALL-time
+SOfock:LL  1.00D-12    1.35%   84.31%    2.97%    4.77%   0.01300000s
+>>> Total wall time:  0.06800000s, and total CPU time :  0.03253500s
+
+########## END ITERATION NO.  19 ##########   Fri Jul 10 09:18:23 2020
+
+It.   19    -76.08061801667      2.88D-12  5.55D-10  8.04D-10   DAMP 25%    0.06800000s   LL             Fri Jul 10
+
+
+                                   SCF - CYCLE
+                                   -----------
+
+* Convergence on norm of error vector (gradient).
+  Desired convergence:1.000D-09
+  Allowed convergence:1.000D-09
+
+* ERGVAL - convergence in total energy
+* FCKVAL - convergence in maximum change in total Fock matrix
+* EVCVAL - convergence in error vector (gradient)
+--------------------------------------------------------------------------------------------------------------------------------
+           Energy               ERGVAL    FCKVAL    EVCVAL      Conv.acc    CPU          Integrals   Time stamp
+--------------------------------------------------------------------------------------------------------------------------------
+It.    1    -37.19007093556      0.00D+00  0.00D+00  0.00D+00               0.02088600s   Atom. scrpot   Fri Jul 10
+It.    2    -75.83473710425      3.86D+01  5.34D+00  1.65D+00               0.14200000s   LL             Fri Jul 10
+It.    3    -76.00033119004      1.66D-01 -1.13D+00  7.32D-01   DIIS   2    0.07100000s   LL             Fri Jul 10
+It.    4    -76.07879317140      7.85D-02  4.58D-01  1.09D-01   DIIS   3    0.06900000s   LL             Fri Jul 10
+It.    5    -76.08060087743      1.81D-03 -5.89D-02  6.10D-03   DIIS   4    0.07000000s   LL             Fri Jul 10
+It.    6    -76.08061618861      1.53D-05  5.82D-04  1.96D-03   DIIS   5    0.07200000s   LL             Fri Jul 10
+It.    7    -76.08061799352      1.80D-06  2.70D-04  2.05D-04   DIIS   6    0.07100000s   LL             Fri Jul 10
+It.    8    -76.08061801556      2.20D-08  2.98D-05  4.23D-05   DIIS   7    0.07100000s   LL             Fri Jul 10
+It.    9    -76.08061801661      1.05D-09 -4.97D-06  9.16D-06   DIIS   8    0.07100000s   LL             Fri Jul 10
+It.   10    -76.08061801667      5.42D-11  2.27D-06  2.03D-06   DIIS   9    0.07000000s   LL             Fri Jul 10
+It.   11    -76.08061801667      2.36D-12 -4.91D-07  2.26D-07   DIIS   9    0.07100000s   LL             Fri Jul 10
+It.   12    -76.08061801667     -5.68D-14  3.35D-08  7.04D-08   DIIS   9    0.02000000s   LL             Fri Jul 10
+It.   13    -76.08061801667     -4.55D-13 -1.84D-08  2.02D-08   DIIS   5    0.02100000s   LL             Fri Jul 10
+It.   14    -76.08061801667      1.42D-13  6.73D-09  3.21D-09   DAMP 25%    0.02000000s   LL             Fri Jul 10
+It.   15    -76.08061801667     -2.47D-12  1.04D-09  3.57D-09   DAMP 25%    0.02000000s   LL             Fri Jul 10
+It.   16    -76.08061801666     -2.16D-12  7.03D-10  2.38D-09   DAMP 25%    0.02000000s   LL             Fri Jul 10
+It.   17    -76.08061801667      6.54D-13 -4.77D-10  1.60D-09   DAMP 25%    0.02000000s   LL             Fri Jul 10
+It.   18    -76.08061801667      1.72D-12  5.24D-10  1.09D-09   DAMP 25%    0.01900000s   LL             Fri Jul 10
+It.   19    -76.08061801667      2.88D-12  5.55D-10  8.04D-10   DAMP 25%    0.06800000s   LL             Fri Jul 10
+--------------------------------------------------------------------------------------------------------------------------------
+* Convergence after   19 iterations.
+* Average elapsed time per iteration: 
+      No 2-ints    :    0.03100000s
+      LL           :    0.05477778s
+
+
+                                   TOTAL ENERGY
+                                   ------------
+
+   Electronic energy                        :    -85.135621163470319
+
+   Other contributions to the total energy
+   Nuclear repulsion energy                 :      9.055003146800487
+
+   Sum of all contributions to the energy
+   Total energy                             :    -76.080618016669831
+
+
+                                   Eigenvalues
+                                   -----------
+
+
+* Fermion symmetry E1 
+  * Closed shell, f = 1.0000
+   -20.56489715453  ( 2)       -1.33252571091  ( 2)       -0.69277015032  ( 2)       -0.56459452085  ( 2)       -0.49287124388  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+     0.18035984555  ( 2)        0.25130412389  ( 2)        0.66089631285  ( 2)        0.73710967714  ( 2)        1.07463066525  ( 2)
+     1.12297048546  ( 2)        1.19782178560  ( 2)        1.41466085600  ( 2)        1.47145549644  ( 2)        1.63534407590  ( 2)
+     1.66934487638  ( 2)        1.89241681940  ( 2)        2.31506926668  ( 2)        2.39594226095  ( 2)        3.27115078423  ( 2)
+     3.29852605720  ( 2)        3.32276170847  ( 2)        3.39980055775  ( 2)        3.52499634469  ( 2)        3.83221318437  ( 2)
+     4.12810705503  ( 2)        6.12206455316  ( 2)        6.55553466737  ( 2)        6.81985413711  ( 2)       13.05167016461  ( 2)
+    22.16800269613  ( 2)       22.33170317491  ( 2)       33.42012479007  ( 2)       33.66119266579  ( 2)       33.81882287988  ( 2)
+    61.53045790283  ( 2)      230.57019791434  ( 2)      851.99630191418  ( 2)     3409.90565706843  ( 2)    15466.31276734550  ( 2)
+* HOMO - LUMO gap:
+
+    E(LUMO) :     0.18035985 au (symmetry E1 )
+  - E(HOMO) :    -0.49287124 au (symmetry E1 )
+  ------------------------------------------
+    gap     :     0.67323109 au
+
+ 
+ 
+                    *****************************************************
+                    ***     Entering the ExaCorr module in DIRAC      ***
+                    ***                                               ***
+                    ***  Authors:         - Lucas Visscher            ***
+                    ***                   - Anastasios Papadopoulos   ***
+                    ***  Contributors:    - Johann Potoschnig         ***
+                    ***                   - Loic Halbert              ***
+                    ***                   - Andre S. P. Gomes         ***
+                    ***  Features:        - CCD/CC2/CCSD              ***
+                    ***                   - 1DM                       ***
+                    ***                   - ReSpect interface         ***
+                    ***                                               ***
+                    ***  Relativistic Coupled Cluster code using the  ***
+                    ***  TALSH and ExaTensor libraries developed by   ***
+                    ***  Dmitry Lyakh                                 ***
+                    *****************************************************
+ 
+ 
+  10 Jul 20 09:18:23 read from DFCOEF:Water molecule. X2C Hamiltonian. CC energies.     Fri Jul 10 09:18:23 2020
+  10 Jul 20 09:18:23 retrieved basis set information
+  10 Jul 20 09:18:23 Initialized global data
+  --- active occupied spinors --- 
+    #             E   
+       5  -0.692770150E+00
+       6  -0.692770150E+00
+       7  -0.564594521E+00
+       8  -0.564594521E+00
+       9  -0.492871244E+00
+      10  -0.492871244E+00
+  --- active virtual spinors --- 
+    #             E   
+      11   0.180359846E+00
+      12   0.180359846E+00
+      13   0.251304124E+00
+      14   0.251304124E+00
+      15   0.660896313E+00
+      16   0.660896313E+00
+      17   0.737109677E+00
+      18   0.737109677E+00
+      19   0.107463067E+01
+      20   0.107463067E+01
+      21   0.112297049E+01
+      22   0.112297049E+01
+      23   0.119782179E+01
+      24   0.119782179E+01
+      25   0.141466086E+01
+      26   0.141466086E+01
+      27   0.147145550E+01
+      28   0.147145550E+01
+      29   0.163534408E+01
+      30   0.163534408E+01
+      31   0.166934488E+01
+      32   0.166934488E+01
+      33   0.189241682E+01
+      34   0.189241682E+01
+  10 Jul 20 09:18:23  Starting CC calculation with exatensor
+  10 Jul 20 09:18:23  Registered AO and MO spaces
+  10 Jul 20 09:18:23  Initialized and registered tensor methods
+ 
+      Characteristics of this calculation      
+-----------------------------------------------
+ - Solve CCD equations :                F
+ - Solve Lambda equations :             F
+ - Compute perturbative Triples :       T
+ - Integral transformation scheme :    41
+ - Maximum number of cycles :          80
+ - Target precision of amplitudes :     1.0E-06
+ 
+ - Number of atomic orbitals :         41
+ - Number of occupied spinors :         6
+ - Number of virtual spinors :         24
+ 
+ Using the multi-node ExaTensor library (MPI) 
+ - ExaTensor block size :              75
+!! ATTENTION !! Properties require TALSH, density matrix must be smaller than: 
+ - TALSH buffer size:                 50 GB
+ 
+ - Print Level :                        5
+ 
+ - Estimating memory requirements
+ -- nao  ( scheme 1-3  ) :         0 GB
+ -- nvir ( scheme 4/42 ) :         0 GB
+-----------------------------------------------
+ 
+  10 Jul 20 09:19:02  === entering decompose_cholesky_exatensor_full === 
+ --- maximum found:                     1                    1               (122.15714250217270,0.0000000000000000)
+ --- maximum found:                     2                    2               (15.441869928933549,0.0000000000000000)
+ --- maximum found:                    22                   22               (8.1879865733451460,0.0000000000000000)
+ --- maximum found:                     4                    4               (5.3495463137142751,0.0000000000000000)
+ --- maximum found:                    28                   28               (3.6868380518741817,0.0000000000000000)
+ --- maximum found:                    35                   35               (3.6864279173589440,0.0000000000000000)
+ --- maximum found:                    25                   25               (3.5937339958113044,0.0000000000000000)
+ --- maximum found:                    27                   27               (2.9264013473868675,0.0000000000000000)
+ --- maximum found:                    11                   11               (1.6634784255246431,0.0000000000000000)
+ --- maximum found:                    17                   25               (1.0880881453194251,0.0000000000000000)
+ --- maximum found:                    18                   27               (1.0552815554203800,0.0000000000000000)
+ --- maximum found:                    16                   22               (1.0258484473814902,0.0000000000000000)
+ --- maximum found:                    12                   12              (0.80963207292813821,0.0000000000000000)
+ --- maximum found:                     6                   11              (0.78557535181965199,0.0000000000000000)
+ --- maximum found:                    12                    6              (0.78536883241728173,0.0000000000000000)
+ --- maximum found:                    10                    6              (0.78508700758828021,0.0000000000000000)
+ --- maximum found:                     3                    3              (0.75375745390160842,0.0000000000000000)
+ --- maximum found:                    10                   10              (0.66298229147744148,0.0000000000000000)
+ --- maximum found:                    29                   29              (0.36750724849506544,0.0000000000000000)
+ --- maximum found:                    36                   36              (0.36750526997065353,0.0000000000000000)
+ --- maximum found:                    23                   22              (0.28587864182943151,0.0000000000000000)
+ --- maximum found:                    26                   27              (0.28587864182943151,0.0000000000000000)
+ --- maximum found:                    14                   14              (0.28544963999957434,0.0000000000000000)
+ --- maximum found:                    24                   27              (0.25182539757046396,0.0000000000000000)
+ --- maximum found:                    11                   12              (0.23601646404068571,0.0000000000000000)
+ --- maximum found:                    10                   11              (0.23601646404068571,0.0000000000000000)
+ --- maximum found:                    10                   12              (0.23594957915619655,0.0000000000000000)
+ --- maximum found:                    40                   40              (0.20041331237608229,0.0000000000000000)
+ --- maximum found:                    33                   33              (0.19892974122505563,0.0000000000000000)
+ --- maximum found:                    15                   15              (0.19681994251262436,0.0000000000000000)
+ --- maximum found:                     1                    2              (0.17316220611045563,0.0000000000000000)
+ --- maximum found:                    13                   13              (0.17143320260251244,0.0000000000000000)
+ --- maximum found:                    33                   30              (0.13483485635081191,0.0000000000000000)
+ --- maximum found:                    40                   37              (0.13387870413569233,0.0000000000000000)
+ --- maximum found:                    41                   41              (0.11524372481603465,0.0000000000000000)
+ --- maximum found:                    34                   34              (0.11500505144935604,0.0000000000000000)
+ --- maximum found:                    14                    7              (0.10208691781010087,0.0000000000000000)
+ --- maximum found:                    15                    7              (0.10187977387537932,0.0000000000000000)
+ --- maximum found:                    13                    7              (0.10006717738642150,0.0000000000000000)
+ --- maximum found:                     5                    5         (9.35449671888688300E-002,0.0000000000000000)
+ --- maximum found:                    25                   23         (9.31001694055385715E-002,0.0000000000000000)
+ --- maximum found:                    25                   26         (9.29924108628134294E-002,0.0000000000000000)
+ --- maximum found:                    39                   37         (9.07929776123204829E-002,0.0000000000000000)
+ --- maximum found:                    32                   30         (9.04084066734946457E-002,0.0000000000000000)
+ --- maximum found:                    24                   22         (8.91331639217455007E-002,0.0000000000000000)
+ --- maximum found:                    30                   34         (7.06834121417774935E-002,0.0000000000000000)
+ --- maximum found:                    37                   41         (7.06833842036485027E-002,0.0000000000000000)
+ --- maximum found:                    15                   14         (6.35745628906717319E-002,0.0000000000000000)
+ --- maximum found:                    14                   13         (6.32094929868924904E-002,0.0000000000000000)
+ --- maximum found:                    13                   15         (6.21991357059918093E-002,0.0000000000000000)
+ --- maximum found:                    32                   32         (6.08100763280708945E-002,0.0000000000000000)
+ --- maximum found:                    39                   39         (6.08093154476491565E-002,0.0000000000000000)
+ --- maximum found:                    20                   20         (6.05689803008471681E-002,0.0000000000000000)
+ --- maximum found:                     4                   11         (5.51570839375898209E-002,0.0000000000000000)
+ --- maximum found:                     4                   12         (5.50273683544027573E-002,0.0000000000000000)
+ --- maximum found:                     4                   10         (5.49115114680811117E-002,0.0000000000000000)
+ --- maximum found:                    18                   26         (5.46964903936357286E-002,0.0000000000000000)
+ --- maximum found:                    17                   26         (5.42289417424036413E-002,0.0000000000000000)
+ --- maximum found:                    17                   23         (5.22360341590641167E-002,0.0000000000000000)
+ --- maximum found:                    17                   22         (5.11086929239839838E-002,0.0000000000000000)
+ --- maximum found:                    27                   25         (4.35231829899363834E-002,0.0000000000000000)
+ --- maximum found:                    18                   22         (4.28535915749963664E-002,0.0000000000000000)
+ --- maximum found:                    25                   22         (4.21828209213784833E-002,0.0000000000000000)
+ --- maximum found:                    27                   22         (3.77241985314369505E-002,0.0000000000000000)
+ --- maximum found:                    41                   40         (3.74374126374737298E-002,0.0000000000000000)
+ --- maximum found:                    34                   33         (3.73841254552053845E-002,0.0000000000000000)
+ --- maximum found:                    32                   33         (3.51007202323272566E-002,0.0000000000000000)
+ --- maximum found:                    40                   39         (3.50107241507801939E-002,0.0000000000000000)
+ --- maximum found:                    21                   21         (3.07074691260921170E-002,0.0000000000000000)
+ --- maximum found:                    18                   24         (3.06750547746941077E-002,0.0000000000000000)
+ --- maximum found:                    14                   25         (2.66754464142571653E-002,0.0000000000000000)
+ --- maximum found:                    38                   38         (2.41836106302621215E-002,0.0000000000000000)
+ --- maximum found:                    31                   31         (2.28532043404671599E-002,0.0000000000000000)
+ --- maximum found:                    15                   27         (2.04570716330571660E-002,0.0000000000000000)
+ --- maximum found:                    13                   22         (2.01592515427447966E-002,0.0000000000000000)
+ --- maximum found:                    26                   23         (1.84731890020869323E-002,0.0000000000000000)
+ --- maximum found:                    26                   24         (1.74965005929912272E-002,0.0000000000000000)
+ --- maximum found:                    33                   29         (1.68881698465795822E-002,0.0000000000000000)
+ --- maximum found:                    36                   40         (1.68610196215907282E-002,0.0000000000000000)
+ --- maximum found:                    26                   22         (1.66093702084740592E-002,0.0000000000000000)
+ --- maximum found:                    16                   26         (1.64874493725855609E-002,0.0000000000000000)
+ --- maximum found:                    34                   29         (1.46674783419317722E-002,0.0000000000000000)
+ --- maximum found:                    36                   41         (1.46601359090058839E-002,0.0000000000000000)
+ --- maximum found:                    39                   36         (1.19243578602766104E-002,0.0000000000000000)
+ --- maximum found:                    29                   32         (1.18193085241672848E-002,0.0000000000000000)
+ --- maximum found:                    20                   25         (1.12586908804250350E-002,0.0000000000000000)
+ --- maximum found:                     2                    3         (1.03009649935029510E-002,0.0000000000000000)
+ --- maximum found:                    39                   41         (9.87346311562221218E-003,0.0000000000000000)
+ --- maximum found:                    34                   32         (9.87334171360344272E-003,0.0000000000000000)
+ --- maximum found:                    20                   21         (9.48574756060056520E-003,0.0000000000000000)
+ --- maximum found:                    19                   19         (7.93234010196782434E-003,0.0000000000000000)
+ --- maximum found:                    20                   19         (6.99619374279034003E-003,0.0000000000000000)
+ --- maximum found:                    21                   19         (6.97724865948584627E-003,0.0000000000000000)
+ --- maximum found:                    15                   25         (6.06333545307903652E-003,0.0000000000000000)
+ --- maximum found:                    14                   23         (5.94736772962873445E-003,0.0000000000000000)
+ --- maximum found:                    15                   26         (5.82743862069891316E-003,0.0000000000000000)
+ --- maximum found:                    35                   36         (5.73679523824898851E-003,0.0000000000000000)
+ --- maximum found:                    28                   29         (5.73671128969641293E-003,0.0000000000000000)
+ --- maximum found:                    11                   14         (5.61751455051531356E-003,0.0000000000000000)
+ --- maximum found:                    12                    5         (5.58634483002499755E-003,0.0000000000000000)
+ --- maximum found:                    10                    5         (5.54561835286605971E-003,0.0000000000000000)
+ --- maximum found:                    14                   22         (5.50149314465255349E-003,0.0000000000000000)
+ --- maximum found:                    12                   15         (5.41034062781480668E-003,0.0000000000000000)
+ --- maximum found:                     5                   11         (5.27143383347856119E-003,0.0000000000000000)
+ --- maximum found:                    13                   10         (5.25608809877954348E-003,0.0000000000000000)
+ --- maximum found:                    15                   24         (4.57592769262970146E-003,0.0000000000000000)
+ --- maximum found:                    15                   22         (4.46477279717257067E-003,0.0000000000000000)
+ --- maximum found:                    20                   38         (4.28876898981994312E-003,0.0000000000000000)
+ --- maximum found:                    21                   27         (2.80860493176384243E-003,0.0000000000000000)
+ --- maximum found:                    10                    3         (2.77756694032986777E-003,0.0000000000000000)
+ --- maximum found:                    11                    3         (2.77334130568737680E-003,0.0000000000000000)
+ --- maximum found:                    12                    3         (2.77197764981671662E-003,0.0000000000000000)
+ --- maximum found:                    15                   23         (2.44373132890920216E-003,0.0000000000000000)
+ --- maximum found:                    12                   14         (2.35367957959822099E-003,0.0000000000000000)
+ --- maximum found:                    14                   10         (2.34793986339959992E-003,0.0000000000000000)
+ --- maximum found:                    15                   10         (2.29688297002866989E-003,0.0000000000000000)
+ --- maximum found:                    28                   33         (2.10696056357236169E-003,0.0000000000000000)
+ --- maximum found:                    40                   35         (2.08743101729779931E-003,0.0000000000000000)
+ --- maximum found:                    28                   34         (2.05098162417912148E-003,0.0000000000000000)
+ --- maximum found:                    41                   35         (2.05068150743688629E-003,0.0000000000000000)
+ --- maximum found:                    39                   35         (2.01689829666680791E-003,0.0000000000000000)
+ --- maximum found:                    32                   28         (2.01668631581406388E-003,0.0000000000000000)
+ --- maximum found:                     8                   25         (2.01612568823361909E-003,0.0000000000000000)
+ --- maximum found:                    19                   22         (1.63506322456440870E-003,0.0000000000000000)
+ --- maximum found:                    21                   31         (1.52405871645071387E-003,0.0000000000000000)
+ --- maximum found:                     8                   27         (1.42664687192091064E-003,0.0000000000000000)
+ --- maximum found:                    22                   33         (1.28919226914230196E-003,0.0000000000000000)
+ --- maximum found:                    40                   22         (1.27661878301469430E-003,0.0000000000000000)
+ --- maximum found:                     8                   22         (1.22339070859009131E-003,0.0000000000000000)
+ --- maximum found:                    20                   23         (1.22308285284564015E-003,0.0000000000000000)
+ --- maximum found:                    21                   25         (1.14543307478471353E-003,0.0000000000000000)
+ --- maximum found:                     4                    3         (1.05867010871658332E-003,0.0000000000000000)
+ --- maximum found:                    21                   26         (1.02361151879613844E-003,0.0000000000000000)
+ --- maximum found:                    33                   25         (9.84704625081414672E-004,0.0000000000000000)
+ --- maximum found:                    40                   25         (9.67655736958009257E-004,0.0000000000000000)
+ --- maximum found:                    41                   22         (9.17077446411386130E-004,0.0000000000000000)
+ --- maximum found:                    34                   22         (9.15773539422602982E-004,0.0000000000000000)
+ --- maximum found:                    33                   27         (8.80916921454129613E-004,0.0000000000000000)
+ --- maximum found:                    40                   27         (8.74231335520016771E-004,0.0000000000000000)
+ --- maximum found:                    22                   29         (8.44321058176486831E-004,0.0000000000000000)
+ --- maximum found:                    36                   22         (8.42935292653934566E-004,0.0000000000000000)
+ --- maximum found:                    19                   38         (6.07648150117439550E-004,0.0000000000000000)
+ --- maximum found:                    32                   27         (5.83300902833979265E-004,0.0000000000000000)
+ --- maximum found:                    39                   27         (5.78035336816617854E-004,0.0000000000000000)
+ --- maximum found:                    20                   22         (5.05407346699421377E-004,0.0000000000000000)
+ --- maximum found:                    27                   36         (4.84641551268250026E-004,0.0000000000000000)
+ --- maximum found:                    29                   27         (4.62269843558435793E-004,0.0000000000000000)
+ --- maximum found:                    31                   33         (4.02022041076266230E-004,0.0000000000000000)
+ --- maximum found:                    20                   33         (3.86376316497590304E-004,0.0000000000000000)
+ --- maximum found:                    20                   40         (3.78700267551969555E-004,0.0000000000000000)
+ --- maximum found:                    13                   17         (3.62452424670892722E-004,0.0000000000000000)
+ --- maximum found:                    15                   16         (3.54754275938156424E-004,0.0000000000000000)
+ --- maximum found:                    17                   15         (3.44312081845548560E-004,0.0000000000000000)
+ --- maximum found:                    12                   27         (3.27464002996837825E-004,0.0000000000000000)
+ --- maximum found:                    10                   22         (3.25599908803198099E-004,0.0000000000000000)
+ --- maximum found:                    38                   40         (3.25367839645114250E-004,0.0000000000000000)
+ --- maximum found:                    11                   25         (3.22602397336729991E-004,0.0000000000000000)
+ --- maximum found:                    23                   33         (3.19366567672364646E-004,0.0000000000000000)
+ --- maximum found:                    11                    2         (3.17591121355064929E-004,0.0000000000000000)
+ --- maximum found:                     2                   12         (3.17508373162782287E-004,0.0000000000000000)
+ --- maximum found:                    10                    2         (3.17460259554035531E-004,0.0000000000000000)
+ --- maximum found:                    40                   23         (3.16180470711375854E-004,0.0000000000000000)
+ --- maximum found:                     9                   25         (3.01852982178091160E-004,0.0000000000000000)
+ --- maximum found:                    40                   26         (2.95867025259755935E-004,0.0000000000000000)
+ --- maximum found:                    33                   26         (2.87198634122341344E-004,0.0000000000000000)
+ --- maximum found:                    40                   24         (2.42516416508367665E-004,0.0000000000000000)
+ --- maximum found:                    34                   31         (2.34915487102750316E-004,0.0000000000000000)
+ --- maximum found:                    36                   37         (2.32524384667870675E-004,0.0000000000000000)
+ --- maximum found:                    30                   29         (2.31387835291420205E-004,0.0000000000000000)
+ --- maximum found:                    33                   24         (2.28863761429688690E-004,0.0000000000000000)
+ --- maximum found:                    19                   27         (2.27513956869149848E-004,0.0000000000000000)
+ --- maximum found:                    21                   22         (2.21998455603027498E-004,0.0000000000000000)
+ --- maximum found:                    38                   41         (2.05492831725424905E-004,0.0000000000000000)
+ --- maximum found:                    31                   38         (1.85897686725398063E-004,0.0000000000000000)
+ --- maximum found:                    41                   20         (1.67967990154410462E-004,0.0000000000000000)
+ --- maximum found:                    33                   21         (1.63665976384691671E-004,0.0000000000000000)
+ --- maximum found:                    19                   26         (1.59303467014664370E-004,0.0000000000000000)
+ --- maximum found:                    11                    7         (1.49133407167856096E-004,0.0000000000000000)
+ --- maximum found:                    39                   38         (1.45392533432586073E-004,0.0000000000000000)
+ --- maximum found:                     5                    4         (1.45332521708592800E-004,0.0000000000000000)
+ --- maximum found:                    31                   32         (1.42984649617278669E-004,0.0000000000000000)
+ --- maximum found:                    12                    7         (1.41659091608594984E-004,0.0000000000000000)
+ --- maximum found:                     7                   10         (1.39068142407311831E-004,0.0000000000000000)
+ --- maximum found:                    10                   23         (1.28122804508461522E-004,0.0000000000000000)
+ --- maximum found:                    12                   24         (1.27478644643544994E-004,0.0000000000000000)
+ --- maximum found:                    12                   23         (1.27206520992639995E-004,0.0000000000000000)
+ --- maximum found:                    10                   24         (1.27121994446074239E-004,0.0000000000000000)
+ --- maximum found:                    20                    9         (1.22567142521113205E-004,0.0000000000000000)
+ --- maximum found:                    20                   31         (9.17069642900942590E-005,0.0000000000000000)
+ --- maximum found:                    19                   31         (8.82521935904313185E-005,0.0000000000000000)
+ --- maximum found:                    41                   19         (6.50622229872185285E-005,0.0000000000000000)
+ --- maximum found:                    34                   19         (6.33396305170910370E-005,0.0000000000000000)
+ --- maximum found:                    21                   38         (4.87005644482482440E-005,0.0000000000000000)
+ --- maximum found:                    39                   32         (4.64613844258721925E-005,0.0000000000000000)
+ --- maximum found:                     7                    7         (4.48297539648224945E-005,0.0000000000000000)
+ --- maximum found:                    19                   33         (4.30502967315592622E-005,0.0000000000000000)
+ --- maximum found:                     9                   26         (4.03198208813144792E-005,0.0000000000000000)
+ --- maximum found:                     9                   21         (3.58478208620148533E-005,0.0000000000000000)
+ --- maximum found:                    36                   23         (3.48987054076908409E-005,0.0000000000000000)
+ --- maximum found:                    29                   23         (3.45664677597981267E-005,0.0000000000000000)
+ --- maximum found:                    34                   27         (3.44279016553908406E-005,0.0000000000000000)
+ --- maximum found:                    39                   20         (3.40429020970397039E-005,0.0000000000000000)
+ --- maximum found:                    28                   22         (3.39914797392981802E-005,0.0000000000000000)
+ --- maximum found:                    35                   22         (3.39528842503525894E-005,0.0000000000000000)
+ --- maximum found:                    27                   41         (2.88413389625494864E-005,0.0000000000000000)
+ --- maximum found:                    15                   18         (2.57993176329179415E-005,0.0000000000000000)
+ --- maximum found:                    39                   22         (2.38159668052768020E-005,0.0000000000000000)
+ --- maximum found:                    32                   22         (2.38156193527294912E-005,0.0000000000000000)
+ --- maximum found:                     3                    1         (2.27705916424112244E-005,0.0000000000000000)
+ --- maximum found:                    17                   14         (2.25728090357073783E-005,0.0000000000000000)
+ --- maximum found:                    19                    9         (2.14512861960648347E-005,0.0000000000000000)
+ --- maximum found:                    36                   26         (1.95029050583358431E-005,0.0000000000000000)
+ --- maximum found:                    39                   21         (1.94617563802494549E-005,0.0000000000000000)
+ --- maximum found:                    26                   29         (1.94603167986594727E-005,0.0000000000000000)
+ --- maximum found:                    32                   21         (1.91301189150557552E-005,0.0000000000000000)
+ --- maximum found:                    16                   13         (1.87127570426437116E-005,0.0000000000000000)
+ --- maximum found:                    27                   35         (1.73829611714746604E-005,0.0000000000000000)
+ --- maximum found:                    27                   28         (1.73691235189453221E-005,0.0000000000000000)
+ --- maximum found:                    40                   32         (1.65967797490571944E-005,0.0000000000000000)
+ --- maximum found:                    25                   29         (1.60311634619764336E-005,0.0000000000000000)
+ --- maximum found:                    36                   25         (1.60126789784983694E-005,0.0000000000000000)
+ --- maximum found:                     9                   23         (1.59507573895117995E-005,0.0000000000000000)
+ --- maximum found:                    41                   24         (1.54829322363234337E-005,0.0000000000000000)
+ --- maximum found:                    34                   24         (1.53986562605369009E-005,0.0000000000000000)
+ --- maximum found:                    36                   24         (1.33439388323800938E-005,0.0000000000000000)
+ --- maximum found:                    24                   29         (1.31774786887205720E-005,0.0000000000000000)
+ --- maximum found:                     8                   26         (1.26434947974052653E-005,0.0000000000000000)
+ --- maximum found:                    11                    1         (1.23476550901885977E-005,0.0000000000000000)
+ --- maximum found:                    12                    1         (1.23464572515347263E-005,0.0000000000000000)
+ --- maximum found:                    10                    1         (1.23463262515601440E-005,0.0000000000000000)
+ --- maximum found:                     8                   23         (1.05052987322161205E-005,0.0000000000000000)
+ --- maximum found:                     9                   27         (1.04512998569352943E-005,0.0000000000000000)
+ --- maximum found:                    31                   40         (8.79535258459965745E-006,0.0000000000000000)
+ --- maximum found:                    38                   37         (8.63986405955891832E-006,0.0000000000000000)
+ --- maximum found:                     8                   14         (8.57111354319432511E-006,0.0000000000000000)
+ --- maximum found:                    31                   30         (8.50714860522200677E-006,0.0000000000000000)
+ --- maximum found:                     8                   24         (7.75989831374569069E-006,0.0000000000000000)
+ --- maximum found:                    39                   23         (6.74215403500119329E-006,0.0000000000000000)
+ --- maximum found:                     8                   15         (6.58117074096117142E-006,0.0000000000000000)
+ --- maximum found:                     9                   22         (6.44730290904857178E-006,0.0000000000000000)
+ --- maximum found:                    13                    8         (6.19576599155924082E-006,0.0000000000000000)
+ --- maximum found:                    28                   23         (6.17166751893327090E-006,0.0000000000000000)
+ --- maximum found:                    23                   35         (6.16455077346520941E-006,0.0000000000000000)
+ --- maximum found:                    38                   34         (5.90339603104835943E-006,0.0000000000000000)
+ --- maximum found:                    41                   31         (5.52890513042243766E-006,0.0000000000000000)
+ --- maximum found:                    38                   33         (5.49395983065265457E-006,0.0000000000000000)
+ --- maximum found:                     5                    6         (5.49384215786441677E-006,0.0000000000000000)
+ --- maximum found:                    20                   32         (5.13412812309480941E-006,0.0000000000000000)
+ --- maximum found:                    39                   26         (4.70197960863825942E-006,0.0000000000000000)
+ --- maximum found:                    39                   24         (4.68366210533148276E-006,0.0000000000000000)
+ --- maximum found:                    20                   37         (4.63435423218324630E-006,0.0000000000000000)
+ --- maximum found:                    26                   32         (4.52313714705454057E-006,0.0000000000000000)
+ --- maximum found:                    32                   23         (4.44595527959372643E-006,0.0000000000000000)
+ --- maximum found:                    24                   32         (4.44038129255587065E-006,0.0000000000000000)
+ --- maximum found:                    33                   39         (3.49509828441838041E-006,0.0000000000000000)
+ --- maximum found:                    40                   33         (3.28256008620617584E-006,0.0000000000000000)
+ --- maximum found:                    14                   40         (2.97545509281629611E-006,0.0000000000000000)
+ --- maximum found:                    14                   33         (2.86539224193356609E-006,0.0000000000000000)
+ --- maximum found:                    33                   13         (2.83839794623728418E-006,0.0000000000000000)
+ --- maximum found:                    40                   13         (2.72101427274568627E-006,0.0000000000000000)
+ --- maximum found:                    21                   34         (2.48107717631826083E-006,0.0000000000000000)
+ --- maximum found:                    21                   41         (2.47924582849954967E-006,0.0000000000000000)
+ --- maximum found:                    20                   30         (2.34697325161883485E-006,0.0000000000000000)
+ --- maximum found:                    15                   40         (2.09837009966327905E-006,0.0000000000000000)
+ --- maximum found:                     9                    9         (2.00879201654637943E-006,0.0000000000000000)
+ --- maximum found:                     9                   24         (1.96284909373436123E-006,0.0000000000000000)
+ --- maximum found:                    33                   15         (1.88297926520138237E-006,0.0000000000000000)
+ --- maximum found:                    32                   19         (1.87862449659965044E-006,0.0000000000000000)
+ --- maximum found:                    39                   19         (1.87198927623823785E-006,0.0000000000000000)
+ --- maximum found:                    19                   40         (1.84763281200583957E-006,0.0000000000000000)
+ --- maximum found:                    13                   41         (1.71606930411599757E-006,0.0000000000000000)
+ --- maximum found:                    13                   34         (1.67477530807560769E-006,0.0000000000000000)
+ --- maximum found:                    41                   32         (1.21892361638530385E-006,0.0000000000000000)
+ --- maximum found:                    25                   32         (1.17383371187024216E-006,0.0000000000000000)
+ --- maximum found:                     4                    2         (1.12986442762292200E-006,0.0000000000000000)
+ --- maximum found:                    39                   25         (1.11920829961731840E-006,0.0000000000000000)
+ --- maximum found:                    37                   34         (1.06756645673167937E-006,0.0000000000000000)
+ Cholesky decomposition done, used          277  elements
+  10 Jul 20 09:30:44 === leaving decompose_cholesky_exatensor_full === 
+  10 Jul 20 09:31:53 initialized two electron integrals
+ 
+    SCF energy ( read ) =     -76.080618016666946
+ 
+  10 Jul 20 09:31:56 initialized Fock matrix
+ 
+     MP2 energy =   -8.8462595608524194E-002
+ 
+  ccdriver: allocated all tensors
+ 
+ -----------------------------------------------
+   It.     Energy                  Convergence  
+ -----------------------------------------------
+    1      -0.092088051118826      0.4E-01
+    2      -0.093442101593813      0.1E-01
+    3      -0.093966174247968      0.6E-02
+    4      -0.093987812382696      0.1E-02
+    5      -0.093989073609634      0.3E-03
+    6      -0.093988778693350      0.4E-04
+    7      -0.093988821522448      0.8E-05
+    8      -0.093988804010116      0.1E-05
+    9      -0.093988799830656      0.3E-06
+ -----------------------------------------------
+ 
+ 
+  10 Jul 20 09:37:50 entering t3_energy_split
+  --- Number of processes (np):                 8
+  --- size of segments (ns):            3.0000000000000000     
+  --- avail. memory (np*TALSH_buff):                   400
+  --- required memory (ns^3*VVV):       27.005970597267151     
+ ======================================
+  --- splitting occupied spaces: 1-3 index 
+  --- using level:                     2
+  --- number el. :                     4 , size el.:    1.50000000    
+  --- subspace   :                     9                    2                   10                    5
+ ======================================
+  10 Jul 20 09:37:50   block     1 of    4 done, n=         1
+ after this block, t3 =   -1.8803048533922763E-036   0.0000000000000000       -5.5675040941917074E-038
+  10 Jul 20 09:37:52   block     2 of    4 done, n=         4
+ after this block, t3 =   -7.7389291542925213E-004   7.6750450996302568E-005   1.1771190193237041E-004
+  10 Jul 20 09:37:56   block     3 of    4 done, n=         9
+ after this block, t3 =   -5.6907076682175374E-003   7.3370159049444817E-004   1.0926267087939543E-003
+  10 Jul 20 09:38:02   block     4 of    4 done, n=        16
+ after this block, t3 =   -1.0147616225999080E-002   1.3656271258309690E-003   2.0308689237413581E-003
+  10 Jul 20 09:38:02 leaving t3_energy_split
+     -     Final results from EXACORR     -    
+-----------------------------------------------
+ Using the multi-node ExaTensor library (MPI) 
+ 
+  MP2 energy :                        -0.088462595608524
+  Final CCSD energy :                 -0.093988799830656
+  4th order triples correction :      -0.001691269371000
+  5th order triples (T) correction :   0.000227604520972
+  5th order triples -T  correction :   0.000338478153957
+  CCSD+T  correlation energy :        -0.095680069201656
+  CCSD(T) correlation energy :        -0.095452464680684
+  CCSD-T  correlation energy :        -0.095341591047699
+  T1 diagnostic      :                 0.000616680857094
+ 
+  SCF energy :                       -76.080618016666946
+  Total MP2 energy :                 -76.169080612275465
+  Total CCSD energy :                -76.174606816497601
+  Total CCSD+T  energy :             -76.176298085868595
+  Total CCSD(T) energy :             -76.176070481347622
+  Total CCSD-T  energy :             -76.175959607714631
+ 
+-----------------------------------------------
+ 
+#MSG(TAL-SH): Device utilization statistics for MPI process      0:
+#MSG(TAL-SH): Device utilization statistics for MPI process      2:
+#MSG(DSVP): Shut down DSVP      6: TAVP-MNG#0
+#MSG(DSVP): Counters: Recv  212417; Rtrd  212417; Crtd  523932; Fail    0: Time (s)     1178.169
+#MSG(TAL-SH): Device utilization statistics for MPI process      3:
+#MSG(TAL-SH): Device utilization statistics for MPI process      1:
+#MSG(TAL-SH): Device utilization statistics for MPI process      4:
+#MSG(TAL-SH): Device utilization statistics for MPI process      5:
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #0:
+ Number of tasks submitted: 71613
+ Number of tasks completed: 71613
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 2.84956E+09
+ Number of Bytes to GPU   : 9.4694E+08
+ Number of Bytes from GPU : 9.11171E+08
+ Time active (sec)        : 5326.290000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #1:
+ Number of tasks submitted: 20935
+ Number of tasks completed: 20935
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 2.27686E+09
+ Number of Bytes to GPU   : 5.58148E+08
+ Number of Bytes from GPU : 4.06653E+08
+ Time active (sec)        : 5330.600000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #2:
+ Number of tasks submitted: 19066
+ Number of tasks completed: 19066
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 2.27609E+09
+ Number of Bytes to GPU   : 5.66603E+08
+ Number of Bytes from GPU : 2.83086E+08
+ Time active (sec)        : 5358.870000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics across all GPU devices:
+ Number of Flops processed   : 7.40251E+09
+ Number of Bytes to GPUs     : 2.07169E+09
+ Number of Bytes from GPUs   : 1.60091E+09
+ Average arithmetic intensity: 2.01561
+#END_MSG
+#MSG(DSVP): Shut down DSVP      2: TAVP-WRK#2
+#MSG(DSVP): Counters: Recv  103775; Rtrd  103775; Crtd   55807; Fail    0: Time (s)     1203.989
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #0:
+ Number of tasks submitted: 20452
+ Number of tasks completed: 20452
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 1.75635E+09
+ Number of Bytes to GPU   : 4.68389E+08
+ Number of Bytes from GPU : 5.38569E+08
+ Time active (sec)        : 5389.910000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #1:
+ Number of tasks submitted: 7651
+ Number of tasks completed: 7651
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 1.1835E+09
+ Number of Bytes to GPU   : 3.0317E+08
+ Number of Bytes from GPU : 1.60446E+08
+ Time active (sec)        : 5391.210000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #2:
+ Number of tasks submitted: 6289
+ Number of tasks completed: 6289
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 1.22381E+09
+ Number of Bytes to GPU   : 3.10018E+08
+ Number of Bytes from GPU : 1.49193E+08
+ Time active (sec)        : 5421.750000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics across all GPU devices:
+ Number of Flops processed   : 4.16366E+09
+ Number of Bytes to GPUs     : 1.08158E+09
+ Number of Bytes from GPUs   : 8.48208E+08
+ Average arithmetic intensity: 2.15758
+#END_MSG
+#MSG(DSVP): Shut down DSVP      4: TAVP-WRK#4
+#MSG(DSVP): Counters: Recv   64894; Rtrd   64894; Crtd   17196; Fail    0: Time (s)     1204.177
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #0:
+ Number of tasks submitted: 66134
+ Number of tasks completed: 66134
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 2.69147E+09
+ Number of Bytes to GPU   : 9.24388E+08
+ Number of Bytes from GPU : 9.03311E+08
+ Time active (sec)        : 5406.110000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #1:
+ Number of tasks submitted: 19103
+ Number of tasks completed: 19103
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 2.27225E+09
+ Number of Bytes to GPU   : 5.68374E+08
+ Number of Bytes from GPU : 4.02374E+08
+ Time active (sec)        : 5407.460000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #2:
+ Number of tasks submitted: 17861
+ Number of tasks completed: 17861
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 2.13951E+09
+ Number of Bytes to GPU   : 5.4382E+08
+ Number of Bytes from GPU : 2.64476E+08
+ Time active (sec)        : 5437.850000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics across all GPU devices:
+ Number of Flops processed   : 7.10324E+09
+ Number of Bytes to GPUs     : 2.03658E+09
+ Number of Bytes from GPUs   : 1.57016E+09
+ Average arithmetic intensity: 1.96943
+#END_MSG
+#MSG(DSVP): Shut down DSVP      0: TAVP-WRK#0
+#MSG(DSVP): Counters: Recv   97396; Rtrd   97396; Crtd   51549; Fail    0: Time (s)     1204.977
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #0:
+ Number of tasks submitted: 199139
+ Number of tasks completed: 199139
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 3.10621E+09
+ Number of Bytes to GPU   : 2.02297E+09
+ Number of Bytes from GPU : 9.21194E+08
+ Time active (sec)        : 5386.250000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #1:
+ Number of tasks submitted: 109765
+ Number of tasks completed: 109765
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 2.37422E+09
+ Number of Bytes to GPU   : 1.07016E+09
+ Number of Bytes from GPU : 3.9971E+08
+ Time active (sec)        : 5387.640000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #2:
+ Number of tasks submitted: 108316
+ Number of tasks completed: 108316
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 2.35951E+09
+ Number of Bytes to GPU   : 1.05408E+09
+ Number of Bytes from GPU : 2.77404E+08
+ Time active (sec)        : 5422.630000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics across all GPU devices:
+ Number of Flops processed   : 7.83994E+09
+ Number of Bytes to GPUs     : 4.1472E+09
+ Number of Bytes from GPUs   : 1.59831E+09
+ Average arithmetic intensity: 1.36454
+#END_MSG
+#MSG(DSVP): Shut down DSVP      1: TAVP-WRK#1
+#MSG(DSVP): Counters: Recv  333081; Rtrd  333081; Crtd  208610; Fail    0: Time (s)     1204.999
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #0:
+ Number of tasks submitted: 20899
+ Number of tasks completed: 20899
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 1.83023E+09
+ Number of Bytes to GPU   : 5.21489E+08
+ Number of Bytes from GPU : 5.52483E+08
+ Time active (sec)        : 5378.060000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #1:
+ Number of tasks submitted: 8641
+ Number of tasks completed: 8641
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 1.42831E+09
+ Number of Bytes to GPU   : 3.78269E+08
+ Number of Bytes from GPU : 2.19313E+08
+ Time active (sec)        : 5379.410000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #2:
+ Number of tasks submitted: 6604
+ Number of tasks completed: 6604
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 1.3669E+09
+ Number of Bytes to GPU   : 3.61396E+08
+ Number of Bytes from GPU : 1.68814E+08
+ Time active (sec)        : 5415.900000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics across all GPU devices:
+ Number of Flops processed   : 4.62544E+09
+ Number of Bytes to GPUs     : 1.26115E+09
+ Number of Bytes from GPUs   : 9.40609E+08
+ Average arithmetic intensity: 2.10079
+#END_MSG
+#MSG(DSVP): Shut down DSVP      3: TAVP-WRK#3
+#MSG(DSVP): Counters: Recv   65885; Rtrd   65885; Crtd   18072; Fail    0: Time (s)     1206.074
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #0:
+ Number of tasks submitted: 65450
+ Number of tasks completed: 65450
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 2.68276E+09
+ Number of Bytes to GPU   : 9.23986E+08
+ Number of Bytes from GPU : 9.09855E+08
+ Time active (sec)        : 5357.460000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #1:
+ Number of tasks submitted: 18460
+ Number of tasks completed: 18460
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 2.12843E+09
+ Number of Bytes to GPU   : 5.3017E+08
+ Number of Bytes from GPU : 3.59475E+08
+ Time active (sec)        : 5358.850000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics on GPU #2:
+ Number of tasks submitted: 17518
+ Number of tasks completed: 17518
+ Number of tasks deferred : 0
+ Number of tasks failed   : 0
+ Number of Flops processed: 2.18149E+09
+ Number of Bytes to GPU   : 5.49807E+08
+ Number of Bytes from GPU : 2.68931E+08
+ Time active (sec)        : 5393.800000
+#END_MSG
+
+#MSG(TAL-SH::NV-TAL): Statistics across all GPU devices:
+ Number of Flops processed   : 6.99268E+09
+ Number of Bytes to GPUs     : 2.00396E+09
+ Number of Bytes from GPUs   : 1.53826E+09
+ Average arithmetic intensity: 1.97409
+#END_MSG
+#MSG(DSVP): Shut down DSVP      5: TAVP-WRK#5
+#MSG(DSVP): Counters: Recv   96477; Rtrd   96477; Crtd   50714; Fail    0: Time (s)     1206.259
+ 
+  Leaving cc_driver routine
+
+*****************************************************
+********** E N D   of   D I R A C  output  **********
+*****************************************************
+
+
+ 
+     Date and time (Linux)  : Fri Jul 10 09:38:30 2020
+     Host name              : h30n12                                  
+
+>>>> Node 0, utime: 2983, stime: 2655, minflt: 105480919, majflt: 45, nvcsw: 170269566, nivcsw: 93570, maxrss: 207436032
+>>>> Total WALL time used in DIRAC: 20min9s
+  
+  Dynamical Memory Usage Summary for Master
+  
+  Mean allocation size (Mb) :      2172.97
+  
+  Largest          10  allocations
+  
+    10864.26 Mb at subroutine __allocator_track_if_MOD_allocator_registe for WORK in PSISCF                            
+    10864.26 Mb at subroutine __allocator_track_if_MOD_allocator_registe for WORK in PAMSET - 2                        
+    10864.26 Mb at subroutine __allocator_track_if_MOD_allocator_registe for WORK in GMOTRA - part 2                   
+    10864.26 Mb at subroutine __allocator_track_if_MOD_allocator_registe for WORK in GMOTRA                            
+    10864.26 Mb at subroutine __allocator_track_if_MOD_allocator_registe for WORK in PAMSET - 1                        
+    10864.26 Mb at subroutine __allocator_track_if_MOD_allocator_registe for test allocation of work array in DIRAC mai
+        0.76 Mb at subroutine __allocator_track_if_MOD_allocator_registe for PAMINP WORK array                         
+        0.66 Mb at subroutine __allocator_track_if_MOD_allocator_registe for buf in butobs                             
+        0.36 Mb at subroutine __allocator_track_if_MOD_allocator_registe for QTRANS90-buffer-space                     
+        0.36 Mb at subroutine __allocator_track_if_MOD_allocator_registe for QTRANS90-buffer-space                     
+  
+  Peak memory usage:     10864.27 MB
+  Peak memory usage:       10.610 GB
+       reached at subroutine : __allocator_track_if_MOD_allocator_registe
+              for variable   : buf in butobs                             
+  
+ MEMGET high-water mark:     0.00 MB
+
+*****************************************************
+DIRAC pam run in /gpfs/alpine/chp109/scratch/jpoto/exacorr_test/exacorr_exatensor_cholesky

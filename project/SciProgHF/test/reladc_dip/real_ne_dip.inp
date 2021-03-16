@@ -1,0 +1,31 @@
+**DIRAC                                                                                             
+.TITLE                                                                                              
+ Valence ionization of the Neon atom                                                      
+.WAVE FUNCTION                                                                                      
+**INTEGRALS
+*READIN
+.UNCONTRACT
+**HAMILTONIAN                                                                                       
+.LVCORR                                                                                             
+**WAVE FUNCTIONS                                                                                    
+.SCF                                                                                                
+.RELADC                                                                                             
+*SCF                                                                                                
+.CLOSED SHELL                                                                                       
+ 4 6                                                                                                
+.FCKCNV                                                                                             
+5.0E-08                                                                                             
+**MOLTRA                                                                                            
+.ACTIVE                                                                                             
+energy  -2.0 2.5 0.1                                                                                
+energy  -2.0 2.5 0.1                                                                                
+**RELADC
+.DODIPS
+**LANCZOS
+.DIPITER
+ 30
+.DIPPRNT
+ 65.0
+*END OF                                                                                             
+                                                                                                    
+                                                                                                    

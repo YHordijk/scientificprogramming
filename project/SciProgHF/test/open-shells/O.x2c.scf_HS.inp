@@ -1,0 +1,49 @@
+**DIRAC
+.TITLE
+ B atom, X ^2P_12 ground state
+.WAVE F
+.ANALYZE
+**INTEGRALS
+.PRINT
+1
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+.PRINT
+1
+**WAVE FUNCTIONS
+.SCF
+*SCF
+# 1s(2) 2s(2)
+.CLOSED SHELL
+4 0
+# 2p12(1) 2p32(3)
+.OPEN S
+2
+1/0,2
+3/0,4
+.EVCCNV
+1.0D-9  1.0D-7
+.PRINT
+0
+.KPSELE
+3
+-1 1 -2
+4 0 0
+0 2 0
+0 0 4
+**ANALYZE
+.MULPOP
+*MULPOP
+# 2 fermion symmetries
+.VECPOP
+ all
+ all
+.PRINT
+0
+**MOLECULE
+*BASIS
+.DEFAULT
+ STO-2G
+*END OF

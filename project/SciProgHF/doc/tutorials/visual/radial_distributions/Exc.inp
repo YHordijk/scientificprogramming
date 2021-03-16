@@ -1,0 +1,40 @@
+**DIRAC
+.WAVE FUNCTION
+.PROPERTIES
+.ANALYZE
+**INTEGRALS
+*READIN
+.UNCONT
+**WAVE FUNCTION
+.SCF
+*SCF
+.CLOSED SHELL
+6 6
+**PROPERTIES
+*EXCITATION ENERGIES
+.ANALYZE
+.EXCITATION
+2 3
+.OPERATOR
+ 'xdipvel'
+ XALPHA
+ OVERLAP
+ CMULT
+.OPERATOR                                                                                           
+ 'xdiplen'
+ DIAGONAL
+ XDIPLEN
+ FACTOR
+ -1.0D0
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+1..oo
+1..oo
+**MOLECULE
+*BASIS
+.DEFAULT
+dyall.ae3z
+**END OF
+

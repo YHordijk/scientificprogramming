@@ -1,0 +1,5 @@
+cp GRIDOUT.h2o  FROZEN
+cp DFCOEF.h2se  DFCOEF
+
+pam --inp=shield_v.inp --mol=h2se.mol --put="numerical_grid FROZEN" --incmo
+

@@ -1,0 +1,93 @@
+##################################
+**DIRAC
+.TITLE
+BeH
+.WAVE FUNCTION
+##################################
+**HAMILTONIAN
+.DOSSSS
+##################################
+**INTEGRALS
+.NUCMOD
+2
+##################################
+**WAVE FUNCTIONS
+.SCF
+.KR CI
+############
+*KRCICALC
+.CI PROGRAM
+LUCIAREL
+.GASSH
+ 3
+  2
+  1
+ 21
+.GASSPC
+  2  4
+  3  5
+  5  5
+.MK2REF
+ 0
+.MK2DEL
+ 5
+.CIROOTS
+ 1  1
+.MAX CI
+ 50
+.RSTRCI
+ 0
+#############
+.OPERATOR
+ 'A2-EDM'
+ iBETAGAM
+ EDM
+#############
+.OPERATOR
+ 'A1-SPS'
+ iBETAGAM
+ 'PVCBe 01'
+#############
+.OPERATOR
+ 'A2-SPS'
+ iBETAGAM
+ 'PVCH  02'
+#############
+.OPERATOR
+ 'X1-HYP'
+ XAVECTOR
+ 'NEF 001'
+ 'NEF 005'
+#############
+.OPERATOR
+ 'Y1-HYP'
+ YAVECTOR
+ 'NEF 003'
+ 'NEF 001'
+#############
+.OPERATOR
+ 'Z1-HYP'
+ ZAVECTOR
+ 'NEF 005'
+ 'NEF 003'
+#############
+.OPERATOR
+ 'X2-HYP'
+ XAVECTOR
+ 'NEF 002'
+ 'NEF 006'
+#############
+.OPERATOR
+ 'Y2-HYP'
+ YAVECTOR
+ 'NEF 004'
+ 'NEF 002'
+#############
+.OPERATOR
+ 'Z2-HYP'
+ ZAVECTOR
+ 'NEF 006'
+ 'NEF 004'
+##################################
+*END OF
+

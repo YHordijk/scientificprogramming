@@ -1,0 +1,30 @@
+!
+! This test calculates the DFT energy of
+! employing valence-only Hamitonian
+! for relativistic effective-core-potentials.
+
+! This is a test of the input reader, have not paid much attention to other aspects (LV, 2013)
+!
+**DIRAC
+.TITLE
+Bi2 molecule with RECP
+.WAVE F
+**HAMILTONIAN 
+.ECP
+.DFT
+LDA
+*ECP
+.PRINT
+ 3
+**WAVE FUNCTIONS
+.SCF
+*SCF
+.CLOSED SHELL
+ 4 6
+**MOLECULE
+*BASIS
+.DEFAULT
+ecp-sdd-DZ
+ECPLIB ECPDS78MDFSO
+*END OF DIRAC
+

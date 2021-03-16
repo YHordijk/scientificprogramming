@@ -1,0 +1,30 @@
+#
+# For the sake of making the execution of this test faster, the dataset
+# originating from a FDE calculation from ADF, and residing in file
+#
+# EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym.bz2 (for the dft embedding potential)
+#
+# havs been shortened. this means that the calculated quantities in this
+# test are not accurate, but are sufficient to verify the functionality.
+# 
+# if one wishes to run the calculations that are comparable to those e.g. from ADF,
+# it is advised to replace the contents of the "menu" file in this directory
+# by the lines below
+
+sh bzip2 -d ../fde_static-vemb_dipole/EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym.bz2
+
+sh ln -sf ../fde_static-vemb_dipole/EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym vemb.grid
+sh ln -sf ../fde_static-vemb_dipole/EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym GRIDOUT
+sh ln -sf ../fde_static-vemb_dipole/EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym numerical_grid
+
+fde_dc_hf_exportdens.inp  water.sto6g     --mw=80 --nw=80 --put="vemb.grid GRIDOUT"
+fde_dc_hf_exportdens.inp  water.sto6g.c2v --mw=80 --nw=80 --put="vemb.grid GRIDOUT"
+
+fde_dc_lda_exportdens.inp water.sto6g     --mw=80 --nw=80 --put="vemb.grid GRIDOUT numerical_grid"
+fde_dc_lda_exportdens.inp water.sto6g.c2v --mw=80 --nw=80 --put="vemb.grid GRIDOUT numerical_grid"
+
+fde_dc_mp2_exportdens.inp water.sto6g     --mw=80 --nw=80 --put="vemb.grid GRIDOUT"
+fde_dc_mp2_exportdens.inp water.sto6g.c2v --mw=80 --nw=80 --put="vemb.grid GRIDOUT"
+
+sh bzip2 -9 ../fde_static-vemb_dipole/EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym
+sh rm vemb.grid GRIDOUT numerical_grid

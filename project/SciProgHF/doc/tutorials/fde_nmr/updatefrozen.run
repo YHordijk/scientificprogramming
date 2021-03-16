@@ -1,0 +1,7 @@
+cp GRIDOUT.h2o FROZEN
+cp GRIDOUT.h2o GRIDOUT
+
+pam --inp=updatefrozen.inp --mol=h2se.mol --put="numerical_grid FROZEN GRIDOUT" --get="GRIDOUT" --outcmo
+
+mv GRIDOUT GRIDOUT.h2se
+mv DFCOEF  DFCOEF.h2se

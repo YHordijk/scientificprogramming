@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Electronic energy',
+      num_lines   = 8,
+      rel_tolerance   = 1.0e-9)
+f.add(from_string = 'Eigenvalues',
+      to_re       = 'HOMO - LUMO',
+      rel_tolerance   = 1.0e-5)
+
+test.run(['H.inp'], ['H.xyz'], args='--get=DFACMO')
+shutil.copy('DFACMO', 'AFHXXX')
+
+test.run(['B.inp'], ['B.xyz'], args='--get=DFACMO')
+shutil.copy('DFACMO', 'AFBXXX')
+
+test.run(['HF.inp'], ['BH3.xyz'], f, args='--copy="AF*"')
+
+
+# cleanup
+os.unlink('DFACMO')
+os.unlink('AFHXXX')
+os.unlink('AFBXXX')
+
+sys.exit(test.return_code)

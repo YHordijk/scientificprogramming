@@ -1,0 +1,120 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+#
+# First, run the CCSD(T) job
+#
+from runtest import version_info, get_filter, cli, run
+# this tells runtest how to run your code
+from runtest_config import configure
+# we stop the script if the major version is not compatible
+assert version_info.major == 2
+# construct a filter list which contains two filters
+f = [
+    get_filter(from_string='Overview of calculated energies',
+               num_lines=11,
+               abs_tolerance=1.0e-6),
+]
+# invoke the command line interface parser which returns options
+options = cli()
+ierr = 0
+ierr += run(options,configure,input_files=['BeH.x2c_scf_relcc.inp','BeH.sto-2g.lsym.mol'],
+            extra_args='--get="MDCINT MRCONEE"',
+                    filters={'out': f})
+
+###########################################################################################################
+
+import runtest_v1 as runtest # utilize radovan's runtest library, v1
+def write_stderr(log_file, s):
+    """
+    Writes s to stderr and to file log_file
+    unless log_file is None.
+    """
+    if log_file:
+        with open(log_file, 'w') as f:
+            f.write(s)
+    sys.stderr.write(s)
+
+class Filter(runtest.Filter):
+
+    def __init__(self):
+        runtest.Filter.__init__(self)
+
+    def add(self, *args, **kwargs):
+        try:
+            runtest.Filter.add(self, *args, **kwargs)
+        except runtest.FilterKeywordError as e:
+            sys.stderr.write(str(e))  # FIXME currently not written to any log file
+            sys.exit(-1)
+
+
+class TestRun(runtest.TestRun):
+    def __init__(self, _file, argv):
+        runtest.TestRun.__init__(self, _file, argv)
+        self.return_code = 0
+    def run(self, f=None, args='', accepted_errors=[], print_args=False):
+        if sys.platform == "win32":
+            dirac_exe = 'dirac_mointegral_export.x.exe'
+        else:
+            dirac_exe = 'dirac_mointegral_export.x'
+        launch_script = os.path.normpath(os.path.join(self.binary_dir, dirac_exe))
+        if self.skip_run:
+            sys.stdout.write('\nskipping actual run\n')
+        else:
+            if not os.path.exists(launch_script):
+                sys.stderr.write('ERROR: launch script %s not found\n' % launch_script)
+                sys.stderr.write('       have you set the correct --binary-dir (or -b)?\n')
+                sys.stderr.write('       try also --help\n')
+                sys.exit(-1)
+        out = 'dirac_mointegral_export.log' # output file
+        launcher = ' "%s" %s ' % (launch_script, args)
+        if print_args:
+            sys.stdout.write('\nrunning test: %s %s with arguments=%s\n' % (args))
+        else:
+            sys.stdout.write('\nrunning test: %s \n' % (launcher))
+            command = launcher
+            try:
+                runtest.TestRun.execute(self,command=command,stdout_file_name=out,accepted_errors=accepted_errors)
+                if f is None:
+                    sys.stdout.write('finished (no reference)\n')
+                else:
+                    try:
+                        f.check(self.work_dir, '%s' % out, 'result/%s' % out, self.verbose)
+                        sys.stdout.write('passed\n')
+                    except IOError as e:
+                        write_stderr(self.log, 'ERROR: could not open file %s\n' % e.filename)
+                        sys.exit(-1)
+                    except runtest.TestFailedError as e:
+                        write_stderr(self.log, str(e))
+                        self.return_code += 1
+                    except runtest.BadFilterError as e:
+                        write_stderr(self.log, str(e))
+                        sys.exit(-1)
+                    except runtest.FilterKeywordError as e:
+                        write_stderr(self.log, str(e))
+                        sys.exit(-1)
+            except runtest.AcceptedError as e:
+                sys.stdout.write(str(e))
+            except runtest.SubprocessError as e:
+                write_stderr(self.log, str(e))
+                sys.exit(-1)
+
+test = TestRun(__file__, sys.argv) # run dirac_mointegral_export.x
+
+f = Filter()
+f.add(from_string = 'Initialized reading from MRCONEE',
+       num_lines   = 5,
+       abs_tolerance   = 1.0e-7)  # we check only core energy of BeH
+test.run(f, args='fcidump') # own run
+ierr +=test.return_code
+
+#os.unlink('MRCONEE')
+#os.unlink('MDCINT')
+os.unlink('FCIDUMP')
+os.unlink('FCITABLE')
+
+sys.exit(ierr)

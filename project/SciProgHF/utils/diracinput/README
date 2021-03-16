@@ -1,0 +1,48 @@
+Dirac Input
+===========
+Christoph Jacob <jacob@few.vu.nl>
+
+
+Dirac Input is a small graphical tool for generating 
+molecule files for Dirac.
+
+It is written in Python using pyGTK and libglade.
+
+This is a first version with only a few features,
+but it can produce complete molecule files for
+using library basis sets.
+
+The program should be self-explaning, if it is not
+please feel free tell me. 
+
+Limitations:
+------------
+* Opening files is not working
+* Only library basis sets can be used
+* Importing coordinates is not working yet
+* Giving coordinates in Angstrom not possible
+* When a pointgroup symmetry is given, the a
+  certain orientation is assumed
+
+Installation:
+-------------
+Getting Dirac Input running could be non-trivial
+on your system because it depends on a number of
+libraries (in quite recent versions).
+
+You need to have installed:
+* Python (>= 2.3)
+* PyGTK (>= 2.4)
+  [ which depends on gtk+ >=2.4 and libglade >= ?? ]
+
+Once you have all the required libraries, just
+run "diracinput.py"
+
+For Dirac People in Amsterdam:
+------------------------------
+On the TC cluster 
+- add "/home4/cjacob/share/Modules" to your MODULEPATH variable
+- and then do "module load Python" to get a version of
+  Python and all the required libraries
+
+

@@ -1,0 +1,55 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Electronic energy',
+      num_lines   = 8,
+      rel_tolerance   = 1.0e-9)
+f.add(from_string = 'Eigenvalues',
+      to_re       = 'HOMO - LUMO',
+      rel_tolerance   = 1.0e-5)
+f.add(from_string = '* Total gross contributions',
+      num_lines   = 7,
+      rel_tolerance   = 1.0e-4)
+
+test.run(['H.inp'], ['H.mol'], args='--get=DFACMO')
+shutil.copy('DFACMO', 'AFH1XX')
+
+test.run(['C.inp'], ['C.mol'], args='--get=DFACMO')
+shutil.copy('DFACMO', 'AFCXXX')
+
+test.run(['CH4.inp'], ['CH4.xyz'], f, args='--outcmo --get=DFACMO --copy="AF*"')
+
+f = Filter()
+f.add(from_string = '* Total gross contributions',
+      num_lines   = 7,
+      rel_tolerance   = 1.0e-4)
+
+test.run(['CH4_repolar.inp'], ['CH4.xyz'], f, args='--incmo --copy="AF*"')
+
+shutil.copy('AFH1XX', 'AFH2XX')
+shutil.copy('AFH1XX', 'AFH3XX')
+shutil.copy('AFH1XX', 'AFH4XX')
+shutil.copy('DFACMO', 'DFCOEF')
+
+test.run(['CH4_C1.inp'], ['CH4.xyz'], f, args='--incmo --copy="AF*"')
+
+
+# cleanup
+os.unlink('DFACMO')
+os.unlink('DFCOEF')
+os.unlink('AFCXXX')
+os.unlink('AFH1XX')
+os.unlink('AFH2XX')
+os.unlink('AFH3XX')
+os.unlink('AFH4XX')
+
+sys.exit(test.return_code)

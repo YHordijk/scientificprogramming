@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'TOTAL ENERGY',
+      num_lines   = 9,
+      rel_tolerance   = 1.0e-8)
+f.add(from_string = 'Eigenvalues',
+      to_re       = 'HOMO - LUMO',
+      rel_tolerance   = 1.0e-5)
+
+test.run(['F.x2c.scf.sto2g.inp'], ['F.xyz'], f, args='--get="DFACMO=AFFXXX" ')
+test.run(['P.x2c.scf.sto2g.inp'], ['P.xyz'], f, args='--get="DFACMO=AFPXXX" ')
+test.run(['PF5.x2c.scf.sto2g.inp'], ['PF5.xyz'], f, args='--put="DFPCMO.PF5_x2c_scf_sto2g_xyz=DFPCMO" --outcmo')
+
+f = Filter()
+f.add(from_string = '* Total gross contributions',
+      num_lines   = 7,
+      rel_tolerance   = 1.0e-4)
+#miro: deactivated - numerically unstable numbers, difficult to compare
+#f.add(from_string = 'Overlaps - summed per all projected orbitals, per fragments',
+#      num_lines   = 4,
+#      rel_tolerance   = 1.0e-5)
+
+test.run(['PF5.x2c.projanal.sto2g.inp'], ['PF5.xyz'], f, args='--incmo  --copy="AF*" ')
+
+# cleanup
+os.unlink('DFCOEF')
+os.unlink('AFFXXX')
+os.unlink('AFPXXX')
+
+sys.exit(test.return_code)

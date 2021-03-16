@@ -1,0 +1,26 @@
+**DIRAC                       
+.TITLE
+ Testing finite field calculation of EFG
+.WAVE F
+.PROPER
+.4INDEX
+**HAMILTONIAN
+.LVCORR
+**WAVE FUNCTIONS
+.SCF
+.RELCCSD
+*SCF
+.FCKCNV
+3.0D-10
+**PROPERTIES
+.EFG
+*EXPECTATION
+**MOLTRA
+.ACTIVE
+2..36
+**RELCCSD
+.GRADIENT
+*CCFOPR
+.MP2G
+.RELAXED
+*END OF                                                                         

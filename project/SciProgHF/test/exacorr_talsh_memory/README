@@ -1,0 +1,23 @@
+! requirements: 
+! TAL-SH library (Dmitry Lyakh): OpenMP, CUDA (optional)
+
+In order to run with TAL-SH a certain amount of working memory is reserved by:
+*****
+.TALSH_BUFF
+50
+*****
+You should set it to the memory available on a node!
+
+You can always find a memory estimate in the header of ExaCorr:
+-----------------
+- Estimating memory requirements
+ -- nao  ( scheme 1-3  ) :         5 GB
+ -- nvir ( scheme 4/42 ) :         5 GB
+-----------------
+
+With the following option you can run the code without doing computations and only testing allocations:
+******
+.MOINT_SCHEME
+5
+*****
+

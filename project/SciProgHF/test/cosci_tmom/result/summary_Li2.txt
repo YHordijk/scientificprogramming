@@ -1,0 +1,96 @@
+=====================================================================
+sya, 2007.09.23, chukyo-u
+Li2 / cc-pVDZ / D2h / transition dipole moments
+inactive: (1-sigma-g)(2) (1-sigma-u)(2)
+active:   (2-sigma-g)(2) (2-sigma-u)(0) (1-pi-x)(0) (1-pi-y)(0)
+=====================================================================
+Dirac COSCI
+DHF
+   Total energy                             :    -14.871115523192847
+
+COSCI
+ Level eigenvalue (eV)  Eigenvalue (cm-1) ag  bg  au  bu
+    1      0.000000000          0.000000   1   0   0   0   X-1-Sigma-g-plus
+    2      1.405589654      11336.846278   0   0   1   2
+    3      1.556355555      12552.855401   0   0   2   0
+    4      1.556368908      12552.963100   0   0   0   2
+    5      1.556382261      12553.070797   0   0   2   0
+    6      2.458414986      19828.456121   0   0   1   0   A-1-Sigma-u-plus
+    7      2.892733130      23331.468558   0   0   0   2   B-1-Pi
+ Level   Rel eigenvalue     Abs eigenvalue  Degeneracy
+    1   0.000000000000    -14.878003328844 (   1 * )      X-1-Sigma-g-plus
+    2   0.051654472371    -14.826348856473 (   3 * )      3-Sigma-u-plus
+    3   0.057195017610    -14.820808311234 (   2 * )      3-Pi
+    4   0.057195508321    -14.820807820523 (   2 * )      3-Pi
+    5   0.057195999024    -14.820807329819 (   2 * )      3-Pi
+    6   0.090345093669    -14.787658235174 (   1 * )      A-1-Sigma-u-plus
+    7   0.106305992733    -14.771697336110 (   2 * )      B-1-Pi
+ Transition dipole moments
+ [1-2] X -> A-1-Sigma-u-plus
+ ----------------------------------------------------------------------
+ TMOM <irrep  3   au vec#   6 |x,y,z| irrep  1   ag vec#   1>
+  Transition dipole moments
+       0.0000000000      0.0000000000      0.0000000000 (real)
+       0.0000000000      0.0000000000      3.1614272442 (imaginary)
+  Norm in atomic units and in Debye
+       3.1614272442      8.0355456460
+ ----------------------------------------------------------------------
+ [1-3] X -> B-1-Pi
+ ----------------------------------------------------------------------
+ TMOM <irrep  4   bu vec#   5 |x,y,z| irrep  1   ag vec#   1>
+  Transition dipole moments
+       0.0000000000      0.0019744426      0.0000000000 (real)
+      -2.8600594852      0.0000000000      0.0000000000 (imaginary)
+  Norm in atomic units and in Debye
+       2.8600601667      7.2695470258
+ ----------------------------------------------------------------------
+ TMOM <irrep  4   bu vec#   6 |x,y,z| irrep  1   ag vec#   1>
+  Transition dipole moments
+       0.0000000000      2.8600594852      0.0000000000 (real)
+       0.0019744426      0.0000000000      0.0000000000 (imaginary)
+  Norm in atomic units and in Debye
+       2.8600601667      7.2695470258
+
+======================================================================
+sya, 2007.09.18
+Li2 / cc-pVDZ / Penitum4 IA32 / prec360n
+======================================================================
+GAMESS2006
+----------------------------------------------------------------------
+FINAL RHF ENERGY IS      -14.8694986919 AFTER   9 ITERATIONS
+----------------------------------------------------------------------
+(2e/4o)FVCI / C1 / 10-CSF
+
+ STATE #    1  ENERGY =     -14.876387292
+ STATE #    2  ENERGY =     -14.786053825
+ STATE #    3  ENERGY =     -14.770101871
+ STATE #    4  ENERGY =     -14.770101871
+----------------------------------------------------------------------
+ CI STATE NUMBER=  1  2 STATE MULTIPLICITY=  1  1
+ STATE ENERGIES          -14.8763872922      -14.7860538249
+ TRANSITION ENERGY=  5.9437E+14 [1/SEC] =    19825.45 [1/CM] =        2.46 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ TRANSITION DIPOLE =    0.000000    0.000000    3.161412    3.161412 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    8.035570    8.035570 DEBYE
+ OSCILLATOR STRENGTH =    0.601893
+ EINSTEIN COEFFICIENTS: A=  1.5780E+08 1/SEC; B=  4.0560E+09 SEC/G
+
+ CI STATE NUMBER=  1  3 STATE MULTIPLICITY=  1  1
+ STATE ENERGIES          -14.8763872922      -14.7701018710
+ TRANSITION ENERGY=  6.9932E+14 [1/SEC] =    23326.42 [1/CM] =        2.89 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ TRANSITION DIPOLE =   -1.136323    2.624549    0.000000    2.859980 E*BOHR
+ TRANSITION DIPOLE =   -2.888268    6.670989    0.000000    7.269401 DEBYE
+ OSCILLATOR STRENGTH =    0.579574
+ EINSTEIN COEFFICIENTS: A=  2.1035E+08 1/SEC; B=  3.3194E+09 SEC/G
+
+ CI STATE NUMBER=  1  4 STATE MULTIPLICITY=  1  1
+ STATE ENERGIES          -14.8763872922      -14.7701018710
+ TRANSITION ENERGY=  6.9932E+14 [1/SEC] =    23326.42 [1/CM] =        2.89 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ TRANSITION DIPOLE =    2.624549    1.136323    0.000000    2.859980 E*BOHR
+ TRANSITION DIPOLE =    6.670989    2.888268    0.000000    7.269401 DEBYE
+ OSCILLATOR STRENGTH =    0.579574
+ EINSTEIN COEFFICIENTS: A=  2.1035E+08 1/SEC; B=  3.3194E+09 SEC/G
+
+======================================================================

@@ -1,0 +1,80 @@
+**DIRAC                       
+.TITLE
+  Cl- for FSCC
+.WAVE F
+.ANALYZE
+**INTEGRALS
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.INTFLG
+1 1 0
+**WAVE FUNCTIONS
+.SCF
+.RELCCSD
+*SCF
+.EVCCNV
+1.0D-9  5.0D-07
+# 1s(2) 2s(2) 2p(6) 3s(2) 3p(6)
+.CLOSED SHELL
+18
+# put DFPCMO
+.MAXITR
+2
+**MOLTRA
+##  frozen core:   none
+##  correlated shells (17 el) : 1s(2) 2s(2) 2p(6) 3s(2) 3p1/2-3p3/2(5)
+## deleted shells > 1000 au
+.ACTIVE
+energy -200.0 1000.0 0.1
+.PRPTRA
+*PRPTRA
+#
+#
+# alpha_y*NEF_z - alpha_z*NEF_y
+#
+# common factor is (-c/2) ... Ephraim, why ?
+#
+.OPERATOR
+ 'A_x'
+ XAVECTOR
+ 'NEF 003'
+ 'NEF 002'
+ FACTORS
+ +1.0
+ -1.0  
+ COMFACTOR
+ -68.51799990D0
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+1..oo
+**RELCC
+#.ENERGY
+.FOCKSP
+.TIMING
+.PRINT
+1
+# Cl-, all 18 electrons
+.NELEC
+9,9 
+*CCENER
+.MAXIT # maximum number of iterations for (0,0) sector
+100       
+.NTOL
+12
+*CCFSPC
+# calculate ionization energy
+.DOIE
+# active space
+.NACTH
+3 3
+*CCSORT
+#.USEOE
+# read finite-field perturbed operator of (T-) symmetry
+.NFFOPER
+1
+A_x
+0.0000, 0.0001
+*END OF

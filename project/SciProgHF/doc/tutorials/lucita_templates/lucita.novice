@@ -1,0 +1,39 @@
+# closed-shell spinfree CISD using LUCITA
+**DIRAC
+.TITLE
+ closed-shell spinfree CISD using LUCITA
+.WAVE FUNCTION
+.4INDEX
+#################################
+**HAMILTONIAN
+.SPINFREE
+.LVCORR
+#################################
+**WAVE FUNCTION
+.SCF
+.LUCITA
+#
+*SCF
+# here we insert the number of electrons
+# (if inversion for gerade and ungerade separately)
+.CLOSED SHELL
+ xx [xx]
+*LUCITA
+# closed-shell DHF-wave function
+.INIWFC
+  DHFSCF
+.CITYPE
+  SDCI
+# number of eigenvalues to be calculated
+.NROOTS
+ xx
+# calculating states of spin S: 2S+1 = xx 
+.MULTIP
+  xx
+# boson irrep of the roots you want to obtain
+.SYMMET
+ xx
+# number of electrons to be correlated
+.NACTEL
+ xx
+**END OF

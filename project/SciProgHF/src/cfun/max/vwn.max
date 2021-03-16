@@ -1,0 +1,74 @@
+PI: 3.14159265358979312;
+rs(rhoa,rhob):= (3/(4*PI*(rhoa+rhob)))^(1/3);
+x(rhoa,rhob):= sqrt(rs(rhoa,rhob));
+zeta(rhoa,rhob):= (rhoa-rhob)/(rhoa+rhob);
+f(rhoa,rhob):= ((1+zeta(rhoa,rhob))^(4/3) + (1-zeta(rhoa,rhob))^(4/3) -2)/(2^(4/3)-2);
+
+/* Evaluate f''(0) */
+d2f0: 4/(9*(2^(1/3) - 1));
+
+/* Parameters [paramagnetic, ferromagnetic, spin stiffness] */
+
+x0:[-0.10498,-0.32500,-0.00475840];
+A: [0.0621814,0.0310907,-1/(3*PI^2)];
+b: [3.72744,7.06042,1.13107];
+c: [12.9352,18.0578,13.0045];
+
+/* Paramagnetic contribution */
+X_p(rhoa,rhob):= x(rhoa,rhob)*x(rhoa,rhob) + b[1]*x(rhoa,rhob) + c[1];
+X0_p: x0[1]*x0[1] + b[1]*x0[1] + c[1]; /* X_p(x0) */
+Q_p: sqrt(4*c[1] - b[1]*b[1]);
+
+/* Write paramagnetic functional as sum/product of 6 terms: */
+t1_p(rhoa,rhob):= log(x(rhoa,rhob)^2/X_p(rhoa,rhob));
+t2_p(rhoa,rhob):= (2*b[1]/Q_p)*atan(Q_p/(2*x(rhoa,rhob) + b[1]));
+t3_p: b[1]*x0[1]/X0_p;
+t4_p(rhoa,rhob):=log((x(rhoa,rhob) - x0[1])^2/X_p(rhoa,rhob));
+t5_p: 2*(b[1] + 2*x0[1])/Q_p;
+t6_p(rhoa,rhob):=atan(Q_p/(2*x(rhoa,rhob) + b[1]));
+
+E_para(rhoa,rhob):= A[1]*(t1_p(rhoa,rhob) + t2_p(rhoa,rhob) - t3_p*(t4_p(rhoa,rhob) + t5_p*t6_p(rhoa,rhob)));
+
+
+/* Ferromagnetic contribution */
+X_f(rhoa,rhob):= x(rhoa,rhob)*x(rhoa,rhob) + b[2]*x(rhoa,rhob) + c[2];
+X0_f: x0[2]*x0[2] + b[2]*x0[2] + c[2]; /* X_f(x0) */
+Q_f: sqrt(4*c[2] - b[2]*b[2]);
+
+/* Write ferromagnetic functional as sum/product of 6 terms: */
+t1_f(rhoa,rhob):= log(x(rhoa,rhob)^2/X_f(rhoa,rhob));
+t2_f(rhoa,rhob):= (2*b[2]/Q_f)*atan(Q_f/(2*x(rhoa,rhob) + b[2]));
+t3_f: b[2]*x0[2]/X0_f;
+t4_f(rhoa,rhob):=log((x(rhoa,rhob) - x0[2])^2/X_f(rhoa,rhob));
+t5_f: 2*(b[2] + 2*x0[2])/Q_f;
+t6_f(rhoa,rhob):=atan(Q_f/(2*x(rhoa,rhob) + b[2]));
+
+E_ferro(rhoa,rhob):= A[2]*(t1_f(rhoa,rhob) + t2_f(rhoa,rhob) - t3_f*(t4_f(rhoa,rhob) + t5_f*t6_f(rhoa,rhob)));
+
+
+/* Spin stiffness*/
+X_s(rhoa,rhob):= x(rhoa,rhob)*x(rhoa,rhob) + b[3]*x(rhoa,rhob) + c[3];
+X0_s: x0[3]*x0[3] + b[3]*x0[3] + c[3]; /* X_s(x0) */
+Q_s: sqrt(4*c[3] - b[3]*b[3]);
+
+/* Write interpolatong functional as sum/product of 6 terms: */
+t1_s(rhoa,rhob):= log(x(rhoa,rhob)^2/X_s(rhoa,rhob));
+t2_s(rhoa,rhob):= (2*b[3]/Q_s)*atan(Q_s/(2*x(rhoa,rhob) + b[3]));
+t3_s: b[3]*x0[3]/X0_s;
+t4_s(rhoa,rhob):=log((x(rhoa,rhob) - x0[3])^2/X_s(rhoa,rhob));
+t5_s: 2*(b[3] + 2*x0[3])/Q_s;
+t6_s(rhoa,rhob):=atan(Q_s/(2*x(rhoa,rhob) + b[3]));
+
+E_s(rhoa,rhob):= A[3]*(t1_s(rhoa,rhob) + t2_s(rhoa,rhob) - t3_s*(t4_s(rhoa,rhob) + t5_s*t6_s(rhoa,rhob)));
+
+
+/* Assemble functional */
+term1(rhoa,rhob):= E_para(rhoa,rhob);
+term2(rhoa,rhob):= E_s(rhoa,rhob)*(f(rhoa,rhob)/d2f0)*(1-zeta(rhoa,rhob)^4);
+term3(rhoa,rhob):= (E_ferro(rhoa,rhob) - E_para(rhoa,rhob))*f(rhoa,rhob)*zeta(rhoa,rhob)^4;
+
+/* VWN5 parametrization of the lDA correlation energy */
+
+L(rhoa,grada,rhob,gradb,gradab):= 0.5*(term1(rhoa,rhob) + term2(rhoa,rhob) + term3(rhoa,rhob))*(rhoa+rhob);
+
+K(rhoa,grada,rhob,gradb,gradab):= L(rhoa,grada,rhob,gradb,gradab);

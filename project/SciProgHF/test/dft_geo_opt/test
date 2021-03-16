@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Final geometry (bohr)',
+      num_lines   = 5,
+      rel_tolerance   = 1.0e-8)
+f.add(string      = 'Energy at final geometry is',
+      rel_tolerance   = 1.0e-9)
+
+test.run(['lda_numgra.inp', 'lda_numgra_x2c.inp'], ['h2.mol'], f)
+test.run(['geop_numgra.inp'], ['h2.xyz'], f)
+test.run(['lda.inp'], ['h2o.mol'], f)
+
+sys.exit(test.return_code)

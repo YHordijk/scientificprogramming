@@ -1,0 +1,4 @@
+!
+! This is a test for the exacorr combined with ExaTensor to check if the input is passed on to the master
+! and broadcasted correctly to the slaves. First a DFCOEF is saved and used to start the CC part.
+! requirements: build using MPI, EXATENSOR library (Dmitry Lyakh), running with at least _3_ MPI processes

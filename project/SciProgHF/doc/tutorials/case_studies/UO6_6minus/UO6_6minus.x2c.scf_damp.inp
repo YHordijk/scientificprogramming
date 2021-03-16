@@ -1,0 +1,48 @@
+!
+! Average DF calculation on the 5f(0) configuration of UO6(6-)
+!
+**DIRAC
+.TITLE
+UO6(6-) Fully uncontracted DHF calculation
+.WAVE F
+.ANALYZE
+**GENERAL
+!.PCMOIN
+.LINDEP
+ 1.0d-5 1.0d-7
+.DIRECT
+1 1 1
+**INTEGRALS
+*TWOINT
+.SOFOCK
+.SCREEN
+1.0E-14
+**HAMILTONIAN
+.PRINT
+ 1
+.X2C
+**WAVE FUNCTIONS
+.SCF
+*SCF
+.CLOSED
+ 72 74
+.MAXITR
+ 200 
+.NODIIS
+! set up damping factor according to the status of convergence
+! based on previous MO coefficients
+.DAMPFC
+dampfactor
+!.CNVINT
+!  0.00001 0.0000001
+.ITRINT
+  0 0
+.FCKCNV
+1.0D-8  5.0D-8
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+ 1..50
+ 1..50
+*END OF

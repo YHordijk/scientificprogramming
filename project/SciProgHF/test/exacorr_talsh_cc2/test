@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'SCF energy :',
+      num_lines   = 3,
+      rel_tolerance   = 1.0e-9)
+f.add(from_string = 'Electronic energy',
+      num_lines   = 8,
+      rel_tolerance   = 1.0e-9)
+f.add(from_string = 'Eigenvalues',
+      num_lines   = 32,
+      rel_tolerance   = 1.0e-5)
+
+test.run(['cc2_energy_small.inp'], ['LiH', 'h2o.xyz'], f)
+# LV: These remaining tests work for LiH and H2O (Feb 4, 2021) but are too long to be used as standard test
+#test.run(['cc2_energy.inp'], ['LiH', 'h2o.xyz', 'sf6.xyz'], f)
+#test.run(['cc2_energy_large_cvalue.inp'], ['LiH', 'h2o.xyz', 'sf6.xyz'], f)
+
+sys.exit(test.return_code)

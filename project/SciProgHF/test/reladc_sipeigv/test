@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = '  eigenvectors are stored in LONGEVC',
+      num_lines    = 4,
+      rel_tolerance   = 1.0e-4)
+
+test.run(['real_ne_eigv.inp'], ['ne_d2h.mol'], f, accepted_errors=['RELADC not parallelized'])
+test.run(['complex_hcn_eigv.inp'], ['hcn_cs.mol'], f, accepted_errors=['RELADC not parallelized'])
+
+sys.exit(test.return_code)

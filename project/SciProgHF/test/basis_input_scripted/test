@@ -1,0 +1,186 @@
+#!/usr/bin/env python
+
+#############################################################################################
+#
+# Python script for testing (almost all) basis sets sitting in the DIRAC directory.
+#
+# Uses user provided environmental variables:  
+#
+#     BSFILE - name of the basis set file
+#
+#     ZELEM  - proton number of an elementy whose basis set has to be tested
+#
+#     RANDOM_BSF_Z : parameters for number of random files, Z numbers (for ex. "1 2"), overrides BSFILE,ZELEM
+#
+# Written by Miro Ilias, Toulouse, June 2017
+#   utilizing runtest library of Radovan Bast (https://runtest.readthedocs.io).
+#
+#############################################################################################
+
+import os
+import glob
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+dirac_top_dir=os.path.join(os.path.dirname(__file__), '..','..')
+
+from runtest import version_info, get_filter, cli, run
+from runtest_config import configure
+
+assert version_info.major == 2
+
+# empty filter - only passing run
+f = []
+
+# also this stuff from Radovan's library
+options = cli()
+
+def select_random_basis_set_file_names(all_basis_set_files, n_bsf):
+# pick n_bsf random basis set file from "all_basis_set_files" list
+    import random
+    if n_bsf >= 1:
+       basis_set_files=random.sample(set(all_basis_set_files),n_bsf)
+       print("...selected random basis set file(s):",basis_set_files)
+    return basis_set_files
+
+def collect_all_basis_set_file_names():
+# collect all basis set file names from within DIRAC space into "all_basis_set_files" list
+    bas_dirs=['basis','basis_dalton','basis_ecp']
+    #bas_dirs='basis  basis_dalton  basis_ecp'
+    for bas_dir in bas_dirs:
+   # accumulate list of basis sets files appearing in basis directories
+        for fn in next(os.walk(os.path.join(dirac_top_dir,bas_dir)))[2]:
+            #print "collect_all_basis_set_file_names:",fn
+            all_basis_set_files.append( os.path.join(bas_dir,fn))
+    print("...found total %i valid basis set input files in Dirac directory" % len(all_basis_set_files))
+    # return them as list
+    return all_basis_set_files
+
+def parse_environment_variables(testday):
+# parse envirovariables related to this test
+# verify them and prepare list of them for running
+    basis_set_files=[] # initialize local variable-list
+    all_basis_set_files=[] # initialize local variable-list
+    Znumbers=[]
+    n_Zelem=None
+    n_bsf=None
+    if os.environ.get('BSFILE'):
+        #print "BSFILE defined = ",os.environ.get('BSFILE')
+        #print "BSFILE glob = ",glob.glob(os.environ.get('BSFILE'))
+        #print("...user provided (BSFILE envirom.variable) basis set files: ",os.environ.get('BSFILE').split())
+        # check and accumulate the list of basis set files for testing
+        for bsf in (os.environ.get('BSFILE').split()):
+            #print("bsf=",bsf)
+            #print("os.path.join(dirac_top_dir,bsf)=",os.path.join(dirac_top_dir,bsf))
+            #print("glob.glob(os.path.join(dirac_top_dir,bsf))=",glob.glob(os.path.join(dirac_top_dir,bsf)))
+            for bsf_glob in glob.glob(os.path.join(dirac_top_dir,bsf)):
+                #print("bsf_glob=",bsf_glob)
+                if os.path.isfile(bsf_glob):
+                    print("This is valid basis set file =",bsf_glob)
+                    basis_set_files.append(bsf_glob)
+                else: 
+                    print("You provided  (in BSFILE env.var.) INVALID basis set file ! Check it ... ",(os.path.join(dirac_top_dir,bsf)))
+                    sys.exit("invalid basis set file !"+bsf)
+
+    if os.environ.get('ZELEM'):
+        #print "ZELEM defined = ",os.environ.get('ZELEM').split()
+        for Znum in (os.environ.get('ZELEM').split()):
+            #print "Znum=",Znum, Znum.isdigit()
+            if Znum.isdigit(): Znumbers.append(Znum)
+        print("...user provided (env.variable ZELEM) set of element's proton numbers: ",Znumbers)
+
+    if os.environ.get('RANDOM_BSF_Z'):
+        #print "RANDOM_BSF_Z defined = ",os.environ.get('RANDOM_BSF_Z').split()
+        n_elem=len(os.environ.get('RANDOM_BSF_Z').split())
+        #print "number of elemen in RANDOM_BSF_Z:",n_elem
+        if os.environ.get('RANDOM_BSF_Z').split()[0].isdigit():
+            n_bsf=int(os.environ.get('RANDOM_BSF_Z').split()[0])
+        if n_elem > 1:
+            if os.environ.get('RANDOM_BSF_Z').split()[1].isdigit():
+                n_Zelem=int(os.environ.get('RANDOM_BSF_Z').split()[1])
+            print("...selects (through RANDOM_BSF_Z) %i random basis file(s) and %i random element(s)."%(n_bsf,n_Zelem))
+        else:
+            print("...provided (through RANDOM_BSF_Z) %i random basis file(s) with all element(s) to be processed."%(n_bsf))
+        # collect n_bsf basis set files form inside dirac
+        all_basis_set_files=collect_all_basis_set_file_names()
+        basis_set_files=select_random_basis_set_file_names(all_basis_set_files, n_bsf)
+
+    # default case (in tests) - runs ALL basis sets with ALL elements within
+    if not(os.environ.get('RANDOM_BSF_Z') or os.environ.get('BSFILE') or os.environ.get('ZELEM') ):
+        import datetime; d=datetime.date.today()
+        if d.day == testday :
+            print("Today it's %i th day of a month, reading all basis set files with all elements. To deactivate it, speficy envirovariables."%testday)
+            all_basis_set_files=collect_all_basis_set_file_names()
+            basis_set_files=all_basis_set_files # to use accumulated basis set file names
+        else :
+            print("\nNothing to check today, empty pass. If you want me to test some basis sets, specify environmental variables BSFILE, ZELEM, RANDOM_BSF_Z.")
+        
+    return (n_bsf, n_Zelem, Znumbers, basis_set_files)
+
+def find_proton_number_in_line(line):
+# in entering "line" string variable, find element's proton number, Zel (out)
+    #Zel=None
+    # basis_dalton/NQvD contains "a 1 2", neglect through line[2:5].count(' ')==0
+    # basis_ecp/ECPDS92MWBSF contains "A105"
+    Zel=None
+    if (line.find("A ")==0 or line.find("a ")==0 or line.find("A")==0) and line[2:6].isdigit and line[2:5].count(' ')==0:
+        #print line
+        if not (line.find("A")==0):
+            Zel=int(line[2:6]); #print line," Zel=",Zel
+        else:
+            Zel=int(line[1:5]); #print line," Zel=",Zel
+    return Zel
+  
+def collect_Znumbers_from_bsfile(basis_file, data, n_Zelem):
+#  ...  get all elements proton-numbers from given "data"
+   Znumbers=[]
+   #print "collect_Znumbers_from_bsfile..."
+   for line in data:
+      Z9Q=find_proton_number_in_line(line)
+      if (Z9Q) : Znumbers.append(str(Z9Q))
+   # finally, take out random Zelems
+   lenZnumbers=len(Znumbers)
+   import random
+   Znumbers=random.sample(set(Znumbers),min(n_Zelem,len(Znumbers)))
+   print("\n...selecting %i random elements from the basis set file %s containing total %i elements " % (min(n_Zelem,len(Znumbers)), basis_file, lenZnumbers))
+   return  Znumbers
+        
+def run_through_selected_basis_set_files(n_bsf, n_Zelem, Znumbers, basis_set_files):
+#
+# basis_set_files variable contains selected or whole set of basis set files
+# Znumbers variable contains SELECTED set of elements proton numbers, if not, run the whole set of elements
+#
+    ierr=0
+    icount=0
+    #print "run_through_selected_basis_set_files: basis_set_files=",len(basis_set_files)
+    for bf in basis_set_files:
+       infile = open(bf, 'r')
+       data=infile.readlines()
+       if n_Zelem: Znumbers=collect_Znumbers_from_bsfile(bf,data,n_Zelem)
+       for line in data:
+           Z9Q=find_proton_number_in_line(line); #print "Z9Q again=",Z9Q
+           # perfom test run either with selected subset of Zelem or with all elements in given basis_set_file
+           if Z9Q and ((str(Z9Q) in Znumbers and len(Znumbers)>0) or (n_Zelem is None and len(Znumbers)==0)):
+               basis_set_file=os.path.basename(bf)
+               pam_extra_args='--replace basis_set='+basis_set_file+'  --replace Z9Q='+str(Z9Q)
+               ierr += run(options, configure, input_files=['input_test.inp','element.mol'], extra_args=pam_extra_args,filters={'out':f}  ) 
+               icount = icount + 1
+
+    print("\nSummary: out of total %i tests, %i tests crashed. "%(icount, ierr))
+    return ierr
+
+testday=14 # the day in month when one tests all basis sets by default
+print("Comprehensive test on basis set files reading.")
+print("- uses user provided environmental variables BSFILE, ZELEM, RANDOM_BSF_Z")
+print("- without specified envirovariables it runs through all basis sets each %i th day in the moth"%testday)
+
+basis_set_files=[] # common variable for susbset of basis set files 
+all_basis_set_files=[]  # common variable for all basis set files in Dirac space
+Znumbers=[] # common variable for all extracted proton numbers from given basis set file
+n_Zelem=None # number of randomly chosen elements for be read from subset of basis set files
+n_bsf=None  # number of basis set files to be randomly chosen
+
+(n_bsf, n_Zelem, Znumbers, basis_set_files) = parse_environment_variables(testday)
+ierr=run_through_selected_basis_set_files(n_bsf, n_Zelem, Znumbers, basis_set_files)
+
+sys.exit(ierr)

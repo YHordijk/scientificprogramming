@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = '<<<  End of Minimization <<<',
+      to_string   = '-------------------------------------------------------',
+      ignore_below = 5.0e-9,
+      rel_tolerance   = 1.0e-3)
+f.add(from_string = 'Energy at final geometry is',
+      num_lines   = 3,
+      rel_tolerance   = 1.0e-4)
+
+test.run(['geopt.levyle.scf_sto3g_skb.inp'], ['acetone.xyz'], f)
+test.run(['geopt.levyle.scf_sto3g_skb_nosym.inp'], ['acetone.xyz'], f)
+
+test.run(['geopt.x2c.scf_sto2g.inp'], ['H2O_bent.xyz'], f)
+test.run(['geopt.x2c.scf_sto2g_nosym.inp'], ['H2O_bent.xyz'], f)
+
+sys.exit(test.return_code)

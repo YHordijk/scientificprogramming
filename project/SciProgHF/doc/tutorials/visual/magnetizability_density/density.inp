@@ -1,0 +1,26 @@
+**DIRAC
+#.WAVE FUNCTION
+**HAMILTONIAN
+.DFT
+ B3LYP
+**WAVE FUNCTION
+.SCF
+**VISUAL
+.3D
+ 80 80 80
+.BDIPX
+ PAMXVC 1         # "paramagnetic" Bx response
+.BDIPX
+ PAMXVC 2         # "diamagnetic"  Bx response
+.BDIPY
+ PAMXVC 3         # "paramagnetic" By response
+.BDIPY
+ PAMXVC 4         # "diamagnetic"  By response
+.BDIPZ
+ PAMXVC 5         # "paramagnetic" Bz response
+.BDIPZ
+ PAMXVC 6         # "diamagnetic"  Bz response
+.SCALE
+ 0.3333333        # we divide sum by 3 to get isotropic value
+.3D_INT           # to double-check that density integrates to the magnetizability
+*END OF INPUT

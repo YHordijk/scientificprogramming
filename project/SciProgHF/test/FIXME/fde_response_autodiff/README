@@ -1,0 +1,27 @@
+#
+# For the sake of making the execution of this test faster, the datasets
+# originating from a FDE calculation from ADF, and residing in files
+#
+# FRZDNS.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym.bz2 (for frozen densities, gradients, electrostatic potential)
+# ../fde_static-vemb_dipole/EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym.bz2 (for the dft embedding potential)
+#
+# have been shortened. this means that the calculated quantities in this
+# test are not accurate, but are sufficient to verify the functionality.
+# 
+# if one wishes to run the calculations that are comparable to those e.g. from ADF,
+# it is advised to replace the contents of the "menu" file in this directory
+# by the lines below
+
+sh bzip2 -d FRZDNS.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym.bz2
+sh bzip2 -d ../fde_static-vemb_dipole/EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym.bz2
+
+sh ln -sf FRZDNS.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym FRZDNS
+sh ln -sf ../fde_static-vemb_dipole/EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym EMBPOT
+
+lda+tfk_vemb-read.inp     water.sto6g.c2v.mol --put="FRZDNS EMBPOT"
+pbe+pw91k_vemb-update.inp water.sto6g.c2v.mol --put="FRZDNS"
+
+sh bzip2 -9 FRZDNS.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym
+sh bzip2 -9 ../fde_static-vemb_dipole/EMBPOT.k.nr.acc4.lda+tfk.fdem_h2o+2h2o_tz2p_nosym
+
+sh rm -f EMBPOT FRZDNS

@@ -1,0 +1,4171 @@
+DIRAC pam run in /home/bast/dirac/svn-trunk-opt/test/geo_opt_saddle
+DIRAC serial starts by allocating 64000000 words (488 MB) of memory
+DIRAC serial has no limitations in place for the amount of dynamically allocated memory
+ 
+Note: maximum allocatable memory for serial run can be set by -aw flag (MW) in pam
+ 
+ ******************************************************************************
+ *                                                                            *
+ *                                O U T P U T                                 *
+ *                                   from                                     *
+ *                                                                            *
+ *                   @@@@@    @@   @@@@@     @@@@     @@@@@                   *
+ *                   @@  @@        @@  @@   @@  @@   @@                       *
+ *                   @@  @@   @@   @@@@@    @@@@@@   @@                       *
+ *                   @@  @@   @@   @@ @@    @@  @@   @@                       *
+ *                   @@@@@    @@   @@  @@   @@  @@    @@@@@                   *
+ *                                                                            *
+ *                                                                            *
+ %}ZS)S?$=$)]S?$%%>SS$%S$ZZ6cHHMHHHHHHHHMHHM&MHbHH6$L/:<S///</:|/:|:/::!:.::--:
+ $?S$$%$$$$?%?$(SSS$SSSHMMMMMMMMMMMMMMMMMM6H&6S&SH&&k?6$r~::://///::::::.:::-::
+ (%?)Z??$$$(S%$>$)S6HMMMMMMMMMMMMMMMMMMMMMMR6M]&&$6HR$&6(i::::::|i|:::::::-:-::
+ $S?$$)$?$%?))?S/]#MMMMMMMMMMMMMMMMMMMMMMMMMMHM1HRH9R&$$$|):?:/://|:/::/:/.::.:
+ SS$%%?$%((S)?Z[6MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM&HF$$&/)S?<~::!!:::::::/:-:|.
+ SS%%%%S$%%%$$MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHHHHHM>?/S/:/:::`:/://:/::-::
+ ?$SSSS?%SS$)MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM/4?:S:/:::/:::/:/:::.::
+ S$(S?S$%(?$HMMMMMMMMMMMMMMMMM#&7RH99MMMMMMMMMMMMMMMMMMHHHd$/:::::/::::::-//.:.
+ (?SS(%)S&HMMMMMMMMMMMMMMMMM#S|///???$9HHMMMMMMMMMDSZ&1S/?</>?~:///::|/!:/-:-:.
+ $S?%?<H(MMMMMMMMMMMMMMMMR?`. :.:`::<>:``?/*?##*)$:/>       `((%://::/:::::/::/
+ S$($$)HdMMMMMMMMMMMMMMMP: . `   `  `    `      `-            `Z<:>?::/:::::|:i
+ c%%%&HMMMMMMMMMMMMMMMM6:                                      `$%)>%%</>!:::::
+ S?%/MMMMMMMMMMMMMMMMMMH-                                        /ZSS>?:?~:;/::
+ $SZ?MMMMMMMMMMMMMMMMMH?.                                        \"&((/?//?|:::
+ $%$%&MMMMMMMMMMMMMMMMM:.                                          ?%/S:</::/::
+ ($?}&HMMMMMMMMMMMMMMMM>:                                          $%%<?/i:|i::
+ Z$($&MMMMMMMMMMMMMMMMHk(:.  . -                                   .S/\?\?/!:/:
+ (??$<HMMMMMMMMMMMMMMMFk|:   -.-.                                  :%/%/(:/:ii|
+ SZ(S?]MMMMMMMMMMMMMMHS?:- -  ::.:                                  |/S:</::?||
+ $%)$$(MMMMMMMMMMMMMMR):`:. :.:::`,,/bcokb/_                       :S?%?|~:/:/:
+ %$$%$)[[?$?MMMMMMMMMM: :.:-.::::$7?<&7&MMMMMMM#/           _ .. ..:</?:(:/::::
+ $$$?Z?HHH~|/MMMMMMMMM/`.-.:.:/:%%%%?dHMMMMMMMMMMH?,-   .,bMMMM6//./i~/~:<:::/:
+ $($S$M//::S?ZHMMMMMH/:.`:::.:/%S/&MMHMMMMMMMMRM&><   ,HMMMMMMMF  :::?:///:|:::
+ )[$S$S($|_i:#>::*H&?/::.::/:\"://:?>>`:&HMHSMMMM$:`-   MMHMMMMHHT .)i/?////::/
+ $$[$$>$}:dHH&$$--?S::-:.:::--/-:``./::>%Zi?)&/?`:.`   `H?$T*\" `  /%?>%:)://ii|
+ $&=&/ZS}$RF<:?/-.|%r/:::/:/:`.-.-..|::S//!`\"``          >??:    `SS<S:)!/////|
+ Z&]>b[Z(Z?&%:::../S$$:>:::i`.`. `-.`  `                         ,>%%%:>/>/!|:/
+ $$&/F&1$c$?>:>?/,>?$$ZS/::/:-: ...                              |S?S)S?<~:::::
+ &$&$&$k&>>|?<:<?((/$[/?)i~/:/. - -                              S?:%%%?/:::/::
+ =[/Z[[Fp[MMH$>?Z&S$$$/$S///||..-           -.-                  /((S$:%<:///:/
+ $&>1MHHMMMM6M9MMMM$Z$}$S%/:::.`.            .:/,,,dcb>/:.       ((SSSS%:)!//i|
+ MMMMMMMMMMMR&&RRRHR&&($(?:|i::-             .:%&S&$[&H&``     ../>%;/?>??:<::>
+ MMMMMMMMMMMMS/}S$&&H&[$SS//:::.:.   . . .v</Jq1&&D]&M&<,      :/::/?%%)S>?://:
+ MMMMMMMMMMMM?}$/$$kMM&&$(%/?//:..`.  .|//1d/`://?*/*/\"` `     .:/(SS$%(S%)):%
+ MMMMMMMMMMMM(}$$>&&MMHR#$S%%:?::.:|-.`:;&&b/D/$p=qpv//b/~`   :/~~%%??$=$)Z$S+;
+ MMMMMMMMMMMM[|S$$Z1]MMMMD[$?$:>)/::: :/?:``???bD&{b<<-`     .,:/)|SS(}Z/$$?/<S
+ MMMMMMMMMMMM||$)&7k&MMMMH9]$$??Z%|!/:i::`  `` .             SS?SS?Z/]1$/&$c/$S
+ MMMMMMMMMMMM| -?>[&]HMMMMMMMH1[/7SS(?:/..-` ::/Sc,/_,     _<$?SS%$S/&c&&$&>//<
+ MMMMMMMMMMMMR  `$&&&HMM9MMMMMMM&&c$%%:/:/:.:.:/\?\?/\    _MMHk/7S/]dq&1S<&&></
+ MMMMMMMMMMMMM?  :&96MHMMMMMMMMMMMHHk[S%(<<:// `         ,MMMMMMM&/Z6H]DkH]1$&&
+ MMMMMMMMMMMMMD    99H9HMMMMMMMMMMMMMMMb&%$<:i.:....    .MMMMMMMMM6HHHRH&H&H1SF
+ MMMMMMMMMMMMMM|   `?HMMMMMMMMMMMMMMMMMMMHk6k&>$&Z$/?_.bHMMMMMMMMMMM&6HRM9H6]Zk
+ MMMMMMMMMMMMMMM/    `TMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH6RH&R6&
+ MMMMMMMMMMMMMMMM    -|?HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMFHH6HMD&&
+ MMMMMMMMMMMMMMMMk  ..:~?9MMMMMMMMMMMMM#`:MMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MHkR6&F
+ MMMMMMMMMMMMMMMMM/  .-!:%$ZHMMMMMMMMMR` dMMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MRMHH9&
+ MMMMMMMMMMMMMMMMMML,:.-|::/?&&MMMMMM` .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHRMH&&6
+ MMMMMMMMMMMMMMMMMMMc%>/:::i<:SMMMMMMHdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHM&969k
+ MMMMMMMMMMMMMMMMMMMMSS/$$/(|HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHH&HH&
+ MMMMMMMMMMMMMMMMMMMM6S/?/MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMR96H1DR1
+ MMMMMMMMMMMMMMMMMMMMM&$MHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH691&&
+ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&R&9Z
+ MMMMMMMMMMMMMMMMMMMMMMMMMRHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&96][6
+ MMMMMMMMMMMMMMMMMMMMMMMMp?:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM96HH1][F
+ MMMMMMMMMMMMMMMMMMMMMMMM> -HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&1k&$&
+ ******************************************************************************
+ *                                                                            *
+ *         =========================================================          *
+ *                     Program for Atomic and Molecular                       *
+ *          Direct Iterative Relativistic All-electron Calculations           *
+ *         =========================================================          *
+ *                                                                            *
+ *                      VERSION 10.00  10 October 2010                        *
+ *                                                                            *
+ ******************************************************************************
+ *                                                                            *
+ *    Written by:                                                             *
+ *                                                                            *
+ *    Trond Saue               Université P. Sabatier, Toulouse  France       *
+ *    Lucas Visscher           VU University Amsterdam           Netherlands  *
+ *    Hans Jørgen Aa. Jensen   University of Southern Denmark    Denmark      *
+ *                                                                            *
+ *    with new contributions since the DIRAC08 release from:                  *
+ *                                                                            *
+ *    Radovan Bast             University of Tromsø              Norway       *
+ *    Kenneth G. Dyall         Schrodinger, Inc., Portland       USA          *
+ *    Ulf Ekström              VU University Amsterdam           Netherlands  *
+ *    Ephraim Eliav            University of Tel Aviv            Israel       *
+ *    Thomas Enevoldsen        University of Southern Denmark    Denmark      *
+ *    Timo Fleig               Université P. Sabatier, Toulouse  France       *
+ *    Andre S. P. Gomes        CNRS/Universite Lille 1           France       *
+ *    Johan Henriksson         Linkôping University              Sweden       *
+ *    Miroslav Ilias           Matej Bel University              Slovakia     *
+ *    Christoph R. Jacob       Karlsruhe Institute of Technology Germany      *
+ *    Stefan Knecht            CNRS/Université de Strasbourg     France       *
+ *    Huliyar Nataraj          BME/Budapest Univ. Tech. & Econ.  Hungary      *
+ *    Patrick Norman           Linköping University              Sweden       *
+ *    Jeppe Olsen              Aarhus University                 Denmark      *
+ *    Markus Pernpointner      University of Heidelberg          Germany      *
+ *    Kenneth Ruud             University of Tromsø              Norway       *
+ *    Bernd Schimmelpfennig    Forschungszentrum Karlsruhe       Germany      *
+ *    Jetze Sikkema            VU University Amsterdam           Netherlands  *
+ *    Andreas Thorvaldsen      University of Tromsø              Norway       *
+ *    Jørn Thyssen             University of Southern Denmark    Denmark      *
+ *    Sebastien Villaume       Linköping University              Sweden       *
+ *    Shigeyoshi Yamamoto      Chukyo University                 Japan        *
+ *                                                                            *
+ *    For the complete list of contributors to the DIRAC code see our         *
+ *    website http://dirac.chem.vu.nl                                         *
+ *                                                                            *
+ *    This is an experimental code. The authors accept no responsibility      *
+ *    for the performance of the code or for the correctness of the results.  *
+ *                                                                            *
+ *    The code (in whole or part) is not to be reproduced for further         *
+ *    distribution without the written permission of the authors or           *
+ *    their representatives.                                                  *
+ *                                                                            *
+ *    If results obtained with this code are published, an                    *
+ *    appropriate citation would be:                                          *
+ *                                                                            *
+ *    DIRAC, a relativistic ab initio electronic structure program,           *
+ *    Release DIRAC10 (2010),                                                 *
+ *    written by T. Saue, L. Visscher, and H. J. Aa. Jensen,                  *
+ *    with new contributions from R. Bast, K. G. Dyall, U. Ekström, E. Eliav, *
+ *    T. Enevoldsen, T. Fleig, A. S. P. Gomes, J. Henriksson, M. Ilias,       *
+ *    Ch. R. Jacob, S. Knecht, H. S. Nataraj, P. Norman, J. Olsen,            *
+ *    M. Pernpointner, K. Ruud, B. Schimmelpfennig, J. Sikkema,               *
+ *    A. Thorvaldsen, J.  Thyssen, S. Villaume, and S. Yamamoto               *
+ *    (see http://dirac.chem.vu.nl).                                          *
+ *                                                                            *
+ ******************************************************************************
+ Version           : Dirac 10.0 (patchlevel 0) 
+ Hostname          : larry
+ Operating system  : Linux 2.6.38-8-generic
+ Machine           : i686
+ Run               : Sequential
+ Last compilation  : 10:58:22 May 21 2011 (by bast@larry:/home/bast/dirac/svn-trunk-opt)
+ FORTRAN compiler  : /opt/intel/bin/ifort -O3 -ip  -g -fpp1 -w -assume byterecl -traceback -Iinclude -module modules -DARCH32BIT -DVAR_IFC -DPRG_DIRAC -DSYS_LINUX -DINSTALL_WRKMEM=64000000 -DVAR_MFDS -DMOD_XML -DMOD_OPENRSP -DMOD_OOF -DMOD_ESR -DMOD_KRCC -DMOD_SRDFT -DMOD_MAGNETIZ -DMOD_MCSCF_spinfree -DMOD_UNRELEASED -DMOD_CAP -DMOD_ERI -DMOD_DNF   
+ C compiler        : /opt/intel/bin/icc -O3 -ip -g -w -Iinclude -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE  -D_LARGEFILE64_SOURCE -DARCH32BIT -DMOD_XML -DMOD_OPENRSP -DMOD_OOF -DMOD_ESR -DMOD_KRCC -DMOD_SRDFT -DMOD_MAGNETIZ -DMOD_MCSCF_spinfree -DMOD_UNRELEASED -DMOD_CAP -DMOD_ERI -DMOD_DNF  -DSYS_LINUX -DINSTALL_WRKMEM=64000000 -DSYS_FLAVOR=LINUX 
+ External libraries: -L/usr/lib -lblas -L/usr/lib -llapack -lcblas -lf77blas -latlas -L/usr/lib -llapack 
+ Internal libraries: DIRAC_BLAS=NO  DIRAC_LAPACK=NO 
+ ILP data model    : ILP32 
+ SVN URL           : http://dirac.chem.sdu.dk/svnDirac 
+ SVN Revision      : 13951 
+ 
+ 
+Execution time and host
+-----------------------
+
+ 
+     Date and time (Linux)  : Sat May 21 12:44:28 2011
+     Host name              :                                         
+ 
+ 
+Contents of the input file
+--------------------------
+ 
+**DIRAC                                                                                             
+.TITLE                                                                                              
+Minimize ethane geometry with C-C bond frozen                                                       
+.OPTIMIZE                                                                                           
+*OPTIMIZE                                                                                           
+.BAKER                                                                                              
+.CONSTR                                                                                             
+1                                                                                                   
+1                                                                                                   
+**GENERAL                                                                                           
+.SPHTRA                                                                                             
+1 0                                                                                                 
+**INTEGRALS                                                                                         
+*TWOINT                                                                                             
+.SCREEN                                                                                             
+ 1.0D-11                                                                                            
+**HAMILTONIAN                                                                                       
+.LEVY-LEBLOND                                                                                       
+**WAVE FUNCTIONS                                                                                    
+.DHF                                                                                                
+*DHFCAL                                                                                             
+.CLOSED SHELL                                                                                       
+18                                                                                                  
+.EVCCNV                                                                                             
+ 1.0D-8                                                                                             
+*END OF                                                                                             
+ 
+ 
+Contents of the molecule file
+-----------------------------
+ 
+WHATEVER                                                                                            
+Ethane. Basis: STO-3G                                                                               
+Project: Benchmark                                                                                  
+C   2    0                                                                                          
+        6.    2                                                                                     
+C     0.0000000000        0.0000000000        1.7547876282             *                            
+C     0.0000000000        0.0000000000       -1.7547876282             *                            
+LARGE BASIS STO-3G                                                                                  
+        1.    6                                                                                     
+H     1.6808445513        0.9704360937        2.4445545504             *                            
+H    -1.6808445513        0.9704360937        2.4445545504             *                            
+H     0.0000000000       -1.9408721894        2.4445545504             *                            
+H     1.6808445513       -0.9704360937       -2.4445545504             *                            
+H    -1.6808445513       -0.9704360937       -2.4445545504             *                            
+H     0.0000000000        1.9408721894       -2.4445545504             *                            
+LARGE BASIS STO-3G                                                                                  
+FINISH                                                                                              
+                                                                                                    
+                                                                                                    
+
+
+    *************************************************************************
+    ************* Minimize ethane geometry with C-C bond frozen *************
+    *************************************************************************
+
+   * Geometry optimization
+     IMPORTANT: *WAVE F must be present for readin of wavefunction.
+
+
+ Chosen parameters for OPTIMI:
+ -----------------------------
+
+ Default 1st order method will be used:   BFGS update.
+ Optimization will be performed in redundant internal coordinates (by default).
+ The approximate model Hessian defined by Roland Lindh
+ will be used as initial Hessian.
+ The model Hessian parameters of Roland Lindh will be used
+ except that reference distance is calculated from covalent/metallic radii
+ 
+ Print level in OPTIMI  :         0
+ Maximum # of iterations:        25
+ 
+ Trust region method will be used to control step (default).
+ 
+ Baker's convergence criteria [J. Comp. Chem. 14(1993) 1085] will be used.
+ Constrained optimization has been requested.
+ The following coordinate numbers will be held fixed during the optimization:
+     Coordinate #           1
+
+ Symmetry will not be broken during a constrained optimization.
+
+ * Contributions to the molecular gradient from
+   - LL-integrals.
+   - LS-integrals (skipped if estimated to be small, or in two-component calculations ).
+   - SS-integrals (skipped if estimated to be small, or in two-component calculations ).
+ * Screening threshold in gradient calculation 1.00D-11
+   (default value of 1.0e-6 * gradient convergence threshold)
+ * Print level in molecular gradient evaluation :    0
+
+
+    **************************************************************************
+    ************************** General DIRAC set-up **************************
+    **************************************************************************
+
+   CODATA Recommended Values of the Fundamental Physical Constants: 1998  
+                Peter J. Mohr and Barry N. Taylor                         
+   Journal of Physical and Chemical Reference Data, Vol. 28, No. 6, 1999  
+ * The speed of light :        137.0359998
+ * running in four-component mode
+ * Direct evaluation of the following two-electron integrals:
+   - LL-integrals
+   - SL-integrals
+   - SS-integrals
+   - GT-integrals
+ * Spherical transformation embedded in MO-transformation
+   for large components
+ * Thresholds for linear dependence:
+   Large components:   1.00D-06
+   Small components:   1.00D-08
+ DFPCMO: IBEIG read in I2 format.
+ * General print level   :   0
+
+
+    *************************************************************************
+    ****************** Output from HERMIT input processing ******************
+    *************************************************************************
+
+ Default print level:        1
+ Nuclear model: Gaussian charge distribution.
+
+ Two-electron integrals not calculated.
+
+
+ Ordinary (field-free non-relativistic) Hamiltonian integrals not calculated.
+
+
+
+  Set-up from HR2INP:
+  -------------------
+
+ Print level in TWOINT:    1
+ * Direct calculation of Fock matrices in SO-basis.
+ * User specified screening threshold in direct Fock matrix construction: 1.00E-11
+ * Separate density screening of Coulomb integral batches
+ * Separate density screening of exchange integral batches
+
+
+ Settings for FCK3 calculation:
+ ------------------------------
+
+Dynamical threshold is not (yet) implemented in DIRAC
+
+
+    *************************************************************************
+    ****************** Output from READIN input processing ******************
+    *************************************************************************
+
+
+
+  Title Cards
+  -----------
+
+  Ethane. Basis: STO-3G                                                   
+  Project: Benchmark                                                      
+
+  Nuclear Gaussian exponent for atom of charge   6.000 :    6.8077502929D+08
+
+  Nuclear Gaussian exponent for atom of charge   1.000 :    2.1248239171D+09
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Point group: C1 
+
+   * Character table
+
+        |  E 
+   -----+-----
+    A   |   1
+
+   * Direct product table
+
+        | A  
+   -----+-----
+    A   | A  
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * One fermion irrep:   E1 
+   * Quaternionic group. NZ = 4
+   * Direct product decomposition:
+          E1  x E1  : A   + A   + A   + A  
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1
+      La  |  A  (1)  A  (1)  |
+      Sa  |  A  (1)  A  (1)  |
+      Lb  |  A  (1)  A  (1)  |
+      Sb  |  A  (1)  A  (1)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    A    1  i  j  k
+
+  QM-QM nuclear repulsion energy :   38.922921861519
+  QM-pc interaction energy       :    0.000000000000
+  pc-pc interaction energy       :    0.000000000000
+  Total interaction energy       :   38.922921861519
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types:     2
+  Total number of atoms:    8
+
+  label    atoms   charge   prim    cont     basis   
+  ----------------------------------------------------------------------
+  C           1       6      15       5      L  - [6s3p|2s1p]                                                    
+                             39      39      S  - [3s6p3d|3s6p3d]                                                
+  C           1       6      15       5      L  - [6s3p|2s1p]                                                    
+                             39      39      S  - [3s6p3d|3s6p3d]                                                
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  ----------------------------------------------------------------------
+                             48      16      L  - large components
+                            132     132      S  - small components
+  ----------------------------------------------------------------------
+  total:      8      18     180     148
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+  MNF.INP input file (for the AMFI stuff) is ready.
+  CAPOUT: preparing the "CAPDIR.inp" file with DIRAC unique order of atomic basis functions. 
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1   2
+   Elements      Contraction                       References                     
+   H - He: (3s)         -> [1s]       W.J. Hehre, R.F. Stewart and J.A. Pople,    
+   Li - Ne: (6s,3p)     -> [2s,1p]    J. Chem. Phys. 2657 (1969).                 
+   Na - Ar: (9s,6p)     -> [3s,2p]    W.J. Hehre, R. Ditchfield, R.F. Stewart,    
+                                      J.A. Pople, J. Chem. Phys.  2769 (1970).    
+   K,Ca - : (12s,9p)    -> [4s,3p]    W.J. Pietro, B.A. Levy, W.J. Hehre and R.F. 
+   Ga - Kr                            Stewart, Inorg. Chem. 19, 2225 (1980).      
+   Sc - Zn: (12s,9p,3d) -> [4s,3p,1d] W.J. Pietro and W.J. Hehre, J. Comp. Chem.  
+   Y - Cd: (15s,12p,6d) -> [5s,4p,2d] 4, 241 (1983).                              
+  ***********************************************************************         
+
+
+  Cartesian Coordinates
+  ---------------------
+
+  Total number of coordinates: 24
+
+
+   1   C        x      0.0000000000
+   2            y      0.0000000000
+   3            z      1.7547876282
+
+   4   C        x      0.0000000000
+   5            y      0.0000000000
+   6            z     -1.7547876282
+
+   7   H        x      1.6808445513
+   8            y      0.9704360937
+   9            z      2.4445545504
+
+  10   H        x     -1.6808445513
+  11            y      0.9704360937
+  12            z      2.4445545504
+
+  13   H        x      0.0000000000
+  14            y     -1.9408721894
+  15            z      2.4445545504
+
+  16   H        x      1.6808445513
+  17            y     -0.9704360937
+  18            z     -2.4445545504
+
+  19   H        x     -1.6808445513
+  20            y     -0.9704360937
+  21            z     -2.4445545504
+
+  22   H        x      0.0000000000
+  23            y      1.9408721894
+  24            z     -2.4445545504
+
+
+
+  Cartesian coordinates xyz format (angstrom)
+  -------------------------------------------
+
+    8
+ 
+C      0.0000000000   0.0000000000   0.9285936183
+C      0.0000000000   0.0000000000  -0.9285936183
+H      0.8894646272   0.5135326629   1.2936025525
+H     -0.8894646272   0.5135326629   1.2936025525
+H      0.0000000000  -1.0270653269   1.2936025525
+H      0.8894646272  -0.5135326629  -1.2936025525
+H     -0.8894646272  -0.5135326629  -1.2936025525
+H      0.0000000000   1.0270653269  -1.2936025525
+
+
+   Interatomic separations (in Angstroms):
+   ---------------------------------------
+
+            C           C           H           H           H           H   
+
+   C       0.000000
+   C       1.857187    0.000000
+   H       1.089998    2.448064    0.000000
+   H       1.089998    2.448064    1.778929    0.000000
+   H       1.089998    2.448064    1.778929    1.778929    0.000000
+   H       2.448064    1.089998    2.783612    3.303496    2.783612    0.000000
+   H       2.448064    1.089998    3.303496    2.783612    2.783612    1.778929
+   H       2.448064    1.089998    2.783612    2.783612    3.303496    1.778929
+
+            H           H   
+
+   H       0.000000
+   H       1.778929    0.000000
+
+
+
+
+  Bond distances (angstroms):
+  ---------------------------
+
+                  atom 1     atom 2                           distance
+                  ------     ------                           --------
+  bond distance:    C          C                              1.857187
+  bond distance:    H          C                              1.089998
+  bond distance:    H          C                              1.089998
+  bond distance:    H          C                              1.089998
+  bond distance:    H          C                              1.089998
+  bond distance:    H          C                              1.089998
+  bond distance:    H          C                              1.089998
+
+
+  Bond angles (degrees):
+  ----------------------
+
+                  atom 1     atom 2     atom 3                   angle
+                  ------     ------     ------                   -----
+  bond angle:       H          C          C                    109.565
+  bond angle:       H          C          C                    109.565
+  bond angle:       H          C          H                    109.378
+  bond angle:       H          C          C                    109.565
+  bond angle:       H          C          H                    109.378
+  bond angle:       H          C          H                    109.378
+  bond angle:       H          C          C                    109.565
+  bond angle:       H          C          C                    109.565
+  bond angle:       H          C          H                    109.378
+  bond angle:       H          C          C                    109.565
+  bond angle:       H          C          H                    109.378
+  bond angle:       H          C          H                    109.378
+
+
+  Nuclear repulsion energy :   38.922921861519
+
+
+                                GETLAB: AO-labels
+                                -----------------
+
+   * Large components:   14
+     1  L C   1 s        2  L C   1 px       3  L C   1 py       4  L C   1 pz       5  L C   1 s        6  L C   1 px  
+     7  L C   1 py       8  L C   1 pz       9  L H   1 s       10  L H   1 s       11  L H   1 s       12  L H   1 s   
+    13  L H   1 s       14  L H   1 s   
+   * Small components:   38
+    15  S C   1 s       16  S C   1 px      17  S C   1 py      18  S C   1 pz      19  S C   1 dxx     20  S C   1 dxy 
+    21  S C   1 dxz     22  S C   1 dyy     23  S C   1 dyz     24  S C   1 dzz     25  S C   1 s       26  S C   1 px  
+    27  S C   1 py      28  S C   1 pz      29  S C   1 dxx     30  S C   1 dxy     31  S C   1 dxz     32  S C   1 dyy 
+    33  S C   1 dyz     34  S C   1 dzz     35  S H   1 px      36  S H   1 py      37  S H   1 pz      38  S H   1 px  
+    39  S H   1 py      40  S H   1 pz      41  S H   1 px      42  S H   1 py      43  S H   1 pz      44  S H   1 px  
+    45  S H   1 py      46  S H   1 pz      47  S H   1 px      48  S H   1 py      49  S H   1 pz      50  S H   1 px  
+    51  S H   1 py      52  S H   1 pz  
+
+
+  Symmetry Orbitals
+  -----------------
+
+  Number of orbitals in each symmetry:          148
+  Number of large orbitals in each symmetry:     16
+  Number of small orbitals in each symmetry:    132
+
+* Large component functions
+
+  Symmetry  A  ( 1)
+
+        2 functions:    C  s   
+        1 functions:    C  px  
+        1 functions:    C  py  
+        1 functions:    C  pz  
+        2 functions:    C  s   
+        1 functions:    C  px  
+        1 functions:    C  py  
+        1 functions:    C  pz  
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+
+* Small component functions
+
+  Symmetry  A  ( 1)
+
+        3 functions:    C  s   
+        6 functions:    C  px  
+        6 functions:    C  py  
+        6 functions:    C  pz  
+        3 functions:    C  dxx 
+        3 functions:    C  dxy 
+        3 functions:    C  dxz 
+        3 functions:    C  dyy 
+        3 functions:    C  dyz 
+        3 functions:    C  dzz 
+        3 functions:    C  s   
+        6 functions:    C  px  
+        6 functions:    C  py  
+        6 functions:    C  pz  
+        3 functions:    C  dxx 
+        3 functions:    C  dxy 
+        3 functions:    C  dxz 
+        3 functions:    C  dyy 
+        3 functions:    C  dyz 
+        3 functions:    C  dzz 
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+
+
+   ***************************************************************************
+   *************************** Hamiltonian defined ***************************
+   ***************************************************************************
+
+ * Print level:    0
+ * Levy-Leblond Hamiltonian
+   - Spin-orbit interactions neglected
+ * Default integral flags passed to all modules
+   - LL-integrals:     1
+   - LS-integrals:     0
+   - SS-integrals:     0
+   - GT-integrals:     0
+ * Basis set:
+   - contracted large component basis set
+   - uncontracted small component basis set
+
+
+ Information about the restricted kinetic balance scheme:
+ * RKB projection:
+   1: No Pre-projection in scalar basis
+   2: Removal of unphysical solutions (via diagonalization of free particle Hamiltonian)
+ *** WARNING **** This procedure may give severe linear  dependence problems for large basis sets
+
+
+    **************************************************************************
+    ************************** Wave function module **************************
+    **************************************************************************
+
+ Jobs in this run (in execution order):
+ * Hartree-Fock calculation
+===========================================================================
+ DHFINP: Set-up for Hartree-Fock calculation:
+===========================================================================
+ * Number of fermion irreps: 1
+ * Closed shell SCF calculation with   18 electrons in
+       9 orbitals in Fermion irrep 1
+ * Bare nucleus screening correction used for start guess
+ * General print level   :   0
+ ***** TRIAL FUNCTION *****
+ * Trial vectors read from file DFCOEF
+ ***** CONVERGENCE CRITERIA *****
+ * Convergence on norm of error vector (gradient).
+   Desired convergence:1.000D-08
+   Allowed convergence:1.000D-08
+
+ ***** CONVERGENCE CONTROL *****
+ * Fock matrix constructed using differential density matrix
+    with optimal parameter.
+ * DIIS (in MO basis)
+ * DIIS will be activated when convergence reaches : 1.00D+20
+   - Maximum size of B-matrix:   10
+ * Damping of Fock matrix when DIIS is not activated. 
+   Weight of old matrix    : 0.250
+ * Maximum number of SCF iterations  :   50
+ * No quadratic convergent Hartree-Fock
+ * Contributions from 2-electron integrals to Fock matrix:
+   LL-integrals.
+ * NB!!! No e-p rotations in 2nd order optimization.
+ ***** OUTPUT CONTROL *****
+ * Only electron eigenvalues written out.
+
+
+ ********************************************************************************
+ *************************** Input consistency checks ***************************
+ ********************************************************************************
+
+
+
+    *************************************************************************
+    ************************ End of input processing ************************
+    *************************************************************************
+
+ PAMSET reports: TWOCOMPBSS F
+
+
+                      Nuclear contribution to dipole moments
+                      --------------------------------------
+
+                               au             Debye
+
+                    x      0.00000000      0.00000000
+                    y      0.00000000      0.00000000
+                    z      0.00000000      0.00000000
+
+                        1 Debye =   2.54177000 a.u. 
+  No SS-nuclear attraction integrals(MOLFLD), adapted PDOINT=+000
+
+
+                       Generating Lowdin canonical matrix:
+                       -----------------------------------
+
+   L   A     * Deleted:          0(Proj:          0, Lindep:          0)
+   S   A     * Deleted:          0
+
+
+                                Output from MODHAM
+                                ------------------
+
+* All positronic solutions deleted !
+
+
+      **********************************************************************
+      ************************* Orbital dimensions *************************
+      **********************************************************************
+
+No. of positive energy orbitals (NESH):    16
+No. of negative energy orbitals (NPSH):     0
+Total no. of orbitals           (NORB):    16
+
+
+              >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+              >>>>>>>>>> 1st Order Geometry Optimization >>>>>>>>>>
+              >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+   ****************************************************************************
+   ************************* Hartree-Fock calculation *************************
+   ****************************************************************************
+
+
+*** INFO *** No trial vectors found. Using bare nucleus approximation for initial trial vectors.
+             Improved by an estimate of the electronic screening (Slater's rules).
+
+
+########## START ITERATION NO.   1 ##########   Sat May 21 12:44:28 2011
+
+It.   1    -6.153519037357      1.00D+20  0.00D+00  0.00D+00               0.01200099s   Scr. nuclei    Sat May 21
+
+########## START ITERATION NO.   2 ##########   Sat May 21 12:44:28 2011
+
+
+* GETGAB: label "GABAO1XX" not found; calling GABGEN.
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   17.17%    0.00%   62.12%   0.05200300s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.11200701s
+
+########## END ITERATION NO.   2 ##########   Sat May 21 12:44:28 2011
+
+It.   2    -78.02273525739      7.19D+01  4.04D-01  8.33D-01               0.11200701s   LL             Sat May 21
+
+########## START ITERATION NO.   3 ##########   Sat May 21 12:44:28 2011
+
+    3 *** Differential density matrix. DCOVLP     = 0.9339
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   17.42%    0.00%   61.94%   0.04800300s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06800401s
+
+########## END ITERATION NO.   3 ##########   Sat May 21 12:44:28 2011
+
+It.   3    -78.25153288964      2.29D-01 -4.19D-01  1.29D-01   DIIS   2    0.06800401s   LL             Sat May 21
+
+########## START ITERATION NO.   4 ##########   Sat May 21 12:44:28 2011
+
+    4 *** Differential density matrix. DCOVLP     = 1.0004
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   17.42%    0.00%   61.94%   0.04800302s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06400397s
+
+########## END ITERATION NO.   4 ##########   Sat May 21 12:44:28 2011
+
+It.   4    -78.25656865267      5.04D-03  5.21D-02  5.91D-03   DIIS   3    0.06400397s   LL             Sat May 21
+
+########## START ITERATION NO.   5 ##########   Sat May 21 12:44:28 2011
+
+    5 *** Differential density matrix. DCOVLP     = 1.0003
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   17.53%    0.00%   61.85%   0.05200401s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.07200402s
+
+########## END ITERATION NO.   5 ##########   Sat May 21 12:44:28 2011
+
+It.   5    -78.25658594777      1.73D-05  5.82D-04  8.13D-04   DIIS   4    0.07200402s   LL             Sat May 21
+
+########## START ITERATION NO.   6 ##########   Sat May 21 12:44:28 2011
+
+    6 *** Differential density matrix. DCOVLP     = 1.0001
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   17.72%    0.00%   61.71%   0.04800299s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06000400s
+
+########## END ITERATION NO.   6 ##########   Sat May 21 12:44:28 2011
+
+It.   6    -78.25658628725      3.39D-07 -8.42D-05  4.65D-05   DIIS   5    0.06000400s   LL             Sat May 21
+
+########## START ITERATION NO.   7 ##########   Sat May 21 12:44:28 2011
+
+    7 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   19.69%    0.00%   60.24%   0.04800302s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06400400s
+
+########## END ITERATION NO.   7 ##########   Sat May 21 12:44:28 2011
+
+It.   7    -78.25658628810      8.49D-10  6.91D-06  3.48D-06   DIIS   6    0.06400400s   LL             Sat May 21
+
+########## START ITERATION NO.   8 ##########   Sat May 21 12:44:28 2011
+
+    8 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   24.58%    1.85%   56.60%   0.05200398s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06800401s
+
+########## END ITERATION NO.   8 ##########   Sat May 21 12:44:28 2011
+
+It.   8    -78.25658628811      3.27D-12 -7.95D-07  1.88D-07   DIIS   7    0.06800401s   LL             Sat May 21
+
+########## START ITERATION NO.   9 ##########   Sat May 21 12:44:28 2011
+
+    9 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.76%   40.29%    6.08%   44.99%   0.04800302s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06800497s
+
+########## END ITERATION NO.   9 ##########   Sat May 21 12:44:28 2011
+
+It.   9    -78.25658628842      3.12D-10  1.04D-08  9.87D-09   DIIS   7    0.06800497s   LL             Sat May 21
+
+
+                                   SCF - CYCLE
+                                   -----------
+
+* Convergence on norm of error vector (gradient).
+  Desired convergence:1.000D-08
+  Allowed convergence:1.000D-08
+
+* ERGVAL - convergence in total energy
+* FCKVAL - convergence in maximum change in total Fock matrix
+* EVCVAL - convergence in error vector (gradient)
+--------------------------------------------------------------------------------------------------------------------------------
+           Energy               ERGVAL    FCKVAL    EVCVAL      Conv.acc    CPU          Integrals   Time stamp
+--------------------------------------------------------------------------------------------------------------------------------
+It.   1    -6.153519037357      1.00D+20  0.00D+00  0.00D+00               0.01200099s   Scr. nuclei    Sat May 21
+It.   2    -78.02273525739      7.19D+01  4.04D-01  8.33D-01               0.11200701s   LL             Sat May 21
+It.   3    -78.25153288964      2.29D-01 -4.19D-01  1.29D-01   DIIS   2    0.06800401s   LL             Sat May 21
+It.   4    -78.25656865267      5.04D-03  5.21D-02  5.91D-03   DIIS   3    0.06400397s   LL             Sat May 21
+It.   5    -78.25658594777      1.73D-05  5.82D-04  8.13D-04   DIIS   4    0.07200402s   LL             Sat May 21
+It.   6    -78.25658628725      3.39D-07 -8.42D-05  4.65D-05   DIIS   5    0.06000400s   LL             Sat May 21
+It.   7    -78.25658628810      8.49D-10  6.91D-06  3.48D-06   DIIS   6    0.06400400s   LL             Sat May 21
+It.   8    -78.25658628811      3.27D-12 -7.95D-07  1.88D-07   DIIS   7    0.06800401s   LL             Sat May 21
+It.   9    -78.25658628842      3.12D-10  1.04D-08  9.87D-09   DIIS   7    0.06800497s   LL             Sat May 21
+--------------------------------------------------------------------------------------------------------------------------------
+* Convergence after    9 iterations.
+* Average elapsed time per iteration: 
+      No 2-ints    :    0.00000000s
+      LL           :    0.00000000s
+
+
+                                   TOTAL ENERGY
+                                   ------------
+
+   Electronic energy                        :    -117.17950814993793
+
+   Other contributions to the total energy
+   Nuclear repulsion energy                 :      38.92292186151871
+
+   Sum of all contributions to the energy
+   Total energy                             :     -78.25658628841921
+
+
+                                   Eigenvalues
+                                   -----------
+
+
+* Boson symmetry A  
+  * Closed shell, f = 1.0000
+-11.03594279151623  ( 2)   -11.03545463953217  ( 2)    -0.92339941962140  ( 2)    -0.82859847519579  ( 2)    -0.54315711420581  ( 4)
+ -0.48419835446836  ( 4)    -0.38878452712566  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+  0.43708653579591  ( 2)     0.68892272182908  ( 4)     0.72381721785465  ( 2)     0.75134899521442  ( 2)     0.75618196482873  ( 4)
+
+* Occupation of subblocks
+                       E1 :  A                                                                              
+  closed shells (f=1.0000):    9
+ virtual shells (f=0.0000):    7
+tot.num. of pos.erg shells:   16
+
+
+* HOMO - LUMO gap:
+
+    E(LUMO) :     0.43708654 au (symmetry A  )
+  - E(HOMO) :    -0.38878453 au (symmetry A  )
+  ------------------------------------------
+    gap     :     0.82587106 au
+
+
+* Reading two-electron Fock matrix for DHF molecular gradient
+
+* REAFCK: Fock matrix read from file /tmp/bast.constrained_ethane_2.32480/DFFCK2                 
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:28 2011
+
+* Reading one-electron Fock matrix for DHF molecular gradient
+
+* REAFCK: Fock matrix read from file /tmp/bast.constrained_ethane_2.32480/DFFCK1                 
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:28 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2565862881070871
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:28 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2565862881070871
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:28 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2565862881070871
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:28 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2565862881070871
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:28 2011
+
+
+        ******************************************************************
+        ********** Analytical calculation of molecular gradient **********
+        ******************************************************************
+
+ Special information about calculation of the molecular gradient:
+
+ Levy-Leblond Hamiltonian: 
+    - No small-small nuclear attraction integrals.
+    - No small-small reorthonormalization gradient
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2565862881070871
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:28 2011
+
+
+                           RMOLGRD1: One-electron part
+                           ---------------------------
+
+
+Time for one-electron part of gradient    :      0.04 seconds.
+
+
+
+                           RMOLGRD1: Two-electron part
+                           ---------------------------
+
+
+* GETGAB: label "GABAO12x" not found; calling GABGEN.
+
+ Time for GAB matrix                       :      0.39 seconds.
+
+
+
+                          RMOLGRD1: LL-Two-electron part
+                          ------------------------------
+
+ Calculate LL-Two-electron gradient: yes
+
+Step 1 Screening
+* Gradient screening statistics:
+               X            Y            Z   
+SCR:LL        0.00%        0.00%        0.00%
+
+Detailed screening statistics
+
+          %int   Type    %int      X        Y        Z   
+TWOCEN   30.47%                   0.00%    0.00%    0.00%
+
+
+                 1122   15.00%    0.00%    0.00%    0.00%
+                 1212   22.86%    0.00%    0.00%    0.00%
+                 1221    0.00%    N/A      N/A      N/A  
+                 1222   46.07%    0.00%    0.00%    0.00%
+                 1211    1.61%    0.00%    0.00%    0.00%
+                 1112   14.46%    0.00%    0.00%    0.00%
+                 1121    0.00%    N/A      N/A      N/A  
+
+
+THRCEN   50.27%                   0.00%    0.00%    0.00%
+
+
+                 1213    6.93%    0.00%    0.00%    0.00%
+                 1223   19.91%    0.00%    0.00%    0.00%
+                 1231    0.00%    N/A      N/A      N/A  
+                 1232   32.90%    0.00%    0.00%    0.00%
+                 1123    6.93%    0.00%    0.00%    0.00%
+                 1233   33.33%    0.00%    0.00%    0.00%
+
+
+FOUCEN   19.26%                   0.00%    0.00%    0.00%
+
+
+                 1234  100.00%    0.00%    0.00%    0.00%
+
+
+Step 1 + Step 2 Screening
+* Gradient screening statistics:
+               X            Y            Z   
+SCR:LL        2.57%        2.57%        2.57%
+
+Detailed screening statistics
+
+          %int   Type    %int      X        Y        Z   
+TWOCEN   30.47%                   8.43%    8.43%    8.43%
+
+
+                 1122   15.00%    8.10%    8.10%    8.10%
+                 1212   22.86%   11.88%   11.88%   11.88%
+                 1221    0.00%    N/A      N/A      N/A  
+                 1222   46.07%    4.88%    4.88%    4.88%
+                 1211    1.61%   13.33%   13.33%   13.33%
+                 1112   14.46%   14.07%   14.07%   14.07%
+                 1121    0.00%    N/A      N/A      N/A  
+
+
+THRCEN   50.27%                   0.00%    0.00%    0.00%
+
+
+                 1213    6.93%    0.00%    0.00%    0.00%
+                 1223   19.91%    0.00%    0.00%    0.00%
+                 1231    0.00%    N/A      N/A      N/A  
+                 1232   32.90%    0.00%    0.00%    0.00%
+                 1123    6.93%    0.00%    0.00%    0.00%
+                 1233   33.33%    0.00%    0.00%    0.00%
+
+
+FOUCEN   19.26%                   0.00%    0.00%    0.00%
+
+
+                 1234  100.00%    0.00%    0.00%    0.00%
+
+
+
+ Time for LL-two-electron part of gradient :      0.09 seconds.
+
+
+
+                          RMOLGRD1: LS-Two-electron part
+                          ------------------------------
+
+
+ Calculate LS-Two-electron gradient: no 
+
+
+
+                          RMOLGRD1: Skipping LS-Two-el.
+                          -----------------------------
+
+
+
+                          RMOLGRD1: SS-Two-electron part
+                          ------------------------------
+
+ Calculate SS-Two-electron gradient: no 
+
+
+
+                          RMOLGRD1: Skipping SS-Two-el.
+                          -----------------------------
+
+
+
+                               Timings for RMOLGRD1
+                               --------------------
+
+
+ One-electron part of gradient    CPU  :      0.04s    WALL :      0.00s
+
+ GAB matrix for screening         CPU  :      0.39s    WALL :      1.00s
+ LL-Two-electron part of gradient CPU  :      0.09s    WALL :      0.00s
+ LS-Two-electron part SKIPPED!
+ SS-Two-electron part SKIPPED!
+ Total two-electron part of grad. CPU  :      0.48s    WALL :      1.00s
+ Total time in RMOLGRD1           CPU  :      0.54s    WALL :      1.00s
+
+
+
+                  **********************************************
+                  ********** Final output from PSIGRD **********
+                  **********************************************
+
+
+
+@                         Total molecular gradient
+@                         ------------------------
+
+@C                     0.0000000000         0.0000000213         0.1214475289
+@C                     0.0000000000        -0.0000000213        -0.1214475289
+@H                     0.0015004104         0.0008662674         0.0047713589
+@H                    -0.0015004104         0.0008662674         0.0047713589
+@H                     0.0000000000        -0.0017325551         0.0047713653
+@H                     0.0015004104        -0.0008662674        -0.0047713589
+@H                    -0.0015004104        -0.0008662674        -0.0047713589
+@H                     0.0000000000         0.0017325551        -0.0047713653
+
+
+
+
+
+                            **************************
+                            *** Output from MINEND ***
+                            **************************
+
+
+ Energy converged       N/A 
+ Gradient converged     no  
+ Step converged         no  
+ Totally sym. index      0
+ Hessian index           0
+ End of minimization    no  
+
+
+           :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+           ::::::::::::::: Minimization Control Center :::::::::::::::
+           :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+                                Next geometry (au)
+                                ------------------
+
+ C          0.0000000000           -0.0000000033            1.7547876282
+ C          0.0000000000            0.0000000033           -1.7547876282
+ H          1.6966499863            0.9795613157            2.3724169692
+ H         -1.6966499863            0.9795613157            2.3724169692
+ H          0.0000000000           -1.9591226421            2.3724169832
+ H          1.6966499863           -0.9795613157           -2.3724169692
+ H         -1.6966499863           -0.9795613157           -2.3724169692
+ H          0.0000000000            1.9591226421           -2.3724169832
+
+
+
+
+
+                             Optimization information
+                             ------------------------
+
+ Iteration number               :       0
+ End of minimization            :       F 
+ Energy at this geometry is     :     -78.256586288419
+ Norm of gradient               : 0.172202D+00 (the threshold is:0.10D-04)
+ Norm of step                   : 0.125964D+00 (the threshold is:0.10D-04)
+ Updated trust radius           : 0.500000D+00
+ Total Hessian index            :       0
+
+
+ 
+ 
+Contents of the input file
+--------------------------
+ 
+**DIRAC                                                                                             
+.TITLE                                                                                              
+Minimize ethane geometry with C-C bond frozen                                                       
+.OPTIMIZE                                                                                           
+*OPTIMIZE                                                                                           
+.BAKER                                                                                              
+.CONSTR                                                                                             
+1                                                                                                   
+1                                                                                                   
+**GENERAL                                                                                           
+.SPHTRA                                                                                             
+1 0                                                                                                 
+**INTEGRALS                                                                                         
+*TWOINT                                                                                             
+.SCREEN                                                                                             
+ 1.0D-11                                                                                            
+**HAMILTONIAN                                                                                       
+.LEVY-LEBLOND                                                                                       
+**WAVE FUNCTIONS                                                                                    
+.DHF                                                                                                
+*DHFCAL                                                                                             
+.CLOSED SHELL                                                                                       
+18                                                                                                  
+.EVCCNV                                                                                             
+ 1.0D-8                                                                                             
+*END OF                                                                                             
+ 
+ 
+Contents of the molecule file
+-----------------------------
+ 
+WHATEVER                                                                                            
+Ethane. Basis: STO-3G                                                                               
+Project: Benchmark                                                                                  
+C   2    0                                                                                          
+        6.    2                                                                                     
+C    -0.0000000000000006 -0.0000000032764937  1.7547876282000019       *                            
+C    -0.0000000000000214  0.0000000032764904 -1.7547876281999977       *                            
+LARGE BASIS STO-3G                                                                                  
+        1.    6                                                                                     
+H     1.6966499862996520  0.9795613156938140  2.3724169691935799       *                            
+H    -1.6966499862997884  0.9795613156935279  2.3724169691936425       *                            
+H     0.0000000000001602 -1.9591226421165819  2.3724169832249160       *                            
+H     1.6966499862996367 -0.9795613156938101 -2.3724169691935653       *                            
+H    -1.6966499862997901 -0.9795613156935239 -2.3724169691936869       *                            
+H     0.0000000000001515  1.9591226421165773 -2.3724169832248903       *                            
+LARGE BASIS STO-3G                                                                                  
+
+
+    *************************************************************************
+    ************* Minimize ethane geometry with C-C bond frozen *************
+    *************************************************************************
+
+   * Geometry optimization
+     IMPORTANT: *WAVE F must be present for readin of wavefunction.
+
+
+    **************************************************************************
+    ************************** General DIRAC set-up **************************
+    **************************************************************************
+
+   CODATA Recommended Values of the Fundamental Physical Constants: 1998  
+                Peter J. Mohr and Barry N. Taylor                         
+   Journal of Physical and Chemical Reference Data, Vol. 28, No. 6, 1999  
+ * The speed of light :        137.0359998
+ * running in four-component mode
+ * Direct evaluation of the following two-electron integrals:
+   - LL-integrals
+   - SL-integrals
+   - SS-integrals
+   - GT-integrals
+ * Spherical transformation embedded in MO-transformation
+   for large components
+ * Thresholds for linear dependence:
+   Large components:   1.00D-06
+   Small components:   1.00D-08
+ DFPCMO: IBEIG read in I2 format.
+ * General print level   :   0
+
+
+    *************************************************************************
+    ****************** Output from HERMIT input processing ******************
+    *************************************************************************
+
+ Default print level:        1
+ Nuclear model: Gaussian charge distribution.
+
+ Two-electron integrals not calculated.
+
+
+ Ordinary (field-free non-relativistic) Hamiltonian integrals not calculated.
+
+
+
+ Settings for FCK3 calculation:
+ ------------------------------
+
+Dynamical threshold is not (yet) implemented in DIRAC
+
+
+    *************************************************************************
+    ****************** Output from READIN input processing ******************
+    *************************************************************************
+
+
+
+  Title Cards
+  -----------
+
+  Ethane. Basis: STO-3G                                                   
+  Project: Benchmark                                                      
+
+  Nuclear Gaussian exponent for atom of charge   6.000 :    6.8077502929D+08
+
+  Nuclear Gaussian exponent for atom of charge   1.000 :    2.1248239171D+09
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Point group: C1 
+
+   * Character table
+
+        |  E 
+   -----+-----
+    A   |   1
+
+   * Direct product table
+
+        | A  
+   -----+-----
+    A   | A  
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * One fermion irrep:   E1 
+   * Quaternionic group. NZ = 4
+   * Direct product decomposition:
+          E1  x E1  : A   + A   + A   + A  
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1
+      La  |  A  (1)  A  (1)  |
+      Sa  |  A  (1)  A  (1)  |
+      Lb  |  A  (1)  A  (1)  |
+      Sb  |  A  (1)  A  (1)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    A    1  i  j  k
+
+  QM-QM nuclear repulsion energy :   39.087384659641
+  QM-pc interaction energy       :    0.000000000000
+  pc-pc interaction energy       :    0.000000000000
+  Total interaction energy       :   39.087384659641
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types:     2
+  Total number of atoms:    8
+
+  label    atoms   charge   prim    cont     basis   
+  ----------------------------------------------------------------------
+  C           1       6      15       5      L  - [6s3p|2s1p]                                                    
+                             39      39      S  - [3s6p3d|3s6p3d]                                                
+  C           1       6      15       5      L  - [6s3p|2s1p]                                                    
+                             39      39      S  - [3s6p3d|3s6p3d]                                                
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  ----------------------------------------------------------------------
+                             48      16      L  - large components
+                            132     132      S  - small components
+  ----------------------------------------------------------------------
+  total:      8      18     180     148
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+  MNF.INP input file (for the AMFI stuff) is ready.
+  CAPOUT: preparing the "CAPDIR.inp" file with DIRAC unique order of atomic basis functions. 
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1   2
+   Elements      Contraction                       References                     
+   H - He: (3s)         -> [1s]       W.J. Hehre, R.F. Stewart and J.A. Pople,    
+   Li - Ne: (6s,3p)     -> [2s,1p]    J. Chem. Phys. 2657 (1969).                 
+   Na - Ar: (9s,6p)     -> [3s,2p]    W.J. Hehre, R. Ditchfield, R.F. Stewart,    
+                                      J.A. Pople, J. Chem. Phys.  2769 (1970).    
+   K,Ca - : (12s,9p)    -> [4s,3p]    W.J. Pietro, B.A. Levy, W.J. Hehre and R.F. 
+   Ga - Kr                            Stewart, Inorg. Chem. 19, 2225 (1980).      
+   Sc - Zn: (12s,9p,3d) -> [4s,3p,1d] W.J. Pietro and W.J. Hehre, J. Comp. Chem.  
+   Y - Cd: (15s,12p,6d) -> [5s,4p,2d] 4, 241 (1983).                              
+  ***********************************************************************         
+
+
+  Cartesian Coordinates
+  ---------------------
+
+  Total number of coordinates: 24
+
+
+   1   C        x      0.0000000000
+   2            y     -0.0000000033
+   3            z      1.7547876282
+
+   4   C        x      0.0000000000
+   5            y      0.0000000033
+   6            z     -1.7547876282
+
+   7   H        x      1.6966499863
+   8            y      0.9795613157
+   9            z      2.3724169692
+
+  10   H        x     -1.6966499863
+  11            y      0.9795613157
+  12            z      2.3724169692
+
+  13   H        x      0.0000000000
+  14            y     -1.9591226421
+  15            z      2.3724169832
+
+  16   H        x      1.6966499863
+  17            y     -0.9795613157
+  18            z     -2.3724169692
+
+  19   H        x     -1.6966499863
+  20            y     -0.9795613157
+  21            z     -2.3724169692
+
+  22   H        x      0.0000000000
+  23            y      1.9591226421
+  24            z     -2.3724169832
+
+
+
+  Cartesian coordinates xyz format (angstrom)
+  -------------------------------------------
+
+    8
+ 
+C      0.0000000000  -0.0000000017   0.9285936183
+C      0.0000000000   0.0000000017  -0.9285936183
+H      0.8978285032   0.5183615224   1.2554289887
+H     -0.8978285032   0.5183615224   1.2554289887
+H      0.0000000000  -1.0367230505   1.2554289961
+H      0.8978285032  -0.5183615224  -1.2554289887
+H     -0.8978285032  -0.5183615224  -1.2554289887
+H      0.0000000000   1.0367230505  -1.2554289961
+
+
+   Interatomic separations (in Angstroms):
+   ---------------------------------------
+
+            C           C           H           H           H           H   
+
+   C       0.000000
+   C       1.857187    0.000000
+   H       1.087022    2.417592    0.000000
+   H       1.087022    2.417592    1.795657    0.000000
+   H       1.087022    2.417592    1.795657    1.795657    0.000000
+   H       2.417592    1.087022    2.716469    3.256315    2.716469    0.000000
+   H       2.417592    1.087022    3.256315    2.716469    2.716469    1.795657
+   H       2.417592    1.087022    2.716469    2.716469    3.256315    1.795657
+
+            H           H   
+
+   H       0.000000
+   H       1.795657    0.000000
+
+
+
+
+  Bond distances (angstroms):
+  ---------------------------
+
+                  atom 1     atom 2                           distance
+                  ------     ------                           --------
+  bond distance:    C          C                              1.857187
+  bond distance:    H          C                              1.087022
+  bond distance:    H          C                              1.087022
+  bond distance:    H          C                              1.087022
+  bond distance:    H          C                              1.087022
+  bond distance:    H          C                              1.087022
+  bond distance:    H          C                              1.087022
+
+
+  Bond angles (degrees):
+  ----------------------
+
+                  atom 1     atom 2     atom 3                   angle
+                  ------     ------     ------                   -----
+  bond angle:       H          C          C                    107.498
+  bond angle:       H          C          C                    107.498
+  bond angle:       H          C          H                    111.370
+  bond angle:       H          C          C                    107.498
+  bond angle:       H          C          H                    111.370
+  bond angle:       H          C          H                    111.370
+  bond angle:       H          C          C                    107.498
+  bond angle:       H          C          C                    107.498
+  bond angle:       H          C          H                    111.370
+  bond angle:       H          C          C                    107.498
+  bond angle:       H          C          H                    111.370
+  bond angle:       H          C          H                    111.370
+
+
+  Nuclear repulsion energy :   39.087384659641
+
+
+                                GETLAB: AO-labels
+                                -----------------
+
+   * Large components:   14
+     1  L C   1 s        2  L C   1 px       3  L C   1 py       4  L C   1 pz       5  L C   1 s        6  L C   1 px  
+     7  L C   1 py       8  L C   1 pz       9  L H   1 s       10  L H   1 s       11  L H   1 s       12  L H   1 s   
+    13  L H   1 s       14  L H   1 s   
+   * Small components:   38
+    15  S C   1 s       16  S C   1 px      17  S C   1 py      18  S C   1 pz      19  S C   1 dxx     20  S C   1 dxy 
+    21  S C   1 dxz     22  S C   1 dyy     23  S C   1 dyz     24  S C   1 dzz     25  S C   1 s       26  S C   1 px  
+    27  S C   1 py      28  S C   1 pz      29  S C   1 dxx     30  S C   1 dxy     31  S C   1 dxz     32  S C   1 dyy 
+    33  S C   1 dyz     34  S C   1 dzz     35  S H   1 px      36  S H   1 py      37  S H   1 pz      38  S H   1 px  
+    39  S H   1 py      40  S H   1 pz      41  S H   1 px      42  S H   1 py      43  S H   1 pz      44  S H   1 px  
+    45  S H   1 py      46  S H   1 pz      47  S H   1 px      48  S H   1 py      49  S H   1 pz      50  S H   1 px  
+    51  S H   1 py      52  S H   1 pz  
+
+
+  Symmetry Orbitals
+  -----------------
+
+  Number of orbitals in each symmetry:          148
+  Number of large orbitals in each symmetry:     16
+  Number of small orbitals in each symmetry:    132
+
+* Large component functions
+
+  Symmetry  A  ( 1)
+
+        2 functions:    C  s   
+        1 functions:    C  px  
+        1 functions:    C  py  
+        1 functions:    C  pz  
+        2 functions:    C  s   
+        1 functions:    C  px  
+        1 functions:    C  py  
+        1 functions:    C  pz  
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+
+* Small component functions
+
+  Symmetry  A  ( 1)
+
+        3 functions:    C  s   
+        6 functions:    C  px  
+        6 functions:    C  py  
+        6 functions:    C  pz  
+        3 functions:    C  dxx 
+        3 functions:    C  dxy 
+        3 functions:    C  dxz 
+        3 functions:    C  dyy 
+        3 functions:    C  dyz 
+        3 functions:    C  dzz 
+        3 functions:    C  s   
+        6 functions:    C  px  
+        6 functions:    C  py  
+        6 functions:    C  pz  
+        3 functions:    C  dxx 
+        3 functions:    C  dxy 
+        3 functions:    C  dxz 
+        3 functions:    C  dyy 
+        3 functions:    C  dyz 
+        3 functions:    C  dzz 
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+
+
+   ***************************************************************************
+   *************************** Hamiltonian defined ***************************
+   ***************************************************************************
+
+ * Print level:    0
+ * Levy-Leblond Hamiltonian
+   - Spin-orbit interactions neglected
+ * Default integral flags passed to all modules
+   - LL-integrals:     1
+   - LS-integrals:     0
+   - SS-integrals:     0
+   - GT-integrals:     0
+ * Basis set:
+   - contracted large component basis set
+   - uncontracted small component basis set
+
+
+ Information about the restricted kinetic balance scheme:
+ * RKB projection:
+   1: No Pre-projection in scalar basis
+   2: Removal of unphysical solutions (via diagonalization of free particle Hamiltonian)
+ *** WARNING **** This procedure may give severe linear  dependence problems for large basis sets
+
+
+    **************************************************************************
+    ************************** Wave function module **************************
+    **************************************************************************
+
+ Jobs in this run (in execution order):
+ * Hartree-Fock calculation
+===========================================================================
+ DHFINP: Set-up for Hartree-Fock calculation:
+===========================================================================
+ * Number of fermion irreps: 1
+ * Closed shell SCF calculation with   18 electrons in
+       9 orbitals in Fermion irrep 1
+ * Bare nucleus screening correction used for start guess
+ * General print level   :   0
+ ***** TRIAL FUNCTION *****
+ * Trial vectors read from file DFCOEF
+ ***** CONVERGENCE CRITERIA *****
+ * Convergence on norm of error vector (gradient).
+   Desired convergence:1.000D-08
+   Allowed convergence:1.000D-08
+
+ ***** CONVERGENCE CONTROL *****
+ * Fock matrix constructed using differential density matrix
+    with optimal parameter.
+ * DIIS (in MO basis)
+ * DIIS will be activated when convergence reaches : 1.00D+20
+   - Maximum size of B-matrix:   10
+ * Damping of Fock matrix when DIIS is not activated. 
+   Weight of old matrix    : 0.250
+ * Maximum number of SCF iterations  :   50
+ * No quadratic convergent Hartree-Fock
+ * Contributions from 2-electron integrals to Fock matrix:
+   LL-integrals.
+ * NB!!! No e-p rotations in 2nd order optimization.
+ ***** OUTPUT CONTROL *****
+ * Only electron eigenvalues written out.
+
+
+ ********************************************************************************
+ *************************** Input consistency checks ***************************
+ ********************************************************************************
+
+
+
+    *************************************************************************
+    ************************ End of input processing ************************
+    *************************************************************************
+
+ PAMSET reports: TWOCOMPBSS F
+
+
+                      Nuclear contribution to dipole moments
+                      --------------------------------------
+
+                               au             Debye
+
+                    x      0.00000000      0.00000000
+                    y      0.00000000      0.00000000
+                    z      0.00000000      0.00000000
+
+                        1 Debye =   2.54177000 a.u. 
+  No SS-nuclear attraction integrals(MOLFLD), adapted PDOINT=+000
+
+
+                       Generating Lowdin canonical matrix:
+                       -----------------------------------
+
+   L   A     * Deleted:          0(Proj:          0, Lindep:          0)
+   S   A     * Deleted:          0
+
+
+                                Output from MODHAM
+                                ------------------
+
+* All positronic solutions deleted !
+
+
+      **********************************************************************
+      ************************* Orbital dimensions *************************
+      **********************************************************************
+
+No. of positive energy orbitals (NESH):    16
+No. of negative energy orbitals (NPSH):     0
+Total no. of orbitals           (NORB):    16
+
+
+   ****************************************************************************
+   ************************* Hartree-Fock calculation *************************
+   ****************************************************************************
+
+
+########## START ITERATION NO.   1 ##########   Sat May 21 12:44:29 2011
+
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2565862881070871
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:28 2011
+
+* GETGAB: label "GABAO1XX" not found; calling GABGEN.
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   15.76%    0.22%   63.22%   0.05200303s
+It.   1    -78.26659464004      7.83D+01  0.00D+00  2.90D-02               0.12400699s   LL             Sat May 21
+
+########## START ITERATION NO.   2 ##########   Sat May 21 12:44:29 2011
+
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   15.74%    0.22%   63.25%   0.04800296s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06800497s
+
+########## END ITERATION NO.   2 ##########   Sat May 21 12:44:29 2011
+
+It.   2    -78.25700855048     -9.59D-03 -8.82D-03  5.23D-03               0.06800497s   LL             Sat May 21
+
+########## START ITERATION NO.   3 ##########   Sat May 21 12:44:29 2011
+
+    3 *** Differential density matrix. DCOVLP     = 0.9998
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   17.53%    0.00%   61.85%   0.04800296s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.07200396s
+
+########## END ITERATION NO.   3 ##########   Sat May 21 12:44:29 2011
+
+It.   3    -78.25702301914      1.45D-05 -5.84D-04  1.39D-03   DIIS   2    0.07200396s   LL             Sat May 21
+
+########## START ITERATION NO.   4 ##########   Sat May 21 12:44:29 2011
+
+    4 *** Differential density matrix. DCOVLP     = 0.9999
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   17.59%    0.00%   61.80%   0.04800296s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06400406s
+
+########## END ITERATION NO.   4 ##########   Sat May 21 12:44:29 2011
+
+It.   4    -78.25702417873      1.16D-06 -2.16D-04  9.85D-05   DIIS   3    0.06400406s   LL             Sat May 21
+
+########## START ITERATION NO.   5 ##########   Sat May 21 12:44:29 2011
+
+    5 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   18.33%    0.00%   61.25%   0.04800308s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06000400s
+
+########## END ITERATION NO.   5 ##########   Sat May 21 12:44:29 2011
+
+It.   5    -78.25702418282      4.09D-09 -3.07D-05  4.58D-06   DIIS   4    0.06000400s   LL             Sat May 21
+
+########## START ITERATION NO.   6 ##########   Sat May 21 12:44:29 2011
+
+    6 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   23.08%    0.17%   57.77%   0.04800296s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06000400s
+
+########## END ITERATION NO.   6 ##########   Sat May 21 12:44:29 2011
+
+It.   6    -78.25702418286      4.06D-11  4.08D-07  3.79D-07   DIIS   5    0.06000400s   LL             Sat May 21
+
+########## START ITERATION NO.   7 ##########   Sat May 21 12:44:29 2011
+
+    7 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.06%   33.25%    5.80%   50.61%   0.04800296s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06000304s
+
+########## END ITERATION NO.   7 ##########   Sat May 21 12:44:29 2011
+
+It.   7    -78.25702418280     -5.98D-11 -2.26D-08  2.33D-08   DIIS   6    0.06000304s   LL             Sat May 21
+
+########## START ITERATION NO.   8 ##########   Sat May 21 12:44:29 2011
+
+    8 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11   12.62%   52.67%    7.47%   32.11%   0.04400301s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06400394s
+
+########## END ITERATION NO.   8 ##########   Sat May 21 12:44:29 2011
+
+It.   8    -78.25702418356      7.62D-10  2.28D-09  1.89D-09   DIIS   6    0.06400394s   LL             Sat May 21
+
+
+                                   SCF - CYCLE
+                                   -----------
+
+* Convergence on norm of error vector (gradient).
+  Desired convergence:1.000D-08
+  Allowed convergence:1.000D-08
+
+* ERGVAL - convergence in total energy
+* FCKVAL - convergence in maximum change in total Fock matrix
+* EVCVAL - convergence in error vector (gradient)
+--------------------------------------------------------------------------------------------------------------------------------
+           Energy               ERGVAL    FCKVAL    EVCVAL      Conv.acc    CPU          Integrals   Time stamp
+--------------------------------------------------------------------------------------------------------------------------------
+It.   1    -78.26659464004      7.83D+01  0.00D+00  2.90D-02               0.12400699s   LL             Sat May 21
+It.   2    -78.25700855048     -9.59D-03 -8.82D-03  5.23D-03               0.06800497s   LL             Sat May 21
+It.   3    -78.25702301914      1.45D-05 -5.84D-04  1.39D-03   DIIS   2    0.07200396s   LL             Sat May 21
+It.   4    -78.25702417873      1.16D-06 -2.16D-04  9.85D-05   DIIS   3    0.06400406s   LL             Sat May 21
+It.   5    -78.25702418282      4.09D-09 -3.07D-05  4.58D-06   DIIS   4    0.06000400s   LL             Sat May 21
+It.   6    -78.25702418286      4.06D-11  4.08D-07  3.79D-07   DIIS   5    0.06000400s   LL             Sat May 21
+It.   7    -78.25702418280     -5.98D-11 -2.26D-08  2.33D-08   DIIS   6    0.06000304s   LL             Sat May 21
+It.   8    -78.25702418356      7.62D-10  2.28D-09  1.89D-09   DIIS   6    0.06400394s   LL             Sat May 21
+--------------------------------------------------------------------------------------------------------------------------------
+* Convergence after    8 iterations.
+* Average elapsed time per iteration: 
+      LL           :    0.00000000s
+
+
+                                   TOTAL ENERGY
+                                   ------------
+
+   Electronic energy                        :    -117.34440884320611
+
+   Other contributions to the total energy
+   Nuclear repulsion energy                 :      39.08738465964137
+
+   Sum of all contributions to the energy
+   Total energy                             :     -78.25702418356474
+
+
+                                   Eigenvalues
+                                   -----------
+
+
+* Boson symmetry A  
+  * Closed shell, f = 1.0000
+-11.03355397159971  ( 2)   -11.03306571410293  ( 2)    -0.92468944105570  ( 2)    -0.82478788255483  ( 2)    -0.54834355206573  ( 4)
+ -0.48721818240078  ( 4)    -0.37836054374912  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+  0.43989583768733  ( 2)     0.70282986532219  ( 4)     0.70882486014288  ( 2)     0.74473745703157  ( 2)     0.76278573105868  ( 4)
+
+* Occupation of subblocks
+                       E1 :  A                                                                              
+  closed shells (f=1.0000):    9
+ virtual shells (f=0.0000):    7
+tot.num. of pos.erg shells:   16
+
+
+* HOMO - LUMO gap:
+
+    E(LUMO) :     0.43989584 au (symmetry A  )
+  - E(HOMO) :    -0.37836054 au (symmetry A  )
+  ------------------------------------------
+    gap     :     0.81825638 au
+
+ Trust radius set equal to norm of step.
+ Updated trust radius   0.12596
+
+* Reading two-electron Fock matrix for DHF molecular gradient
+
+* REAFCK: Fock matrix read from file /tmp/bast.constrained_ethane_2.32480/DFFCK2                 
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:29 2011
+
+* Reading one-electron Fock matrix for DHF molecular gradient
+
+* REAFCK: Fock matrix read from file /tmp/bast.constrained_ethane_2.32480/DFFCK1                 
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:29 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2570241828022972
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:29 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2570241828022972
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:29 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2570241828022972
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:29 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2570241828022972
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:29 2011
+
+
+        ******************************************************************
+        ********** Analytical calculation of molecular gradient **********
+        ******************************************************************
+
+ Special information about calculation of the molecular gradient:
+
+ Levy-Leblond Hamiltonian: 
+    - No small-small nuclear attraction integrals.
+    - No small-small reorthonormalization gradient
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2570241828022972
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:29 2011
+
+
+                           RMOLGRD1: One-electron part
+                           ---------------------------
+
+
+ 
+     Date and time (Linux)  : Sat May 21 12:44:30 2011
+     Host name              :                                         
+
+ Estimated CPU time:        0.04 seconds.
+ Estimated WALL time:       0.00 seconds.
+
+
+Time for one-electron part of gradient    :      0.05 seconds.
+
+
+
+                           RMOLGRD1: Two-electron part
+                           ---------------------------
+
+
+* GETGAB: label "GABAO12x" not found; calling GABGEN.
+
+ Time for GAB matrix                       :      0.52 seconds.
+
+
+
+                          RMOLGRD1: LL-Two-electron part
+                          ------------------------------
+
+ Calculate LL-Two-electron gradient: yes
+
+
+ 
+     Date and time (Linux)  : Sat May 21 12:44:30 2011
+     Host name              :                                         
+
+ Estimated CPU time:        0.09 seconds.
+ Estimated WALL time:       0.00 seconds.
+
+Step 1 Screening
+* Gradient screening statistics:
+               X            Y            Z   
+SCR:LL        0.00%        0.00%        0.00%
+
+Detailed screening statistics
+
+          %int   Type    %int      X        Y        Z   
+TWOCEN   30.47%                   0.00%    0.00%    0.00%
+
+
+                 1122   15.00%    0.00%    0.00%    0.00%
+                 1212   22.86%    0.00%    0.00%    0.00%
+                 1221    0.00%    N/A      N/A      N/A  
+                 1222   46.07%    0.00%    0.00%    0.00%
+                 1211    1.61%    0.00%    0.00%    0.00%
+                 1112   14.46%    0.00%    0.00%    0.00%
+                 1121    0.00%    N/A      N/A      N/A  
+
+
+THRCEN   50.27%                   0.00%    0.00%    0.00%
+
+
+                 1213    6.93%    0.00%    0.00%    0.00%
+                 1223   19.91%    0.00%    0.00%    0.00%
+                 1231    0.00%    N/A      N/A      N/A  
+                 1232   32.90%    0.00%    0.00%    0.00%
+                 1123    6.93%    0.00%    0.00%    0.00%
+                 1233   33.33%    0.00%    0.00%    0.00%
+
+
+FOUCEN   19.26%                   0.00%    0.00%    0.00%
+
+
+                 1234  100.00%    0.00%    0.00%    0.00%
+
+
+Step 1 + Step 2 Screening
+* Gradient screening statistics:
+               X            Y            Z   
+SCR:LL        2.09%        2.09%        2.09%
+
+Detailed screening statistics
+
+          %int   Type    %int      X        Y        Z   
+TWOCEN   30.47%                   6.86%    6.86%    6.86%
+
+
+                 1122   15.00%    6.19%    6.19%    6.19%
+                 1212   22.86%   10.00%   10.00%   10.00%
+                 1221    0.00%    N/A      N/A      N/A  
+                 1222   46.07%    3.95%    3.95%    3.95%
+                 1211    1.61%    0.00%    0.00%    0.00%
+                 1112   14.46%   12.59%   12.59%   12.59%
+                 1121    0.00%    N/A      N/A      N/A  
+
+
+THRCEN   50.27%                   0.00%    0.00%    0.00%
+
+
+                 1213    6.93%    0.00%    0.00%    0.00%
+                 1223   19.91%    0.00%    0.00%    0.00%
+                 1231    0.00%    N/A      N/A      N/A  
+                 1232   32.90%    0.00%    0.00%    0.00%
+                 1123    6.93%    0.00%    0.00%    0.00%
+                 1233   33.33%    0.00%    0.00%    0.00%
+
+
+FOUCEN   19.26%                   0.00%    0.00%    0.00%
+
+
+                 1234  100.00%    0.00%    0.00%    0.00%
+
+
+
+ Time for LL-two-electron part of gradient :      0.10 seconds.
+
+
+
+                          RMOLGRD1: LS-Two-electron part
+                          ------------------------------
+
+
+ Calculate LS-Two-electron gradient: no 
+
+
+
+                          RMOLGRD1: Skipping LS-Two-el.
+                          -----------------------------
+
+
+
+                          RMOLGRD1: SS-Two-electron part
+                          ------------------------------
+
+ Calculate SS-Two-electron gradient: no 
+
+
+
+                          RMOLGRD1: Skipping SS-Two-el.
+                          -----------------------------
+
+
+
+                               Timings for RMOLGRD1
+                               --------------------
+
+
+ One-electron part of gradient    CPU  :      0.05s    WALL :      0.00s
+
+ GAB matrix for screening         CPU  :      0.52s    WALL :      0.00s
+ LL-Two-electron part of gradient CPU  :      0.10s    WALL :      0.00s
+ LS-Two-electron part SKIPPED!
+ SS-Two-electron part SKIPPED!
+ Total two-electron part of grad. CPU  :      0.62s    WALL :      0.00s
+ Total time in RMOLGRD1           CPU  :      0.67s    WALL :      0.00s
+
+
+
+                  **********************************************
+                  ********** Final output from PSIGRD **********
+                  **********************************************
+
+
+
+@                         Total molecular gradient
+@                         ------------------------
+
+@C                     0.0000000000        -0.0000000029         0.1362851636
+@C                     0.0000000000         0.0000000029        -0.1362851636
+@H                     0.0019064693         0.0011006994        -0.0016860969
+@H                    -0.0019064693         0.0011006994        -0.0016860969
+@H                     0.0000000000        -0.0022013975        -0.0016860961
+@H                     0.0019064693        -0.0011006994         0.0016860969
+@H                    -0.0019064693        -0.0011006994         0.0016860969
+@H                     0.0000000000         0.0022013975         0.0016860961
+
+
+
+
+
+                            **************************
+                            *** Output from MINEND ***
+                            **************************
+
+
+ Energy converged       no  
+ Gradient converged     no  
+ Step converged         no  
+ Totally sym. index      0
+ Hessian index           0
+ End of minimization    no  
+
+
+           :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+           ::::::::::::::: Minimization Control Center :::::::::::::::
+           :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+                                Next geometry (au)
+                                ------------------
+
+ C          0.0000000000            0.0000000042            1.7547876282
+ C          0.0000000000           -0.0000000042           -1.7547876282
+ H          1.6870589522            0.9740239388            2.3980030301
+ H         -1.6870589522            0.9740239388            2.3980030301
+ H          0.0000000000           -1.9480478733            2.3980030191
+ H          1.6870589522           -0.9740239388           -2.3980030301
+ H         -1.6870589522           -0.9740239388           -2.3980030301
+ H          0.0000000000            1.9480478733           -2.3980030191
+
+
+
+
+
+                             Optimization information
+                             ------------------------
+
+ Iteration number               :       1
+ End of minimization            :       F 
+ Energy at this geometry is     :     -78.257024183565
+ Energy change from last geom.  : -.437895D-03 (the threshold is:0.10D-05)
+ Norm of gradient               : 0.192856D+00 (the threshold is:0.10D-04)
+ Norm of step                   : 0.455651D-01 (the threshold is:0.10D-04)
+ Updated trust radius           : 0.125964D+00
+ Total Hessian index            :       0
+
+
+ 
+ 
+Contents of the input file
+--------------------------
+ 
+**DIRAC                                                                                             
+.TITLE                                                                                              
+Minimize ethane geometry with C-C bond frozen                                                       
+.OPTIMIZE                                                                                           
+*OPTIMIZE                                                                                           
+.BAKER                                                                                              
+.CONSTR                                                                                             
+1                                                                                                   
+1                                                                                                   
+**GENERAL                                                                                           
+.SPHTRA                                                                                             
+1 0                                                                                                 
+**INTEGRALS                                                                                         
+*TWOINT                                                                                             
+.SCREEN                                                                                             
+ 1.0D-11                                                                                            
+**HAMILTONIAN                                                                                       
+.LEVY-LEBLOND                                                                                       
+**WAVE FUNCTIONS                                                                                    
+.DHF                                                                                                
+*DHFCAL                                                                                             
+.CLOSED SHELL                                                                                       
+18                                                                                                  
+.EVCCNV                                                                                             
+ 1.0D-8                                                                                             
+*END OF                                                                                             
+ 
+ 
+Contents of the molecule file
+-----------------------------
+ 
+WHATEVER                                                                                            
+Ethane. Basis: STO-3G                                                                               
+Project: Benchmark                                                                                  
+C   2    0                                                                                          
+        6.    2                                                                                     
+C    -0.0000000000001548  0.0000000041823010  1.7547876282000050       *                            
+C    -0.0000000000000741 -0.0000000041822946 -1.7547876281999946       *                            
+LARGE BASIS STO-3G                                                                                  
+        1.    6                                                                                     
+H     1.6870589522121253  0.9740239388018745  2.3980030301149280       *                            
+H    -1.6870589522121637  0.9740239388014188  2.3980030301163286       *                            
+H     0.0000000000000597 -1.9480478733063322  2.3980030190504809       *                            
+H     1.6870589522121651 -0.9740239388018431 -2.3980030301150830       *                            
+H    -1.6870589522121102 -0.9740239388014411 -2.3980030301161412       *                            
+H     0.0000000000001527  1.9480478733063165 -2.3980030190505235       *                            
+LARGE BASIS STO-3G                                                                                  
+
+
+    *************************************************************************
+    ************* Minimize ethane geometry with C-C bond frozen *************
+    *************************************************************************
+
+   * Geometry optimization
+     IMPORTANT: *WAVE F must be present for readin of wavefunction.
+
+
+    **************************************************************************
+    ************************** General DIRAC set-up **************************
+    **************************************************************************
+
+   CODATA Recommended Values of the Fundamental Physical Constants: 1998  
+                Peter J. Mohr and Barry N. Taylor                         
+   Journal of Physical and Chemical Reference Data, Vol. 28, No. 6, 1999  
+ * The speed of light :        137.0359998
+ * running in four-component mode
+ * Direct evaluation of the following two-electron integrals:
+   - LL-integrals
+   - SL-integrals
+   - SS-integrals
+   - GT-integrals
+ * Spherical transformation embedded in MO-transformation
+   for large components
+ * Thresholds for linear dependence:
+   Large components:   1.00D-06
+   Small components:   1.00D-08
+ DFPCMO: IBEIG read in I2 format.
+ * General print level   :   0
+
+
+    *************************************************************************
+    ****************** Output from HERMIT input processing ******************
+    *************************************************************************
+
+ Default print level:        1
+ Nuclear model: Gaussian charge distribution.
+
+ Two-electron integrals not calculated.
+
+
+ Ordinary (field-free non-relativistic) Hamiltonian integrals not calculated.
+
+
+
+ Settings for FCK3 calculation:
+ ------------------------------
+
+Dynamical threshold is not (yet) implemented in DIRAC
+
+
+    *************************************************************************
+    ****************** Output from READIN input processing ******************
+    *************************************************************************
+
+
+
+  Title Cards
+  -----------
+
+  Ethane. Basis: STO-3G                                                   
+  Project: Benchmark                                                      
+
+  Nuclear Gaussian exponent for atom of charge   6.000 :    6.8077502929D+08
+
+  Nuclear Gaussian exponent for atom of charge   1.000 :    2.1248239171D+09
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Point group: C1 
+
+   * Character table
+
+        |  E 
+   -----+-----
+    A   |   1
+
+   * Direct product table
+
+        | A  
+   -----+-----
+    A   | A  
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * One fermion irrep:   E1 
+   * Quaternionic group. NZ = 4
+   * Direct product decomposition:
+          E1  x E1  : A   + A   + A   + A  
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1
+      La  |  A  (1)  A  (1)  |
+      Sa  |  A  (1)  A  (1)  |
+      Lb  |  A  (1)  A  (1)  |
+      Sb  |  A  (1)  A  (1)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    A    1  i  j  k
+
+  QM-QM nuclear repulsion energy :   39.076955586970
+  QM-pc interaction energy       :    0.000000000000
+  pc-pc interaction energy       :    0.000000000000
+  Total interaction energy       :   39.076955586970
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types:     2
+  Total number of atoms:    8
+
+  label    atoms   charge   prim    cont     basis   
+  ----------------------------------------------------------------------
+  C           1       6      15       5      L  - [6s3p|2s1p]                                                    
+                             39      39      S  - [3s6p3d|3s6p3d]                                                
+  C           1       6      15       5      L  - [6s3p|2s1p]                                                    
+                             39      39      S  - [3s6p3d|3s6p3d]                                                
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  ----------------------------------------------------------------------
+                             48      16      L  - large components
+                            132     132      S  - small components
+  ----------------------------------------------------------------------
+  total:      8      18     180     148
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+  MNF.INP input file (for the AMFI stuff) is ready.
+  CAPOUT: preparing the "CAPDIR.inp" file with DIRAC unique order of atomic basis functions. 
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1   2
+   Elements      Contraction                       References                     
+   H - He: (3s)         -> [1s]       W.J. Hehre, R.F. Stewart and J.A. Pople,    
+   Li - Ne: (6s,3p)     -> [2s,1p]    J. Chem. Phys. 2657 (1969).                 
+   Na - Ar: (9s,6p)     -> [3s,2p]    W.J. Hehre, R. Ditchfield, R.F. Stewart,    
+                                      J.A. Pople, J. Chem. Phys.  2769 (1970).    
+   K,Ca - : (12s,9p)    -> [4s,3p]    W.J. Pietro, B.A. Levy, W.J. Hehre and R.F. 
+   Ga - Kr                            Stewart, Inorg. Chem. 19, 2225 (1980).      
+   Sc - Zn: (12s,9p,3d) -> [4s,3p,1d] W.J. Pietro and W.J. Hehre, J. Comp. Chem.  
+   Y - Cd: (15s,12p,6d) -> [5s,4p,2d] 4, 241 (1983).                              
+  ***********************************************************************         
+
+
+  Cartesian Coordinates
+  ---------------------
+
+  Total number of coordinates: 24
+
+
+   1   C        x      0.0000000000
+   2            y      0.0000000042
+   3            z      1.7547876282
+
+   4   C        x      0.0000000000
+   5            y     -0.0000000042
+   6            z     -1.7547876282
+
+   7   H        x      1.6870589522
+   8            y      0.9740239388
+   9            z      2.3980030301
+
+  10   H        x     -1.6870589522
+  11            y      0.9740239388
+  12            z      2.3980030301
+
+  13   H        x      0.0000000000
+  14            y     -1.9480478733
+  15            z      2.3980030191
+
+  16   H        x      1.6870589522
+  17            y     -0.9740239388
+  18            z     -2.3980030301
+
+  19   H        x     -1.6870589522
+  20            y     -0.9740239388
+  21            z     -2.3980030301
+
+  22   H        x      0.0000000000
+  23            y      1.9480478733
+  24            z     -2.3980030191
+
+
+
+  Cartesian coordinates xyz format (angstrom)
+  -------------------------------------------
+
+    8
+ 
+C      0.0000000000   0.0000000022   0.9285936183
+C      0.0000000000  -0.0000000022  -0.9285936183
+H      0.8927531466   0.5154312688   1.2689685490
+H     -0.8927531466   0.5154312688   1.2689685490
+H      0.0000000000  -1.0308625352   1.2689685431
+H      0.8927531466  -0.5154312688  -1.2689685490
+H     -0.8927531466  -0.5154312688  -1.2689685490
+H      0.0000000000   1.0308625352  -1.2689685431
+
+
+   Interatomic separations (in Angstroms):
+   ---------------------------------------
+
+            C           C           H           H           H           H   
+
+   C       0.000000
+   C       1.857187    0.000000
+   H       1.085602    2.427335    0.000000
+   H       1.085602    2.427335    1.785506    0.000000
+   H       1.085602    2.427335    1.785506    1.785506    0.000000
+   H       2.427335    1.085602    2.739307    3.269837    2.739307    0.000000
+   H       2.427335    1.085602    3.269837    2.739307    2.739307    1.785506
+   H       2.427335    1.085602    2.739307    2.739307    3.269837    1.785506
+
+            H           H   
+
+   H       0.000000
+   H       1.785506    0.000000
+
+
+
+
+  Bond distances (angstroms):
+  ---------------------------
+
+                  atom 1     atom 2                           distance
+                  ------     ------                           --------
+  bond distance:    C          C                              1.857187
+  bond distance:    H          C                              1.085602
+  bond distance:    H          C                              1.085602
+  bond distance:    H          C                              1.085602
+  bond distance:    H          C                              1.085602
+  bond distance:    H          C                              1.085602
+  bond distance:    H          C                              1.085602
+
+
+  Bond angles (degrees):
+  ----------------------
+
+                  atom 1     atom 2     atom 3                   angle
+                  ------     ------     ------                   -----
+  bond angle:       H          C          C                    108.272
+  bond angle:       H          C          C                    108.272
+  bond angle:       H          C          H                    110.643
+  bond angle:       H          C          C                    108.272
+  bond angle:       H          C          H                    110.643
+  bond angle:       H          C          H                    110.643
+  bond angle:       H          C          C                    108.272
+  bond angle:       H          C          C                    108.272
+  bond angle:       H          C          H                    110.643
+  bond angle:       H          C          C                    108.272
+  bond angle:       H          C          H                    110.643
+  bond angle:       H          C          H                    110.643
+
+
+  Nuclear repulsion energy :   39.076955586970
+
+
+                                GETLAB: AO-labels
+                                -----------------
+
+   * Large components:   14
+     1  L C   1 s        2  L C   1 px       3  L C   1 py       4  L C   1 pz       5  L C   1 s        6  L C   1 px  
+     7  L C   1 py       8  L C   1 pz       9  L H   1 s       10  L H   1 s       11  L H   1 s       12  L H   1 s   
+    13  L H   1 s       14  L H   1 s   
+   * Small components:   38
+    15  S C   1 s       16  S C   1 px      17  S C   1 py      18  S C   1 pz      19  S C   1 dxx     20  S C   1 dxy 
+    21  S C   1 dxz     22  S C   1 dyy     23  S C   1 dyz     24  S C   1 dzz     25  S C   1 s       26  S C   1 px  
+    27  S C   1 py      28  S C   1 pz      29  S C   1 dxx     30  S C   1 dxy     31  S C   1 dxz     32  S C   1 dyy 
+    33  S C   1 dyz     34  S C   1 dzz     35  S H   1 px      36  S H   1 py      37  S H   1 pz      38  S H   1 px  
+    39  S H   1 py      40  S H   1 pz      41  S H   1 px      42  S H   1 py      43  S H   1 pz      44  S H   1 px  
+    45  S H   1 py      46  S H   1 pz      47  S H   1 px      48  S H   1 py      49  S H   1 pz      50  S H   1 px  
+    51  S H   1 py      52  S H   1 pz  
+
+
+  Symmetry Orbitals
+  -----------------
+
+  Number of orbitals in each symmetry:          148
+  Number of large orbitals in each symmetry:     16
+  Number of small orbitals in each symmetry:    132
+
+* Large component functions
+
+  Symmetry  A  ( 1)
+
+        2 functions:    C  s   
+        1 functions:    C  px  
+        1 functions:    C  py  
+        1 functions:    C  pz  
+        2 functions:    C  s   
+        1 functions:    C  px  
+        1 functions:    C  py  
+        1 functions:    C  pz  
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+
+* Small component functions
+
+  Symmetry  A  ( 1)
+
+        3 functions:    C  s   
+        6 functions:    C  px  
+        6 functions:    C  py  
+        6 functions:    C  pz  
+        3 functions:    C  dxx 
+        3 functions:    C  dxy 
+        3 functions:    C  dxz 
+        3 functions:    C  dyy 
+        3 functions:    C  dyz 
+        3 functions:    C  dzz 
+        3 functions:    C  s   
+        6 functions:    C  px  
+        6 functions:    C  py  
+        6 functions:    C  pz  
+        3 functions:    C  dxx 
+        3 functions:    C  dxy 
+        3 functions:    C  dxz 
+        3 functions:    C  dyy 
+        3 functions:    C  dyz 
+        3 functions:    C  dzz 
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+
+
+   ***************************************************************************
+   *************************** Hamiltonian defined ***************************
+   ***************************************************************************
+
+ * Print level:    0
+ * Levy-Leblond Hamiltonian
+   - Spin-orbit interactions neglected
+ * Default integral flags passed to all modules
+   - LL-integrals:     1
+   - LS-integrals:     0
+   - SS-integrals:     0
+   - GT-integrals:     0
+ * Basis set:
+   - contracted large component basis set
+   - uncontracted small component basis set
+
+
+ Information about the restricted kinetic balance scheme:
+ * RKB projection:
+   1: No Pre-projection in scalar basis
+   2: Removal of unphysical solutions (via diagonalization of free particle Hamiltonian)
+ *** WARNING **** This procedure may give severe linear  dependence problems for large basis sets
+
+
+    **************************************************************************
+    ************************** Wave function module **************************
+    **************************************************************************
+
+ Jobs in this run (in execution order):
+ * Hartree-Fock calculation
+===========================================================================
+ DHFINP: Set-up for Hartree-Fock calculation:
+===========================================================================
+ * Number of fermion irreps: 1
+ * Closed shell SCF calculation with   18 electrons in
+       9 orbitals in Fermion irrep 1
+ * Bare nucleus screening correction used for start guess
+ * General print level   :   0
+ ***** TRIAL FUNCTION *****
+ * Trial vectors read from file DFCOEF
+ ***** CONVERGENCE CRITERIA *****
+ * Convergence on norm of error vector (gradient).
+   Desired convergence:1.000D-08
+   Allowed convergence:1.000D-08
+
+ ***** CONVERGENCE CONTROL *****
+ * Fock matrix constructed using differential density matrix
+    with optimal parameter.
+ * DIIS (in MO basis)
+ * DIIS will be activated when convergence reaches : 1.00D+20
+   - Maximum size of B-matrix:   10
+ * Damping of Fock matrix when DIIS is not activated. 
+   Weight of old matrix    : 0.250
+ * Maximum number of SCF iterations  :   50
+ * No quadratic convergent Hartree-Fock
+ * Contributions from 2-electron integrals to Fock matrix:
+   LL-integrals.
+ * NB!!! No e-p rotations in 2nd order optimization.
+ ***** OUTPUT CONTROL *****
+ * Only electron eigenvalues written out.
+
+
+ ********************************************************************************
+ *************************** Input consistency checks ***************************
+ ********************************************************************************
+
+
+
+    *************************************************************************
+    ************************ End of input processing ************************
+    *************************************************************************
+
+ PAMSET reports: TWOCOMPBSS F
+
+
+                      Nuclear contribution to dipole moments
+                      --------------------------------------
+
+                               au             Debye
+
+                    x      0.00000000      0.00000000
+                    y      0.00000000      0.00000000
+                    z      0.00000000      0.00000000
+
+                        1 Debye =   2.54177000 a.u. 
+  No SS-nuclear attraction integrals(MOLFLD), adapted PDOINT=+000
+
+
+                       Generating Lowdin canonical matrix:
+                       -----------------------------------
+
+   L   A     * Deleted:          0(Proj:          0, Lindep:          0)
+   S   A     * Deleted:          0
+
+
+                                Output from MODHAM
+                                ------------------
+
+* All positronic solutions deleted !
+
+
+      **********************************************************************
+      ************************* Orbital dimensions *************************
+      **********************************************************************
+
+No. of positive energy orbitals (NESH):    16
+No. of negative energy orbitals (NPSH):     0
+Total no. of orbitals           (NORB):    16
+
+
+   ****************************************************************************
+   ************************* Hartree-Fock calculation *************************
+   ****************************************************************************
+
+
+########## START ITERATION NO.   1 ##########   Sat May 21 12:44:30 2011
+
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2570241828022972
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:29 2011
+
+* GETGAB: label "GABAO1XX" not found; calling GABGEN.
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   15.65%    0.11%   63.29%   0.04800296s
+It.   1    -78.25929959664      7.83D+01  0.00D+00  9.87D-03               0.13200808s   LL             Sat May 21
+
+########## START ITERATION NO.   2 ##########   Sat May 21 12:44:30 2011
+
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   15.65%    0.11%   63.29%   0.04800296s
+>>> Total wall time: 1.00000000s
+>>> Total CPU-time : 0.06000400s
+
+########## END ITERATION NO.   2 ##########   Sat May 21 12:44:30 2011
+
+It.   2    -78.25721690883     -2.08D-03 -2.94D-03  2.53D-03               0.06000400s   LL             Sat May 21
+
+########## START ITERATION NO.   3 ##########   Sat May 21 12:44:31 2011
+
+    3 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   17.55%    0.00%   61.84%   0.05200291s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06400394s
+
+########## END ITERATION NO.   3 ##########   Sat May 21 12:44:31 2011
+
+It.   3    -78.25721967206      2.76D-06  8.29D-04  5.52D-04   DIIS   2    0.06400394s   LL             Sat May 21
+
+########## START ITERATION NO.   4 ##########   Sat May 21 12:44:31 2011
+
+    4 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   17.68%    0.00%   61.74%   0.04800296s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06000304s
+
+########## END ITERATION NO.   4 ##########   Sat May 21 12:44:31 2011
+
+It.   4    -78.25721982867      1.57D-07 -1.18D-04  1.31D-04   DIIS   3    0.06000304s   LL             Sat May 21
+
+########## START ITERATION NO.   5 ##########   Sat May 21 12:44:31 2011
+
+    5 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   18.09%    0.00%   61.43%   0.04800320s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06400394s
+
+########## END ITERATION NO.   5 ##########   Sat May 21 12:44:31 2011
+
+It.   5    -78.25721983815      9.48D-09  1.96D-05  1.87D-06   DIIS   4    0.06400394s   LL             Sat May 21
+
+########## START ITERATION NO.   6 ##########   Sat May 21 12:44:31 2011
+
+    6 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   25.46%    0.11%   55.94%   0.05200291s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.07200503s
+
+########## END ITERATION NO.   6 ##########   Sat May 21 12:44:31 2011
+
+It.   6    -78.25721983813     -1.94D-11 -1.51D-07  1.95D-07   DIIS   5    0.07200503s   LL             Sat May 21
+
+########## START ITERATION NO.   7 ##########   Sat May 21 12:44:31 2011
+
+    7 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.76%   38.25%    4.53%   46.28%   0.04800296s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.07200384s
+
+########## END ITERATION NO.   7 ##########   Sat May 21 12:44:31 2011
+
+It.   7    -78.25721983807     -6.25D-11 -1.09D-08  6.99D-09   DIIS   5    0.07200384s   LL             Sat May 21
+
+
+                                   SCF - CYCLE
+                                   -----------
+
+* Convergence on norm of error vector (gradient).
+  Desired convergence:1.000D-08
+  Allowed convergence:1.000D-08
+
+* ERGVAL - convergence in total energy
+* FCKVAL - convergence in maximum change in total Fock matrix
+* EVCVAL - convergence in error vector (gradient)
+--------------------------------------------------------------------------------------------------------------------------------
+           Energy               ERGVAL    FCKVAL    EVCVAL      Conv.acc    CPU          Integrals   Time stamp
+--------------------------------------------------------------------------------------------------------------------------------
+It.   1    -78.25929959664      7.83D+01  0.00D+00  9.87D-03               0.13200808s   LL             Sat May 21
+It.   2    -78.25721690883     -2.08D-03 -2.94D-03  2.53D-03               0.06000400s   LL             Sat May 21
+It.   3    -78.25721967206      2.76D-06  8.29D-04  5.52D-04   DIIS   2    0.06400394s   LL             Sat May 21
+It.   4    -78.25721982867      1.57D-07 -1.18D-04  1.31D-04   DIIS   3    0.06000304s   LL             Sat May 21
+It.   5    -78.25721983815      9.48D-09  1.96D-05  1.87D-06   DIIS   4    0.06400394s   LL             Sat May 21
+It.   6    -78.25721983813     -1.94D-11 -1.51D-07  1.95D-07   DIIS   5    0.07200503s   LL             Sat May 21
+It.   7    -78.25721983807     -6.25D-11 -1.09D-08  6.99D-09   DIIS   5    0.07200384s   LL             Sat May 21
+--------------------------------------------------------------------------------------------------------------------------------
+* Convergence after    7 iterations.
+* Average elapsed time per iteration: 
+      LL           :    0.14285714s
+
+
+                                   TOTAL ENERGY
+                                   ------------
+
+   Electronic energy                        :    -117.33417542504174
+
+   Other contributions to the total energy
+   Nuclear repulsion energy                 :      39.07695558697039
+
+   Sum of all contributions to the energy
+   Total energy                             :     -78.25721983807135
+
+
+                                   Eigenvalues
+                                   -----------
+
+
+* Boson symmetry A  
+  * Closed shell, f = 1.0000
+-11.03437411034073  ( 2)   -11.03388530630538  ( 2)    -0.92518869916150  ( 2)    -0.82750800391889  ( 2)    -0.54739760723664  ( 4)
+ -0.48714072652516  ( 4)    -0.38256522334636  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+  0.43891534135336  ( 2)     0.69997545550783  ( 4)     0.71765767180389  ( 2)     0.75045368557331  ( 2)     0.76268603177140  ( 4)
+
+* Occupation of subblocks
+                       E1 :  A                                                                              
+  closed shells (f=1.0000):    9
+ virtual shells (f=0.0000):    7
+tot.num. of pos.erg shells:   16
+
+
+* HOMO - LUMO gap:
+
+    E(LUMO) :     0.43891534 au (symmetry A  )
+  - E(HOMO) :    -0.38256522 au (symmetry A  )
+  ------------------------------------------
+    gap     :     0.82148056 au
+
+ Trust radius squarely increased due to very good ratio.
+ Updated trust radius   0.12596
+
+* Reading two-electron Fock matrix for DHF molecular gradient
+
+* REAFCK: Fock matrix read from file /tmp/bast.constrained_ethane_2.32480/DFFCK2                 
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:31 2011
+
+* Reading one-electron Fock matrix for DHF molecular gradient
+
+* REAFCK: Fock matrix read from file /tmp/bast.constrained_ethane_2.32480/DFFCK1                 
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:30 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2572198381338211
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:31 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2572198381338211
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:31 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2572198381338211
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:31 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2572198381338211
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:31 2011
+
+
+        ******************************************************************
+        ********** Analytical calculation of molecular gradient **********
+        ******************************************************************
+
+ Special information about calculation of the molecular gradient:
+
+ Levy-Leblond Hamiltonian: 
+    - No small-small nuclear attraction integrals.
+    - No small-small reorthonormalization gradient
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2572198381338211
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:31 2011
+
+
+                           RMOLGRD1: One-electron part
+                           ---------------------------
+
+
+ 
+     Date and time (Linux)  : Sat May 21 12:44:31 2011
+     Host name              :                                         
+
+ Estimated CPU time:        0.05 seconds.
+ Estimated WALL time:       0.00 seconds.
+
+
+Time for one-electron part of gradient    :      0.04 seconds.
+
+
+
+                           RMOLGRD1: Two-electron part
+                           ---------------------------
+
+
+* GETGAB: label "GABAO12x" not found; calling GABGEN.
+
+ Time for GAB matrix                       :      0.52 seconds.
+
+
+
+                          RMOLGRD1: LL-Two-electron part
+                          ------------------------------
+
+ Calculate LL-Two-electron gradient: yes
+
+
+ 
+     Date and time (Linux)  : Sat May 21 12:44:32 2011
+     Host name              :                                         
+
+ Estimated CPU time:        0.10 seconds.
+ Estimated WALL time:       0.00 seconds.
+
+Step 1 Screening
+* Gradient screening statistics:
+               X            Y            Z   
+SCR:LL        0.00%        0.00%        0.00%
+
+Detailed screening statistics
+
+          %int   Type    %int      X        Y        Z   
+TWOCEN   30.47%                   0.00%    0.00%    0.00%
+
+
+                 1122   15.00%    0.00%    0.00%    0.00%
+                 1212   22.86%    0.00%    0.00%    0.00%
+                 1221    0.00%    N/A      N/A      N/A  
+                 1222   46.07%    0.00%    0.00%    0.00%
+                 1211    1.61%    0.00%    0.00%    0.00%
+                 1112   14.46%    0.00%    0.00%    0.00%
+                 1121    0.00%    N/A      N/A      N/A  
+
+
+THRCEN   50.27%                   0.00%    0.00%    0.00%
+
+
+                 1213    6.93%    0.00%    0.00%    0.00%
+                 1223   19.91%    0.00%    0.00%    0.00%
+                 1231    0.00%    N/A      N/A      N/A  
+                 1232   32.90%    0.00%    0.00%    0.00%
+                 1123    6.93%    0.00%    0.00%    0.00%
+                 1233   33.33%    0.00%    0.00%    0.00%
+
+
+FOUCEN   19.26%                   0.00%    0.00%    0.00%
+
+
+                 1234  100.00%    0.00%    0.00%    0.00%
+
+
+Step 1 + Step 2 Screening
+* Gradient screening statistics:
+               X            Y            Z   
+SCR:LL        2.07%        2.07%        2.07%
+
+Detailed screening statistics
+
+          %int   Type    %int      X        Y        Z   
+TWOCEN   30.47%                   6.79%    6.79%    6.79%
+
+
+                 1122   15.00%    5.71%    5.71%    5.71%
+                 1212   22.86%   10.00%   10.00%   10.00%
+                 1221    0.00%    N/A      N/A      N/A  
+                 1222   46.07%    3.95%    3.95%    3.95%
+                 1211    1.61%    0.00%    0.00%    0.00%
+                 1112   14.46%   12.59%   12.59%   12.59%
+                 1121    0.00%    N/A      N/A      N/A  
+
+
+THRCEN   50.27%                   0.00%    0.00%    0.00%
+
+
+                 1213    6.93%    0.00%    0.00%    0.00%
+                 1223   19.91%    0.00%    0.00%    0.00%
+                 1231    0.00%    N/A      N/A      N/A  
+                 1232   32.90%    0.00%    0.00%    0.00%
+                 1123    6.93%    0.00%    0.00%    0.00%
+                 1233   33.33%    0.00%    0.00%    0.00%
+
+
+FOUCEN   19.26%                   0.00%    0.00%    0.00%
+
+
+                 1234  100.00%    0.00%    0.00%    0.00%
+
+
+
+ Time for LL-two-electron part of gradient :      0.09 seconds.
+
+
+
+                          RMOLGRD1: LS-Two-electron part
+                          ------------------------------
+
+
+ Calculate LS-Two-electron gradient: no 
+
+
+
+                          RMOLGRD1: Skipping LS-Two-el.
+                          -----------------------------
+
+
+
+                          RMOLGRD1: SS-Two-electron part
+                          ------------------------------
+
+ Calculate SS-Two-electron gradient: no 
+
+
+
+                          RMOLGRD1: Skipping SS-Two-el.
+                          -----------------------------
+
+
+
+                               Timings for RMOLGRD1
+                               --------------------
+
+
+ One-electron part of gradient    CPU  :      0.04s    WALL :      0.00s
+
+ GAB matrix for screening         CPU  :      0.52s    WALL :      1.00s
+ LL-Two-electron part of gradient CPU  :      0.09s    WALL :      0.00s
+ LS-Two-electron part SKIPPED!
+ SS-Two-electron part SKIPPED!
+ Total two-electron part of grad. CPU  :      0.61s    WALL :      1.00s
+ Total time in RMOLGRD1           CPU  :      0.66s    WALL :      1.00s
+
+
+
+                  **********************************************
+                  ********** Final output from PSIGRD **********
+                  **********************************************
+
+
+
+@                         Total molecular gradient
+@                         ------------------------
+
+@C                     0.0000000000         0.0000000004         0.1328501160
+@C                     0.0000000000        -0.0000000004        -0.1328501160
+@H                    -0.0000555012        -0.0000320440         0.0000619184
+@H                     0.0000555012        -0.0000320440         0.0000619184
+@H                     0.0000000000         0.0000640890         0.0000619171
+@H                    -0.0000555012         0.0000320440        -0.0000619184
+@H                     0.0000555012         0.0000320440        -0.0000619184
+@H                     0.0000000000        -0.0000640890        -0.0000619171
+
+
+
+
+
+                            **************************
+                            *** Output from MINEND ***
+                            **************************
+
+
+ Energy converged       no  
+ Gradient converged     yes 
+ Step converged         no  
+ Totally sym. index      0
+ Hessian index           0
+ End of minimization    no  
+
+
+           :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+           ::::::::::::::: Minimization Control Center :::::::::::::::
+           :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+                                Next geometry (au)
+                                ------------------
+
+ C          0.0000000000           -0.0000000080            1.7547876282
+ C          0.0000000000            0.0000000080           -1.7547876282
+ H          1.6873570863            0.9741960626            2.3971530106
+ H         -1.6873570863            0.9741960626            2.3971530106
+ H          0.0000000000           -1.9483921386            2.3971530322
+ H          1.6873570863           -0.9741960626           -2.3971530106
+ H         -1.6873570863           -0.9741960626           -2.3971530106
+ H          0.0000000000            1.9483921386           -2.3971530322
+
+
+
+
+
+                             Optimization information
+                             ------------------------
+
+ Iteration number               :       2
+ End of minimization            :       F 
+ Energy at this geometry is     :     -78.257219838071
+ Energy change from last geom.  : -.195655D-03 (the threshold is:0.10D-05)
+ Norm of gradient               : 0.187879D+00 (the threshold is:0.10D-04)
+ Norm of step                   : 0.151764D-02 (the threshold is:0.10D-04)
+ Updated trust radius           : 0.125964D+00
+ Total Hessian index            :       0
+
+
+ 
+ 
+Contents of the input file
+--------------------------
+ 
+**DIRAC                                                                                             
+.TITLE                                                                                              
+Minimize ethane geometry with C-C bond frozen                                                       
+.OPTIMIZE                                                                                           
+*OPTIMIZE                                                                                           
+.BAKER                                                                                              
+.CONSTR                                                                                             
+1                                                                                                   
+1                                                                                                   
+**GENERAL                                                                                           
+.SPHTRA                                                                                             
+1 0                                                                                                 
+**INTEGRALS                                                                                         
+*TWOINT                                                                                             
+.SCREEN                                                                                             
+ 1.0D-11                                                                                            
+**HAMILTONIAN                                                                                       
+.LEVY-LEBLOND                                                                                       
+**WAVE FUNCTIONS                                                                                    
+.DHF                                                                                                
+*DHFCAL                                                                                             
+.CLOSED SHELL                                                                                       
+18                                                                                                  
+.EVCCNV                                                                                             
+ 1.0D-8                                                                                             
+*END OF                                                                                             
+ 
+ 
+Contents of the molecule file
+-----------------------------
+ 
+WHATEVER                                                                                            
+Ethane. Basis: STO-3G                                                                               
+Project: Benchmark                                                                                  
+C   2    0                                                                                          
+        6.    2                                                                                     
+C     0.0000000000017048 -0.0000000080208232  1.7547876281999997       *                            
+C     0.0000000000012504  0.0000000080207994 -1.7547876281999999       *                            
+LARGE BASIS STO-3G                                                                                  
+        1.    6                                                                                     
+H     1.6873570862510172  0.9741960626394400  2.3971530105761878       *                            
+H    -1.6873570862531935  0.9741960626317154  2.3971530105729748       *                            
+H     0.0000000000011637 -1.9483921386156762  2.3971530322144949       *                            
+H     1.6873570862507812 -0.9741960626395806 -2.3971530105753556       *                            
+H    -1.6873570862534122 -0.9741960626315695 -2.3971530105739443       *                            
+H     0.0000000000006881  1.9483921386156944 -2.3971530322143573       *                            
+LARGE BASIS STO-3G                                                                                  
+
+
+    *************************************************************************
+    ************* Minimize ethane geometry with C-C bond frozen *************
+    *************************************************************************
+
+   * Geometry optimization
+     IMPORTANT: *WAVE F must be present for readin of wavefunction.
+
+
+    **************************************************************************
+    ************************** General DIRAC set-up **************************
+    **************************************************************************
+
+   CODATA Recommended Values of the Fundamental Physical Constants: 1998  
+                Peter J. Mohr and Barry N. Taylor                         
+   Journal of Physical and Chemical Reference Data, Vol. 28, No. 6, 1999  
+ * The speed of light :        137.0359998
+ * running in four-component mode
+ * Direct evaluation of the following two-electron integrals:
+   - LL-integrals
+   - SL-integrals
+   - SS-integrals
+   - GT-integrals
+ * Spherical transformation embedded in MO-transformation
+   for large components
+ * Thresholds for linear dependence:
+   Large components:   1.00D-06
+   Small components:   1.00D-08
+ DFPCMO: IBEIG read in I2 format.
+ * General print level   :   0
+
+
+    *************************************************************************
+    ****************** Output from HERMIT input processing ******************
+    *************************************************************************
+
+ Default print level:        1
+ Nuclear model: Gaussian charge distribution.
+
+ Two-electron integrals not calculated.
+
+
+ Ordinary (field-free non-relativistic) Hamiltonian integrals not calculated.
+
+
+
+ Settings for FCK3 calculation:
+ ------------------------------
+
+Dynamical threshold is not (yet) implemented in DIRAC
+
+
+    *************************************************************************
+    ****************** Output from READIN input processing ******************
+    *************************************************************************
+
+
+
+  Title Cards
+  -----------
+
+  Ethane. Basis: STO-3G                                                   
+  Project: Benchmark                                                      
+
+  Nuclear Gaussian exponent for atom of charge   6.000 :    6.8077502929D+08
+
+  Nuclear Gaussian exponent for atom of charge   1.000 :    2.1248239171D+09
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Point group: C1 
+
+   * Character table
+
+        |  E 
+   -----+-----
+    A   |   1
+
+   * Direct product table
+
+        | A  
+   -----+-----
+    A   | A  
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * One fermion irrep:   E1 
+   * Quaternionic group. NZ = 4
+   * Direct product decomposition:
+          E1  x E1  : A   + A   + A   + A  
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1
+      La  |  A  (1)  A  (1)  |
+      Sa  |  A  (1)  A  (1)  |
+      Lb  |  A  (1)  A  (1)  |
+      Sb  |  A  (1)  A  (1)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    A    1  i  j  k
+
+  QM-QM nuclear repulsion energy :   39.077582965582
+  QM-pc interaction energy       :    0.000000000000
+  pc-pc interaction energy       :    0.000000000000
+  Total interaction energy       :   39.077582965582
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types:     2
+  Total number of atoms:    8
+
+  label    atoms   charge   prim    cont     basis   
+  ----------------------------------------------------------------------
+  C           1       6      15       5      L  - [6s3p|2s1p]                                                    
+                             39      39      S  - [3s6p3d|3s6p3d]                                                
+  C           1       6      15       5      L  - [6s3p|2s1p]                                                    
+                             39      39      S  - [3s6p3d|3s6p3d]                                                
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  H           1       1       3       1      L  - [3s|1s]                                                        
+                              9       9      S  - [3p|3p]                                                        
+  ----------------------------------------------------------------------
+                             48      16      L  - large components
+                            132     132      S  - small components
+  ----------------------------------------------------------------------
+  total:      8      18     180     148
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+  MNF.INP input file (for the AMFI stuff) is ready.
+  CAPOUT: preparing the "CAPDIR.inp" file with DIRAC unique order of atomic basis functions. 
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1   2
+   Elements      Contraction                       References                     
+   H - He: (3s)         -> [1s]       W.J. Hehre, R.F. Stewart and J.A. Pople,    
+   Li - Ne: (6s,3p)     -> [2s,1p]    J. Chem. Phys. 2657 (1969).                 
+   Na - Ar: (9s,6p)     -> [3s,2p]    W.J. Hehre, R. Ditchfield, R.F. Stewart,    
+                                      J.A. Pople, J. Chem. Phys.  2769 (1970).    
+   K,Ca - : (12s,9p)    -> [4s,3p]    W.J. Pietro, B.A. Levy, W.J. Hehre and R.F. 
+   Ga - Kr                            Stewart, Inorg. Chem. 19, 2225 (1980).      
+   Sc - Zn: (12s,9p,3d) -> [4s,3p,1d] W.J. Pietro and W.J. Hehre, J. Comp. Chem.  
+   Y - Cd: (15s,12p,6d) -> [5s,4p,2d] 4, 241 (1983).                              
+  ***********************************************************************         
+
+
+  Cartesian Coordinates
+  ---------------------
+
+  Total number of coordinates: 24
+
+
+   1   C        x      0.0000000000
+   2            y     -0.0000000080
+   3            z      1.7547876282
+
+   4   C        x      0.0000000000
+   5            y      0.0000000080
+   6            z     -1.7547876282
+
+   7   H        x      1.6873570863
+   8            y      0.9741960626
+   9            z      2.3971530106
+
+  10   H        x     -1.6873570863
+  11            y      0.9741960626
+  12            z      2.3971530106
+
+  13   H        x      0.0000000000
+  14            y     -1.9483921386
+  15            z      2.3971530322
+
+  16   H        x      1.6873570863
+  17            y     -0.9741960626
+  18            z     -2.3971530106
+
+  19   H        x     -1.6873570863
+  20            y     -0.9741960626
+  21            z     -2.3971530106
+
+  22   H        x      0.0000000000
+  23            y      1.9483921386
+  24            z     -2.3971530322
+
+
+
+  Cartesian coordinates xyz format (angstrom)
+  -------------------------------------------
+
+    8
+ 
+C      0.0000000000  -0.0000000042   0.9285936183
+C      0.0000000000   0.0000000042  -0.9285936183
+H      0.8929109123   0.5155223528   1.2685187380
+H     -0.8929109123   0.5155223528   1.2685187380
+H      0.0000000000  -1.0310447126   1.2685187495
+H      0.8929109123  -0.5155223528  -1.2685187380
+H     -0.8929109123  -0.5155223528  -1.2685187380
+H      0.0000000000   1.0310447126  -1.2685187495
+
+
+   Interatomic separations (in Angstroms):
+   ---------------------------------------
+
+            C           C           H           H           H           H   
+
+   C       0.000000
+   C       1.857187    0.000000
+   H       1.085635    2.427006    0.000000
+   H       1.085635    2.427006    1.785822    0.000000
+   H       1.085635    2.427006    1.785822    1.785822    0.000000
+   H       2.427006    1.085635    2.738542    3.269369    2.738542    0.000000
+   H       2.427006    1.085635    3.269369    2.738542    2.738542    1.785822
+   H       2.427006    1.085635    2.738542    2.738542    3.269369    1.785822
+
+            H           H   
+
+   H       0.000000
+   H       1.785822    0.000000
+
+
+
+
+  Bond distances (angstroms):
+  ---------------------------
+
+                  atom 1     atom 2                           distance
+                  ------     ------                           --------
+  bond distance:    C          C                              1.857187
+  bond distance:    H          C                              1.085635
+  bond distance:    H          C                              1.085635
+  bond distance:    H          C                              1.085635
+  bond distance:    H          C                              1.085635
+  bond distance:    H          C                              1.085635
+  bond distance:    H          C                              1.085635
+
+
+  Bond angles (degrees):
+  ----------------------
+
+                  atom 1     atom 2     atom 3                   angle
+                  ------     ------     ------                   -----
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          H                    110.667
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          H                    110.667
+  bond angle:       H          C          H                    110.667
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          H                    110.667
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          H                    110.667
+  bond angle:       H          C          H                    110.667
+
+
+  Nuclear repulsion energy :   39.077582965582
+
+
+                                GETLAB: AO-labels
+                                -----------------
+
+   * Large components:   14
+     1  L C   1 s        2  L C   1 px       3  L C   1 py       4  L C   1 pz       5  L C   1 s        6  L C   1 px  
+     7  L C   1 py       8  L C   1 pz       9  L H   1 s       10  L H   1 s       11  L H   1 s       12  L H   1 s   
+    13  L H   1 s       14  L H   1 s   
+   * Small components:   38
+    15  S C   1 s       16  S C   1 px      17  S C   1 py      18  S C   1 pz      19  S C   1 dxx     20  S C   1 dxy 
+    21  S C   1 dxz     22  S C   1 dyy     23  S C   1 dyz     24  S C   1 dzz     25  S C   1 s       26  S C   1 px  
+    27  S C   1 py      28  S C   1 pz      29  S C   1 dxx     30  S C   1 dxy     31  S C   1 dxz     32  S C   1 dyy 
+    33  S C   1 dyz     34  S C   1 dzz     35  S H   1 px      36  S H   1 py      37  S H   1 pz      38  S H   1 px  
+    39  S H   1 py      40  S H   1 pz      41  S H   1 px      42  S H   1 py      43  S H   1 pz      44  S H   1 px  
+    45  S H   1 py      46  S H   1 pz      47  S H   1 px      48  S H   1 py      49  S H   1 pz      50  S H   1 px  
+    51  S H   1 py      52  S H   1 pz  
+
+
+  Symmetry Orbitals
+  -----------------
+
+  Number of orbitals in each symmetry:          148
+  Number of large orbitals in each symmetry:     16
+  Number of small orbitals in each symmetry:    132
+
+* Large component functions
+
+  Symmetry  A  ( 1)
+
+        2 functions:    C  s   
+        1 functions:    C  px  
+        1 functions:    C  py  
+        1 functions:    C  pz  
+        2 functions:    C  s   
+        1 functions:    C  px  
+        1 functions:    C  py  
+        1 functions:    C  pz  
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+        1 functions:    H  s   
+
+* Small component functions
+
+  Symmetry  A  ( 1)
+
+        3 functions:    C  s   
+        6 functions:    C  px  
+        6 functions:    C  py  
+        6 functions:    C  pz  
+        3 functions:    C  dxx 
+        3 functions:    C  dxy 
+        3 functions:    C  dxz 
+        3 functions:    C  dyy 
+        3 functions:    C  dyz 
+        3 functions:    C  dzz 
+        3 functions:    C  s   
+        6 functions:    C  px  
+        6 functions:    C  py  
+        6 functions:    C  pz  
+        3 functions:    C  dxx 
+        3 functions:    C  dxy 
+        3 functions:    C  dxz 
+        3 functions:    C  dyy 
+        3 functions:    C  dyz 
+        3 functions:    C  dzz 
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+        3 functions:    H  px  
+        3 functions:    H  py  
+        3 functions:    H  pz  
+
+
+   ***************************************************************************
+   *************************** Hamiltonian defined ***************************
+   ***************************************************************************
+
+ * Print level:    0
+ * Levy-Leblond Hamiltonian
+   - Spin-orbit interactions neglected
+ * Default integral flags passed to all modules
+   - LL-integrals:     1
+   - LS-integrals:     0
+   - SS-integrals:     0
+   - GT-integrals:     0
+ * Basis set:
+   - contracted large component basis set
+   - uncontracted small component basis set
+
+
+ Information about the restricted kinetic balance scheme:
+ * RKB projection:
+   1: No Pre-projection in scalar basis
+   2: Removal of unphysical solutions (via diagonalization of free particle Hamiltonian)
+ *** WARNING **** This procedure may give severe linear  dependence problems for large basis sets
+
+
+    **************************************************************************
+    ************************** Wave function module **************************
+    **************************************************************************
+
+ Jobs in this run (in execution order):
+ * Hartree-Fock calculation
+===========================================================================
+ DHFINP: Set-up for Hartree-Fock calculation:
+===========================================================================
+ * Number of fermion irreps: 1
+ * Closed shell SCF calculation with   18 electrons in
+       9 orbitals in Fermion irrep 1
+ * Bare nucleus screening correction used for start guess
+ * General print level   :   0
+ ***** TRIAL FUNCTION *****
+ * Trial vectors read from file DFCOEF
+ ***** CONVERGENCE CRITERIA *****
+ * Convergence on norm of error vector (gradient).
+   Desired convergence:1.000D-08
+   Allowed convergence:1.000D-08
+
+ ***** CONVERGENCE CONTROL *****
+ * Fock matrix constructed using differential density matrix
+    with optimal parameter.
+ * DIIS (in MO basis)
+ * DIIS will be activated when convergence reaches : 1.00D+20
+   - Maximum size of B-matrix:   10
+ * Damping of Fock matrix when DIIS is not activated. 
+   Weight of old matrix    : 0.250
+ * Maximum number of SCF iterations  :   50
+ * No quadratic convergent Hartree-Fock
+ * Contributions from 2-electron integrals to Fock matrix:
+   LL-integrals.
+ * NB!!! No e-p rotations in 2nd order optimization.
+ ***** OUTPUT CONTROL *****
+ * Only electron eigenvalues written out.
+
+
+ ********************************************************************************
+ *************************** Input consistency checks ***************************
+ ********************************************************************************
+
+
+
+    *************************************************************************
+    ************************ End of input processing ************************
+    *************************************************************************
+
+ PAMSET reports: TWOCOMPBSS F
+
+
+                      Nuclear contribution to dipole moments
+                      --------------------------------------
+
+                               au             Debye
+
+                    x      0.00000000      0.00000000
+                    y      0.00000000      0.00000000
+                    z      0.00000000      0.00000000
+
+                        1 Debye =   2.54177000 a.u. 
+  No SS-nuclear attraction integrals(MOLFLD), adapted PDOINT=+000
+
+
+                       Generating Lowdin canonical matrix:
+                       -----------------------------------
+
+   L   A     * Deleted:          0(Proj:          0, Lindep:          0)
+   S   A     * Deleted:          0
+
+
+                                Output from MODHAM
+                                ------------------
+
+* All positronic solutions deleted !
+
+
+      **********************************************************************
+      ************************* Orbital dimensions *************************
+      **********************************************************************
+
+No. of positive energy orbitals (NESH):    16
+No. of negative energy orbitals (NPSH):     0
+Total no. of orbitals           (NORB):    16
+
+
+   ****************************************************************************
+   ************************* Hartree-Fock calculation *************************
+   ****************************************************************************
+
+
+########## START ITERATION NO.   1 ##########   Sat May 21 12:44:32 2011
+
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2572198381338211
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:31 2011
+
+* GETGAB: label "GABAO1XX" not found; calling GABGEN.
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   15.35%    0.11%   63.50%   0.04800272s
+It.   1    -78.25718903478      7.83D+01  0.00D+00  3.13D-04               0.12400818s   LL             Sat May 21
+
+########## START ITERATION NO.   2 ##########   Sat May 21 12:44:32 2011
+
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   15.35%    0.11%   63.50%   0.04800320s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06000376s
+
+########## END ITERATION NO.   2 ##########   Sat May 21 12:44:32 2011
+
+It.   2    -78.25722006209      3.10D-05  7.16D-05  7.71D-05               0.06000376s   LL             Sat May 21
+
+########## START ITERATION NO.   3 ##########   Sat May 21 12:44:32 2011
+
+    3 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   18.55%    0.04%   61.10%   0.04800320s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06400394s
+
+########## END ITERATION NO.   3 ##########   Sat May 21 12:44:32 2011
+
+It.   3    -78.25722006475      2.66D-09 -2.26D-05  1.76D-05   DIIS   2    0.06400394s   LL             Sat May 21
+
+########## START ITERATION NO.   4 ##########   Sat May 21 12:44:32 2011
+
+    4 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   19.96%    0.00%   60.05%   0.04800320s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06800413s
+
+########## END ITERATION NO.   4 ##########   Sat May 21 12:44:32 2011
+
+It.   4    -78.25722006489      1.34D-10  3.36D-06  3.85D-06   DIIS   3    0.06800413s   LL             Sat May 21
+
+########## START ITERATION NO.   5 ##########   Sat May 21 12:44:32 2011
+
+    5 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    0.00%   22.47%    0.11%   58.19%   0.04800320s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06400394s
+
+########## END ITERATION NO.   5 ##########   Sat May 21 12:44:32 2011
+
+It.   5    -78.25722006484     -4.68D-11 -6.29D-07  5.70D-08   DIIS   4    0.06400394s   LL             Sat May 21
+
+########## START ITERATION NO.   6 ##########   Sat May 21 12:44:32 2011
+
+    6 *** Differential density matrix. DCOVLP     = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+SOfock:LL  1.00D-11    4.39%   49.79%    2.70%   36.28%   0.04800320s
+>>> Total wall time: 0.00000000s
+>>> Total CPU-time : 0.06400394s
+
+########## END ITERATION NO.   6 ##########   Sat May 21 12:44:32 2011
+
+It.   6    -78.25722006467     -1.71D-10  4.26D-09  6.81D-09   DIIS   4    0.06400394s   LL             Sat May 21
+
+
+                                   SCF - CYCLE
+                                   -----------
+
+* Convergence on norm of error vector (gradient).
+  Desired convergence:1.000D-08
+  Allowed convergence:1.000D-08
+
+* ERGVAL - convergence in total energy
+* FCKVAL - convergence in maximum change in total Fock matrix
+* EVCVAL - convergence in error vector (gradient)
+--------------------------------------------------------------------------------------------------------------------------------
+           Energy               ERGVAL    FCKVAL    EVCVAL      Conv.acc    CPU          Integrals   Time stamp
+--------------------------------------------------------------------------------------------------------------------------------
+It.   1    -78.25718903478      7.83D+01  0.00D+00  3.13D-04               0.12400818s   LL             Sat May 21
+It.   2    -78.25722006209      3.10D-05  7.16D-05  7.71D-05               0.06000376s   LL             Sat May 21
+It.   3    -78.25722006475      2.66D-09 -2.26D-05  1.76D-05   DIIS   2    0.06400394s   LL             Sat May 21
+It.   4    -78.25722006489      1.34D-10  3.36D-06  3.85D-06   DIIS   3    0.06800413s   LL             Sat May 21
+It.   5    -78.25722006484     -4.68D-11 -6.29D-07  5.70D-08   DIIS   4    0.06400394s   LL             Sat May 21
+It.   6    -78.25722006467     -1.71D-10  4.26D-09  6.81D-09   DIIS   4    0.06400394s   LL             Sat May 21
+--------------------------------------------------------------------------------------------------------------------------------
+* Convergence after    6 iterations.
+* Average elapsed time per iteration: 
+      LL           :    0.00000000s
+
+
+                                   TOTAL ENERGY
+                                   ------------
+
+   Electronic energy                        :    -117.33480303025048
+
+   Other contributions to the total energy
+   Nuclear repulsion energy                 :      39.07758296558249
+
+   Sum of all contributions to the energy
+   Total energy                             :     -78.25722006466799
+
+
+                                   Eigenvalues
+                                   -----------
+
+
+* Boson symmetry A  
+  * Closed shell, f = 1.0000
+-11.03434721799791  ( 2)   -11.03385842554639  ( 2)    -0.92517741666821  ( 2)    -0.82742564552426  ( 2)    -0.54743517780928  ( 4)
+ -0.48715048622583  ( 4)    -0.38242835872261  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+  0.43895089559281  ( 2)     0.70008383136412  ( 4)     0.71738438247774  ( 2)     0.75028015705018  ( 2)     0.76270416083780  ( 4)
+
+* Occupation of subblocks
+                       E1 :  A                                                                              
+  closed shells (f=1.0000):    9
+ virtual shells (f=0.0000):    7
+tot.num. of pos.erg shells:   16
+
+
+* HOMO - LUMO gap:
+
+    E(LUMO) :     0.43895090 au (symmetry A  )
+  - E(HOMO) :    -0.38242836 au (symmetry A  )
+  ------------------------------------------
+    gap     :     0.82137925 au
+
+ Trust radius squarely increased due to very good ratio.
+ Updated trust radius   0.12596
+
+* Reading two-electron Fock matrix for DHF molecular gradient
+
+* REAFCK: Fock matrix read from file /tmp/bast.constrained_ethane_2.32480/DFFCK2                 
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:32 2011
+
+* Reading one-electron Fock matrix for DHF molecular gradient
+
+* REAFCK: Fock matrix read from file /tmp/bast.constrained_ethane_2.32480/DFFCK1                 
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:32 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2572200648393732
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:32 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2572200648393732
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:32 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2572200648393732
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:32 2011
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2572200648393732
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:32 2011
+
+
+        ******************************************************************
+        ********** Analytical calculation of molecular gradient **********
+        ******************************************************************
+
+ Special information about calculation of the molecular gradient:
+
+ Levy-Leblond Hamiltonian: 
+    - No small-small nuclear attraction integrals.
+    - No small-small reorthonormalization gradient
+
+* REACMO: Coefficients read from file DFCOEF - Total energy: -78.2572200648393732
+* Heading :Minimize ethane geometry with C-C bond frozen     Sat May 21 12:44:32 2011
+
+
+                           RMOLGRD1: One-electron part
+                           ---------------------------
+
+
+ 
+     Date and time (Linux)  : Sat May 21 12:44:32 2011
+     Host name              :                                         
+
+ Estimated CPU time:        0.04 seconds.
+ Estimated WALL time:       0.00 seconds.
+
+
+Time for one-electron part of gradient    :      0.04 seconds.
+
+
+
+                           RMOLGRD1: Two-electron part
+                           ---------------------------
+
+
+* GETGAB: label "GABAO12x" not found; calling GABGEN.
+
+ Time for GAB matrix                       :      0.52 seconds.
+
+
+
+                          RMOLGRD1: LL-Two-electron part
+                          ------------------------------
+
+ Calculate LL-Two-electron gradient: yes
+
+
+ 
+     Date and time (Linux)  : Sat May 21 12:44:33 2011
+     Host name              :                                         
+
+ Estimated CPU time:        0.09 seconds.
+ Estimated WALL time:       0.00 seconds.
+
+Step 1 Screening
+* Gradient screening statistics:
+               X            Y            Z   
+SCR:LL        0.00%        0.00%        0.00%
+
+Detailed screening statistics
+
+          %int   Type    %int      X        Y        Z   
+TWOCEN   30.47%                   0.00%    0.00%    0.00%
+
+
+                 1122   15.00%    0.00%    0.00%    0.00%
+                 1212   22.86%    0.00%    0.00%    0.00%
+                 1221    0.00%    N/A      N/A      N/A  
+                 1222   46.07%    0.00%    0.00%    0.00%
+                 1211    1.61%    0.00%    0.00%    0.00%
+                 1112   14.46%    0.00%    0.00%    0.00%
+                 1121    0.00%    N/A      N/A      N/A  
+
+
+THRCEN   50.27%                   0.00%    0.00%    0.00%
+
+
+                 1213    6.93%    0.00%    0.00%    0.00%
+                 1223   19.91%    0.00%    0.00%    0.00%
+                 1231    0.00%    N/A      N/A      N/A  
+                 1232   32.90%    0.00%    0.00%    0.00%
+                 1123    6.93%    0.00%    0.00%    0.00%
+                 1233   33.33%    0.00%    0.00%    0.00%
+
+
+FOUCEN   19.26%                   0.00%    0.00%    0.00%
+
+
+                 1234  100.00%    0.00%    0.00%    0.00%
+
+
+Step 1 + Step 2 Screening
+* Gradient screening statistics:
+               X            Y            Z   
+SCR:LL        1.22%        1.22%        1.22%
+
+Detailed screening statistics
+
+          %int   Type    %int      X        Y        Z   
+TWOCEN   30.47%                   4.00%    4.00%    4.00%
+
+
+                 1122   15.00%    4.76%    4.76%    4.76%
+                 1212   22.86%    2.50%    2.50%    2.50%
+                 1221    0.00%    N/A      N/A      N/A  
+                 1222   46.07%    2.95%    2.95%    2.95%
+                 1211    1.61%    0.00%    0.00%    0.00%
+                 1112   14.46%    9.38%    9.38%    9.38%
+                 1121    0.00%    N/A      N/A      N/A  
+
+
+THRCEN   50.27%                   0.00%    0.00%    0.00%
+
+
+                 1213    6.93%    0.00%    0.00%    0.00%
+                 1223   19.91%    0.00%    0.00%    0.00%
+                 1231    0.00%    N/A      N/A      N/A  
+                 1232   32.90%    0.00%    0.00%    0.00%
+                 1123    6.93%    0.00%    0.00%    0.00%
+                 1233   33.33%    0.00%    0.00%    0.00%
+
+
+FOUCEN   19.26%                   0.00%    0.00%    0.00%
+
+
+                 1234  100.00%    0.00%    0.00%    0.00%
+
+
+
+ Time for LL-two-electron part of gradient :      0.10 seconds.
+
+
+
+                          RMOLGRD1: LS-Two-electron part
+                          ------------------------------
+
+
+ Calculate LS-Two-electron gradient: no 
+
+
+
+                          RMOLGRD1: Skipping LS-Two-el.
+                          -----------------------------
+
+
+
+                          RMOLGRD1: SS-Two-electron part
+                          ------------------------------
+
+ Calculate SS-Two-electron gradient: no 
+
+
+
+                          RMOLGRD1: Skipping SS-Two-el.
+                          -----------------------------
+
+
+
+                               Timings for RMOLGRD1
+                               --------------------
+
+
+ One-electron part of gradient    CPU  :      0.04s    WALL :      0.00s
+
+ GAB matrix for screening         CPU  :      0.52s    WALL :      1.00s
+ LL-Two-electron part of gradient CPU  :      0.10s    WALL :      0.00s
+ LS-Two-electron part SKIPPED!
+ SS-Two-electron part SKIPPED!
+ Total two-electron part of grad. CPU  :      0.62s    WALL :      1.00s
+ Total time in RMOLGRD1           CPU  :      0.67s    WALL :      1.00s
+
+
+
+                  **********************************************
+                  ********** Final output from PSIGRD **********
+                  **********************************************
+
+
+
+@                         Total molecular gradient
+@                         ------------------------
+
+@C                     0.0000000000        -0.0000000029         0.1329754207
+@C                     0.0000000000         0.0000000029        -0.1329754207
+@H                    -0.0000006945        -0.0000004011         0.0000007362
+@H                     0.0000006945        -0.0000004011         0.0000007362
+@H                     0.0000000000         0.0000008023         0.0000007381
+@H                    -0.0000006945         0.0000004011        -0.0000007362
+@H                     0.0000006945         0.0000004011        -0.0000007362
+@H                     0.0000000000        -0.0000008023        -0.0000007381
+
+
+
+
+
+                            **************************
+                            *** Output from MINEND ***
+                            **************************
+
+
+ Energy converged       yes 
+ Gradient converged     yes 
+ Step converged         yes 
+ Totally sym. index      0
+ Hessian index           0
+ End of minimization    yes 
+
+
+           :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+           ::::::::::::::: Minimization Control Center :::::::::::::::
+           :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+                               Final geometry (au)
+                               -------------------
+
+ C          0.0000000000           -0.0000000080            1.7547876282
+ C          0.0000000000            0.0000000080           -1.7547876282
+ H          1.6873570863            0.9741960626            2.3971530106
+ H         -1.6873570863            0.9741960626            2.3971530106
+ H          0.0000000000           -1.9483921386            2.3971530322
+ H          1.6873570863           -0.9741960626           -2.3971530106
+ H         -1.6873570863           -0.9741960626           -2.3971530106
+ H          0.0000000000            1.9483921386           -2.3971530322
+
+
+
+
+
+                             Optimization information
+                             ------------------------
+
+ Iteration number               :       3
+ End of minimization            :       T 
+      ****  minimization ended  ****
+ Energy at this geometry is     :     -78.257220064668
+ Energy change from last geom.  : -.226597D-06 (the threshold is:0.10D-05)
+ Norm of gradient               : 0.188056D+00 (the threshold is:0.10D-04)
+ Norm of step                   : 0.185238D-04 (the threshold is:0.10D-04)
+ Updated trust radius           : 0.125964D+00
+ Total Hessian index            :       0
+
+
+
+
+          <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+          <<<<<<<<<<<<<<<<<<<<  End of Minimization <<<<<<<<<<<<<<<<<<<<
+          <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+                                  Final geometry
+                                  --------------
+
+ C          0.0000000000           -0.0000000080            1.7547876282
+ C          0.0000000000            0.0000000080           -1.7547876282
+ H          1.6873570863            0.9741960626            2.3971530106
+ H         -1.6873570863            0.9741960626            2.3971530106
+ H          0.0000000000           -1.9483921386            2.3971530322
+ H          1.6873570863           -0.9741960626           -2.3971530106
+ H         -1.6873570863           -0.9741960626           -2.3971530106
+ H          0.0000000000            1.9483921386           -2.3971530322
+
+
+
+ Iter     Energy     Change    GradNorm  Index   StepLen    TrustRad #Rej
+ ------------------------------------------------------------------------
+   0 -0.78257E+02 0.0000E+00 0.1722E+00    0 0.12596E+00* 0.5000E+00   0 
+   1 -0.78257E+02-0.4379E-03 0.1929E+00    0 0.45565E-01* 0.1260E+00   0 
+   2 -0.78257E+02-0.1957E-03 0.1879E+00    0 0.15176E-02* 0.1260E+00   0 
+   3 -0.78257E+02-0.2266E-06 0.1881E+00    0 0.18524E-04* 0.1260E+00   0 
+ 
+ *) Newton step taken.
+
+
+   Interatomic separations (in Angstroms):
+   ---------------------------------------
+
+            C           C           H           H           H           H   
+
+   C       0.000000
+   C       1.857187    0.000000
+   H       1.085635    2.427006    0.000000
+   H       1.085635    2.427006    1.785822    0.000000
+   H       1.085635    2.427006    1.785822    1.785822    0.000000
+   H       2.427006    1.085635    2.738542    3.269369    2.738542    0.000000
+   H       2.427006    1.085635    3.269369    2.738542    2.738542    1.785822
+   H       2.427006    1.085635    2.738542    2.738542    3.269369    1.785822
+
+            H           H   
+
+   H       0.000000
+   H       1.785822    0.000000
+
+
+
+
+  Bond distances (angstroms):
+  ---------------------------
+
+                  atom 1     atom 2                           distance
+                  ------     ------                           --------
+  bond distance:    C          C                              1.857187
+  bond distance:    H          C                              1.085635
+  bond distance:    H          C                              1.085635
+  bond distance:    H          C                              1.085635
+  bond distance:    H          C                              1.085635
+  bond distance:    H          C                              1.085635
+  bond distance:    H          C                              1.085635
+
+
+  Bond angles (degrees):
+  ----------------------
+
+                  atom 1     atom 2     atom 3                   angle
+                  ------     ------     ------                   -----
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          H                    110.667
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          H                    110.667
+  bond angle:       H          C          H                    110.667
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          H                    110.667
+  bond angle:       H          C          C                    108.247
+  bond angle:       H          C          H                    110.667
+  bond angle:       H          C          H                    110.667
+
+
+ 
+ Constrained optimization converged in            4  iterations!
+ Removing the constraint(s) might decrease the energy further.
+ 
+ Energy at final geometry is       :     -78.257220064668 a.u.
+ Energy change during minimization :      -0.000633776249 a.u.
+                                                -1.663979 kJ/mol
+ 
+
+ 
+     Date and time (Linux)  : Sat May 21 12:44:33 2011
+     Host name              :                                         
+********** E N D   of   D I R A C  output  **********
+*****************************************************
+
+  
+  Dynamical Memory Usage Summary
+  
+  Mean allocation size (Mb) :        28.82
+  
+  Largest          10  allocations
+  
+      488.28 Mb at subroutine                                            for work array at main                        
+        0.17 Mb at subroutine gtovlx_+0x195                              for buf in butobs                             
+        0.17 Mb at subroutine lowdi1_.+0x84                              for unnamed variable                          
+        0.17 Mb at subroutine gtovlx_+0x195                              for buf in butobs                             
+        0.17 Mb at subroutine lowdi1_.+0x84                              for unnamed variable                          
+        0.17 Mb at subroutine gtovlx_+0x195                              for buf in butobs                             
+        0.17 Mb at subroutine lowdi1_.+0x84                              for unnamed variable                          
+        0.17 Mb at subroutine gtovlx_+0x195                              for buf in butobs                             
+        0.17 Mb at subroutine lowdi1_.+0x84                              for unnamed variable                          
+        0.08 Mb at subroutine mksaomo_+0x6f7                             for unnamed variable                          
+  
+  Peak memory usage    (Mb) :       489.00
+       reached at subroutine : lowdi1_.+0x84                             
+              for variable   : unnamed variable                          
+  
+ MEMGET high-water mark:    41.88 MB
+
+*****************************************************
+>>>> Node 0, utime: 5, stime: 0, minflt: 128868, majflt: 0, nvcsw: 1442, nivcsw: 686, maxrss: 508188
+>>>> Total WALL time used in DIRAC: 6s

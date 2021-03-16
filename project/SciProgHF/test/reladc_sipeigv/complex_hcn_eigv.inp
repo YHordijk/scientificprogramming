@@ -1,0 +1,38 @@
+**DIRAC
+.TITLE 
+ Valence ionization of the HCN-molecule + long eigenvectors        
+.WAVE FUNCTION        
+**INTEGRALS
+*READIN
+.UNCONTRACT
+**HAMILTONIAN         
+.LVCORR               
+**WAVE FUNCTIONS      
+.SCF                  
+.RELADC               
+*SCF                  
+.CLOSED SHELL         
+ 14                   
+.FCKCNV               
+5.0E-05               
+**MOLTRA              
+.ACTIVE               
+energy  -2.0 2.5 0.1  
+**RELADC
+.DOSIPS
+.ADCLEVEL
+ 3
+.SIPREPS
+ 1
+ 1
+**LANCZOS
+.SIPITER
+ 20
+.SIPPRNT
+ 20.0
+.SIPEIGV
+ 1
+ 0.0 20.0
+*END OF               
+                      
+                      

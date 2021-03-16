@@ -1,0 +1,7 @@
+cp numerical_grid GRIDOUT
+cp numerical_grid FILEEX
+
+pam --inp=getfrozen.inp --mol=h2o.mol --put="numerical_grid FILEEX GRIDOUT" --get="GRIDOUT" --outcmo
+
+mv DFCOEF   DFCOEF.h2o
+mv GRIDOUT  GRIDOUT.h2o

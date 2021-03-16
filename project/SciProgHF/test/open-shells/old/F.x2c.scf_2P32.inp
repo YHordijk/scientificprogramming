@@ -1,0 +1,41 @@
+**DIRAC
+.TITLE
+  F atom; X ^2P_32
+.WAVE F
+.ANALYZE
+**INTEGRALS
+.PRINT
+1
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+.PRINT
+1
+**WAVE FUNCTIONS
+.SCF
+*SCF
+# 1s(2) 2s(2) 2p(2)
+.CLOSED SHELL
+4 2
+# 2p32(3) 
+.OPEN SHELL
+1
+3/0,4
+# Shift 2p+ slightly upwards since it is almost degenerate with closed-shell 2p-
+.OLEVEL
+0.1
+.EVCCNV
+1.0D-9  1.0D-7
+.PRINT 
+0
+**ANALYZE
+.MULPOP
+*MULPOP
+# 2 fermion symmetries
+.VECPOP
+ all
+ all
+.PRINT
+0
+*END OF

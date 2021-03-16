@@ -1,0 +1,46 @@
+**DIRAC
+.WAVE FUNCTION
+.PROPERTIES
+**HAMILTONIAN
+.LEVY-LEBLOND
+.DFTAUTO
+ BLYP
+!lda vwn=-1.0 becke=1.0 lyp
+!just to test the functional read-in, complicated way to say "blyp"
+**GRID
+.DEBUG          !very coarse grid
+.ZIPGRID
+**INTEGRALS
+.NUCMOD
+ 1
+*READIN
+.UNCONTRACT
+**WAVE FUNCTION
+.SCF
+*SCF
+.ITRINT
+ 0 0
+.EVCCNV
+ 1.0D-4         !we use poor convergence threshold for the test
+.MOSTART        !we need to start in the same way as the test was made
+BNCORR
+**PROPERTIES
+.FIRST ORDER HYPERPOLAR
+*EXPECTATION
+.OPERATOR
+ ZZSECMOM
+*EXCITATIONS
+.EXCITATIONS
+ 1 3
+.ANALYZE
+.SKIPEP
+.THRESH
+ 1.0D-3         !we use poor convergence threshold for the test
+*QUADRATIC
+.SKIPEP
+.THRESH
+ 1.0D-3         !we use poor convergence threshold for the test
+.B FREQ
+ 1
+ 0.06
+*END OF

@@ -1,0 +1,42 @@
+!
+! Very short test for the CCSD(T) geometry optimization. 
+!
+**DIRAC
+.TITLE
+ HeH+ molecule (2el)
+.WAVE FUNCTION
+.OPTIMIZE
+*OPTIMIZE
+.PRINT
+ 1
+.MAX IT
+25
+**GENERAL
+.PRINT
+0
+**INTEGRALS
+*READIN
+.UNCONTRACT
+**HAMILTONIAN
+.X2C
+.NOAMFI
+**WAVE FUNCTIONS
+.SCF
+.RELCCSD
+*SCF
+.CLOSED SHELL
+ 2
+**MOLTRA
+# all 2 electrons correlated
+.ACTIVE
+energy -100.0   100.0   0.01
+**RELCC
+.ENERGY
+.PRINT
+0
+*CCENER
+.MAXIT # maximum number of iterations 
+50  
+.NTOL
+6
+*END OF 

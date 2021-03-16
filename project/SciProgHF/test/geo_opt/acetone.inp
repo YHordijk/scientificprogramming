@@ -1,0 +1,16 @@
+! Non-relativistic optimization of the acetone molecule. We use the point nucleus
+! model to facilitate comparison with nonrelativistic results.
+**DIRAC
+.OPTIMIZE
+*OPTIMIZE
+.1STORD
+**INTEGRALS
+.NUCMOD
+ 1
+*READIN
+.CONTRACT
+**HAMILTONIAN
+.LEVY-LEBLOND
+**WAVE FUNCTIONS
+.SCF
+*END OF 

@@ -1,0 +1,59 @@
+
+  **** Welcome to the testing program of DIRAC diagonalization routines ! ****
+
+Matrix dimension, read N=  9 and NZ=1
+  The matrix for diagonalization was read.
+ arrays for RS subroutine allocated
+ Eispack's RS eigenvalues:
+           1  -1.50000000000001     
+           2  -1.50000000000000     
+           3  -1.50000000000000     
+           4  0.499999999999998     
+           5  0.499999999999999     
+           6  0.500000000000000     
+           7  0.500000000000000     
+           8  0.500000000000001     
+           9   2.50000000000000     
+  **** EISPACK RS ****
+ U^{+}*A*U - eps ?= 0> norm/diag:0.2714D-15 norm/offdiag:0.1075D-15
+     U^{+}*U - I ?= 0> norm/diag:0.3084D-15 norm/offdiag:0.7555D-16
+     U*U^{+} - I ?= 0> norm/diag:0.1110D-15 norm/offdiag:0.8589D-16
+ lapack_dsyerv ABSTOL=  2.225073858507201E-308
+ LAPACK DSYEVR eigenvalues:
+           1  -1.50000000000001     
+           2  -1.50000000000000     
+           3  -1.50000000000000     
+           4  0.499999999999996     
+           5  0.499999999999998     
+           6  0.499999999999999     
+           7  0.500000000000000     
+           8  0.500000000000001     
+           9   2.50000000000000     
+  **** LAPACK DSYEVR ****
+ U^{+}*A*U - eps ?= 0> norm/diag:0.1351D-14 norm/offdiag:0.1487D-05
+     U^{+}*U - I ?= 0> norm/diag:0.3701D-15 norm/offdiag:0.2974D-05
+     U*U^{+} - I ?= 0> norm/diag:0.1054D-04 norm/offdiag:0.5903D-05
+
+  Testing DSYEVR diagonalization of 9**2 matrix (Ulf)
+ Diagonalizing..
+ Eigenvalues sorted ascending: T
+ Maximum absolute eigenvalue error:  9.992007221626409E-016
+ Maximum absolute vector element error:  3.368209854255402E-015
+
+  *** Quaternion Jacobi diagonalization test ***
+
+
+           QJACOBI, selective diagonalization of the quaternion matrix.
+           ------------------------------------------------------------
+
+  size of the square hermitian/real symmetric matrix, N=    9
+  type of matrix {real(NZ=1), complex(NZ=2) or quaternion(NZ=4)}, NZ= 1
+  PRINT level:    2
+  The file #33 with name:QJACO.MTX has been open.
+  ...entering matrix has been written to the file QJACO.MTX
+  >>>> QJACOBI finished, # of iterations:      11
+  last 2 sums of largets elements:  0.17018D-13 0.33789D-08
+  "zero" off-diag elem. threshold:  0.10000D-11
+  >>>> CPU/wall  time used in QJACOBI: 0.00000000s/ 0.00220000s
+ 
+  The auxiliary file (lu=#,33) was closed, checking of A=P.Ad.P^H done

@@ -1,0 +1,39 @@
+!
+! This test calculates the CC energy with the X2C Hamiltonian
+!
+**DIRAC
+.TITLE
+LiH molecule. X2C Hamiltonian. CC energies.
+.WAVE F
+**INTEGRALS
+*READIN
+.UNCONTR
+**HAMILTONIAN
+.X2C
+**WAVE FUNCTIONS
+.SCF
+.EXACC
+*SCF
+.EVCCNV
+1.0E-9
+**MOLTRA
+.EXACORR
+.ACTIVE
+energy -20.0 20.0 0.1 
+**EXACC
+.EXATENSOR
+.OCCUPIED
+1..2
+.VIRTUAL
+3..6
+.CC2
+.PRINT
+1
+**MOLECULE
+*SYMMETRY
+.NOSYM
+*BASIS
+.DEFAULT
+sto-3g 
+*END OF
+                        

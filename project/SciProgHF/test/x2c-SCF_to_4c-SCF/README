@@ -1,0 +1,11 @@
+!
+! This test calculates the SCF energy of the water molecule using different choices for the Hamiltonian:
+! 	- X2C with 2e-spin-orbit-corrections from AMFI
+! 	- 4c-Dirac-Coulomb Hamiltonian
+!	- X2C with 2e-spin-orbit-corrections from AMFI (until convergence) which is followed by a 4c-Dirac-Coulomb Hamiltonian
+!	  calculation to produce a final 4c-wave function.
+!
+! NOTE: the last test is at present failing because the feature is not correctly working (yet). this will hopefully be
+!       resolved soon. The reference numbers in the result part for this test are WRONG (manually changed)!!!
+!
+!

@@ -1,0 +1,20 @@
+cp EMBPOT.2e-1  vemb.grid
+
+cp fde_dc_lda.inp fde_dc_lda_short.inp
+cp fde_ll_lda.inp fde_ll_lda_short.inp 
+cp fde_twocomp_lda.inp fde_twocomp_lda_short.inp
+cp fde_dc_cc.inp fde_dc_cc_short.inp 
+
+fde_dc_lda_short.inp      water.sto6g.mol --mw=80 --nw=80 --aw=90 --put=vemb.grid
+fde_dc_lda_short.inp      water.sto6g.c2v --mw=80 --nw=80 --aw=90 --put=vemb.grid
+
+fde_ll_lda_short.inp      water.sto6g.mol --mw=80 --nw=80 --aw=90 --put=vemb.grid
+fde_ll_lda_short.inp      water.sto6g.c2v --mw=80 --nw=80 --aw=90 --put=vemb.grid
+
+fde_twocomp_lda_short.inp water.sto6g.mol --mw=80 --nw=80 --aw=90 --put=vemb.grid
+fde_twocomp_lda_short.inp water.sto6g.c2v --mw=80 --nw=80 --aw=90 --put=vemb.grid
+
+fde_dc_cc_short.inp       water.sto6g.mol --mw=80 --nw=80 --aw=95 --put=vemb.grid
+fde_dc_cc_short.inp       water.sto6g.c2v --mw=80 --nw=80 --aw=95 --put=vemb.grid
+
+rm vemb.grid fde_dc_lda_short.inp fde_ll_lda_short.inp fde_twocomp_lda_short.inp fde_dc_cc_short.inp

@@ -1,0 +1,3 @@
+      COMMON /TAYSOL/ ESOLTT, GSOLTT(MXCOOR), GSOLNN(MXCOOR),
+     &                ESOLNN
+

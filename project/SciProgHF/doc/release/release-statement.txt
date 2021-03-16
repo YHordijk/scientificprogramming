@@ -1,0 +1,45 @@
+Dear DIRAC-users,
+
+We are happy to announce the release of DIRAC14, the latest version of the
+DIRAC code for 2- and 4-component relativistic  molecular electronic structure
+calculations. The date has been chosen to mark the 81th anniversary of the
+Nobel lecture given by P. A. M. Dirac, Dec 12 1933:
+http://www.nobelprize.org/nobel_prizes/physics/laureates/1933/dirac-lecture.html
+
+See also our web site: http://diracprogram.org
+
+
+New features in DIRAC14
+-----------------------
+
+* Intrinsic Atomic Orbitals (IAOs), as formulated by Gerald Knizia,
+  have been implemented to eliminate the polarization contribution in projection analysis.
+* The Polarizable Continuum Model (PCM) is available for the inclusion of solvent effects.
+* As a byproduct of the PCM implementation, molecular electrostatic potential (MEP) maps are available
+  for 4-component electronic-structure calculations.
+* +Q corrections (size-consistency corrections) for KR-CI.
+* Extended Hückel method using atomic fragments for SCF start guess (alternative to atomic start)
+
+A full list of features of DIRAC14 is found here:
+http://diracprogram.org/doku.php?id=features
+
+On http://diracprogram.org under "News" you can also find the papers
+describing the new developments and some examples of applications.
+Our documentation pages
+http://diracprogram.org/doc/release-14/
+contains a number of new tutorials and is continually updated.
+
+As usual, the code is freely distributed to all academic users;
+please find detailed information about licensing and download here:
+http://dirac.chem.sdu.dk/DIRAC14/
+
+For proper citation of DIRAC14, please consult
+http://www.diracprogram.org/doku.php?id=citation
+
+
+On behalf of the DIRAC team,
+
+   Trond Saue
+   Lucas Visscher
+   Hans Jørgen Aagaard Jensen
+   Radovan Bast

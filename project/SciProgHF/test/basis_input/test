@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Atoms and basis sets',
+      to_string   = 'Threshold for integrals',
+      rel_tolerance   = 1.0e-9)
+
+mol_files = []
+mol_files.append('ch4_temp.mol')
+mol_files.append('ch4_explicit.mol')
+mol_files.append('ch4_explicit_small.mol')
+mol_files.append('ch4_family.mol')
+mol_files.append('ch4_dualfamily.mol')
+mol_files.append('ch4_basis.mol')
+mol_files.append('ch4_bsse.mol')
+mol_files.append('ch4_basis_vtz.mol')
+mol_files.append('ch4_multibasis_vtz.mol')
+mol_files.append('ch4_molfbas.mol')
+
+test.run(['ch4.inp'], mol_files, f)
+
+sys.exit(test.return_code)

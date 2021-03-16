@@ -1,0 +1,32 @@
+**DIRAC
+.WAVE FUNCTION
+.ANALYZE
+**WAVE FUNCTION
+.SCF
+*SCF
+.MAXITR
+80
+.CLOSED SHELL
+98
+.OPEN SHELL
+1
+7/14
+.OPENFAC
+1.0
+.PROJEC
+1
+DFCOEF
+1
+1..49
+.FROZEN
+1..49
+**ANALYZE
+.MULPOP
+*MULPOP
+.LABEL
+SHELL
+**MOLECULE                                                                                          
+*BASIS                                                                                              
+.DEFAULT                                                                                            
+dyall.cv3z                                                                                          
+**END OF

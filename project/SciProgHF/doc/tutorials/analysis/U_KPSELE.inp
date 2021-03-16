@@ -1,0 +1,27 @@
+**DIRAC                                                                                             
+.ANALYZE                                                                                            
+.WAVE FUNCTION                                                                                      
+**INTEGRALS
+*READIN
+.UNCONT
+**WAVE FUNCTION                                                                                     
+.SCF                                                                                                
+*SCF
+.CLOSED SHELL                                                                                                
+88
+.OPEN SHELL
+2
+3/14
+1/10
+.KPSELE
+7
+-1  1 -2  2 -3  3 -4
+14 10 20 12 18  6  8                                                                                
+ 0  0  0  0  0  6  8                                                                                
+ 0  0  0  4  6  0  0
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+1..oo
+**END OF

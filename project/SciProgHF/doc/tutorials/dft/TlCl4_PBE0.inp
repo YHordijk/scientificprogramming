@@ -1,0 +1,25 @@
+**DIRAC                                                                                             
+.WAVE FUNCTION                                                                                      
+.ANALYZE                                                                                            
+**HAMILTONIAN                                                                                       
+.SPINFREE                                                                                           
+.DFT                                                                                                
+PBE0                                                                                                
+**INTEGRALS                                                                                         
+*READIN                                                                                             
+.UNCONT                                                                                             
+**WAVE FUNCTION                                                                                     
+.SCF                                                                                                
+*SCF                                                                                                
+.CLOSED SHELL                                                                                       
+90                                                                                                  
+**ANALYZE                                                                                           
+.MULPOP                                                                                             
+*MULPOP                                                                                             
+.VECPOP                                                                                             
+1..oo                                                                                               
+**MOLECULE                                                                                          
+*BASIS                                                                                              
+.DEFAULT                                                                                            
+dyall.ae3z
+**END OF

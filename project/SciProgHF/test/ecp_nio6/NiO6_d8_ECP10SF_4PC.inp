@@ -1,0 +1,62 @@
+!
+! Average DF for the e(2) configuration of NiO6+COSCI
+!
+**DIRAC
+.TITLE
+NiO6 Cluster with old UW PCs w/o most diffuse s and p basis func
+.WAVE F
+.ANALYZE
+**GENERAL
+.LINDEP
+ 1.0d-5 1.0d-7
+.DIRECT
+1 1 1
+**INTEGRALS
+*TWOINT
+.SOFOCK
+.SCREEN
+1.0E-14
+**HAMILTONIAN
+.ECP
+.LVNEW
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+ 1..oo 
+ 1..oo  
+.LABDEF
+ 6
+Ni s        1
+Ni p        2..4
+Ni d        5..10
+O s         11..12, 31..32, 51..52
+O p         13..18, 33..38, 53..58
+O d         19..30, 39..50, 59..70
+.INDSML
+.AOLAB
+**WAVE FUNCTIONS
+.SCF
+!.RESOLVE
+*SCF
+.CLOSED
+ 32 36 
+.OPEN S
+ 1
+ 8/10, 0
+.OPENFACTOR
+0.0D0
+.NODAMP
+!.BNC_FORCE
+!.OVLSEL
+.MAXITR
+ 8
+!.CNVINT
+!  0.00100 0.0000100
+.ITRINT
+ 0 0
+!.EVCCNV
+!5.E-8 1.E-7
+.FCKCNV
+ 1.0D-8  5.0D-8
+*END OF 

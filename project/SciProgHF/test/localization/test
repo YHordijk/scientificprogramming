@@ -1,0 +1,57 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import tarfile
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(string = '**** Inverse mean delocalization',
+      rel_tolerance = 1.0e-7)
+
+# prepare reference orbitals
+test.run(['H.inp'], ['H.xyz'], args='--get "DFACMO=cf.H"')
+test.run(['C.inp'], ['C.xyz'], args='--get "DFACMO=cf.C"')
+test.run(['O.inp'], ['O.xyz'], args='--get "DFACMO=cf.O"')
+
+shutil.copy('cf.H', 'DFH1AT')
+shutil.copy('cf.H', 'DFH2AT')
+shutil.copy('cf.H', 'DFH3AT')
+shutil.copy('cf.H', 'DFH4AT')
+shutil.copy('cf.C', 'DFC1AT')
+shutil.copy('cf.O', 'DFO1AT')
+
+# CH4
+shutil.copy('cf.CH4', 'DFPCMO')
+test.run(['CH4locmul_full.inp'], ['CH4.mol'], f, '--copy="DFPCMO"')
+test.run(['CH4locprj_full.inp'], ['CH4.mol'], f, '--copy="DFPCMO DFC1AT DFH1AT DFH2AT DFH3AT DFH4AT"')
+test.run(['CH4locprj_comb.inp'], ['CH4.mol'], f, '--copy="DFPCMO DFC1AT DFH1AT DFH2AT DFH3AT DFH4AT"')
+test.run(['CH4locprj_diag.inp'], ['CH4.mol'], f, '--copy="DFPCMO DFC1AT DFH1AT DFH2AT DFH3AT DFH4AT"')
+
+# H2O
+shutil.copy('cf.H2O', 'DFPCMO')
+test.run(['H2Olocmul_full.inp'], ['H2O.mol'], f, '--copy="DFPCMO"')
+test.run(['H2Olocprj_full.inp'], ['H2O.mol'], f, '--copy="DFPCMO DFO1AT DFH1AT DFH2AT"')
+test.run(['H2Olocprj_comb.inp'], ['H2O.mol'], f, '--copy="DFPCMO DFO1AT DFH1AT DFH2AT"')
+test.run(['H2Olocprj_diag.inp'], ['H2O.mol'], f, '--copy="DFPCMO DFO1AT DFH1AT DFH2AT"')
+
+# cleanup
+os.unlink('cf.H')
+os.unlink('cf.C')
+os.unlink('cf.O')
+os.unlink('cf.CH4')
+os.unlink('cf.H2O')
+os.unlink('DFC1AT')
+os.unlink('DFO1AT')
+os.unlink('DFH1AT')
+os.unlink('DFH2AT')
+os.unlink('DFH3AT')
+os.unlink('DFH4AT')
+os.unlink('DFPCMO')
+
+sys.exit(test.return_code)

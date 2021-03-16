@@ -1,0 +1,1062 @@
+ **********************************************************************
+                          MRCC program system
+ **********************************************************************
+ 
+                              Written by
+ Mihaly Kallay, Peter R. Nagy, David Mester, Zoltan Rolik, Gyula Samu,
+   Jozsef Csontos, Jozsef Csoka, P. Bernat Szabo, Laszlo Gyevi-Nagy,
+    Bence Hegely, Istvan Ladjanszki, Lorant Szegedy, Bence Ladoczki,
+       Klara Petrov, Mate Farkas, Pal D. Mezei, and Adam Ganyecz
+ 
+        Department of Physical Chemistry and Materials Science
+            Budapest University of Technology and Economics
+                  Budapest P.O.Box 91, H-1521 Hungary
+ 
+                              www.mrcc.hu
+ 
+                    Release date: February 22, 2020
+
+ ************************ 2020-03-12 16:23:52 *************************
+ Executing minp...
+
+ Reading input from MINP...
+ 
+ Input file:
+ 
+# CC2 calculation for water
+basis=cc-pVDZ
+ccprog=mrcc
+calc=cc2
+dfbasis scf=none
+dfbasis cor=none
+verbosity=3
+mem=500MB
+core=corr
+symm=off
+uncontract=on
+nstate=5
+
+unit=bohr
+geom=xyz
+3
+  
+   O     0.00000000    0.00000000    0.11749920
+   H     0.00000000   -1.51526299   -0.93239879
+   H     0.00000000    1.51526299   -0.93239879
+
+ 
+ 
+ Checking keyword combinations...
+ 
+ Keywords:
+ 
+ active=none
+ agrid=ld0006-ld0590
+ basis=cc-pvdz
+ basis_sm=none
+ basopt=off
+ bfbasis=none
+ bfgsmem=10
+ bfgstol=1.0d-3
+ bpcompo=0.95
+ bpcompv=0.98
+ bpdfo=0.95
+ bpocc=0.95
+ bppdo=0.95
+ bppdv=0.98
+ bpedo=0.95
+ bpedv=0.98
+ calc=cc2
+ ccmaxit=50
+ ccprog=mrcc
+ ccsdalg=disk
+ ccsdmkl=seq
+ ccsdrest=off
+ ccsdthreads=2
+ cctol=6
+ charge=0
+ cialg=disk
+ ciguess=off
+ cmpgrp=auto
+ core=corr
+ corembed=off
+ csapprox=off
+ dboc=off
+ dendec=laplace
+ dens=0
+ dfalg=lineq
+ dfbasis_cor=none
+ dfbasis_scf=none
+ dfintran=ovirt
+ dft=off
+ dhexc=adc(2)
+ diag=david
+ docc=
+ domrad=10.d0
+ drpaalg=fit
+ dual=off
+ ecp=auto
+ edisp=off
+ edisp_embed=off
+ embed=off
+ epert=none
+ eps=0.975
+ excrad=0.d0
+ excrad_fin=0.000000000D+00
+ fmm=off
+ fmmord=8
+ freq=off
+ gauss=spher
+ geom=xyz
+ gopt=off
+ ghost=none
+ gtol=7
+ grdens=off
+ grtol=10
+ hamilton=dc
+ iface=none
+ intalg=auto
+ itol=10
+ laptol=1.d-2
+ lccoporder=trffirst
+ lcorthr=normal
+ lccrest=off
+ lmp2dens=on
+ lnoepso=0.d0
+ lnoepsv=1e-6
+ localcc=off
+ localcorrsymm=off
+ locintrf=disk
+ mact=
+ maxact=off
+ maxdim=100
+ maxex=0
+ maxmicroit=100
+ mcscfiguess=hf
+ mem=500mb
+ molden=on
+ mpitasks=1
+ mulmet=0
+ mult=
+ nacto=0
+ nactv=0
+ naf_cor=off
+ naf_scf=off
+ nafalg=albe
+ naftyp=
+ nchol=auto
+ ndeps=1e-3
+ nstate=5
+ nsing=0
+ ntrip=0
+ occ=
+ oniom=off
+ oniom_eechg=off
+ oniom_pcm=off
+ optalg=
+ optmaxit=50
+ optetol=1e-6
+ optex=   4
+ optgtol=1e-4
+ optstol=1e-3
+ orblocc=off
+ orbloce=off
+ orbloco=off
+ orblocv=off
+ orblocguess=cholesky
+ osveps=1e-3
+ ovirt=off
+ ovltol=1e-7
+ ovosnorb=80.0
+ pcm=off
+ popul=off
+ pressure=100000
+ pssp=off
+ ptfreq=0.0
+ ptthreads=2
+ qscf=off
+ qmmm=off
+ redcost_exc=off
+ redcost_tddft=off
+ refdet=none
+ rest=0
+ rgrid=log3
+ rohfcore=semicanonical
+ rohftype=semicanonical
+ scfalg=auto
+ scfdamp=off
+ scfdiis=on
+ scfdiis_end=50
+ scfdiis_start=1
+ scfdiis_step=1
+ scfdtol=7
+ scfext=10
+ scfguessdens=
+ scfiguess=sad
+ scflshift=off
+ scfmaxit=50
+ scftype=
+ scftol=6
+ scspe=1.d0
+ scsph=1.d0
+ scsps=1.0d0
+ scspt=1.0d0
+ scspv=1.d0
+ spairtol=1e-4
+ subminp=top
+ symm=0
+ talg=occ
+ temp=298.15
+ test=off
+ theodore=off
+ tlmo=0.999
+ tpao=0.94
+ tprint=off
+ uncontract=on
+ unit=bohr
+ usedisk=2
+ verbosity=3
+ wpairtol=0.100000000E-05
+
+ ************************ 2020-03-12 16:23:52 *************************
+ Executing integ...
+
+ Allocation of 500.0 Mbytes of memory...
+ 
+ 
+ Number of atoms:                  3
+ Charge:                           0
+ Number of electrons:             10
+ Number of core electrons:         2
+ Spin multiplicity:                1
+ 
+                 Cartesian coordinates [bohr]      Atomic mass [AMU]  Z
+   1  O     0.00000000    0.00000000    0.11749920    15.994915       8
+   2  H     0.00000000   -1.51526299   -0.93239879     1.007825       1
+   3  H     0.00000000    1.51526299   -0.93239879     1.007825       1
+ 
+ This molecule is an asymmetric top.
+ This molecule is planar.
+ 
+ Rotational constants [cm-1]: 
+     30.509162686912     13.007776382418      9.119583645668
+ 
+ Point group: C2v 
+ Computational point group: C1  
+ 
+ Cartesian coordinates in standard orientation [bohr]
+   1  O     0.00000000    0.00000000    0.11749920
+   2  H     0.00000000   -1.51526299   -0.93239879
+   3  H     0.00000000    1.51526299   -0.93239879
+ 
+ Nuclear repulsion energy [au]:          9.009354297355
+ 
+ 
+ Basis set information:
+ 
+ Maximum angular momentum: d
+ Maximum number of contracted Gaussians:    9
+ Maximum number of primitive Gaussians:     9
+ Spherical harmonic GTOs are used.
+ 
+    1  O  cc-pvdz [ 9s 4p 1d | 9s 4p 1d ]
+    2  H  cc-pvdz [ 4s 1p | 4s 1p ]
+    3  H  cc-pvdz [ 4s 1p | 4s 1p ]
+ 
+ Basis functions:
+            1             2             3             4             5             6             7             8             9            10
+    0    1O1s          1O2s          1O3s          1O4s          1O5s          1O6s          1O7s          1O8s          1O9s          1O1pz     
+    1    1O1py         1O1px         1O2pz         1O2py         1O2px         1O3pz         1O3py         1O3px         1O4pz         1O4py     
+    2    1O4px         1O1d-2        1O1d-1        1O1d0         1O1d+1        1O1d+2        2H1s          2H2s          2H3s          2H4s      
+    3    2H1pz         2H1py         2H1px         3H1s          3H2s          3H3s          3H4s          3H1pz         3H1py         3H1px     
+ 
+ Maximum number of basis functions per shell:   12
+ Total number of basis functions:     40
+ 
+ 
+ Generating atomic densities for the SCF calculation...
+ CPU time [min]:     0.003                   Wall time [min]:     0.003
+ 
+ Character table for point group C1:
+ 
+          E  
+    A     1
+ 
+ Number of basis functions per irrep:
+    A      40
+ 
+ 
+ Calculation of overlap integrals...
+ CPU time [min]:     0.003                   Wall time [min]:     0.004
+ 
+ Calculation of the square root of the overlap matrix...
+ Minimum eigenvalue of the overlap matrix: 0.147214E-01
+ CPU time [min]:     0.003                   Wall time [min]:     0.004
+ 
+ Calculation of kinetic energy integrals...
+ CPU time [min]:     0.003                   Wall time [min]:     0.004
+ Calculation of dipole moment integrals...
+ CPU time [min]:     0.003                   Wall time [min]:     0.004
+ Calculation of second moment integrals...
+ CPU time [min]:     0.003                   Wall time [min]:     0.004
+ Calculation of third moment integrals...
+ CPU time [min]:     0.003                   Wall time [min]:     0.004
+ Calculation of linear momentum integrals...
+ CPU time [min]:     0.003                   Wall time [min]:     0.004
+ Calculation of angular momentum integrals...
+ CPU time [min]:     0.003                   Wall time [min]:     0.004
+ Calculation of nuclear attraction integrals...
+ CPU time [min]:     0.003                   Wall time [min]:     0.004
+ 
+ Calculation of prescreening integrals...
+ CPU time [min]:     0.004                   Wall time [min]:     0.004
+ 
+ Calculation of two-electron integrals...
+   8% done.
+  32% done.
+  47% done.
+  74% done.
+ 100% done.
+ CPU time [min]:     0.004                   Wall time [min]:     0.005
+
+ ************************ 2020-03-12 16:23:53 *************************
+ Executing scf...
+
+ @scfsetup: integrals taken from disk
+            mrcc/integ binary format
+ @scfsetup: calculating on full matrices
+            not using symmetry adapted basis
+ @scfsetup: diis switched on
+ @scfsetup: number of steps to extrapolate from  10
+ @scfsetup: tolerance in energy deviation    0.100000E-05
+            tolerance in density deviation    0.100000E-06
+ @scfsetup: maximum number of iterations:  50
+ @scfsetup: restricted closed shell hf calc
+ @scfsetup: starting scf from superposition of atomic densities
+ @scfsetup: occupation set:
+            from initial orbitals
+ @scfsetup: diis runs from iteration:   1
+ @scfsetup: diis runs to iteration:  50
+ @scfsetup: diis runs in every iteration
+ Allocation of 500.0 Mbytes of memory...
+ ======================================================================
+ ITERATION STEP   1
+ CPU time [min]:     0.002                   Wall time [min]:     0.002
+ 
+ Gradient norm:      2.1147E+04
+ RMS of difference density:                            0.24608234745115
+ Gap [au]:  0.25431017
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP   1 IS   43376.6562331338427612 [AU]
+ ======================================================================
+ ITERATION STEP   2
+ CPU time [min]:     0.003                   Wall time [min]:     0.003
+ 
+ Gradient norm:      2.6919E+01
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.94168683630457
+ RMS of difference density:                            0.21759774228742
+ Gap [au]:  1.74469197
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP   2 IS     -52.7166785428364406 [AU]
+ ======================================================================
+ ITERATION STEP   3
+ CPU time [min]:     0.003                   Wall time [min]:     0.003
+ 
+ Gradient norm:      5.7946E+00
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.27609031852280
+ RMS of difference density:                            0.18124573802653
+ Gap [au]:  0.00216459
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP   3 IS     -70.2266561247889172 [AU]
+ ======================================================================
+ ITERATION STEP   4
+ CPU time [min]:     0.003                   Wall time [min]:     0.003
+ 
+ Gradient norm:      2.3837E+00
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.10724814185134
+ RMS of difference density:                            0.16949025897492
+ Gap [au]:  0.43624701
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP   4 IS     -73.0212776660505369 [AU]
+ ======================================================================
+ ITERATION STEP   5
+ CPU time [min]:     0.004                   Wall time [min]:     0.004
+ 
+ Gradient norm:      1.5197E+00
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.05967077704925
+ RMS of difference density:                            0.01409368336916
+ Gap [au]:  0.55187380
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP   5 IS     -75.5633286848600250 [AU]
+ ======================================================================
+ ITERATION STEP   6
+ CPU time [min]:     0.004                   Wall time [min]:     0.004
+ 
+ Gradient norm:      3.5644E-01
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.01212191253691
+ RMS of difference density:                            0.00484347587876
+ Gap [au]:  0.65650677
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP   6 IS     -76.0023415402439042 [AU]
+ ======================================================================
+ ITERATION STEP   7
+ CPU time [min]:     0.004                   Wall time [min]:     0.004
+ 
+ Gradient norm:      2.4797E-02
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.00122227794448
+ RMS of difference density:                            0.00073181413070
+ Gap [au]:  0.66901562
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP   7 IS     -76.0271303290886351 [AU]
+ ======================================================================
+ ITERATION STEP   8
+ CPU time [min]:     0.005                   Wall time [min]:     0.005
+ 
+ Gradient norm:      9.5128E-03
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.00033504654097
+ RMS of difference density:                            0.00035989189893
+ Gap [au]:  0.67107673
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP   8 IS     -76.0274709559260202 [AU]
+ ======================================================================
+ ITERATION STEP   9
+ CPU time [min]:     0.005                   Wall time [min]:     0.005
+ 
+ Gradient norm:      2.3211E-03
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.00006267719351
+ RMS of difference density:                            0.00009420176254
+ Gap [au]:  0.67114001
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP   9 IS     -76.0275181227880807 [AU]
+ ======================================================================
+ ITERATION STEP  10
+ CPU time [min]:     0.005                   Wall time [min]:     0.005
+ 
+ Gradient norm:      6.0903E-04
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.00001468609641
+ RMS of difference density:                            0.00001516396358
+ Gap [au]:  0.67119077
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP  10 IS     -76.0275206431876711 [AU]
+ ======================================================================
+ ITERATION STEP  11
+ CPU time [min]:     0.006                   Wall time [min]:     0.006
+ 
+ Gradient norm:      6.7600E-05
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.00000177696174
+ RMS of difference density:                            0.00000155509357
+ Gap [au]:  0.67122176
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP  11 IS     -76.0275207371223019 [AU]
+ ======================================================================
+ ITERATION STEP  12
+ CPU time [min]:     0.006                   Wall time [min]:     0.006
+ 
+ Gradient norm:      9.6538E-06
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.00000031727518
+ RMS of difference density:                            0.00000017872894
+ Gap [au]:  0.67121967
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP  12 IS     -76.0275207382944700 [AU]
+ ======================================================================
+ ITERATION STEP  13
+ CPU time [min]:     0.006                   Wall time [min]:     0.006
+ 
+ Gradient norm:      1.6728E-06
+ DIIS is running in this iteration step.
+ RMS of [F,P]:                                         0.00000005511724
+ RMS of difference density:                            0.00000003018639
+ Gap [au]:  0.67121989
+ ALPHA OCC:   5
+ BETA  OCC:   5
+ 
+ ***HARTREE-FOCK ENERGY IN STEP  13 IS     -76.0275207383121483 [AU]
+ ======================================================================
+ 
+ SUCCESS...
+ THE SCF ITERATION HAS CONVERGED!
+ 
+                   A   
+ FINAL ALPHA OCC:   5
+ FINAL BETA  OCC:   5
+ 
+ ***FINAL HARTREE-FOCK ENERGY:    -76.0275207383121483 [AU]
+ 
+ Orbital energies [au]:
+      Irrep         Alpha          Beta
+    1   A        -20.546604     -20.546604
+    2   A         -1.324517      -1.324517
+    3   A         -0.701771      -0.701771
+    4   A         -0.551775      -0.551775
+    5   A         -0.490434      -0.490434
+ 
+    6   A          0.180785       0.180785
+    7   A          0.250288       0.250288
+    8   A          0.674553       0.674553
+    9   A          0.708660       0.708660
+   10   A          1.082581       1.082581
+   11   A          1.124674       1.124674
+   12   A          1.190049       1.190049
+   13   A          1.452812       1.452812
+   14   A          1.463149       1.463149
+   15   A          1.677349       1.677349
+   16   A          1.699470       1.699470
+   17   A          1.848352       1.848352
+   18   A          2.333033       2.333033
+   19   A          2.384859       2.384859
+   20   A          3.236627       3.236627
+   21   A          3.280766       3.280766
+   22   A          3.342205       3.342205
+   23   A          3.377565       3.377565
+   24   A          3.547384       3.547384
+   25   A          3.884005       3.884005
+   26   A          4.089003       4.089003
+   27   A          6.127691       6.127691
+   28   A          6.511337       6.511337
+   29   A          6.851290       6.851290
+   30   A         13.086435      13.086435
+   31   A         22.181858      22.181858
+   32   A         22.345502      22.345502
+   33   A         33.505598      33.505598
+   34   A         33.711819      33.711819
+   35   A         33.923868      33.923868
+   36   A         61.805085      61.805085
+   37   A        233.096235     233.096235
+   38   A        879.388538     879.388538
+   39   A       3791.933499    3791.933499
+   40   A      22771.371041   22771.371041
+ 
+ RETURNING FROM SCF ALGORITHM
+ ======================================================================
+
+ ************************ 2020-03-12 16:23:53 *************************
+ Executing ovirt...
+
+ ovirt, the routine of orbital optimization and integral transformation 
+Thu Mar 12 16:23:53 CET 2020
+ memory =                    500  Mb              65536000  8 byte word
+ mrccboot = T
+ scftype  = rhf  
+ localcc  = off 
+ core     = corr  
+ ovirt    = off  
+ ccprog   = mrcc
+ dfnbasis =                      0
+ dfbasis_cor =none                
+ lmp2dens = on 
+ dens =                      0
+ verblev =                      3
+ task     =                      4
+ epsilon =   0.975000000000000     
+ lmp2= on 
+ localNO  =  F
+ localMP2 =  F
+ localMP2_TEST =  F
+ LMP2_shortcut =  F
+ FOCKTR   =  T
+ Allocated memory:                     500  Mb
+ onbasis=                    40
+ RHF calculation! 
+ integral transforamtion: AOs ------ MOs
+ # of basis functions, # of int. blocks    40     1
+100 % 
+ second part
+100 %
+ integral transformation is completed! 
+CPU and WC time           0.13           0.13     AOs -> MOs 
+ occupied and 
+     1-20.5466042894
+     2 -1.3245169377
+     3 -0.7017709437
+     4 -0.5517753938
+     5 -0.4904344653
+               virtual energies 
+     6  0.1807854244
+     7  0.2502875834
+     8  0.6745525684
+     9  0.7086602628
+    10  1.0825807289
+    11  1.1246739874
+    12  1.1900490291
+    13  1.4528116164
+    14  1.4631488349
+    15  1.6773490867
+    16  1.6994699455
+    17  1.8483518962
+    18  2.3330331229
+    19  2.3848587983
+    20  3.2366266745
+    21  3.2807663243
+    22  3.3422051070
+    23  3.3775654427
+    24  3.5473844409
+    25  3.8840054145
+    26  4.0890033946
+    27  6.1276912684
+    28  6.5113367780
+    29  6.8512898987
+    30 13.0864347700
+    31 22.1818577633
+    32 22.3455018686
+    33 33.5055978470
+    34 33.7118191928
+    35 33.9238683282
+    36 61.8050850430
+    37233.0962345055
+    38879.3885379515
+    39**************
+    40**************
+ inttol =   1.000000000000000E-010   10.0000000000000     
+Integrals are written to fort.55
+Thu Mar 12 16:23:54 CET 2020
+  ovirt terminated normally 
+
+ ************************ 2020-03-12 16:23:54 *************************
+ Executing goldstone...
+
+ Generation of CC equations in terms of H and T...
+ Generation of antisymmetrized Goldstone diagrams...
+ Number of diagrams in T^1 equations:    14
+ Number of diagrams in T^2 equations:    11
+ Translation of diagrams to factorized equations...
+ Optimizing intermediate calculation...
+ Optimizing right-hand EOMCC calculation...
+ Number of floating-point operations per iteration step:   1.1957E+08
+ Probable CPU time per iteration step (hours):      0.00
+ Required memory (Mbytes):     202.8
+ Number of intermediates:                                  61
+ Number of intermediates to be stored:                     29
+ Length of intermediate file (Mbytes):      59.8
+
+ ************************ 2020-03-12 16:23:54 *************************
+ Executing xmrcc...
+
+ **********************************************************************
+ CC(                     2 ) calculation 
+ 
+ 
+ Allocation of 202.8 Mbytes of memory...
+ Number of spinorbitals:                    80
+ Number of alpha electrons:                        5
+ Number of beta electrons:                         5
+ z-component of spin:  0.0
+ Spatial symmetry is not used.
+ Convergence criterion:  1.0E-06
+ Construction of occupation graphs...
+ Number of                     0 -fold excitations:                      1
+ Number of                     1 -fold excitations:                    350
+ Number of                     2 -fold excitations:                  42525
+ Total number of configurations:                  42876
+ Calculation of coupling coefficients...
+ Length of intermediate file (Mbytes):      45.4
+ 
+ ======================================================================
+ 
+ ======================================================================
+ 
+ ======================================================================
+ 
+ ======================================================================
+ 
+ ======================================================================
+ 
+ Memory requirements /Mbyte/: 
+               Minimal        Optimal
+ Real*8:         13.0860        22.9016
+ Integer:         0.2616
+ Total:          13.3476        23.1632
+ 
+
+ ************************ 2020-03-12 16:23:54 *************************
+ Executing mrcc...
+
+ **********************************************************************
+ LR-CC2 calculation                                                     
+ 
+ 
+ OpenMP parallel version is running.
+ Number of CPU cores:   1
+ Allocation of   22.9 Mbytes of memory...
+ Number of spinorbitals:  80
+ Number of alpha electrons:  5
+ Number of beta  electrons:  5
+ z-component of spin:  0.0
+ Spatial symmetry is not used.
+ Convergence criterion:  1.0E-06
+ Construction of occupation graphs...
+ Number of 0-fold excitations: 1
+ Number of 1-fold excitations: 350
+ Number of 2-fold excitations: 42525
+ Total number of determinants: 42876
+ Calculation of coupling coefficients...
+ Initial cluster amplitudes are generated.
+ Length of intermediate file (Mbytes):      45.4
+ Reading integral list from unit 55...
+ Sorting integrals...
+ Calculation of diagonal elements of Hamiltonian...
+ Calculation of MP denominators...
+ 
+ Starting CC iteration...
+ ======================================================================
+ Norm of residual vector:     2.33450232
+ CPU time [min]:     0.015                   Wall time [min]:     0.015
+ 
+ Iteration  1  CC energy:   -76.28582723  Energy decrease:   0.25830649
+ ======================================================================
+ Norm of residual vector:     0.08239135
+ CPU time [min]:     0.024                   Wall time [min]:     0.024
+ 
+ Iteration  2  CC energy:   -76.28579513  Energy decrease:   0.00003209
+ ======================================================================
+ Norm of residual vector:     0.01781708
+ CPU time [min]:     0.034                   Wall time [min]:     0.034
+ 
+ Iteration  3  CC energy:   -76.28722407  Energy decrease:   0.00142894
+ ======================================================================
+ Norm of residual vector:     0.00285712
+ CPU time [min]:     0.044                   Wall time [min]:     0.044
+ 
+ Iteration  4  CC energy:   -76.28727782  Energy decrease:   0.00005374
+ ======================================================================
+ Norm of residual vector:     0.00098405
+ CPU time [min]:     0.053                   Wall time [min]:     0.053
+ 
+ Iteration  5  CC energy:   -76.28724987  Energy decrease:   0.00002794
+ ======================================================================
+ Norm of residual vector:     0.00025482
+ CPU time [min]:     0.063                   Wall time [min]:     0.063
+ 
+ Iteration  6  CC energy:   -76.28725115  Energy decrease:   0.00000128
+ ======================================================================
+ Norm of residual vector:     0.00007709
+ CPU time [min]:     0.073                   Wall time [min]:     0.073
+ 
+ Iteration  7  CC energy:   -76.28725341  Energy decrease:   0.00000226
+ ======================================================================
+ Norm of residual vector:     0.00001007
+ CPU time [min]:     0.083                   Wall time [min]:     0.083
+ 
+ Iteration  8  CC energy:   -76.28725333  Energy decrease:   0.00000009
+ ======================================================================
+ Norm of residual vector:     0.00000228
+ CPU time [min]:     0.093                   Wall time [min]:     0.093
+ 
+ Iteration  9  CC energy:   -76.28725331  Energy decrease:   0.00000002
+ ======================================================================
+ Norm of residual vector:     0.00000043
+ CPU time [min]:     0.103                   Wall time [min]:     0.103
+ 
+ Iteration 10  CC energy:   -76.28725331  Energy decrease:   2.8977E-09
+ ======================================================================
+ 
+ Iteration has converged in 10 steps.
+ 
+ Final results:
+ Total CC2 energy [au]:              -76.287253310772
+ Total MP2 energy [au]:              -76.285827225755
+ Spin multiplicity:                     1
+ 
+ 
+ 
+ Starting right-hand LR-CC iteration for root                      2 ...
+ ======================================================================
+ Norm of residual vector:     0.62087909      Convergence:   1.00000000
+ CPU time [min]:     0.108                   Wall time [min]:     0.108
+ 
+ Iteration  1  CI energy:   -75.87061592  Energy decrease:   0.41663739
+ ======================================================================
+ Norm of residual vector:     0.16293217      Convergence:   0.24937646
+ CPU time [min]:     0.113                   Wall time [min]:     0.113
+ 
+ Iteration  2  CI energy:   -75.99207166  Energy decrease:   0.12145575
+ ======================================================================
+ Norm of residual vector:     0.02882939      Convergence:   0.03268644
+ CPU time [min]:     0.118                   Wall time [min]:     0.119
+ 
+ Iteration  3  CI energy:   -75.99560588  Energy decrease:   0.00353422
+ ======================================================================
+ Norm of residual vector:     0.00949416      Convergence:   0.01720451
+ CPU time [min]:     0.124                   Wall time [min]:     0.124
+ 
+ Iteration  4  CI energy:   -75.99582430  Energy decrease:   0.00021842
+ ======================================================================
+ Norm of residual vector:     0.00304440      Convergence:   0.00381165
+ CPU time [min]:     0.129                   Wall time [min]:     0.129
+ 
+ Iteration  5  CI energy:   -75.99583928  Energy decrease:   0.00001498
+ ======================================================================
+ Norm of residual vector:     0.00059963      Convergence:   0.00069609
+ CPU time [min]:     0.135                   Wall time [min]:     0.135
+ 
+ Iteration  6  CI energy:   -75.99584075  Energy decrease:   0.00000148
+ ======================================================================
+ Norm of residual vector:     0.00008760      Convergence:   0.00013538
+ CPU time [min]:     0.140                   Wall time [min]:     0.140
+ 
+ Iteration  7  CI energy:   -75.99584092  Energy decrease:   0.00000017
+ ======================================================================
+ Norm of residual vector:     0.00002023      Convergence:   0.00002317
+ CPU time [min]:     0.146                   Wall time [min]:     0.146
+ 
+ Iteration  8  CI energy:   -75.99584093  Energy decrease:   0.00000001
+ ======================================================================
+ Norm of residual vector:     0.0000E+00      Convergence:   3.5645E-06
+ CPU time [min]:     0.151                   Wall time [min]:     0.151
+ 
+ Iteration  9  CI energy:   -75.99584094  Energy decrease:   0.00000001
+ ======================================================================
+ 
+ Iteration has converged in  9 steps.
+ 
+ Final results:
+ Total LR-CC2 energy [au]:           -75.995840935011
+ Excitation energy [eV]:           7.9297
+ Excitation energy [cm^-1]:    63957.63
+ Absorption wavelength [nm]:     156.35
+ Spin multiplicity:                     1
+ 
+ 
+ 
+ Starting right-hand LR-CC iteration for root                      3 ...
+ ======================================================================
+ Norm of residual vector:     0.61957158      Convergence:   1.00000000
+ CPU time [min]:     0.156                   Wall time [min]:     0.157
+ 
+ Iteration  1  CI energy:   -75.78523644  Energy decrease:   0.50201687
+ ======================================================================
+ Norm of residual vector:     0.16547169      Convergence:   0.25720283
+ CPU time [min]:     0.162                   Wall time [min]:     0.162
+ 
+ Iteration  2  CI energy:   -75.90478359  Energy decrease:   0.11954714
+ ======================================================================
+ Norm of residual vector:     0.04303141      Convergence:   0.05383455
+ CPU time [min]:     0.167                   Wall time [min]:     0.167
+ 
+ Iteration  3  CI energy:   -75.90940172  Energy decrease:   0.00461814
+ ======================================================================
+ Norm of residual vector:     0.01451391      Convergence:   0.02501926
+ CPU time [min]:     0.172                   Wall time [min]:     0.173
+ 
+ Iteration  4  CI energy:   -75.90996039  Energy decrease:   0.00055866
+ ======================================================================
+ Norm of residual vector:     0.00530346      Convergence:   0.00770666
+ CPU time [min]:     0.178                   Wall time [min]:     0.178
+ 
+ Iteration  5  CI energy:   -75.91000704  Energy decrease:   0.00004665
+ ======================================================================
+ Norm of residual vector:     0.00133310      Convergence:   0.00131436
+ CPU time [min]:     0.183                   Wall time [min]:     0.183
+ 
+ Iteration  6  CI energy:   -75.91000464  Energy decrease:   0.00000239
+ ======================================================================
+ Norm of residual vector:     0.00024327      Convergence:   0.00039523
+ CPU time [min]:     0.189                   Wall time [min]:     0.189
+ 
+ Iteration  7  CI energy:   -75.91000506  Energy decrease:   0.00000041
+ ======================================================================
+ Norm of residual vector:     0.00007932      Convergence:   0.00008593
+ CPU time [min]:     0.194                   Wall time [min]:     0.194
+ 
+ Iteration  8  CI energy:   -75.91000476  Energy decrease:   0.00000030
+ ======================================================================
+ Norm of residual vector:     0.00001777      Convergence:   0.00002049
+ CPU time [min]:     0.200                   Wall time [min]:     0.200
+ 
+ Iteration  9  CI energy:   -75.91000481  Energy decrease:   0.00000005
+ ======================================================================
+ Norm of residual vector:     0.00000453      Convergence:   0.00000623
+ CPU time [min]:     0.206                   Wall time [min]:     0.206
+ 
+ Iteration 10  CI energy:   -75.91000484  Energy decrease:   0.00000003
+ ======================================================================
+ Norm of residual vector:     0.0000E+00      Convergence:   1.3718E-06
+ CPU time [min]:     0.211                   Wall time [min]:     0.211
+ 
+ Iteration 11  CI energy:   -75.91000484  Energy decrease:   3.0485E-10
+ ======================================================================
+ 
+ Iteration has converged in 11 steps.
+ 
+ Final results:
+ Total LR-CC2 energy [au]:           -75.910004838002
+ Excitation energy [eV]:          10.2655
+ Excitation energy [cm^-1]:    82796.48
+ Absorption wavelength [nm]:     120.78
+ Spin multiplicity:                     1
+ 
+ 
+ 
+ Starting right-hand LR-CC iteration for root                      4 ...
+ ======================================================================
+ Norm of residual vector:     0.61027283      Convergence:   1.00000000
+ CPU time [min]:     0.216                   Wall time [min]:     0.217
+ 
+ Iteration  1  CI energy:   -75.78983238  Energy decrease:   0.49742093
+ ======================================================================
+ Norm of residual vector:     0.19299796      Convergence:   0.27753651
+ CPU time [min]:     0.222                   Wall time [min]:     0.222
+ 
+ Iteration  2  CI energy:   -75.91492223  Energy decrease:   0.12508985
+ ======================================================================
+ Norm of residual vector:     0.04108809      Convergence:   0.04460951
+ CPU time [min]:     0.227                   Wall time [min]:     0.227
+ 
+ Iteration  3  CI energy:   -75.92057322  Energy decrease:   0.00565099
+ ======================================================================
+ Norm of residual vector:     0.01145045      Convergence:   0.02112738
+ CPU time [min]:     0.232                   Wall time [min]:     0.232
+ 
+ Iteration  4  CI energy:   -75.92101007  Energy decrease:   0.00043685
+ ======================================================================
+ Norm of residual vector:     0.00353972      Convergence:   0.00572351
+ CPU time [min]:     0.238                   Wall time [min]:     0.238
+ 
+ Iteration  5  CI energy:   -75.92103880  Energy decrease:   0.00002873
+ ======================================================================
+ Norm of residual vector:     0.00079235      Convergence:   0.00117254
+ CPU time [min]:     0.243                   Wall time [min]:     0.243
+ 
+ Iteration  6  CI energy:   -75.92104113  Energy decrease:   0.00000233
+ ======================================================================
+ Norm of residual vector:     0.00017318      Convergence:   0.00030425
+ CPU time [min]:     0.249                   Wall time [min]:     0.249
+ 
+ Iteration  7  CI energy:   -75.92104157  Energy decrease:   0.00000044
+ ======================================================================
+ Norm of residual vector:     0.00004672      Convergence:   0.00005217
+ CPU time [min]:     0.254                   Wall time [min]:     0.254
+ 
+ Iteration  8  CI energy:   -75.92104166  Energy decrease:   0.00000009
+ ======================================================================
+ Norm of residual vector:     0.00000585      Convergence:   0.00000780
+ CPU time [min]:     0.260                   Wall time [min]:     0.260
+ 
+ Iteration  9  CI energy:   -75.92104166  Energy decrease:   0.00000001
+ ======================================================================
+ Norm of residual vector:     0.0000E+00      Convergence:   1.5122E-06
+ CPU time [min]:     0.265                   Wall time [min]:     0.265
+ 
+ Iteration 10  CI energy:   -75.92104167  Energy decrease:   3.3181E-09
+ ======================================================================
+ 
+ Iteration has converged in 10 steps.
+ 
+ Final results:
+ Total LR-CC2 energy [au]:           -75.921041667728
+ Excitation energy [eV]:           9.9651
+ Excitation energy [cm^-1]:    80374.17
+ Absorption wavelength [nm]:     124.42
+ Spin multiplicity:                     1
+ 
+ 
+ 
+ Starting right-hand LR-CC iteration for root                      5 ...
+ ======================================================================
+ Norm of residual vector:     0.59866958      Convergence:   1.00000000
+ CPU time [min]:     0.270                   Wall time [min]:     0.271
+ 
+ Iteration  1  CI energy:   -75.71313428  Energy decrease:   0.57411903
+ ======================================================================
+ Norm of residual vector:     0.16963459      Convergence:   0.25455123
+ CPU time [min]:     0.276                   Wall time [min]:     0.276
+ 
+ Iteration  2  CI energy:   -75.82934240  Energy decrease:   0.11620812
+ ======================================================================
+ Norm of residual vector:     0.03626546      Convergence:   0.04194186
+ CPU time [min]:     0.281                   Wall time [min]:     0.281
+ 
+ Iteration  3  CI energy:   -75.83384392  Energy decrease:   0.00450152
+ ======================================================================
+ Norm of residual vector:     0.01531423      Convergence:   0.02805209
+ CPU time [min]:     0.286                   Wall time [min]:     0.287
+ 
+ Iteration  4  CI energy:   -75.83429019  Energy decrease:   0.00044627
+ ======================================================================
+ Norm of residual vector:     0.00655737      Convergence:   0.00821683
+ CPU time [min]:     0.292                   Wall time [min]:     0.292
+ 
+ Iteration  5  CI energy:   -75.83434584  Energy decrease:   0.00005566
+ ======================================================================
+ Norm of residual vector:     0.00307999      Convergence:   0.00409403
+ CPU time [min]:     0.297                   Wall time [min]:     0.297
+ 
+ Iteration  6  CI energy:   -75.83435696  Energy decrease:   0.00001112
+ ======================================================================
+ Norm of residual vector:     0.00111494      Convergence:   0.00149488
+ CPU time [min]:     0.303                   Wall time [min]:     0.303
+ 
+ Iteration  7  CI energy:   -75.83436140  Energy decrease:   0.00000444
+ ======================================================================
+ Norm of residual vector:     0.00049603      Convergence:   0.00064268
+ CPU time [min]:     0.308                   Wall time [min]:     0.308
+ 
+ Iteration  8  CI energy:   -75.83436301  Energy decrease:   0.00000162
+ ======================================================================
+ Norm of residual vector:     0.00011961      Convergence:   0.00016661
+ CPU time [min]:     0.314                   Wall time [min]:     0.314
+ 
+ Iteration  9  CI energy:   -75.83436302  Energy decrease:   0.00000001
+ ======================================================================
+ Norm of residual vector:     0.00003739      Convergence:   0.00004714
+ CPU time [min]:     0.319                   Wall time [min]:     0.320
+ 
+ Iteration 10  CI energy:   -75.83436302  Energy decrease:   3.3417E-09
+ ======================================================================
+ Norm of residual vector:     0.00000702      Convergence:   0.00000855
+ CPU time [min]:     0.325                   Wall time [min]:     0.325
+ 
+ Iteration 11  CI energy:   -75.83436302  Energy decrease:   1.5584E-09
+ ======================================================================
+ Norm of residual vector:     0.0000E+00      Convergence:   1.8877E-06
+ CPU time [min]:     0.331                   Wall time [min]:     0.331
+ 
+ Iteration 12  CI energy:   -75.83436302  Energy decrease:   7.6035E-10
+ ======================================================================
+ 
+ Iteration has converged in 12 steps.
+ 
+ Final results:
+ Total LR-CC2 energy [au]:           -75.834363019176
+ Excitation energy [eV]:          12.3238
+ Excitation energy [cm^-1]:    99397.94
+ Absorption wavelength [nm]:     100.61
+ Spin multiplicity:                     1
+ 
+ ************************ 2020-03-12 16:24:14 *************************
+                      Normal termination of mrcc.
+ **********************************************************************

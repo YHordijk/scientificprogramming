@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+#f1 = Filter()
+#f1.add(from_string = 'Total energy',
+#      num_lines   = 1,
+#      rel_tolerance   = 1.0e-9)
+
+f = Filter()
+f.add(from_string = 'Final results from EXACORR',
+      num_lines   = 1,
+      abs_tolerance   = 1.0e-6)
+f.add(from_string = 'Norm of Fock matrix (OO',
+      num_lines   = 1,
+      abs_tolerance   = 1.0e-6)
+f.add(from_string = 'Norm of Fock matrix (OV',
+      num_lines   = 1,
+      abs_tolerance   = 1.0e-4)
+f.add(from_string = 'Norm of Fock matrix (VV',
+      num_lines   = 1,
+      abs_tolerance   = 1.0e-4)
+
+os.system('ulimit -s unlimited')
+
+#test.run(['scf_h2o.inp'], ['H2O_nosym.mol'], f1,"--get='X2CMAT AOMOMAT DFCOEF'")
+
+test.run(['talsh_cc_h2o.inp'], ['H2O_nosym.mol'], f, "--put='X2CMAT AOMOMAT DFCOEF'")
+test.run(['talsh_cc_h2o_core.inp'], ['H2O_nosym.mol'], f, "--put='X2CMAT AOMOMAT DFCOEF'")
+
+sys.exit(test.return_code)

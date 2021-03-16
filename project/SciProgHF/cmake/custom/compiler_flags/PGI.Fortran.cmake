@@ -1,0 +1,5 @@
+if(CMAKE_Fortran_COMPILER_ID MATCHES PGI)
+    set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -DVAR_PGF90 -g")
+    set(CMAKE_Fortran_FLAGS_RELEASE "-fast")
+    set(CMAKE_Fortran_FLAGS_DEBUG "-g")
+endif()

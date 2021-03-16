@@ -1,0 +1,18 @@
+# CC2 calculation for water
+basis=cc-pVDZ
+ccprog=mrcc
+calc=cc2
+mem=500MB
+core=corr
+symm=off
+uncontract=on
+nstate=5
+
+unit=bohr
+geom=xyz
+3
+  
+   O     0.00000000    0.00000000    0.11749920
+   H     0.00000000   -1.51526299   -0.93239879
+   H     0.00000000    1.51526299   -0.93239879
+

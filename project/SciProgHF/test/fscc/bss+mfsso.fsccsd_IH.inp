@@ -1,0 +1,61 @@
+!
+**DIRAC
+.TITLE
+Magnesium atom. Fockspace test calculations.
+.WAVE F
+.4INDEX
+**HAMILTONAIN    
+.BSS
+2999
+.CMPEIG
+*AMFI
+.PRNT_A 
+0
+.PRNT_S
+0
+.MXITER
+45
+.AMFICH
+0
+**WAVE FUNCTIONS
+.SCF
+.RELCCSD
+*SCF
+.EVCCNV
+1.0E-10
+.CLOSED SHELL
+4 6
+**MOLTRA
+.ACTIVE
+energy -1000.0 1000.0 1.0
+energy -1000.0 1000.0 1.0
+**RELCC
+.FOCKSP
+#.ENERGY
+.PRINT
+1
+#.DEBUG
+*CCENER
+.MAXIT # maximum number of iterations for (0,0) sector
+55
+.NTOL
+9
+*CCFSPC
+.MAXIT # maximum number of iterations in sectors
+95
+.DOEA     #  (0,1) sector
+.DOEA2    #  (0,2) sector
+#.DOIE     #  (1,0) sector
+#.DOIE2    #  (2,0) sector
+#.DOEXC    #  (1,1) sector
+.NACTH
+0 0 0 0
+.NACTP
+8 8 3 3
+.DOIH
+*CCIH
+.EPMIN
+1.15
+.EPMAX
+1.40
+*END OF

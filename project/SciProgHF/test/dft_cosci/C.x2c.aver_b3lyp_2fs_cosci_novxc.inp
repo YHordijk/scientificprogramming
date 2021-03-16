@@ -1,0 +1,37 @@
+**DIRAC
+.TITLE
+ C atom               
+.WAVE F
+**GENERAL
+.PRINT
+1
+**INTEGRALS
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+.DFT
+ B3LYP
+.PRINT
+0
+**WAVE FUNCTIONS
+.SCF
+.RESOLVE
+*SCF
+# 1s(2) 2s(2)
+.CLOSED SHELL
+4 0
+# 2p_aver(2)
+.OPEN SHELL
+1
+2/0,6
+.MAXITR
+25
+.PRINT
+0
+*RESOLVE
+# no exch-correl.term into Fock mtx elements
+.NOVXC
+.PRINT
+0
+*END OF

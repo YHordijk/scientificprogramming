@@ -1,0 +1,33 @@
+**DIRAC
+.TITLE
+ UF6-
+.WAVE FUNCTION
+.ANALYZE
+**HAMILTONIAN
+.ECP
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+1..oo
+1..oo
+.LABEL
+SHELL
+**INTEGRALS
+*READIN
+.UNCONTRACT
+**WAVE FUNCTION
+.SCF
+*SCF
+.CLOSED SHELL
+ 44 42
+.OPEN SHELL
+ 1
+ 1/0,14
+.OPENFAC  ! deactivate active-active shells interaction to get convergence
+  0.0D0
+.LSHIFT ! enable convergence
++1.0
+!.OVLSEL
+!.NODYNSEL
+*END OF

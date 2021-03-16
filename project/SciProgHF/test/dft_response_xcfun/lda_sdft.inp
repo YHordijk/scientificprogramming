@@ -1,0 +1,32 @@
+**DIRAC
+.WAVE FUNCTION
+.PROPERTIES
+**HAMILTONIAN
+.LEVY-LEBLOND
+.DFTAUTO
+ LDA
+**GRID
+.DEBUG          !very coarse grid
+.ZIPGRID
+**INTEGRALS
+.NUCMOD
+ 1
+*READIN
+.CONTRACT
+**WAVE FUNCTION
+.SCF
+*SCF
+.ITRINT
+ 0 0
+.EVCCNV
+ 1.0D-4         !we use poor convergence threshold for the test
+**PROPERTIES
+*EXCITATIONS
+.EXCITATIONS
+ 8 6
+.TRIPLET
+.ANALYZE
+.SKIPEP
+.THRESH
+ 1.0D-3         !we use poor convergence threshold for the test
+*END OF

@@ -1,0 +1,49 @@
+#################################
+**DIRAC
+.TITLE
+ Testing KRMC for Be in Pierloot basis
+.ANALYZE
+.WAVE FUNCTION
+#################################
+**ANALYZE
+.PRIVEC
+*PRIVEC
+.VECPRI
+1..3
+1..3
+#################################
+**HAMILTONIAN
+.X2C
+#################################
+**WAVE FUNCTION
+.SCF
+.KRMCSCF
+#########
+*SCF
+.CLOSED SHELL
+ 4  0
+#########
+*KRMCSCF
+.CI PROGRAM
+GASCIP
+.INACTIVE
+ 1  0
+.GASSH
+ 3
+ 1  0
+ 0  3
+ 1  0
+.GASSPC
+ 0  2
+ 0  2
+ 2  2
+.MK2REF
+ 0
+.MK2DEL
+ 2
+.SYMMETRY
+ 1
+.PRINT
+ 1
+#################################
+*END OF

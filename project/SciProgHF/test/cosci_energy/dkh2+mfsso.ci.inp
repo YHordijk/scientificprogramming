@@ -1,0 +1,30 @@
+!
+! This test calculates the spin-orbit components of the 2P state of Fluorine,
+! using a COSCI wavefunction.
+!
+**DIRAC
+.TITLE
+Fluorine atom.
+.WAVE F
+**GENERAL
+.PCMOUT
+**HAMILTONIAN
+.BSS
+2022
+.CMPEIG
+.PRINT
+2
+**WAVE FUNCTIONS
+.SCF
+.RESOLVE
+*SCF
+.CLOSED SHELL
+4 0
+.OPEN S
+1
+5/0,6
+.MAXITR
+25
+*END OF
+
+ $GOSCIP IPRNT=5 &END

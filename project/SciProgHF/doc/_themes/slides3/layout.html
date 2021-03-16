@@ -1,0 +1,9 @@
+{% extends "slides/layout.html" %}
+
+{%- block extrahead %}
+  {# GOOGLE ANALYTICS #}
+  {%- if theme_google_analytics_account %}
+    {% import "macros.html" as macros %}
+    {{ macros.google_analytics(theme_google_analytics_account) }}
+  {%- endif %}
+{%- endblock %}

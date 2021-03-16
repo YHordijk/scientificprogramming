@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string  = '   Electronic energy',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-10)
+
+test.run(['Nb.inp'], ['Nb.xyz'], f)
+test.run(['Nblin.inp'], ['Nblin.xyz'], f)
+
+sys.exit(test.return_code)

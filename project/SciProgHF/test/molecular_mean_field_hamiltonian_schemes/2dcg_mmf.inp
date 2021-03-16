@@ -1,0 +1,45 @@
+#################################
+**DIRAC
+.TITLE
+ FO molecule - X2C-mmf model
+.WAVE FUNCTION
+.ANALYZ
+#################################
+**ANALYZE
+.PRIVEC
+*PRIVEC
+.VECPRI
+1..10
+#################################
+**INTEGRALS
+*READIN
+.UNCONTRACT
+**HAMILTONIAN
+.X2Cmmf
+.GAUNT        ! include LSLS integrals in mmf
+.DOSSSS       ! include SSSS integrals in mmf
+#################################
+**WAVE FUNCTION
+.SCF
+.RELCCSD
+*SCF
+.CLOSED SHELL
+ 18
+.EVCCNV
+1.0D-8
+.MAXITR
+ 100
+#####################################################
+**MOLTRA
+.ACTIVE
+energy -6.0 20.0 1.0
+#####################################################
+**RELCCSD
+.FOCKSP
+*CCFSPC
+.DOIE
+.NACTH
+ 2 2
+.MAXIT
+100
+**END OF

@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = '  Magnetizabilities                     au                       SI                      cgs',
+      num_lines   = 9,
+      rel_tolerance   = 0.0002)
+
+test.run(['LiH.dc_ukb.linresp_ep_magnetiz_lao-go_cm.inp'], ['LiH.lsym.mol'], f)
+test.run(['LiH.dc_rkb.linresp_ee_magnetiz_lao-go_cm.inp'], ['LiH.lsym.mol'], f)
+test.run(['LiH.levyle.linresp_magnetiz_lao-go_cm.inp'],    ['LiH.lsym.mol'], f)
+test.run(['LiH.dc_ukb.linresp_ep_magnetiz_lao-go_1.inp'],  ['LiH.C1.mol'], f)
+test.run(['LiH.dc_rkb.linresp_ee_magnetiz_lao-go_1.inp'],  ['LiH.C1.mol'], f)
+test.run(['LiH.levyle.linresp_magnetiz_lao-go_1.inp'],     ['LiH.C1.mol'], f)
+
+sys.exit(test.return_code)

@@ -1,0 +1,39 @@
+**DIRAC
+.TITLE
+  C atom  
+.WAVE F
+.ANALYZE
+**GENERAL
+.DIRECT
+1 1 1
+**INTEGRALS
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+**WAVE FUNCTIONS
+.SCF
+*SCF
+# 1s(2) 2s(2)
+.CLOSED SHELL
+4 0
+# 2p12(1) 2p32(1)
+.OPEN SHELL
+2
+1/0,2
+1/0,4
+.OPENFACTOR
+1.0
+# Activate level shift (for open-shell orbitals)
+.OLEVEL
+0.00
+0.20
+.EVCCNV
+5.0E-7 1.0E-5
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+all 
+all 
+*END OF

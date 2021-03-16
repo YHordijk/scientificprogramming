@@ -1,0 +1,58 @@
+WHATEVER
+Test of basis set readin.
+Methane
+    2    2 XY YZ
+        6.    1
+C  1          0.00000000          0.00000000          0.00000000
+LARGE FAMILY   10    3    1    1    1
+#
+# Family basis set. 
+# Give the exponent and the ranges for each block.
+#
+# Number of exponents is 10, and there is one block each for
+# s, p, and d functions.
+#
+# exponents
+#
+6665.0000000
+1000.0000000
+ 228.0000000
+  64.7100000
+  21.0600000
+   7.4950000
+   2.7970000
+   0.5215000
+   0.1596000
+   0.0469000
+#
+# s functions:
+#
+1..10
+#
+# p functions:
+#
+6..10
+#
+# d functions:
+#
+8..9
+        1.    1
+H  2          1.18486272          1.18486272          1.18486272
+LARGE FAMILY   5    2    1    1
+#
+# exponents:
+#
+ 13.0100000
+  1.9620000
+  0.4446000
+  0.1220000
+  0.0297400
+#
+# s-functions:
+#
+1..5
+#
+# p-functions:
+#
+3..4
+FINISH

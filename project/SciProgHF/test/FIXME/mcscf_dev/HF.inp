@@ -1,0 +1,22 @@
+**DIRAC
+.TITLE
+ Testing KRMC and KR-CI for Be in Pierloot basis
+.ANALYZE
+.WAVE FUNCTION
+**GENERAL
+.ACMOUT
+**HAMILTONIAN
+.X2C
+**WAVE FUNCTION
+.SCF
+*SCF
+.CLOSED SHELL
+ 4 0
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+2
+1,2,3
+! print active orbitals
+**END OF

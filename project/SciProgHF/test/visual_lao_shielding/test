@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = '      scalar              x-component         y-component         z-component',
+      num_lines   = 3,
+      rel_tolerance   = 1.0e-5)
+
+test.run(['rsp_ll_nolao.inp'], ['hf.mol'],    args=' --get="DFCOEF PAMXVC TBMO"')
+test.run(['vis_ll_nolao.inp'], ['hf.mol'], f, args='--copy="DFCOEF PAMXVC TBMO"')
+
+test.run(['rsp_ll_lao.inp'], ['hf.mol'],    args=' --get="DFCOEF PAMXVC TBMO"')
+test.run(['vis_ll_lao.inp'], ['hf.mol'], f, args='--copy="DFCOEF PAMXVC TBMO"')
+
+test.run(['rsp_dc_nolao.inp'], ['hf.mol'],    args=' --get="DFCOEF PAMXVC TBMO"')
+test.run(['vis_dc_nolao.inp'], ['hf.mol'], f, args='--copy="DFCOEF PAMXVC TBMO"')
+
+test.run(['rsp_dc_lao_nc.inp'],            ['hf.mol'],    args=' --get="DFCOEF PAMXVC TBMO"')
+test.run(['vis_dc_lao_nc.inp'],            ['hf.mol'], f, args='--copy="DFCOEF PAMXVC TBMO"')
+test.run(['vis_dc_lao_none_after_nc.inp'], ['hf.mol'], f, args='--copy="DFCOEF PAMXVC TBMO"')
+
+test.run(['rsp_dc_lao_sc.inp'],            ['hf.mol'],    args=' --get="DFCOEF PAMXVC TBMO"')
+test.run(['vis_dc_lao_sc.inp'],            ['hf.mol'], f, args='--copy="DFCOEF PAMXVC TBMO"')
+test.run(['vis_dc_lao_none_after_sc.inp'], ['hf.mol'], f, args='--copy="DFCOEF PAMXVC TBMO"')
+
+test.run(['rsp_dc_lao_g987.inp'],                   ['hf.mol'],    args=' --get="DFCOEF PAMXVC TBMO"')
+test.run(['vis_dc_lao_reorth_g987_select_all.inp'], ['hf.mol'], f, args='--copy="DFCOEF PAMXVC TBMO"')
+test.run(['vis_dc_lao_reorth_g987_select_35.inp'],  ['hf.mol'], f, args='--copy="DFCOEF PAMXVC TBMO"')
+
+test.run(['rsp_dc_lao_g123.inp'],                   ['hf.mol'],    args=' --get="DFCOEF PAMXVC TBMO"')
+test.run(['vis_dc_lao_reorth_g123_select_all.inp'], ['hf.mol'], f, args='--copy="DFCOEF PAMXVC TBMO"')
+test.run(['vis_dc_lao_reorth_g123_select_35.inp'],  ['hf.mol'], f, args='--copy="DFCOEF PAMXVC TBMO"')
+
+# cleanup
+os.unlink('DFCOEF')
+os.unlink('PAMXVC')
+os.unlink('TBMO')
+
+sys.exit(test.return_code)

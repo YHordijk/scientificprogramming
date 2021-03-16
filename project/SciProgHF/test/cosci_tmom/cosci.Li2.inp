@@ -1,0 +1,85 @@
+!
+! Li2
+!
+**DIRAC
+.TITLE
+Li2
+.WAVE F
+.PROPERTIES
+.4INDEX
+**GENERAL
+.PCMOUT
+**HAMILTONIAN
+.LVCORR
+**WAVE FUNCTIONS
+.SCF
+.COSCI
+######################################################################
+*SCF
+## total number of electrons in closed-shell (1..NFSYM)
+.CLOSED SHELL
+ 4 2 
+.MAXITR
+100
+######################################################################
+*COSCI
+## D2h-> 1Eg,2Eg,1Eu,2Eu / ag,bg,au,bu
+.NREP
+4
+## (INACT(IFRP),IFRP=1,NFSYM) / number of inactive MOs
+.INACT
+ 1 1
+## (ACTIVE(IFRP),IFRP=1,NFSYM) / number of open-shell MOs
+.ACTIVE
+ 1 3 
+.NOPEN
+ 1
+## ((NGASO(IREP,IOPEN),IREP=1,NREP),J=1,NOPEN) / 
+## number of spinors for each REP
+.GASO
+ 1,1,3,3
+## (IELC(IOPEN),I=1,NOPEN)
+.IELC
+ 2
+## (TRDM(IREP),I=1,NREP) / number of roots / 
+.TRDM
+ 1,0,6,6
+.PRINT
+ 3
+######################################################################
+**MOLTRA
+.SCHEME
+ 4
+## specify open shell for each Fermion irrep in MO numbering
+.ACTIVE
+2..2
+2..4
+*PRPTRA
+## specify inactive+active MO range for each Fermion irrep
+.MORANGE
+1..2
+1..4
+.OPERATOR
+ XDIPLEN
+.OPERATOR
+ YDIPLEN
+.OPERATOR
+ ZDIPLEN
+.PRINT
+ 3
+######################################################################
+**PROPERTIES
+*EXPECTATION VALUE
+.OPERATOR
+ XDIPLEN
+.OPERATOR
+ YDIPLEN
+.OPERATOR
+ ZDIPLEN
+.PRINT
+ 1
+*END OF
+
+ $GOSCIP IPRNT=5 &END
+
+

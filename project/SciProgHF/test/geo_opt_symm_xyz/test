@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Newton step taken',
+      to_string   = 'Bond distances (angstroms)',
+      ignore_below = 5.0e-9,
+      rel_tolerance   = 1.0e-3)
+f.add(from_string = 'Energy at final geometry is',
+      num_lines   = 3,
+      rel_tolerance   = 1.0e-4)
+
+test.run(['geopt.levyl.scf.sto-2g.inp'], ['NH3.c3v.xyz'], f)
+test.run(['geopt_nortsd.levyl.scf.sto-2g.inp'], ['CH4.td.xyz'], f)
+
+sys.exit(test.return_code)

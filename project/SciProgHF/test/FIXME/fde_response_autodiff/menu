@@ -1,0 +1,39 @@
+cp FRZDNS.2e-1 FRZDNS
+cp ../fde_static-vemb_dipole/EMBPOT.2e-1 EMBPOT
+
+cp lda+tfk_vemb-read.inp  lda+tfk_vemb-read_short.inp
+cp pbe+pw91k_vemb-update.inp  pbe+pw91k_vemb-update_short.inp
+
+cp hf_pbe+pw91k_vemb-update.inp  hf_pbe+pw91k_vemb-update_short.inp
+cp hf_lda+tfk_vemb-read.inp  hf_lda+tfk_vemb-read_short.inp
+
+cp cc_pbe+pw91k_vemb-update.inp cc_pbe+pw91k_vemb-update_short.inp
+
+lda+tfk_vemb-read_short.inp     water.sto6g.c2v.mol --put="FRZDNS EMBPOT" 
+pbe+pw91k_vemb-update_short.inp water.sto6g.c2v.mol --put="FRZDNS"
+
+hf_lda+tfk_vemb-read_short.inp     water.sto6g.c2v.mol --put="FRZDNS EMBPOT"
+hf_pbe+pw91k_vemb-update_short.inp water.sto6g.c2v.mol --put="FRZDNS"
+
+cc_pbe+pw91k_vemb-update_short.inp water.sto6g.c2v.mol --put="FRZDNS" --aw=90
+
+rm  lda+tfk_vemb-read_short.inp pbe+pw91k_vemb-update_short.inp 
+rm  hf_lda+tfk_vemb-read_short.inp hf_pbe+pw91k_vemb-update_short.inp 
+rm  cc_pbe+pw91k_vemb-update_short.inp 
+
+cp lda+tfk_vemb-read_nofdekern.inp lda+tfk_vemb-read_nofdekern_short.inp
+cp pbe+pw91k_vemb-update_nofdekern.inp pbe+pw91k_vemb-update_nofdekern_short.inp
+
+cp hf_pbe+pw91k_vemb-update_nofdekern.inp hf_pbe+pw91k_vemb-update_nofdekern_short.inp
+cp hf_lda+tfk_vemb-read_nofdekern.inp hf_lda+tfk_vemb-read_nofdekern_short.inp
+
+lda+tfk_vemb-read_nofdekern_short.inp     water.sto6g.c2v.mol --put="FRZDNS EMBPOT" 
+pbe+pw91k_vemb-update_nofdekern_short.inp water.sto6g.c2v.mol --put="FRZDNS"
+
+hf_lda+tfk_vemb-read_nofdekern_short.inp     water.sto6g.c2v.mol --put="FRZDNS EMBPOT"
+hf_pbe+pw91k_vemb-update_nofdekern_short.inp water.sto6g.c2v.mol --put="FRZDNS"
+
+rm lda+tfk_vemb-read_nofdekern_short.inp pbe+pw91k_vemb-update_nofdekern_short.inp
+rm hf_lda+tfk_vemb-read_nofdekern_short.inp hf_pbe+pw91k_vemb-update_nofdekern_short.inp
+
+rm EMBPOT FRZDNS

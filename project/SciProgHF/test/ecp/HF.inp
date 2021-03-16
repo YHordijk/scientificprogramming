@@ -1,0 +1,27 @@
+!
+! This test calculates the total energy 
+! and the dipole moment of
+! employing valence-only Hamitonian
+! for relativistic effective-core-potentials.
+!
+**DIRAC
+.TITLE
+HI molecule with RECP
+.WAVE F
+.ANALYZE
+.PROPERTIES
+**HAMILTONIAN 
+.ECP
+**WAVE FUNCTIONS
+.SCF
+*SCF
+.CLOSED SHELL
+8
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+1..oo
+**PROPERTIES
+.DIPOLE
+*END OF DIRAC

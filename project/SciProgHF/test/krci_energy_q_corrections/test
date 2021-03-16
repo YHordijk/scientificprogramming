@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Q corrections for state',
+      num_lines   = 12,
+      rel_tolerance   = 1.0e-5)
+
+test.run(['scf-casscf.inp'], ['h2o.xyz'], args='--outkrmc --get="refvec.luci"')
+
+test.run(['krci-q.inp'], ['h2o.xyz'], f, args='--copy="refvec.luci" --inkrmc')
+
+# cleanup
+os.unlink('KRMCSCF')
+os.unlink('refvec.luci')
+
+sys.exit(test.return_code)

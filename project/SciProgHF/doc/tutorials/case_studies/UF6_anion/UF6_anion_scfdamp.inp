@@ -1,0 +1,46 @@
+**DIRAC   
+.TITLE   
+UF6 ECP Test With Kirk Peterson U-O distance  
+.WAVE F  
+.ANALYZE 
+**HAMILTONIAN 
+.ECP 
+**ANALYZE 
+.MULPOP 
+*MULPOP 
+.VECPOP  
+ 1..40   
+ 1..40 
+**INTEGRALS                                                                                         
+*READIN                                                                                             
+.UNCONTRACT                                                                                         
+.PRINT                                                                                              
+    1                                                                                               
+**WAVE FUNCTIONS    
+.SCF 
+*SCF 
+.CLOSED 
+ 44 42  
+.OPEN SHELL
+ 1 
+ 1/0, 14  
+!.MXDIIS    ! -- did not help at all (compared to default .MXDIIS 10) 
+! 20 
+!.ITRINT  
+! 0 0 
+.PRINT 
+ 0 
+.MAXITR
+  100
+.LSHIFT
+ +1.0
+.NODIIS ! -- deactivate DIIS, keep only damping 
+.DAMPFC ! choose reasonable damping factor
+ dampfactor
+!.OLEVEL
+! -0.2 
+.EVCCNV
+ 5.d-6 1.d-6
+.OPENFAC  ! --- deactive-active shells interaction
+  0.0D0 
+**END OF DIRAC INPUT

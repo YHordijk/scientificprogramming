@@ -1,0 +1,31 @@
+**DIRAC
+.TITLE
+ DFT linear response run with the SAOP asymptotic correction
+.WAVE FUNCTION
+.PROPERTIES
+**HAMILTONIAN
+.LEVY-LEBLOND
+.DFT
+ GLLBhole
+*DFT
+.SAOP!
+.BLOCKED
+**GRID
+.ZIPGRID
+.COARSE         !for the test we use a coarse grid
+**INTEGRALS
+.NUCMOD
+ 1
+*READIN
+.CONTRACT
+**WAVE FUNCTION
+.SCF
+*SCF
+.EVCCNV
+ 1.0E-5         !we use poor convergence threshold for the test
+**PROPERTIES
+.POLARIZABILITY
+*EXPECTATION
+.OPERATOR
+ ZZSECMOM
+*END OF

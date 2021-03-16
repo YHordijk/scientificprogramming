@@ -1,0 +1,152 @@
+\documentclass[a4paper, fleqn]{article}
+
+\begin{document}
+\section*{DIRACPARSER.PY}
+
+\section{Introduction}
+
+The file diracparser introduces two classes for handeling dirac output files. 
+\begin{enumerate}
+\item \textbf{Diracparser: class for reading outputfiles.}
+\item \textbf{Diracnames: implements the naming of dirac in and output files.}
+\end{enumerate}
+Though the diracparser class was originally written to read dirac and level output files, it is written in a way that can extract information from files in fairly general way.
+
+\section{Use of the class}
+The main functionality is given by the following example. 
+\indent \begin{verbatim}
+from diracparser import *
+p=diracparser()
+p.keys=['CCSD', 'FSCC']
+p.files=['FS26_ClO.out', 'FS25_ClO.out']
+print p.energy, p.files
+\end{verbatim}
+Like for any class derived from an object class, in order to use it we have to make an instance of it (objects in the real world can also only be used when they are real and not concepts). In other words, \textit{p} points to a specific example living somewhere in the memory of the computer. This instance I will call \textit{p}. The properties or variables are described in the next section. It's functions are describe in the section thereafter.  \\
+\textbf{Note:} every element in the list of read energies, \textit{p.energy}, corresponds to the same element in the filelist, \textit{p.files}. In other words, if \textit{p.files} contains ['file1', 'file2'] then \textit{p.energy} looks like ['energies read from file1', 'energies read from file 2']. In this list 'energies read from file1' is itself ordered according to keys, \textit{p.keys}. Thus, 'energies read from file1'=['energy of key1', 'energy of key2', \ldots], if \textit{p.keys} contains ['key1', 'key2', \ldots]
+
+\section{Variables}
+The main attributes which we can set:
+\begin{enumerate}
+\item{KEYS} Allows you to set the keys that are read from files by the assignment. \\
+Example p.keys=['CCSD', 'SCF']
+\item{FILES} Allows you to set the files from which the energies corresponding to keys are read. 
+As soon as you set this variable. The program will search the corresponding files for energies. Old files with their energy information will be trown away. If this is not desired use one of the funtions of the 'functions' section. \\
+Example: p.files=['Output1', 'Output2']
+print p.energy \# Prints the (alread read) energies of output1 and output2
+\item{RESULTFILE} If we set this variable to an \textbf{opened} file messages from the class will be written to this file instead of to the standard output. \\
+Example: res=open('messages.txt', 'w') \\
+p.resultfile=res
+\end{enumerate}
+Attributes that can be queried:
+\begin{enumerate}
+\item{KEYS} Returns a list with the keywords that are currently used in reading the energy. \\
+Example: print p.keys
+\item{ENERGY} Returns a list with all the energies. This list contians in the same order as the files a set of sublist with every sublist has an energy for the corresponding key. \\
+Example: Energies=p.energy
+\item{FILES} Returns the list of read files. \\
+Example: Readfiles=p.files
+\item{RESULTFILES} Returns the id of the file where messages are written to. \\
+Example:
+p.resultfile.write('Some comment on messages')
+\end{enumerate}
+
+\section{functions}
+\begin{enumerate}
+\item{KEYNAMES()} Returns all the names that can be used as a key for reading energies from output files. \\
+Example:
+print p.keynames
+\item{ADDFILES(NEWFILES)} Adds the list of new files to the filelist and returns the energies of the new files. \\
+Example:
+p.keys=p.keynames() \# Read all possible data from file1 and file2 \\
+newenergies=p.addfiles(['File1', 'File2']) 
+\item{INSERTFILE(POSITION, NEWFILE)} Insert a new file at a specific position in the filelist and returns the energies of the new file. \\
+Example: newfirstenergy=p.insertfile(0, 'filename').
+\item{INSERTFILES(POSITION, NEWFILES)} Insert now a list of newfiles in the original filelist at the specified position. It also returns the energies of the added files. \\
+Example: newenergies=p.insertfiles(2, filelist) 
+\item{DELFILES(FILENAMES)} Deletes all names in the list from the filelist. \\
+Example: p.files=['CCSD1.out', 'CCSD2.out'] \\
+p.delfiles(['CCSD1.out']) \\
+print p.energy \#Prints only the energies found in file CCSD2.out
+\item{DELFILES(MAX=0, MIN=0)} Deletes all files between the optional parameters numbers max and min (if no arguments are given then no files are deleted). \\
+Example: 
+p.files=[ ] \\
+newenergies=p.delfiles(0, ['CCSD1.out', 'CCSD2.out']) \\
+p.delfiles(0,0) \\
+print p.energy \#Same as the previous example.
+\end{enumerate}
+
+\section{Datafile}
+With the class there comes a datafile named: \textit{'diracparser.dat'}. It contains all the information that is needed to read the information.  \\
+\begin{enumerate}
+\item The general setup is that the first column in this datafile contains the key which denotes the energy in the diracparser. 
+\item The next column holds the keyword that tells from where to start reading. 
+\item The third column tells us where we can find the startingpoint of  block of information. If this column is empty (a space or double double qoutes: "") we read the entries immediately after the 'start reading' keyword (thus on the same line). 
+An example: \\
+Suppose that we have the following structure in the outputfile:
+\begin{verbatim}
+
+Some other text: wrong energy
+
+
+Here we can start reading
+
+Some text energy1 energy2
+        Some other text energy3
+
+Column1 Column2   label1   label2
+
+  1        2     0     1
+  3        4     1      0
+
+
+Here we can stop reading
+\end{verbatim}
+Now if we add to the datafile the following line:
+\begin{verbatim}
+"Energy 1 and 2" "Some text" "" 4
+\end{verbatim}
+Now if we have the following program to read the outputfile
+\begin{verbatim}
+p=diracparser()
+p.keys=['Energy 1 and 2']
+p.files=['outputfile']
+print p.files, p.energy
+\end{verbatim}
+We obtain the result:
+\begin{verbatim}
+['outputfile'] [[4*energy1, 4*energy2]] 
+\end{verbatim}
+So the last number on an inputline gives us a correctionfactor to get the numbers to different units or something like that. 
+\item The fourth column tells us where we should stop reading. If the class can't find this string it will read to the end of the outputfile.
+\item The fifth column tells us when a block ends. If we have entered a number, n, here, we reading stop after n empty lines. If a string is entered we stop reading each block as soon as we encounter that string. If n=0 we only read the starting lines of the blocks. If our key \textit{Some other text} is not a unique key we can still read it correctly by treating it as a block of zero length:
+\begin{verbatim}
+Energy3 "Here we can start reading" "Some other text" \\
+\\"Here we can stop reading" 0
+\end{verbatim}
+This will give as an output:
+\begin{verbatim}
+[[Energy3]]
+\end{verbatim}
+\item the sixth column gives us how the information in the block, after the startblock keyword (so label1, label2 and the data underneath them) should be treated. 
+\begin{enumerate}
+\item If "label", "" or space is written here we label the energies in the block with the labels if the number in their columns is True. 
+\end{enumerate}
+\item The seventh up to the last but one columns indicate the position of the energies to be read. The absolute positions are determined. If absolute positions cannot be used a new type (column six) can be defined (read everything as a variable length block and look at the number of non zero entries on each line (To be programmed))
+\item the last column, as said before contains a multiplicative factor.
+\end{enumerate}
+So to read the energies from column 1 and 2 and label them correctly:
+\begin{verbatim}
+Block "Here we can start reading" "Column1 Column2" "Here we can stop reading" \\
+\\2 "Column1" "Column2" 1
+\end{verbatim} 
+This gives as output:
+\begin{verbatim}
+[[[1, 2, 'label 2'], [3, 4, 'label 1']]]
+\end{verbatim}
+\textbf{Remark:} The location of the datafile is stored in the variable p.\_datafile (as private as private can be in python).
+
+
+
+
+
+\end{document} 

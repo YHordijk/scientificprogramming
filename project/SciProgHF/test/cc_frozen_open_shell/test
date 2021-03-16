@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+# Testing regular and Fock space coupled cluster
+f = Filter()
+f.add(from_string = 'Electronic energy',
+      num_lines   = 8,
+      rel_tolerance   = 1.0e-8)
+
+f.add(from_string = ' Overview of calculated energies',
+      to_string   = '@ Total CCSD-T  energy',
+      rel_tolerance   = 1.0e-4)
+
+test.run(['cc_ru.inp'], ['Ru.mol'], f, args='--mw=120 ')
+
+test.run(['cc_ru_nosym.inp'], ['Ru_nosym.mol'], f, args='--mw=120 ')
+
+sys.exit(test.return_code)

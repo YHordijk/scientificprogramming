@@ -1,0 +1,62 @@
+# closed-shell spinfree SD-mrSD CI using LUCITA in GASCI-mode 
+**DIRAC
+.TITLE
+ closed-shell spinfree SD-mrSD CI using LUCITA in GASCI-mode
+.WAVE FUNCTION
+# do the AO -> MO transformation
+.4INDEX
+#################################
+**HAMILTONIAN
+.SPINFREE
+.LVCORR
+#################################
+**WAVE FUNCTION
+.SCF
+.LUCITA
+# here we insert the number of electrons
+# (if inversion for gerade and ungerade separately)
+.CLOSED SHELL
+ xx [xx]
+*LUCITA
+# closed-shell DHF-wave function
+.INIWFC
+  DHFSCF
+.CITYPE
+  GASCI
+# number of eigenvalues to be calculated
+.NROOTS
+ xx
+# calculating states of spin S: 2S+1 = xx
+.MULTIP
+  xx
+# boson irrep of the roots you want to obtain
+.SYMMET
+ xx
+# number of electrons to be correlated
+.NACTEL
+ xx
+# specifying the GAS setup
+# first line: Number xx of GAS shells
+# number of orbitals in boson irrep per GAS shell
+.GASSHE
+xx
+a,b,c,d  !  
+e,f,g,h  ! Cas space
+i,j,k,l  ! all virtuals up to cut off
+# Number of gas spaces i.e. number of different ci calculations to be done
+# first line: works only with 1 
+# minimum and maximum occupation in each gas shell 
+# with: a+b+c+d = 1/2 * X and Y = NACTEL and e+f+g+h > 1/2 * Y
+.GASSPC
+ 1
+X-2  X     
+Y-2  Y     
+Y    Y 
+#####################################################
+**MOLTRA
+.ACTIVE
+# transformation from AO to MO basis
+#       lower bound xx upper bound yy (cut off) threshold zz
+energy  xx  yy  zz    
+**END OF
+

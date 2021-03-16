@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_re   = 'no-London Magnetizability = Eoo',
+      num_lines = 4,
+      rel_tolerance = 1.0e-7)
+f.add(from_re   = 'London Magnetizability = Ebb',
+      num_lines = 4,
+      rel_tolerance = 1.0e-7)
+
+test.run(['nr_hf.inp', 'nr_hf_shifted.inp', 'dc_hf_skipep.inp', 'dc_hf_skipep_cval=900.inp', 'dc_hf_cval=30.inp', 'dc_hf_shifted_cval=30.inp'],
+                 ['mol.mol'], f)
+
+sys.exit(test.return_code)

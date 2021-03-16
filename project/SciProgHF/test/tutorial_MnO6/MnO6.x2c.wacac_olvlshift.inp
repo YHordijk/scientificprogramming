@@ -1,0 +1,54 @@
+!
+! Average DF for the 3d(5) configuration of MnO6 cluster + COSCI
+!
+**DIRAC
+.TITLE
+MnO6 Cluster with old UW PCs Bare Start
+.ANALYZE
+.WAVE F
+**GENERAL
+**INTEGRALS
+*TWOINT
+.SOFOCK
+.SCREEN
+1.0D-14
+**HAMILTONIAN
+.X2C
+**WAVE FUNCTIONS
+.SCF
+.RESOLVE
+*SCF
+.CLOSED SHELL
+ 36 42 
+.OPEN SHELL
+1
+5/10, 0
+! appply shift to get SCF convergence
+.OLEVEL
+ +0.2
+.OPENFAC ! stress keeping the default active-active open-shell contribution
+ 1.00
+!.BNC_FORCE
+.INTFLG
+1 1 0
+.MAXITR
+ 10 
+.EVCCNV
+5.0E-9  1.0e-7
+.ITRINT
+ 0 0
+!.CNVINT
+!0.001 0.000001
+*RESOLVE
+.SCHEME
+ 4
+.INTFLG
+ 1 1 0
+.SCREEN
+ -1.0d-14
+.PRINT 
+ 1
+*END OF
+
+ &GOSCIP IPRNT=5  &end 
+ &POPAN  SELPOP=0.000 &end

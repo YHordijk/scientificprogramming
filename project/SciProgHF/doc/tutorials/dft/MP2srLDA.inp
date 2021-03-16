@@ -1,0 +1,21 @@
+**DIRAC                                                                                             
+.TITLE                                                                                              
+ Helium dimer                                                                                       
+.WAVE FUNCTION                                                                                      
+**INTEGRALS                                                                                         
+*READIN                                                                                             
+.UNCONT                                                                                             
+.NORTSD
+**HAMILTONIAN                                                                                       
+.DFT                                                                                                
+CAM p:alpha=0.0 p:beta=1.0 p:mu=0.40 x:slater=1.0 c:srvwn5=1.0                                      
+**WAVE FUNCTIONS                                                                                    
+.SCF                                                                                                
+.MP2                                                                                                
+*SCF                                                                                                
+.CLOSED SHELL                                                                                       
+4                                                                                                   
+*MP2CAL                                                                                             
+.VIRTHR                                                                                             
+40.00                                                                                               
+*END OF       

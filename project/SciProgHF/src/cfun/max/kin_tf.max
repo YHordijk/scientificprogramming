@@ -1,0 +1,9 @@
+PI: 3.14159265358979312;
+ctf: (3/10)*(3*PI^2)^(2/3);
+
+rho(rhoa,rhob):= rhoa+rhob;
+
+/* Thomas-Fermi kinetic energy functional */
+tf(rhoa,rhob):= ctf*rho(rhoa,rhob)^(5/3);
+
+K(rhoa,grada,rhob,gradb,gradab):= tf(rhoa,rhob);

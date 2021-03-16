@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Electronic energy',
+      num_lines   = 8,
+      rel_tolerance   = 1.0e-9)
+f.add(from_string = 'Eigenvalues',
+      to_re       = 'HOMO - LUMO',
+      rel_tolerance   = 1.0e-5)
+f.add(from_string = ' Overview of calculated energies',
+      num_lines   = 12,
+      rel_tolerance   = 1.0e-6)
+
+MRCCDIR = os.environ.get('MRCCDIR')
+if MRCCDIR == None:
+    sys.stderr.write('ERROR: you need to set MRCCDIR\n')
+    sys.exit(-1)
+
+DIRAC_UTILS_PATH = os.environ.get('DIRAC_UTILS_PATH')
+if DIRAC_UTILS_PATH == None:
+    sys.stderr.write('ERROR: you need to set DIRAC_UTILS_PATH\n')
+    sys.exit(-1)
+
+test.run(['ccsd.inp'], ['Be_D2h.mol'], f, args='--mw=128 --get="MRCONEE MDCINT"')
+
+os.system('%s' % os.path.join(DIRAC_UTILS_PATH, 'dirac_mointegral_export.x'))
+os.system('%s' % os.path.join(MRCCDIR, 'goldstone'))
+os.system('%s' % os.path.join(MRCCDIR, 'mrcc'))
+
+os.unlink('MRCONEE')
+os.unlink('MDCINT')
+os.unlink('fort.10')
+os.unlink('fort.14')
+os.unlink('fort.16')
+os.unlink('fort.55')
+os.unlink('fort.56')
+os.unlink('iface')
+
+sys.exit(test.return_code)

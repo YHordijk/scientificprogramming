@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#BSUB -nnodes 4
+#BSUB -W 2:00
+#BSUB -P CHM160
+#BSUB -J dirac
+#BSUB -o info_%J.out
+#BSUB -e info_%J.err
+
+# number of mpi processes (2*nnodes)
+export nmpi=8
+
+# Set binary specific paths for dirac.x and exacorr.x
+export BASDIR=${DIRAC_PATH}/basis:${DIRAC_PATH}/basis_dalton:${DIRAC_PATH}/basis_ecp
+
+#environment - modules and general variables
+source ~/.modules
+
+# run exacorr
+${DIRAC_PATH}/pam --mpi=$nmpi --mol=$MOL_file --inp=$INP_file --outqforce
+# run exacorr with scratch for debugging 
+#${DIRAC_PATH}/pam --mpi=$nmpi --mol=$MOL_file --inp=$INP_file --put="DFCOEF" --get="DFCOEF" --outqforce --keep_scratch 
+
+#If you observe a crash or hang, collect the following files
+#and place them in a new directory inside /ccs/proj/chp109/issues:
+#----------------------------
+# (1) This PBS submit script;
+# (2) DIRAC.INP;
+# (3) MOLECULE.XYZ;
+# (4) DFCOEF (if exists);
+# (5) Dirac output/error logs;
+# (6) qforce.*.log files.
+#-----------------------------
+

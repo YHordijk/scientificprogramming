@@ -1,0 +1,32 @@
+!
+! This test calculates the spin-orbit components of the 2P state of Fluorine,
+! using a CISD wavefunction.
+! 
+! Several Hamiltonians are used: the four-component Dirac-Coulomb (DC),
+! two-component Hamiltonians (BSS,BSS_RKB,DKH2..), mean-field screened two-component
+! Hamiltonians (BSS+MFSSO). DC2BSS is the picture change transformed converged Fock-Dirac
+! operator.
+!
+!  1 au = 219474.6313710 cm-1
+!
+!  Hamiltonian      Splitting 2P3/2-2P1/2 (in cm-1)
+! ==========================================================
+!       DC                45.42
+!    BSS+MFSSO            47.52
+!  BSS_RKB+MFSSO          47.52
+!  BSSsfESO1+MFSSO        47.59
+!  DKH2sfESO1+MFSSO       47.59
+!      DC2BSS            191.82
+!      BSS               192.83
+!     BSS_RKB            192.83
+!     BSSsfESO1          192.91
+!     BSSsfBSO1          192.91
+!     DKH2sfESO1         192.91
+!     DKH2sfBSO1         192.91
+!
+
+(-99.598251234322+99.597377268021)*219474.6313710
+-191.8134317426514286710 <-- dc2bss
+(-99.598251746746+99.597377756791)*219474.6313710
+-191.8186231955818783050 : dc2bss_df
+

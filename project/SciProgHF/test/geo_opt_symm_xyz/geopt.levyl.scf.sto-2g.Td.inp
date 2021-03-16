@@ -1,0 +1,28 @@
+**DIRAC
+.OPTIMIZE
+*OPTIMIZE
+# force numerical gradient
+.NUMGRA
+# do not break the symmetry !
+.NOBREA
+.PRINT
+1  
+.IPRGRD
+1  
+.MAX IT
+50
+**MOLECULE
+*SYMMETRY
+T(d)
+*BASIS
+.DEFAULT 
+STO-2G    
+**INTEGRALS
+*READIN
+#.UNCONTRACT
+.NORTSD
+**HAMILTONIAN
+.LEVY-LEBLOND
+**WAVE FUNCTIONS
+.SCF
+*END OF 

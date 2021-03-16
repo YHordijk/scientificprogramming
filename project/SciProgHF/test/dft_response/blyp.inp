@@ -1,0 +1,42 @@
+**DIRAC
+.WAVE FUNCTION
+.PROPERTIES
+**HAMILTONIAN
+.LEVY-LEBLOND
+.DFT
+ BLYP
+**GRID
+.ZIPGRID
+.DEBUG          !very coarse grid
+**INTEGRALS
+.NUCMOD
+ 1
+*READIN
+.UNCONTRACT
+**WAVE FUNCTION
+.SCF
+*SCF
+.ITRINT
+ 0 0
+.EVCCNV
+ 1.0D-4
+**PROPERTIES
+.FIRST ORDER HYPERPOLAR
+*EXPECTATION
+.OPERATOR
+ ZZSECMOM
+*EXCITATIONS
+.EXCITATIONS
+ 1 3
+.ANALYZE
+.SKIPEP
+.THRESH
+ 1.0D-3         !we use poor convergence threshold for the test
+*QUADRATIC
+.SKIPEP
+.THRESH
+ 1.0D-3         !we use poor convergence threshold for the test
+.B FREQ
+ 1
+ 0.06
+*END OF

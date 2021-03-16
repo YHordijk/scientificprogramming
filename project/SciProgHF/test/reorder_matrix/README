@@ -1,0 +1,8 @@
+This test is a unit test for the reorder_matrix subroutine in gpdyall.F
+It tests all pathways in reorder_matrix, using a vector of length 10
+consisting of numbers from 0.0 to 9.0, not ordered. The test first calls
+sort_vector from the same file, to produce the index array for the
+reordering, then the vector is reordered using reorder_matrix with a
+row length of 1. The test exercises all three cases for the reordering.
+The test can be run with the shell script test_reorder.sh; after running,
+remove test_reorder.x.

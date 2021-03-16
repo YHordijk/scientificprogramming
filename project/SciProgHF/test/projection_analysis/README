@@ -1,0 +1,22 @@
+!
+! This test performs a projection analysis for the methane molecule.
+! A standard Mulliken population analysis is included for comparison.
+! It is a quite interesting exercise to compare the atomic charges
+! obtained with various basis sets by the two methods. Whereas the 
+! projection analysis is quite stable, the Mulliken population analysis
+| is strongly basis set dependent.
+|
+| Note furthermore that the fragments are not calculated in the full
+| molecular basis, but their own basis set. This is what is obtained with
+| the .OWNBAS keyword. 
+|
+| In general the projection analysis is based on symmetry-independent centers;
+| this means that in C2v symmetry the fragments for the water molecule will
+| be the oxygen atom and the H2 fragment.
+|
+| In order to do a projection analysis on true atomic fragments one has to
+| lower symmetry. Note that one may calculate in maximum symmetry and then
+| use the ACMOUT keyword under **GENERAL to dump coefficients in C1 symmetry.
+|
+| Note also the use of weak electric fields to break degeneracies and thereby obtain
+| atomic orbitals with well-defined mj values.

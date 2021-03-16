@@ -1,0 +1,76 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(string = '* Electronic eigenvalue',
+      rel_tolerance = 1.0e-7)
+
+# run calculation for hydrogen in linear symmetry
+test.run(['H.inp'], ['H.mol'], f, '--get=DFACMO')
+
+# export coefficients to cs symmetry
+test.run(['H_Cs.inp'], ['H_Cs.mol'], f, '--get=DFCOEF --put=DFACMO')
+shutil.copy('DFCOEF', 'DFHAT1')
+shutil.copy('DFCOEF', 'DFHAT2')
+shutil.copy('DFCOEF', 'DFHAT3')
+
+# run calculation for nitrogen in linear symmetry
+test.run(['N.inp'], ['N.mol'], f, '--get="DFCOEF DFACMO"')
+shutil.copy('DFCOEF', 'DFCAT')
+
+# export coefficients to cs symmetry
+test.run(['N_Cs.inp'], ['N_Cs.mol'], f, '--get=DFCOEF --put=DFACMO')
+shutil.copy('DFCOEF', 'DFNNNN')
+
+# run calculation for ammonia; note that it is flat ...
+test.run(['NH3.inp'], ['NH3.mol'], f, '--put="DFNNNN DFHAT1 DFHAT2 DFHAT3" ')
+
+# cleanup
+os.unlink('DFCOEF')
+os.unlink('DFACMO')
+os.unlink('DFNNNN')
+os.unlink('DFCAT')
+os.unlink('DFHAT1')
+os.unlink('DFHAT2')
+os.unlink('DFHAT3')
+
+### run spinfree version of the test ###
+
+# run calculation for hydrogen in linear symmetry
+test.run(['H_sf.inp'], ['H.mol'], f, '--get=DFACMO')
+
+# export coefficients to cs symmetry
+test.run(['H_Cs_sf.inp'], ['H_Cs.mol'], f, '--get=DFCOEF --put=DFACMO')
+shutil.copy('DFCOEF', 'DFHAT1')
+shutil.copy('DFCOEF', 'DFHAT2')
+shutil.copy('DFCOEF', 'DFHAT3')
+
+# run calculation for nitrogen in linear symmetry
+test.run(['N_sf.inp'], ['N.mol'], f, '--get="DFCOEF DFACMO"')
+shutil.copy('DFCOEF', 'DFCAT')
+
+# export coefficients to cs symmetry
+test.run(['N_Cs_sf.inp'], ['N_Cs.mol'], f, '--get=DFCOEF --put=DFACMO')
+shutil.copy('DFCOEF', 'DFNNNN')
+
+# run calculation for ammonia; note that it is flat ...
+test.run(['NH3_sf.inp'], ['NH3.mol'], f, '--put="DFNNNN DFHAT1 DFHAT2 DFHAT3"')
+
+# cleanup
+os.unlink('DFCOEF')
+os.unlink('DFACMO')
+os.unlink('DFNNNN')
+os.unlink('DFCAT')
+os.unlink('DFHAT1')
+os.unlink('DFHAT2')
+os.unlink('DFHAT3')
+
+sys.exit(test.return_code)

@@ -1,0 +1,94 @@
+#!/bin/bash
+
+#BSUB -nnodes 1
+#BSUB -W 02:00
+#BSUB -P CHP109
+#BSUB -J dirac
+#BSUB -o info_%J.out
+#BSUB -e info_%J.err
+
+#input info adept!!!
+export numproc=1    # TALSH uses only half the node
+export PRN000=chp109 # the same as above
+export USE_DFCOEF=1 # larger than zero -> use DFCOEF
+export INP_FILE=cc_sf6.inp
+export MOL_XYZ=SF6.xyz
+
+#file locations
+export SCRATCHDIR=${MEMBERWORK}/${PRN000}/tmp_dirac/talsh
+#export DIRAC_PATH=/gpfs/alpine/world-shared/chp109/dirac_install
+export FILEDIR=$LS_SUBCWD
+export BASDIR="$DIRAC_PATH/basis:$DIRAC_PATH/basis_dalton:$DIRAC_PATH/basis_ecp"
+
+######################### set up environment
+
+#environment - modules and general variables
+source ~/.modules
+
+#environment - ExaTENSOR
+export QF_NUM_PROCS=$numproc      #total number of MPI processes
+export QF_PROCS_PER_NODE=1        #number of MPI processes per logical node
+
+#environment - OpenMP
+export OMP_PLACES="{0},{4},{8},{12},{28:56},{16},{20},{24}" #TALSH only uses half of the node
+
+#environment - DIRAC
+export DIRWRK=1424000000 
+export DIRMAX=2048000000 
+export DIRNOD=1424000000
+export DIRPAR=1 
+#export GLBSCR=1  
+
+######################### running the code
+echo "TALSH can only be used for testin and not for production on summit"
+echo "setting up for dirac run"
+ulimit -s unlimited
+
+#set up scratch
+h1=${INP_FILE%.*}
+h2=${MOL_XYZ%.*}
+h3="${h1}_${h2}_$LSB_JOBID"
+export WORKDIR="$SCRATCHDIR/$h3"
+
+echo "working directory: $WORKDIR "
+echo "file directory: $FILEDIR "
+#printenv
+
+mkdir -p $WORKDIR
+
+# copy files
+cp $FILEDIR/$INP_FILE  $WORKDIR/DIRAC.INP
+
+if [ ${MOL_XYZ: -4} == ".mol" ]
+then
+  cp $FILEDIR/$MOL_XYZ  $WORKDIR/MOLECULE.MOL
+else
+  cp $FILEDIR/$MOL_XYZ  $WORKDIR/MOLECULE.XYZ 
+fi
+
+if [ $USE_DFCOEF -gt 0 ]
+then
+  echo "copy DFCOEF"
+  cp $FILEDIR/DFCOEF  $WORKDIR
+fi
+
+#get executable
+cp $DIRAC_PATH/dirac.x $WORKDIR
+
+#execute dirac using jsrun
+cd $WORKDIR
+
+echo "execute dirac"
+echo "working dir:"
+echo $PWD
+
+h3="${h1}_${h2}.out"
+echo "output filename: $h3 "
+
+jsrun --smpiargs='-async' --smpiargs='-mca common_pami_use_odp 1' -D PAMI_IBV_DISABLE_ODP=0 -n $QF_NUM_PROCS -r $QF_PROCS_PER_NODE -a 1 -c $QF_CORES_PER_PROCESS -g $QF_GPUS_PER_PROCESS -bnone ./dirac.x > $FILEDIR/$h3
+
+#if anyone wants to debug: comment out the line below to keep the work directory
+rm -r $WORKDIR
+
+echo "computation done" 
+

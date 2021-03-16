@@ -1,0 +1,11 @@
+This example demonstrates the shortcomings of restricted kinetic balance
+for calculation of magnetic properties. At the 4cHF/aug-cc-pVDZ level
+the isotropic shielding of the helium atom is 39.7301 ppm using RKB 
+and 59.6079 ppm using UKB; the latter captures the magnetic balance. 
+
+A better approach, though, is to perform an SCF calculation using RKB and 
+the extend the coefficients with the UKB complement for the response 
+calculation. This is accomplished with the RKBIMP flag.
+For a full account, see
+Małgorzata Olejniczak, Radovan Bast, Trond Saue, and Magdalena Pecul, J. Chem. Phys. 136 (2012) 014108
+M. Pecul, T. Saue, K. Ruud and A. Rizzo, J. Chem. Phys. 121 (2004) 3051

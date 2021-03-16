@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = ' Energy eigenvalues in atomic units',
+      to_re       = 'Relative real eigenvalues in other units;',
+# tolerance here is for differencees in absolute terms because for the complex
+# cases relative changes could be very large for the complex part of the energy
+# even though its magnitude is tiny (e.g. 5x10-9 vs 1x10-9)
+      abs_tolerance = 1.0e-7)
+
+# 1. tests with the standard options, that is,sorted unit vectors as initial trial vectors and, roots sorted by overlap to the trial vectors
+# during the davidson procedure). 
+
+test.run(['eom_ip_dc_noinv_c_oo_v.inp'],   ['f2_c_oo_v_turbomole-dz.mol'], f, args='--mw=110')
+test.run(['eom_ip_dc_noinv.inp'],   ['f2_d2_turbomole-dz.mol', 'f2_c2v_turbomole-dz.mol', 'f2_c2_turbomole-dz.mol', 'f2_cs_turbomole-dz.mol'], f, args='--mw=110')
+
+test.run(['eom_ip_dc_inv_d_oo_h.inp'],   ['f2_d_oo_h_turbomole-dz.mol'], f, args='--mw=110')
+test.run(['eom_ip_dc_inv.inp'],     ['f2_d2h_turbomole-dz.mol', 'f2_c2h_turbomole-dz.mol'], f, args='--mw=110')
+test.run(['eom_ip_dc_inv_ci.inp'],  ['f2_ci_turbomole-dz.mol'], f, args='--mw=110')
+
+# 2. the tests above but using the  unit vectors (1's along the diagonal)
+# and without enforcing overlap to the original trial vectors in the davidson 
+# procedure. the results may change a bit from the ones above since (2h,1p) / (2p,1h) / (2h2p)
+# states may become sufficiently lower in energy to take the place of some of
+# the singly excited/ionized/attached states that the sorting with overlap
+# constrains.
+ 
+test.run(['eom_ip_dc_noinv_full_nooverlap_c_oo_v_Omega.inp'],   ['f2_c_oo_v_turbomole-dz.mol'], f, args='--mw=110')
+test.run(['eom_ip_dc_noinv_full_nooverlap.inp'],  ['f2_d2_turbomole-dz.mol', 'f2_c2v_turbomole-dz.mol', 'f2_c2_turbomole-dz.mol', 'f2_cs_turbomole-dz.mol'], f, args='--mw=110')
+test.run(['eom_ip_dc_noinv_full_nooverlap_c1.inp'], ['f2_c1_turbomole-dz.mol'], f, args='--mw=110')
+
+test.run(['eom_ip_dc_inv_full_nooverlap_d_oo_h_Omega.inp'],   ['f2_d_oo_h_turbomole-dz.mol'], f, args='--mw=110')
+test.run(['eom_ip_dc_inv_full_nooverlap.inp'],    ['f2_d2h_turbomole-dz.mol', 'f2_c2h_turbomole-dz.mol'], f, args='--mw=110')
+test.run(['eom_ip_dc_inv_full_nooverlap_ci.inp'], ['f2_ci_turbomole-dz.mol'], f, args='--mw=110')
+
+sys.exit(test.return_code)

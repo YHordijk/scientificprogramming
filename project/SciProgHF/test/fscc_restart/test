@@ -1,0 +1,97 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+#
+# first part of the test is to redo the Mg fscc calculation in stepwise fashion, restarting along the way
+#
+
+my_scratchdir = os.path.join(os.getcwd(), 'fscc_scratchdir')
+if os.path.lexists(my_scratchdir):
+   files_to_delete = os.listdir(my_scratchdir)
+   for f in files_to_delete:
+      os.unlink(os.path.join(my_scratchdir,f))
+   os.rmdir(my_scratchdir)
+
+f = Filter()
+f.add(from_string = 'Spinor   Abelian Rep.         Energy   Recalc. Energy',
+      to_string   = 'The diagonal elements of the recomputed Fock matrix',
+      rel_tolerance   = 1.0e-8)
+
+test.run(['fsccsd_integrals.inp'], ['Mg.mol'], f, args='--keep_scratch --scratchful='+my_scratchdir)
+
+
+sectors = [ '00', '01', '10', '11', '02', '20']
+
+for s in sectors:
+   f = Filter()
+   f.add(from_string = 'Spinor   Abelian Rep.         Energy   Recalc. Energy',
+         to_string   = 'The diagonal elements of the recomputed Fock matrix',
+         rel_tolerance   = 1.0e-8)
+   f.add(from_string = 'CCSD results',
+         to_string   = 'T1 diagnostic',
+         rel_tolerance   = 5.0e-8)
+
+   test.run(['fsccsd_restart_s'+s+'_a.inp'], ['Mg.mol'], f, args='--mw=110 --keep_scratch --scratchful='+my_scratchdir)
+
+   f = Filter()
+   f.add(from_string = 'Spinor   Abelian Rep.         Energy   Recalc. Energy',
+         to_string   = 'The diagonal elements of the recomputed Fock matrix',
+         rel_tolerance   = 1.0e-8)
+   if s == '00':
+      f.add(from_string = 'CCSD results',
+            to_string   = 'T1 diagnostic',
+            rel_tolerance   = 5.0e-8)
+   else:
+      f.add(from_string = ' Energy eigenvalues in atomic units',
+            to_re       = 'Relative real eigenvalues in other units;',
+            rel_tolerance = 1.0e-5)
+
+   test.run(['fsccsd_restart_s'+s+'_b.inp'], ['Mg.mol'], f, args='--mw=110 --keep_scratch --scratchful='+my_scratchdir)
+
+files_to_delete = os.listdir(my_scratchdir)
+for f in files_to_delete:
+   os.unlink(os.path.join(my_scratchdir,f))
+os.rmdir(my_scratchdir)
+
+#
+# in the second part of the test comprises ihfscc calculations on oh- ... 2h2o  
+# in it the ithreshold for pm/pi division is changed in one of the steps to faciliate convergence
+# for sector 10, and then amplitudes for the 20 sector are reoptimized
+#
+
+my_scratchdir = os.path.join(os.getcwd(), 'ihfscc_scratchdir')
+if os.path.lexists(my_scratchdir):
+   files_to_delete = os.listdir(my_scratchdir)
+   for f in files_to_delete:
+      os.unlink(os.path.join(my_scratchdir,f))
+   os.rmdir(my_scratchdir)
+
+f = Filter()
+f.add(from_string = 'Spinor   Abelian Rep.         Energy   Recalc. Energy',
+      to_string   = 'The diagonal elements of the recomputed Fock matrix',
+      rel_tolerance   = 1.0e-8)
+f.add(from_string = 'CCSD results',
+      to_string   = 'T1 diagnostic',
+      rel_tolerance   = 5.0e-8)
+f.add(from_string = ' Energy eigenvalues in atomic units',
+      to_re       = 'Relative real eigenvalues in other units;',
+      rel_tolerance = 1.0e-5)
+
+test.run(['ihfscc_oh-_to_oh+_integrals_035.inp'], ['oh+2h2o.xyz'], f, args='--keep_scratch --scratchful='+my_scratchdir)
+test.run(['ihfscc_oh-_to_oh+_restart_a_025.inp'], ['oh+2h2o.xyz'], f, args='--keep_scratch --scratchful='+my_scratchdir)
+test.run(['ihfscc_oh-_to_oh+_restart_b_025.inp'], ['oh+2h2o.xyz'], f, args='--keep_scratch --scratchful='+my_scratchdir)
+test.run(['ihfscc_oh-_to_oh+_all_norst_025.inp'], ['oh+2h2o.xyz'], f, args='--keep_scratch --scratchful='+my_scratchdir)
+files_to_delete = os.listdir(my_scratchdir)
+for f in files_to_delete:
+   os.unlink(os.path.join(my_scratchdir,f))
+os.rmdir(my_scratchdir)
+
+
+sys.exit(test.return_code)

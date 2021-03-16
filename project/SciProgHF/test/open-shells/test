@@ -1,0 +1,39 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'TOTAL ENERGY',
+      num_lines   = 10,
+      rel_tolerance   = 1.0e-8)
+f.add(from_string = 'Eigenvalues',
+      to_re       = 'HOMO - LUMO',
+      rel_tolerance   = 1.0e-7)
+
+test.run(['B.x2c.scf_2P12.inp'],   ['B.xyz'],  f)
+test.run(['B.x2c.scf_2P32.inp'],   ['B.xyz'],  f)
+test.run(['C.x2c.scf_LS.inp'],     ['C.xyz'],  f)
+test.run(['C.x2c.scf_HS.inp'],     ['C.xyz'],  f)
+test.run(['N.x2c.scf_LS.inp'],     ['N.xyz'],  f)
+test.run(['N.x2c.scf_HS.inp'],     ['N.xyz'],  f)
+test.run(['O.x2c.scf_LS.inp'],     ['O.xyz'],  f)
+test.run(['O.x2c.scf_HS.inp'],     ['O.xyz'],  f)
+test.run(['F.x2c.scf_2P12.inp'],   ['F.xyz'],  f)
+test.run(['F.x2c.scf_2P32.inp'],   ['F.xyz'],  f)
+test.run(['CH.x2c.scf_mj.2Pi12.inp'],    ['CH.lsym.mol'], f)
+test.run(['CH.x2c.scf_mj.2Pi32.inp'],    ['CH.lsym.mol'], f)
+test.run(['CH.x2c.scf.2Pi12.inp'],       ['CH.lsym.mol'], f, args='--outcmo')
+test.run(['CH.x2c.scf.2Pi32_reord.inp'], ['CH.lsym.mol'], f, args='--incmo ')
+test.run(['CO.x2c.scf.inp'], ['CO.sto-2g.mol'], f, args='--outcmo ')
+test.run(['CO_1p.x2c.scf_4sigma.inp'], ['CO.sto-2g.mol'], f, args='--incmo ')
+test.run(['CO_1p.x2c.scf_5sigma.inp'], ['CO.sto-2g.mol'], f, args='--incmo ')
+
+os.unlink('DFCOEF')
+
+sys.exit(test.return_code)

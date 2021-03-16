@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = ' Energy eigenvalues in atomic units',
+      to_re       = 'Relative real eigenvalues in other units;',
+      rel_tolerance   = 2.0e-5)
+f.add(from_string  = '-> dipole oscillator strength (length)',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-4)
+f.add(from_string  = '-> dipole oscillator strength (velocity)',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-4)
+
+test.run(['pe-dc-exc.inp'], ['lih.mol'], args='--put peqm.pot')
+test.run(['pe-sf-exc.inp'], ['lih.mol'], f, args='--put peqm.pot')
+test.run(['pe-x2c-exc.inp'], ['lih.mol'], f, args='--put peqm.pot')
+test.run(['pe-eef-dc-exc.inp'], ['lih.mol'], f, args='--put peqm.pot')
+test.run(['pe-dc-gspol-exc.inp'], ['lih.mol'], f, args='--put peqm.pot')
+test.run(['pe-dc-exc-pbe0.inp'], ['lih.mol'], f, args='--put peqm.pot')
+
+sys.exit(test.return_code)

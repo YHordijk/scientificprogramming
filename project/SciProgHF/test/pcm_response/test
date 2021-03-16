@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string  = '@   xx',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+f.add(from_string  = '@   yy',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+f.add(from_string  = '@   zz',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+f.add(from_string  = '@   average',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+f.add(from_string  = '@   anisotropy',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+
+test.run(['pcm-scf-levy.inp'], ['CH4.mol'], args='--put @pcmsolver.inp --outcmo')
+os.unlink('pcm-scf-levy_CH4.out')
+test.run(['pcm-levy.inp'], ['CH4.mol'], f, args='--put @pcmsolver.inp --incmo')
+test.run(['pcm-levy-skipoit.inp'], ['CH4.mol'], f, args='--put @pcmsolver.inp --incmo')
+os.unlink('DFCOEF')
+
+test.run(['pcm-scf-levy.inp'], ['H2O.mol'], args='--put @pcmsolver.inp --outcmo')
+os.unlink('pcm-scf-levy_H2O.out')
+test.run(['pcm-levy.inp'], ['H2O.mol'], f, args='--put @pcmsolver.inp --incmo')
+test.run(['pcm-levy-skipoit.inp'], ['H2O.mol'], f, args='--put @pcmsolver.inp --incmo')
+os.unlink('DFCOEF')
+
+test.run(['pcm-scf-dc.inp'], ['CH4.mol'], args='--put @pcmsolver.inp --outcmo')
+os.unlink('pcm-scf-dc_CH4.out')
+test.run(['pcm-dc.inp'], ['CH4.mol'], f, args='--put @pcmsolver.inp --incmo')
+test.run(['pcm-dc-skipoit.inp'], ['CH4.mol'], f, args='--put @pcmsolver.inp --incmo')
+os.unlink('DFCOEF')
+
+test.run(['pcm-scf-dc.inp'], ['H2O.mol'], args='--put @pcmsolver.inp --outcmo')
+os.unlink('pcm-scf-dc_H2O.out')
+test.run(['pcm-dc.inp'], ['H2O.mol'], f, args='--put @pcmsolver.inp --incmo')
+test.run(['pcm-dc-skipoit.inp'], ['H2O.mol'], f, args='--put @pcmsolver.inp --incmo')
+os.unlink('DFCOEF')
+
+sys.exit(test.return_code)

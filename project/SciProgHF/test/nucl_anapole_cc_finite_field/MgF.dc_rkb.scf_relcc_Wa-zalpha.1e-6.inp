@@ -1,0 +1,106 @@
+**DIRAC
+.TITLE
+  MgF
+.WAVE F ! Activate integral and wave functions modules
+.ANALYZE
+**GENERAL
+.DIRECT
+1 1 1
+**INTEGRALS
+.PRINT
+1
+.NUCMOD ! 1-Point nucleus, 2-gaussian
+2
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.PRINT
+1
+.INTFLG
+1 1 0
+**WAVE FUNCTIONS 
+.SCF
+.RELCCSD
+*SCF
+.CLOSED SHELL
+20  
+.OPEN SHELL
+1
+1/2
+.INTFLG ! Specify what 2-el.integrals to include
+1 1 0
+.EVCCNV ! Energy convergence...
+1.0D-9  1.0D-6
+#################################################
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+all
+**MOLTRA
+.ACTIVE
+energy -1000.00   2000.0 0.01
+.PRPTRA
+*PRPTRA
+.PRINT
+0
+# W_A effective operators
+.OPERATOR                                                                                           
+ 'xalpha_PV Mg'                                                                                     
+ XALPHA                                                                                             
+ 'PVCMg 02' 
+ COMFACTOR                                                                                          
+ 1.00D0                                                                                             
+.OPERATOR                                                                                           
+ 'yalpha_PV Mg'
+ YALPHA                                                                                             
+ 'PVCMg 02'                                                                                         
+ COMFACTOR                                                                                          
+ 1.00D0                                                                                             
+.OPERATOR                                                                                           
+ 'zalpha_PV Mg' 
+ ZALPHA                                                                                             
+ 'PVCMg 02'                                                                                         
+ COMFACTOR                                                                                          
+ 1.00D0                                                                                             
+.OPERATOR    
+ 'xalpha_PV F' 
+ XALPHA                                                                                             
+ 'PVCF  01'
+ COMFACTOR                                                                                          
+ 1.00D0                                                                                             
+.OPERATOR                                                                                           
+ 'yalpha_PV F' 
+ YALPHA                                                                                             
+ 'PVCF  01' 
+ COMFACTOR                                                                                          
+ 1.00D0                                                                                             
+.OPERATOR                                                                                           
+ 'zalpha_PV F' 
+ ZALPHA                                                                                             
+ 'PVCF  01' 
+ COMFACTOR                                                                                          
+ 1.00D0         
+**RELCC
+.ENERGY
+.TIMING
+.PRINT
+1
+##  all 21 correlated electrons  ##
+.NELEC
+10 11
+*CCENER
+.MAXIT # maximum number of iterations for (0,0) sector
+45        
+.NTOL
+13
+*CCSORT
+# add chosen perturbation operator
+#xalpha_PV Mg/F
+#yalpha_PV Mg/F
+#zalpha_PV Mg/F
+.NFFOPER
+1
+zalpha_PV Mg
+0.000, 0.000001
+*END OF

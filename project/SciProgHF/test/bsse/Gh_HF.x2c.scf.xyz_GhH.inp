@@ -1,0 +1,47 @@
+**DIRAC                       
+.TITLE
+  Testing BSSE
+.WAVE F
+**INTEGRALS
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+.PRINT
+1
+*AMFI
+.PRNT_A 
+0
+.PRNT_S
+0
+.MXITER
+40
+.AMFICH
+0
+**WAVE FUNCTIONS
+.SCF
+*SCF
+# - no autooccupation based on mol-input ... F needs explicitly typed occupation 
+# 1s(2) 2s(2)
+.CLOSED SHELL
+4  
+# 2p_av(5)
+.OPEN SHELL
+1
+5/6
+.EVCCNV
+1.0D-9  1.0D-7
+.MAXITR
+40
+**MOLECULE
+*CENTERS
+# The first number gives the nuclear charge that is used in the calculation,
+# and the second the one with which to search in basis set files
+.NUCLEUS
+HGh 0.0 1.0
+*UNITS
+ AU
+*BASIS
+.DEFAULT 
+STO-2G
+*END OF                                                                         

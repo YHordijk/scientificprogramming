@@ -1,0 +1,60 @@
+**DIRAC
+.TITLE 
+ Valence ionization of the Neon atom
+.WAVE FUNCTION 
+**INTEGRALS
+*READIN
+#.UNCONTRACT
+**HAMILTONIAN 
+.NONREL
+#.LVCORR  
+**WAVE FUNCTIONS
+.SCF
+.RELADC     
+*SCF                 
+.CLOSED SHELL        
+ 4 6                 
+.FCKCNV              
+5.0E-09              
+**MOLTRA             
+.ACTIVE              
+energy  -33.0 3. 0.1 
+energy  -33.0 3. 0.1 
+**RELADC
+.DOSIPS
+.SIPREPS
+ 1
+ 3
+.ADCLEVEL
+ 2
+.FANO
+.FANOIN
+ 1
+ 1
+.FANOCHNL
+ 2
+ 1,12
+s2
+ 2 7
+sp2
+ 2 3
+ 2 4
+ 2 5
+ 2 8
+ 2 9
+ 2 10
+ 3 7
+ 4 7
+ 5 7
+ 3 8
+ 4 9
+ 5 10
+.FANOONLY
+**LANCZOS
+.SIPITER
+ 100
+.SIPPRNT
+ 30.0
+*END OF                                                                                             
+                                                                                                    
+                                                                                                    

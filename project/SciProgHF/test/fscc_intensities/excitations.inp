@@ -1,0 +1,21 @@
+**DIRAC
+.TITLE
+Testing excitation energies and intensities.
+.WAVE FUNCTION
+**WAVE FUNCTIONS
+.SCF
+.RELCCSD
+**RELCCSD
+.TIMING
+.FOCKSP
+.PRINT
+1
+*CCFSPC
+.DOEXC
+.NACTH
+ 3 3
+.NACTP
+ 2 2
+.MAXIT
+50
+*END OF

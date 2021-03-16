@@ -1,0 +1,15 @@
+PI: 3.14159265358979312;
+ctf: (3/10)*(3*PI^2)^(2/3);
+
+rho(rhoa, rhob) := rhoa + rhob;
+grad_square(grada, gradb, gradab) := grada^2 + gradb^2 + 2*gradab;
+
+// Thomas-Fermi part
+tf(rhoa,rhob):= ctf*rho(rhoa,rhob)^(5/3);
+
+// Von Weizsaecker part
+vw(rhoa,grada,rhob,gradb,gradab) := (1/8) * grad_square(grada, gradb, gradab) / rho(rhoa, rhob) ;
+
+// Thomas-Fermi + Von Weizsaecker kinetic energy functional
+K(rhoa,grada,rhob,gradb,gradab) := tf(rhoa,rhob) + (1/9) * vw(rhoa,grada,rhob,gradb,gradab) ;
+

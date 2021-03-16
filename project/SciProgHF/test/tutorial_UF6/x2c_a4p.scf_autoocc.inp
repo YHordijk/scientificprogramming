@@ -1,0 +1,34 @@
+**DIRAC
+.TITLE
+  generic input
+.WAVE FUNCTION
+#.ANALYZE
+**GENERAL
+.PCMOUT
+**INTEGRALS
+*READIN
+.UNCONTRACTED
+**HAMILTONIAN
+.X2C
+#.DFT
+#BP86
+*AMFI
+.AMFICH
++4
+**WAVE FUNCTION
+.SCF
+*SCF
+.EVCCNV
+1.0D-7  5.0D-5
+.MAXITR
+45
+# omit term in Fock mtx,  ensure the convergence !
+.OPENFAC
+0.0
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+all
+all
+*END OF

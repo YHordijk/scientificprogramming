@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string  = '@   xx',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+f.add(from_string  = '@   yy',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+f.add(from_string  = '@   zz',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+f.add(from_string  = '@   average',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+f.add(from_string  = '@   anisotropy',
+      num_lines    = 1,
+      rel_tolerance    = 1.0e-5)
+
+test.run(['pe-sf-static-no-ep.inp'], ['ch2o.mol'], args='--put peqm.pot')
+test.run(['pe-dc-static-no-ep.inp'], ['ch2o.mol'], f, args='--put peqm.pot')
+test.run(['pe-dc-gspol-static-no-ep.inp'], ['ch2o.mol'], f, args='--put peqm.pot')
+test.run(['pe-eef-dc-static-no-ep.inp'], ['ch2o.mol'], f, args='--put peqm.pot')
+
+sys.exit(test.return_code)

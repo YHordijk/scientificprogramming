@@ -1,0 +1,13 @@
+!
+! This test calculates the energy of the CO molecule using the full Dirac-Coulomb-Gaunt Hamiltonian
+! In addition we also compute some properties of this molecule.
+!
+! The test is meant to check the implementation of the Gaun interaction for energies and
+! properties for Hartree-Fock and DFT hybrid functionals. 
+!
+! At the moment of making this test only the so-called AOFOCK build option can be used and
+! the Gaunt integrals will NOT be included in 4-index transformations. Correlated energies
+! will therefore be only approximate wiith Hamiltonian model.
+!
+! We assume that the correlation consistent basis sets are available in your standard path. These sets can be
+! obtained from the DALTON distribution and may later be included in the DIRAC distribution as well.

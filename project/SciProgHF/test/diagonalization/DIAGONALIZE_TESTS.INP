@@ -1,0 +1,29 @@
+!-------------------------------------------------------------
+!
+! Sample input file for the diag.x standalone program
+!
+!-------------------------------------------------------------
+**DIAG
+.TITLE
+testing of various DIRAC diagonalization routines
+! print level 
+.PRINT
+1
+! File name with the Hermitian matrix to be diagonalized
+.MTXFILE
+Jz_SS_matrix.fermirp2-2
+! Do testing of eigenvectors and eigenvalues
+.EIGVTS
+! check LAPACK's routine DSYEVR (real only matrices)
+.DSYEVR
+! Ul'f check LAPACK's routine DSYEVR (real only matrices)
+.ULF
+! check EISPACK's routine RS (real only matrices)
+.RS
+! check DIRAC's routine for Jacobi diagonalization (real only matrices)
+.RSJACO
+! check DIRAC's MiroI routine for quaternion Jacobi diagonalization (up to quaternion matrices)
+.QJACO
+! check Paul Bagus Householder diagonalization routine
+.PAUL
+*END OF

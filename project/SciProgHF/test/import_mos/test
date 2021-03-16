@@ -1,0 +1,146 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+#---------------------------------------#
+#
+# Test 1:  Molcas format 1.1
+#
+#---------------------------------------#
+
+f = Filter()
+
+# check energy
+f.add(from_string = 'checksum of imported and converted MOs:',
+      num_lines   = 1,
+      rel_tolerance = 1.0e-11)
+ 
+# copy MOs
+shutil.copy('scf-h2o-cc-pV5Z-nosym-format-1_1.ScfOrb', 'ScfOrb')
+
+# run test
+test.run(['scf-nr-molcas.inp'], ['h2o-cc-pV5Z-nosym.mol'], f, args='--put="ScfOrb"')
+
+# remove copy
+os.unlink('ScfOrb')
+
+#---------------------------------------#
+#
+# Test 2:  Molcas format 2.0
+#
+#---------------------------------------#
+
+f = Filter()
+
+# check energy
+f.add(from_string = 'checksum of imported and converted MOs:',
+      num_lines   = 1,
+      rel_tolerance = 1.0e-11)
+ 
+# copy MOs
+shutil.copy('scf-fh-cc-pV5Z-nosym-format-2_0.ScfOrb', 'ScfOrb')
+
+# run test
+test.run(['scf-nr-molcas.inp'], ['fh-cc-pV5Z-nosym.mol'], f, args='--put="ScfOrb"')
+
+# remove copy
+os.unlink('ScfOrb')
+
+#---------------------------------------#
+#
+# Test 3:  ReSpect non relativistic
+#
+#---------------------------------------#
+
+f = Filter()
+
+# check energy
+f.add(from_string = 'checksum of imported and converted MOs:',
+      num_lines   = 1,
+      rel_tolerance = 1.0e-11)
+ 
+# copy MOs
+shutil.copy('scf-nr-h2o-cc-pVTZ-nosym.ReSpect', 'ReSpect.txt')
+
+# run test
+test.run(['scf-nr-respect.inp'], ['h2o-cc-pVTZ-nosym.mol'], f, args='--put="ReSpect.txt"')
+
+# remove copy
+os.unlink('ReSpect.txt')
+
+#---------------------------------------#
+#
+# Test 4:  ReSpect with nuclear X2C
+#
+#---------------------------------------#
+
+#f = Filter()
+#
+## check energy
+#f.add(from_string = 'checksum of imported and converted MOs:',
+#      num_lines   = 1,
+#      rel_tolerance = 1.0e-11)
+# 
+## copy MOs
+#shutil.copy('scf-x2c-h2o-cc-pVTZ-nosym.ReSpect', 'ReSpect.txt')
+#
+## run test
+#test.run(['scf-x2c-respect.inp'], ['h2o-cc-pVTZ-nosym.mol'], f, args='--put="ReSpect.txt"')
+#
+## remove copy
+#os.unlink('ReSpect.txt')
+
+#---------------------------------------#
+#
+# Test 5:  Turbomole non relativistic
+#
+#---------------------------------------#
+
+f = Filter()
+
+# check energy
+f.add(from_string = 'checksum of imported and converted MOs:',
+      num_lines   = 1,
+      rel_tolerance = 1.0e-11)
+ 
+# copy MOs
+shutil.copy('scf-nr-h2o-cc-pV5Z-nosym.mos', 'mos')
+
+# run test
+test.run(['scf-nr-turbomole.inp'], ['h2o-cc-pV5Z-nosym-tm.mol'], f, args='--put="mos"')
+
+# remove copy
+os.unlink('mos')
+
+#---------------------------------------#
+#
+# Test 6:  Turbomole  X2C
+#
+#---------------------------------------#
+
+f = Filter()
+
+# check energy
+f.add(from_string = 'checksum of imported and converted MOs:',
+      num_lines   = 1,
+      rel_tolerance = 1.0e-11)
+ 
+# copy MOs
+shutil.copy('scf-x2c-h2po-nosym.spinor.r', 'spinor.r')
+shutil.copy('scf-x2c-h2po-nosym.spinor.i', 'spinor.i')
+
+# run test
+test.run(['scf-x2c-turbomole.inp'], ['h2po-nosym-tm.mol'], f, args='--put="spinor.r spinor.i"')
+
+# remove copy
+os.unlink('spinor.r')
+os.unlink('spinor.i')
+
+sys.exit(test.return_code)

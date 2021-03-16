@@ -1,0 +1,26 @@
+!
+! Calculation of singlet-triplet splitting of molecular oxygen using COSCI
+!
+**DIRAC
+.TITLE
+Molecular oxygen. Ground state.
+.WAVE F
+.ANALYZE
+**HAMILTONIAN
+.LVCORR
+**WAVE FUNCTIONS
+.SCF
+.RESOLVE
+*SCF
+.CLOSED SHELL
+ 6 8
+.OPEN SHELL
+1
+2/4,0
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+all
+all
+*END OF

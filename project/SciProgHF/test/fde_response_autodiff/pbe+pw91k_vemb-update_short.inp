@@ -1,0 +1,44 @@
+**DIRAC
+.TITLE
+electric properties for frozen density embedding
+.WAVE F
+.PROPERTIES
+**HAMILTONIAN
+.LEVY-LEBLOND
+.DFTAUTO
+pbex=1.0 pbec=1.0
+.FDE
+*FDE
+.RSP
+.NAKEF
+kin_pw91
+.NAXCF
+pbex=1.0 pbec=1.0
+**WAVE FUNCTIONS
+.SCF
+*SCF
+.MOSTART ! test is made with old start procedure and not converged, so we need to use this
+BNCORR    
+.EVCCNV
+ 1.0D-2
+**PROPERTIES
+.DIPOLE
+*LINEAR RESPONSE
+.B FREQ
+ 2
+ 0.000
+ 0.100
+.OPERATOR
+ YDIPLEN
+*EXCITATIONS
+.TRIPLET
+.EXCITATIONS
+ 1 10
+.EXCITATIONS
+ 2 10
+.EXCITATIONS
+ 3 10
+.EXCITATIONS
+ 4 10
+.ANALYZE
+*END OF

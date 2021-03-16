@@ -1,0 +1,24 @@
+**DIRAC
+.TITLE
+Polarizable embedding with Dirac-Coulomb Hamiltonian 
+.WAVE FUNCTION
+**INTEGRALS
+*READIN
+.UNCONTRACT
+**HAMILTONIAN
+.X2C
+.PEQM
+*PEQM
+.POTENT
+peqm.pot
+**WAVE FUNCTION
+.SCF
+*SCF
+.CLOSED SHELL
+16
+.PRINT
+1
+.EVCCNV
+1.0D-06
+*END OF
+

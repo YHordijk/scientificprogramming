@@ -1,0 +1,21 @@
+**DIRAC
+.WAVE FUNCTION
+**HAMILTONIAN
+.LEVY-LEBLOND
+.DFT
+ LDA
+**GRID
+.COARSE         !for the test we use a coarse grid
+**INTEGRALS
+*READIN
+.CONTRACT
+**WAVE FUNCTION
+.SCF
+*SCF
+.MAXITR
+ 4              !we stop after 4 iterations
+.MOSTART
+BNCORR          !we use the old start procedure, as the test was made with this start
+.EVCCNV
+ 1.0D-9 1.0D8   !and set the accepted threshold to a large number
+*END OF

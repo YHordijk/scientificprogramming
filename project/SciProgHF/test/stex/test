@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string  = 'Electronic energy',
+      num_lines     = 8,
+      rel_tolerance    = 1.0e-10)
+f.add(from_string  = ' --------------- STEX Final Output --------------',
+      to_string    = '   Sum of oscillator strengths',
+      rel_tolerance    = 7.0e-5,
+      mask = [1,2,3,4], # miro: compare only first four numbers, avoid comparing components
+      ignore_below = 1.0e-9)
+
+test.run(['gs.inp'], ['LiH-c1.mol'], args='--get "DFCOEF=DFCOEF.GS"')
+
+test.run(['ion.inp'], ['LiH-c1.mol'], args='--put "DFCOEF.GS=DFCOEF" --get "DFCOEF=DFCOEF.ION"')
+
+test.run(['stex.inp'], ['LiH-c1.mol'], f, args='--put "DFCOEF.GS=DFCOEF" --copy="DFCOEF.ION"')
+
+os.unlink('DFCOEF.ION')
+os.unlink('DFCOEF.GS')
+
+sys.exit(test.return_code)

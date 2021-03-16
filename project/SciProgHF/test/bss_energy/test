@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+f.add(from_string = 'Electronic energy',
+      num_lines   = 8,
+      rel_tolerance   = 1.0e-9)
+f.add(from_string = 'Overview of calculated energies',
+      to_string   = '@ Total CCSD-T  energy',
+      abs_tolerance   = 1.0e-7)
+
+test.run(['HF.bss.cc.inp'], ['Z80H.lsym.dir.mol'], f, args='--mw=80')
+
+f.add(string      = 'Final energy',
+      rel_tolerance   = 1.0e-5)
+
+test.run(['HF.bss_sfb.cc_cisd.inp', 'HF.dk2_sfb.pnuc.cc_cisd.inp'], ['Z80H.lsym.dir.mol'], f,
+                 accepted_errors=['FATAL ERROR for LUCITA runs: memory offset (dynamic memory - static memory) is too big for i*4','LUCITA WORK(MXPWRD) memory off-set is too big for INTEGER*4']) 
+
+sys.exit(test.return_code)

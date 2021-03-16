@@ -1,0 +1,32 @@
+**DIRAC
+.TITLE
+Pipek-Mezey localization based on atomic charges from projection analysis
+.ANALYZE
+**WAVE FUNCTIONS
+.SCF
+*SCF
+.CLOSED SHELL
+ 10
+**ANALYZE
+.MULPOP
+.LOCALIZE
+*LOCALIZE
+.PRJLOC
+.HESLOC
+DIAGONAL
+.THDIAG
+1.0D-13
+.OWNBAS
+.VECREF
+5
+DFC1AT
+1..5
+DFH1AT
+1
+DFH2AT
+1
+DFH3AT
+1
+DFH4AT
+1
+*END OF 

@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+os.environ['OMPI_MCA_btl'] = '^openib'
+
+f = Filter()
+f.add(string = 'Total energy                             :',
+      rel_tolerance = 1.0e-5)
+f.add(from_string = '* Dipole moment:', num_lines   = 8,
+      rel_tolerance = 1.0e-5)
+
+test.run(['HF.inp'], ['HI_arep.mol', 'HI_sorep.mol', 'HI_ecplib.mol'], f)
+
+f = Filter()
+f.add(string = 'Total energy                             :',
+      rel_tolerance = 1.0e-5)
+
+test.run(['DFT.inp'], ['Bi2.xyz'], f)
+
+sys.exit(test.return_code)

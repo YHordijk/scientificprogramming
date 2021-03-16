@@ -1,0 +1,2 @@
+      REAL*8 DEBYE
+      PARAMETER (DEBYE = 2.541 770 D00)

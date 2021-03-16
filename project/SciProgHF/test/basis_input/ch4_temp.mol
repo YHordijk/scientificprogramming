@@ -1,0 +1,34 @@
+WHATEVER
+Test of basis set readin.
+Methane
+    2    2 XY YZ
+        6.    1
+C  1          0.00000000          0.00000000          0.00000000
+LARGE EVENTEMP 0.05 3.0 11 3 2 1 1
+#
+# An even tempered or geometric progression with alpha = 0.05,
+# beta = 3, and N = 11. Maximum angular moment is 2 (3-1), and
+# there is two s-blocks, and one p- and d-block.
+#
+# s functions:
+1..5
+6..11
+#
+# p functions:
+# Function 11 is the most diffuse.
+#
+7..11
+#
+# d functions:
+#
+9..10
+        1.    1
+H  2          1.18486272          1.18486272          1.18486272
+LARGE WELLTEMP 0.3 3.0 2.0 7.0 4 2 1 1
+#
+# Well-temperered series with alpha = 0.3, beta = 3,0, gamma = 2.0,
+# delta = 7.0, and N = 4. One s-block and one p-block.
+#
+1..4
+4
+FINISH

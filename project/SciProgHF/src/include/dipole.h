@@ -1,0 +1,4 @@
+      REAL*8 DIPMN(3), DIPME(3), DIPMCORR(3), DDIPN(3, MXCOOR),         &
+     &       DDIPE(3, MXCOOR), DDIPS(3, MXCOOR), DDIPR(3, MXCOOR)
+      COMMON /DIPOLE/ DIPMN, DIPME, DIPMCORR, DDIPN, DDIPE, DDIPS,      &
+     &                DDIPR

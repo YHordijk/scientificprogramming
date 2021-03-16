@@ -1,0 +1,38 @@
+**DIRAC
+.TITLE
+electric properties for frozen density embedding
+.WAVE F
+.PROPERTIES
+**HAMILTONIAN
+.DFT
+PBE
+! frozen density embedding selected
+.FDE
+! one can give the file name for the potential here
+! if ommited, the default filename is EMBPOT. regardless
+! of the name, this file has to be transferred to the
+! scratch directory first
+*FDE
+.UPDATE
+.ENER_B
+-152.614180369233
+.NUCREP
+35.836914845800
+.NAKEF
+kin_pw91
+.NAXCF
+pbe
+**INTEGRALS
+.NUCMOD
+1
+*READIN
+.CONTRACTED
+**WAVE FUNCTIONS
+.SCF
+*SCF
+.PRINT
+ 1
+**PROPERTIES
+.DIPOLE
+*END OF
+

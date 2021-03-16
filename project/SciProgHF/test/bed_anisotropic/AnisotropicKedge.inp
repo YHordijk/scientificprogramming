@@ -1,0 +1,36 @@
+**DIRAC                                                                                             
+.WAVE FUNCTION                                                                                     
+.PROPERTIES                                                                                         
+**INTEGRALS                                                                                         
+*READIN                                                                                             
+.UNCONT                                                                                             
+*TWOINT                                                                                             
+.SCREEN                                                                                             
+-1.0D-16                                                                                            
+**WAVE FUNCTION                                                                                     
+.SCF                                                                                                
+*SCF                                                                                                
+.CLOSED SHELL                                                                                       
+10                                                                                               
+.EVCCNV                                                                                             
+1.0D-8 5.0D-8                                                                                       
+**PROPERTIES                                                                                        
+*EXCITATION ENERGIES
+.OCCUP
+1                                                                                                    
+.THRESH                                                                                             
+5.0D-6                                                                                              
+.EXCITATION ! A1                                                                                  
+1 2                                                                                                
+.EXCITATION ! B2                                                                                  
+3 2                                                                                                
+.ORIENT
+0.0 90.0 0.0
+.BED
+.INTENS
+4
+**MOLECULE                                                                                          
+*BASIS                                                                                              
+.DEFAULT                                                                                            
+dyall.v2z                                                                                          
+**END OF  

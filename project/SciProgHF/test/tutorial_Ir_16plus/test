@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+# SCF energies
+f.add(from_string = 'Electronic energy',
+      num_lines   = 8,
+      rel_tolerance   = 1.0e-9)
+f.add(from_string = 'Eigenvalues',
+      to_re       = 'HOMO - LUMO',
+      rel_tolerance   = 1.0e-7)
+
+# CCSD(T)
+f.add(from_string = 'Overview of calculated energies',
+      num_lines   = 12,
+      rel_tolerance   = 5.0e-6)
+
+test.run(['Z61.x2c.2S12.scf_cc33e.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --put "DFPCMO.v2z.2S12=DFPCMO"')
+test.run(['Z61.x2c.2S12.scf_cc33e_oe.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --put "DFPCMO.v2z.2S12=DFPCMO"')
+
+test.run(['Z61.x2c.2P12.scf_cc33e.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --get="DFCOEF=DFCOEF.v2z.2P12" --put "DFPCMO.v2z.2P12=DFPCMO"')
+test.run(['Z61.x2c.2P12.scf_cc33e_oe.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --put "DFPCMO.v2z.2P12=DFPCMO"')
+
+test.run(['Z61.x2c.2P32.scf_cc33e.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --put "DFCOEF.v2z.2P12=DFCOEF"')
+test.run(['Z61.x2c.2P32.scf_cc33e_oe.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --put "DFCOEF.v2z.2P12=DFCOEF"')
+
+test.run(['Z61.x2c.2Paver.scf_cc33e.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --put "DFPCMO.v2z.2Paver=DFPCMO"')
+test.run(['Z61.x2c.2Paver.scf_cc33e_oe.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --put "DFPCMO.v2z.2Paver=DFPCMO"')
+
+test.run(['Z61.x2c.2Paver.scf_cc33e_2P12.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --put "DFPCMO.v2z.2Paver=DFPCMO"')
+test.run(['Z61.x2c.2Paver.scf_cc33e_oe_2P12.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --put "DFPCMO.v2z.2Paver=DFPCMO"')
+
+test.run(['Z61.x2c.2Paver.scf_cc33e_2P32.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --put "DFPCMO.v2z.2Paver=DFPCMO"')
+test.run(['Z61.x2c.2Paver.scf_cc33e_oe_2P32.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120 --put "DFPCMO.v2z.2Paver=DFPCMO"')
+
+
+# FSCC
+f = Filter()
+f.add(from_string = ' Energy eigenvalues in atomic units',
+      to_re       = 'Relative real eigenvalues in other units;',
+      rel_tolerance = 5.0e-6)
+
+test.run(['Z61.x2c.scf_fscc01_33ce_5s5p.2fs.inp'], ['Ir.dyall_v2z.lsym.mol'], f, args='--mw=120')
+
+os.unlink('DFCOEF.v2z.2P12')
+
+sys.exit(test.return_code)

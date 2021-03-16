@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from runtest import version_info, get_filter, cli, run
+from runtest_config import configure
+
+assert version_info.major == 2
+
+# miro: checking of degenerate numbers placed in various positions in the printout 
+# for example, matrix elements involving degenerate px,py,pz shells
+f_prop_elem = [
+    get_filter(from_string='Property elements of the "Z1-MQM  " operator in Kramers paired molecular spinor basis:',
+               to_string   = 'End of property elements printout.',
+               ignore_sign = True, ignore_order=True,
+               mask=[3, 4], # skip first two indexes
+               abs_tolerance   = 5.0e-8),
+    get_filter(from_string='Property elements of the "Z2-MQM  " operator in Kramers paired molecular spinor basis:',
+               to_string   = 'End of property elements printout.',
+               ignore_sign = True, ignore_order=True,
+               mask=[3, 4], # skip first two indexes
+               abs_tolerance   = 5.0e-8)
+]
+
+options = cli()
+ierr = 0
+for inp in ['MgF.dc_rkb.scf_prptra_nmqm.inp','MgF.dc_rkb.scf_prptra_nmqm_def.inp']:
+    for mol in ['MgF.sto-2g.C2v.mol']:
+        ierr += run(options,
+                    configure,
+                    input_files=[inp, mol],
+                    filters={'out': f_prop_elem})
+
+
+#Next, ff-CCSD(T) approach
+f = [
+    get_filter(from_string='Overview of calculated energies',
+               to_string='--------------------------------------------------------------------------------',
+               abs_tolerance=5e-8)
+]
+options = cli()
+ierr = 0
+for inp in ['MgF.dc_rkb.scf_relcc_nmqm.1e-4.inp']:
+    for mol in ['MgF.sto-2g.C2v.mol']:
+        ierr += run(options,
+                    configure,
+                    input_files=[inp, mol],
+                    filters={'out': f})
+
+sys.exit(ierr)
+

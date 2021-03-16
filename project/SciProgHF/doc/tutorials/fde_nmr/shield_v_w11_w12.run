@@ -1,0 +1,5 @@
+cp DFCOEF.h2se  DFCOEF
+cp GRIDOUT.h2o  FROZEN
+
+pam --inp=shield_v_w11_w12.inp  --mol=h2se.mol --put="numerical_grid FROZEN pertden_direct_lao.FINAL pertden_reorth_lao.FINAL" --incmo
+

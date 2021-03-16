@@ -1,0 +1,48 @@
+**DIRAC
+.TITLE
+ V [Ar]3d(3)4s(2)
+.WAVE F
+.ANALYZE
+**GENERAL
+.DIRECT
+1 1 1
+**INTEGRALS
+.PRINT
+1
+.NUCMOD 
+2
+*READIN
+.UNCONTRACTED
+.PRINT
+1
+**HAMILTONIAN
+.X2C
+.PRINT
+1
+**WAVE FUNCTIONS
+.SCF
+.RESOLVE
+*SCF
+# V: 1s(2) 2s(2) 2p(6) 3s(2) 3p(6) 3d(3) 4s(2)
+.CLOSED SHELL
+6 12
+# the highest 3d(3) averaged open-shell state (after reorder)
+.OPEN SHELL
+2
+3/10,0
+2/2,0
+# overlap selection 
+.OVLSEL
+.NODYNSEL
+.MAXITR
+100
+*RESOLVE
+.PRINT
+0
+**ANALYZE
+.MULPOP
+*MULPOP
+.VECPOP
+1..14
+1..14
+*END OF

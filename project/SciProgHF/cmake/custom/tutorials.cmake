@@ -1,0 +1,12 @@
+option(ENABLE_TUTORIALS "Enable tutorials within the test suite" OFF)
+if(ENABLE_TUTORIALS)
+    message(STATUS "Specialized tutorial tests ENABLED")
+    #miro: add proper TIMEOUTS
+    dirac_test(tutorial_W "tutorial;W;open-shell;scf" "")
+    dirac_test(tutorial_MnO6 "tutorial;MnO6;scf;long" "")
+    dirac_test(tutorial_UF6 "tutorial;UF6;long" "")
+    dirac_test(tutorial_Ir_16plus "tutorial;cc;long" "")
+    dirac_test(tutorial_projection_analysis "tutorial;projection" "")
+else()
+    message(STATUS "Specialized tutorial tests DISABLED")
+endif()

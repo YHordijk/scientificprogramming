@@ -1,0 +1,34 @@
+**DIRAC                       
+.TITLE
+ Testing finite field calculation of EFG
+.WAVE F
+.PROPER
+.4INDEX
+**HAMILTONIAN
+# 'EFG H'
+# DIAGONAL
+# 'H EFG ZZ'
+.BSS
+999
+.CMPEIG
+.PRINT
+2
+.OPERATOR
+ 'EFG F'
+ DIAGONAL
+ 'ZZEFG011'
+ COMFACTOR 0.001
+**WAVE FUNCTIONS
+.SCF
+.RELCCSD
+*SCF
+.FCKCNV
+3.0D-10
+**PROPERTIES
+.EFG
+*EXPECTATION
+.ORBANA
+**MOLTRA
+.ACTIVE
+2..36
+*END OF                                                                         

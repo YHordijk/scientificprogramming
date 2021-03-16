@@ -1,0 +1,44 @@
+!
+! H3+/C2v/KR-CI
+!
+**DIRAC
+.TITLE
+H3+
+.WAVE F
+**HAMILTONIAN
+.LVCORR
+**WAVE FUNCTIONS
+.SCF
+.KR CI
+######################################################################
+*SCF
+.CLOSED SHELL
+2
+.MAXITR
+100
+######################################################################
+*KRCICALC
+.CI PROGRAM
+LUCIAREL
+.INACTIVE
+ 0
+.GASSH
+ 1
+ 2
+.GASSPC
+ 2 2
+.MK2REF
+ 0
+.MK2DEL
+ 2
+.CIROOTS
+ 1 4
+.CIROOTS
+ 2 2
+##################################
+.MAX CI
+ 600
+.MXCIVE
+ 64
+.DIPMOM
+**END OF

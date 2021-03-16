@@ -1,0 +1,22 @@
+!
+! Do a free-particle projection before diagonalizing the Dirac matrix (no 2-e interactions)
+! Illustrates the errors that are introduced by such explicit projectors.
+!
+**DIRAC
+.TITLE
+Fluorine atom.
+.WAVE F
+**GENERAL
+.DIRECT
+1 1 1
+**HAMILTONIAN
+.ONESYS
+.FREEPJ
+**WAVE FUNCTIONS
+.SCF
+*SCF
+.CLOSED SHELL
+42 38
+*END OF
+
+

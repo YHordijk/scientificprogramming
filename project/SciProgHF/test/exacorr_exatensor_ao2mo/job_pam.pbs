@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#If you observe a crash or hang, collect the following files
+#and place them in a new directory in /ccs/proj/chp109/issues:
+#----------------------------
+# (1) This PBS submit script;
+# (2) DIRAC.INP;
+# (3) MOLECULE.XYZ;
+# (4) DFCOEF (if exists);
+# (5) Dirac output/error logs;
+# (6) qforce.{N-1}.log, where N = QF_NUM_PROCS.
+#----------------------------------------------
+
+#BSUB -nnodes 2
+#BSUB -W 2:00
+#BSUB -P CHP109
+#BSUB -J dirac
+#BSUB -o info_%J.out
+#BSUB -e info_%J.err
+
+# values to adjust
+# Set binary specific paths for dirac.x and exacorr.x
+export EX_PATH=$DIRAC_PATH
+export BASDIR=${DIRAC_PATH}/basis:${DIRAC_PATH}/basis_dalton:${DIRAC_PATH}/basis_ecp
+
+# number of mpi processes (2*nnodes)
+export nmpi=4
+
+# Load modules:
+module load gcc/8.1.1
+module load essl
+module load cuda
+module load git
+module load cmake
+module load python
+module load netlib-lapack
+
+#set additional environmental variables
+export PAMI_IBV_DEVICE_NAME="mlx5_0:1,mlx5_3:1"
+export PAMI_IBV_DEVICE_NAME_1="mlx5_3:1,mlx5_0:1"
+
+ulimit -s unlimited
+
+# run cc
+$EX_PATH/pam --mpi=$nmpi --mol=$MOL_file --inp=$INP_file --put="DFCOEF" --get="DFCOEF"
+
+

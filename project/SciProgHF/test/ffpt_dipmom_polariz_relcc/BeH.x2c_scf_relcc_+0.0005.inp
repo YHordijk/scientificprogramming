@@ -1,0 +1,46 @@
+**DIRAC
+.TITLE
+ BeH,ffpt RelCC
+.WAVE F
+.4INDEX
+**HAMILTONIAN
+.X2C
+.OPERATOR
+ ZDIPLEN
+ COMFACTOR
+ +0.0005
+**INTEGRALS
+*READINP
+.UNCONTRACT
+**WAVE FUNCTIONS
+.SCF
+.RELCCSD
+*SCF
+.CLOSED SHELL
+4 
+.OPEN SHELL
+1
+1/2 
+.EVCCNV
+1.0D-9  5.0D-7
+# reads starting (unperturbed) MOs, DFPCMO
+.MAXITR
+8
+**MOLTRA
+# all 5 electrons,all virtuals 
+.ACTIVE
+all
+**RELCC
+.ENERGY
+.PRINT
+1
+# all electrons active
+.NELEC
+3 2   
+*CCENER
+.MAXIT # maximum number of iterations for (0,0) sector
+60
+.NTOL
+10
+*END OF
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from runtest_dirac import Filter, TestRun
+
+test = TestRun(__file__, sys.argv)
+
+f = Filter()
+
+f.add(from_re     = '! PV',
+      to_string   = 'E N D   of   D I R A C  output',
+      rel_tolerance   = 1.0e-3)
+
+test.run(['shielding_dc.inp', 'shielding_nr.inp', 'spinspin_dc.inp', 'spinspin_nr.inp'], ['H2O2.mol'], f)
+
+sys.exit(test.return_code)

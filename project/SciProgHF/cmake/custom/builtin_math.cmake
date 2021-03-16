@@ -1,0 +1,13 @@
+option(ENABLE_BUILTIN_BLAS "Enable builtin BLAS implementation (slow)" OFF)
+if(ENABLE_BUILTIN_BLAS)
+    add_definitions(-DUSE_BUILTIN_BLAS)
+    set(BLAS_FOUND TRUE)
+    message(STATUS "Using builtin BLAS implementation (slow)")
+endif()
+
+option(ENABLE_BUILTIN_LAPACK "Enable builtin LAPACK implementation (slow)" OFF)
+if(ENABLE_BUILTIN_LAPACK)
+    add_definitions(-DUSE_BUILTIN_LAPACK)
+    set(LAPACK_FOUND TRUE)
+    message(STATUS "Using builtin LAPACK implementation (slow)")
+endif()
