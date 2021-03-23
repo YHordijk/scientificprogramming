@@ -13,6 +13,9 @@ module mobasis_hartree_fock
         logical :: ReadFromFile = .false.
         logical :: UHF = .false. !whether to do UHF
         integer :: Nel = -1 !number of electrons
+        logical :: usemixing = .true.
+        real(8) :: mixing = 0.1
+        integer :: maxiter = 20
     end type settings
 
     contains
@@ -24,10 +27,10 @@ module mobasis_hartree_fock
 
         type(one_el_t) :: oneint
         complex(8)     :: twoint(:,:,:,:)
-        integer        :: nspin, i, j, p, q, r, s, maxiter=20
-        real(8), allocatable     :: D(:,:,:), F(:,:,:)
+        integer        :: nspin, i, j, p, q, r, s
+        real(8), allocatable     :: D(:,:,:), F(:,:,:), Dn(:,:,:)
         real(8), allocatable :: eigenvalues(:), eigenvectors(:,:,:)
-        real(8) :: thresh = 1e-9, eps1, eps2
+        real(8) :: thresh = 1e-9, eps1, eps2, energy
         logical :: converged = .false.
         character(256) :: setpath
         type(settings) :: set
@@ -40,7 +43,7 @@ module mobasis_hartree_fock
 
         nspin = oneint%n_spinor
 
-        !if we are doing UHF we double the number of spinors
+        !if we are doing UHF we double the number of spinorbitals
         if(set%UHF) then
             nspin = nspin*2
             !and half the values in the core hamiltonian and 2e integrals
@@ -48,7 +51,7 @@ module mobasis_hartree_fock
             twoint = twoint/2
         endif
 
-        allocate(D(nspin,nspin,2), F(nspin,nspin,2))
+        allocate(D(nspin,nspin,2), Dn(nspin,nspin,2), F(nspin,nspin,2))
         allocate(eigenvalues(nspin), eigenvectors(nspin,nspin,2))
 
         !initialize D as eye
@@ -56,11 +59,12 @@ module mobasis_hartree_fock
         do i = 1, nspin
             D(i,i,1) = 1
         enddo
+        call calculate_energy(oneint%h_core, twoint, D, energy, set)
 
-        call print_data(D, eigenvalues)
+        call print_data(D, eigenvalues, energy)
 
         i = 1
-        do while(i<maxiter .and..not.converged)
+        do while(i<set%maxiter .and..not.converged)
             eps1 = eps2
             !get fock matrix first
             call calculate_Fock(oneint%h_core, D, twoint, F, set)
@@ -73,8 +77,17 @@ module mobasis_hartree_fock
                 ! converged = .true.
             endif
             !if not converged calculate the new density
-            call calculate_dens(eigenvectors, D, set)
-            call print_data(D, eigenvalues)
+            call calculate_dens(eigenvectors, Dn, set)
+            call calculate_energy(oneint%h_core, twoint, D, energy, set)
+            
+            !if we are using mixing then we are going to mix the density matrices
+            if(set%usemixing) then
+                D = (1 - set%mixing) * D + set%mixing * Dn
+            else
+                D = Dn
+            endif
+
+            call print_data(D, eigenvalues, energy)
             i = i + 1
         enddo
 
@@ -108,24 +121,35 @@ module mobasis_hartree_fock
         read(20,*) set%UHF
         read(20,*)
         read(20,*) set%Nel
+        read(20,*)
+        read(20,*) set%usemixing
+        read(20,*)
+        read(20,*) set%mixing
+        read(20,*)
+        read(20,*) set%maxiter
 
         print *, "Use UHF: ", set%UHF 
         print *, "Number of electrons: ", set%Nel
+        print *, "Use mixing: ", set%usemixing
+        print *, "Mixing strenght: ", set%mixing
+        print *, "Max iteration: ", set%maxiter
 
     end subroutine read_settings   
 
+
     !subroutine that prints values for logging and use in python script later on
-    subroutine print_data(D, eigenvalues)
-        real(8), intent(in) :: D(:,:,:), eigenvalues(:)
+    subroutine print_data(D, eigenvalues, energy)
+        real(8), intent(in) :: D(:,:,:), eigenvalues(:), energy
         integer :: nspin, j
 
         nspin = size(eigenvalues)
         !log energies
-        print*, "begin energies"
+        print*, "Energy: ", energy
+        print*, "begin eigenvalues"
         do j = 1, nspin
             print*, eigenvalues(j)
         enddo
-        print*, "end energies"
+        print*, "end eigenvalues"
         !log the densities for visualization using python and debugging
         !real part of dens
         print*, "begin density"
@@ -140,6 +164,7 @@ module mobasis_hartree_fock
         enddo
         print*, "end density"
     end subroutine print_data
+
 
     !subroutine for calculating convergence as described in project description
     subroutine calculate_eps(F, D, eps)
@@ -166,6 +191,7 @@ module mobasis_hartree_fock
 
         eps = sqrt(eps)
     end subroutine calculate_eps
+
 
     !subroutine for calculating density matrix
     subroutine calculate_dens(C, D, set)
@@ -199,6 +225,7 @@ module mobasis_hartree_fock
         enddo
 
     end subroutine calculate_dens
+
 
     !subroutine for calculating fock matrix
     subroutine calculate_Fock(h, D, g, F, set)
@@ -265,9 +292,10 @@ module mobasis_hartree_fock
         decompg(:,:,:,:,2) = aimag(g)
 
 
-        !we iterate p and q over all spinors
+        !we iterate p and q over all spinorbitals
         do p = 1, n
             do q = 1, n
+                !and r and s over occupied spinorbitals
                 do r = 1, n_occ
                     do s = 1, n_occ
                         !calculate fock matrix for real and imag parts
@@ -287,6 +315,61 @@ module mobasis_hartree_fock
 
         deallocate(decompg)
     end subroutine calculate_Fock 
+
+
+    subroutine calculate_energy(h, g, D, energy, set)
+        complex(8), intent(in) :: h(:,:), g(:,:,:,:)
+        real(8), intent(in) :: D(:,:,:)
+        real(8), intent(out) :: energy
+        real(8) :: energy1, energy2
+        complex(8), allocatable :: CD(:,:)
+        type(settings) :: set
+
+        integer :: p, q, r, s, n, n_occ
+
+        n = size(D, 1)
+        if(set%UHF) then
+            n_occ = set%nel
+        else
+            n_occ = set%nel / 2
+        endif
+
+        allocate(CD(n,n))
+        CD = CMPLX(D(:,:,1), D(:,:,2))
+
+        !calcualte the first term
+        energy1 = 0
+        do p = 1, n
+            do q = 1, n
+                if(set%UHF) then
+                    energy1 = energy1 + h((p-1)/2+1, (q-1)/2+1) * CD(p,q)
+                else
+                    energy1 = energy1 + h(p,q) * CD(p,q)
+                endif
+            enddo
+        enddo
+
+
+        !calculate second term
+        energy2 = 0
+        do p = 1, n
+            do q = 1, n
+                do r = 1, n_occ
+                    do s = 1, n_occ
+                        if(set%UHF) then
+                            energy2 = energy2 + g((p-1)/2+1,(r-1)/2+1,(q-1)/2+1,(s-1)/2+1) * CD(p,q) * CD(r,s)  
+                        else    
+                            energy2 = energy2 + g(p,r,q,s) * CD(p,q) * CD(r,s) 
+                        endif
+                    enddo
+                enddo
+            enddo
+        enddo
+
+        energy = energy1 + 0.5d0 * energy2
+
+    end subroutine calculate_energy
+
 
     !subroutine for diagonalizing a complex matrix
     subroutine diagonalize_complex_matrix (the_matrix, eigenvalues, eigenvectors)
