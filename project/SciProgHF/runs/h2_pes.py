@@ -6,7 +6,7 @@ import shutil
 
 
 
-def read(name, ext='', directory=None, log_dens=False):
+def read(name, ext='', directory=None, log_dens=True):
 	if directory is None:
 		directory = rf'{os.getcwd()}/{name}{ext}'
 
@@ -102,7 +102,46 @@ def read(name, ext='', directory=None, log_dens=False):
 
 
 if __name__ == '__main__':
-	name = 'h2'
-	ext = '_UHF'
+	try: 
+		os.mkdir(f"{os.getcwd()}/h2_r")
+		shutil.copy(f"{os.getcwd()}/settings", f"{os.getcwd()}/h2_r/settings")
+	except: pass
 
-	read(name, ext, directory=rf"{os.getcwd()}/{name}{ext}")
+	energies = []
+	true_energies = []
+	r_range = np.linspace(0.2, 3, 15)
+	print(f"Starting bond length PES calculation for H2 with r in interval [{r_range[0]}, {r_range[-1]}] with {len(r_range)} steps.")
+	for i, r in enumerate(r_range):
+		try:os.mkdir(f"{os.getcwd()}/h2_r/{i}")
+		except: pass
+
+		shutil.copy(f"{os.getcwd()}/h2_r/hf.inp", f"{os.getcwd()}/h2_r/{i}/hf.inp")
+		shutil.copy(f"{os.getcwd()}/h2_r/settings", f"{os.getcwd()}/h2_r/{i}/settings")
+
+		with open(f"{os.getcwd()}/h2_r/{i}/h2.xyz", 'w+') as f:
+			f.write(f"2 \nHydrogen with bondlength set to {r} for step {i} of PES calculation \nH     0.0 0.0 0.0 \nH     0.0 0.0 {r} \n")
+
+		os.system(f'pam --inp={os.getcwd()}/h2_r/{i}/hf.inp --mol={os.getcwd()}/h2_r/{i}/h2.xyz --copy={os.getcwd()}/h2_r/{i}/settings')
+		#move files
+		shutil.move(f"{os.getcwd()}/hf_h2.out", f"{os.getcwd()}/h2_r/{i}/hf_h2.out")
+		shutil.move(f"{os.getcwd()}/hf_h2.tgz", f"{os.getcwd()}/h2_r/{i}/hf_h2.tgz")
+
+		res = read('h2', f'_{i}', f'{os.getcwd()}/h2_r/{i}', False)
+
+		energies.append(res[0][-1])
+		true_energies.append(res[1][-1])
+
+
+	fig = plt.figure()
+	plt.plot(r_range, energies, label='Yuman')
+	plt.plot(r_range, true_energies, label='Dirac')
+	plt.legend()
+	plt.title("PES bond distance")
+	plt.xlabel('r (Angstrom)')
+	plt.ylabel('HF Energy (hartree)')
+	fig.savefig(f"{os.getcwd()}/PES.jpg")
+
+	for i, e, te in zip(range(len(energies)), energies, true_energies):
+		print(f"Step {i:>3}: E = {e:.6f} E_dirac = {te:.6f} Difference = {e-te:.6f}")
+
+	print('\a')

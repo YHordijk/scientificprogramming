@@ -38,30 +38,40 @@ module mobasis_hartree_fock
             type(settings) :: set
     
             !path to settings file
+            !we have copied the settings file to cwd during calling of pam
+            !so it should be there
             call getcwd(cwd)
             setpath = trim(cwd) // '/settings'
             call read_settings(setpath, set)
     
-            !if we are doing UHF we double the number of spinorbitals
+            !in RHF we have half the number of spinors, since Dirac integral matrices are UHF
             nspin = oneint%n_spinor / 2
-            if(set%UHF) nspin = nspin*2
-
-            print*, nspin
-    
+            if(set%UHF) nspin = oneint%n_spinor
+            
+            !allocate the matrices we need
+            !we need a density matrix D, a second density matrix Dn which we use
+            !for mixing. Fock matrix and also vector for eigenvalues and matrix for the
+            !eigenvectors. Density, FOck and eigenvectors are complex valued, however we
+            !represent the real and complex parts as a separate axis, for simplicity later
             allocate(D(nspin,nspin,2), Dn(nspin,nspin,2), F(nspin,nspin,2))
             allocate(eigenvalues(nspin), eigenvectors(nspin,nspin,2))
     
-            !initialize D as eye
+            !initialize D as identity matrix on the real part
             D = 0
             do i = 1, nspin
                 D(i,i,1) = 1
             enddo
+            
+            !calculate starting energy
             call calculate_energy(oneint%h_core, oneint%e_core, twoint, D, energy, set)
+            
+            !write data to log file for reading later (using python)
+            call print_data(F, eigenvalues, energy)
     
-            call print_data(D, eigenvalues, energy)
-    
+            !start SCF cycles
             i = 1
-            do while(i<set%maxiter .and..not.converged)
+            !we do at most maxiter steps
+            do while(i<set%maxiter .and. .not.converged)
                 eps1 = eps2
                 !get fock matrix first
                 call calculate_Fock(oneint%h_core, D, twoint, F, set)
@@ -70,20 +80,22 @@ module mobasis_hartree_fock
                 !calculate convergence criterium using density from previous iteration
                 call calculate_eps(F, D, eps2)
                 !check for convergence:
+                call calculate_energy(oneint%h_core, oneint%e_core, twoint, D, energy, set)
+
                 if(abs(eps1-eps2)<thresh .and. i>1) then
                     ! converged = .true.
                 endif
+                
                 !if not converged calculate the new density
                 call calculate_dens(eigenvectors, Dn, set)
-                call calculate_energy(oneint%h_core, oneint%e_core, twoint, D, energy, set)
-                
+                                
                 !if we are using mixing then we are going to mix the density matrices
                 if(set%usemixing) then
                     D = (1 - set%mixing) * D + set%mixing * Dn
                 else
                     D = Dn
                 endif
-                call print_data(D, eigenvalues, energy)
+                call print_data(F, eigenvalues, energy)
                 i = i + 1
             enddo
     
@@ -257,15 +269,13 @@ module mobasis_hartree_fock
                     do r = 1, n_occ
                         do s = 1, n_occ
                             !calculate fock matrix for real and imag parts
-                            !for UHF decompg is twice as small so we must correct the indices for that
-                            print *, set%UHF, p, q, r, s
-
-                            F(p,q,1) = F(p,q,1) + real(g(p,r,q,s))*D(r,s,1) - aimag(g(p,r,q,s))*D(r,s,2)
-                            F(p,q,2) = F(p,q,2) + aimag(g(p,r,q,s))*D(r,s,2) + real(g(p,r,q,s))*D(r,s,2)
+                            F(p,q,1) = F(p,q,1) + real(g(p,r,q,s))*D(r,s,1) + aimag(g(p,r,q,s))*D(r,s,2)
+                            F(p,q,2) = F(p,q,2) + aimag(g(p,r,q,s))*D(r,s,2) - real(g(p,r,q,s))*D(r,s,2)
                         enddo
                     enddo
                 enddo
             enddo
+
         end subroutine calculate_Fock 
     
     
@@ -299,11 +309,10 @@ module mobasis_hartree_fock
                 enddo
             enddo
     
-    
             !calculate second term
             energy2 = 0
-            do p = 1, n
-                do q = 1, n
+            do p = 1, n_occ
+                do q = 1, n_occ
                     do r = 1, n_occ
                         do s = 1, n_occ
                             ! if(set%UHF) then
