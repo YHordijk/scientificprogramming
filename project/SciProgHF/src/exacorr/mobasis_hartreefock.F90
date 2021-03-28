@@ -14,10 +14,11 @@ module mobasis_hartree_fock
         type :: settings 
             logical :: ReadFromFile = .false.
             logical :: UHF = .false. !whether to do UHF
-            integer :: Nel = -1 !number of electrons
+            integer :: Nel = 1 !number of electrons
             logical :: usemixing = .true.
             real(8) :: mixing = 0.1
             integer :: maxiter = 20
+            real(8) :: thresh = 1e-9
         end type settings
     
         contains
@@ -32,7 +33,7 @@ module mobasis_hartree_fock
             integer        :: nspin, i, j, p, q, r, s
             real(8), allocatable     :: D(:,:,:), F(:,:,:), Dn(:,:,:)
             real(8), allocatable :: eigenvalues(:), eigenvectors(:,:,:)
-            real(8) :: thresh = 1e-9, eps1, eps2, energy
+            real(8) :: eps, energy
             logical :: converged = .false.
             character(256) :: setpath, cwd
             type(settings) :: set
@@ -72,18 +73,18 @@ module mobasis_hartree_fock
             i = 1
             !we do at most maxiter steps
             do while(i<set%maxiter .and. .not.converged)
-                eps1 = eps2
                 !get fock matrix first
                 call calculate_Fock(oneint%h_core, D, twoint, F, set)
                 !diagonalize F to get eigenvectors
                 call diagonalize_complex_matrix (F, eigenvalues, eigenvectors)
-                !calculate convergence criterium using density from previous iteration
-                call calculate_eps(F, D, eps2)
                 !check for convergence:
                 call calculate_energy(oneint%h_core, oneint%e_core, twoint, D, energy, set)
 
-                if(abs(eps1-eps2)<thresh .and. i>1) then
-                    ! converged = .true.
+                !calculate convergence criterium using density from previous iteration
+                call calculate_eps(F, D, eps)
+                print *, "epsilon: ", eps
+                if(eps<set%thresh .and. i>1) then
+                    converged = .true.
                 endif
                 
                 !if not converged calculate the new density
@@ -135,12 +136,15 @@ module mobasis_hartree_fock
             read(20,*) set%mixing
             read(20,*)
             read(20,*) set%maxiter
+            read(20,*)
+            read(20,*) set%thresh
     
             print *, "Use UHF: ", set%UHF 
             print *, "Number of electrons: ", set%Nel
             print *, "Use mixing: ", set%usemixing
             print *, "Mixing strenght: ", set%mixing
             print *, "Max iteration: ", set%maxiter
+            print *, "Convergence threshold: ", set%thresh
     
         end subroutine read_settings   
     
@@ -177,23 +181,26 @@ module mobasis_hartree_fock
         !subroutine for calculating convergence as described in project description
         subroutine calculate_eps(F, D, eps)
             real(8), intent(in) :: D(:,:,:), F(:,:,:)
-            real(8), allocatable :: comm2(:,:,:)
+            complex(8), allocatable :: comm2(:,:), CD(:,:), CF(:,:)
             integer :: n, p, q
             real(8), intent(out) :: eps
     
     
             n = size(F, 1)
-            allocate(comm2(n,n,2))
+            allocate(comm2(n,n))
+
+            allocate(CD(n,n), CF(n,n))
+            CD = CMPLX(D(:,:,1), D(:,:,2))
+            CF = CMPLX(F(:,:,1), F(:,:,2))
     
             !calculate real and imaginary parts of the commutator
-            comm2(:,:,1) = matmul(F(:,:,1),D(:,:,1)) - matmul(D(:,:,1),F(:,:,1))
-            comm2(:,:,2) = matmul(F(:,:,2),D(:,:,2)) - matmul(D(:,:,2),F(:,:,2))
-    
+            comm2 = matmul(CF,CD) - matmul(CD,CF)
+            
             eps = 0.0
             do p = 1, n 
                 do q = 1, n
                     !square commutator
-                    eps = comm2(p,q,1)*comm2(p,q,1) + comm2(p,q,2)*comm2(p,q,2)
+                    eps = comm2(p,q)*comm2(p,q)
                 enddo
             enddo
     

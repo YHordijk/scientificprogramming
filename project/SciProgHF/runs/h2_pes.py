@@ -21,6 +21,7 @@ def read(name, ext='', directory=None, log_dens=True):
 	energies = []
 	true_energies = []
 	iterations = 0
+	epsilon = []
 	with open(directory + f"/hf_{name}.out", 'r') as f:
 		lines = f.readlines()
 		recorddens = False
@@ -29,6 +30,10 @@ def read(name, ext='', directory=None, log_dens=True):
 			if line.strip().startswith('Total energy'):
 				parts = line.split(':')
 				true_energies.append(float(parts[-1].strip()))
+
+			if line.strip().startswith('epsilon'):
+				parts = line.split(':')
+				epsilon.append(float(parts[-1].strip()))
 
 			if line.strip().startswith('Energy:'):
 				parts = line.split(':')
@@ -96,9 +101,18 @@ def read(name, ext='', directory=None, log_dens=True):
 	plt.ylabel('Energy (hartree)')
 	fig.savefig(directory + f'/energy.jpg')
 
+	fig = plt.figure()
+	plt.plot(range(1, iterations), epsilon, label='Epsilon')
+	plt.legend()
+	plt.title("Per Iteration")
+	plt.xlabel('Iteration')
+	plt.ylabel('Epsilon')
+	fig.savefig(directory + f'/epsilon.jpg')
+
+
 	plt.close()
 
-	return energies, true_energies
+	return energies, true_energies, iterations
 
 
 if __name__ == '__main__':
@@ -142,6 +156,6 @@ if __name__ == '__main__':
 	fig.savefig(f"{os.getcwd()}/PES.jpg")
 
 	for i, e, te in zip(range(len(energies)), energies, true_energies):
-		print(f"Step {i:>3}: E = {e:.6f} E_dirac = {te:.6f} Difference = {e-te:.6f}")
+		print(f"Step {i:>3}: Iterations = {res[2]:>4}, E = {e:.6f}, E_dirac = {te:.6f} Difference = {e-te:.6f}")
 
 	print('\a')
